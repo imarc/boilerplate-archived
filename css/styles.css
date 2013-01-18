@@ -1,0 +1,777 @@
+/* = Table of Contents =====================================================
+ * 1.  Web Fonts
+ * 2.  Reset
+ * 3.  Headings
+ * 4.  Typography
+ * 5.  Links
+ * 6.  Lists
+ * 7.  Embedded Content
+ * 8.  Tables
+ * 9.  Layout
+ * 10. Messaging
+ * 11. Non-semantic Classes
+ * 12. Forms
+ * 13. Navigation
+ * 14. Print Styles
+ * 15. Media Queries
+/* ========================================================================= */
+
+/* = 1. Web Fonts ========================================================== */
+@import url(http://fonts.googleapis.com/css?family=Fjord+One);
+
+
+/* = 2. Reset ============================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption,
+figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
+section, summary {
+	display: block;
+}
+
+audio, canvas, video {
+	display: inline-block;
+}
+
+html.lt-ie8 {
+	display: inline;
+	zoom: 1;
+}
+
+audio:not([controls]) {
+	display: none;
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+	max-width: 920px;
+	min-width: 480px;
+	margin: 0 auto;
+	padding: 1em;
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+html.lt-ie7 body {
+	width: 920px;
+}
+
+blockquote, html, button, input[type=text], input[type=password], textarea, select, caption {
+	font-family: Arial, Helvetica, sans-serif;
+	background: #fff;
+	color: #000;
+}
+
+::-moz-selection {
+	background: #bbb;
+	text-shadow: none;
+}
+
+::selection {
+	background: #bbb;
+	text-shadow: none;
+}
+
+
+/* = 3. Headings =========================================================== */
+
+header h1 a,
+header h1 a:visited {
+	color: #f2006d;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.4;
+	margin: 0 0 .5em;
+	font-family: 'Fjord One', Georgia, serif;
+}
+h1 {
+	font-size: 3.25em; /* 52px / 16px */
+}
+h2 {
+	font-size: 2.25em; /* 36px / 16px */
+}
+h3 {
+	font-size: 1.5em; /* 24px / 16px */
+}
+h4 {
+	font-size: 1.125em; /* 18px / 16px */
+}
+h5, h6 {
+	font-size: 1em;
+}
+
+hgroup h1,
+hgroup h2,
+hgroup h3,
+hgroup h4,
+hgroup h5,
+hgroup h6 {
+	margin: 0 inherit;
+}
+
+
+/* = 4. Typography ========================================================= */
+
+abbr[title],
+acronym[title] {
+	border-bottom: 1px dotted;
+}
+
+b,
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+blockquote,
+pre {
+	clear: both;
+	padding-left: .5em;
+	margin: 2em 0 2em .5em;
+}
+	blockquote {
+		font-style: italic;
+		font-size: 1.25em;
+		border-left: 1px dotted;
+	}
+		blockquote p {
+			margin: 1em 0;
+		}
+pre {
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+code {
+	padding: 0.2em;
+}
+
+pre, code, kbd, samp {
+	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', monospace;
+}
+
+p {
+	margin: 1.5em 0;
+}
+
+q {
+	quotes: none;
+}
+
+q:before,
+q:after {
+	content: "";
+	content: none;
+}
+
+dfn {
+	font-style: italic;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	background: #999;
+	margin: 3em auto;
+	width: 80%;
+}
+
+ins {
+	background: #9f9;
+	color: #000;
+	text-decoration: none;
+}
+
+del {
+	background: #f99;
+	text-decoration: line-through;
+}
+
+mark {
+	background: #ff3;
+	color: #000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+/* = 5. Links ============================================================== */
+
+a {
+	color: #0096d2;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #0096d2;
+}
+
+a:hover,
+a:active {
+	color: #f2006d;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+
+/* = 6. Lists ============================================================== */
+
+dl,
+ol,
+ul {
+	margin: 1em 0;
+	padding-left: 2em;
+}
+ul {
+	list-style: square;
+}
+
+dd {
+	margin-left: 2em;
+}
+
+
+/* = 7. Embedded Content =================================================== */
+img {
+	max-width: 100%;
+	vertical-align: middle;
+	-ms-interpolation-mode: bicubic;
+}
+
+html.lt-ie9 svg {
+	overflow: hidden;
+}
+
+
+/* = 8. Tables ============================================================= */
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin: 1em 0 2em;
+}
+	thead {
+		line-height: 2;
+		color: #333;
+	}
+		th {
+			font-weight: bold;
+			line-height: 1.2;
+		}
+	tr {
+	}
+		thead tr {
+			border: 0;
+			border-bottom: 1px solid #999;
+		}
+
+	td, th {
+		padding: .25em .5em;
+		text-align: left;
+		vertical-align: top;
+	}
+
+caption {
+	font-size: 1.2em;
+}
+
+
+/* = 9. Layout ============================================================= */
+
+body > header,
+body > .torso,
+body > footer {
+	position: relative;
+}
+
+body > header h1 {
+	font-size: 2em;
+}
+
+body > .torso {
+	padding: 2em 0;
+}
+
+body > footer {
+	margin-top: 100px;
+	color: #999;
+	font-size: 14px;
+	text-align: center;
+}
+
+
+/* = 10. Messaging ========================================================= */
+.highlight,
+aside {
+	font-family: 'Fjord One', Georgia, serif;
+	font-size: 2.5em; /* 40px / 16px */
+	margin: 0 0 1.8em;
+}
+
+.error, .info, .success {
+	margin: 1.5em 0;
+	padding: 1em;
+}
+.error a, .info a, .success a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+div.error, div.info, div.success {
+	margin: 1em 0;
+	border-radius: 3px;
+}
+	div.error:before,
+	div.info:before,
+	div.success:before {
+		content:'';
+		display: block;
+		float: left;
+		width: 23px;
+		height: 23px;
+		background-position: 0 0;
+		margin: 0 1em 0 0;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAABFCAYAAAChbH1cAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEQAh0Zl47LzAAAAuJJREFUWMPtmO9H3VEcx9/t5nK5ZNGMy7iJiBgxRkT2YESPNnEf7VHsUUSKnk00MSIuoz9gGqNEbItNjFhGbEYaEc0od5qItteenG87O31/nO+93x5s9eHwdb6f7+uc8zmfz+d8P0f6rwXoBHaAPeBu1vA1/sg+UMwKXOGsTGcBLgK7BnhoTANwDHQ0Cp80sM9Ai+mrmr7lRsAlM1uAp1Z/n2WevjjGlZh3M5KCjftp9dvPs0AuFRzolVTxWOBNScNpZz6bwoJTwX4kwoGKpJ4U8FZJE4lwExwzdez/aJhrujOflFQK+fi69Rzm3/lYUwIdJjiipApMW+4ZJv1RM58yM4iSvKTvpkXJkzOuCfQSLy8t3YEE3YenMzcjzSVsmO1qRQ/XbA1mMoafrAHzQM1Dd16SmoAvksoZny8/JF3TpVwcKUh6IOm5pF1JWG1H0jPzvpAGmpM0IqnmAKNazSS8vE9ufuMJddumpBtxiWm9TnDQ9iJSsuY8Pj6QdF/SeIzOR3cfypKOPeCv7GQa0/469qZTLP2xpIUEnX1JhWYD9zmQX0vaMLp3PByjtznkjIwDB8vdltSe8E1n8PDe0ySBHHjojgVn6CcPs2xYJrzqof81gC952lwe9g7krR3yHxKWGUAXPEyy6o7UJ+kk5oNxo9du3DFK70TS7bClDHsE0XaCzmicre5JOqoztzzy2Yyyyddp4f1pcnurKQJeSDp0QL98NrJe6TKrc004FCg0ZTBI0YR6j/n9XrIC7lL+0SuTbmDkPMAl6/Jh+fTHPwNwC7Dp/PivZAEuAKsOeBcoNQrOAYsOuAZ0ZzHrqgM+dmvQesETIQVWJQtw2H3XRBpAV0R/f0j5Xk0DHgpu3+wy2wSJW38uxt0SueAe4Mj2V+PHdpAEsg4UfMFtIQCArZAg2QLa0pgjD8x5lN3f6r5PBAZjavsj4Faj7lYG3oUEyWBWCSlvPCa7IAkZZOBc8vTFlt90PErGWW5fZgAAAABJRU5ErkJggg==);
+		background-repeat: no-repeat;
+	}
+
+	div.error:before {
+		background-position: 0 0;
+	}
+	div.success:before {
+		background-position: 0 -46px;
+	}
+	div.info:before {
+		background-position: 0 -23px;
+	}
+
+div.success {
+	background: #19af55;
+	color: #fff;
+}
+div.error {
+	background: #c21e1e;
+	color: #fff;
+}
+div.info {
+	background: #ccc;
+	color: #000;
+}
+
+.error p, .error li, .info p, .info li, .success p, .success li {
+	margin: 0;
+}
+
+.help {
+	color: #999;
+	font-size: .875em;
+}
+div.help {
+	margin: 0 1em;
+}
+
+
+/* = 11. Non-semantic Classes ============================================== */
+.visuallyhidden {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+.lt-ie7-only, .ie7-only {
+	display: none;
+}
+html.lt-ie7 .lt-ie7-only {
+	display: block;
+}
+html.lt-ie8 .ie7-only {
+	display: block;
+}
+html.lt-ie7 .ie7-only {
+	display: none;
+}
+
+.group:before,
+.group:after {
+	content: "";
+	display: table;
+}
+
+.group:after {
+	clear: both;
+}
+
+html.lt-ie8 .group {
+	zoom: 1;
+}
+
+.columns {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+	.columns > div {
+		display: table-cell;
+	}
+
+
+/* = 12. Forms ============================================================= */
+
+label {
+	cursor: pointer;
+}
+
+legend {
+	white-space: normal;
+}
+html.lt-ie8 legend {
+	margin-left: -7px;
+}
+
+button,
+input,
+select,
+textarea {
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+select,
+textarea {
+	min-width: 10em;
+}
+html.lt-ie8 button,
+html.lt-ie8 input,
+html.lt-ie8 select,
+html.lt-ie8 textarea {
+	vertical-align: middle;
+}
+
+button,
+input {
+	line-height: normal;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+html.lt-ie8 button,
+html.lt-ie8 input[type="button"],
+html.lt-ie8 input[type="reset"],
+html.lt-ie8 input[type="submit"] {
+	overflow: visible;
+}
+
+button[disabled],
+input[disabled] {
+	cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+html.lt-ie8 input[type="checkbox"],
+html.lt-ie8 input[type="radio"] {
+	width: 13px;
+	height: 13px;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+	-ms-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical;
+}
+
+form h4 {
+	margin: 0 0 0.4em;
+}
+form label {
+	display: block;
+	color: #333;
+	font-size: .875em;
+	font-weight: bold;
+	margin: 0 0 3px;
+}
+	label.radio,
+	label.checkbox {
+		font-weight: normal;
+	}
+
+	span.required {
+		color: #ac181b;
+	}
+
+	fieldset .help {
+		color: #999;
+		font-size: .75em;
+		margin: 0 1em;
+	}
+
+.text, .password, .entry, .file, .checkboxes, .select, .radios, .textarea, .validation, .submit {
+	margin-bottom: 1em;
+}
+	.validation .text {
+		margin-top: 1em;
+	}
+
+.text input,
+.password input,
+.textarea textarea {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	margin: 2px 0 0;
+	padding: 0.6em 0.7em;
+	border-color: #848484 #c1c1c1 #e1e1e1;
+	border-radius: 2px;
+	border-style: solid;
+	border-width: 1px;
+	color: #333;
+	font-size: 14px;
+}
+	div.text input,
+	div.password input,
+	div.textarea textarea {
+		display: block;
+		width: 100%;
+	}
+.textarea textarea {
+	height: 12em;
+}
+
+.button,
+.reset,
+.submit {
+	display: inline;
+}
+
+button,
+input[type=button],
+input[type=reset],
+input[type=submit],
+.button a,
+a.button {
+	background: #0394CD;
+	border: none;
+	color: #fff;
+	display: inline-block;
+	font-family: 'Fjord One', Georgia, serif;
+	padding: 0.4em 0.8em;
+	text-align: center;
+	border-radius: 3px;
+}
+button:hover,
+input[type=button]:hover,
+input[type=reset]:hover,
+input[type=submit]:hover,
+.button a:hover,
+a.button:hover {
+	background: #0084b8;
+	cursor: pointer;
+}
+
+
+/* = 13. Navigation ======================================================== */
+
+header > nav {
+	display: block;
+}
+	header > nav:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+	nav a {
+		display: inline-block;
+		float: left;
+	}
+
+nav.utility {
+	position: absolute;
+	top: 0;
+	right: 0;
+	text-align: right;
+}
+	nav.utility a {
+		float: none;
+		font-size: .9em;
+		padding: 18px 5px 5px;
+	}
+
+nav.primary {
+	background: #333;
+	font-size: 1.3em;
+	font-family: 'Fjord One', Georgia, serif;
+}
+	nav.primary a {
+		color: #fff;
+		padding: 8px 15px;
+	}
+	nav.primary a:hover {
+		background: #0096d2;
+	}
+nav.secondary {
+	font-size: .9em;
+	//font-family: 'Fjord One', Georgia, serif;
+	background: #666;
+}
+	nav.secondary a {
+		padding: 5px 15px;
+		color: #fff;
+	}
+		nav.secondary a:hover {
+			background: #555;
+		}
+
+/* = 14. Print Styles ====================================================== */
+
+@media print {
+	* {
+		background: transparent !important;
+		color: #000 !important; /* Black prints faster: h5bp.com/s */
+		box-shadow: none !important;
+		text-shadow: none !important;
+	}
+
+	a,
+	a:visited {
+		text-decoration: underline;
+	}
+
+	a[href]:after {
+		content: " (" attr(href) ")";
+	}
+
+	abbr[title]:after,
+	acronym[title]:after {
+		content: " (" attr(title) ")";
+	}
+
+	a[href^="javascript:"]:after,
+	a[href^="#"]:after {
+		content: "";
+	}
+
+	pre,
+	blockquote {
+		border: 1px solid #999;
+		page-break-inside: avoid;
+	}
+
+	thead {
+		display: table-header-group;
+	}
+
+	tr,
+	img {
+		page-break-inside: avoid;
+	}
+
+	@page {
+		margin: 0.5cm;
+	}
+
+	p,
+	h2,
+	h3 {
+		orphans: 3;
+		widows: 3;
+	}
+
+	h2,
+	h3 {
+		page-break-after: avoid;
+	}
+}
+
+/* = 15. Media Queries ===================================================== */
+
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	body {
+		min-width: 480px;
+	}
+}
+
+/* Landscape phne to portrait tablet */
+@media (max-width: 767px) {
+	body {
+		min-width: 480px;
+		width: 100%;
+		padding: 1em 0;
+		margin: 0;
+	}
+
+	body > .torso {
+		margin: 0 1em;
+	}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+}
+
+/* Large desktop */
+@media (min-width: 980px) {
+}
