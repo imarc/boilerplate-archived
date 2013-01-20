@@ -317,6 +317,9 @@ body > footer {
 body > header h1 {
 	font-size: 2em;
 }
+	body > header .search {
+		margin: 0;
+	}
 
 body > .torso {
 	padding: 2em 0;
@@ -569,7 +572,7 @@ form label {
 		margin: 0 1em;
 	}
 
-.text, .password, .entry, .file, .checkboxes, .select, .radios, .textarea, .validation, .submit {
+.checkboxes, .entry, .file, .password, .radios, .search, .select, .submit, .text, .textarea, .validation {
 	margin-bottom: 1em;
 }
 	.validation .text {
@@ -578,6 +581,7 @@ form label {
 
 .text input,
 .password input,
+.search input,
 .textarea textarea {
 	border-color: #848484 #c1c1c1 #e1e1e1;
 	border-radius: 2px;
