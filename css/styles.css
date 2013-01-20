@@ -642,9 +642,44 @@ header > nav {
 		display: table;
 		clear: both;
 	}
-	nav a {
+	nav > a,
+	nav li {
 		display: inline-block;
 		float: left;
+	}
+
+	nav ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	nav li {
+		position: relative;
+	}
+
+	nav li a,
+	nav li a:hover,
+	nav li a:visited {
+		display: block;
+		color: inherit;
+	}
+	.subnav {
+		border-top: 1px solid;
+		display: none;
+		left: 0;
+		position: absolute;
+		right: 0;
+		z-index: 1;
+	}
+		.subnav li {
+			color: #f00;
+			display: block;
+			float: none;
+		}
+
+	li:hover .subnav {
+		display: block;
 	}
 
 nav.utility {
@@ -664,24 +699,44 @@ nav.primary {
 	font-size: 1.3em;
 	font-family: 'Fjord One', Georgia, serif;
 }
-	nav.primary a {
+	nav.primary li {
 		color: #fff;
-		padding: 8px 15px;
 	}
-	nav.primary a:hover {
+		nav.primary a {
+			padding: 8px 15px;
+		}
+	nav.primary li:hover {
 		background: #0096d2;
 	}
+
+	nav.primary .subnav {
+		background: #333;
+	}
+
+	nav.primary .subnav li {
+		font-size: .875em;
+	}
+		nav.primary .subnav a {
+			padding: 6px 15px;
+		}
 nav.secondary {
-	font-size: .9em;
+	font-size: .875em;
 	//font-family: 'Fjord One', Georgia, serif;
 	background: #666;
 }
-	nav.secondary a {
-		padding: 5px 15px;
+	nav.secondary li {
 		color: #fff;
 	}
-		nav.secondary a:hover {
+		nav.secondary a {
+			padding: 5px 15px;
+		}
+
+		nav.secondary li:hover {
 			background: #555;
+		}
+
+		nav.secondary .subnav {
+			background: #666;
 		}
 
 /* = 14. Print Styles ====================================================== */

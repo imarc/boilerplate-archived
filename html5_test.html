@@ -26,14 +26,30 @@
 				<a href="#">Log In</a>
 			</nav>
 			<nav class="primary">
-				<a href="/">Home</a>
-				<a href="#important">Important</a>
-				<a href="#about">About</a>
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="#important">Important</a></li>
+					<li>
+						<a href="#about">Dropdown</a>
+						<ul class="subnav">
+							<li><a href href="#">First</a></li>
+							<li><a href href="#">Second</a></li>
+						</ul>
+					</li>
+				</ul>
 			</nav>
 			<nav class="secondary">
-				<a href="#these">Overview</a>
-				<a href="#next">First Subsection</a>
-				<a href="#previous">Second Subsection</a>
+				<ul>
+					<li><a href="#these">Overview</a></li>
+					<li><a href="#next">First Subsection</a></li>
+					<li>
+						<a href="#previous">Second Subsection</a>
+						<ul class="subnav">
+							<li><a href href="#">First</a></li>
+							<li><a href href="#">Second</a></li>
+						</ul>
+					</li>
+				</ul>
 			</nav>
 		</header>
 		<div class="torso">
@@ -131,6 +147,31 @@
 					quotes from other sources. Lorem ipsum dolor sit amet,
 					consectetur adipiscing elit. Felis est, nec convallis dui.
 				</blockquote>
+
+				<p>
+					Filler paragraph – Ignore this. Most of the sections end with a standard
+					paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+					replicates real-world content a little. Lorem ipsum dolor sit amet,
+					consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+					velit, ornare sit amet blandit in, mattis eget nulla.
+				</p>
+
+				<article>
+					<header>
+						<h3>Article Title</h3>
+					</header>
+
+					<p>
+						There's also an article tag, meant for articles. This article has its
+						own header and footer as well. Lorem ipsum dolor sit amet, consectetur
+						adipiscing elit. Felis est, nec convallis dui. Nulla lectus velit,
+						ornare sit amet blandit in, mattis eget nulla.
+					</p>
+
+					<footer>
+						This is the article's footer.
+					</footer>
+				</article>
 
 				<p>
 					Filler paragraph – Ignore this. Most of the sections end with a standard
