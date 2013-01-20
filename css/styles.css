@@ -665,12 +665,16 @@ header > nav {
 		color: inherit;
 	}
 	.subnav {
-		border-top: 1px solid;
-		display: none;
+		max-height: 0;
 		left: 0;
+		overflow: hidden;
 		position: absolute;
 		right: 0;
-		z-index: 1;
+		-moz-transition: max-height .2s;
+		-o-transition: max-height .2s;
+		-webkit-transition: max-height .2s;
+		transition: max-height .2s;
+		z-index: 2;
 	}
 		.subnav li {
 			color: #f00;
@@ -679,7 +683,7 @@ header > nav {
 		}
 
 	li:hover .subnav {
-		display: block;
+		max-height: 250px;
 	}
 
 nav.utility {
@@ -737,6 +741,7 @@ nav.secondary {
 
 		nav.secondary .subnav {
 			background: #666;
+			z-index: 1;
 		}
 
 /* = 14. Print Styles ====================================================== */
