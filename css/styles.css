@@ -28,12 +28,12 @@ center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption,
 tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption,
 figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio,
 video {
-	margin: 0;
-	padding: 0;
 	border: 0;
-	outline: 0;
 	font-size: 100%;
 	font: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
 	vertical-align: baseline;
 }
 
@@ -56,17 +56,17 @@ audio:not([controls]) {
 }
 
 html {
-	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
-	max-width: 920px;
-	min-width: 480px;
-	margin: 0 auto;
-	padding: 1em;
 	font-size: 16px;
 	line-height: 1.4;
+	margin: 0 auto;
+	max-width: 920px;
+	min-width: 480px;
+	padding: 1em;
 }
 
 html.lt-ie7 body {
@@ -74,9 +74,9 @@ html.lt-ie7 body {
 }
 
 blockquote, html, button, input[type=text], input[type=password], textarea, select, caption {
-	font-family: Arial, Helvetica, sans-serif;
 	background: #fff;
 	color: #000;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 ::-moz-selection {
@@ -98,9 +98,9 @@ header h1 a:visited {
 }
 
 h1, h2, h3, h4, h5, h6 {
+	font-family: 'Fjord One', Georgia, serif;
 	line-height: 1.4;
 	margin: 0 0 .5em;
-	font-family: 'Fjord One', Georgia, serif;
 }
 h1 {
 	font-size: 3.25em; /* 52px / 16px */
@@ -147,8 +147,8 @@ em {
 blockquote,
 pre {
 	clear: both;
-	padding-left: .5em;
 	margin: 2em 0 2em .5em;
+	padding-left: .5em;
 }
 	blockquote {
 		font-style: italic;
@@ -191,10 +191,10 @@ dfn {
 }
 
 hr {
+	background: #999;
+	border: 0;
 	display: block;
 	height: 1px;
-	border: 0;
-	background: #999;
 	margin: 3em auto;
 	width: 80%;
 }
@@ -262,9 +262,9 @@ dd {
 
 /* = 7. Embedded Content =================================================== */
 img {
+	-ms-interpolation-mode: bicubic;
 	max-width: 100%;
 	vertical-align: middle;
-	-ms-interpolation-mode: bicubic;
 }
 
 html.lt-ie9 svg {
@@ -275,14 +275,14 @@ html.lt-ie9 svg {
 /* = 8. Tables ============================================================= */
 
 table {
-	width: 100%;
 	border-collapse: collapse;
 	border-spacing: 0;
 	margin: 1em 0 2em;
+	width: 100%;
 }
 	thead {
-		line-height: 2;
 		color: #333;
+		line-height: 2;
 	}
 		th {
 			font-weight: bold;
@@ -323,9 +323,9 @@ body > .torso {
 }
 
 body > footer {
-	margin-top: 100px;
 	color: #999;
 	font-size: 14px;
+	margin-top: 100px;
 	text-align: center;
 }
 
@@ -348,21 +348,21 @@ aside {
 }
 
 div.error, div.info, div.success {
-	margin: 1em 0;
 	border-radius: 3px;
+	margin: 1em 0;
 }
 	div.error:before,
 	div.info:before,
 	div.success:before {
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAABFCAYAAAChbH1cAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEQAh0Zl47LzAAAAuJJREFUWMPtmO9H3VEcx9/t5nK5ZNGMy7iJiBgxRkT2YESPNnEf7VHsUUSKnk00MSIuoz9gGqNEbItNjFhGbEYaEc0od5qItteenG87O31/nO+93x5s9eHwdb6f7+uc8zmfz+d8P0f6rwXoBHaAPeBu1vA1/sg+UMwKXOGsTGcBLgK7BnhoTANwDHQ0Cp80sM9Ai+mrmr7lRsAlM1uAp1Z/n2WevjjGlZh3M5KCjftp9dvPs0AuFRzolVTxWOBNScNpZz6bwoJTwX4kwoGKpJ4U8FZJE4lwExwzdez/aJhrujOflFQK+fi69Rzm3/lYUwIdJjiipApMW+4ZJv1RM58yM4iSvKTvpkXJkzOuCfQSLy8t3YEE3YenMzcjzSVsmO1qRQ/XbA1mMoafrAHzQM1Dd16SmoAvksoZny8/JF3TpVwcKUh6IOm5pF1JWG1H0jPzvpAGmpM0IqnmAKNazSS8vE9ufuMJddumpBtxiWm9TnDQ9iJSsuY8Pj6QdF/SeIzOR3cfypKOPeCv7GQa0/469qZTLP2xpIUEnX1JhWYD9zmQX0vaMLp3PByjtznkjIwDB8vdltSe8E1n8PDe0ySBHHjojgVn6CcPs2xYJrzqof81gC952lwe9g7krR3yHxKWGUAXPEyy6o7UJ+kk5oNxo9du3DFK70TS7bClDHsE0XaCzmicre5JOqoztzzy2Yyyyddp4f1pcnurKQJeSDp0QL98NrJe6TKrc004FCg0ZTBI0YR6j/n9XrIC7lL+0SuTbmDkPMAl6/Jh+fTHPwNwC7Dp/PivZAEuAKsOeBcoNQrOAYsOuAZ0ZzHrqgM+dmvQesETIQVWJQtw2H3XRBpAV0R/f0j5Xk0DHgpu3+wy2wSJW38uxt0SueAe4Mj2V+PHdpAEsg4UfMFtIQCArZAg2QLa0pgjD8x5lN3f6r5PBAZjavsj4Faj7lYG3oUEyWBWCSlvPCa7IAkZZOBc8vTFlt90PErGWW5fZgAAAABJRU5ErkJggg==);
+		background-position: 0 0;
+		background-repeat: no-repeat;
 		content:'';
 		display: block;
 		float: left;
-		width: 23px;
 		height: 23px;
-		background-position: 0 0;
 		margin: 0 1em 0 0;
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAABFCAYAAAChbH1cAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEQAh0Zl47LzAAAAuJJREFUWMPtmO9H3VEcx9/t5nK5ZNGMy7iJiBgxRkT2YESPNnEf7VHsUUSKnk00MSIuoz9gGqNEbItNjFhGbEYaEc0od5qItteenG87O31/nO+93x5s9eHwdb6f7+uc8zmfz+d8P0f6rwXoBHaAPeBu1vA1/sg+UMwKXOGsTGcBLgK7BnhoTANwDHQ0Cp80sM9Ai+mrmr7lRsAlM1uAp1Z/n2WevjjGlZh3M5KCjftp9dvPs0AuFRzolVTxWOBNScNpZz6bwoJTwX4kwoGKpJ4U8FZJE4lwExwzdez/aJhrujOflFQK+fi69Rzm3/lYUwIdJjiipApMW+4ZJv1RM58yM4iSvKTvpkXJkzOuCfQSLy8t3YEE3YenMzcjzSVsmO1qRQ/XbA1mMoafrAHzQM1Dd16SmoAvksoZny8/JF3TpVwcKUh6IOm5pF1JWG1H0jPzvpAGmpM0IqnmAKNazSS8vE9ufuMJddumpBtxiWm9TnDQ9iJSsuY8Pj6QdF/SeIzOR3cfypKOPeCv7GQa0/469qZTLP2xpIUEnX1JhWYD9zmQX0vaMLp3PByjtznkjIwDB8vdltSe8E1n8PDe0ySBHHjojgVn6CcPs2xYJrzqof81gC952lwe9g7krR3yHxKWGUAXPEyy6o7UJ+kk5oNxo9du3DFK70TS7bClDHsE0XaCzmicre5JOqoztzzy2Yyyyddp4f1pcnurKQJeSDp0QL98NrJe6TKrc004FCg0ZTBI0YR6j/n9XrIC7lL+0SuTbmDkPMAl6/Jh+fTHPwNwC7Dp/PivZAEuAKsOeBcoNQrOAYsOuAZ0ZzHrqgM+dmvQesETIQVWJQtw2H3XRBpAV0R/f0j5Xk0DHgpu3+wy2wSJW38uxt0SueAe4Mj2V+PHdpAEsg4UfMFtIQCArZAg2QLa0pgjD8x5lN3f6r5PBAZjavsj4Faj7lYG3oUEyWBWCSlvPCa7IAkZZOBc8vTFlt90PErGWW5fZgAAAABJRU5ErkJggg==);
-		background-repeat: no-repeat;
+		width: 23px;
 	}
 
 	div.error:before {
@@ -491,8 +491,8 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	cursor: pointer;
 	-webkit-appearance: button;
+	cursor: pointer;
 }
 html.lt-ie8 button,
 html.lt-ie8 input[type="button"],
@@ -540,16 +540,16 @@ input::-moz-focus-inner {
 
 textarea {
 	overflow: auto;
-	vertical-align: top;
 	resize: vertical;
+	vertical-align: top;
 }
 
 form h4 {
 	margin: 0 0 0.4em;
 }
 form label {
-	display: block;
 	color: #333;
+	display: block;
 	font-size: .875em;
 	font-weight: bold;
 	margin: 0 0 3px;
@@ -579,16 +579,16 @@ form label {
 .text input,
 .password input,
 .textarea textarea {
-	box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	margin: 2px 0 0;
-	padding: 0.6em 0.7em;
 	border-color: #848484 #c1c1c1 #e1e1e1;
 	border-radius: 2px;
 	border-style: solid;
 	border-width: 1px;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 	color: #333;
 	font-size: 14px;
+	margin: 2px 0 0;
+	padding: 0.6em 0.7em;
 }
 	div.text input,
 	div.password input,
@@ -613,13 +613,13 @@ input[type=submit],
 .button a,
 a.button {
 	background: #0394CD;
+	border-radius: 3px;
 	border: none;
 	color: #fff;
 	display: inline-block;
 	font-family: 'Fjord One', Georgia, serif;
 	padding: 0.4em 0.8em;
 	text-align: center;
-	border-radius: 3px;
 }
 button:hover,
 input[type=button]:hover,
@@ -635,13 +635,13 @@ a.button:hover {
 /* = 13. Navigation ======================================================== */
 
 header > nav {
-	display: block;
 	clear: both;
+	display: block;
 }
 	header > nav:after {
+		clear: both;
 		content: '';
 		display: table;
-		clear: both;
 	}
 	nav > a,
 	nav li {
@@ -649,9 +649,9 @@ header > nav {
 	}
 
 	nav ul {
+		list-style: none;
 		margin: 0;
 		padding: 0;
-		list-style: none;
 	}
 
 	nav li {
@@ -665,8 +665,8 @@ header > nav {
 		color: #fff;
 	}
 	.subnav {
-		max-height: 0;
 		left: 0;
+		max-height: 0;
 		overflow: hidden;
 		position: absolute;
 		right: 0;
@@ -687,9 +687,9 @@ header > nav {
 
 nav.utility {
 	position: absolute;
-	top: 0;
 	right: 0;
 	text-align: right;
+	top: 0;
 }
 	nav.utility a {
 		float: none;
@@ -699,8 +699,8 @@ nav.utility {
 
 nav.primary {
 	background: #333;
-	font-size: 1.3em;
 	font-family: 'Fjord One', Georgia, serif;
+	font-size: 1.3em;
 }
 
 html.lt-ie8 nav.primary {
@@ -727,9 +727,8 @@ html.lt-ie8 nav.primary {
 			padding: .3em 15px;
 		}
 nav.secondary {
-	font-size: .875em;
-	//font-family: 'Fjord One', Georgia, serif;
 	background: #666;
+	font-size: .875em;
 }
 	html.lt-ie8 nav.secondary {
 		height: 32px; /* Required because all of the content is floated. */
@@ -758,8 +757,8 @@ nav.secondary {
 @media print {
 	* {
 		background: transparent !important;
-		color: #000 !important; /* Black prints faster: h5bp.com/s */
 		box-shadow: none !important;
+		color: #000 !important; /* Black prints faster: h5bp.com/s */
 		text-shadow: none !important;
 	}
 
@@ -826,10 +825,10 @@ nav.secondary {
 /* Landscape phne to portrait tablet */
 @media (max-width: 767px) {
 	body {
-		min-width: 480px;
-		width: 100%;
-		padding: 1em 0;
 		margin: 0;
+		min-width: 480px;
+		padding: 1em 0;
+		width: 100%;
 	}
 
 	body > .torso {
