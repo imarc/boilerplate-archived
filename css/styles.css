@@ -636,6 +636,7 @@ a.button:hover {
 
 header > nav {
 	display: block;
+	clear: both;
 }
 	header > nav:after {
 		content: '';
@@ -644,7 +645,6 @@ header > nav {
 	}
 	nav > a,
 	nav li {
-		display: inline-block;
 		float: left;
 	}
 
@@ -662,7 +662,7 @@ header > nav {
 	nav li a:hover,
 	nav li a:visited {
 		display: block;
-		color: inherit;
+		color: #fff;
 	}
 	.subnav {
 		max-height: 0;
@@ -677,7 +677,6 @@ header > nav {
 		z-index: 2;
 	}
 		.subnav li {
-			color: #f00;
 			display: block;
 			float: none;
 		}
@@ -703,11 +702,15 @@ nav.primary {
 	font-size: 1.3em;
 	font-family: 'Fjord One', Georgia, serif;
 }
+
+html.lt-ie8 nav.primary {
+	height: 45px; /* Required since all of the content are floated. */
+}
 	nav.primary li {
 		color: #fff;
 	}
 		nav.primary a {
-			padding: 8px 15px;
+			padding: .4em 15px;
 		}
 	nav.primary li:hover {
 		background: #0096d2;
@@ -721,18 +724,21 @@ nav.primary {
 		font-size: .875em;
 	}
 		nav.primary .subnav a {
-			padding: 6px 15px;
+			padding: .3em 15px;
 		}
 nav.secondary {
 	font-size: .875em;
 	//font-family: 'Fjord One', Georgia, serif;
 	background: #666;
 }
+	html.lt-ie8 nav.secondary {
+		height: 32px; /* Required because all of the content is floated. */
+	}
 	nav.secondary li {
 		color: #fff;
 	}
 		nav.secondary a {
-			padding: 5px 15px;
+			padding: .4em 15px;
 		}
 
 		nav.secondary li:hover {
@@ -743,6 +749,9 @@ nav.secondary {
 			background: #666;
 			z-index: 1;
 		}
+			nav.secondary .subnav a {
+				padding: .3em 15px;
+			}
 
 /* = 14. Print Styles ====================================================== */
 
