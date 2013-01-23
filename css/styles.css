@@ -1,4 +1,4 @@
-/* = Table of Contents =====================================================
+/* = Table of Contents =
  * Web Fonts
  * Reset
  * Headings
@@ -14,13 +14,13 @@
  * Navigation
  * Print Styles
  * Media Queries
-/* ========================================================================= */
+/* =                   =*/
 
-/* = Web Fonts ========================================================== */
+/* = Web Fonts = */
 @import url(http://fonts.googleapis.com/css?family=Fjord+One);
 
 
-/* = Reset ============================================================== */
+/* = Reset = */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
 ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
@@ -90,7 +90,7 @@ blockquote, html, button, input[type=text], input[type=password], textarea, sele
 }
 
 
-/* = Headings =========================================================== */
+/* = Headings = */
 
 header h1 a,
 header h1 a:visited {
@@ -128,7 +128,7 @@ hgroup h6 {
 }
 
 
-/* = Typography ========================================================= */
+/* = Typography = */
 
 abbr[title],
 acronym[title] {
@@ -217,7 +217,7 @@ mark {
 	font-weight: bold;
 }
 
-/* = Links ============================================================== */
+/* = Links = */
 
 a {
 	color: #0096d2;
@@ -243,7 +243,7 @@ a:active {
 }
 
 
-/* = Lists ============================================================== */
+/* = Lists = */
 
 dl,
 ol,
@@ -260,7 +260,7 @@ dd {
 }
 
 
-/* = Embedded Content =================================================== */
+/* = Embedded Content = */
 img {
 	-ms-interpolation-mode: bicubic;
 	max-width: 100%;
@@ -272,7 +272,7 @@ html.lt-ie9 svg {
 }
 
 
-/* = Tables ============================================================= */
+/* = Tables = */
 
 table {
 	border-collapse: collapse;
@@ -306,7 +306,7 @@ caption {
 }
 
 
-/* = Layout ============================================================= */
+/* = Layout = */
 
 body > header,
 body > .torso,
@@ -333,7 +333,7 @@ body > footer {
 }
 
 
-/* = Messaging ========================================================= */
+/* = Messaging = */
 .highlight,
 aside {
 	font-family: 'Fjord One', Georgia, serif;
@@ -403,7 +403,7 @@ div.help {
 }
 
 
-/* = Non-semantic Classes ============================================== */
+/* = Non-semantic Classes = */
 .visuallyhidden {
 	border: 0;
 	clip: rect(0 0 0 0);
@@ -452,7 +452,7 @@ html.lt-ie8 .group {
 	}
 
 
-/* = Forms ============================================================= */
+/* = Forms = */
 
 label {
 	cursor: pointer;
@@ -635,7 +635,7 @@ a.button:hover {
 }
 
 
-/* = Navigation ======================================================== */
+/* = Navigation = */
 
 header > nav {
 	clear: both;
@@ -764,7 +764,7 @@ nav.secondary {
 				padding: .3em 15px;
 			}
 
-/* = Print Styles ====================================================== */
+/* = Print Styles = */
 
 @media print {
 	* {
@@ -825,7 +825,7 @@ nav.secondary {
 	}
 }
 
-/* = Media Queries ===================================================== */
+/* = Media Queries = */
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
