@@ -661,9 +661,12 @@ header > nav {
 		position: relative;
 	}
 
-	nav li a,
-	nav li a:hover,
-	nav li a:visited {
+	nav.primary li a,
+	nav.primary li a:hover,
+	nav.primary li a:visited,
+	nav.secondary li a,
+	nav.secondary li a:hover,
+	nav.secondary li a:visited {
 		display: block;
 		color: #fff;
 	}
