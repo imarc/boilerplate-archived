@@ -1,26 +1,26 @@
 /* = Table of Contents =====================================================
- * 1.  Web Fonts
- * 2.  Reset
- * 3.  Headings
- * 4.  Typography
- * 5.  Links
- * 6.  Lists
- * 7.  Embedded Content
- * 8.  Tables
- * 9.  Layout
- * 10. Messaging
- * 11. Non-semantic Classes
- * 12. Forms
- * 13. Navigation
- * 14. Print Styles
- * 15. Media Queries
+ * Web Fonts
+ * Reset
+ * Headings
+ * Typography
+ * Links
+ * Lists
+ * Embedded Content
+ * Tables
+ * Layout
+ * Messaging
+ * Non-semantic Classes
+ * Forms
+ * Navigation
+ * Print Styles
+ * Media Queries
 /* ========================================================================= */
 
-/* = 1. Web Fonts ========================================================== */
+/* = Web Fonts ========================================================== */
 @import url(http://fonts.googleapis.com/css?family=Fjord+One);
 
 
-/* = 2. Reset ============================================================== */
+/* = Reset ============================================================== */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
 blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
 ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i,
@@ -90,7 +90,7 @@ blockquote, html, button, input[type=text], input[type=password], textarea, sele
 }
 
 
-/* = 3. Headings =========================================================== */
+/* = Headings =========================================================== */
 
 header h1 a,
 header h1 a:visited {
@@ -128,7 +128,7 @@ hgroup h6 {
 }
 
 
-/* = 4. Typography ========================================================= */
+/* = Typography ========================================================= */
 
 abbr[title],
 acronym[title] {
@@ -217,7 +217,7 @@ mark {
 	font-weight: bold;
 }
 
-/* = 5. Links ============================================================== */
+/* = Links ============================================================== */
 
 a {
 	color: #0096d2;
@@ -243,7 +243,7 @@ a:active {
 }
 
 
-/* = 6. Lists ============================================================== */
+/* = Lists ============================================================== */
 
 dl,
 ol,
@@ -260,7 +260,7 @@ dd {
 }
 
 
-/* = 7. Embedded Content =================================================== */
+/* = Embedded Content =================================================== */
 img {
 	-ms-interpolation-mode: bicubic;
 	max-width: 100%;
@@ -272,7 +272,7 @@ html.lt-ie9 svg {
 }
 
 
-/* = 8. Tables ============================================================= */
+/* = Tables ============================================================= */
 
 table {
 	border-collapse: collapse;
@@ -306,7 +306,7 @@ caption {
 }
 
 
-/* = 9. Layout ============================================================= */
+/* = Layout ============================================================= */
 
 body > header,
 body > .torso,
@@ -333,7 +333,7 @@ body > footer {
 }
 
 
-/* = 10. Messaging ========================================================= */
+/* = Messaging ========================================================= */
 .highlight,
 aside {
 	font-family: 'Fjord One', Georgia, serif;
@@ -403,7 +403,7 @@ div.help {
 }
 
 
-/* = 11. Non-semantic Classes ============================================== */
+/* = Non-semantic Classes ============================================== */
 .visuallyhidden {
 	border: 0;
 	clip: rect(0 0 0 0);
@@ -452,7 +452,7 @@ html.lt-ie8 .group {
 	}
 
 
-/* = 12. Forms ============================================================= */
+/* = Forms ============================================================= */
 
 label {
 	cursor: pointer;
@@ -635,7 +635,7 @@ a.button:hover {
 }
 
 
-/* = 13. Navigation ======================================================== */
+/* = Navigation ======================================================== */
 
 header > nav {
 	clear: both;
@@ -764,7 +764,7 @@ nav.secondary {
 				padding: .3em 15px;
 			}
 
-/* = 14. Print Styles ====================================================== */
+/* = Print Styles ====================================================== */
 
 @media print {
 	* {
@@ -825,7 +825,7 @@ nav.secondary {
 	}
 }
 
-/* = 15. Media Queries ===================================================== */
+/* = Media Queries ===================================================== */
 
 /* Landscape phones and down */
 @media (max-width: 480px) {
