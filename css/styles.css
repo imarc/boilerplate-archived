@@ -718,6 +718,9 @@ html.lt-ie8 nav.primary {
 		nav.primary a {
 			padding: .4em 15px;
 		}
+	nav.primary li.active {
+		background: #444;
+	}
 	nav.primary li:hover {
 		background: #0096d2;
 	}
@@ -742,13 +745,16 @@ nav.secondary {
 	nav.secondary li {
 		color: #fff;
 	}
-		nav.secondary a {
-			padding: .4em 15px;
+		nav.secondary li.active {
+			background: #777;
 		}
-
 		nav.secondary li:hover {
 			background: #555;
 		}
+
+	nav.secondary a {
+		padding: .4em 15px;
+	}
 
 		nav.secondary .subnav {
 			background: #666;
