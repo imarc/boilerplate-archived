@@ -97,26 +97,24 @@ html.lt-ie8 .group {
 
 
 /* = Layout = */
-body > header,
-body > .torso,
-body > footer {
-	position: relative;
+.site {
+	margin: 0 auto;
+	padding: 0 1em;
 }
+	.site > header h1 {
+		font-size: 2em;
+	}
 
-body > header h1 {
-	font-size: 2em;
-}
+	.site > .torso {
+		padding: 2em 0;
+	}
 
-body > .torso {
-	padding: 2em 0;
-}
-
-body > footer {
-	color: #999;
-	font-size: 14px;
-	margin-top: 100px;
-	text-align: center;
-}
+	.site > footer {
+		color: #999;
+		font-size: 14px;
+		margin-top: 100px;
+		text-align: center;
+	}
 
 
 /* = Typography = */
@@ -696,6 +694,9 @@ table {
 
 /* Large desktop */
 @media (min-width: 980px) {
+	.site {
+		width: 948px;
+	}
 }
 
 
