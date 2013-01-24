@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en"> <!--<![endif]-->
+	<head>
+		<meta charset="UTF-8" />
+		<title>iMarc HTML Content Tester</title>
+		<meta name="description" content="iMarc, LLC" />
+		<meta name="author" content="Design, programming, by iMarc. More info at http://imarc.net" />
+		<meta name="viewport" content="width=device-width, target-densitydpi=device-dpi" />
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+
+		<!--[if lt IE 9]>
+			<script src="js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="site">
+			<header>
+				<h1><a href="/">iMarc Header</a></h1>
+				<nav class="utility">
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Utility 1</a></li>
+						<li><a href="#">Utility 2</a></li>
+						<li><a href="#">Log In</a></li>
+					</ul>
+				</nav>
+				<nav class="primary">
+					<ul>
+						<li><a href="/">Home</a></li>
+						<li class="active"><a href="#important">Active</a></li>
+						<li>
+							<a href="#about">Dropdown</a>
+							<ul class="subnav">
+								<li><a href href="#">First</a></li>
+								<li><a href href="#">Second</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+				<nav class="secondary">
+					<ul>
+						<li><a href="#these">Overview</a></li>
+						<li><a href="#">Subsection</a></li>
+						<li class="active"><a href="#next">Active Subsection</a></li>
+						<li>
+							<a href="#previous">Dropdown</a>
+							<ul class="subnav">
+								<li><a href href="#">First</a></li>
+								<li><a href href="#">Second</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+			</header>
+			<div class="torso">
+				<header>
+					<hgroup>
+						<h1>iMarc HTML Content Tester</h1>
+						<h2>a sample of HTML5 markup for styling</h2>
+					</hgroup>
+				</header>
+
+				<p>
+					HTML5 Introduced a number of new tags and semantics, and this
+					markup is meant to use the new tags and adhere to the new
+					semantics to the best of our understanding.
+				</p>
+				<p>
+					For more information, see iMarc's
+					<a href="http://handbook.imarc.net/frontend">frontend standards</a>.
+				</p>
+
+				<p>
+					Filler paragraph – Ignore this. Most of the sections end with a standard
+					paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+					replicates real-world content a little. Lorem ipsum dolor sit amet,
+					consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+					velit, ornare sit amet blandit in, mattis eget nulla.
+				</p>
+
+				<section>
+					<header>
+						<h2>Typography</h2>
+						<p>
+							Each section can contain its own header and footer.
+						</p>
+					</header>
+
+					<p>
+						<strong>Some UTF8 characters appear in this paragraph</strong>. Separation of
+						content – better with an en-dash. iMarc’s motto: “Use curly quotes” and
+						always © with the current year.
+						<br />
+						<a href="http://www.handbook.imarc.net"> Learn More »</a>
+					</p>
+
+					<p>
+						<em>The basic paragraph</em> – might contain a number of different of
+						HTML tags, including
+						<a href="http://www.imarc.net">a (link)</a>,
+						<abbr title="Abbreviation">abbr</abbr>,
+						<code>code</code>,
+						<del>del</del>,
+						<dfn>dfn</dfn>,
+						<em>em</em>,
+						<ins>ins</ins>,
+						<mark>mark</mark>,
+						<span>span (no class here, so you probably shouldn't see any styling)</span>,
+						<strong>strong</strong>,
+						<sub>sub</sub>,
+						<sup>sup</sup>, and times like
+						<time>11:30</time>.
+					</p>
+
+					<p>
+						Filler paragraph – Ignore this. Most of the sections end with a standard
+						paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+						replicates real-world content a little. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+						velit, ornare sit amet blandit in, mattis eget nulla.
+					</p>
+
+
+					<h3>Typographical Blocks</h3>
+
+					<p>
+						There's also some typographical elements which should be
+						treated as blocks, such as
+					</p>
+
+					<address>
+						This is an Address Tag<br />
+						123 Example Address<br />
+						Newburyport, MA 01950
+					</address>
+
+					<p>
+						Filler paragraph – Ignore this. Most of the sections end with a standard
+						paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+						replicates real-world content a little. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+						velit, ornare sit amet blandit in, mattis eget nulla.
+					</p>
+
+					<blockquote>
+						This, on the otherhand, is a blockquote, meant for large
+						quotes from other sources. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui.
+					</blockquote>
+
+					<p>
+						Filler paragraph – Ignore this. Most of the sections end with a standard
+						paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+						replicates real-world content a little. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+						velit, ornare sit amet blandit in, mattis eget nulla.
+					</p>
+
+					<article>
+						<header>
+							<h3>Article Title</h3>
+						</header>
+
+						<p>
+							There's also an article tag, meant for articles. This article has its
+							own header and footer as well. Lorem ipsum dolor sit amet, consectetur
+							adipiscing elit. Felis est, nec convallis dui. Nulla lectus velit,
+							ornare sit amet blandit in, mattis eget nulla.
+						</p>
+
+						<footer>
+							This is the article's footer.
+						</footer>
+					</article>
+
+					<p>
+						Filler paragraph – Ignore this. Most of the sections end with a standard
+						paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+						replicates real-world content a little. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+						velit, ornare sit amet blandit in, mattis eget nulla.
+					</p>
+
+	<pre>
+	Here is a block of preformatted text in the pre tag.
+
+	There is a line of whitespace between these two sentences.
+	</pre>
+
+					<p>
+						And this next bit is a code element.
+					</p>
+	<code>
+	var foo = function(name) {
+		return "Hello, " + name + "!";
+	};
+
+	foo('there');
+	</code>
+					<p>
+						Filler paragraph – Ignore this. Most of the sections end with a standard
+						paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+						replicates real-world content a little. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+						velit, ornare sit amet blandit in, mattis eget nulla.
+					</p>
+
+					<footer>
+						<p>
+							Lastly, each section can have its own footer like this one.
+						</p>
+					</footer>
+				</section>
+
+
+				<section>
+					<header>
+						<hgroup>
+							<h2>Lists</h2>
+							<h3>Unordered Lists</h3>
+						</hgroup>
+					</header>
+
+					<ul>
+						<li>
+							This is an unordered list – ipsum dolor sit amet, consectetur adipiscing
+							elit fringilla libero id quam semper semper.
+						</li>
+						<li>
+							Bar is listed second – Cras fringilla libero id quam semper semper.
+							ipsum dolor sit amet, consectetur adipiscing elit fringilla libero id
+							quam semper semper.
+						</li>
+					</ul>
+
+					<h3>Ordered List</h3>
+
+					<ol>
+						<li>Wake up in the morning</li>
+						<li>Freshen up and go downstairs</li>
+						<li>Have a bowl of cereal</li>
+						<li>Go to the bus stop</li>
+					</ol>
+
+					<h3>Definition List</h3>
+
+					<dl>
+						<dt>This Markup</dt>
+						<dd>- a definition list</dd>
+						<dt>Coffee</dt>
+						<dd>- black hot drink</dd>
+						<dt>Milk</dt>
+						<dd>- white cold drink</dd>
+					</dl>
+
+					<p>
+						Filler paragraph – Ignore this. Most of the sections end with a standard
+						paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+						replicates real-world content a little. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+						velit, ornare sit amet blandit in, mattis eget nulla.
+					</p>
+
+					<h3>Asides</h3>
+
+					<p>
+						HTML5 introduces the <em>aside</em> tag to be used as a
+						callout for tangentially related content to the main
+						content, so this replaces <em>div.highlight</em>.
+					</p>
+
+					<aside>
+					This is an example of an <em>aside</em>. Its related to the content
+						at hand, however isn't part of the main content. Also note,
+						<em>aside</em> should not be used for full columns in site
+						layout.
+					</aside>
+
+					<p>
+						Filler paragraph – Ignore this. Most of the sections end with a standard
+						paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+						replicates real-world content a little. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+						velit, ornare sit amet blandit in, mattis eget nulla.
+					</p>
+
+					<p>
+						This table has a caption, colgroup, thead, tfoot, and tbody.
+					</p>
+
+					<table>
+						<caption>Table with caption, colgroup, thead, tfoot, and tbody</caption>
+						<colgroup>
+							<col />
+							<col />
+							<col />
+						</colgroup>
+						<thead>
+							<tr>
+								<th>header 1</th>
+								<th>header 2</th>
+								<th>header 3</th>
+							</tr>
+						</thead>
+						<tfoot>
+							<tr>
+								<td>footer 1</td>
+								<td>footer 2</td>
+								<td>footer 3</td>
+							</tr>
+						</tfoot>
+						<tbody>
+							<tr>
+								<td>body 1</td>
+								<td>body 2</td>
+								<td>body 3</td>
+							</tr>
+							<tr>
+								<td>body 1</td>
+								<td>body 2</td>
+								<td>body 3</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<p>
+						Filler paragraph – Ignore this. Most of the sections end with a standard
+						paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+						replicates real-world content a little. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+						velit, ornare sit amet blandit in, mattis eget nulla.
+					</p>
+				</section>
+
+				<section>
+					<header>
+						<hgroup>
+							<h2>Forms</h2>
+							<h3>Messaging</h3>
+						</hgroup>
+					</header>
+
+					<p>
+						The following are paragraph tags using the various
+						<a href="http://handbook.imarc.net/frontend#Messaging">messaging styles defined in handbook</a>.
+					</p>
+
+					<div class="success">
+						<p>
+							<strong>Success</strong> – Message with a <a href="http://imarc.net">link</a>.
+						</p>
+						<ul>
+							<li>Item one: messsage regarding item one</li>
+							<li>Item two: messsage regarding item two</li>
+							<li>Item three: messsage regarding item three</li>
+						</ul>
+					</div>
+
+					<div class="info">
+						<p>
+							<strong>Info</strong> – Message with a <a href="http://imarc.net">link</a>.
+						</p>
+						<ul>
+							<li>Item one: messsage regarding item one</li>
+							<li>Item two: messsage regarding item two</li>
+							<li>Item three: messsage regarding item three</li>
+						</ul>
+					</div>
+
+					<div class="error">
+						<p>
+							<strong>Error</strong> – Message with a <a href="http://imarc.net">link</a>.
+						</p>
+						<ul>
+							<li>Item one: messsage regarding item one</li>
+							<li>Item two: messsage regarding item two</li>
+							<li>Item three: messsage regarding item three</li>
+						</ul>
+					</div>
+
+					<div>
+						Help can also be called out inline with a span like this:
+						<span class="help">Please read this sentence in span, class="help"</span>.
+					</div>
+
+					<p>
+						Filler paragraph – Ignore this. Most of the sections end with a standard
+						paragraph in an un-scoped <code>&lt;p&gt;</code> tag. Hopefully, this
+						replicates real-world content a little. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus
+						velit, ornare sit amet blandit in, mattis eget nulla.
+					</p>
+
+
+					<h3>Fields</h3>
+					<form method="post">
+						<fieldset>
+							<h4>Text Inputs</h4>
+							<div class="text">
+								<label for="sample_form-text">Text<span class="required">*</span></label>
+								<input id="sample_form-text" type="text" />
+								<span class="help">only numbers and letters</span>
+							</div>
+							<div class="password">
+								<label for="sample_form-password">Password<span class="required">*</span></label>
+								<input id="sample_form-password" type="password" />
+							</div>
+							<p>
+								The following inputs are inside their labels, which is
+								best when labels and inputs are on the same line.
+							</p>
+							<label class="text">
+								Text:
+								<input id="sample_form-text-2" type="text" />
+								<span class="help">only numbers and letters</span>
+							</label>
+							<label class="password">
+								Password:
+								<input id="sample_form-password-2" type="password" />
+							</label>
+						</fieldset>
+
+						<fieldset>
+							<h4>Radios and Checkboxes</h4>
+							<div class="radios group">
+								<h4>Choose one</h4>
+								<label class="radio">
+									<input id="sample_form-radio" type="radio" />
+									radio
+								</label>
+								<label class="radio">
+									<input id="sample_form-radio_1" type="radio" />
+									radio 1
+								</label>
+								<label class="radio">
+									<input id="sample_form-radio_2" type="radio" />
+									radio 2
+								</label>
+							</div>
+							<div class="checkboxes group">
+								<h4>Check all that apply</h4>
+								<label class="checkbox">
+									<input id="sample_form-checkbox" type="checkbox" />
+									checkbox
+								</label>
+								<label class="checkbox">
+									<input id="sample_form-checkbox_1" type="checkbox" />
+									checkbox 1
+								</label>
+								<label class="checkbox">
+									<input id="sample_form-checkbox_2" type="checkbox" />
+									checkbox 2
+								</label>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<h4>Selects</h4>
+							<div class="select">
+								<label for="sample_form-select">Select one</label>
+								<select id="sample_form-select">
+									<optgroup label="group">
+										<option value="option">Option</option>
+										<option value="option 1">option 1</option>
+										<option value="option 2" selected="selected">option 2</option>
+									</optgroup>
+									<optgroup label="group 1">
+										<option value="option 3">option 3</option>
+										<option value="option 4">option 4</option>
+										<option value="option 5">option 5</option>
+									</optgroup>
+								</select>
+							</div>
+							<div class="select multiple">
+								<label for="sample_form-select_multiple">Select multiple</label>
+								<select id="sample_form-select_multiple" multiple="multiple" size="2">
+									<option value="option 6">option 6</option>
+									<option value="option 7">option 7</option>
+									<option value="option 8" selected="selected">option 8</option>
+								</select>
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<h4>Textareas and Files</h4>
+							<div class="textarea">
+								<label for="sample_form-textarea">Textarea</label>
+								<textarea id="sample_form-textarea" rows="20" cols="20">Textarea, 20 rows, 20 columns</textarea>
+							</div>
+							<div class="file">
+								<label for="sample_form-file">Upload File</label>
+								<input type="file" id="sample_form-file" />
+							</div>
+						</fieldset>
+
+						<fieldset>
+							<h4>Buttons</h4>
+							<div class="button">
+								<input type="button" value="Input Button" />
+							</div>
+							<div class="submit">
+								<input type="submit" value="Submit" />
+							</div>
+							<div class="reset">
+								<input type="reset" value="Reset" />
+							</div>
+							<div class="button">
+								<button>Button Tag</button>
+							</div>
+							<a href="#" class="button">Link</a>
+						</fieldset>
+					</form>
+				</section>
+
+				<section>
+					<header>
+						<hgroup>
+							<h2>Breaks and Headings</h2>
+							<h3>Breaks</h3>
+						</hgroup>
+					</header>
+
+					<p>
+						Below is a horizontal break.
+					</p>
+					<hr />
+					<p>
+						That's it.
+					</p>
+
+
+					<h2>Headings – This is an H2</h2>
+
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
+						felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
+						in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
+						nec, tempor in enim.
+					</p>
+
+					<h3>Three – This is an H3</h3>
+
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
+						felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
+						in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
+						nec, tempor in enim.
+					</p>
+
+					<h4>Four – This is an H4</h4>
+
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
+						felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
+						in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
+						nec, tempor in enim.
+					</p>
+
+					<h5>Five – This is an H5</h5>
+
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
+						felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
+						in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
+						nec, tempor in enim.
+					</p>
+
+					<h6>Six – This is an H6</h6>
+
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
+						felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
+						in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
+						nec, tempor in enim.
+					</p>
+				</section>
+			</div>
+
+			<footer>
+				<div class="copyright">©2013 iMarc LLC.</div>
+			</footer>
+		</div>
+	</body>
+</html>
