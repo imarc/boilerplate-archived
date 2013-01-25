@@ -101,9 +101,14 @@ html.lt-ie8 .group {
 	margin: 0 auto;
 	padding: 0 1em;
 }
-	.site > header h1 {
-		font-size: 2em;
+
+	.site > header {
+		position: relative;
 	}
+
+		.site > header h1 {
+			font-size: 2em;
+		}
 
 	.site > .torso {
 		padding: 2em 0;
