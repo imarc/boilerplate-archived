@@ -102,7 +102,9 @@ html.lt-ie8 .group {
 	padding: 0 1em;
 }
 
-	.site > header {
+	.site > header,
+	.site > .torso,
+	.site > footer {
 		position: relative;
 	}
 
