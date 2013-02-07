@@ -177,7 +177,7 @@ em {
 blockquote,
 pre {
 	clear: both;
-	margin: 2em 0 2em .5em;
+	margin: 0 0 1.5em .5em;
 	padding-left: .5em;
 }
 
@@ -199,7 +199,7 @@ code {
 }
 
 p {
-	margin: 1.5em 0;
+	margin: 0 0 1.5em;
 }
 
 hr {
@@ -233,12 +233,12 @@ a:focus {
 dl,
 ol,
 ul {
-	margin: 1em 0;
+	margin: 0 0 1.5em;
 	padding-left: 2em;
 }
 
 ul {
-	list-style: square;
+	list-style: disc;
 }
 
 dd {
@@ -514,7 +514,7 @@ fieldset .help {
 .submit,
 .text,
 .textarea {
-	margin-bottom: 1em;
+	margin-bottom: 1.5em;
 }
 
 .password input,
@@ -533,9 +533,9 @@ fieldset .help {
 	padding: 0.6em 0.7em;
 }
 
-	div.text input,
-	div.password input,
-	div.textarea textarea {
+	.text input,
+	.password input,
+	.textarea textarea {
 		display: block;
 		width: 100%;
 	}
@@ -583,18 +583,18 @@ a.button:hover {
 	text-decoration: underline;
 }
 
-div.error,
-div.info,
-div.success {
+.error,
+.info,
+.success {
 	padding: 1em 4em;
 	border-radius: 3px;
-	margin: 1em 0;
+	margin: 0 0 1.5em;
 	position: relative;
 }
 
-	div.error:before,
-	div.info:before,
-	div.success:before {
+	.error:before,
+	.info:before,
+	.success:before {
 		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAABFCAYAAAChbH1cAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEQAh0Zl47LzAAAAuJJREFUWMPtmO9H3VEcx9/t5nK5ZNGMy7iJiBgxRkT2YESPNnEf7VHsUUSKnk00MSIuoz9gGqNEbItNjFhGbEYaEc0od5qItteenG87O31/nO+93x5s9eHwdb6f7+uc8zmfz+d8P0f6rwXoBHaAPeBu1vA1/sg+UMwKXOGsTGcBLgK7BnhoTANwDHQ0Cp80sM9Ai+mrmr7lRsAlM1uAp1Z/n2WevjjGlZh3M5KCjftp9dvPs0AuFRzolVTxWOBNScNpZz6bwoJTwX4kwoGKpJ4U8FZJE4lwExwzdez/aJhrujOflFQK+fi69Rzm3/lYUwIdJjiipApMW+4ZJv1RM58yM4iSvKTvpkXJkzOuCfQSLy8t3YEE3YenMzcjzSVsmO1qRQ/XbA1mMoafrAHzQM1Dd16SmoAvksoZny8/JF3TpVwcKUh6IOm5pF1JWG1H0jPzvpAGmpM0IqnmAKNazSS8vE9ufuMJddumpBtxiWm9TnDQ9iJSsuY8Pj6QdF/SeIzOR3cfypKOPeCv7GQa0/469qZTLP2xpIUEnX1JhWYD9zmQX0vaMLp3PByjtznkjIwDB8vdltSe8E1n8PDe0ySBHHjojgVn6CcPs2xYJrzqof81gC952lwe9g7krR3yHxKWGUAXPEyy6o7UJ+kk5oNxo9du3DFK70TS7bClDHsE0XaCzmicre5JOqoztzzy2Yyyyddp4f1pcnurKQJeSDp0QL98NrJe6TKrc004FCg0ZTBI0YR6j/n9XrIC7lL+0SuTbmDkPMAl6/Jh+fTHPwNwC7Dp/PivZAEuAKsOeBcoNQrOAYsOuAZ0ZzHrqgM+dmvQesETIQVWJQtw2H3XRBpAV0R/f0j5Xk0DHgpu3+wy2wSJW38uxt0SueAe4Mj2V+PHdpAEsg4UfMFtIQCArZAg2QLa0pgjD8x5lN3f6r5PBAZjavsj4Faj7lYG3oUEyWBWCSlvPCa7IAkZZOBc8vTFlt90PErGWW5fZgAAAABJRU5ErkJggg==);
 		background-position: 0 0;
 		background-repeat: no-repeat;
@@ -607,40 +607,31 @@ div.success {
 		width: 23px;
 	}
 
-	div.error:before {
+	.error:before {
 		background-position: 0 0;
 	}
 
-	div.success:before {
+	.success:before {
 		background-position: 0 -46px;
 	}
 
-	div.info:before {
+	.info:before {
 		background-position: 0 -23px;
 	}
 
-div.success {
+.success {
 	background: #19af55;
 	color: #fff;
 }
 
-div.error {
+.error {
 	background: #c21e1e;
 	color: #fff;
 }
 
-div.info {
+.info {
 	background: #ccc;
 	color: #000;
-}
-
-.error li,
-.error p,
-.info li,
-.info p,
-.success li,
-.success p {
-	margin: 0;
 }
 
 .help {
@@ -653,7 +644,7 @@ div.info {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	margin: 1em 0 2em;
+	margin: 0 0 1.5em;
 	width: 100%;
 }
 
