@@ -17,27 +17,26 @@
 	</head>
 	<body>
 		<div class="site">
-		    <header>
-				<span class="selector">.site &gt; header</span>
+		    <header class="primary">
 		        <div class="logo"></div>
 		        <nav class="utility"></nav>
 		        <nav class="primary"></nav>
 		    </header>
 			<div class="torso">
-			    <aside>
-					<span class="selector">.torso &gt; aside</span>
+			    <aside class="primary">
 			        <section>
-						<span class="selector">aside section</span>
+						<span class="selector">aside.primary section</span>
 			            <nav class="secondary"></nav>
 			        </section>
 					<section>
-						<span class="selector">aside section</span>
+						<span class="selector">aside.primary section</span>
 					</section>
 					<section>
-						<span class="selector">aside section</span>
+						<span class="selector">aside.primary section</span>
 					</section>
 			    </aside>
-				<main>
+				<div class="main" rel="main">
+					<section class="intro"></section>
 				    <article>
 						<header>
 							<span class="selector">article header</span>
@@ -48,7 +47,7 @@
 				        <div class="highlight"></div>
 				        <p></p>
 						<aside>
-							<span class="selector">article aside</span>
+							<span class="selector">.main aside</span>
 						</aside>
 				        <p></p>
 						<footer>
@@ -62,15 +61,15 @@
 							<div class="meta"></div>
 						</header>
 				        <p></p>
-				        <div class="call_to_action"></div>
 						<footer>
 							<span class="selector">article footer</span>
 						</footer>
 				    </article>
-				</main>
+					<section class="pagination">
+					</section>
+				</div>
 			</div>
-			<footer>
-				<span class="selector">.site &gt; footer</span>
+			<footer class="primary">
 			    <nav class="utility"></nav>
 			</footer>
 		</div>

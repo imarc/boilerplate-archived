@@ -33,9 +33,9 @@ html *:before {
 	top: .25em;
 }
 
-.site > header:after,
+header.primary:after,
 .torso:after,
-.site > footer:after {
+footer.primary:after {
 	clear: both;
 	content: '';
 	display: table;
@@ -43,9 +43,10 @@ html *:before {
 
 body:before { content: 'body'; }
 .site:before { content: '.site'; }
-header:before { content: 'header'; }
+header.primary:before { content: 'header.primary'; }
 .torso:before { content: '.torso'; }
-footer:before { content: 'footer'; }
+footer.primary:before { content: 'footer.primary'; }
+aside.primary:before { content: 'aside.primary'; }
 
 .logo:before { content: '.logo'; }
 nav.utility:before { content: 'nav.utility'; }
@@ -53,11 +54,14 @@ nav.primary:before { content: 'nav.primary'; }
 nav.secondary:before { content: 'nav.secondary'; }
 section:before { content: 'section'; }
 article:before { content: 'article'; }
+header:before { content: 'header'; }
+footer:before { content: 'footer'; }
 aside:before { content: 'aside'; }
-main:before { content: 'main'; }
+.main:before { content: '.main'; }
 p:before { content: 'p'; }
 .highlight:before { content: '.highlight'; }
-.call_to_action:before { content: '.call_to_action'; }
+.intro:before { content: '.intro'; }
+.pagination:before { content: '.pagination'; }
 .meta:before { content: '.meta'; }
 h2:before { content: 'h2'; }
 
@@ -83,7 +87,7 @@ nav.primary {
 	clear: both;
 }
 
-.torso > aside {
+aside.primary {
 	position: absolute;
 	right: .25em;
 	top: .25em;
@@ -91,7 +95,7 @@ nav.primary {
 	height: 95.5%;
 }
 
-.torso > main {
+.main {
 	display: block;
 	margin-right: 30%;
 }
@@ -126,22 +130,11 @@ p:after {
 	content: 'This is highlight. It is important.';
 }
 
-.call_to_action {
-	padding: 1.5em 1em;
-	width: 15em;
-	margin: 1em auto;
-	text-align: center;
-}
-.call_to_action:after {
-	font-size: 2em;
-	content: 'DO IT NOW';
-}
-
-article > aside {
+.main aside {
 	float: right;
 	padding: 2em 1em;
 }
-article > aside:after {
+.main aside:after {
 	content: 'See Also: this aside.';
 }
 
