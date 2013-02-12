@@ -61,7 +61,7 @@ aside:before { content: 'aside'; }
 p:before { content: 'p'; }
 .highlight:before { content: '.highlight'; }
 .intro:before { content: '.intro'; }
-.pagination:before { content: '.pagination'; }
+.pagination:before { content: 'section.pagination'; }
 .meta:before { content: '.meta'; }
 h2:before { content: 'h2'; }
 

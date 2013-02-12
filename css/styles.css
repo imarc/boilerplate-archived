@@ -102,26 +102,43 @@ html.lt-ie8 .group {
 	padding: 0 1em;
 }
 
-	.site > header,
-	.site > .torso,
-	.site > footer {
-		position: relative;
+header.primary,
+.torso,
+footer.primary {
+	position: relative;
+}
+
+
+	header.primary h1 {
+		font-size: 2em;
 	}
 
-		.site > header h1 {
-			font-size: 2em;
-		}
+.torso {
+	padding: 2em 0;
+}
 
-	.site > .torso {
-		padding: 2em 0;
-	}
+aside.primary {
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 200px;
+}
 
-	.site > footer {
-		color: #999;
-		font-size: 14px;
-		margin-top: 100px;
-		text-align: center;
-	}
+aside.primary section {
+	background: #eee;
+}
+
+.main {
+	margin-right: 216px;
+}
+
+footer.primary {
+	color: #999;
+	font-size: 14px;
+	margin-top: 100px;
+	text-align: center;
+}
 
 
 /* = Typography = */
@@ -246,49 +263,35 @@ dd {
 }
 
 aside {
-	font-family: 'Fjord One', Georgia, serif;
-	font-size: 2.5em; /* 40px / 16px */
-	margin: 0 0 1.8em;
+	xxxfont-family: 'Fjord One', Georgia, serif;
+	xxxfont-size: 2.5em; /* 40px / 16px */
+	xxxmargin: 0 0 1.8em;
 }
 
 
 /* = Navigation = */
-header > nav {
+header nav:after {
 	clear: both;
-	display: block;
+	content: '';
+	display: table;
 }
 
-	header > nav:after {
-		clear: both;
-		content: '';
-		display: table;
-	}
-
-	nav li {
-		float: left;
-	}
-
-	nav ul {
+	header nav ul {
 		list-style: none;
 		margin: 0;
 		padding: 0;
 	}
 
-	nav li {
-		position: relative;
-	}
+		header nav li {
+			float: left;
+			position: relative;
+		}
 
-	nav.primary li a,
-	nav.primary li a:hover,
-	nav.primary li a:visited,
-	nav.secondary li a,
-	nav.secondary li a:hover,
-	nav.secondary li a:visited {
-		display: block;
-		color: #fff;
-	}
+nav li a {
+	display: block;
+}
 
-	.subnav {
+	header .subnav {
 		left: 0;
 		max-height: 0;
 		overflow: hidden;
@@ -301,14 +304,14 @@ header > nav {
 		z-index: 2;
 	}
 
-		.subnav li {
-			display: block;
-			float: none;
-		}
+		header .subnav li {
+				display: block;
+				float: none;
+			}
 
-	li:hover .subnav {
-		max-height: 250px;
-	}
+		header li:hover > .subnav {
+			max-height: 250px;
+		}
 
 nav.primary {
 	background: #333;
@@ -325,6 +328,7 @@ html.lt-ie8 nav.primary {
 	}
 
 		nav.primary a {
+			color: #fff;
 			padding: .4em 15px;
 		}
 
@@ -348,36 +352,37 @@ html.lt-ie8 nav.primary {
 			padding: .3em 15px;
 		}
 
-nav.secondary {
+header.primary nav.secondary {
 	background: #666;
 	font-size: .875em;
 }
 
-	html.lt-ie8 nav.secondary {
+	html.lt-ie8 header.primary nav.secondary {
 		height: 32px; /* Required because all of the content is floated. */
 	}
 
-	nav.secondary li {
+	header.primary nav.secondary li {
 		color: #fff;
 	}
-		nav.secondary li.active {
+		header.primary nav.secondary li.active {
 			background: #777;
 		}
 
-		nav.secondary li:hover {
+		header.primary nav.secondary li:hover {
 			background: #555;
 		}
 
-	nav.secondary a {
+	header.primary nav.secondary a {
+		color: #fff;
 		padding: .4em 15px;
 	}
 
-		nav.secondary .subnav {
+		header.primary nav.secondary .subnav {
 			background: #666;
 			z-index: 1;
 		}
 
-			nav.secondary .subnav a {
+			header.primary nav.secondary .subnav a {
 				padding: .3em 15px;
 			}
 
@@ -576,25 +581,19 @@ a.button:hover {
 
 
 /* = Messaging = */
-.error a,
-.info a,
-.success a {
-	color: inherit;
-	text-decoration: underline;
-}
-
-.error,
-.info,
-.success {
+.messaging {
 	padding: 1em 4em;
 	border-radius: 3px;
 	margin: 0 0 1.5em;
 	position: relative;
 }
 
-	.error:before,
-	.info:before,
-	.success:before {
+.messaging a {
+	color: inherit;
+	text-decoration: underline;
+}
+
+	.messaging:before {
 		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAABFCAYAAAChbH1cAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEQAh0Zl47LzAAAAuJJREFUWMPtmO9H3VEcx9/t5nK5ZNGMy7iJiBgxRkT2YESPNnEf7VHsUUSKnk00MSIuoz9gGqNEbItNjFhGbEYaEc0od5qItteenG87O31/nO+93x5s9eHwdb6f7+uc8zmfz+d8P0f6rwXoBHaAPeBu1vA1/sg+UMwKXOGsTGcBLgK7BnhoTANwDHQ0Cp80sM9Ai+mrmr7lRsAlM1uAp1Z/n2WevjjGlZh3M5KCjftp9dvPs0AuFRzolVTxWOBNScNpZz6bwoJTwX4kwoGKpJ4U8FZJE4lwExwzdez/aJhrujOflFQK+fi69Rzm3/lYUwIdJjiipApMW+4ZJv1RM58yM4iSvKTvpkXJkzOuCfQSLy8t3YEE3YenMzcjzSVsmO1qRQ/XbA1mMoafrAHzQM1Dd16SmoAvksoZny8/JF3TpVwcKUh6IOm5pF1JWG1H0jPzvpAGmpM0IqnmAKNazSS8vE9ufuMJddumpBtxiWm9TnDQ9iJSsuY8Pj6QdF/SeIzOR3cfypKOPeCv7GQa0/469qZTLP2xpIUEnX1JhWYD9zmQX0vaMLp3PByjtznkjIwDB8vdltSe8E1n8PDe0ySBHHjojgVn6CcPs2xYJrzqof81gC952lwe9g7krR3yHxKWGUAXPEyy6o7UJ+kk5oNxo9du3DFK70TS7bClDHsE0XaCzmicre5JOqoztzzy2Yyyyddp4f1pcnurKQJeSDp0QL98NrJe6TKrc004FCg0ZTBI0YR6j/n9XrIC7lL+0SuTbmDkPMAl6/Jh+fTHPwNwC7Dp/PivZAEuAKsOeBcoNQrOAYsOuAZ0ZzHrqgM+dmvQesETIQVWJQtw2H3XRBpAV0R/f0j5Xk0DHgpu3+wy2wSJW38uxt0SueAe4Mj2V+PHdpAEsg4UfMFtIQCArZAg2QLa0pgjD8x5lN3f6r5PBAZjavsj4Faj7lYG3oUEyWBWCSlvPCa7IAkZZOBc8vTFlt90PErGWW5fZgAAAABJRU5ErkJggg==);
 		background-position: 0 0;
 		background-repeat: no-repeat;
