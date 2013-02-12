@@ -309,6 +309,16 @@ dd {
 	margin-left: 2em;
 }
 
+sup {
+	vertical-align: top;
+	font-size: 80%;
+}
+
+sub{
+	vertical-align: bottom;
+	font-size: 80%;
+}
+
 .main aside {
 	background: #eee;
 	color: #aaa;
