@@ -125,13 +125,12 @@ aside.primary {
 	width: 200px;
 }
 
-aside.primary section {
-	background: #eee;
-}
-
 .main {
 	margin-right: 216px;
 }
+	.main > header {
+		margin: 0 0 3em;
+	}
 
 footer.primary {
 	color: #999;
@@ -173,8 +172,16 @@ h6 {
 	font-size: 1em;
 }
 
+hgroup {
+	margin: 0 0 1em;
+}
+
 hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
 	margin: 0 inherit;
+}
+
+.main section {
+	margin: 0 0 3em;
 }
 
 abbr[title] {
@@ -202,6 +209,14 @@ blockquote {
 	border-left: 1px dotted;
 	font-size: 1.25em;
 	font-style: italic;
+}
+
+.highlight {
+	background: #eee;
+	font-family: 'Fjord One', Georgia, serif;
+	font-size: 1.5em;
+	margin: 1em 0;
+	padding: .5em 32px;
 }
 
 pre {
@@ -262,36 +277,39 @@ dd {
 	margin-left: 2em;
 }
 
-aside {
-	xxxfont-family: 'Fjord One', Georgia, serif;
-	xxxfont-size: 2.5em; /* 40px / 16px */
-	xxxmargin: 0 0 1.8em;
+.main aside {
+	background: #eee;
+	color: #aaa;
+	font-size: .875em;
+	float: right;
+	margin: 0 0 1em 1em;
+	padding: 1em;
+	width: 33.33%;
 }
 
 
 /* = Navigation = */
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+nav a {
+	display: block;
+}
+
 header nav:after {
 	clear: both;
 	content: '';
 	display: table;
 }
 
-	header nav ul {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+	header nav li {
+		float: left;
+		position: relative;
 	}
 
-		header nav li {
-			float: left;
-			position: relative;
-		}
-
-nav li a {
-	display: block;
-}
-
-	header .subnav {
+	header nav li ul {
 		left: 0;
 		max-height: 0;
 		overflow: hidden;
@@ -304,96 +322,106 @@ nav li a {
 		z-index: 2;
 	}
 
-		header .subnav li {
-				display: block;
-				float: none;
-			}
+	header li:hover > ul {
+		max-height: 250px;
+	}
 
-		header li:hover > .subnav {
-			max-height: 250px;
+		header li li {
+			float: none;
 		}
 
-nav.primary {
+/* == top primary navigation == */
+header nav.primary {
 	background: #333;
 	font-family: 'Fjord One', Georgia, serif;
 	font-size: 1.3em;
 }
 
-html.lt-ie8 nav.primary {
-	height: 45px; /* Required since all of the content are floated. */
-}
-
-	nav.primary li {
-		color: #fff;
+	html.lt-ie8 header nav.primary {
+		height: 45px; /* Required since all of the content are floated. */
 	}
 
-		nav.primary a {
-			color: #fff;
-			padding: .4em 15px;
-		}
-
-	nav.primary li.active {
+	header nav.primary li.active {
 		background: #444;
 	}
 
-	nav.primary li:hover {
-		background: #0096d2;
-	}
-
-	nav.primary .subnav {
-		background: #333;
-	}
-
-	nav.primary .subnav li {
-		font-size: .875em;
-	}
-
-		nav.primary .subnav a {
-			padding: .3em 15px;
-		}
-
-header.primary nav.secondary {
-	background: #666;
-	font-size: .875em;
-}
-
-	html.lt-ie8 header.primary nav.secondary {
-		height: 32px; /* Required because all of the content is floated. */
-	}
-
-	header.primary nav.secondary li {
-		color: #fff;
-	}
-		header.primary nav.secondary li.active {
-			background: #777;
-		}
-
-		header.primary nav.secondary li:hover {
-			background: #555;
-		}
-
-	header.primary nav.secondary a {
+	header nav.primary a {
 		color: #fff;
 		padding: .4em 15px;
 	}
 
-		header.primary nav.secondary .subnav {
+		header nav.primary a:hover {
+			background: #0096d2;
+		}
+
+		header nav.primary li ul {
+			background: #333;
+			font-size: .875em;
+		}
+			header nav.primary li ul a {
+				padding: .3em 15px;
+			}
+			
+/* == top secondary navigation == */
+header nav.secondary {
+	background: #666;
+	font-size: .875em;
+}
+	html.lt-ie8 header nav.secondary {
+		height: 32px; /* Required because all of the content is floated. */
+	}
+
+	header nav.secondary li.active {
+		background: #777;
+	}
+
+	header nav.secondary a {
+		color: #fff;
+		padding: .5em 15px;
+	}
+	
+		header nav.secondary a:hover {
+			background: #555;
+		}
+
+		header nav.secondary li ul {
 			background: #666;
 			z-index: 1;
 		}
 
-			header.primary nav.secondary .subnav a {
+			header nav.secondary li ul a {
 				padding: .3em 15px;
 			}
 
-nav.utility {
+/* == aside secondary navigation == */
+aside nav.secondary {
+	margin: 1em 0;
+	background: #eee;
+}
+
+aside nav.secondary a {
+	padding: .3em 15px;
+}
+
+	aside nav.secondary a:hover {
+		background: #d8d8d8;
+	}
+
+aside nav.secondary li ul a {
+	font-size: .875em;
+	padding: .3em 30px;
+}
+
+
+/* == utility navigation == */
+header nav.utility {
 	position: absolute;
 	right: 0;
 	text-align: right;
 	top: 0;
 }
 
-	nav.utility a {
+	header nav.utility a {
 		float: none;
 		font-size: .9em;
 		padding: 18px 5px 5px;
