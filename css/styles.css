@@ -132,6 +132,30 @@ aside.primary {
 		margin: 0 0 3em;
 	}
 
+article {
+	margin: 0 0 3em;
+}
+
+article header {
+	margin: 0 0 1.5em;
+}
+
+article .meta {
+	color: #aaa;
+	margin: 0 0 1.5em;
+}
+	article h2 + .meta,
+	article h3 + .meta,
+	article h4 + .meta,
+	article h5 + .meta {
+		margin-top: -.875em;
+	}
+	
+
+article footer {
+	margin: 0 0 1.5em;
+}
+
 footer.primary {
 	color: #999;
 	font-size: 14px;
@@ -211,6 +235,10 @@ blockquote {
 	font-style: italic;
 }
 
+.intro p {
+	font-size: 1.2em;
+}
+
 .highlight {
 	background: #eee;
 	font-family: 'Fjord One', Georgia, serif;
@@ -231,6 +259,10 @@ code {
 }
 
 p {
+	margin: 0 0 1.5em;
+}
+
+address {
 	margin: 0 0 1.5em;
 }
 
