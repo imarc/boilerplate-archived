@@ -99,7 +99,6 @@ html.lt-ie8 .group {
 /* = Layout = */
 .site {
 	margin: 0 auto;
-	padding: 0 1em;
 }
 
 header.primary,
@@ -108,29 +107,18 @@ footer.primary {
 	position: relative;
 }
 
+.torso {
+	padding: 0 16px;
+}
+
 
 	header.primary h1 {
 		font-size: 2em;
 	}
 
-.torso {
-	padding: 2em 0;
+.main > header {
+	margin: 0 0 3em;
 }
-
-aside.primary {
-	height: 100%;
-	position: absolute;
-	right: 0;
-	top: 0;
-	width: 200px;
-}
-
-.main {
-	margin-right: 216px;
-}
-	.main > header {
-		margin: 0 0 3em;
-	}
 
 article {
 	margin: 0 0 3em;
@@ -165,6 +153,10 @@ footer.primary {
 
 
 /* = Typography = */
+header.primary h1 {
+	padding: 0 16px;
+	margin: 0;
+}
 header h1 a,
 header h1 a:visited {
 	color: #f2006d;
@@ -323,10 +315,8 @@ sub{
 	background: #eee;
 	color: #aaa;
 	font-size: .875em;
-	float: right;
-	margin: 0 0 1em 1em;
 	padding: 1em;
-	width: 33.33%;
+	margin: 1em 0;
 }
 
 
@@ -376,7 +366,6 @@ header nav:after {
 header nav.primary {
 	background: #333;
 	font-family: 'Fjord One', Georgia, serif;
-	font-size: 1.3em;
 }
 
 	html.lt-ie8 header nav.primary {
@@ -407,7 +396,7 @@ header nav.primary {
 /* == top secondary navigation == */
 header nav.secondary {
 	background: #666;
-	font-size: .875em;
+	font-size: .75em;
 }
 	html.lt-ie8 header nav.secondary {
 		height: 32px; /* Required because all of the content is floated. */
@@ -439,6 +428,7 @@ header nav.secondary {
 aside nav.secondary {
 	margin: 1em 0;
 	background: #eee;
+	text-align: center;
 }
 
 aside nav.secondary a {
@@ -747,16 +737,73 @@ table {
 
 
 /* = Media Queries = */
-/* Landscape phones and down */
-@media (max-width: 480px) {
-}
-
 /* Landscape phne to portrait tablet */
 @media (max-width: 767px) {
+	html {
+		background: #fff;
+	}
+
+	nav.primary > ul,
+	nav.secondary > ul {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+	}
+
+	header nav.primary > ul > li,
+	header nav.secondary > ul > li {
+		float: none;
+		display: table-cell;
+	}
+
+	header nav.primary > ul > li > a,
+	header nav.secondary > ul > li > a {
+		overflow: hidden;
+		text-align: center;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+
 }
 
 /* Portrait tablet to landscape and desktop */
-@media (min-width: 768px) and (max-width: 979px) {
+@media (min-width: 768px) {
+	.site {
+		padding: 0 1em;
+	}
+
+	.torso {
+		padding: 2em 0;
+	}
+
+	aside.primary {
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 200px;
+	}
+		aside nav.secondary {
+			text-align: left;
+		}
+
+	.main {
+		margin-right: 216px;
+	}
+
+		.main aside {
+			float: right;
+			width: 33.33%;
+			margin: 0 0 1em 1em;
+		}
+	
+	header nav.primary {
+		font-size: 1.25em;
+	}
+
+	header nav.secondary {
+		font-size: .875em;
+	}
 }
 
 /* Large desktop */
