@@ -58,6 +58,7 @@ html {
 body {
 	font-size: 16px;
 	line-height: 1.4;
+	min-width: 380px;
 }
 
 ::-moz-selection {
@@ -549,10 +550,6 @@ fieldset .help {
 .search,
 .text,
 .textarea {
-	-ms-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 	padding: 0 12px;
 }
 
