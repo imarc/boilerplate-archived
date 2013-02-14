@@ -74,16 +74,12 @@ body {
 /* = Grouping = */
 .group:before,
 .group:after {
-	content: "";
+	content: '';
 	display: table;
 }
 
 .group:after {
 	clear: both;
-}
-
-html.lt-ie8 .group {
-	zoom: 1;
 }
 
 .columns {
@@ -351,7 +347,6 @@ header nav:after {
 		-o-transition: max-height .2s;
 		-webkit-transition: max-height .2s;
 		transition: max-height .2s;
-		z-index: 2;
 	}
 
 	header li:hover > ul {
@@ -367,10 +362,6 @@ header nav.primary {
 	background: #333;
 	font-family: 'Fjord One', Georgia, serif;
 }
-
-	html.lt-ie8 header nav.primary {
-		height: 45px; /* Required since all of the content are floated. */
-	}
 
 	header nav.primary li.active {
 		background: #444;
@@ -388,6 +379,7 @@ header nav.primary {
 		header nav.primary li ul {
 			background: #333;
 			font-size: .875em;
+			z-index: 1;
 		}
 			header nav.primary li ul a {
 				padding: .3em 15px;
@@ -398,10 +390,6 @@ header nav.secondary {
 	background: #666;
 	font-size: .75em;
 }
-	html.lt-ie8 header nav.secondary {
-		height: 32px; /* Required because all of the content is floated. */
-	}
-
 	header nav.secondary li.active {
 		background: #777;
 	}
@@ -481,13 +469,6 @@ textarea {
 	vertical-align: baseline;
 }
 
-html.lt-ie8 button,
-html.lt-ie8 input,
-html.lt-ie8 select,
-html.lt-ie8 textarea {
-	vertical-align: middle;
-}
-
 button,
 input {
 	line-height: normal;
@@ -499,13 +480,6 @@ input[type="reset"],
 input[type="submit"] {
 	-webkit-appearance: button;
 	cursor: pointer;
-}
-
-html.lt-ie8 button,
-html.lt-ie8 input[type="button"],
-html.lt-ie8 input[type="reset"],
-html.lt-ie8 input[type="submit"] {
-	overflow: visible;
 }
 
 button[disabled],
@@ -520,12 +494,6 @@ input[type="radio"] {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-html.lt-ie8 input[type="checkbox"],
-html.lt-ie8 input[type="radio"] {
-	height: 13px;
-	width: 13px;
-}
-
 button::-moz-focus-inner,
 input::-moz-focus-inner {
 	border: 0;
@@ -585,6 +553,7 @@ fieldset .help {
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	padding: 0 12px;
 }
 
 .password input,
@@ -602,14 +571,9 @@ fieldset .help {
 	color: #333;
 	font-size: 14px;
 	margin: 2px 0 0;
-	padding: 8px 12px;
+	padding: 8px 0;
+	width: 100%;
 }
-
-	.text input,
-	.password input,
-	.textarea textarea {
-		width: 100%;
-	}
 
 .textarea textarea {
 	height: 12em;
@@ -743,7 +707,7 @@ table {
 
 
 /* = Media Queries = */
-/* Landscape phne to portrait tablet */
+/* Phones */
 @media (max-width: 767px) {
 	html {
 		background: #fff;
@@ -772,7 +736,7 @@ table {
 
 }
 
-/* Portrait tablet to landscape and desktop */
+/* Tablets */
 @media (min-width: 768px) {
 	.site {
 		padding: 0 1em;
@@ -812,11 +776,85 @@ table {
 	}
 }
 
-/* Large desktop */
+/* Desktops */
 @media (min-width: 980px) {
 	.site {
 		width: 948px;
 	}
+}
+
+/* = IE Specific = */
+/* IE6, IE7 */
+html.lt-ie8 .group,
+html.lt-ie8 header nav {
+	zoom: 1;
+}
+
+html.lt-ie8 header nav.primary {
+	height: 45px; /* Required since all of the content are floated. */
+}
+
+html.lt-ie8 header nav.secondary {
+	height: 32px; /* Required because all of the content is floated. */
+}
+
+html.lt-ie8 button,
+html.lt-ie8 input,
+html.lt-ie8 select,
+html.lt-ie8 textarea {
+	vertical-align: middle;
+}
+
+html.lt-ie8 button,
+html.lt-ie8 input[type="button"],
+html.lt-ie8 input[type="reset"],
+html.lt-ie8 input[type="submit"] {
+	overflow: visible;
+}
+
+html.lt-ie8 input[type="checkbox"],
+html.lt-ie8 input[type="radio"] {
+	height: 13px;
+	width: 13px;
+}
+
+/* IE6, IE7, IE8 */
+html.lt-ie9 .site {
+	padding: 0 1em;
+	width: 948px;
+}
+
+html.lt-ie9 .torso {
+	padding: 2em 0;
+}
+
+html.lt-ie9 aside.primary {
+	height: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 200px;
+}
+	html.lt-ie9 aside nav.secondary {
+		text-align: left;
+	}
+
+html.lt-ie9 .main {
+	margin-right: 216px;
+}
+
+	html.lt-ie9 .main aside {
+		float: right;
+		width: 33.33%;
+		margin: 0 0 1em 1em;
+	}
+
+html.lt-ie9 header nav.primary {
+	font-size: 1.25em;
+}
+
+html.lt-ie9 header nav.secondary {
+	font-size: .875em;
 }
 
 
@@ -844,7 +882,7 @@ table {
 
 	a[href^="javascript:"]:after,
 	a[href^="#"]:after {
-		content: "";
+		content: '';
 	}
 
 	pre,
