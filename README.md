@@ -32,8 +32,8 @@ padding and vertical margins relative to the font size when appropriate. We set 
 relative to this.
 
 
-The Details
-===========
+Our Sections
+============
 
 A Table of Contents
 ------------------------
