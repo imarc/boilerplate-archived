@@ -115,4 +115,4 @@ These rules are primarily from the HTML5 Boilerplate.
 License
 =======
 
-iMarc Boilerplate is releases under the MIT license. See LICENSE for the full license.
+iMarc Boilerplate is released under the MIT license. See LICENSE for the full license.
