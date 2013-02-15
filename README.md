@@ -37,9 +37,7 @@ Our Sections
 
 A Table of Contents
 ------------------------
-
 We like our CSS with a table of contents as we find this helps keep everything more organized.
-
 
 Web Fonts
 ---------
