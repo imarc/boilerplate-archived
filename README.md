@@ -68,6 +68,12 @@ etc. These containers all can contain out layout or typographical block elements
 Note that we are not using the `main` element yet. While it looks great, until its more widely
 adopted we're going to stick with the semantic equivalent, `<div class="main" rel="main">`.
 
+### Primary, Secondary, and Tertiary
+We use the classes `primary`, `secondary`, and `tertiary` to identify layout elements that might occur
+more than once. This includes `<header>`, `<aside>`, `<footer>`, and `<nav>`. The markup includes
+examples of `header.primary`, `aside.primary`, `footer.primary`, `nav.primary`, and `nav.secondary`,
+however `tertiary`, or even `quarternary` can be used if appropriate.
+
 Typography
 ----------
 This section contains rules for inline typographical styles and typographical blocks. Inline
