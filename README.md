@@ -6,13 +6,13 @@ as a lighter, customized variant of something like Twitter Bootstrap or the
 HTML5 Boilerplate, by focusing on our uses, aligning things with our semantics,
 and being willing to allow for slightly more variance between browsers.
 
-We're targeting IE8+, Chrome, Safari, and Firefox. We're aiming for the site to
-still be functional in IE7, however we'll willing to accept visual degradation.
+We're targeting IE8+, Chrome, Safari, and Firefox. We're aiming for boilerplate to
+be functional in IE7, however we are willing to accept visual degradation.
 
 Take a Look
 -----------
-* [See the Structure](http://imarc.github.com/boilerplate/structure)
 * [See the Markup](http://imarc.github.com/boilerplate/markup)
+* [See the Structure](http://imarc.github.com/boilerplate/structure)
 * [See the CSS](https://github.com/imarc/boilerplate/blob/gh-pages/css/styles.css)
 
 Our Goals
