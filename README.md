@@ -1,7 +1,7 @@
 iMarc Boilerplate
 =================
 
-We're currently developing new boilerplates for new sites. This is meant work
+We're currently developing a boilerplate for new sites. This is meant work
 as a lighter, customized variant of something like Twitter Bootstrap or the
 HTML5 Boilerplate, by focusing on our uses, aligning things with our semantics,
 and being willing to allow for slightly more variance between browsers.
