@@ -740,7 +740,8 @@ table {
 	}
 
 	.torso {
-		padding: 2em 0;
+		padding-bottom: 2em;
+		padding-top: 2em;
 	}
 
 	aside.primary {
