@@ -1,18 +1,18 @@
 iMarc Boilerplate
 =================
 
-We're currently developing new boilerplates for new sites. This is meant work
+We're currently developing a boilerplate for new sites. This is meant work
 as a lighter, customized variant of something like Twitter Bootstrap or the
 HTML5 Boilerplate, by focusing on our uses, aligning things with our semantics,
 and being willing to allow for slightly more variance between browsers.
 
-We're targeting IE8+, Chrome, Safari, and Firefox. We're aiming for the site to
-still be functional in IE7, however we'll willing to accept visual degradation.
+We're targeting IE8+, Chrome, Safari, and Firefox. We're aiming for boilerplate to
+be functional in IE7, however we are willing to accept visual degradation.
 
 Take a Look
 -----------
-* [See the Structure](http://imarc.github.com/boilerplate/structure)
 * [See the Markup](http://imarc.github.com/boilerplate/markup)
+* [See the Structure](http://imarc.github.com/boilerplate/structure)
 * [See the CSS](https://github.com/imarc/boilerplate/blob/gh-pages/css/styles.css)
 
 Our Goals
@@ -37,9 +37,7 @@ Our Sections
 
 A Table of Contents
 ------------------------
-
 We like our CSS with a table of contents as we find this helps keep everything more organized.
-
 
 Web Fonts
 ---------
@@ -67,6 +65,12 @@ etc. These containers all can contain out layout or typographical block elements
 
 Note that we are not using the `main` element yet. While it looks great, until its more widely
 adopted we're going to stick with the semantic equivalent, `<div class="main" rel="main">`.
+
+### Primary, Secondary, and Tertiary
+We use the classes `primary`, `secondary`, and `tertiary` to identify layout elements that might occur
+more than once. This includes `<header>`, `<aside>`, `<footer>`, and `<nav>`. The markup includes
+examples of `header.primary`, `aside.primary`, `footer.primary`, `nav.primary`, and `nav.secondary`,
+however `tertiary`, or even `quarternary` can be used if appropriate.
 
 Typography
 ----------
@@ -115,4 +119,4 @@ These rules are primarily from the HTML5 Boilerplate.
 License
 =======
 
-iMarc Boilerplate is releases under the MIT license. See LICENSE for the full license.
+iMarc Boilerplate is released under the MIT license. See LICENSE for the full license.
