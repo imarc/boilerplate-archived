@@ -11,6 +11,7 @@
  * Section Specific
  * Page Specific
  * Media Queries
+ * Internet Explorer
  * Print Styles
  */
 
@@ -107,13 +108,21 @@ footer.primary {
 .torso {
 	padding: 0 16px;
 }
-
-
-	header.primary h1 {
-		font-size: 2em;
+header.primary h1 {
+	font-size: 2em;
+	margin: 0;
+	padding: 0 16px;
+}
+	header h1 a,
+	header h1 a:visited {
+		color: #f2006d;
 	}
 
 .main > header {
+	margin: 0 0 3em;
+}
+
+.main section {
 	margin: 0 0 3em;
 }
 
@@ -121,44 +130,33 @@ article {
 	margin: 0 0 3em;
 }
 
-article header {
-	margin: 0 0 1.5em;
-}
-
-article .meta {
-	color: #aaa;
-	margin: 0 0 1.5em;
-}
-	article h2 + .meta,
-	article h3 + .meta,
-	article h4 + .meta,
-	article h5 + .meta {
-		margin-top: -.875em;
+	article header {
+		margin: 0 0 1.5em;
 	}
-	
 
-article footer {
-	margin: 0 0 1.5em;
-}
+	article .meta {
+		color: #aaa;
+		margin: 0 0 1.5em;
+	}
+		article h2 + .meta,
+		article h3 + .meta,
+		article h4 + .meta,
+		article h5 + .meta {
+			margin-top: -.875em;
+		}
+	
+	article footer {
+		margin: 0 0 1.5em;
+	}
 
 footer.primary {
 	color: #999;
 	font-size: 14px;
-	margin-top: 100px;
 	text-align: center;
 }
 
 
 /* = Typography = */
-header.primary h1 {
-	padding: 0 16px;
-	margin: 0;
-}
-header h1 a,
-header h1 a:visited {
-	color: #f2006d;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Fjord One', Georgia, serif;
 	margin: 0 0 .5em;
@@ -191,10 +189,6 @@ hgroup {
 
 hgroup h1, hgroup h2, hgroup h3, hgroup h4, hgroup h5, hgroup h6 {
 	margin: 0 inherit;
-}
-
-.main section {
-	margin: 0 0 3em;
 }
 
 abbr[title] {
@@ -706,9 +700,6 @@ table {
 /* = Media Queries = */
 /* Phones */
 @media (max-width: 767px) {
-	html {
-		background: #fff;
-	}
 
 	nav.primary > ul,
 	nav.secondary > ul {
@@ -740,8 +731,7 @@ table {
 	}
 
 	.torso {
-		padding-bottom: 2em;
-		padding-top: 2em;
+		padding: 2em 0;
 	}
 
 	aside.primary {
