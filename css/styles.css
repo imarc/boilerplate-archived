@@ -445,77 +445,35 @@ header nav.utility {
 
 /* = Forms = */
 button,
-input[type=text],
-input[type=password],
-textarea,
-select {
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-label {
-	cursor: pointer;
-}
-
-button,
 input,
 select,
 textarea {
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 100%;
-	vertical-align: baseline;
-}
-
-button,
-input {
-	line-height: normal;
-}
-
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	-webkit-appearance: button;
-	cursor: pointer;
-}
-
-button[disabled],
-input[disabled] {
-	cursor: default;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-	-ms-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
-
-textarea {
-	overflow: auto;
-	resize: vertical;
-	vertical-align: top;
 }
 
 form h4 {
 	margin: 0 0 0.4em;
 }
 
-form label {
+.checkboxes,
+.file,
+.password,
+.radios,
+.select,
+.submit,
+.text,
+.textarea {
+	margin-bottom: 1.5em;
+}
+
+label {
 	color: #333;
+	cursor: pointer;
 	display: block;
 	font-size: .875em;
 	font-weight: bold;
-	margin: 0 0 3px;
-}
-
-label.radio,
-label.checkbox {
-	font-weight: normal;
+	margin: 0 0 6px;
 }
 
 span.required {
@@ -525,32 +483,16 @@ span.required {
 fieldset .help {
 	color: #999;
 	font-size: .75em;
-	margin: 0 1em;
 }
 
-.checkboxes,
-.file,
-.password,
-.radios,
-.search,
-.select,
-.submit,
-.text,
-.textarea {
-	margin-bottom: 1.5em;
+.radio,
+.checkbox {
+	font-weight: normal;
 }
 
-.password,
-.search,
-.text,
-.textarea {
-	padding: 0 12px;
-}
-
-.password input,
-.search input,
-.text input,
-.textarea textarea {
+input[type="text"],
+input[type="password"],
+textarea {
 	border-color: #848484 #c1c1c1 #e1e1e1;
 	border-radius: 2px;
 	border-style: solid;
@@ -562,29 +504,40 @@ fieldset .help {
 	color: #333;
 	font-size: 14px;
 	margin: 2px 0 0;
-	padding: 8px 0;
+	padding: 8px 6px;
 	width: 100%;
 }
 
-.textarea textarea {
+textarea {
 	height: 12em;
+	overflow: auto;
+	resize: vertical;
 }
 
-.button,
-.reset,
-.submit {
-	display: inline;
+input[type="checkbox"],
+input[type="radio"] {
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 button,
-input[type=button],
-input[type=reset],
-input[type=submit],
-a.button {
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
 	background: #0394CD;
 	border-radius: 3px;
 	border: none;
-	color: #fff;
+	color: #FFF;
 	display: inline-block;
 	font-family: 'Fjord One', Georgia, serif;
 	padding: 0.4em 0.8em;
@@ -592,12 +545,23 @@ a.button {
 }
 
 button:hover,
-input[type=button]:hover,
-input[type=reset]:hover,
-input[type=submit]:hover,
-a.button:hover {
-	background: #0084b8;
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+	background: #00709C;
 	cursor: pointer;
+}
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus {
+	background: #0084B8;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
 }
 
 
@@ -652,11 +616,6 @@ a.button:hover {
 .info {
 	background: #ccc;
 	color: #000;
-}
-
-.help {
-	color: #999;
-	font-size: .875em;
 }
 
 
