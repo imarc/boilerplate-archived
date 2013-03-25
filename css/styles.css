@@ -420,7 +420,6 @@ header nav.secondary {
 aside nav.secondary {
 	margin: 1em 0;
 	background: #eee;
-	text-align: center;
 }
 
 aside nav.secondary a {
@@ -673,29 +672,22 @@ table {
 
 /* = Media Queries = */
 /* Phones */
-@media (max-width: 767px) {
+@media (max-width: 567px) {
 
-	nav.primary > ul,
-	nav.secondary > ul {
-		display: table;
-		table-layout: fixed;
-		width: 100%;
+	header nav.primary,
+	header nav.secondary {
+		height: auto;
 	}
-
-	header nav.primary > ul > li,
-	header nav.secondary > ul > li {
+	header nav > ul {
+		position: relative;
+	}
+		header nav ul ul {
+			padding-left: 20px;
+		}
+	nav.primary li,
+	nav.secondary li {
 		float: none;
-		display: table-cell;
 	}
-
-	header nav.primary > ul > li > a,
-	header nav.secondary > ul > li > a {
-		overflow: hidden;
-		text-align: center;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-	}
-
 }
 
 /* Tablets */
