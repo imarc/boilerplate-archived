@@ -369,7 +369,7 @@ header nav:after {
 	}
 
 	header li:hover > ul {
-		max-height: 250px;
+		max-height: 300px;
 		-moz-transition: max-height .2s;
 		-o-transition: max-height .2s;
 		-webkit-transition: max-height .2s;
