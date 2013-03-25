@@ -359,7 +359,7 @@ header nav:after {
 	}
 
 	header nav li ul {
-		display: none;
+		max-height: 0;
 		left: 0;
 		overflow: hidden;
 		-moz-transition: max-height .2s ease .1s;
