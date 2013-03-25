@@ -113,10 +113,6 @@ header.primary h1 {
 	margin: 0;
 	padding: 0 16px;
 }
-	header h1 a,
-	header h1 a:visited {
-		color: #f2006d;
-	}
 
 .main > header {
 	margin: 0 0 3em;
@@ -321,6 +317,16 @@ nav a {
 	display: block;
 }
 
+header nav {
+	position: relative;
+}
+
+header nav > ul {
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+}
+
 header nav:after {
 	clear: both;
 	content: '';
@@ -336,8 +342,6 @@ header nav:after {
 		left: 0;
 		max-height: 0;
 		overflow: hidden;
-		position: absolute;
-		right: 0;
 		-moz-transition: max-height .2s;
 		-o-transition: max-height .2s;
 		-webkit-transition: max-height .2s;
@@ -356,8 +360,12 @@ header nav:after {
 header nav.primary {
 	background: #333;
 	font-family: 'Fjord One', Georgia, serif;
+	height: 2.2em;
 }
 
+	header nav.primary > ul {
+		z-index: 2;
+	}
 	header nav.primary li.active {
 		background: #444;
 	}
@@ -384,6 +392,7 @@ header nav.primary {
 header nav.secondary {
 	background: #666;
 	font-size: .75em;
+	height: 2.35em;
 }
 	header nav.secondary li.active {
 		background: #777;
@@ -435,6 +444,9 @@ header nav.utility {
 	text-align: right;
 	top: 0;
 }
+	header nav.utility > ul {
+		position: relative;
+	}
 
 	header nav.utility a {
 		float: none;
