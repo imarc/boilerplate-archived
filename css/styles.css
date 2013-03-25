@@ -355,11 +355,12 @@ header nav:after {
 	header nav li {
 		float: left;
 		position: relative;
+		white-space: nowrap;
 	}
 
 	header nav li ul {
+		display: none;
 		left: 0;
-		max-height: 0;
 		overflow: hidden;
 		-moz-transition: max-height .2s ease .1s;
 		-o-transition: max-height .2s ease .1s;
@@ -377,6 +378,7 @@ header nav:after {
 
 		header li li {
 			float: none;
+			min-width: 100%;
 		}
 
 /* == top primary navigation == */
