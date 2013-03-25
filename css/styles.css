@@ -682,11 +682,19 @@ table {
 		position: relative;
 	}
 		header nav ul ul {
-			padding-left: 20px;
+			display: none;
 		}
+			header nav li.active ul {
+				display: block;
+				max-height: 250px;
+				padding-left: 40px;
+			}
 	nav.primary li,
 	nav.secondary li {
 		float: none;
+	}
+	header nav.secondary {
+		display: none;
 	}
 }
 
