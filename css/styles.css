@@ -350,12 +350,6 @@ header nav {
 	position: relative;
 }
 
-header nav > ul {
-	position: absolute;
-	z-index: 1;
-	width: 100%;
-}
-
 header nav:after {
 	clear: both;
 	content: '';
@@ -369,21 +363,15 @@ header nav:after {
 	}
 
 	header nav li ul {
-		max-height: 0;
+		position: absolute;
+		display: none;
+		width: 200px;
 		left: 0;
 		overflow: hidden;
-		-moz-transition: max-height .2s ease .1s;
-		-o-transition: max-height .2s ease .1s;
-		-webkit-transition: max-height .2s ease .1s;
-		transition: max-height .2s ease .1s;
 	}
 
 	header li:hover > ul {
-		max-height: 300px;
-		-moz-transition: max-height .2s;
-		-o-transition: max-height .2s;
-		-webkit-transition: max-height .2s;
-		transition: max-height .2s;
+		display: block;
 	}
 
 		header li li {
@@ -394,7 +382,6 @@ header nav:after {
 /* == top primary navigation == */
 header nav.primary {
 	background: #333;
-	height: 2em;
 }
 
 	header nav.primary > ul {
@@ -428,7 +415,6 @@ header nav.primary {
 header nav.secondary {
 	background: #F2006D;
 	font-size: .75em;
-	height: 2.6em;
 }
 	header nav.secondary li.active {
 		background: #AD004E;
@@ -743,7 +729,10 @@ table {
 			display: none;
 		}
 			header nav li.active ul {
+				background: #F2006D;
 				display: block;
+				width: auto;
+				position: relative;
 				max-height: 250px;
 				padding-left: 40px;
 			}
