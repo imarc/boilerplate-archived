@@ -10,7 +10,6 @@
 		<meta name="author" content="Design, programming, by iMarc. More info at http://imarc.net" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
-
 		<!--[if IE]>
 			<script src="js/html5shiv.js"></script>
 		<![endif]-->
@@ -18,28 +17,30 @@
 	<body>
 		<div class="site">
 			<header class="primary">
-				<h1><a href="/">iMarc</a></h1>
-				<nav class="utility">
-					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Careers</a></li>
-						<li><a href="#">Legal</a></li>
-						<li><a href="#">Log In</a></li>
-					</ul>
-				</nav>
+				<div class="group branding">
+					<h1>
+						<a href="/">iMarc</a>
+					</h1>
+					<nav class="utility">
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="#">Careers</a></li>
+							<li><a href="#">Legal</a></li>
+							<li><a href="#">Log In</a></li>
+						</ul>
+					</nav>
+				</div>
 				<nav class="primary">
 					<ul>
 						<li><a href="/">Home</a></li>
 						<li class="active">
 							<a href="#">Massachusetts</a>
 							<ul>
-							    <li><a href="#">Hockey</a></li>
-							    <li><a href="#">Baseball</a></li>
-							    <li><a href="#">Football</a></li>
-							    <li><a href="#">IWFL</a></li>
-							    <li><a href="#">Basketball</a></li>
-							    <li><a href="#">Soccer</a></li>
-							    <li><a href="#">Other Sports</a></li>
+							    <li><a href="#">Boston</a></li>
+							    <li><a href="#">Lowell</a></li>
+							    <li><a href="#">Worcester</a></li>
+							    <li><a href="#">Lynn</a></li>
+							    <li><a href="#">Springfield</a></li>
 							</ul>
 						</li>
 						<li>
@@ -74,86 +75,38 @@
 				<nav class="secondary">
 					<ul>
 						<li>
-							<a href="#">Hockey</a>
+							<a href="#">Boston</a>
+						</li>
+						<li class="active">
+							<a href="#">Lowell</a>
 							<ul>
-								<li><a href="#">Bruins</a></li>
-								<li><a href="#">IceCaps</a></li>
-								<li><a href="#">Monarchs</a></li>
-								<li><a href="#">Pirates</a></li>
-								<li><a href="#">Sharks</a></li>
+								<li><a href="#">History</a></li>
+								<li><a href="#">Recreation</a></li>
+								<li><a href="#">Government</a></li>
+								<li><a href="#">Notable Natives</a></li>
+								<li><a href="#">References</a></li>
 							</ul>
 						</li>
 						<li>
-							<a href="#">Baseball</a>
-							<ul>
-								<li><a href="#">Fightin Phils</a></li>
-								<li><a href="#">Fisher Cats</a></li>
-								<li><a href="#">Mets</a></li>
-								<li><a href="#">Rock Cats</a></li>
-								<li><a href="#">Sea Dogs</a></li>
-								<li><a href="#">Thunder</a></li>
-							</ul>
+							<a href="#">Worcester</a>
 						</li>
 						<li>
-							<a href="#">Football</a>
-							<ul>
-								<li><a href="#">Bills</a></li>
-								<li><a href="#">Dolphins</a></li>
-								<li><a href="#">Jets</a></li>
-								<li><a href="#">Patriots</a></li>
-							</ul>
+							<a href="#">Lynn</a>
 						</li>
 						<li>
-							<a href="#">IWFL</a>
-							<ul>
-								<li><a href="#">Blitz</a></li>
-								<li><a href="#">Freedom</a></li>
-								<li><a href="#">Intensity</a></li>
-								<li><a href="#">Nitro</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#">Basketball</a>
-							<ul>
-								<li><a href="#">76ers</a></li>
-								<li><a href="#">Celtics</a></li>
-								<li><a href="#">Knicks</a></li>
-								<li><a href="#">Nets</a></li>
-								<li><a href="#">Raptors</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#">Soccer</a>
-							<ul>
-								<li><a href="#">Italians</a></li>
-								<li><a href="#">Mariners</a></li>
-								<li><a href="#">Phantoms</a></li>
-								<li><a href="#">Red Bull NPSL</a></li>
-								<li><a href="#">Reds</a></li>
-							</ul>
-						</li>
-						<li>
-							<a href="#">Other Sports</a>
-							<ul>
-								<li><a href="#">Roller Derby</a></li>
-								<li><a href="#">Rugby</a></li>
-								<li><a href="#">Tennis</a></li>
-								<li><a href="#">Lacrosse</a></li>
-								<li><a href="#">Softball</a></li>
-								<li><a href="#">Cycling</a></li>
-								<li><a href="#">Running</a></li>
-								<li><a href="#">Parkour</a></li>
-							</ul>
+							<a href="#">Springfield</a>
 						</li>
 					</ul>
 				</nav>
 			</header>
-			<div class="torso">
+
+			<div class="group torso">
 				<div class="main" role="main">
 					<header>
 						<hgroup>
-							<h1><a href="#">The iMarc Boilerplate</a></h1>
-							<h2>Simple, Semantic Structure for Your CSS</h2>
+							<h1>
+								The iMarc Boilerplate
+							</h1>
 						</hgroup>
 					</header>
 
@@ -163,20 +116,7 @@
 							structure. It uses some HTML5 elements as well as the HTML5Shiv and
 							supports Chrome, Firefox, and Internet Explorer 8+.
 						</p>
-
-						<div class="highlight">
-							For more information, see iMarc's
-							<a href="http://handbook.imarc.net/frontend">frontend standards</a>.
-						</div>
-
-						<p>
-							This is a filler paragraph – Ignore this. These are scattered through
-							out the markup to simulate content. Lorem ipsum dolor sit amet,
-							consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus
-							velit, ornare sit amet blandit in, mattis eget nulla.
-						</p>
 					</section>
-
 
 					<section>
 						<header>
@@ -190,7 +130,9 @@
 						</p>
 
 						<div class="highlight">
-							<a href="http://www.handbook.imarc.net"> Learn More »</a>
+							<p>
+								Since 2013, this has been iMarc’s example of a page highlight. For more information, see iMarc’s <a href="http://handbook.imarc.net/frontend">frontend standards</a>.
+							</p>
 						</div>
 
 						<p>
@@ -400,12 +342,14 @@ There is a line of whitespace between these two sentences.
 						<h3>Definition List</h3>
 
 						<dl>
-							<dt>This Markup</dt>
-							<dd>a definition list</dd>
-							<dt>Coffee</dt>
-							<dd>black hot drink</dd>
-							<dt>Milk</dt>
-							<dd>white cold drink</dd>
+							<dt>iPod</dt>
+							<dd>The iPod is a line of portable media players designed and marketed by Apple Inc.</dd>
+
+							<dt>VCR</dt>
+							<dd>The VCR is an electro-mechanical device that records analog audio and analog video from broadcast television on a removable tape. </dd>
+
+							<dt>Walkman</dt>
+							<dd>Walkman is a Sony brand tradename originally used for portable audio cassette players. </dd>
 						</dl>
 
 						<p>
@@ -698,84 +642,42 @@ There is a line of whitespace between these two sentences.
 						</p>
 					</section>
 				</div>
+
 				<aside class="primary">
 					<section>
 					    <nav class="secondary">
 							<ul>
 								<li>
-									<a href="#">Hockey</a>
+									<a href="#">Boston</a>
+								</li>
+								<li class="active">
+									<a href="#">Lowell</a>
 									<ul>
-										<li><a href="#">Bruins</a></li>
-										<li><a href="#">IceCaps</a></li>
-										<li><a href="#">Monarchs</a></li>
-										<li><a href="#">Pirates</a></li>
-										<li><a href="#">Sharks</a></li>
+										<li><a href="#">History</a></li>
+										<li><a href="#">Recreation</a></li>
+										<li><a href="#">Government</a></li>
+										<li><a href="#">Notable Natives</a></li>
+										<li><a href="#">References</a></li>
 									</ul>
 								</li>
 								<li>
-									<a href="#">Baseball</a>
-									<ul>
-										<li><a href="#">Fightin Phils</a></li>
-										<li><a href="#">Fisher Cats</a></li>
-										<li><a href="#">Mets</a></li>
-										<li><a href="#">Rock Cats</a></li>
-										<li><a href="#">Sea Dogs</a></li>
-										<li><a href="#">Thunder</a></li>
-									</ul>
+									<a href="#">Worcester</a>
 								</li>
 								<li>
-									<a href="#">Football</a>
-									<ul>
-										<li><a href="#">Bills</a></li>
-										<li><a href="#">Dolphins</a></li>
-										<li><a href="#">Jets</a></li>
-										<li><a href="#">Patriots</a></li>
-									</ul>
+									<a href="#">Lynn</a>
 								</li>
 								<li>
-									<a href="#">IWFL</a>
-									<ul>
-										<li><a href="#">Blitz</a></li>
-										<li><a href="#">Freedom</a></li>
-										<li><a href="#">Intensity</a></li>
-										<li><a href="#">Nitro</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Basketball</a>
-									<ul>
-										<li><a href="#">76ers</a></li>
-										<li><a href="#">Celtics</a></li>
-										<li><a href="#">Knicks</a></li>
-										<li><a href="#">Nets</a></li>
-										<li><a href="#">Raptors</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Soccer</a>
-									<ul>
-										<li><a href="#">Italians</a></li>
-										<li><a href="#">Mariners</a></li>
-										<li><a href="#">Phantoms</a></li>
-										<li><a href="#">Red Bull NPSL</a></li>
-										<li><a href="#">Reds</a></li>
-									</ul>
-								</li>
-								<li>
-									<a href="#">Other Sports</a>
-									<ul>
-										<li><a href="#">Roller Derby</a></li>
-										<li><a href="#">Rugby</a></li>
-										<li><a href="#">Tennis</a></li>
-										<li><a href="#">Lacrosse</a></li>
-										<li><a href="#">Softball</a></li>
-										<li><a href="#">Cycling</a></li>
-										<li><a href="#">Running</a></li>
-										<li><a href="#">Parkour</a></li>
-									</ul>
+									<a href="#">Springfield</a>
 								</li>
 							</ul>
 						</nav>
+					</section>
+
+					<section>
+						<h5>Did you Know?</h5>
+						<p>
+							There are ice cream shops within 100 feet of iMarc.
+						</p>
 					</section>
 				</aside>
 			</div>
