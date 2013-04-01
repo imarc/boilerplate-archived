@@ -97,6 +97,7 @@ body {
 /* = Layout = */
 .site {
 	margin: 20px auto 0;
+	padding: 0 20px;
 }
 
 header.primary,
@@ -747,9 +748,6 @@ table {
 
 /* Tablets */
 @media (min-width: 768px) {
-	.site {
-		padding: 0 1em;
-	}
 
 	aside.primary {
 		height: 100%;
@@ -845,7 +843,7 @@ html.lt-ie9 aside.primary {
 	}
 
 html.lt-ie9 .main {
-	margin-right: 216px;
+	margin-right: 240px;
 }
 
 	html.lt-ie9 .main aside {
@@ -861,6 +859,7 @@ html.lt-ie9 header nav.primary {
 html.lt-ie9 header nav.secondary {
 	font-size: .875em;
 }
+
 
 
 /* = Print Styles = */
