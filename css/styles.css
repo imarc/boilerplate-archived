@@ -109,7 +109,7 @@ footer.primary {
 header.primary,
 .torso,
 footer.primary {
-	margin: 0 0 1.5em;
+	margin: 0 0 3em;
 }
 
 header.primary h1 {
@@ -142,7 +142,7 @@ aside section {
 
 footer.primary {
 	color: #999;
-	font-size: 14px;
+	font-size: 0.875em;
 	text-align: center;
 }
 
@@ -202,14 +202,14 @@ em {
 blockquote,
 pre {
 	clear: both;
-	margin: 0 0 1em 20px;
-	padding: 0 0 0 20px;
+	margin-bottom: 1em;
 }
 
 blockquote {
 	border-left: 8px solid #CCC;
 	color: #666;
 	font-size: 1.25em;
+	margin: 0 0 1em 20px;
 	padding: 0.8em 1em;
 	font-style: italic;
 }
@@ -247,6 +247,7 @@ pre {
 pre,
 code {
 	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', monospace;
+	font-size: 0.875em;
 }
 
 p {
