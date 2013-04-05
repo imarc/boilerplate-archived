@@ -60,7 +60,7 @@ We have two classes we use for identifying how a particular tag should behave:
 
 Layout
 ------
-This contains rules for the site's layout elements: `body`, `.site`, `header`, `aside`, `article`,
+This contains rules for the site's layout elements: `body`, `header`, `aside`, `article`,
 etc. These containers all can contain out layout or typographical block elements.
 
 Note that we are not using the `main` element yet. While it looks great, until its more widely
