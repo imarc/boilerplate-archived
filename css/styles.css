@@ -95,14 +95,10 @@ body {
 
 
 /* = Layout = */
-.site {
-	margin: 20px auto 0;
+.wrapper,
+.branding {
+	margin: 0 auto;
 	padding: 0 20px;
-}
-
-header.primary,
-.torso,
-footer.primary {
 	position: relative;
 }
 
@@ -114,7 +110,11 @@ footer.primary {
 
 header.primary h1 {
 	font-size: 2em;
-	padding: 0 16px;
+	margin: 0;
+}
+
+.branding {
+	padding: 20px;
 }
 
 .main section {
@@ -387,6 +387,8 @@ header nav.primary {
 }
 
 	header nav.primary > ul {
+		margin: 0 auto;
+		padding: 0;
 		z-index: 2;
 	}
 
@@ -396,7 +398,7 @@ header nav.primary {
 
 	header nav.primary a {
 		color: #fff;
-		padding: .25em 16px;
+		padding: .25em 20px;
 	}
 
 		header nav.primary a:hover {
@@ -409,7 +411,7 @@ header nav.primary {
 			z-index: 1;
 		}
 			header nav.primary li ul a {
-				padding: .3em 16px;
+				padding: .3em 20px;
 			}
 			
 
@@ -418,27 +420,30 @@ header nav.secondary {
 	background: #F2006D;
 	font-size: .75em;
 }
-	header nav.secondary li.active {
-		background: #AD004E;
+	header.primary nav.secondary > ul {
+		margin: 0 auto;
 	}
-
-	header nav.secondary a {
-		color: #FFF;
-		padding: .5em 16px;
-	}
-	
-		header nav.secondary a:hover {
-			background: #555;
+		header nav.secondary li.active {
+			background: #AD004E;
 		}
 
-		header nav.secondary li ul {
-			background: #666;
-			z-index: 1;
+		header nav.secondary a {
+			color: #FFF;
+			padding: .5em 20px;
 		}
-
-			header nav.secondary li ul a {
-				padding: .3em 16px;
+		
+			header nav.secondary a:hover {
+				background: #555;
 			}
+
+			header nav.secondary li ul {
+				background: #666;
+				z-index: 1;
+			}
+
+				header nav.secondary li ul a {
+					padding: .3em 16px;
+				}
 
 
 /* == aside secondary navigation == */
@@ -781,9 +786,12 @@ table {
 }
 
 /* Desktops */
-@media (min-width: 980px) {
-	.site {
-		width: 948px;
+@media (min-width: 960px) {
+	.wrapper,
+	.branding,
+	header nav.primary > ul,
+	header nav.secondary > ul {
+		width: 920px;
 	}
 }
 
