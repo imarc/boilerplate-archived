@@ -104,37 +104,32 @@ footer.primary {
 header.primary,
 .torso,
 footer.primary {
-	margin: 0 0 3em;
-}
-
-header.primary h1 {
-	font-size: 2em;
-	margin: 0;
+	margin: 0 0 2.5em;
 }
 
 .branding {
-	padding: 20px;
+	padding: 1.75em 16px;
 }
+	.branding h1 {
+		margin: 0;
+	}
 
 .main,
 aside.primary {
 	padding: 0 16px;
 }
 
+.main section,
 article {
 	margin: 0 0 3em;
 }
 
 	article .meta {
 		color: #aaa;
-		margin: 0 0 1em;
+		font-size: .875em;
+		line-height: 1.71;
+		margin: -1.71em 0 .57em;
 	}
-		article h2 + .meta,
-		article h3 + .meta,
-		article h4 + .meta,
-		article h5 + .meta {
-			margin-top: -1em;
-		}
 
 aside section {
 	margin: 0 0 1.5em;
@@ -201,8 +196,10 @@ em {
 
 blockquote,
 pre {
+	color: #666;
 	clear: both;
-	margin-bottom: 1em;
+	margin: 0 0 1.5em;
+	padding: 0 1em;
 }
 
 blockquote {
@@ -214,24 +211,24 @@ blockquote {
 	font-style: italic;
 }
 
-.intro {
-	border-bottom: 1px solid #DDD;
-	margin: 0 0 1em;
-	padding: 0 0 1em;
+.main .intro {
+	box-shadow: 0 1px 0 0 #ddd;
+	margin: 0 0 2.5em;
+	padding: 0 0 1.5em;
 }
 
 	.intro p {
 		color: #888;
 		font-size: 1.25em;
 		line-height: 1.6;
-		margin: 0 0 1em;
+		margin: 0 0 .8em;
 	}
 
 .highlight {
 	background: #E8E8E8;
 	font-size: 1.375em; 
-	margin: 0 0 1.5em;
-	padding: 1em;
+	margin: 0 0 1em;
+	padding: .67em;
 }
 
 	.highlight p {
@@ -259,12 +256,12 @@ address {
 }
 
 hr {
-	background: #999;
 	border: 0;
+	box-shadow: 0 1px 0 0px #999;
 	display: block;
-	height: 1px;
-	margin: 2em auto;
-	width: 80%;
+	height: 1em;
+	margin: 1em auto 2em;
+	width: 75%;
 }
 
 a {
@@ -289,14 +286,16 @@ a:focus {
 ol,
 ul {
 	margin: 0 0 1.5em;
-	padding-left: 2.5em;
+	padding: 0 0 0 2em;
 }
-li {
-	margin: 0 0 0.7em;
+li,
+dt,
+dd {
+	margin: 0 0 .5em;
 }
 
 ul {
-	list-style: disc;
+	list-style: square;
 }
 
 dl {
@@ -305,10 +304,11 @@ dl {
 
 dt {
 	font-weight: bold;
+	padding: 0 0 0 .5em;
 }
 
 dd {
-	margin: 0 0 0.7em;
+	padding: 0 0 0 2em;
 }
 
 sup {
@@ -325,8 +325,10 @@ sub {
 	background: #eee;
 	color: #888;
 	font-size: .875em;
-	padding: 1em;
-	margin: 0 16px 1em;
+	line-height: 1.43em;
+	margin: 0 0 1.333em 1.333em;
+	padding: 1.333em;
+	width: 33.33%;
 }
 
 
@@ -529,8 +531,9 @@ label {
 	color: #333;
 	cursor: pointer;
 	display: block;
-	font-size: 1em;
 	font-weight: bold;
+	line-height: 2;
+	margin: 0;
 }
 
 span.required {
@@ -538,9 +541,8 @@ span.required {
 }
 
 fieldset .help {
-	display: block;
 	color: #999;
-	font-size: 1em;
+	display: block;
 	font-size: .75em;
 	line-height: 1.34;
 	margin: 0;
@@ -550,26 +552,33 @@ fieldset .help {
 .radio,
 .checkbox {
 	font-weight: normal;
-	padding: 0 0 0 4px;
+	margin: 0 0 .5em;
+	padding: 0 0 0 .25em;
 }
 
 input[type="text"],
 input[type="password"],
 textarea {
-	border-color: #848484 #c1c1c1 #e1e1e1;
 	border-radius: 2px;
-	border-style: solid;
-	border-width: 1px;
-	-ms-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+	border: 0;
+	box-shadow: 0 1px 4px 0 #848484 inset;
 	color: #333;
-	font-size: .875em;
-	margin: 0 0 1.14em;
-	padding: .57em 8px;
-	width: 100%;
 	display: block;
+	font-size: 1em;
+	line-height: 2;
+	margin: 0;
+	padding: 0 1%;
+	width: 98%;
+}
+
+input[type="file"] {
+	color: #333;
+	display: block;
+	font-size: 1em;
+	line-height: 2;
+	margin: 0;
+	padding: 0;
+	width: 100%;
 }
 
 textarea {
@@ -599,14 +608,15 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	background: #0394CD;
+	background: #0394cd;
 	border-radius: 3px;
 	border: none;
-	color: #FFF;
+	color: #fff;
 	display: inline-block;
 	font-weight: bold;
-	padding: .5em 12px;
 	line-height: 1;
+	margin: 0;
+	padding: .5em .5em;
 	text-align: center;
 }
 
@@ -636,9 +646,9 @@ input::-moz-focus-inner {
 
 /* = Messaging = */
 .messaging {
-	padding: 1em 4em;
 	border-radius: 3px;
-	margin: 0 0 1em;
+	margin: 0 1em 1.5em;
+	padding: 1em 3.25em;
 	position: relative;
 }
 
@@ -653,10 +663,10 @@ input::-moz-focus-inner {
 		background-repeat: no-repeat;
 		content:'';
 		display: block;
-		position: absolute;
-		left: 1em;
-		top: 1em;
 		height: 23px;
+		left: 1em;
+		position: absolute;
+		top: 1em;
 		width: 23px;
 	}
 
@@ -689,6 +699,11 @@ input::-moz-focus-inner {
 
 
 /* = Tables = */
+caption {
+	font-size: .75em;
+	line-height: 1.33em;
+}
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -700,9 +715,8 @@ table {
 		color: #333;
 	}
 
-		thead tr {
-			border: 0;
-			border-bottom: 1px solid #999;
+		thead th {
+			box-shadow: 0 -1px 0 0 #999 inset;
 		}
 
 	th {
