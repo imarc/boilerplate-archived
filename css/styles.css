@@ -59,7 +59,7 @@ html {
 body {
 	font-size: 16px;
 	line-height: 1.5;
-	min-width: 360px;
+	min-width: 310px;
 }
 
 ::-moz-selection {
@@ -95,10 +95,9 @@ body {
 
 
 /* = Layout = */
-.wrapper,
-.branding {
-	margin: 0 auto;
-	padding: 0 20px;
+header.primary,
+.torso,
+footer.primary {
 	position: relative;
 }
 
@@ -117,8 +116,9 @@ header.primary h1 {
 	padding: 20px;
 }
 
-.main section {
-	margin: 0 0 3em;
+.main,
+aside.primary {
+	padding: 0 16px;
 }
 
 article {
@@ -348,11 +348,12 @@ nav li.active > a {
 	font-weight: bold;
 }
 
-header nav {
-	position: relative;
+nav li {
+	display: block;
+	white-space: nowrap;
 }
 
-header nav:after {
+nav ul:after {
 	clear: both;
 	content: '';
 	display: table;
@@ -614,9 +615,10 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 a.button:hover {
-	background: #00709C;
+	background: #00709c;
 	cursor: pointer;
 }
+
 button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -722,15 +724,17 @@ table {
 
 
 /* = Media Queries = */
-/* Phones */
-@media (max-width: 567px) {
 
-	header nav.primary,
-	header nav.secondary {
-		height: auto;
+/* tablets, landscape phones, small desktops */
+@media only screen and (min-width: 640px) {
+	header nav.utility {
+		display: block;
 	}
-	header nav > ul {
+
+	header nav li {
+		float: left;
 		position: relative;
+		white-space: nowrap;
 	}
 		header nav ul ul {
 			display: none;
@@ -747,16 +751,9 @@ table {
 	nav.secondary li {
 		float: none;
 	}
-	header nav.secondary {
-		display: none;
-	}
-}
-
-/* Tablets */
-@media (min-width: 768px) {
 
 	aside.primary {
-		height: 100%;
+		padding: 0;
 		position: absolute;
 		right: 0;
 		top: 0;
@@ -767,21 +764,15 @@ table {
 		}
 
 	.main {
-		margin-right: 240px;
+		margin-right: 192px;
+		padding: 0 32px 0 0;
 	}
 
-		.main aside {
-			float: right;
-			width: 33.33%;
-			margin: 0 0 1em 1em;
-		}
-	
-	header nav.primary {
-		font-size: 1.25em;
-	}
-
-	header nav.secondary {
-		font-size: .875em;
+	.mold {
+		margin: 0 auto;
+		max-width: 1024px;
+		padding: 0 16px;
+		position: relative;
 	}
 }
 
