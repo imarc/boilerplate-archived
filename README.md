@@ -66,6 +66,11 @@ etc. These containers all can contain out layout or typographical block elements
 Note that we are not using the `main` element yet. While it looks great, until its more widely
 adopted we're going to stick with the semantic equivalent, `<div class="main" rel="main">`.
 
+### .mold
+Sometimes we need to identify which elements should be constrained to the maximum width we believe
+the site is best viewed at. Sometimes this is called `.wrapper` or `.container`, but we're using
+`.mold` as a classname that we will only use for this purpose.
+
 ### Primary, Secondary, and Tertiary
 We use the classes `primary`, `secondary`, and `tertiary` to identify layout elements that might occur
 more than once. This includes `<header>`, `<aside>`, `<footer>`, and `<nav>`. The markup includes

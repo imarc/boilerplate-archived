@@ -75,12 +75,15 @@ body {
 
 /* = Grouping = */
 .group:before,
-.group:after {
+.group:after,
+.mold:before,
+.mold:after {
 	content: '';
 	display: table;
 }
 
-.group:after {
+.group:after,
+.mold:after {
 	clear: both;
 }
 
@@ -839,6 +842,7 @@ table {
 /* = IE Specific = */
 /* IE6, IE7 */
 html.lt-ie8 .group,
+html.lt-ie8 .mold,
 html.lt-ie8 header nav {
 	zoom: 1;
 }

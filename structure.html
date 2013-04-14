@@ -44,6 +44,7 @@
 				top: .25em;
 			}
 
+			.mold,
 			header.primary:after,
 			.torso:after,
 			footer.primary:after {
@@ -53,9 +54,9 @@
 			}
 
 			body:before { content: 'body'; }
-			.site:before { content: '.site'; }
+			.mold:before { content: '.mold'; }
 			header.primary:before { content: 'header.primary'; }
-			.torso:before { content: '.torso'; }
+			.mold.torso:before { content: '.torso.mold'; }
 			footer.primary:before { content: 'footer.primary'; }
 			aside.primary:before { content: 'aside.primary'; }
 
@@ -73,6 +74,7 @@
 			.highlight:before { content: '.highlight'; }
 			.intro:before { content: '.intro'; }
 			.pagination:before { content: 'section.pagination'; }
+			.copyright:before { content: '.copyright'; }
 			.meta:before { content: '.meta'; }
 			h2:before { content: 'h2'; }
 
@@ -83,7 +85,7 @@
 				margin: 0 auto;
 			}
 
-			.site {
+			.mold {
 				width: 960px;
 				margin: 0 auto;
 			}
@@ -154,6 +156,11 @@
 				content: 'See Also: this aside.';
 			}
 
+			.copyright {
+				float: left;
+				width: 50%;
+			}
+
 
 			nav { box-shadow: 0 0 0 2px #00a0e0 inset; }
 			nav:before { background: #00a0e0; }
@@ -176,13 +183,16 @@
 		<![endif]-->
 	</head>
 	<body>
-		<div class="site">
 		    <header class="primary">
-		        <div class="logo"></div>
-		        <nav class="utility"></nav>
-		        <nav class="primary"></nav>
+				<div class="mold">
+					<div class="logo"></div>
+					<nav class="utility"></nav>
+				</div>
+				<nav class="primary">
+					<ul class="mold"></ul>
+				</nav>
 		    </header>
-			<div class="torso">
+			<div class="torso mold">
 			    <aside class="primary">
 			        <section>
 						<span class="selector">aside.primary section</span>
@@ -230,7 +240,10 @@
 				</div>
 			</div>
 			<footer class="primary">
-			    <nav class="utility"></nav>
+				<div class="mold">
+					<div class="copyright"></div>
+					<nav class="utility"></nav>
+				</div>
 			</footer>
 		</div>
 	</body>
