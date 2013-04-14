@@ -49,8 +49,8 @@ img {
 }
 
 html {
-	background: #fff;
-	color: #333;
+	background: #FCFCFC;
+	color: #555555;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -63,12 +63,12 @@ body {
 }
 
 ::-moz-selection {
-	background: #bbb;
+	background: #FFF6B5;
 	text-shadow: none;
 }
 
 ::selection {
-	background: #bbb;
+	background: #FFF6B5;
 	text-shadow: none;
 }
 
@@ -99,12 +99,11 @@ header.primary,
 .torso,
 footer.primary {
 	position: relative;
+	margin: 0 0 2.5em;
 }
 
-header.primary,
-.torso,
-footer.primary {
-	margin: 0 0 2.5em;
+header.primary {
+	background: #0096d2;
 }
 
 .branding {
@@ -143,13 +142,27 @@ footer.primary {
 
 
 /* = Typography = */
-h1, h2, h3, h4, h5, h6,
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
-	color: #777;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
 	font-family: Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: normal;
 }
-	h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, h6:first-child {
+	h1:first-child,
+	h2:first-child,
+	h3:first-child,
+	h4:first-child,
+	h5:first-child,
+	h6:first-child {
 		margin-top: 0;
 	}
 
@@ -161,7 +174,6 @@ h1 {
 }
 
 h2 {
-	color: #333;
 	font-size: 2.5em;
 	line-height: 1;
 	margin: 1.2em 0 .6em;
@@ -248,7 +260,9 @@ blockquote {
 	}
 
 .highlight {
-	background: #e8e8e8;
+	background: #e9e9e9;
+	border-radius: 5px;
+	color: #888888;
 	font-family: Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 1.5em;
 	line-height: 1.34;
@@ -299,12 +313,20 @@ a:visited {
 
 a:hover,
 a:active {
-	color: #f2006d;
+	color: #444;
 	outline: 0;
 }
 
 a:focus {
 	outline: thin dotted;
+}
+
+header.primary a {
+	color: #D8E7ED;
+}
+
+header.primary a:hover {
+	color: #FCFCFC;
 }
 
 ol,
@@ -335,6 +357,10 @@ dd {
 	padding: 0 0 0 2em;
 }
 
+mark {
+	background: #FFF6B5;
+}
+
 sup {
 	font-size: 80%;
 	vertical-align: top;
@@ -347,6 +373,7 @@ sub {
 
 .main aside {
 	background: #eee;
+	border-radius: 5px;
 	color: #888;
 	float: right;
 	font-size: .875em;
@@ -371,10 +398,6 @@ nav li {
 	margin: 0;
 }
 
-nav li.active > a {
-	font-weight: bold;
-}
-
 nav li {
 	display: block;
 	white-space: nowrap;
@@ -388,13 +411,11 @@ nav ul:after {
 
 
 /* == top primary navigation == */
-nav.primary {
-	background: #333;
-}
+nav.primary { }
 
 	nav.primary a {
-		color: #fff;
-		padding: .25em 16px;
+		color: #e9e9e9;
+		padding: .35em 16px;
 	}
 
 		nav.primary li ul li {
@@ -405,8 +426,9 @@ nav.primary {
 			display: none;
 		}
 
-			nav.primary li.active > a {
-				background: #f2006d;
+			nav.primary li.active > a,
+		   	nav.primary li.active:hover > a	{
+				background: #555;
 			}
 
 			nav.primary li.active ul {
@@ -424,17 +446,16 @@ nav.primary {
 			}
 
 			nav.primary a:hover {
-				background: #0096d2;
+				color: #e9e9e9;
 			}
 
 header nav.secondary {
-	background: #333;
-	box-shadow: 0 1px 0 0 #444 inset;
+	background: #555;
 	display: none;
 }
 
 	header nav.secondary a {
-		color: #aaa;
+		color: #999;
 		font-size: .75em;
 		line-height: 2.67;
 		padding: 0 12px;
@@ -446,7 +467,7 @@ header nav.secondary {
 		color: #fff;
 	}
 	header nav.secondary li:hover > a {
-		background: #444;
+		color: #fff;
 	}
 
 
@@ -465,7 +486,7 @@ header nav.secondary {
 
 
 		aside nav.secondary a:hover {
-			color: #222;
+			color: #444;
 		}
 
 				aside nav.secondary li li {
@@ -620,7 +641,7 @@ a.button {
 	display: inline-block;
 	font-weight: bold;
 	line-height: 1;
-	margin: 0;
+	margin: 0 .5em 0 0;
 	padding: .5em .5em;
 	text-align: center;
 }
@@ -630,7 +651,7 @@ input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
 a.button:hover {
-	background: #00709c;
+	background: #13ABE8;
 	cursor: pointer;
 }
 
@@ -651,8 +672,8 @@ input::-moz-focus-inner {
 
 /* = Messaging = */
 .messaging {
-	border-radius: 3px;
-	margin: 0 1em 1.5em;
+	border-radius: 5px;
+	margin: 0 0 1.5em;
 	padding: 1em 3.25em;
 	position: relative;
 }
@@ -688,18 +709,18 @@ input::-moz-focus-inner {
 	}
 
 .success {
-	background: #19af55;
-	color: #fff;
+	background: #40B36E;
+	color: #FCFCFC;
 }
 
 .error {
-	background: #c21e1e;
-	color: #fff;
+	background: #C44949;
+	color: #FCFCFC;
 }
 
 .info {
-	background: #ccc;
-	color: #000;
+	background: #CCCCCC;
+	color: #555555;
 }
 
 
@@ -764,13 +785,13 @@ table {
 		position: absolute;
 		width: 200px;
 	}
+
 		nav.primary li ul a {
-			padding: .33em 1.33em .33em;
+			padding: .6em 1.33em .6em;
 		}
 
 
-	header li:hover > ul,
-	nav.primary li.active:hover > ul {
+	header li:hover > ul {
 		display: block;
 		z-index: 2;
 	}
@@ -780,18 +801,35 @@ table {
 			min-width: 100%;
 		}
 
+		nav.primary > ul > li.active > a,
 		nav.primary > ul > li:hover > a {
-			background: #0096d2;
+			border-top-left-radius: 6px;
+			border-top-right-radius: 6px;
 		}
+
+		nav.primary > ul > li:hover > a {
+			background: #13ABE8;
+		}
+
+		nav.primary > ul > li a:hover {
+			color: #FFFFFF;
+		}
+
+		nav.primary > ul > li:hover > ul {
+			border-bottom-left-radius: 6px;
+			border-bottom-right-radius: 6px;
+		}
+
 		header nav.secondary {
 			display: block;
 		}
 
 		header nav li ul {
-			background: #333;
+			background: #13ABE8;
 			margin: 0;
 			padding: 0;
 		}
+		
 		header nav li ul a {
 			font-size: .875em;
 			line-height: 2;
@@ -815,7 +853,7 @@ table {
 	}
 
 	aside.primary {
-		padding: 0;
+		padding: 0 1em 0 0;
 		position: absolute;
 		right: 0;
 		top: 0;
