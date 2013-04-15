@@ -642,7 +642,7 @@ a.button {
 	display: inline-block;
 	font-weight: bold;
 	line-height: 1;
-	margin: 0 .5em 0 0;
+	margin: 0 .5em .5em 0;
 	padding: .5em .5em;
 	text-align: center;
 }
