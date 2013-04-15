@@ -433,6 +433,7 @@ nav.primary { }
 
 			nav.primary li.active ul {
 				display: block;
+				background: #555;
 			}
 
 			nav.primary ul ul {
@@ -532,7 +533,7 @@ button,
 input,
 select,
 textarea {
-	font-family: Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 100%;
 }
 
@@ -737,9 +738,7 @@ table {
 	width: 100%;
 }
 
-	thead {
-		color: #333;
-	}
+	thead { }
 
 		thead th {
 			box-shadow: 0 -1px 0 0 #999 inset;
