@@ -11,9 +11,9 @@ be functional in IE7, however we are willing to accept visual degradation.
 
 Take a Look
 -----------
-* [See the Markup](http://imarc.github.com/boilerplate/markup)
-* [See the Structure](http://imarc.github.com/boilerplate/structure)
-* [See the CSS](https://github.com/imarc/boilerplate/blob/gh-pages/css/styles.css)
+* [See the Markup](http://imarc.github.io/boilerplate)
+* [See the Structure](http://imarc.github.io/boilerplate/structure)
+* [See the CSS](https://github.io/imarc/boilerplate/blob/gh-pages/css/styles.css)
 
 Our Goals
 ---------
