@@ -110,7 +110,7 @@ header.primary {
 }
 
 .branding {
-	padding: 1.75em 16px;
+	padding: 1.5em 16px;
 }
 	.branding h1 {
 		margin: 0;
@@ -418,7 +418,7 @@ nav.primary { }
 
 	nav.primary a {
 		color: #e9e9e9;
-		padding: .35em 16px;
+		padding: .25em 16px;
 	}
 
 		nav.primary li ul li {
@@ -433,6 +433,13 @@ nav.primary { }
 		   	nav.primary li.active:hover > a	{
 				background: #555;
 			}
+
+			nav.primary > ul > li:hover > a {
+				background: #13abe8;
+			}
+				nav.primary li > ul > li:hover > a {
+					color: #fff;
+				}
 
 			nav.primary li.active ul {
 				display: block;
@@ -807,10 +814,6 @@ table {
 		nav.primary > ul > li:hover > a {
 			border-top-left-radius: 6px;
 			border-top-right-radius: 6px;
-		}
-
-		nav.primary > ul > li:hover > a {
-			background: #13ABE8;
 		}
 
 		nav.primary > ul > li a:hover {
