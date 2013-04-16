@@ -22,9 +22,8 @@
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite,
 code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6,
-header, hgroup, html, i, iframe, img, label, li, nav, object, ol, p, pre,
-section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul,
-video {
+header, html, i, iframe, img, label, li, nav, object, ol, p, pre, section,
+span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
@@ -34,7 +33,7 @@ video {
 	vertical-align: baseline;
 }
 
-article, aside, footer, header, hgroup, nav, section {
+article, aside, footer, header, nav, section {
 	display: block;
 }
 
