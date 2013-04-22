@@ -245,11 +245,11 @@ pre {
 
 blockquote {
 	font-style: italic;
-	box-shadow: 1px 0 0 0 #ccc inset;
+	border-left: 1px solid #ccc;
 }
 
 .main .intro {
-	box-shadow: 0 1px 0 0 #ddd;
+	border-bottom: 1px solid #ddd;
 	margin: 0 0 2.5em;
 	padding: 0 0 1.5em;
 }
@@ -297,10 +297,10 @@ address {
 
 hr {
 	border: 0;
-	box-shadow: 0 1px 0 0px #999;
+	border-top: 1px solid #999;
 	display: block;
-	height: 1em;
-	margin: 1em auto 2em;
+	height: 0;
+	margin: 1em auto 3em;
 	width: 75%;
 }
 
@@ -484,10 +484,10 @@ header nav.secondary {
 
 /* == aside secondary navigation == */
 	aside nav.secondary > ul > li {
-		box-shadow: 0 1px 0 0 #ddd inset;
+		border-top: 1px solid #ddd;
 	}
 		aside nav.secondary li:first-child {
-			box-shadow: none;
+			border-top: none;
 		}
 
 		aside nav.secondary a {
@@ -750,7 +750,7 @@ table {
 	thead { }
 
 		thead th {
-			box-shadow: 0 -1px 0 0 #999 inset;
+			border-bottom: 1px solid #999;
 		}
 
 	th {
@@ -907,7 +907,18 @@ html.lt-ie8 input[type="radio"] {
 }
 
 /* IE6, IE7, IE8 */
-html.lt-ie9 nav.primary li {
+html.lt-ie9 input[type="text"],
+html.lt-ie9 input[type="password"],
+html.lt-ie9 textarea {
+	border: 1px solid #848484;
+}
+
+/* Navigation */
+html.lt-ie9 header nav.utility {
+	display: block;
+}
+
+html.lt-ie9 header nav li {
 	float: left;
 	position: relative;
 	white-space: nowrap;
@@ -922,8 +933,11 @@ html.lt-ie9 nav.primary li.active ul {
 	width: 200px;
 }
 
-html.lt-ie9 header li:hover > ul,
-html.lt-ie9 nav.primary li.active:hover > ul {
+	html.lt-ie9 nav.primary li ul a {
+		padding: .6em 1.33em .6em;
+	}
+
+html.lt-ie9 header li:hover > ul {
 	display: block;
 	z-index: 2;
 }
@@ -933,21 +947,70 @@ html.lt-ie9 nav.primary li.active:hover > ul {
 		min-width: 100%;
 	}
 
-html.lt-ie9 .site {
-	margin: 0 auto;
-	width: 886px; /* width of split 1920x1080 on Windows */
+	html.lt-ie9 nav.primary > ul > li.active > a,
+	html.lt-ie9 nav.primary > ul > li:hover > a {
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+	}
+
+	html.lt-ie9 nav.primary > ul > li a:hover {
+		color: #FFFFFF;
+	}
+
+	html.lt-ie9 nav.primary > ul > li:hover > ul {
+		border-bottom-left-radius: 6px;
+		border-bottom-right-radius: 6px;
+	}
+
+	html.lt-ie9 header nav.secondary {
+		display: block;
+	}
+
+	html.lt-ie9 header nav li ul {
+		background: #13ABE8;
+		margin: 0;
+		padding: 0;
+	}
+	
+	html.lt-ie9 header nav li ul a {
+		font-size: .875em;
+		line-height: 2;
+	}
+
+	html.lt-ie9 header nav li ul li {
+		float: none;
+	}
+
+		html.lt-ie9 header nav li ul a {
+			padding: 0 16px 0 32px;
+		}
+
+		html.lt-ie9 nav.primary ul ul {
+			padding: 0;
+		}
+html.lt-ie9 .branding {
+	padding: 1.75em 0;
 }
 
-	html.lt-ie9 .main {
-		margin-right: 192px;
-	}
+html.lt-ie9 aside.primary {
+	padding: 0 1em 0 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 192px;
+}
 
-	html.lt-ie9 aside.primary {
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 192px;
-	}
+html.lt-ie9 .main {
+	margin-right: 192px;
+	padding: 0 32px 0 0;
+}
+
+html.lt-ie9 .mold {
+	margin: 0 auto;
+	max-width: 1024px;
+	padding: 0 16px;
+	position: relative;
+}
 
 /* = Print Styles = */
 @media print {
