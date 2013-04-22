@@ -245,11 +245,11 @@ pre {
 
 blockquote {
 	font-style: italic;
-	box-shadow: 1px 0 0 0 #ccc inset;
+	border-left: 1px solid #ccc;
 }
 
 .main .intro {
-	box-shadow: 0 1px 0 0 #ddd;
+	border-bottom: 1px solid #ddd;
 	margin: 0 0 2.5em;
 	padding: 0 0 1.5em;
 }
@@ -297,7 +297,7 @@ address {
 
 hr {
 	border: 0;
-	box-shadow: 0 1px 0 0px #999;
+	border-top: 1px solid #999;
 	display: block;
 	height: 1em;
 	margin: 1em auto 2em;
@@ -484,10 +484,10 @@ header nav.secondary {
 
 /* == aside secondary navigation == */
 	aside nav.secondary > ul > li {
-		box-shadow: 0 1px 0 0 #ddd inset;
+		border-top: 1px solid #ddd;
 	}
 		aside nav.secondary li:first-child {
-			box-shadow: none;
+			border-top: none;
 		}
 
 		aside nav.secondary a {
@@ -750,7 +750,7 @@ table {
 	thead { }
 
 		thead th {
-			box-shadow: 0 -1px 0 0 #999 inset;
+			border-bottom: 1px solid #999;
 		}
 
 	th {
@@ -907,6 +907,12 @@ html.lt-ie8 input[type="radio"] {
 }
 
 /* IE6, IE7, IE8 */
+html.lt-ie9 input[type="text"],
+html.lt-ie9 input[type="password"],
+html.lt-ie9 textarea {
+	border: 1px solid #848484;
+}
+
 html.lt-ie9 nav.primary li {
 	float: left;
 	position: relative;
