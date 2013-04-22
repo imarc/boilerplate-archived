@@ -299,8 +299,8 @@ hr {
 	border: 0;
 	border-top: 1px solid #999;
 	display: block;
-	height: 1em;
-	margin: 1em auto 2em;
+	height: 0;
+	margin: 1em auto 3em;
 	width: 75%;
 }
 
