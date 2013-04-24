@@ -75,14 +75,14 @@ body {
 /* = Grouping = */
 .group:before,
 .group:after,
-.mold:before,
-.mold:after {
+.container:before,
+.container:after {
 	content: '';
 	display: table;
 }
 
 .group:after,
-.mold:after {
+.container:after {
 	clear: both;
 }
 
@@ -895,7 +895,7 @@ table {
 		padding-right: 32px;
 	}
 
-	.mold {
+	.container {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 1024px;
@@ -904,8 +904,8 @@ table {
 		position: relative;
 	}
 	
-	footer.primary.mold, 
-	footer.primary .mold {
+	footer.primary.container, 
+	footer.primary .container {
 		max-width: 992px;
 		padding-right: 32px;
 		padding-left: 32px;
@@ -916,7 +916,7 @@ table {
 /* = IE Specific = */
 /* IE6, IE7 */
 html.lt-ie8 .group,
-html.lt-ie8 .mold,
+html.lt-ie8 .container,
 html.lt-ie8 header nav {
 	zoom: 1;
 }
@@ -1042,7 +1042,7 @@ html.lt-ie9 .main {
 	padding-right: 32px;
 }
 
-html.lt-ie9 .mold {
+html.lt-ie9 .container {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1024px;

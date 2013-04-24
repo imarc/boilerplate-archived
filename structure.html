@@ -44,7 +44,7 @@
 				top: .25em;
 			}
 
-			.mold,
+			.container,
 			header.primary:after,
 			.torso:after,
 			footer.primary:after {
@@ -54,9 +54,9 @@
 			}
 
 			body:before { content: 'body'; }
-			.mold:before { content: '.mold'; }
+			.container:before { content: '.container'; }
 			header.primary:before { content: 'header.primary'; }
-			.mold.torso:before { content: '.torso.mold'; }
+			.container.torso:before { content: '.torso.container'; }
 			footer.primary:before { content: 'footer.primary'; }
 			aside.primary:before { content: 'aside.primary'; }
 
@@ -85,7 +85,7 @@
 				margin: 0 auto;
 			}
 
-			.mold {
+			.container {
 				width: 960px;
 				margin: 0 auto;
 			}
@@ -184,15 +184,15 @@
 	</head>
 	<body>
 		    <header class="primary">
-				<div class="mold">
+				<div class="container">
 					<div class="logo"></div>
 					<nav class="utility"></nav>
 				</div>
 				<nav class="primary">
-					<ul class="mold"></ul>
+					<ul class="container"></ul>
 				</nav>
 		    </header>
-			<div class="torso mold">
+			<div class="torso container">
 			    <aside class="primary">
 			        <section>
 						<span class="selector">aside.primary section</span>
@@ -240,7 +240,7 @@
 				</div>
 			</div>
 			<footer class="primary">
-				<div class="mold">
+				<div class="container">
 					<div class="copyright"></div>
 					<nav class="utility"></nav>
 				</div>
