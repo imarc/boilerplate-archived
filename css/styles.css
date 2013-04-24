@@ -562,13 +562,7 @@ button,
 input,
 select,
 textarea {
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-size: 100%;
-}
-
-select {
-	margin-top: .5em;
-	margin-bottom: 0;
 }
 
 .button,
@@ -605,13 +599,6 @@ fieldset .help {
 	padding: 0;
 }
 
-.radio,
-.checkbox {
-	font-weight: normal;
-	margin-bottom: .5em;
-	padding-left: .25em;
-}
-
 input[type="text"],
 input[type="password"],
 textarea {
@@ -628,14 +615,12 @@ textarea {
 	width: 98%;
 }
 
-input[type="file"] {
-	color: #333;
-	display: block;
-	font-size: 1em;
-	line-height: 2;
-	margin: 0;
-	padding: 0;
-	width: 100%;
+select {
+	margin-bottom: 0;
+}
+.multiple select {
+	padding-left: 5px;
+	padding-right: 10px;
 }
 
 textarea {
@@ -644,12 +629,24 @@ textarea {
 	resize: vertical;
 }
 
+.radio,
+.checkbox {
+	font-weight: normal;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
 	-ms-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+}
+
+input[type="file"] {
+	color: #333;
+	display: block;
+	font-size: 1em;
+	width: 100%;
 }
 
 button,
@@ -711,12 +708,11 @@ input::-moz-focus-inner {
 }
 
 .messaging a {
-	color: inherit;
 	text-decoration: underline;
 }
 
 	.messaging:before {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAABFCAYAAAChbH1cAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QEQAh0Zl47LzAAAAuJJREFUWMPtmO9H3VEcx9/t5nK5ZNGMy7iJiBgxRkT2YESPNnEf7VHsUUSKnk00MSIuoz9gGqNEbItNjFhGbEYaEc0od5qItteenG87O31/nO+93x5s9eHwdb6f7+uc8zmfz+d8P0f6rwXoBHaAPeBu1vA1/sg+UMwKXOGsTGcBLgK7BnhoTANwDHQ0Cp80sM9Ai+mrmr7lRsAlM1uAp1Z/n2WevjjGlZh3M5KCjftp9dvPs0AuFRzolVTxWOBNScNpZz6bwoJTwX4kwoGKpJ4U8FZJE4lwExwzdez/aJhrujOflFQK+fi69Rzm3/lYUwIdJjiipApMW+4ZJv1RM58yM4iSvKTvpkXJkzOuCfQSLy8t3YEE3YenMzcjzSVsmO1qRQ/XbA1mMoafrAHzQM1Dd16SmoAvksoZny8/JF3TpVwcKUh6IOm5pF1JWG1H0jPzvpAGmpM0IqnmAKNazSS8vE9ufuMJddumpBtxiWm9TnDQ9iJSsuY8Pj6QdF/SeIzOR3cfypKOPeCv7GQa0/469qZTLP2xpIUEnX1JhWYD9zmQX0vaMLp3PByjtznkjIwDB8vdltSe8E1n8PDe0ySBHHjojgVn6CcPs2xYJrzqof81gC952lwe9g7krR3yHxKWGUAXPEyy6o7UJ+kk5oNxo9du3DFK70TS7bClDHsE0XaCzmicre5JOqoztzzy2Yyyyddp4f1pcnurKQJeSDp0QL98NrJe6TKrc004FCg0ZTBI0YR6j/n9XrIC7lL+0SuTbmDkPMAl6/Jh+fTHPwNwC7Dp/PivZAEuAKsOeBcoNQrOAYsOuAZ0ZzHrqgM+dmvQesETIQVWJQtw2H3XRBpAV0R/f0j5Xk0DHgpu3+wy2wSJW38uxt0SueAe4Mj2V+PHdpAEsg4UfMFtIQCArZAg2QLa0pgjD8x5lN3f6r5PBAZjavsj4Faj7lYG3oUEyWBWCSlvPCa7IAkZZOBc8vTFlt90PErGWW5fZgAAAABJRU5ErkJggg==);
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAABFCAYAAAChbH1cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA5FJREFUeNrsWG9klVEYv/fuirFc3ZSxLJsRq2vLZYlL2fpQSpG0qU8jSynNqJbbt8bWKEsfpsSITf+UEku1NEWWImaXWMVIaZQxxpj1PPmd6+k4O+e8995J3Ief+77vPe/vnPd5nvP8OeHFxcXQckl4Ocmjmfp6n3EbCE8JKwithCc+L0U8F3GDUEkoJwwSygpFfoiQEvdxQroQ5LzCXlzPEqZw3UGoyZf8FKGC8JGwjrCe0A/d9+VDzqSduB4lzOD6Nn53E7blSt4rDLcgnstrXn1JUPIUDOkS9uO2oOR9AfZKFyHmS84rTgYgjwvbWMml6wURo2vq5Gl4iS7l4trk30bXDE/U1cmXJjDQJP1wxxOW7d9EeGFaeZeFWK1uRvi7SS5J14wI12u2vPSMcITQQzjq65oRzHTVYbCYZnSXa8YVeQdmtEkD4RVC7zUP1+xVBv1Mv1UFTkIcQdeG/9scWiQ3lxZ/dtDAD9N/pdhYnHG2ajGHc+kblBicmeZ8Q24Jcuc3wgDhgCGYVWLiAYxLm0JHxLABRhDhYp5fH8OufIdJjeQ887Ar6VokQRiTITmiRbQGB8EvwsGlMg/i/kPYK0teZUu0Qt4T7hIuWsbUwmZZ8jZHLFeyA2H3jmPcaV59FDc+Cfk5Vp7EJK7ImIoacqSNWOn6E6HaVXYrtcx7qOOsuF/l8aWlijzjaUylQh/y74r8kafOQx76VjKqyB8QPniS+xify4upiKhc27UKVhdF2unwc+Y4n42KogY/bknAPVBJtcNTziBi/kXOcp3wk3BTbWGD19jkAuGyLeTeI2wUHUQQeelTn38htBBWEw7D4LPaGFMKSwdpuFhFQ4T9hJWcFgU2GbJQoywLo3mkyAy+rgwddhIZa7JYWvxj8i0jiXx5EvCUK3wz1jQe6Egk5Gjjh1GOPFaFfyHIYyCuEOcBg4Ug59hzHypR8hW9U17kXPLdgp6VcJe3CxPkRc4N2l5xP48QMZ7LGZcUThbHtGetsrnNlZwPHbq1Z+cQ3LxK6NoliBtRMuste4/veUsz+v9u7QQoAc+QJR9XDCd9j6GSYmWd2BAxsUlkvf4W4XbB2baQrJGlL2QnCvo5rbPgeL1nqVbFtPIZpDJdarRNMg1fnvaxvqwVWX/7LEcec1jxpK9r6QZlI21WdYe2SVqg61Cu5Crzb9dcrNWznjQaNGRYKW+O19D7UDGHFkx+CzAA6nHUdfvIb58AAAAASUVORK5CYII=);
 		background-position: 0 0;
 		background-repeat: no-repeat;
 		content:'';
@@ -741,25 +737,22 @@ input::-moz-focus-inner {
 	}
 
 .success {
-	background: #40B36E;
-	color: #FCFCFC;
+	background: #ECFAE3;
+	
 }
 
 .error {
-	background: #C44949;
-	color: #FCFCFC;
+	background: #FFD7D7;
 }
 
 .info {
-	background: #CCCCCC;
-	color: #555555;
+	background: #BDE5F8;
 }
 
 
 /* = Tables = */
 caption {
 	font-size: .75em;
-	line-height: 1.33em;
 }
 
 table {
