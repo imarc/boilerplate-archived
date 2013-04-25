@@ -253,8 +253,8 @@ pre {
 blockquote {
 	font-style: italic;
 	border-left: 1px solid #ccc;
-	margin-left: 3em;
-	margin-right: 3em;
+	margin-left: 2em;
+	margin-right: 1em;
 	padding-left: 1em;
 	padding-right: 1em;
 }
@@ -416,7 +416,7 @@ nav li {
 
 nav li {
 	display: block;
-	white-space: nowrap;
+	-white-space: nowrap;
 }
 
 nav ul:after {
@@ -790,6 +790,11 @@ table {
 
 /* tablets, landscape phones, small desktops */
 @media only screen and (min-width: 640px) {
+	
+	blockquote {
+		margin-left: 3em;
+		margin-right: 3em;
+	}
 	
 	header nav.utility {
 		display: block;
