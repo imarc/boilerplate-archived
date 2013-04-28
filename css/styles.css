@@ -17,6 +17,7 @@
  */
 
 /* = Web Fonts = */
+@import url(http://fonts.googleapis.com/css?family=Raleway);
 
 
 /* = Base = */
@@ -105,7 +106,7 @@ footer.primary {
 }
 
 header.primary {
-	background: #0096d2;
+	background: #1a1a1a;
 }
 
 .branding {
@@ -158,11 +159,8 @@ h3 a,
 h4 a,
 h5 a,
 h6 a {
-	/*
-	font-family: Georgia, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: normal;
-	*/
-	font-weight: 600;
 }
 	h1:first-child,
 	h2:first-child,
@@ -430,7 +428,7 @@ nav ul:after {
 nav.primary { }
 
 	nav.primary a {
-		color: #e9e9e9;
+		color: #999;
 		padding: .25em 16px;
 	}
 
@@ -444,11 +442,12 @@ nav.primary { }
 
 			nav.primary li.active > a,
 		   	nav.primary li.active:hover > a	{
-				background: #555;
+				color: #e9e9e9;
+				background: #2a2a2a;
 			}
 
 			nav.primary > ul > li:hover > a {
-				background: #13abe8;
+				background: #3a3a3a;
 			}
 				nav.primary li > ul > li:hover > a {
 					color: #fff;
@@ -474,20 +473,22 @@ nav.primary { }
 			}
 
 header nav.secondary {
-	background: #555;
+	background: #2a2a2a;
 	display: none;
 }
 
 	header nav.secondary a {
 		color: #888;
 		font-size: .75em;
-		line-height: 2.67;
+		line-height: 1.33;
 		padding-left: 12px;
 		padding-right: 12px;
+		padding-top: 8px;
 	}
 		header nav.secondary li:first-child a {
 			padding-left: 16px;
 			padding-right: 2px;
+			padding-top: 8px;
 		}
 	header nav.secondary li.active a {
 		color: #fff;
@@ -815,6 +816,10 @@ table {
 		width: 200px;
 	}
 
+	header.primary {
+		border-bottom: .5em solid #2a2a2a;
+	}
+
 		nav.primary li ul a {
 			padding: .6em 1.33em .6em;
 		}
@@ -850,7 +855,7 @@ table {
 		}
 
 		header nav li ul {
-			background: #13ABE8;
+			background: #3a3a3a;
 			margin: 0;
 			padding: 0;
 		}
