@@ -21,7 +21,7 @@
 /* = Colors = */
 $background: #fcfcfc;
 $text: #555;
-$selection: #ff68b5;
+$selection: #fff6b5;
 
 $darkgray: #1a1a1a;
 $midgray: #2a2a2a;
@@ -113,8 +113,9 @@ body {
 	table-layout: fixed;
 	width: 100%;
 
-	> div {
+	> * {
 		display: table-cell;
+		width: 100%;
 	}
 }
 
@@ -500,6 +501,12 @@ header {
 						}
 					}
 				}
+
+				.dropdown {
+					aside {
+						display: none;
+					}
+				}
 			}
 		}
 	}
@@ -833,15 +840,13 @@ table {
 					float: left;
 
 					ul {
+						margin-top: 1em;
+						margin-bottom: 1em;
 						li {
-							a {
-								padding: 0 12px;
-								line-height: 2.67;
-							}
-						}
-						li:first-child {
+							float: none;
 							a {
 								padding-left: 0;
+								line-height: 2;
 							}
 						}
 					}
@@ -865,6 +870,17 @@ table {
 						.container {
 							padding-left: 32px;
 							padding-right: 32px;
+
+							ul {
+								float: left;
+								width: 20%;
+							}
+
+							aside {
+								margin-top: 1em;
+								float: right;
+								width: 80%;
+							}
 						}
 					}
 				}
