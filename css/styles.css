@@ -105,8 +105,7 @@ header.primary,
 .torso,
 footer.primary {
 	position: relative;
-	padding-bottom: 2.5em;
-	padding-top: 2.5em;
+	margin-bottom: 2.5em;
 }
 
 header.primary {
@@ -160,6 +159,9 @@ footer.primary {
 	background: #1a1a1a;
 	color: #888888;
 	font-size: 0.875em;
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
+	margin-bottom: 0;
 }
 
 /* = Typography = */

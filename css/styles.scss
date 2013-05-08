@@ -157,8 +157,7 @@ header.primary,
 .torso,
 footer.primary {
 	position: relative;
-	padding-bottom: 2.5em;
-	padding-top: 2.5em;
+	margin-bottom: 2.5em;
 }
 
 header.primary {
@@ -226,6 +225,9 @@ footer.primary {
 	background: $darkgray;
 	color: $textgray;
 	font-size: 0.875em;
+	padding-top: 2.5em;
+	padding-bottom: 2.5em;
+	margin-bottom: 0;
 }
 
 
