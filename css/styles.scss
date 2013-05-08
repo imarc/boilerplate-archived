@@ -39,7 +39,7 @@ $error: #ffd7d7;
 $info: #bde5f8;
 
 /* = Web Fonts = */
-@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Lato);
 
 
 /* = Base = */
@@ -166,7 +166,6 @@ header.primary {
 
 		h1 {
 			margin: 0;
-			text-shadow: 2px 2px 4px #111;
 
 			a {
 				color: $white;
@@ -235,7 +234,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Raleway', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: normal;
 
 	&:first-child {
@@ -501,12 +500,6 @@ header {
 						}
 					}
 				}
-
-				.dropdown {
-					aside {
-						display: none;
-					}
-				}
 			}
 		}
 	}
@@ -522,6 +515,7 @@ header {
 			> li {
 				> a {
 					color: $lightgray;
+					font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
 				}
 				> a:hover {
 					color: $white;
@@ -561,11 +555,12 @@ aside {
 				a {
 					padding-top: .5em;
 					padding-bottom: .5em;
-
-					&:hover {
-						color: $text;
-					}
 				}
+
+				a:hover {
+					color: $text;
+				}
+
 
 				ul {
 					li {
@@ -840,8 +835,6 @@ table {
 					float: left;
 
 					ul {
-						margin-top: 1em;
-						margin-bottom: 1em;
 						li {
 							float: none;
 							a {
@@ -855,33 +848,26 @@ table {
 
 			> ul {
 				> li {
+					position: relative;
+
 					> a {
 						padding: .25em 16px;
 					}
 
 					.dropdown {
+						box-shadow: 0 3px 5px 0px $darkgray;
 						display: none;
 						position: absolute;
 						left: 0;
-						right: 0;
 						background: $midgray;
 						z-index: 1;
-
-						.container {
-							padding-left: 32px;
-							padding-right: 32px;
-
-							ul {
-								float: left;
-								width: 20%;
-							}
-
-							aside {
-								margin-top: 1em;
-								float: right;
-								width: 80%;
-							}
-						}
+						padding-left: 16px;
+						padding-right: 16px;
+						min-width: 192px;
+						-ms-box-sizing: border-box;
+						-moz-box-sizing: border-box;
+						-webkit-box-sizing: border-box;
+						box-sizing: border-box;
 					}
 				}
 				> li:hover {
@@ -896,6 +882,12 @@ table {
 			ul {
 				li.active {
 					background: none;
+				}
+
+				li:hover {
+					a {
+						background: $midgray;
+					}
 				}
 			}
 		}
@@ -918,6 +910,12 @@ table {
 				li:first-child {
 					a {
 						padding-left: 16px;
+					}
+				}
+
+				li.active {
+					a {
+						color: $white;
 					}
 				}
 			}
