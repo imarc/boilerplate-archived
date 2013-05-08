@@ -26,6 +26,7 @@ $selection: #fff6b5;
 $darkgray: #1a1a1a;
 $midgray: #2a2a2a;
 $lightgray: #ccc;
+$lightestgray: #e9e9e9;
 $white: #fcfcfc;
 
 $textgray: #888;
@@ -71,7 +72,7 @@ img {
 }
 
 html {
-	background: $background;
+	background: $darkgray;
 	color: $text;
 	font-family:  Arial, Helvetica, sans-serif;
 	-ms-text-size-adjust: 100%;
@@ -79,6 +80,7 @@ html {
 }
 
 body {
+	background: $white;
 	font-size: 16px;
 	line-height: 1.5;
 	min-width: 310px;
@@ -155,7 +157,8 @@ header.primary,
 .torso,
 footer.primary {
 	position: relative;
-	margin-bottom: 2.5em;
+	padding-bottom: 2.5em;
+	padding-top: 2.5em;
 }
 
 header.primary {
@@ -197,9 +200,9 @@ header.primary {
 		}
 
 		aside {
-			background: #eee;
+			background: $white;
 			border-radius: 5px;
-			color: #888;
+			color: $textgray;
 			float: right;
 			font-size: .875em;
 			line-height: 1.43em;
@@ -220,10 +223,9 @@ header.primary {
 }
 
 footer.primary {
+	background: $darkgray;
 	color: $textgray;
 	font-size: 0.875em;
-	padding-left: 16px;
-	padding-right: 16px;
 }
 
 
@@ -335,7 +337,7 @@ blockquote {
 		padding-bottom: 1.5em;
 
 		p {
-			color: #888;
+			color: $textgray;
 			font-size: 1.25em;
 			line-height: 1.6;
 			margin-bottom: .8em;
@@ -343,9 +345,9 @@ blockquote {
 	}
 
 	.highlight {
-		background: #e9e9e9;
+		background: $lightestgray;
 		border-radius: 5px;
-		color: #888;
+		color: $textgray;
 		font-size: 1.5em;
 		line-height: 1.34;
 		margin-bottom: 1em;
@@ -381,7 +383,7 @@ address {
 
 hr {
 	border: 0;
-	border-top: 1px solid #999;
+	border-top: 1px solid $textgray;
 	display: block;
 	height: 0;
 	margin: 2em auto 3em;
@@ -471,7 +473,8 @@ nav {
 	}
 }
 
-header {
+header.primary,
+header.secondary {
 	nav {
 		ul {
 			margin-bottom: 1em;
@@ -512,6 +515,8 @@ header {
 
 		> ul {
 			> li {
+				margin-bottom: 1em;
+
 				> a {
 					color: $lightgray;
 					font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -583,7 +588,7 @@ aside {
 			}
 
 			> li {
-				border-top: 1px solid #ddd;
+				border-top: 1px solid $lightgray;
 			}
 
 			> li:first-child {
@@ -627,7 +632,7 @@ span.required {
 }
 
 fieldset .help {
-	color: #888;
+	color: $textgray;
 	display: block;
 	font-size: .75em;
 	line-height: 1.34;
@@ -698,7 +703,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	background: #0394cd;
+	background: $textprimary;
 	border-radius: 3px;
 	border: none;
 	color: #fff;
@@ -801,7 +806,7 @@ table {
 
 	thead {
 		th {
-			border-bottom: 1px solid #999;
+			border-bottom: 1px solid $textgray;
 		}
 	}
 }
@@ -820,7 +825,8 @@ table {
 		margin-right: 3em;
 	}
 
-	header {
+	header.primary,
+	header.secondary {
 		> .container {
 			position: relative;
 		}
@@ -843,6 +849,11 @@ table {
 								line-height: 2;
 							}
 						}
+					}
+				}
+				li:first-child {
+					a {
+						padding-left: 0;
 					}
 				}
 			}
@@ -910,7 +921,7 @@ table {
 
 				li:first-child {
 					a {
-						padding-left: 16px;
+						padding-left: 0;
 					}
 				}
 
@@ -929,6 +940,13 @@ table {
 			right: 32px;
 		}
 	}
+
+	header.primary {
+		.branding {
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
 }
 
 @include for-desktops {
@@ -945,22 +963,26 @@ table {
 		box-sizing: border-box;
 	}
 	
-	.main {
-		width: 76%;
-		float: left;
-		-ms-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
+	.torso {
+		.main {
+			-moz-box-sizing: border-box;
+			-ms-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+			float: left;
+			padding-right: 0;
+			padding-left: 0;
+			width: 76%;
+		}
 
-	aside.primary {
-		width: 24%;
-		float: right;
-		-ms-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
+		aside.primary {
+			width: 24%;
+			float: right;
+			-ms-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
 	}
 }
 
@@ -1020,7 +1042,7 @@ html.lt-ie8 {
 
 	pre,
 	blockquote {
-		border: 1px solid #999;
+		border: 1px solid $textgray;
 		page-break-inside: avoid;
 	}
 

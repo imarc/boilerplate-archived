@@ -52,7 +52,7 @@ img {
 }
 
 html {
-	background: #fcfcfc;
+	background: #1a1a1a;
 	color: #555555;
 	font-family: Arial, Helvetica, sans-serif;
 	-ms-text-size-adjust: 100%;
@@ -60,6 +60,7 @@ html {
 }
 
 body {
+	background: #fcfcfc;
 	font-size: 16px;
 	line-height: 1.5;
 	min-width: 310px;
@@ -104,7 +105,8 @@ header.primary,
 .torso,
 footer.primary {
 	position: relative;
-	margin-bottom: 2.5em;
+	padding-bottom: 2.5em;
+	padding-top: 2.5em;
 }
 
 header.primary {
@@ -137,9 +139,9 @@ header.primary .branding h1 a {
 	margin-bottom: 3em;
 }
 .torso .main aside {
-	background: #eee;
+	background: #fcfcfc;
 	border-radius: 5px;
-	color: #888;
+	color: #888888;
 	float: right;
 	font-size: .875em;
 	line-height: 1.43em;
@@ -155,10 +157,9 @@ header.primary .branding h1 a {
 }
 
 footer.primary {
+	background: #1a1a1a;
 	color: #888888;
 	font-size: 0.875em;
-	padding-left: 16px;
-	padding-right: 16px;
 }
 
 /* = Typography = */
@@ -287,7 +288,7 @@ blockquote {
 	padding-bottom: 1.5em;
 }
 .main .intro p {
-	color: #888;
+	color: #888888;
 	font-size: 1.25em;
 	line-height: 1.6;
 	margin-bottom: .8em;
@@ -295,7 +296,7 @@ blockquote {
 .main .highlight {
 	background: #e9e9e9;
 	border-radius: 5px;
-	color: #888;
+	color: #888888;
 	font-size: 1.5em;
 	line-height: 1.34;
 	margin-bottom: 1em;
@@ -328,7 +329,7 @@ address {
 
 hr {
 	border: 0;
-	border-top: 1px solid #999;
+	border-top: 1px solid #888888;
 	display: block;
 	height: 0;
 	margin: 2em auto 3em;
@@ -416,51 +417,69 @@ nav ul li a {
 	display: block;
 }
 
-header nav ul {
+header.primary nav ul,
+header.secondary nav ul {
 	margin-bottom: 1em;
 }
-header nav ul li {
+header.primary nav ul li,
+header.secondary nav ul li {
 	padding-left: 1em;
 }
-header nav ul li a,
-header nav ul li a:visited {
+header.primary nav ul li a,
+header.primary nav ul li a:visited,
+header.secondary nav ul li a,
+header.secondary nav ul li a:visited {
 	color: #888888;
 }
-header nav ul li a:hover {
+header.primary nav ul li a:hover,
+header.secondary nav ul li a:hover {
 	color: #fcfcfc;
 }
-header nav ul li ul li {
+header.primary nav ul li ul li,
+header.secondary nav ul li ul li {
 	float: left;
 }
-header nav ul li ul li a {
+header.primary nav ul li ul li a,
+header.secondary nav ul li ul li a {
 	font-size: .75em;
 	line-height: 1.34;
 	padding: .33em 1em .33em;
 }
-header nav.primary ul li.active {
+header.primary nav.primary ul li.active,
+header.secondary nav.primary ul li.active {
 	background: #2a2a2a;
 }
-header nav.primary > ul > li > a {
+header.primary nav.primary > ul > li,
+header.secondary nav.primary > ul > li {
+	margin-bottom: 1em;
+}
+header.primary nav.primary > ul > li > a,
+header.secondary nav.primary > ul > li > a {
 	color: #cccccc;
 	font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	white-space: nowrap;
 }
-header nav.primary > ul > li > a:hover {
+header.primary nav.primary > ul > li > a:hover,
+header.secondary nav.primary > ul > li > a:hover {
 	color: #fcfcfc;
 }
-header nav.primary > ul > li.active > a {
+header.primary nav.primary > ul > li.active > a,
+header.secondary nav.primary > ul > li.active > a {
 	color: #0096d2;
 }
-header nav.utility {
+header.primary nav.utility,
+header.secondary nav.utility {
 	display: none;
 }
-header nav.utility ul li a {
+header.primary nav.utility ul li a,
+header.secondary nav.utility ul li a {
 	font-size: .75em;
 	line-height: 2;
 	padding-left: .667em;
 	padding-right: .667em;
 }
-header nav.secondary {
+header.primary nav.secondary,
+header.secondary nav.secondary {
 	display: none;
 }
 
@@ -483,7 +502,7 @@ aside nav > ul li ul li:last-child a {
 	padding-bottom: 1em;
 }
 aside nav > ul > li {
-	border-top: 1px solid #ddd;
+	border-top: 1px solid #cccccc;
 }
 aside nav > ul > li:first-child {
 	border-top: none;
@@ -523,7 +542,7 @@ span.required {
 }
 
 fieldset .help {
-	color: #888;
+	color: #888888;
 	display: block;
 	font-size: .75em;
 	line-height: 1.34;
@@ -595,7 +614,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	background: #0394cd;
+	background: #f2006d;
 	border-radius: 3px;
 	border: none;
 	color: #fff;
@@ -694,7 +713,7 @@ table th {
 	font-weight: bold;
 }
 table thead th {
-	border-bottom: 1px solid #999;
+	border-bottom: 1px solid #888888;
 }
 
 /* = Section Specific = */
@@ -708,33 +727,46 @@ table thead th {
 		margin-right: 3em;
 	}
 
-	header > .container {
+	header.primary > .container,
+	header.secondary > .container {
 		position: relative;
 	}
-	header nav {
+	header.primary nav,
+	header.secondary nav {
 		position: relative;
 	}
-	header nav ul {
+	header.primary nav ul,
+	header.secondary nav ul {
 		margin-bottom: 0;
 	}
-	header nav ul li {
+	header.primary nav ul li,
+	header.secondary nav ul li {
 		padding-left: 0;
 		float: left;
 	}
-	header nav ul li ul li {
+	header.primary nav ul li ul li,
+	header.secondary nav ul li ul li {
 		float: none;
 	}
-	header nav ul li ul li a {
+	header.primary nav ul li ul li a,
+	header.secondary nav ul li ul li a {
 		padding-left: 0;
 		line-height: 2;
 	}
-	header nav > ul > li {
+	header.primary nav ul li:first-child a,
+	header.secondary nav ul li:first-child a {
+		padding-left: 0;
+	}
+	header.primary nav > ul > li,
+	header.secondary nav > ul > li {
 		position: relative;
 	}
-	header nav > ul > li > a {
+	header.primary nav > ul > li > a,
+	header.secondary nav > ul > li > a {
 		padding: .25em 16px;
 	}
-	header nav > ul > li .dropdown {
+	header.primary nav > ul > li .dropdown,
+	header.secondary nav > ul > li .dropdown {
 		box-shadow: 0 3px 5px 0px #1a1a1a;
 		display: none;
 		position: absolute;
@@ -749,71 +781,98 @@ table thead th {
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-	header nav > ul > li:hover .dropdown {
+	header.primary nav > ul > li:hover .dropdown,
+	header.secondary nav > ul > li:hover .dropdown {
 		display: block;
 	}
-	header nav.primary ul li.active {
+	header.primary nav.primary ul li.active,
+	header.secondary nav.primary ul li.active {
 		background: none;
 	}
-	header nav.primary ul li:hover a {
+	header.primary nav.primary ul li:hover a,
+	header.secondary nav.primary ul li:hover a {
 		background: #2a2a2a;
 	}
-	header nav.secondary {
+	header.primary nav.secondary,
+	header.secondary nav.secondary {
 		display: block;
 		background: #2a2a2a;
 	}
-	header nav.secondary ul li {
+	header.primary nav.secondary ul li,
+	header.secondary nav.secondary ul li {
 		float: left;
 	}
-	header nav.secondary ul li a {
+	header.primary nav.secondary ul li a,
+	header.secondary nav.secondary ul li a {
 		font-size: .75em;
 		padding: 0 12px;
 		line-height: 2.67;
 	}
-	header nav.secondary ul li:first-child a {
-		padding-left: 16px;
+	header.primary nav.secondary ul li:first-child a,
+	header.secondary nav.secondary ul li:first-child a {
+		padding-left: 0;
 	}
-	header nav.secondary ul li.active a {
+	header.primary nav.secondary ul li.active a,
+	header.secondary nav.secondary ul li.active a {
 		color: #fcfcfc;
 	}
-	header nav.utility {
+	header.primary nav.utility,
+	header.secondary nav.utility {
 		display: block;
 		position: absolute;
 		top: 1em;
 		right: 32px;
+	}
+
+	header.primary .branding {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 html.lt-ie9 blockquote {
 	margin-left: 3em;
 	margin-right: 3em;
 }
-html.lt-ie9 header > .container {
+html.lt-ie9 header.primary > .container,
+html.lt-ie9 header.secondary > .container {
 	position: relative;
 }
-html.lt-ie9 header nav {
+html.lt-ie9 header.primary nav,
+html.lt-ie9 header.secondary nav {
 	position: relative;
 }
-html.lt-ie9 header nav ul {
+html.lt-ie9 header.primary nav ul,
+html.lt-ie9 header.secondary nav ul {
 	margin-bottom: 0;
 }
-html.lt-ie9 header nav ul li {
+html.lt-ie9 header.primary nav ul li,
+html.lt-ie9 header.secondary nav ul li {
 	padding-left: 0;
 	float: left;
 }
-html.lt-ie9 header nav ul li ul li {
+html.lt-ie9 header.primary nav ul li ul li,
+html.lt-ie9 header.secondary nav ul li ul li {
 	float: none;
 }
-html.lt-ie9 header nav ul li ul li a {
+html.lt-ie9 header.primary nav ul li ul li a,
+html.lt-ie9 header.secondary nav ul li ul li a {
 	padding-left: 0;
 	line-height: 2;
 }
-html.lt-ie9 header nav > ul > li {
+html.lt-ie9 header.primary nav ul li:first-child a,
+html.lt-ie9 header.secondary nav ul li:first-child a {
+	padding-left: 0;
+}
+html.lt-ie9 header.primary nav > ul > li,
+html.lt-ie9 header.secondary nav > ul > li {
 	position: relative;
 }
-html.lt-ie9 header nav > ul > li > a {
+html.lt-ie9 header.primary nav > ul > li > a,
+html.lt-ie9 header.secondary nav > ul > li > a {
 	padding: .25em 16px;
 }
-html.lt-ie9 header nav > ul > li .dropdown {
+html.lt-ie9 header.primary nav > ul > li .dropdown,
+html.lt-ie9 header.secondary nav > ul > li .dropdown {
 	box-shadow: 0 3px 5px 0px #1a1a1a;
 	display: none;
 	position: absolute;
@@ -828,38 +887,51 @@ html.lt-ie9 header nav > ul > li .dropdown {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-html.lt-ie9 header nav > ul > li:hover .dropdown {
+html.lt-ie9 header.primary nav > ul > li:hover .dropdown,
+html.lt-ie9 header.secondary nav > ul > li:hover .dropdown {
 	display: block;
 }
-html.lt-ie9 header nav.primary ul li.active {
+html.lt-ie9 header.primary nav.primary ul li.active,
+html.lt-ie9 header.secondary nav.primary ul li.active {
 	background: none;
 }
-html.lt-ie9 header nav.primary ul li:hover a {
+html.lt-ie9 header.primary nav.primary ul li:hover a,
+html.lt-ie9 header.secondary nav.primary ul li:hover a {
 	background: #2a2a2a;
 }
-html.lt-ie9 header nav.secondary {
+html.lt-ie9 header.primary nav.secondary,
+html.lt-ie9 header.secondary nav.secondary {
 	display: block;
 	background: #2a2a2a;
 }
-html.lt-ie9 header nav.secondary ul li {
+html.lt-ie9 header.primary nav.secondary ul li,
+html.lt-ie9 header.secondary nav.secondary ul li {
 	float: left;
 }
-html.lt-ie9 header nav.secondary ul li a {
+html.lt-ie9 header.primary nav.secondary ul li a,
+html.lt-ie9 header.secondary nav.secondary ul li a {
 	font-size: .75em;
 	padding: 0 12px;
 	line-height: 2.67;
 }
-html.lt-ie9 header nav.secondary ul li:first-child a {
-	padding-left: 16px;
+html.lt-ie9 header.primary nav.secondary ul li:first-child a,
+html.lt-ie9 header.secondary nav.secondary ul li:first-child a {
+	padding-left: 0;
 }
-html.lt-ie9 header nav.secondary ul li.active a {
+html.lt-ie9 header.primary nav.secondary ul li.active a,
+html.lt-ie9 header.secondary nav.secondary ul li.active a {
 	color: #fcfcfc;
 }
-html.lt-ie9 header nav.utility {
+html.lt-ie9 header.primary nav.utility,
+html.lt-ie9 header.secondary nav.utility {
 	display: block;
 	position: absolute;
 	top: 1em;
 	right: 32px;
+}
+html.lt-ie9 header.primary .branding {
+	padding-left: 0;
+	padding-right: 0;
 }
 
 @media only screen and (min-width: 800px) {
@@ -875,16 +947,17 @@ html.lt-ie9 header nav.utility {
 		box-sizing: border-box;
 	}
 
-	.main {
-		width: 76%;
-		float: left;
-		-ms-box-sizing: border-box;
+	.torso .main {
 		-moz-box-sizing: border-box;
+		-ms-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
+		float: left;
+		padding-right: 0;
+		padding-left: 0;
+		width: 76%;
 	}
-
-	aside.primary {
+	.torso aside.primary {
 		width: 24%;
 		float: right;
 		-ms-box-sizing: border-box;
@@ -904,15 +977,17 @@ html.lt-ie9 .container {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
-html.lt-ie9 .main {
-	width: 76%;
-	float: left;
-	-ms-box-sizing: border-box;
+html.lt-ie9 .torso .main {
 	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
+	float: left;
+	padding-right: 0;
+	padding-left: 0;
+	width: 76%;
 }
-html.lt-ie9 aside.primary {
+html.lt-ie9 .torso aside.primary {
 	width: 24%;
 	float: right;
 	-ms-box-sizing: border-box;
@@ -973,7 +1048,7 @@ html.lt-ie8 input[type="radio"] {
 
 	pre,
 	blockquote {
-		border: 1px solid #999;
+		border: 1px solid #888888;
 		page-break-inside: avoid;
 	}
 
