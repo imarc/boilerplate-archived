@@ -413,7 +413,6 @@ nav ul li {
 	margin-bottom: 0;
 }
 nav ul li a {
-	white-space: nowrap;
 	display: block;
 }
 
@@ -444,6 +443,7 @@ header nav.primary ul li.active {
 header nav.primary > ul > li > a {
 	color: #cccccc;
 	font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	white-space: nowrap;
 }
 header nav.primary > ul > li > a:hover {
 	color: #fcfcfc;
