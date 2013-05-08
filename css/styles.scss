@@ -465,7 +465,6 @@ nav {
 			margin-bottom: 0;
 
 			a {
-				white-space: nowrap;
 				display: block;
 			}
 		}
@@ -516,6 +515,7 @@ header {
 				> a {
 					color: $lightgray;
 					font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+					white-space: nowrap;
 				}
 				> a:hover {
 					color: $white;
