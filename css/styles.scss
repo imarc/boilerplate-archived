@@ -39,7 +39,7 @@ $error: #ffd7d7;
 $info: #bde5f8;
 
 /* = Web Fonts = */
-@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
 
 /* = Base = */
@@ -73,7 +73,7 @@ img {
 html {
 	background: $background;
 	color: $text;
-	font-family:  "Helvetica Neue Light", HelveticaNeue-Light, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family:  Arial, Helvetica, sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
@@ -234,7 +234,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: normal;
 
 	&:first-child {
@@ -515,7 +515,7 @@ header {
 			> li {
 				> a {
 					color: $lightgray;
-					font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+					font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 				}
 				> a:hover {
 					color: $white;
@@ -703,10 +703,11 @@ a.button {
 	border: none;
 	color: #fff;
 	display: inline-block;
-	font-weight: bold;
+	font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 600;
 	line-height: 1;
-	margin-left: .5em;
 	margin-bottom: .5em;
+	margin-right: .5em;
 	padding: .5em .5em;
 	text-align: center;
 

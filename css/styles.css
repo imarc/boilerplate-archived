@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Lato);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 /* = Table of Contents =
 
  * Colors
@@ -51,7 +51,7 @@ img {
 html {
   background: #fcfcfc;
   color: #555555;
-  font-family: "Helvetica Neue Light", HelveticaNeue-Light, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -164,7 +164,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: normal;
 }
 h1:first-child,
@@ -439,7 +439,7 @@ header nav.primary ul li.active {
 }
 header nav.primary > ul > li > a {
   color: #cccccc;
-  font-family: 'Lato', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 header nav.primary > ul > li > a:hover {
   color: #fcfcfc;
@@ -596,10 +596,11 @@ a.button {
   border: none;
   color: #fff;
   display: inline-block;
-  font-weight: bold;
+  font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 600;
   line-height: 1;
-  margin-left: .5em;
   margin-bottom: .5em;
+  margin-right: .5em;
   padding: .5em .5em;
   text-align: center;
 }
