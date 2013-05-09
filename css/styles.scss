@@ -705,7 +705,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	background: $textprimary;
+	background: $textsecondary;
 	border-radius: 3px;
 	border: none;
 	color: #fff;
@@ -822,6 +822,18 @@ table {
 /* = Media Queries = */
 @include for-tablets {
 
+	.container {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1024px;
+		padding-left: 16px;
+		padding-right: 16px;
+		-ms-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
 	blockquote {
 		margin-left: 3em;
 		margin-right: 3em;
@@ -894,6 +906,10 @@ table {
 
 		nav.primary {
 			ul {
+				li {
+					margin-bottom: 0;
+				}
+
 				li.active {
 					background: none;
 				}
@@ -952,18 +968,6 @@ table {
 }
 
 @include for-desktops {
-
-	.container {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: 1024px;
-		padding-left: 16px;
-		padding-right: 16px;
-		-ms-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
 	
 	.torso {
 		.main {

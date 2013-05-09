@@ -616,7 +616,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	background: #f2006d;
+	background: #0096d2;
 	border-radius: 3px;
 	border: none;
 	color: #fff;
@@ -724,6 +724,18 @@ table thead th {
 
 /* = Media Queries = */
 @media only screen and (min-width: 640px) {
+	.container {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1024px;
+		padding-left: 16px;
+		padding-right: 16px;
+		-ms-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+
 	blockquote {
 		margin-left: 3em;
 		margin-right: 3em;
@@ -787,6 +799,10 @@ table thead th {
 	header.secondary nav > ul > li:hover .dropdown {
 		display: block;
 	}
+	header.primary nav.primary ul li,
+	header.secondary nav.primary ul li {
+		margin-bottom: 0;
+	}
 	header.primary nav.primary ul li.active,
 	header.secondary nav.primary ul li.active {
 		background: none;
@@ -830,6 +846,17 @@ table thead th {
 		padding-left: 0;
 		padding-right: 0;
 	}
+}
+html.lt-ie9 .container {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 1024px;
+	padding-left: 16px;
+	padding-right: 16px;
+	-ms-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 html.lt-ie9 blockquote {
 	margin-left: 3em;
@@ -893,6 +920,10 @@ html.lt-ie9 header.primary nav > ul > li:hover .dropdown,
 html.lt-ie9 header.secondary nav > ul > li:hover .dropdown {
 	display: block;
 }
+html.lt-ie9 header.primary nav.primary ul li,
+html.lt-ie9 header.secondary nav.primary ul li {
+	margin-bottom: 0;
+}
 html.lt-ie9 header.primary nav.primary ul li.active,
 html.lt-ie9 header.secondary nav.primary ul li.active {
 	background: none;
@@ -937,18 +968,6 @@ html.lt-ie9 header.primary .branding {
 }
 
 @media only screen and (min-width: 800px) {
-	.container {
-		margin-left: auto;
-		margin-right: auto;
-		max-width: 1024px;
-		padding-left: 16px;
-		padding-right: 16px;
-		-ms-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
-	}
-
 	.torso .main {
 		-moz-box-sizing: border-box;
 		-ms-box-sizing: border-box;
@@ -967,17 +986,6 @@ html.lt-ie9 header.primary .branding {
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-}
-html.lt-ie9 .container {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1024px;
-	padding-left: 16px;
-	padding-right: 16px;
-	-ms-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
 }
 html.lt-ie9 .torso .main {
 	-moz-box-sizing: border-box;
