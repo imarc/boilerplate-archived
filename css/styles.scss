@@ -865,11 +865,6 @@ table {
 						}
 					}
 				}
-				li:first-child {
-					a {
-						padding-left: 0;
-					}
-				}
 			}
 
 			> ul {
@@ -896,10 +891,16 @@ table {
 						box-sizing: border-box;
 					}
 				}
+
 				> li:hover {
 					.dropdown {
 						display: block;
 					}
+				}
+
+				> li:first-child {
+					padding-left: 0;
+					margin-left: -16px;
 				}
 			}
 		}
@@ -934,12 +935,6 @@ table {
 						font-size: .75em;
 						padding: 0 12px;
 						line-height: 2.67;
-					}
-				}
-
-				li:first-child {
-					a {
-						padding-left: 0;
 					}
 				}
 

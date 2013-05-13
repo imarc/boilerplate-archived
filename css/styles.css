@@ -1,5 +1,4 @@
 /* = Table of Contents =
-
  * Colors
  * Web Fonts
  * Base
@@ -767,10 +766,6 @@ table thead th {
 		padding-left: 0;
 		line-height: 2;
 	}
-	header.primary nav ul li:first-child a,
-	header.secondary nav ul li:first-child a {
-		padding-left: 0;
-	}
 	header.primary nav > ul > li,
 	header.secondary nav > ul > li {
 		position: relative;
@@ -799,6 +794,11 @@ table thead th {
 	header.secondary nav > ul > li:hover .dropdown {
 		display: block;
 	}
+	header.primary nav > ul > li:first-child,
+	header.secondary nav > ul > li:first-child {
+		padding-left: 0;
+		margin-left: -16px;
+	}
 	header.primary nav.primary ul li,
 	header.secondary nav.primary ul li {
 		margin-bottom: 0;
@@ -825,10 +825,6 @@ table thead th {
 		font-size: .75em;
 		padding: 0 12px;
 		line-height: 2.67;
-	}
-	header.primary nav.secondary ul li:first-child a,
-	header.secondary nav.secondary ul li:first-child a {
-		padding-left: 0;
 	}
 	header.primary nav.secondary ul li.active a,
 	header.secondary nav.secondary ul li.active a {
@@ -888,10 +884,6 @@ html.lt-ie9 header.secondary nav ul li ul li a {
 	padding-left: 0;
 	line-height: 2;
 }
-html.lt-ie9 header.primary nav ul li:first-child a,
-html.lt-ie9 header.secondary nav ul li:first-child a {
-	padding-left: 0;
-}
 html.lt-ie9 header.primary nav > ul > li,
 html.lt-ie9 header.secondary nav > ul > li {
 	position: relative;
@@ -920,6 +912,11 @@ html.lt-ie9 header.primary nav > ul > li:hover .dropdown,
 html.lt-ie9 header.secondary nav > ul > li:hover .dropdown {
 	display: block;
 }
+html.lt-ie9 header.primary nav > ul > li:first-child,
+html.lt-ie9 header.secondary nav > ul > li:first-child {
+	padding-left: 0;
+	margin-left: -16px;
+}
 html.lt-ie9 header.primary nav.primary ul li,
 html.lt-ie9 header.secondary nav.primary ul li {
 	margin-bottom: 0;
@@ -946,10 +943,6 @@ html.lt-ie9 header.secondary nav.secondary ul li a {
 	font-size: .75em;
 	padding: 0 12px;
 	line-height: 2.67;
-}
-html.lt-ie9 header.primary nav.secondary ul li:first-child a,
-html.lt-ie9 header.secondary nav.secondary ul li:first-child a {
-	padding-left: 0;
 }
 html.lt-ie9 header.primary nav.secondary ul li.active a,
 html.lt-ie9 header.secondary nav.secondary ul li.active a {
