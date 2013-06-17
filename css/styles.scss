@@ -48,11 +48,11 @@ $info: #bde5f8;
 
 @font-face {
 	font-family: 'imarcicons';
-	src:url('fonts/imarcicons.eot');
-	src:url('fonts/imarcicons.eot?#iefix') format('embedded-opentype'),
-		url('fonts/imarcicons.woff') format('woff'),
-		url('fonts/imarcicons.ttf') format('truetype'),
-		url('fonts/imarcicons.svg#imarcicons') format('svg');
+	src:url('../css/fonts/imarcicons.eot');
+	src:url('../css/fonts/imarcicons.eot?#iefix') format('embedded-opentype'),
+		url('../css/fonts/imarcicons.woff') format('woff'),
+		url('../css/fonts/imarcicons.ttf') format('truetype'),
+		url('../css/fonts/imarcicons.svg#imarcicons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -492,7 +492,7 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-cancel, .icon-checkmark, .icon-envelope, .icon-magnifier, .icon-x, .icon-question, .icon-gear, .icon-facebook, .icon-chat, .icon-twitter, .icon-youtube, .icon-worddoc, .icon-pdf, .icon-smartphone, .icon-error, .icon-location, .icon-information, .icon-question, .icon-mail {
+.icon-cancel, .icon-checkmark, .icon-envelope, .icon-magnifier, .icon-question, .icon-gear, .icon-facebook, .icon-chat, .icon-twitter, .icon-youtube, .icon-worddoc, .icon-pdf, .icon-smartphone, .icon-error, .icon-location, .icon-information, .icon-question, .icon-mail {
 	font-family: 'imarcicons';
 	speak: none;
 	font-style: normal;
@@ -513,9 +513,6 @@ you can use the generic selector below, but it's slower:
 }
 .icon-magnifier:before {
 	content: "\e00a";
-}
-.icon-x:before {
-	content: "\27";
 }
 .icon-gear:before {
 	content: "\53";
