@@ -23,6 +23,13 @@
  */
 /* = Colors = */
 /* = Web Fonts = */
+@font-face {
+  font-family: 'imarcicons';
+  src: url("fonts/imarcicons.eot");
+  src: url("fonts/imarcicons.eot?#iefix") format("embedded-opentype"), url("fonts/imarcicons.woff") format("woff"), url("fonts/imarcicons.ttf") format("truetype"), url("fonts/imarcicons.svg#imarcicons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite,
 code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6,
@@ -338,31 +345,13 @@ Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-@font-face {
-  font-family: 'imarcicons';
-  src: url("fonts/imarcicons.eot");
-  src: url("fonts/imarcicons.eot?#iefix") format("embedded-opentype"), url("fonts/imarcicons.woff") format("woff"), url("fonts/imarcicons.ttf") format("truetype"), url("fonts/imarcicons.svg#imarcicons") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-
-/* Use the following CSS code if you want to use data attributes for inserting your icons */
-[data-icon]:before {
-  font-family: 'imarcicons';
-  content: attr(data-icon);
-  speak: none;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased; }
-
 /* Use the following CSS code if you want to have a class per icon */
 /*
 Instead of a list of all class selectors,
 you can use the generic selector below, but it's slower:
 [class*="icon-"] {
 */
-.icon-cancel, .icon-checkmark, .icon-chat, .icon-smartphone, .icon-twitter, .icon-phone, .icon-facebook, .icon-location, .icon-doc, .icon-envelope, .icon-magnifier, .icon-pdf, .icon-worddoc {
+.icon-cancel, .icon-checkmark, .icon-envelope, .icon-magnifier, .icon-x, .icon-question, .icon-gear, .icon-facebook, .icon-chat, .icon-twitter, .icon-youtube, .icon-worddoc, .icon-pdf, .icon-smartphone, .icon-error, .icon-location, .icon-information, .icon-question, .icon-mail {
   font-family: 'imarcicons';
   speak: none;
   font-style: normal;
@@ -373,43 +362,58 @@ you can use the generic selector below, but it's slower:
   -webkit-font-smoothing: antialiased; }
 
 .icon-cancel:before {
-  content: "\e00a"; }
+  content: "\e000"; }
 
 .icon-checkmark:before {
-  content: "\e00b"; }
-
-.icon-chat:before {
   content: "\e001"; }
 
-.icon-smartphone:before {
-  content: "\e002"; }
-
-.icon-twitter:before {
-  content: "\e004"; }
-
-.icon-phone:before {
-  content: "\e005"; }
-
-.icon-facebook:before {
-  content: "\e007"; }
-
-.icon-location:before {
-  content: "\e008"; }
-
-.icon-doc:before {
+.icon-envelope:before {
   content: "\e009"; }
 
-.icon-envelope:before {
-  content: "\e00c"; }
-
 .icon-magnifier:before {
-  content: "\e00e"; }
+  content: "\e00a"; }
 
-.icon-pdf:before {
-  content: "\e003"; }
+.icon-x:before {
+  content: "\27"; }
+
+.icon-gear:before {
+  content: "\53"; }
+
+.icon-facebook:before {
+  content: "\66"; }
+
+.icon-chat:before {
+  content: "\64"; }
+
+.icon-twitter:before {
+  content: "\74"; }
+
+.icon-youtube:before {
+  content: "\79"; }
 
 .icon-worddoc:before {
-  content: "\e006"; }
+  content: "\21"; }
+
+.icon-pdf:before {
+  content: "\22"; }
+
+.icon-smartphone:before {
+  content: "\d4"; }
+
+.icon-error:before {
+  content: "\23"; }
+
+.icon-location:before {
+  content: "\2c"; }
+
+.icon-information:before {
+  content: "\3d"; }
+
+.icon-question:before {
+  content: "\24"; }
+
+.icon-mail:before {
+  content: "\6d"; }
 
 .glyph {
   font-size: 32px;
@@ -425,7 +429,10 @@ you can use the generic selector below, but it's slower:
 .glyph input {
   font-family: consolas, monospace;
   font-size: 13px !important;
+  width: 100%;
   text-align: center;
+  border: 0;
+  box-shadow: 0 0 0 1px #ccc;
   padding: .125em; }
 
 /* = Navigation = */
@@ -660,37 +667,30 @@ input::-moz-focus-inner {
   .messaging a {
     text-decoration: underline; }
   .messaging:before {
+    font-family: 'imarcicons';
+    font-size: 20px;
     content: '';
     display: block;
-    font-family: 'imarcicons';
-    -webkit-font-smoothing: antialiased;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: normal;
-    font-size: 2em;
-    height: 2em;
-    left: .25em;
-    line-height: 1;
+    height: 23px;
+    left: 1em;
     position: absolute;
-    speak: none;
-    text-transform: none;
-    top: .4em;
-    width: 2em; }
+    top: .7em;
+    width: 23px; }
 
 .success {
   background: #ecfae8; }
   .success:before {
-    content: '\e00b'; }
+    content: "\e001"; }
 
 .error {
   background: #ffd7d7; }
   .error:before {
-    content: '\e00a'; }
+    content: "\23"; }
 
 .info {
   background: #bde5f8; }
   .info:before {
-    content: '\e001'; }
+    content: "\3d"; }
 
 /* = Tables = */
 table {
@@ -711,6 +711,16 @@ table {
     border-bottom: 1px solid #888888; }
 
 /* = Rich Text Editor (TinyMCE) = */
+a.pdf:before {
+  font-family: 'imarcicons';
+  content: "\22"; }
+
+a.word:before,
+a.doc:before,
+a.docx:before {
+  font-family: 'imarcicons';
+  content: "\21"; }
+
 /* = Section Specific = */
 /* = Page Specific = */
 /* = Media Queries = */
