@@ -8,10 +8,13 @@
  * Grouping
  * Layout
  * Typography
+ * Iconography
  * Navigation
  * Forms
  * Messaging
  * Tables
+ * Site Manager
+ 		== Rich Text Editor (TinyMCE)
  * Section Specific
  * Page Specific
  * Media Queries
@@ -329,6 +332,102 @@ sup {
 sub {
   vertical-align: bottom; }
 
+/* = Iconography = */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+@font-face {
+  font-family: 'imarcicons';
+  src: url("fonts/imarcicons.eot");
+  src: url("fonts/imarcicons.eot?#iefix") format("embedded-opentype"), url("fonts/imarcicons.woff") format("woff"), url("fonts/imarcicons.ttf") format("truetype"), url("fonts/imarcicons.svg#imarcicons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'imarcicons';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+/* Use the following CSS code if you want to have a class per icon */
+/*
+Instead of a list of all class selectors,
+you can use the generic selector below, but it's slower:
+[class*="icon-"] {
+*/
+.icon-cancel, .icon-checkmark, .icon-chat, .icon-smartphone, .icon-twitter, .icon-phone, .icon-facebook, .icon-location, .icon-doc, .icon-envelope, .icon-magnifier, .icon-pdf, .icon-worddoc {
+  font-family: 'imarcicons';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased; }
+
+.icon-cancel:before {
+  content: "\e00a"; }
+
+.icon-checkmark:before {
+  content: "\e00b"; }
+
+.icon-chat:before {
+  content: "\e001"; }
+
+.icon-smartphone:before {
+  content: "\e002"; }
+
+.icon-twitter:before {
+  content: "\e004"; }
+
+.icon-phone:before {
+  content: "\e005"; }
+
+.icon-facebook:before {
+  content: "\e007"; }
+
+.icon-location:before {
+  content: "\e008"; }
+
+.icon-doc:before {
+  content: "\e009"; }
+
+.icon-envelope:before {
+  content: "\e00c"; }
+
+.icon-magnifier:before {
+  content: "\e00e"; }
+
+.icon-pdf:before {
+  content: "\e003"; }
+
+.icon-worddoc:before {
+  content: "\e006"; }
+
+.glyph {
+  font-size: 32px;
+  float: left;
+  text-align: center;
+  background: #eee;
+  padding: .75em;
+  margin: .75em 1.5em .75em 0;
+  width: 4.5em;
+  border-radius: .25em;
+  box-shadow: inset 0 0 0 1px #f8f8f8, 0 0 0 1px #CCC; }
+
+.glyph input {
+  font-family: consolas, monospace;
+  font-size: 13px !important;
+  text-align: center;
+  padding: .125em; }
+
 /* = Navigation = */
 nav ul {
   list-style: none;
@@ -561,7 +660,7 @@ input::-moz-focus-inner {
   .messaging a {
     text-decoration: underline; }
   .messaging:before {
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAABFCAYAAAChbH1cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA5FJREFUeNrsWG9klVEYv/fuirFc3ZSxLJsRq2vLZYlL2fpQSpG0qU8jSynNqJbbt8bWKEsfpsSITf+UEku1NEWWImaXWMVIaZQxxpj1PPmd6+k4O+e8995J3Ief+77vPe/vnPd5nvP8OeHFxcXQckl4Ocmjmfp6n3EbCE8JKwithCc+L0U8F3GDUEkoJwwSygpFfoiQEvdxQroQ5LzCXlzPEqZw3UGoyZf8FKGC8JGwjrCe0A/d9+VDzqSduB4lzOD6Nn53E7blSt4rDLcgnstrXn1JUPIUDOkS9uO2oOR9AfZKFyHmS84rTgYgjwvbWMml6wURo2vq5Gl4iS7l4trk30bXDE/U1cmXJjDQJP1wxxOW7d9EeGFaeZeFWK1uRvi7SS5J14wI12u2vPSMcITQQzjq65oRzHTVYbCYZnSXa8YVeQdmtEkD4RVC7zUP1+xVBv1Mv1UFTkIcQdeG/9scWiQ3lxZ/dtDAD9N/pdhYnHG2ajGHc+kblBicmeZ8Q24Jcuc3wgDhgCGYVWLiAYxLm0JHxLABRhDhYp5fH8OufIdJjeQ887Ar6VokQRiTITmiRbQGB8EvwsGlMg/i/kPYK0teZUu0Qt4T7hIuWsbUwmZZ8jZHLFeyA2H3jmPcaV59FDc+Cfk5Vp7EJK7ImIoacqSNWOn6E6HaVXYrtcx7qOOsuF/l8aWlijzjaUylQh/y74r8kafOQx76VjKqyB8QPniS+xify4upiKhc27UKVhdF2unwc+Y4n42KogY/bknAPVBJtcNTziBi/kXOcp3wk3BTbWGD19jkAuGyLeTeI2wUHUQQeelTn38htBBWEw7D4LPaGFMKSwdpuFhFQ4T9hJWcFgU2GbJQoywLo3mkyAy+rgwddhIZa7JYWvxj8i0jiXx5EvCUK3wz1jQe6Egk5Gjjh1GOPFaFfyHIYyCuEOcBg4Ug59hzHypR8hW9U17kXPLdgp6VcJe3CxPkRc4N2l5xP48QMZ7LGZcUThbHtGetsrnNlZwPHbq1Z+cQ3LxK6NoliBtRMuste4/veUsz+v9u7QQoAc+QJR9XDCd9j6GSYmWd2BAxsUlkvf4W4XbB2baQrJGlL2QnCvo5rbPgeL1nqVbFtPIZpDJdarRNMg1fnvaxvqwVWX/7LEcec1jxpK9r6QZlI21WdYe2SVqg61Cu5Crzb9dcrNWznjQaNGRYKW+O19D7UDGHFkx+CzAA6nHUdfvIb58AAAAASUVORK5CYII=);
+    background-image: url(/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAABFCAYAAAChbH1cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA5FJREFUeNrsWG9klVEYv/fuirFc3ZSxLJsRq2vLZYlL2fpQSpG0qU8jSynNqJbbt8bWKEsfpsSITf+UEku1NEWWImaXWMVIaZQxxpj1PPmd6+k4O+e8995J3Ief+77vPe/vnPd5nvP8OeHFxcXQckl4Ocmjmfp6n3EbCE8JKwithCc+L0U8F3GDUEkoJwwSygpFfoiQEvdxQroQ5LzCXlzPEqZw3UGoyZf8FKGC8JGwjrCe0A/d9+VDzqSduB4lzOD6Nn53E7blSt4rDLcgnstrXn1JUPIUDOkS9uO2oOR9AfZKFyHmS84rTgYgjwvbWMml6wURo2vq5Gl4iS7l4trk30bXDE/U1cmXJjDQJP1wxxOW7d9EeGFaeZeFWK1uRvi7SS5J14wI12u2vPSMcITQQzjq65oRzHTVYbCYZnSXa8YVeQdmtEkD4RVC7zUP1+xVBv1Mv1UFTkIcQdeG/9scWiQ3lxZ/dtDAD9N/pdhYnHG2ajGHc+kblBicmeZ8Q24Jcuc3wgDhgCGYVWLiAYxLm0JHxLABRhDhYp5fH8OufIdJjeQ887Ar6VokQRiTITmiRbQGB8EvwsGlMg/i/kPYK0teZUu0Qt4T7hIuWsbUwmZZ8jZHLFeyA2H3jmPcaV59FDc+Cfk5Vp7EJK7ImIoacqSNWOn6E6HaVXYrtcx7qOOsuF/l8aWlijzjaUylQh/y74r8kafOQx76VjKqyB8QPniS+xify4upiKhc27UKVhdF2unwc+Y4n42KogY/bknAPVBJtcNTziBi/kXOcp3wk3BTbWGD19jkAuGyLeTeI2wUHUQQeelTn38htBBWEw7D4LPaGFMKSwdpuFhFQ4T9hJWcFgU2GbJQoywLo3mkyAy+rgwddhIZa7JYWvxj8i0jiXx5EvCUK3wz1jQe6Egk5Gjjh1GOPFaFfyHIYyCuEOcBg4Ug59hzHypR8hW9U17kXPLdgp6VcJe3CxPkRc4N2l5xP48QMZ7LGZcUThbHtGetsrnNlZwPHbq1Z+cQ3LxK6NoliBtRMuste4/veUsz+v9u7QQoAc+QJR9XDCd9j6GSYmWd2BAxsUlkvf4W4XbB2baQrJGlL2QnCvo5rbPgeL1nqVbFtPIZpDJdarRNMg1fnvaxvqwVWX/7LEcec1jxpK9r6QZlI21WdYe2SVqg61Cu5Crzb9dcrNWznjQaNGRYKW+O19D7UDGHFkx+CzAA6nHUdfvIb58AAAAASUVORK5CYII=);
     background-position: 0 0;
     background-repeat: no-repeat;
     content: '';
@@ -605,6 +704,7 @@ table {
   table thead th {
     border-bottom: 1px solid #888888; }
 
+/* = Rich Text Editor (TinyMCE) = */
 /* = Section Specific = */
 /* = Page Specific = */
 /* = Media Queries = */
