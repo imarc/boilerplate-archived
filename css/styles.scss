@@ -887,16 +887,23 @@ input::-moz-focus-inner {
 	}
 
 	&:before {
-		background-image: url(/png;base64,iVBORw0KGgoAAAANSUhEUgAAABcAAABFCAYAAAChbH1cAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA5FJREFUeNrsWG9klVEYv/fuirFc3ZSxLJsRq2vLZYlL2fpQSpG0qU8jSynNqJbbt8bWKEsfpsSITf+UEku1NEWWImaXWMVIaZQxxpj1PPmd6+k4O+e8995J3Ief+77vPe/vnPd5nvP8OeHFxcXQckl4Ocmjmfp6n3EbCE8JKwithCc+L0U8F3GDUEkoJwwSygpFfoiQEvdxQroQ5LzCXlzPEqZw3UGoyZf8FKGC8JGwjrCe0A/d9+VDzqSduB4lzOD6Nn53E7blSt4rDLcgnstrXn1JUPIUDOkS9uO2oOR9AfZKFyHmS84rTgYgjwvbWMml6wURo2vq5Gl4iS7l4trk30bXDE/U1cmXJjDQJP1wxxOW7d9EeGFaeZeFWK1uRvi7SS5J14wI12u2vPSMcITQQzjq65oRzHTVYbCYZnSXa8YVeQdmtEkD4RVC7zUP1+xVBv1Mv1UFTkIcQdeG/9scWiQ3lxZ/dtDAD9N/pdhYnHG2ajGHc+kblBicmeZ8Q24Jcuc3wgDhgCGYVWLiAYxLm0JHxLABRhDhYp5fH8OufIdJjeQ887Ar6VokQRiTITmiRbQGB8EvwsGlMg/i/kPYK0teZUu0Qt4T7hIuWsbUwmZZ8jZHLFeyA2H3jmPcaV59FDc+Cfk5Vp7EJK7ImIoacqSNWOn6E6HaVXYrtcx7qOOsuF/l8aWlijzjaUylQh/y74r8kafOQx76VjKqyB8QPniS+xify4upiKhc27UKVhdF2unwc+Y4n42KogY/bknAPVBJtcNTziBi/kXOcp3wk3BTbWGD19jkAuGyLeTeI2wUHUQQeelTn38htBBWEw7D4LPaGFMKSwdpuFhFQ4T9hJWcFgU2GbJQoywLo3mkyAy+rgwddhIZa7JYWvxj8i0jiXx5EvCUK3wz1jQe6Egk5Gjjh1GOPFaFfyHIYyCuEOcBg4Ug59hzHypR8hW9U17kXPLdgp6VcJe3CxPkRc4N2l5xP48QMZ7LGZcUThbHtGetsrnNlZwPHbq1Z+cQ3LxK6NoliBtRMuste4/veUsz+v9u7QQoAc+QJR9XDCd9j6GSYmWd2BAxsUlkvf4W4XbB2baQrJGlL2QnCvo5rbPgeL1nqVbFtPIZpDJdarRNMg1fnvaxvqwVWX/7LEcec1jxpK9r6QZlI21WdYe2SVqg61Cu5Crzb9dcrNWznjQaNGRYKW+O19D7UDGHFkx+CzAA6nHUdfvIb58AAAAASUVORK5CYII=);
-		background-position: 0 0;
-		background-repeat: no-repeat;
 		content:'';
 		display: block;
-		height: 23px;
-		left: 1em;
+		font-family: 'imarcicons';
+		-webkit-font-smoothing: antialiased;
+		font-style: normal;
+		font-variant: normal;
+		font-weight: normal;
+		font-size: 2em;
+		height: 2em;
+		left: .25em;
+		line-height: 1;
 		position: absolute;
-		top: 1em;
-		width: 23px;
+		speak: none;
+		text-transform: none;
+		top: .4em;
+		width: 2em;
+
 	}
 }
 
@@ -904,7 +911,7 @@ input::-moz-focus-inner {
 	background: $success;
 
 	&:before {
-		background-position: 0 -46px;
+		content: '\e00b';
 	}
 }
 
@@ -912,7 +919,7 @@ input::-moz-focus-inner {
 	background: $error;
 
 	&:before {
-		background-position: 0 0;
+		content: '\e00a';
 	}
 }
 
@@ -920,7 +927,7 @@ input::-moz-focus-inner {
 	background: $info;
 
 	&:before {
-		background-position: 0 -23px;
+		content: '\e001';
 	}
 }
 
