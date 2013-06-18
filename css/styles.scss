@@ -27,8 +27,8 @@ $text: #555;
 $selection: #fff6b5;
 
 $black: #000;
-$darkgray: #1a1a1a;
-$midgray: #2a2a2a;
+$darkgray: #2c2c2c;
+$midgray: #333333;
 $lightgray: #ccc;
 $lightestgray: #e9e9e9;
 $white: #fcfcfc;
@@ -273,14 +273,14 @@ h6 {
 
 h1 {
 	color: $textprimary;
-	font-size: 3em;
+	font-size: 2.5em;
 	line-height: 1.2;
 	margin-top: 1.67em;
 	margin-bottom: .5em;
 }
 
 h2 {
-	font-size: 2.5em;
+	font-size: 2em;
 	line-height: 1.2;
 	margin-top: 1.2em;
 	margin-bottom: .4em;
@@ -1139,7 +1139,7 @@ a.docx:before {
 					}
 
 					.dropdown {
-						box-shadow: 0 5px 5px 0px $midgray;
+        				box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.2);
 						display: none;
 						position: absolute;
 						left: 0;
@@ -1154,11 +1154,16 @@ a.docx:before {
 						border-bottom-left-radius: 5px;
 						border-bottom-right-radius: 5px;
 
-						> li:hover a {
+						> ul {
+							border-bottom-left-radius: 5px;
+							border-bottom-right-radius: 5px;
+						}
+
+						> ul li:hover a {
 							color: $white;
 						}
 
-						> li:last-child {
+						> ul li:last-child {
 							border-bottom-left-radius: 5px;
 							border-bottom-right-radius: 5px;
 

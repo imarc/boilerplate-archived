@@ -55,7 +55,7 @@ img {
   vertical-align: middle; }
 
 html {
-  background: #1a1a1a;
+  background: #2c2c2c;
   color: #555555;
   font-family: Arial, Helvetica, sans-serif;
   -ms-text-size-adjust: 100%;
@@ -102,7 +102,7 @@ footer.primary {
   margin-bottom: 2.5em; }
 
 header.primary {
-  background: #1a1a1a; }
+  background: #2c2c2c; }
   header.primary .branding {
     padding: 1.5em 16px; }
     header.primary .branding h1 {
@@ -140,7 +140,7 @@ header.primary {
   margin-bottom: 1.5em; }
 
 footer.primary {
-  background: #1a1a1a;
+  background: #2c2c2c;
   color: #888888;
   font-size: 0.875em;
   padding-top: 2.5em;
@@ -166,13 +166,13 @@ h6 {
 
 h1 {
   color: #444444;
-  font-size: 3em;
+  font-size: 2.5em;
   line-height: 1.2;
   margin-top: 1.67em;
   margin-bottom: .5em; }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 2em;
   line-height: 1.2;
   margin-top: 1.2em;
   margin-bottom: .4em; }
@@ -473,10 +473,10 @@ header.secondary nav ul {
         color: #fcfcfc; }
 header.primary nav.primary,
 header.secondary nav.primary {
-  background-color: #2a2a2a; }
+  background-color: #333333; }
   header.primary nav.primary ul li.active,
   header.secondary nav.primary ul li.active {
-    background: #2a2a2a; }
+    background: #333333; }
   header.primary nav.primary > ul > li,
   header.secondary nav.primary > ul > li {
     margin-bottom: 1em; }
@@ -507,7 +507,7 @@ header.secondary nav.secondary {
   display: none; }
   header.primary nav.secondary li a,
   header.secondary nav.secondary li a {
-    color: #2a2a2a; }
+    color: #333333; }
   header.primary nav.secondary li:hover a,
   header.secondary nav.secondary li:hover a {
     color: black; }
@@ -780,7 +780,7 @@ a.docx:before {
       line-height: auto;
       overflow: visible; }
       body:not(:target) #menu:target li a {
-        background-color: #2a2a2a;
+        background-color: #333333;
         height: 100%;
         line-height: 50px;
         padding-left: 30px; }
@@ -842,7 +842,7 @@ html.lt-ie9 body:not(:target) #menu {
     line-height: auto;
     overflow: visible; }
     html.lt-ie9 body:not(:target) #menu:target li a {
-      background-color: #2a2a2a;
+      background-color: #333333;
       height: 100%;
       line-height: 50px;
       padding-left: 30px; }
@@ -904,11 +904,11 @@ html.lt-ie9 div.dropdown {
         padding: .25em 16px; }
       header.primary nav > ul > li .dropdown,
       header.secondary nav > ul > li .dropdown {
-        box-shadow: 0 5px 5px 0px #2a2a2a;
+        box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.2);
         display: none;
         position: absolute;
         left: 0;
-        background: #2a2a2a;
+        background: #333333;
         z-index: 1;
         padding: 0;
         min-width: 192px;
@@ -918,15 +918,19 @@ html.lt-ie9 div.dropdown {
         box-sizing: border-box;
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px; }
-        header.primary nav > ul > li .dropdown > li:hover a,
-        header.secondary nav > ul > li .dropdown > li:hover a {
-          color: #fcfcfc; }
-        header.primary nav > ul > li .dropdown > li:last-child,
-        header.secondary nav > ul > li .dropdown > li:last-child {
+        header.primary nav > ul > li .dropdown > ul,
+        header.secondary nav > ul > li .dropdown > ul {
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px; }
-          header.primary nav > ul > li .dropdown > li:last-child a,
-          header.secondary nav > ul > li .dropdown > li:last-child a {
+        header.primary nav > ul > li .dropdown > ul li:hover a,
+        header.secondary nav > ul > li .dropdown > ul li:hover a {
+          color: #fcfcfc; }
+        header.primary nav > ul > li .dropdown > ul li:last-child,
+        header.secondary nav > ul > li .dropdown > ul li:last-child {
+          border-bottom-left-radius: 5px;
+          border-bottom-right-radius: 5px; }
+          header.primary nav > ul > li .dropdown > ul li:last-child a,
+          header.secondary nav > ul > li .dropdown > ul li:last-child a {
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px; }
     header.primary nav > ul > li:hover .dropdown,
@@ -944,7 +948,7 @@ html.lt-ie9 div.dropdown {
     background: none; }
   header.primary nav.primary ul li:hover a,
   header.secondary nav.primary ul li:hover a {
-    background: #2a2a2a; }
+    background: #333333; }
   header.primary nav.secondary,
   header.secondary nav.secondary {
     display: block;
@@ -1020,11 +1024,11 @@ html.lt-ie9 header.secondary nav {
       padding: .25em 16px; }
     html.lt-ie9 header.primary nav > ul > li .dropdown,
     html.lt-ie9 header.secondary nav > ul > li .dropdown {
-      box-shadow: 0 5px 5px 0px #2a2a2a;
+      box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.2);
       display: none;
       position: absolute;
       left: 0;
-      background: #2a2a2a;
+      background: #333333;
       z-index: 1;
       padding: 0;
       min-width: 192px;
@@ -1034,15 +1038,19 @@ html.lt-ie9 header.secondary nav {
       box-sizing: border-box;
       border-bottom-left-radius: 5px;
       border-bottom-right-radius: 5px; }
-      html.lt-ie9 header.primary nav > ul > li .dropdown > li:hover a,
-      html.lt-ie9 header.secondary nav > ul > li .dropdown > li:hover a {
-        color: #fcfcfc; }
-      html.lt-ie9 header.primary nav > ul > li .dropdown > li:last-child,
-      html.lt-ie9 header.secondary nav > ul > li .dropdown > li:last-child {
+      html.lt-ie9 header.primary nav > ul > li .dropdown > ul,
+      html.lt-ie9 header.secondary nav > ul > li .dropdown > ul {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px; }
-        html.lt-ie9 header.primary nav > ul > li .dropdown > li:last-child a,
-        html.lt-ie9 header.secondary nav > ul > li .dropdown > li:last-child a {
+      html.lt-ie9 header.primary nav > ul > li .dropdown > ul li:hover a,
+      html.lt-ie9 header.secondary nav > ul > li .dropdown > ul li:hover a {
+        color: #fcfcfc; }
+      html.lt-ie9 header.primary nav > ul > li .dropdown > ul li:last-child,
+      html.lt-ie9 header.secondary nav > ul > li .dropdown > ul li:last-child {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px; }
+        html.lt-ie9 header.primary nav > ul > li .dropdown > ul li:last-child a,
+        html.lt-ie9 header.secondary nav > ul > li .dropdown > ul li:last-child a {
           border-bottom-left-radius: 5px;
           border-bottom-right-radius: 5px; }
   html.lt-ie9 header.primary nav > ul > li:hover .dropdown,
@@ -1060,7 +1068,7 @@ html.lt-ie9 header.secondary nav.primary ul li.active {
   background: none; }
 html.lt-ie9 header.primary nav.primary ul li:hover a,
 html.lt-ie9 header.secondary nav.primary ul li:hover a {
-  background: #2a2a2a; }
+  background: #333333; }
 html.lt-ie9 header.primary nav.secondary,
 html.lt-ie9 header.secondary nav.secondary {
   display: block;
