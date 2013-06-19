@@ -674,7 +674,7 @@ header.secondary {
 				> a {
 					border-top-left-radius: 3px;
 					border-top-right-radius: 3px;
-					color: $white;
+					color: $background;
 				}
 			}
 			> li.active {
@@ -709,7 +709,7 @@ header.secondary {
 		}
 		li:hover {
 			a {
-				color: $black;
+				color: #000;
 			}
 		}
 	}
