@@ -28,12 +28,15 @@ $selection: #fff6b5;
 
 $black: #000;
 $darkgray: #2c2c2c;
-$midgray: #333333;
-$midgrayborder: #2a2a2a;
+$midgray: #2e2e2e;
+$midgrayborder: #2b2b2b;
 $lightgray: #eaeaea;
 $lightgrayborder: #e2e2e2;
 $lightestgray: #e9e9e9;
 $white: #fcfcfc;
+
+$header_gradient_start: #2f3a42;
+$header_gradient_end: #333333;
 
 $textgray: #888;
 $textprimary: #444;
@@ -188,7 +191,15 @@ footer.primary {
 }
 
 header.primary {
-	background: $darkgray;
+	background: $header_gradient_start;
+	background: -webkit-linear-gradient(top, $header_gradient_start 0%, $header_gradient_end 60%);
+	background: -moz-linear-gradient(top,  $header_gradient_start 0%, $header_gradient_end 73%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$header_gradient_start), color-stop(73%,$header_gradient_end));
+	background: -webkit-linear-gradient(top,  $header_gradient_start 0%, $header_gradient_end 73%);
+	background: -o-linear-gradient(top, $header_gradient_start 0%, $header_gradient_end 73%);
+	background: -ms-linear-gradient(top,  $header_gradient_start 0%, $header_gradient_end 73%);
+	background: linear-gradient(to bottom,  $header_gradient_start 0%, $header_gradient_end 73%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$header_gradient_start', endColorstr='$header_gradient_end',GradientType=0 );
 
 	.branding {
 		padding: 1.5em 16px;
@@ -622,9 +633,9 @@ header.secondary {
 						float: left;
 
 						a {
-							font-size: .75em;
+							font-size: .8em;
 							line-height: 1.34;
-							padding: .33em 1em .33em;
+							padding: .23em 1em .23em;
 						}
 
 						a:hover {
@@ -856,6 +867,7 @@ a.button {
 	background: $textsecondary;
 	border-radius: 3px;
 	border: none;
+	border-bottom: 2px solid #258AB3;
 	color: #fff;
 	display: inline-block;
 	font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -868,6 +880,7 @@ a.button {
 
 	&:hover {
 		background: $textsecondarylit;
+		border-color: #1295C9;
 		cursor: pointer;
 	}
 
@@ -986,8 +999,12 @@ a.docx:before {
 
 @include  for-mobile {
 
+	body {
+		font-size: 13px;
+	}
+
 	h1 {
-		font-size: 2.7em;
+		font-size: 2em;
 	}
 
 	li.active {
@@ -996,18 +1013,12 @@ a.docx:before {
 
 	a.menu-link {
 		display: block;
-		height: 55px;
-		width: 55px;
-		border-radius: 5px;
 		position: absolute;
-		top: 20px;
-		right: 15px;
+		top: 7px;
+		right: 17px;
 		z-index: 1003;
-		background-color: $lightgray;
-		font-size: 42px;
+		font-size: 38px;
 		text-align: center;
-		line-height: 55px;
-		vertical-align: middle;
 	}
 
 	body:not(:target) #menu {
@@ -1144,11 +1155,12 @@ a.docx:before {
 					}
 
 					.dropdown {
-        				box-shadow: 0px 6px 15px 0px rgba(0,0,0,0.2);
 						display: none;
 						position: absolute;
 						left: 0;
 						background: $midgray;
+						border: 2px solid $midgrayborder;
+						border-top: 0;
 						z-index: 1;
 						padding: 0;
 						min-width: 192px;
@@ -1221,7 +1233,7 @@ a.docx:before {
 					float: left;
 
 					a {
-						font-size: .75em;
+						font-size: 0.8em;
 						padding: 0 12px;
 						line-height: 2.67;
 					}
@@ -1262,7 +1274,7 @@ a.docx:before {
 			float: left;
 			padding-right: 0;
 			padding-left: 0;
-			width: 76%;
+			width: 74%;
 		}
 
 		aside.primary {

@@ -102,7 +102,15 @@ footer.primary {
   margin-bottom: 2.5em; }
 
 header.primary {
-  background: #2c2c2c; }
+  background: #2f3a42;
+  background: -webkit-linear-gradient(top, #2f3a42 0%, #333333 60%);
+  background: -moz-linear-gradient(top, #2f3a42 0%, #333333 73%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2f3a42), color-stop(73%, #333333));
+  background: -webkit-linear-gradient(top, #2f3a42 0%, #333333 73%);
+  background: -o-linear-gradient(top, #2f3a42 0%, #333333 73%);
+  background: -ms-linear-gradient(top, #2f3a42 0%, #333333 73%);
+  background: linear-gradient(to bottom, #2f3a42 0%, #333333 73%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$header_gradient_start', endColorstr='$header_gradient_end',GradientType=0 ); }
   header.primary .branding {
     padding: 1.5em 16px; }
     header.primary .branding h1 {
@@ -466,19 +474,19 @@ header.secondary nav ul {
       float: left; }
       header.primary nav ul li ul li a,
       header.secondary nav ul li ul li a {
-        font-size: .75em;
+        font-size: .8em;
         line-height: 1.34;
-        padding: .33em 1em .33em; }
+        padding: .23em 1em .23em; }
       header.primary nav ul li ul li a:hover,
       header.secondary nav ul li ul li a:hover {
         color: #fcfcfc; }
 header.primary nav.primary,
 header.secondary nav.primary {
-  background-color: #333333;
-  border-top: 1px solid #2a2a2a; }
+  background-color: #2e2e2e;
+  border-top: 1px solid #2b2b2b; }
   header.primary nav.primary ul li.active,
   header.secondary nav.primary ul li.active {
-    background: #333333; }
+    background: #2e2e2e; }
   header.primary nav.primary > ul > li,
   header.secondary nav.primary > ul > li {
     margin-bottom: 1em; }
@@ -509,7 +517,7 @@ header.secondary nav.secondary {
   display: none; }
   header.primary nav.secondary li a,
   header.secondary nav.secondary li a {
-    color: #333333; }
+    color: #2e2e2e; }
   header.primary nav.secondary li:hover a,
   header.secondary nav.secondary li:hover a {
     color: black; }
@@ -629,6 +637,7 @@ a.button {
   background: #0096d2;
   border-radius: 3px;
   border: none;
+  border-bottom: 2px solid #258AB3;
   color: #fff;
   display: inline-block;
   font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -644,6 +653,7 @@ a.button {
   input[type="submit"]:hover,
   a.button:hover {
     background: #13abe8;
+    border-color: #1295C9;
     cursor: pointer; }
   button:focus,
   input[type="button"]:focus,
@@ -724,26 +734,23 @@ a.docx:before {
 /* = Page Specific = */
 /* = Media Queries = */
 @media only screen and (max-width: 640px) {
+  body {
+    font-size: 13px; }
+
   h1 {
-    font-size: 2.7em; }
+    font-size: 2em; }
 
   li.active {
     background: none; }
 
   a.menu-link {
     display: block;
-    height: 55px;
-    width: 55px;
-    border-radius: 5px;
     position: absolute;
-    top: 20px;
-    right: 15px;
+    top: 7px;
+    right: 17px;
     z-index: 1003;
-    background-color: #eaeaea;
-    font-size: 42px;
-    text-align: center;
-    line-height: 55px;
-    vertical-align: middle; }
+    font-size: 38px;
+    text-align: center; }
 
   body:not(:target) #menu {
     margin: 0;
@@ -782,31 +789,27 @@ a.docx:before {
       line-height: auto;
       overflow: visible; }
       body:not(:target) #menu:target li a {
-        background-color: #333333;
+        background-color: #2e2e2e;
         height: 100%;
         line-height: 50px;
         padding-left: 30px; }
 
   div.dropdown {
     display: none; } }
+html.lt-ie9 body {
+  font-size: 13px; }
 html.lt-ie9 h1 {
-  font-size: 2.7em; }
+  font-size: 2em; }
 html.lt-ie9 li.active {
   background: none; }
 html.lt-ie9 a.menu-link {
   display: block;
-  height: 55px;
-  width: 55px;
-  border-radius: 5px;
   position: absolute;
-  top: 20px;
-  right: 15px;
+  top: 7px;
+  right: 17px;
   z-index: 1003;
-  background-color: #eaeaea;
-  font-size: 42px;
-  text-align: center;
-  line-height: 55px;
-  vertical-align: middle; }
+  font-size: 38px;
+  text-align: center; }
 html.lt-ie9 body:not(:target) #menu {
   margin: 0;
   position: absolute;
@@ -844,7 +847,7 @@ html.lt-ie9 body:not(:target) #menu {
     line-height: auto;
     overflow: visible; }
     html.lt-ie9 body:not(:target) #menu:target li a {
-      background-color: #333333;
+      background-color: #2e2e2e;
       height: 100%;
       line-height: 50px;
       padding-left: 30px; }
@@ -906,11 +909,12 @@ html.lt-ie9 div.dropdown {
         padding: .25em 16px; }
       header.primary nav > ul > li .dropdown,
       header.secondary nav > ul > li .dropdown {
-        box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.2);
         display: none;
         position: absolute;
         left: 0;
-        background: #333333;
+        background: #2e2e2e;
+        border: 2px solid #2b2b2b;
+        border-top: 0;
         z-index: 1;
         padding: 0;
         min-width: 192px;
@@ -950,7 +954,7 @@ html.lt-ie9 div.dropdown {
     background: none; }
   header.primary nav.primary ul li:hover a,
   header.secondary nav.primary ul li:hover a {
-    background: #333333; }
+    background: #2e2e2e; }
   header.primary nav.secondary,
   header.secondary nav.secondary {
     display: block;
@@ -961,7 +965,7 @@ html.lt-ie9 div.dropdown {
       float: left; }
       header.primary nav.secondary ul li a,
       header.secondary nav.secondary ul li a {
-        font-size: .75em;
+        font-size: 0.8em;
         padding: 0 12px;
         line-height: 2.67; }
     header.primary nav.secondary ul li.active a,
@@ -1027,11 +1031,12 @@ html.lt-ie9 header.secondary nav {
       padding: .25em 16px; }
     html.lt-ie9 header.primary nav > ul > li .dropdown,
     html.lt-ie9 header.secondary nav > ul > li .dropdown {
-      box-shadow: 0px 6px 15px 0px rgba(0, 0, 0, 0.2);
       display: none;
       position: absolute;
       left: 0;
-      background: #333333;
+      background: #2e2e2e;
+      border: 2px solid #2b2b2b;
+      border-top: 0;
       z-index: 1;
       padding: 0;
       min-width: 192px;
@@ -1071,7 +1076,7 @@ html.lt-ie9 header.secondary nav.primary ul li.active {
   background: none; }
 html.lt-ie9 header.primary nav.primary ul li:hover a,
 html.lt-ie9 header.secondary nav.primary ul li:hover a {
-  background: #333333; }
+  background: #2e2e2e; }
 html.lt-ie9 header.primary nav.secondary,
 html.lt-ie9 header.secondary nav.secondary {
   display: block;
@@ -1082,7 +1087,7 @@ html.lt-ie9 header.secondary nav.secondary {
     float: left; }
     html.lt-ie9 header.primary nav.secondary ul li a,
     html.lt-ie9 header.secondary nav.secondary ul li a {
-      font-size: .75em;
+      font-size: 0.8em;
       padding: 0 12px;
       line-height: 2.67; }
   html.lt-ie9 header.primary nav.secondary ul li.active a,
@@ -1107,7 +1112,7 @@ html.lt-ie9 header.primary .branding {
     float: left;
     padding-right: 0;
     padding-left: 0;
-    width: 76%; }
+    width: 74%; }
   .torso aside.primary {
     width: 24%;
     float: right;
@@ -1123,7 +1128,7 @@ html.lt-ie9 .torso .main {
   float: left;
   padding-right: 0;
   padding-left: 0;
-  width: 76%; }
+  width: 74%; }
 html.lt-ie9 .torso aside.primary {
   width: 24%;
   float: right;
