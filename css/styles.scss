@@ -1130,7 +1130,8 @@ table {
 
 					.dropdown {
 						background: $background_secondary;
-						border: 2px solid #2B2B2B;
+						box-shadow: 0 8px 12px 0px rgba(0,0,0,0.2);
+						border: 2px solid #202020;
 						border-bottom-left-radius: 5px;
 						border-bottom-right-radius: 5px;
 						border-top: 0;
