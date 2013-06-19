@@ -145,10 +145,6 @@ body {
 	@media only screen and (max-width: 640px) {
 		@content;
 	}
-
-	html.lt-ie9 {
-		@content;
-	}
 }
 
 @mixin for-tablets {
@@ -661,18 +657,17 @@ header.secondary {
 			> li {
 				margin-bottom: 1em;
 
-				&:hover {
-					> a {
-						border-top-left-radius: 3px;
-						border-top-right-radius: 3px;
-						color: $white;
-					}
-				}
-
 				> a {
 					color: $lightgray;
 					font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 					white-space: nowrap;
+				}
+			}
+			> li:hover {
+				> a {
+					border-top-left-radius: 3px;
+					border-top-right-radius: 3px;
+					color: $white;
 				}
 			}
 			> li.active {
@@ -704,11 +699,10 @@ header.secondary {
 			a {
 				color: $midgray;
 			}
-
-			&:hover {
-				a {
-					color: $black;
-				}
+		}
+		li:hover {
+			a {
+				color: $black;
 			}
 		}
 	}
