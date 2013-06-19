@@ -1151,7 +1151,7 @@ a.docx:before {
 					position: relative;
 
 					> a {
-						padding: .25em 16px;
+						padding: .45em 16px;
 					}
 
 					.dropdown {
@@ -1243,6 +1243,11 @@ a.docx:before {
 					a {
 						color: $textsecondary;
 					}
+				}
+
+				> li:first-child {
+					padding-left: 0;
+					margin-left: -12px;
 				}
 			}
 		}

@@ -906,7 +906,7 @@ html.lt-ie9 div.dropdown {
       position: relative; }
       header.primary nav > ul > li > a,
       header.secondary nav > ul > li > a {
-        padding: .25em 16px; }
+        padding: .45em 16px; }
       header.primary nav > ul > li .dropdown,
       header.secondary nav > ul > li .dropdown {
         display: none;
@@ -971,6 +971,10 @@ html.lt-ie9 div.dropdown {
     header.primary nav.secondary ul li.active a,
     header.secondary nav.secondary ul li.active a {
       color: #0096d2; }
+    header.primary nav.secondary ul > li:first-child,
+    header.secondary nav.secondary ul > li:first-child {
+      padding-left: 0;
+      margin-left: -12px; }
   header.primary nav.utility,
   header.secondary nav.utility {
     display: block;
@@ -1028,7 +1032,7 @@ html.lt-ie9 header.secondary nav {
     position: relative; }
     html.lt-ie9 header.primary nav > ul > li > a,
     html.lt-ie9 header.secondary nav > ul > li > a {
-      padding: .25em 16px; }
+      padding: .45em 16px; }
     html.lt-ie9 header.primary nav > ul > li .dropdown,
     html.lt-ie9 header.secondary nav > ul > li .dropdown {
       display: none;
@@ -1093,6 +1097,10 @@ html.lt-ie9 header.secondary nav.secondary {
   html.lt-ie9 header.primary nav.secondary ul li.active a,
   html.lt-ie9 header.secondary nav.secondary ul li.active a {
     color: #0096d2; }
+  html.lt-ie9 header.primary nav.secondary ul > li:first-child,
+  html.lt-ie9 header.secondary nav.secondary ul > li:first-child {
+    padding-left: 0;
+    margin-left: -12px; }
 html.lt-ie9 header.primary nav.utility,
 html.lt-ie9 header.secondary nav.utility {
   display: block;
