@@ -13,7 +13,7 @@ Take a Look
 -----------
 * [See the Markup](http://imarc.github.io/boilerplate)
 * [See the Structure](http://imarc.github.io/boilerplate/structure)
-* [See the CSS](https://github.io/imarc/boilerplate/blob/gh-pages/css/styles.css)
+* [See the CSS](http://imarc.github.io/boilerplate/css/styles.css)
 
 Our Goals
 ---------
@@ -32,8 +32,8 @@ padding and vertical margins relative to the font size when appropriate. We set 
 relative to this.
 
 
-Our Sections
-============
+Our Stylesheet Sections
+=======================
 
 A Table of Contents
 ------------------------
