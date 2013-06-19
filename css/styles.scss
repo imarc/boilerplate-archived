@@ -1,6 +1,6 @@
 /* = Table of Contents =
 
- * Colors
+ * Variables
  * Web Fonts
  * Base
  * Mixins
@@ -12,41 +12,33 @@
  * Forms
  * Messaging
  * Tables
- * Site Manager
- 		== Rich Text Editor (TinyMCE)
  * Section Specific
  * Page Specific
  * Media Queries
- * Internet Explorer
  * Print Styles
  */
 
-/* = Colors = */
-$background: #fcfcfc;
-$text: #555;
-$selection: #fff6b5;
+/* = Variables = */
+$background: #FCFCFC;
+$selection: #FFF6B5;
 
-$black: #000;
-$darkgray: #2c2c2c;
-$midgray: #2e2e2e;
-$midgrayborder: #2b2b2b;
-$lightgray: #eaeaea;
-$lightgrayborder: #e2e2e2;
-$lightestgray: #e9e9e9;
-$white: #fcfcfc;
+$background_primary: #2C2C2C;
+$background_secondary: #2E2E2E;
+
+$text_primary: #555;
+$text_secondary: #888;
+
+$link: #0096D2;
+$link_hover: #13abe8;
 
 $header_gradient_start: #2f3a42;
 $header_gradient_end: #333333;
 
-$textgray: #888;
-$textprimary: #444;
-$textsecondary: #0096d2;
-$textsecondarylit: #13abe8;
-$textsecondaryfocused: #0084b8;
+$success: #ECFAE8;
+$error: #FFD7D7;
+$info: #BDE5F8;
 
-$success: #ecfae8;
-$error: #ffd7d7;
-$info: #bde5f8;
+$padding: 16px;
 
 /* = Web Fonts = */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
@@ -85,25 +77,31 @@ audio, canvas, video {
 	display: inline-block;
 }
 
-img {
-	-ms-interpolation-mode: bicubic;
-	max-width: 100%;
-	vertical-align: middle;
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 html {
-	background: $darkgray;
-	color: $text;
-	font-family:  Arial, Helvetica, sans-serif;
+	background: $background_primary;
+	color: $text_primary;
+	font-family: Arial, Helvetica, sans-serif;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
 
 body {
-	background: $white;
+	background: #FCFCFC;
 	font-size: 16px;
 	line-height: 1.5;
 	min-width: 310px;
+}
+
+img {
+	-ms-interpolation-mode: bicubic;
+	max-width: 100%;
+	vertical-align: middle;
 }
 
 ::-moz-selection {
@@ -143,10 +141,6 @@ body {
 
 @mixin for-mobile {
 	@media only screen and (max-width: 640px) {
-		@content;
-	}
-
-	html.lt-ie9 {
 		@content;
 	}
 }
@@ -199,16 +193,15 @@ header.primary {
 	background: -o-linear-gradient(top, $header_gradient_start 0%, $header_gradient_end 73%);
 	background: -ms-linear-gradient(top,  $header_gradient_start 0%, $header_gradient_end 73%);
 	background: linear-gradient(to bottom,  $header_gradient_start 0%, $header_gradient_end 73%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$header_gradient_start', endColorstr='$header_gradient_end',GradientType=0 );
 
 	.branding {
-		padding: 1.5em 16px;
+		padding: 1.5em $padding;
 
 		h1 {
 			margin: 0;
 
 			a {
-				color: $white;
+				color: #FCFCFC;
 			}
 		}
 	}
@@ -217,15 +210,15 @@ header.primary {
 .torso {
 	.main,
 	aside.primary {
-		padding-left: 16px;
-		padding-right: 16px;
+		padding-left: $padding;
+		padding-right: $padding;
 
 		article {
 			.meta {
-				color: $textgray;
+				color: $text_secondary;
 				font-size: .875em;
-				margin-top: -.5em;
 				margin-bottom: 1em;
+				margin-top: -.5em;
 			}
 		}
 	}
@@ -237,9 +230,9 @@ header.primary {
 		}
 
 		aside {
-			background: $white;
+			background: #FCFCFC;
 			border-radius: 5px;
-			color: $textgray;
+			color: $text_secondary;
 			float: right;
 			font-size: .875em;
 			line-height: 1.43em;
@@ -260,12 +253,11 @@ header.primary {
 }
 
 footer.primary {
-	background: $darkgray;
-	color: $textgray;
+	background: $background_primary;
+	color: $text_secondary;
 	font-size: 0.875em;
-	padding-top: 2.5em;
-	padding-bottom: 2.5em;
 	margin-bottom: 0;
+	padding: 2.5em $padding;
 }
 
 
@@ -285,18 +277,17 @@ h6 {
 }
 
 h1 {
-	color: $textprimary;
 	font-size: 2.5em;
 	line-height: 1.2;
-	margin-top: 1.67em;
 	margin-bottom: .5em;
+	margin-top: 1.67em;
 }
 
 h2 {
 	font-size: 2em;
 	line-height: 1.2;
-	margin-top: 1.2em;
 	margin-bottom: .4em;
+	margin-top: 1.2em;
 }
 	h1 + h2 {
 		margin-top: -.2em;
@@ -305,19 +296,19 @@ h2 {
 h3 {
 	font-size: 1.5em;
 	line-height: 1.3;
-	margin-top: 1.8em;
 	margin-bottom: .4em;
+	margin-top: 1.8em;
 }
 	h2 + h3 {
-		margin-top: -.4em;
 		margin-bottom: .2em;
+		margin-top: -.4em;
 	}
 
 h4 {
 	font-size: 1.25em;
 	line-height: 1.4;
-	margin-top: 1.8em;
 	margin-bottom: .4em;
+	margin-top: 1.8em;
 }
 	h3 + h4 {
 		margin-top: -.3em;
@@ -325,16 +316,16 @@ h4 {
 
 h5 {
 	font-size: 1em;
-	margin-top: 1.8em;
 	margin-bottom: .4em;
+	margin-top: 1.8em;
 }
 	h4 + h5 {
 		margin-top: -.3em;
 	}
 h6 {
 	font-size: .9em;
-	margin-top: 1.8em;
 	margin-bottom: .4em;
+	margin-top: 1.8em;
 }
 	h5 + h6 {
 		margin-top: -.2em;
@@ -357,13 +348,13 @@ em {
 blockquote,
 pre {
 	@include grouping;
-	color: $textgray;
+	color: $text_secondary;
 	margin-bottom: 1.5em;
 }
 
 blockquote {
+	border-left: 1px solid #EAEAEA;
 	font-style: italic;
-	border-left: 1px solid $lightgray;
 	margin-left: 2em;
 	margin-right: 1em;
 	padding-left: 1em;
@@ -372,12 +363,12 @@ blockquote {
 
 .main {
 	.intro {
-		border-bottom: 1px solid $lightgrayborder;
+		border-bottom: 1px solid #E2E2E2;
 		margin-bottom: 2.5em;
 		padding-bottom: 1.5em;
 
 		p {
-			color: $textgray;
+			color: $text_secondary;
 			font-size: 1.25em;
 			line-height: 1.6;
 			margin-bottom: .8em;
@@ -385,10 +376,10 @@ blockquote {
 	}
 
 	.highlight {
-		background: $lightgray;
-		border: 1px solid $lightgrayborder;
+		background: #EAEAEA;
+		border: 1px solid #E2E2E2;
 		border-radius: 5px;
-		color: $textgray;
+		color: $text_secondary;
 		font-size: 1.5em;
 		line-height: 1.34;
 		margin-bottom: 1em;
@@ -413,7 +404,6 @@ pre {
 	word-wrap: break-word;
 }
 
-
 p {
 	margin-bottom: 1.5em;
 }
@@ -424,7 +414,7 @@ address {
 
 hr {
 	border: 0;
-	border-top: 1px solid $textgray;
+	border-top: 1px solid $text_secondary;
 	display: block;
 	height: 0;
 	margin: 2em auto 3em;
@@ -432,16 +422,12 @@ hr {
 }
 
 a {
-	color: $textsecondary;
+	color: $link;
 	text-decoration: none;
-
-	&:visited {
-		color: $textsecondary
-	}
 
 	&:hover,
 	&:active {
-		color: $textgray;
+		color: $text_secondary;
 		outline: 0;
 	}
 
@@ -494,100 +480,117 @@ sub {
 }
 
 /* = Iconography = */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
 
-/* Use the following CSS code if you want to have a class per icon */
-/*
-Instead of a list of all class selectors,
-you can use the generic selector below, but it's slower:
-[class*="icon-"] {
-*/
-.icon-cancel, .icon-checkmark, .icon-envelope, .icon-magnifier, .icon-question, .icon-gear, .icon-facebook, .icon-chat, .icon-twitter, .icon-youtube, .icon-worddoc, .icon-pdf, .icon-smartphone, .icon-error, .icon-location, .icon-information, .icon-question, .icon-mail {
+.icon_cancel, 
+.icon_checkmark, 
+.icon_envelope, 
+.icon_magnifier, 
+.icon_question, 
+.icon_gear, 
+.icon_facebook, 
+.icon_chat, 
+.icon_twitter, 
+.icon_youtube, 
+.icon_worddoc, 
+.icon_pdf, 
+.icon_smartphone, 
+.icon_error, 
+.icon_location, 
+.icon_information, 
+.icon_question, 
+.icon_mail {
 	font-family: 'imarcicons';
-	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
-	text-transform: none;
 	line-height: 1;
+	speak: none;
+	text-transform: none;
 	-webkit-font-smoothing: antialiased;
 }
-.icon-cancel:before {
+.icon_cancel:before {
 	content: "\e000";
 }
-.icon-checkmark:before {
+.icon_checkmark:before {
 	content: "\e001";
 }
-.icon-envelope:before {
+.icon_envelope:before {
 	content: "\e009";
 }
-.icon-magnifier:before {
+.icon_magnifier:before {
 	content: "\e00a";
 }
-.icon-gear:before {
+.icon_gear:before {
 	content: "\53";
 }
-.icon-facebook:before {
+.icon_facebook:before {
 	content: "\66";
 }
-.icon-chat:before {
+.icon_chat:before {
 	content: "\64";
 }
-.icon-twitter:before {
+.icon_twitter:before {
 	content: "\74";
 }
-.icon-youtube:before {
+.icon_youtube:before {
 	content: "\79";
 }
-.icon-worddoc:before {
+.icon_worddoc:before {
 	content: "\21";
 }
-.icon-pdf:before {
+.icon_pdf:before {
 	content: "\22";
 }
-.icon-smartphone:before {
+.icon_smartphone:before {
 	content: "\d4";
 }
-.icon-error:before {
+.icon_error:before {
 	content: "\23";
 }
-.icon-location:before {
+.icon_location:before {
 	content: "\2c";
 }
-.icon-information:before {
+.icon_information:before {
 	content: "\3d";
 }
-.icon-question:before {
+.icon_question:before {
 	content: "\24";
 }
-.icon-mail:before {
+.icon_mail:before {
 	content: "\6d";
 }
-
-
 .glyph {
 	font-size: 32px;
 	float: left;
-	text-align: center;
 	background: #eee;
-	padding: .75em;
-	margin: .75em 1.5em .75em 0;
-	width: 4.5em;
 	border-radius: .25em;
 	box-shadow: inset 0 0 0 1px #f8f8f8, 0 0 0 1px #CCC;
+	margin: .75em 1.5em .75em 0;
+	padding: .75em;
+	text-align: center;
+	width: 5.5em;
 }
-.glyph input {
+.glyph input[type="text"] {
+	box-shadow: 0 0 0 1px #ccc;
+	border: 0;
 	font-family: consolas, monospace;
 	font-size: 13px !important;
-	width: 100%;
-	text-align: center;
-	border: 0;
-	box-shadow: 0 0 0 1px #ccc;
+	margin-top: 0.5em;
 	padding: .125em;
+	text-align: center;
+	width: 100%;
+}
+
+/* These apply icons to TinyMCE classed anchors */
+a.pdf:before {
+	content: "\22";
+	font-family: 'imarcicons';
+}
+a.word:before, 
+a.doc:before, 
+a.docx:before { 
+	content: "\21";
+	font-family: 'imarcicons';
 }
 
 
@@ -621,11 +624,11 @@ header.secondary {
 				padding-left: 1em;
 
 				a {
-					color: $lightgray;
+					color: #EAEAEA;
 				}
 				
 				a:hover {
-					color: $white;
+					color: #FCFCFC;
 				}
 
 				ul {
@@ -639,7 +642,7 @@ header.secondary {
 						}
 
 						a:hover {
-							color: $white;
+							color: #FCFCFC;
 						}
 					}
 				}
@@ -648,12 +651,12 @@ header.secondary {
 	}
 
 	nav.primary {
-		background-color: $midgray;
-		border-top: 1px solid $midgrayborder;
+		background-color: $background_secondary;
+		border-top: 1px solid #2B2B2B;
 
 		ul {
 			li.active {
-				background: $midgray;
+				background: $background_secondary;
 			}
 		}
 
@@ -665,19 +668,19 @@ header.secondary {
 					> a {
 						border-top-left-radius: 3px;
 						border-top-right-radius: 3px;
-						color: $white;
+						color: #FCFCFC;
 					}
 				}
 
 				> a {
-					color: $lightgray;
+					color: #EAEAEA;
 					font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
 					white-space: nowrap;
 				}
 			}
 			> li.active {
 				> a {
-					color: $textsecondary;
+					color: $link;
 				}
 			}
 		}
@@ -702,12 +705,12 @@ header.secondary {
 
 		li {
 			a {
-				color: $midgray;
+				color: $background_secondary;
 			}
 
 			&:hover {
 				a {
-					color: $black;
+					color: #000;
 				}
 			}
 		}
@@ -719,37 +722,37 @@ aside {
 		> ul {
 			li {
 				a {
-					padding-top: .5em;
 					padding-bottom: .5em;
+					padding-top: .5em;
 				}
 
 				a:hover {
-					color: $text;
+					color: $text_primary;
 				}
 
 
 				ul {
 					li {
 						a {
-							color: $textgray;
+							color: $text_secondary;
 							font-size: .75em;
 							line-height: 1.34;
-							padding-top: .333em;
 							padding-bottom: .333em;
+							padding-top: .333em;
 						}
 					}
 
 					li:last-child {
 						a {
-							padding-top: .333em;
 							padding-bottom: 1em;
+							padding-top: .333em;
 						}
 					}
 				}
 			}
 
 			> li {
-				border-top: 1px solid $lightgray;
+				border-top: 1px solid #EAEAEA;
 			}
 
 			> li:first-child {
@@ -793,7 +796,7 @@ span.required {
 }
 
 fieldset .help {
-	color: $textgray;
+	color: $text_secondary;
 	display: block;
 	font-size: .75em;
 	line-height: 1.34;
@@ -801,19 +804,17 @@ fieldset .help {
 	padding: 0;
 }
 
-input[type="text"],
 input[type="password"],
+input[type="text"],
 textarea {
 	border-radius: 2px;
-	border: 0;
-	box-shadow: 0 1px 4px 0 #848484 inset;
-	color: #333;
+	border: 1px solid #BBB;
+	color: $text_primary;
 	display: block;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 1em;
-	line-height: 2;
 	margin: 0;
-	padding-left: 1%;
-	padding-right: 1%;
+	padding: 0.3em 1%;
 	width: 98%;
 }
 
@@ -838,10 +839,7 @@ textarea {
 
 input[type="checkbox"],
 input[type="radio"] {
-	-ms-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
+	padding: 0
 }
 
 input[type="file"] {
@@ -864,10 +862,10 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	background: $textsecondary;
-	border-radius: 3px;
+	background: $link;
 	border: none;
 	border-bottom: 2px solid #258AB3;
+	border-radius: 3px;
 	color: #fff;
 	display: inline-block;
 	font-family: 'Open Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -879,13 +877,13 @@ a.button {
 	text-align: center;
 
 	&:hover {
-		background: $textsecondarylit;
+		background: $link_hover;
 		border-color: #1295C9;
 		cursor: pointer;
 	}
 
 	&:focus {
-		background: $textsecondaryfocused;
+		background: #0084B8;
 	}
 }
 
@@ -908,10 +906,10 @@ input::-moz-focus-inner {
 	}
 
 	&:before {
-		font-family: 'imarcicons';
-		font-size: 20px;
 		content:'';
 		display: block;
+		font-family: 'imarcicons';
+		font-size: 20px;
 		height: 23px;
 		left: 1em;
 		position: absolute;
@@ -968,36 +966,18 @@ table {
 
 	thead {
 		th {
-			border-bottom: 1px solid $textgray;
+			border-bottom: 1px solid $text_secondary;
 		}
 	}
 }
 
-/* = Rich Text Editor (TinyMCE) = */
-
-
-a.pdf:before {
-	font-family: 'imarcicons';
-	content: "\22";
-}
-a.word:before, 
-a.doc:before, 
-a.docx:before { 
-	font-family: 'imarcicons';
-	content: "\21";
-}
-
 
 /* = Section Specific = */
-
-
 /* = Page Specific = */
 
 
 /* = Media Queries = */
-
-
-@include  for-mobile {
+@include for-mobile {
 
 	body {
 		font-size: 13px;
@@ -1011,28 +991,28 @@ a.docx:before {
 		background: none;
 	}
 
-	a.menu-link {
+	a.menu_link {
 		display: block;
-		position: absolute;
-		top: 7px;
-		right: 17px;
-		z-index: 1003;
 		font-size: 38px;
+		position: absolute;
+		right: 17px;
 		text-align: center;
+		top: 7px;
+		z-index: 1003;
 	}
 
 	body:not(:target) #menu {
+		left: 0;
 		margin: 0;
 		position: absolute;
-		top: 0;
 		right: 0;
-		left: 0;
+		top: 0;
 		z-index: 1000;
 
 		&:target {
-			z-index: 1001;
 			display: block;
 			position: relative;
+			z-index: 1001;
 
 			.back {
 				height: 0;
@@ -1040,26 +1020,26 @@ a.docx:before {
 
 				a {
 					background-color: transparent;
-					height: auto;
-					position: absolute;
-					top: -101em;
 					bottom: -101em;
+					height: auto;
 					left: 0;
+					position: absolute;
 					right: 0;
 					text-indent: -999em;
+					top: -101em;
 					z-index: -1;
 				}
 			}
 		}
 
 		li {
-			width: 100%;
 			height: 0;
 			line-height: 0;
 			overflow: hidden;
-			transition: height .25s ease;
-			-webkit-transition: height .25s ease;
 			padding-left: 0;
+			-webkit-transition: height .25s ease;
+			transition: height .25s ease;
+			width: 100%;
 		}
 
 		&:target li {
@@ -1068,7 +1048,7 @@ a.docx:before {
 			overflow: visible;
 
 			a {
-				background-color: $midgray;
+				background-color: $background_secondary;
 				height: 100%;
 				line-height: 50px;
 				padding-left: 30px;
@@ -1085,15 +1065,15 @@ a.docx:before {
 
 @include for-tablets {
 
-	.menu-link {
+	.menu_link {
 		display: none;
 	}
 	body:not(:target) #menu {
 	    padding-top: 0;
 
 	    li {
-	    	display: inline;
 	    	border: none;
+	    	display: inline;
 	    }
 
 	    .back {
@@ -1105,12 +1085,8 @@ a.docx:before {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 1024px;
-		padding-left: 16px;
-		padding-right: 16px;
-		-ms-box-sizing: border-box;
-		-moz-box-sizing: border-box;
-		-webkit-box-sizing: border-box;
-		box-sizing: border-box;
+		padding-left: $padding;
+		padding-right: $padding;
 	}
 
 	blockquote {
@@ -1131,14 +1107,14 @@ a.docx:before {
 				margin-bottom: 0;
 
 				li {
-					padding-left: 0;
 					float: left;
+					padding-left: 0;
 
 					ul {
 						li {
 							float: none;
 							a {
-								padding-left: 16px;
+								padding-left: $padding;
 								line-height: 2;
 							}
 						}
@@ -1151,25 +1127,21 @@ a.docx:before {
 					position: relative;
 
 					> a {
-						padding: .45em 16px;
+						padding: .45em $padding;
 					}
 
 					.dropdown {
-						display: none;
-						position: absolute;
-						left: 0;
-						background: $midgray;
-						border: 2px solid $midgrayborder;
-						border-top: 0;
-						z-index: 1;
-						padding: 0;
-						min-width: 192px;
-						-ms-box-sizing: border-box;
-						-moz-box-sizing: border-box;
-						-webkit-box-sizing: border-box;
-						box-sizing: border-box;
+						background: $background_secondary;
+						border: 2px solid #2B2B2B;
 						border-bottom-left-radius: 5px;
 						border-bottom-right-radius: 5px;
+						border-top: 0;
+						display: none;
+						left: 0;
+						min-width: 192px;
+						padding: 0;
+						position: absolute;
+						z-index: 1;
 
 						> ul {
 							border-bottom-left-radius: 5px;
@@ -1177,7 +1149,7 @@ a.docx:before {
 						}
 
 						> ul li:hover a {
-							color: $white;
+							color: #FCFCFC;
 						}
 
 						> ul li:last-child {
@@ -1217,16 +1189,16 @@ a.docx:before {
 
 				li:hover {
 					a {
-						background: $midgray;
+						background: $background_secondary;
 					}
 				}
 			}
 		}
 
 		nav.secondary {
+			background: #EAEAEA;
+			border-bottom: 1px solid #E2E2E2;
 			display: block;
-			background: $lightgray;
-			border-bottom: 1px solid $lightgrayborder;
 
 			ul {
 				li {
@@ -1234,20 +1206,20 @@ a.docx:before {
 
 					a {
 						font-size: 0.8em;
-						padding: 0 12px;
 						line-height: 2.67;
+						padding: 0 12px;
 					}
 				}
 
 				li.active {
 					a {
-						color: $textsecondary;
+						color: $link;
 					}
 				}
 
 				> li:first-child {
-					padding-left: 0;
 					margin-left: -12px;
+					padding-left: 0;
 				}
 			}
 		}
@@ -1255,8 +1227,8 @@ a.docx:before {
 		nav.utility {
 			display: block;
 			position: absolute;
-			top: 1em;
 			right: 32px;
+			top: 1em;
 		}
 	}
 
@@ -1272,52 +1244,28 @@ a.docx:before {
 	
 	.torso {
 		.main {
-			-moz-box-sizing: border-box;
-			-ms-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
 			float: left;
-			padding-right: 0;
 			padding-left: 0;
+			padding-right: 0;
 			width: 74%;
 		}
 
 		aside.primary {
-			width: 24%;
 			float: right;
-			-ms-box-sizing: border-box;
-			-moz-box-sizing: border-box;
-			-webkit-box-sizing: border-box;
-			box-sizing: border-box;
+			width: 24%;
 		}
-	}
-}
 
-/* IE Specific */
-html.lt-ie8 {
-	.group,
-	.container {
-		zoom: 1;
-	}
+		img.justified_left {
+			float: left;
+			margin-right: 3%;
+			max-width: 47%;
+		}
 
-	button,
-	input,
-	select,
-	textarea {
-		vertical-align: middle;
-	}
-
-	button,
-	input[type="button"],
-	input[type="reset"],
-	input[type="submit"] {
-		overflow: visible;
-	}
-
-	input[type="checkbox"],
-	input[type="radio"] {
-		height: 13px;
-		width: 13px;
+		img.justified_right {
+			float: right;
+			margin-left: 3%;
+			max-width: 47%;
+		}
 	}
 }
 
@@ -1349,7 +1297,7 @@ html.lt-ie8 {
 
 	pre,
 	blockquote {
-		border: 1px solid $textgray;
+		border: 1px solid $text_secondary;
 		page-break-inside: avoid;
 	}
 
