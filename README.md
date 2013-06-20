@@ -1,5 +1,5 @@
-iMarc Boilerplate
-=================
+Boilerplate
+===========
 
 We're currently developing a boilerplate for new sites. This is meant work
 as a lighter, customized variant of something like Twitter Bootstrap or the
@@ -124,4 +124,4 @@ These rules are primarily from the HTML5 Boilerplate.
 License
 =======
 
-iMarc Boilerplate is released under the MIT license. See LICENSE for the full license.
+Boilerplate is released under the MIT license. See LICENSE for the full license.
