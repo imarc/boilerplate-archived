@@ -143,6 +143,12 @@ img {
 		display: table-cell;
 		width: 100%;
 	}
+	> hr {
+		border: 0;
+		padding: 0;
+		margin: 0;
+		width: 1em;
+	}
 }
 
 @mixin for-mobile {
@@ -1249,9 +1255,12 @@ table {
 	
 	.torso {
 		.main {
-			float: left;
 			padding-left: 0;
 			padding-right: 0;
+		}
+
+		aside.primary + .main {
+			float: left;
 			width: 74%;
 		}
 
