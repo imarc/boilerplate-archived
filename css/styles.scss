@@ -50,16 +50,12 @@ $padding: 16px;
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
 
 @font-face {
-	font-family: 'imarcicons';
-	src:url('../css/fonts/imarcicons.eot');
-	src:url('../css/fonts/imarcicons.eot?#iefix') format('embedded-opentype'),
-		url('../css/fonts/imarcicons.woff') format('woff'),
-		url('../css/fonts/imarcicons.ttf') format('truetype'),
-		url('../css/fonts/imarcicons.svg#imarcicons') format('svg');
-	font-weight: normal;
-	font-style: normal;
+  font-family: 'FontAwesome';
+  src: url('fonts/fontawesome-webfont.eot?v=3.2.1');
+  src: url('fonts/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('fonts/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('fonts/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
-
 
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite,
@@ -486,119 +482,145 @@ sub {
 }
 
 /* = Iconography = */
-
-.icon_cancel, 
-.icon_checkmark, 
-.icon_envelope, 
-.icon_magnifier, 
-.icon_question, 
-.icon_gear, 
-.icon_facebook, 
-.icon_chat, 
-.icon_twitter, 
-.icon_youtube, 
-.icon_worddoc, 
-.icon_pdf, 
-.icon_smartphone, 
-.icon_error, 
-.icon_location, 
-.icon_information, 
-.icon_question, 
-.icon_mail {
-	font-family: 'imarcicons';
+a.doc:before,
+a.docx:before,
+a.pdf:before,
+a.word:before,
+[class*="icon-"]:before {
+	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: normal;
-	font-variant: normal;
 	line-height: 1;
 	speak: none;
 	text-transform: none;
 	-webkit-font-smoothing: antialiased;
 }
-.icon_cancel:before {
-	content: "\e000";
-}
-.icon_checkmark:before {
-	content: "\e001";
-}
-.icon_envelope:before {
-	content: "\e009";
-}
-.icon_magnifier:before {
-	content: "\e00a";
-}
-.icon_gear:before {
-	content: "\53";
-}
-.icon_facebook:before {
-	content: "\66";
-}
-.icon_chat:before {
-	content: "\64";
-}
-.icon_twitter:before {
-	content: "\74";
-}
-.icon_youtube:before {
-	content: "\79";
-}
-.icon_worddoc:before {
-	content: "\21";
-}
-.icon_pdf:before {
-	content: "\22";
-}
-.icon_smartphone:before {
-	content: "\d4";
-}
-.icon_error:before {
-	content: "\23";
-}
-.icon_location:before {
-	content: "\2c";
-}
-.icon_information:before {
-	content: "\3d";
-}
-.icon_question:before {
-	content: "\24";
-}
-.icon_mail:before {
-	content: "\6d";
-}
-.glyph {
-	font-size: 32px;
-	float: left;
-	background: #eee;
-	border-radius: .25em;
-	box-shadow: inset 0 0 0 1px #f8f8f8, 0 0 0 1px #CCC;
-	margin: .75em 1.5em .75em 0;
-	padding: .75em;
+
+a.doc:before,
+a.docx:before,
+a.pdf:before,
+a.word:before,
+a[class*="icon-"]:before {
+	width: 1em;
+	padding-right: .1em;
 	text-align: center;
-	width: 5.5em;
-}
-.glyph input[type="text"] {
-	box-shadow: 0 0 0 1px #ccc;
-	border: 0;
-	font-family: consolas, monospace;
-	font-size: 13px !important;
-	margin-top: 0.5em;
-	padding: .125em;
-	text-align: center;
-	width: 100%;
+	display: inline-block;
 }
 
-/* These apply icons to TinyMCE classed anchors */
-a.pdf:before {
-	content: "\22";
-	font-family: 'imarcicons';
-}
-a.word:before, 
-a.doc:before, 
-a.docx:before { 
-	content: "\21";
-	font-family: 'imarcicons';
+.icon-only {
+	overflow: show;
+	font-size: 0;
+
+	&:before {
+		font-size: 32px;
+	}
 }
 
+.icons {
+	padding-left: 9px;
+
+	li {
+		list-style: none;
+
+		a.doc:before,
+		a.docx:before,
+		a.pdf:before,
+		a.word:before,
+		a[class*="icon-"]:before {
+			color: $text_primary;
+			padding-right: .5em;
+		}
+	}
+}
+
+a.button[class*="icon-"]:before {
+	padding-right: .5em;
+}
+
+/* = Icon Definitions = */
+.icon-download-alt:before {
+	content: "\f019";
+}
+.icon-file:before {
+	content: "\f15b";
+}
+
+a.doc:before,
+a.word:before,
+a.docx:before,
+a.pdf:before,
+.icon-file-alt:before {
+	content: "\f016";
+}
+.icon-file-text:before {
+	content: "\f15c";
+}
+.icon-file-text-alt:before {
+	content: "\f0f6";
+}
+
+.icon-exclamation:before {
+	content: "\f12a";
+}
+.icon-info:before {
+	content: "\f129";
+}
+.icon-ok:before {
+	content: "\f00c";
+}
+.icon-question:before {
+	content: "\f128";
+}
+.icon-remove:before {
+	content: "\f00d";
+}
+
+.icon-envelope:before {
+	content: "\f0e0";
+}
+.icon-facebook:before {
+	content: "\f09a";
+}
+.icon-rss:before {
+	content: "\f09e";
+}
+.icon-linkedin:before {
+	content: "\f0e1";
+}
+.icon-twitter:before {
+	content: "\f099";
+}
+.icon-youtube:before {
+	content: "\f167";
+}
+
+.icon-cog:before {
+	content: "\f013";
+}
+.icon-comment:before {
+	content: "\f075";
+}
+.icon-globe:before {
+	content: "\f0ac";
+}
+.icon-map-marker:before {
+	content: "\f041";
+}
+.icon-mobile-phone:before {
+	content: "\f10b";
+}
+.icon-phone:before {
+	content: "\f095";
+}
+.icon-play:before {
+	content: "\f04b";
+}
+.icon-search:before {
+	content: "\f002";
+}
+.icon-youtube-play:before {
+	content: "\f16a";
+}
 
 /* = Navigation = */
 nav {
