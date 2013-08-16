@@ -1,0 +1,196 @@
+/*!
+ *  Font Awesome 3.2.1
+ *  the iconic font designed for Bootstrap
+ *  ------------------------------------------------------------------------------
+ *  The full suite of pictographic icons, examples, and documentation can be
+ *  found at http://fontawesome.io.  Stay up to date on Twitter at
+ *  http://twitter.com/fontawesome.
+ *
+ *  License
+ *  ------------------------------------------------------------------------------
+ *  - The Font Awesome font is licensed under SIL OFL 1.1 -
+ *    http://scripts.sil.org/OFL
+ *  - Font Awesome CSS, LESS, and SASS files are licensed under MIT License -
+ *    http://opensource.org/licenses/mit-license.html
+ *  - Font Awesome documentation licensed under CC BY 3.0 -
+ *    http://creativecommons.org/licenses/by/3.0/
+ *  - Attribution is no longer required in Font Awesome 3.0, but much appreciated:
+ *    "Font Awesome by Dave Gandy - http://fontawesome.io"
+ *
+ *  Author - Dave Gandy
+ *  ------------------------------------------------------------------------------
+ *  Email: dave@fontawesome.io
+ *  Twitter: http://twitter.com/davegandy
+ *  Work: Lead Product Designer @ Kyruus - http://kyruus.com
+ */
+/* FONT PATH
+ * -------------------------- */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('../font/fontawesome-webfont.eot?v=3.2.1');
+  src: url('../font/fontawesome-webfont.eot?#iefix&v=3.2.1') format('embedded-opentype'), url('../font/fontawesome-webfont.woff?v=3.2.1') format('woff'), url('../font/fontawesome-webfont.ttf?v=3.2.1') format('truetype'), url('../font/fontawesome-webfont.svg#fontawesomeregular?v=3.2.1') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* FONT AWESOME CORE
+ * -------------------------- */
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: inherit;
+  -webkit-font-smoothing: antialiased;
+  *margin-right: .3em;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  text-decoration: inherit;
+  display: inline-block;
+  speak: none;
+}
+/* makes sure icons active on rollover in links */
+a [class^="icon-"],
+a [class*=" icon-"] {
+  display: inline;
+}
+/* increased font size for icon-large */
+[class^="icon-"].icon-fixed-width,
+[class*=" icon-"].icon-fixed-width {
+  display: inline-block;
+  width: 1.1428571428571428em;
+  text-align: right;
+  padding-right: 0.2857142857142857em;
+}
+.icons-ul {
+  margin-left: 2.142857142857143em;
+  list-style-type: none;
+}
+.icons-ul > li {
+  position: relative;
+}
+.icons-ul .icon-li {
+  position: absolute;
+  left: -2.142857142857143em;
+  width: 2.142857142857143em;
+  text-align: center;
+  line-height: inherit;
+}
+[class^="icon-"].hide,
+[class*=" icon-"].hide {
+  display: none;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+[class^="icon-"].pull-left,
+[class*=" icon-"].pull-left {
+  margin-right: .3em;
+}
+[class^="icon-"].pull-right,
+[class*=" icon-"].pull-right {
+  margin-left: .3em;
+}
+
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+a.doc:before,
+a.docx:before,
+a.pdf:before,
+a.word:before {
+	display: inline-block;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	padding-right: .5em;
+	speak: none;
+	text-align: center;
+	text-transform: none;
+	width: 1em;
+	-webkit-font-smoothing: antialiased;
+}
+
+.icon-download-alt:before {
+	content: "\f019";
+}
+.icon-file:before {
+	content: "\f15b";
+}
+
+a.doc:before,
+a.word:before,
+a.docx:before,
+a.pdf:before,
+.icon-file-alt:before {
+	content: "\f016";
+}
+.icon-file-text:before {
+	content: "\f15c";
+}
+.icon-file-text-alt:before {
+	content: "\f0f6";
+}
+
+.icon-exclamation:before {
+	content: "\f12a";
+}
+.icon-info:before {
+	content: "\f129";
+}
+.icon-ok:before {
+	content: "\f00c";
+}
+.icon-question:before {
+	content: "\f128";
+}
+.icon-remove:before {
+	content: "\f00d";
+}
+
+.icon-envelope:before {
+	content: "\f0e0";
+}
+.icon-facebook:before {
+	content: "\f09a";
+}
+.icon-rss:before {
+	content: "\f09e";
+}
+.icon-twitter:before {
+	content: "\f099";
+}
+.icon-youtube:before {
+	content: "\f167";
+}
+
+.icon-cog:before {
+	content: "\f013";
+}
+.icon-comment:before {
+	content: "\f075";
+}
+.icon-globe:before {
+	content: "\f0ac";
+}
+.icon-map-marker:before {
+	content: "\f041";
+}
+.icon-mobile-phone:before {
+	content: "\f10b";
+}
+.icon-phone:before {
+	content: "\f095";
+}
+.icon-play:before {
+	content: "\f04b";
+}
+.icon-search:before {
+	content: "\f002";
+}
+.icon-youtube-play:before {
+	content: "\f16a";
+}
