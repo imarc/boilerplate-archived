@@ -855,12 +855,12 @@ input::-moz-focus-inner {
 .messaging:before {
 	content: '';
 	display: block;
-	font-family: 'imarcicons';
+	font-family: 'FontAwesome';
 	font-size: 20px;
 	height: 23px;
 	left: 1em;
 	position: absolute;
-	top: .7em;
+	top: .6em;
 	width: 23px;
 }
 
@@ -868,21 +868,21 @@ input::-moz-focus-inner {
 	background: #ecfae8;
 }
 .success:before {
-	content: "\e001";
+	content: "\f00c";
 }
 
 .error {
 	background: #ffd7d7;
 }
 .error:before {
-	content: "\23";
+	content: "\f12a";
 }
 
 .info {
 	background: #bde5f8;
 }
 .info:before {
-	content: "\3d";
+	content: "\f129";
 }
 
 /* = Tables = */

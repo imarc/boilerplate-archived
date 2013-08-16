@@ -934,12 +934,12 @@ input::-moz-focus-inner {
 	&:before {
 		content:'';
 		display: block;
-		font-family: 'imarcicons';
+		font-family: 'FontAwesome';
 		font-size: 20px;
 		height: 23px;
 		left: 1em;
 		position: absolute;
-		top: .7em;
+		top: .6em;
 		width: 23px;
 	}
 }
@@ -948,7 +948,7 @@ input::-moz-focus-inner {
 	background: $success;
 
 	&:before {
-		content: "\e001";
+		content: "\f00c";
 	}
 }
 
@@ -956,7 +956,7 @@ input::-moz-focus-inner {
 	background: $error;
 
 	&:before {
-		content: "\23";
+		content: "\f12a";
 	}
 }
 
@@ -964,7 +964,7 @@ input::-moz-focus-inner {
 	background: $info;
 
 	&:before {
-		content: "\3d"
+		content: "\f129";
 	}
 }
 
