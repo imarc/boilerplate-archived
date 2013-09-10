@@ -1,5 +1,5 @@
 /**
- * iMarc Boilerplate v1.0.0
+ * Built using iMarc Boilerplate v1.0.0
  * 
  * Copyright 2013 iMarc LLC
  * Licensed under the Apache License v2.0
@@ -43,8 +43,6 @@ $header_gradient_end: #333333;
 $success: #ECFAE8;
 $error: #FFD7D7;
 $info: #BDE5F8;
-
-$padding: 16px;
 
 /* = Web Fonts = */
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
@@ -131,19 +129,31 @@ img {
 }
 
 @mixin columns {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-
 	> * {
-		display: table-cell;
+		display: block;
 		width: 100%;
 	}
+
 	> hr {
-		border: 0;
-		padding: 0;
-		margin: 0;
-		width: 1em;
+		display: none;
+	}
+
+	@include for-desktops {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+
+		> * {
+			display: table-cell;
+			vertical-align: top;
+		}
+		> hr {
+			display: table-cell;
+			border: 0;
+			padding: 0;
+			margin: 0;
+			width: 1em;
+		}
 	}
 }
 
@@ -203,7 +213,7 @@ header.primary {
 	background: linear-gradient(to bottom,  $header_gradient_start 0%, $header_gradient_end 73%);
 
 	.branding {
-		padding: 1.5em $padding;
+		padding: 1.5em 16px;
 
 		h1 {
 			margin: 0;
@@ -218,8 +228,8 @@ header.primary {
 .torso {
 	.main,
 	aside.primary {
-		padding-left: $padding;
-		padding-right: $padding;
+		padding-left: 16px;
+		padding-right: 16px;
 
 		article {
 			.meta {
@@ -265,7 +275,7 @@ footer.primary {
 	color: $text_secondary;
 	font-size: 0.875em;
 	margin-bottom: 0;
-	padding: 2.5em $padding;
+	padding: 2.5em 16px;
 }
 
 
@@ -1088,9 +1098,9 @@ table {
 		}
 	}
 
-  div.dropdown {
-  	display: none;
-  }
+	div.dropdown {
+		display: none;
+	}
 
 }
 
@@ -1117,8 +1127,8 @@ table {
 		margin-left: auto;
 		margin-right: auto;
 		max-width: 1024px;
-		padding-left: $padding;
-		padding-right: $padding;
+		padding-left: 16px;
+		padding-right: 16px;
 	}
 
 	blockquote {
@@ -1146,7 +1156,7 @@ table {
 						li {
 							float: none;
 							a {
-								padding-left: $padding;
+								padding-left: 16px;
 								line-height: 2;
 							}
 						}
@@ -1159,7 +1169,7 @@ table {
 					position: relative;
 
 					> a {
-						padding: .45em $padding;
+						padding: .45em 16px;
 					}
 
 					.dropdown {
