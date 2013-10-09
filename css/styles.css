@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600);
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
 /**
  * iMarc Boilerplate v1.0.0
  * 
@@ -114,6 +114,12 @@ img {
 .columns > * {
 	display: table-cell;
 	width: 100%;
+}
+.columns > hr {
+	border: 0;
+	padding: 0;
+	margin: 0;
+	width: 1em;
 }
 
 /* = Layout = */
@@ -1295,9 +1301,11 @@ html.lt-ie9 header.primary .branding {
 
 @media only screen and (min-width: 800px) {
 	.torso .main {
-		float: left;
 		padding-left: 0;
 		padding-right: 0;
+	}
+	.torso aside.primary + .main {
+		float: left;
 		width: 74%;
 	}
 	.torso aside.primary {
@@ -1316,9 +1324,11 @@ html.lt-ie9 header.primary .branding {
 	}
 }
 html.lt-ie9 .torso .main {
-	float: left;
 	padding-left: 0;
 	padding-right: 0;
+}
+html.lt-ie9 .torso aside.primary + .main {
+	float: left;
 	width: 74%;
 }
 html.lt-ie9 .torso aside.primary {
