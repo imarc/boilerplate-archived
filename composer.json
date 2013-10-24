@@ -1,0 +1,24 @@
+{
+	"name": "imarc/boilerplate",
+	"description": "Default styling, js, and example html",
+	"keywords": ["frontend", "js", "css"],
+	"license": "MIT",
+	"type": "opus-package",
+	"authors": [
+		{
+			"name": "Kevin Hamer",
+			"email": "kevin@imarc.net",
+			"role": "Developer"
+		}
+	],
+	"extra": {
+		"opus": {
+			"imarc/base": {
+				"css/fonts":       "docroot/css/fonts",
+				"css/styles.css":  "docroot/css/screen.css",
+				"js/html5shiv.js": "docroot/js/html5shiv.js"
+			}
+		}
+	}
+}
+
