@@ -139,7 +139,7 @@ img {
 		display: none;
 	}
 
-	@include for-tablets {
+	@include for-tablets-and-up {
 		display: table;
 		table-layout: fixed;
 		width: 100%;
@@ -154,14 +154,8 @@ img {
 	}
 }
 
-@mixin for-mobile {
-	@media only screen and (max-width: 640px) {
-		@content;
-	}
-}
-
-@mixin for-tablets {
-	@media only screen and (min-width: 641px) {
+@mixin for-tablets-and-up {
+	@media only screen and (min-width: 600px) {
 		@content;
 	}
 
@@ -170,12 +164,18 @@ img {
 	}
 }
 
-@mixin for-desktops {
-	@media only screen and (min-width: 800px) {
+@mixin for-desktops-and-up {
+	@media only screen and (min-width: 700px) {
 		@content;
 	}
 
 	html.lt-ie9 {
+		@content;
+	}
+}
+
+@mixin for-widescreens {
+	@media only screen and (min-width: 1400px) {
 		@content;
 	}
 }
@@ -219,16 +219,11 @@ header.primary {
 }
 .meta {
 	color: $meta_text;
-	font-size: .875em;
-	margin-bottom: 1em;
-	margin-top: -.5em;
+	font-size: .75em;
+	margin-bottom: .5em;
+	margin-top: -1em;
 }
 .main {
-	article,
-	section {
-		margin-bottom: 3em;
-	}
-
 	aside {
 		background: mix($background, $meta_text, 80%);
 		color: $meta_text;
@@ -243,11 +238,6 @@ header.primary {
 
 aside.primary {
 	display: none;
-
-	article,
-	section {
-		margin-bottom: 1.5em;
-	}
 }
 
 footer.primary {
@@ -286,40 +276,40 @@ h1 {
 	font-size: 2.5em;
 	line-height: 1.2;
 	padding-bottom: .6em;
-	padding-top: 1.5em;
+	padding-top: 0.6em;
 }
 
 h2 {
 	font-size: 2em;
 	line-height: 1.2;
 	padding-bottom: .5em;
-	padding-top: 1.2em;
+	padding-top: .75em;
 }
 
 h3 {
 	font-size: 1.5em;
 	line-height: 1.3;
 	padding-bottom: .4em;
-	padding-top: 1.8em;
+	padding-top: 1em;
 }
 
 h4 {
 	font-size: 1.25em;
 	line-height: 1.4;
 	padding-bottom: .4em;
-	padding-top: 1.8em;
+	padding-top: 1.2em;
 }
 
 h5 {
 	font-size: 1em;
 	padding-bottom: .4em;
-	padding-top: 1.8em;
+	padding-top: 1.5em;
 }
 
 h6 {
 	font-size: .9em;
 	padding-bottom: .4em;
-	padding-top: 1.8em;
+	padding-top: 1.667em;
 }
 
 abbr[title] {
@@ -346,15 +336,26 @@ pre {
 blockquote {
 	border-left: 1px solid $border;
 	font-style: italic;
-	margin-left: 16px;
 	padding-left: 16px;
 }
 
+section {
+	&:after {
+		content: '';
+		display: block;
+		background: $border;
+		margin-top: 1.5em;
+		margin-bottom: 1.5em;
+		height: 1px;
+	}
+}
+
+article {
+	margin-bottom: 3em;
+}
+
 .intro {
-	border-bottom: 1px solid $border;
 	color: $meta_text;
-	margin-bottom: 1.5em;
-	padding-bottom: 1.5em;
 
 	p {
 		font-size: 1.25em;
@@ -368,6 +369,7 @@ blockquote {
 	color: $meta_text;
 	font-size: 1.5em;
 	line-height: 1.34;
+
 	margin-bottom: 1em;
 	padding: .67em;
 	text-shadow: 0px 1px 0px lighten($meta_text, 45%);
@@ -468,12 +470,25 @@ sub {
 	vertical-align: bottom;
 }
 
-nav ul {
-	list-style: none;
-	padding-left: 0;
+nav {
+	position: relative;
 
-	li {
+	ul {
+		list-style: none;
+		padding-left: 0;
 		margin-bottom: 0;
+		position: relative;
+
+		li {
+			white-space: nowrap;
+			margin-bottom: 0;
+			float: left;
+			display: block;
+
+			a {
+				padding: .5em 16px;
+			}
+		}
 	}
 }
 
@@ -619,15 +634,19 @@ a.pdf:before,
 }
 
 /* = Navigation = */
-nav.primary {
+header nav {
+	ul.container {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+header nav.primary {
 	background: $primary_nav;
-	position: relative;
 
 	&:before,
-	> ul:before {
+	ul:before {
 		bottom: 100%;
 		color: #000;
-		/*content: '\f0c9';*/
 		content: '\f0c9';
 		display: block;
 		font-family: 'FontAwesome';
@@ -637,61 +656,55 @@ nav.primary {
 		right: 0;
 	}
 
-	> ul {
-		position: relative;
-		padding-left: 0;
-		padding-right: 0;
-
+	ul {
 		&:before {
 			color: $primary_text;
 		}
 
-		> li {
+		li {
 			display: none;
 
-			ul {
+			.dropdown {
 				display: none;
 			}
-		}
-	}
-
-	> ul.focused {
-		&:before {
-			display: none;
-		}
-
-		li {
-			display: block;
 
 			a {
 				border-top: 1px solid #212121;
 				display: block;
-				padding: .825em 16px;
-				line-height: 1;
-				font-weight: bold;
+				padding: .5em 16px;
 				color: #fff;
 				font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-				font-weight: 600;
 
 				&:before {
+					font-family: 'FontAwesome';
 					float: right;
-					content: '❯';
+					content: '\f054';
 					-webkit-transition: margin-right 200ms;
 				}
 			}
 		}
 
 		li:hover,
-		li:active {
+		li.active {
 			background: #1a1a1a;
 
-			a {
+			> a {
 				color: $link;
 
 				&:before {
 					margin-right: -.5em;
 				}
 			}
+		}
+	}
+
+	ul.focused {
+		&:before {
+			display: none;
+		}
+
+		li {
+			display: block;
 		}
 	}
 }
@@ -702,6 +715,31 @@ nav.secondary {
 
 nav.utility {
 	display: none;
+}
+
+ul.supplemental {
+	list-style: none;
+	padding-left: 0;
+
+	> li {
+		padding-bottom: .5em;
+		border-bottom: 1px solid $border;
+	}
+
+	ul {
+		list-style: none;
+		padding-left: 0;
+		margin-bottom: 0;
+
+		li {
+			margin-bottom: 0;
+		}
+
+		a {
+			color: $meta_text;
+			font-size: .75em;
+		}
+	}
 }
 
 /* = Forms = */
@@ -920,15 +958,69 @@ table {
 
 
 /* = Media Queries = */
-@include for-tablets {
+@include for-tablets-and-up {
 	.main aside {
 		float: right;
 		margin-left: 1em;
 		width: 33.33%;
 	}
+
+	nav.secondary {
+		display: block;
+	}
+
+	header nav.primary {
+		&:before,
+		ul:before {
+			display: none;
+		}
+
+		ul {
+			li {
+				float: left;
+				display: block;
+				a {
+					border-top: 0;
+					font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+					&:before {
+						display: none;
+					}
+				}
+			}
+			
+			li {
+				li {
+					float: none;
+
+					a {
+						font-size: .8125em;
+						font-family: inherit;
+					}
+				}
+			}
+
+			li.active,
+			li:hover {
+				background: none;
+			}
+
+			li:hover {
+				position: relative;
+
+				.dropdown {
+					display: block;
+					position: absolute;
+					left: 0;
+					min-width: 100%;
+					background: $primary_nav;
+				}
+			}
+		}
+	}
 }
 
-@include for-desktops {
+@include for-desktops-and-up {
 	.torso aside.primary {
 		display: block;
 		float: right;
@@ -937,7 +1029,11 @@ table {
 	.torso aside.primary ~ .main {
 		float: left;
 		width: 75%;
+		padding-right: 1em;
 	}
+}
+
+@include for-widescreens {
 }
 
 @media print {

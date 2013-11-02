@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
 /**
  * Built using iMarc Boilerplate v1.1.0
@@ -99,7 +98,7 @@ img {
   width: 100%; }
 .columns > hr {
   display: none; }
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 600px) {
   .columns {
     display: table;
     table-layout: fixed;
@@ -137,13 +136,10 @@ header.primary {
 
 .meta {
   color: #888888;
-  font-size: .875em;
-  margin-bottom: 1em;
-  margin-top: -.5em; }
+  font-size: .75em;
+  margin-bottom: .5em;
+  margin-top: -1em; }
 
-.main article,
-.main section {
-  margin-bottom: 3em; }
 .main aside {
   background: #e4e4e4;
   color: #888888;
@@ -153,9 +149,6 @@ header.primary {
 
 aside.primary {
   display: none; }
-  aside.primary article,
-  aside.primary section {
-    margin-bottom: 1.5em; }
 
 footer.primary {
   background: #333333;
@@ -193,35 +186,35 @@ h1 {
   font-size: 2.5em;
   line-height: 1.2;
   padding-bottom: .6em;
-  padding-top: 1.5em; }
+  padding-top: 0.6em; }
 
 h2 {
   font-size: 2em;
   line-height: 1.2;
   padding-bottom: .5em;
-  padding-top: 1.2em; }
+  padding-top: .75em; }
 
 h3 {
   font-size: 1.5em;
   line-height: 1.3;
   padding-bottom: .4em;
-  padding-top: 1.8em; }
+  padding-top: 1em; }
 
 h4 {
   font-size: 1.25em;
   line-height: 1.4;
   padding-bottom: .4em;
-  padding-top: 1.8em; }
+  padding-top: 1.2em; }
 
 h5 {
   font-size: 1em;
   padding-bottom: .4em;
-  padding-top: 1.8em; }
+  padding-top: 1.5em; }
 
 h6 {
   font-size: .9em;
   padding-bottom: .4em;
-  padding-top: 1.8em; }
+  padding-top: 1.667em; }
 
 abbr[title] {
   border-bottom: 1px dotted; }
@@ -250,14 +243,21 @@ pre {
 blockquote {
   border-left: 1px solid #dddddd;
   font-style: italic;
-  margin-left: 16px;
   padding-left: 16px; }
 
-.intro {
-  border-bottom: 1px solid #dddddd;
-  color: #888888;
+section:after {
+  content: '';
+  display: block;
+  background: #dddddd;
+  margin-top: 1.5em;
   margin-bottom: 1.5em;
-  padding-bottom: 1.5em; }
+  height: 1px; }
+
+article {
+  margin-bottom: 3em; }
+
+.intro {
+  color: #888888; }
   .intro p {
     font-size: 1.25em;
     line-height: 1.6;
@@ -345,11 +345,20 @@ sup {
 sub {
   vertical-align: bottom; }
 
-nav ul {
-  list-style: none;
-  padding-left: 0; }
-  nav ul li {
-    margin-bottom: 0; }
+nav {
+  position: relative; }
+  nav ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+    position: relative; }
+    nav ul li {
+      white-space: nowrap;
+      margin-bottom: 0;
+      float: left;
+      display: block; }
+      nav ul li a {
+        padding: .5em 16px; }
 
 /* = Iconography = */
 a.doc:before,
@@ -477,14 +486,16 @@ a.pdf:before,
   content: '\f16a'; }
 
 /* = Navigation = */
-nav.primary {
-  background: #2e2e2e;
-  position: relative; }
-  nav.primary:before,
-  nav.primary > ul:before {
+header nav ul.container {
+  padding-left: 0;
+  padding-right: 0; }
+
+header nav.primary {
+  background: #2e2e2e; }
+  header nav.primary:before,
+  header nav.primary ul:before {
     bottom: 100%;
     color: #000;
-    /*content: '\f0c9';*/
     content: '\f0c9';
     display: block;
     font-family: 'FontAwesome';
@@ -492,48 +503,58 @@ nav.primary {
     padding: .35em .6em;
     position: absolute;
     right: 0; }
-  nav.primary > ul {
-    position: relative;
-    padding-left: 0;
-    padding-right: 0; }
-    nav.primary > ul:before {
-      color: #555555; }
-    nav.primary > ul > li {
-      display: none; }
-      nav.primary > ul > li ul {
-        display: none; }
-  nav.primary > ul.focused:before {
+  header nav.primary ul:before {
+    color: #555555; }
+  header nav.primary ul li {
     display: none; }
-  nav.primary > ul.focused li {
-    display: block; }
-    nav.primary > ul.focused li a {
+    header nav.primary ul li .dropdown {
+      display: none; }
+    header nav.primary ul li a {
       border-top: 1px solid #212121;
       display: block;
-      padding: .825em 16px;
-      line-height: 1;
-      font-weight: bold;
+      padding: .5em 16px;
       color: #fff;
-      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      font-weight: 600; }
-      nav.primary > ul.focused li a:before {
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      header nav.primary ul li a:before {
+        font-family: 'FontAwesome';
         float: right;
-        content: '❯';
+        content: '\f054';
         -webkit-transition: margin-right 200ms; }
-  nav.primary > ul.focused li:hover,
-  nav.primary > ul.focused li:active {
+  header nav.primary ul li:hover,
+  header nav.primary ul li.active {
     background: #1a1a1a; }
-    nav.primary > ul.focused li:hover a,
-    nav.primary > ul.focused li:active a {
+    header nav.primary ul li:hover > a,
+    header nav.primary ul li.active > a {
       color: #0096d2; }
-      nav.primary > ul.focused li:hover a:before,
-      nav.primary > ul.focused li:active a:before {
+      header nav.primary ul li:hover > a:before,
+      header nav.primary ul li.active > a:before {
         margin-right: -.5em; }
+  header nav.primary ul.focused:before {
+    display: none; }
+  header nav.primary ul.focused li {
+    display: block; }
 
 nav.secondary {
   display: none; }
 
 nav.utility {
   display: none; }
+
+ul.supplemental {
+  list-style: none;
+  padding-left: 0; }
+  ul.supplemental > li {
+    padding-bottom: .5em;
+    border-bottom: 1px solid #dddddd; }
+  ul.supplemental ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0; }
+    ul.supplemental ul li {
+      margin-bottom: 0; }
+    ul.supplemental ul a {
+      color: #888888;
+      font-size: .75em; }
 
 /* = Forms = */
 button,
@@ -712,17 +733,77 @@ table {
 /* = Section Specific = */
 /* = Page Specific = */
 /* = Media Queries = */
-@media only screen and (min-width: 641px) {
+@media only screen and (min-width: 600px) {
   .main aside {
     float: right;
     margin-left: 1em;
-    width: 33.33%; } }
+    width: 33.33%; }
+
+  nav.secondary {
+    display: block; }
+
+  header nav.primary:before,
+  header nav.primary ul:before {
+    display: none; }
+  header nav.primary ul li {
+    float: left;
+    display: block; }
+    header nav.primary ul li a {
+      border-top: 0;
+      font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+      header nav.primary ul li a:before {
+        display: none; }
+  header nav.primary ul li li {
+    float: none; }
+    header nav.primary ul li li a {
+      font-size: .8125em;
+      font-family: inherit; }
+  header nav.primary ul li.active,
+  header nav.primary ul li:hover {
+    background: none; }
+  header nav.primary ul li:hover {
+    position: relative; }
+    header nav.primary ul li:hover .dropdown {
+      display: block;
+      position: absolute;
+      left: 0;
+      min-width: 100%;
+      background: #2e2e2e; } }
 html.lt-ie9 .main aside {
   float: right;
   margin-left: 1em;
   width: 33.33%; }
+html.lt-ie9 nav.secondary {
+  display: block; }
+html.lt-ie9 header nav.primary:before,
+html.lt-ie9 header nav.primary ul:before {
+  display: none; }
+html.lt-ie9 header nav.primary ul li {
+  float: left;
+  display: block; }
+  html.lt-ie9 header nav.primary ul li a {
+    border-top: 0;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+    html.lt-ie9 header nav.primary ul li a:before {
+      display: none; }
+html.lt-ie9 header nav.primary ul li li {
+  float: none; }
+  html.lt-ie9 header nav.primary ul li li a {
+    font-size: .8125em;
+    font-family: inherit; }
+html.lt-ie9 header nav.primary ul li.active,
+html.lt-ie9 header nav.primary ul li:hover {
+  background: none; }
+html.lt-ie9 header nav.primary ul li:hover {
+  position: relative; }
+  html.lt-ie9 header nav.primary ul li:hover .dropdown {
+    display: block;
+    position: absolute;
+    left: 0;
+    min-width: 100%;
+    background: #2e2e2e; }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 700px) {
   .torso aside.primary {
     display: block;
     float: right;
@@ -730,14 +811,16 @@ html.lt-ie9 .main aside {
 
   .torso aside.primary ~ .main {
     float: left;
-    width: 75%; } }
+    width: 75%;
+    padding-right: 1em; } }
 html.lt-ie9 .torso aside.primary {
   display: block;
   float: right;
   width: 25%; }
 html.lt-ie9 .torso aside.primary ~ .main {
   float: left;
-  width: 75%; }
+  width: 75%;
+  padding-right: 1em; }
 
 @media print {
   * {
