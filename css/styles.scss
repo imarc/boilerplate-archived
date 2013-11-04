@@ -33,7 +33,7 @@ $background: #fcfcfc;
 $border: #ddd;
 
 $primary_nav: #2e2e2e;
-$secondary_nav: blue;
+$secondary_nav: #eaeaea;
 
 $selection: #FFF6B5;
 
@@ -197,6 +197,7 @@ img {
 /* = Layout = */
 header.primary {
 	background: $matte;
+	background: linear-gradient(to bottom, #2f3a42 0%, #333333 73%);
 	margin-bottom: 1.5em;
 
 	.branding {
@@ -965,8 +966,42 @@ table {
 		width: 33.33%;
 	}
 
+	nav.utility {
+		display: block;
+		position: absolute;
+		right: 32px;
+		top: 1em;
+
+		a {
+			display: block;
+			color: #fff;
+			font-size: .75em;
+		}
+
+		li.active,
+		li:hover {
+			a {
+				color: $link;
+			}
+		}
+	}
+
 	nav.secondary {
 		display: block;
+		background: $secondary_nav;
+
+		a {
+			display: block;
+			color: $primary_text;
+			font-size: .75em;
+		}
+
+		li.active,
+		li:hover {
+			a {
+				color: $link;
+			}
+		}
 	}
 
 	header nav.primary {

@@ -121,6 +121,7 @@ img {
 /* = Layout = */
 header.primary {
   background: #333333;
+  background: linear-gradient(to bottom, #2f3a42 0%, #333333 73%);
   margin-bottom: 1.5em; }
   header.primary .branding h1 {
     padding-bottom: 0; }
@@ -739,8 +740,29 @@ table {
     margin-left: 1em;
     width: 33.33%; }
 
+  nav.utility {
+    display: block;
+    position: absolute;
+    right: 32px;
+    top: 1em; }
+    nav.utility a {
+      display: block;
+      color: #fff;
+      font-size: .75em; }
+    nav.utility li.active a,
+    nav.utility li:hover a {
+      color: #0096d2; }
+
   nav.secondary {
-    display: block; }
+    display: block;
+    background: #eaeaea; }
+    nav.secondary a {
+      display: block;
+      color: #555555;
+      font-size: .75em; }
+    nav.secondary li.active a,
+    nav.secondary li:hover a {
+      color: #0096d2; }
 
   header nav.primary:before,
   header nav.primary ul:before {
@@ -773,8 +795,28 @@ html.lt-ie9 .main aside {
   float: right;
   margin-left: 1em;
   width: 33.33%; }
+html.lt-ie9 nav.utility {
+  display: block;
+  position: absolute;
+  right: 32px;
+  top: 1em; }
+  html.lt-ie9 nav.utility a {
+    display: block;
+    color: #fff;
+    font-size: .75em; }
+  html.lt-ie9 nav.utility li.active a,
+  html.lt-ie9 nav.utility li:hover a {
+    color: #0096d2; }
 html.lt-ie9 nav.secondary {
-  display: block; }
+  display: block;
+  background: #eaeaea; }
+  html.lt-ie9 nav.secondary a {
+    display: block;
+    color: #555555;
+    font-size: .75em; }
+  html.lt-ie9 nav.secondary li.active a,
+  html.lt-ie9 nav.secondary li:hover a {
+    color: #0096d2; }
 html.lt-ie9 header nav.primary:before,
 html.lt-ie9 header nav.primary ul:before {
   display: none; }
