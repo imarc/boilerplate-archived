@@ -271,9 +271,9 @@ article {
   line-height: 1.34;
   margin-bottom: 1em;
   padding: .67em;
-  text-shadow: 0px 1px 0px #fbfbfb; }
+  text-shadow: 0 1px 0 #fbfbfb; }
   .highlight a {
-    text-shadow: 0px 1px 0px #b8ebff; }
+    text-shadow: 0 1px 0 #b8ebff; }
   .highlight p {
     margin-bottom: 0; }
 
@@ -305,8 +305,7 @@ a {
   color: #0096d2;
   text-decoration: none; }
   a:hover, a:active {
-    color: #888888;
-    outline: 0; }
+    color: #888888; }
   a:focus {
     outline: thin dotted; }
 
@@ -519,8 +518,7 @@ header nav.primary {
       header nav.primary ul li a:before {
         font-family: 'FontAwesome';
         float: right;
-        content: '\f054';
-        -webkit-transition: margin-right 200ms; }
+        content: '\f054'; }
   header nav.primary ul li:hover,
   header nav.primary ul li.active {
     background: #1a1a1a; }
@@ -583,7 +581,7 @@ label {
   font-weight: bold;
   line-height: 2; }
 
-span.required {
+.required {
   color: #ac181b; }
 
 fieldset .help {
@@ -637,6 +635,7 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+  -moz-appearance: button;
   -webkit-appearance: button;
   cursor: pointer; }
 
