@@ -87,9 +87,10 @@ img {
   clear: both; }
 
 .container {
+  position: relative;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1408px;
+  max-width: 1024px;
   padding-left: 16px;
   padding-right: 16px; }
 
@@ -490,10 +491,10 @@ header nav ul.container {
   padding-left: 0;
   padding-right: 0; }
 
-header nav.primary {
+nav.primary {
   background: #2e2e2e; }
-  header nav.primary:before,
-  header nav.primary ul:before {
+  nav.primary:before,
+  nav.primary ul:before {
     bottom: 100%;
     color: #000;
     content: '\f0c9';
@@ -503,34 +504,34 @@ header nav.primary {
     padding: .35em .6em;
     position: absolute;
     right: 0; }
-  header nav.primary ul:before {
+  nav.primary ul:before {
     color: #555555; }
-  header nav.primary ul li {
+  nav.primary ul li {
     display: none; }
-    header nav.primary ul li .dropdown {
+    nav.primary ul li .dropdown {
       display: none; }
-    header nav.primary ul li a {
+    nav.primary ul li a {
       border-top: 1px solid #212121;
       display: block;
       padding: .5em 16px;
       color: #fff;
       font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-      header nav.primary ul li a:before {
+      nav.primary ul li a:before {
         font-family: 'FontAwesome';
         float: right;
         content: '\f054'; }
-  header nav.primary ul li:hover,
-  header nav.primary ul li.active {
+  nav.primary ul li:hover,
+  nav.primary ul li.active {
     background: #1a1a1a; }
-    header nav.primary ul li:hover > a,
-    header nav.primary ul li.active > a {
+    nav.primary ul li:hover > a,
+    nav.primary ul li.active > a {
       color: #0096d2; }
-      header nav.primary ul li:hover > a:before,
-      header nav.primary ul li.active > a:before {
+      nav.primary ul li:hover > a:before,
+      nav.primary ul li.active > a:before {
         margin-right: -.5em; }
-  header nav.primary ul.focused:before {
+  nav.primary ul.focused:before {
     display: none; }
-  header nav.primary ul.focused li {
+  nav.primary ul.focused li {
     display: block; }
 
 nav.secondary {
@@ -763,28 +764,28 @@ table {
     nav.secondary li:hover a {
       color: #0096d2; }
 
-  header nav.primary:before,
-  header nav.primary ul:before {
+  nav.primary:before,
+  nav.primary ul:before {
     display: none; }
-  header nav.primary ul li {
+  nav.primary ul li {
     float: left;
     display: block; }
-    header nav.primary ul li a {
+    nav.primary ul li a {
       border-top: 0;
       font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-      header nav.primary ul li a:before {
+      nav.primary ul li a:before {
         display: none; }
-  header nav.primary ul li li {
+  nav.primary ul li li {
     float: none; }
-    header nav.primary ul li li a {
+    nav.primary ul li li a {
       font-size: .8125em;
       font-family: inherit; }
-  header nav.primary ul li.active,
-  header nav.primary ul li:hover {
+  nav.primary ul li.active,
+  nav.primary ul li:hover {
     background: none; }
-  header nav.primary ul li:hover {
+  nav.primary ul li:hover {
     position: relative; }
-    header nav.primary ul li:hover .dropdown {
+    nav.primary ul li:hover .dropdown {
       display: block;
       position: absolute;
       left: 0;
@@ -816,28 +817,28 @@ html.lt-ie9 nav.secondary {
   html.lt-ie9 nav.secondary li.active a,
   html.lt-ie9 nav.secondary li:hover a {
     color: #0096d2; }
-html.lt-ie9 header nav.primary:before,
-html.lt-ie9 header nav.primary ul:before {
+html.lt-ie9 nav.primary:before,
+html.lt-ie9 nav.primary ul:before {
   display: none; }
-html.lt-ie9 header nav.primary ul li {
+html.lt-ie9 nav.primary ul li {
   float: left;
   display: block; }
-  html.lt-ie9 header nav.primary ul li a {
+  html.lt-ie9 nav.primary ul li a {
     border-top: 0;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-    html.lt-ie9 header nav.primary ul li a:before {
+    html.lt-ie9 nav.primary ul li a:before {
       display: none; }
-html.lt-ie9 header nav.primary ul li li {
+html.lt-ie9 nav.primary ul li li {
   float: none; }
-  html.lt-ie9 header nav.primary ul li li a {
+  html.lt-ie9 nav.primary ul li li a {
     font-size: .8125em;
     font-family: inherit; }
-html.lt-ie9 header nav.primary ul li.active,
-html.lt-ie9 header nav.primary ul li:hover {
+html.lt-ie9 nav.primary ul li.active,
+html.lt-ie9 nav.primary ul li:hover {
   background: none; }
-html.lt-ie9 header nav.primary ul li:hover {
+html.lt-ie9 nav.primary ul li:hover {
   position: relative; }
-  html.lt-ie9 header nav.primary ul li:hover .dropdown {
+  html.lt-ie9 nav.primary ul li:hover .dropdown {
     display: block;
     position: absolute;
     left: 0;
