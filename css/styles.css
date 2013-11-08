@@ -66,16 +66,15 @@ body {
   min-width: 300px; }
 
 img {
-  -ms-interpolation-mode: bicubic;
   max-width: 100%;
   vertical-align: middle; }
 
 ::-moz-selection {
-  background: #fff6b5;
+  background: #fff1b5;
   text-shadow: none; }
 
 ::selection {
-  background: #fff6b5;
+  background: #fff1b5;
   text-shadow: none; }
 
 /* = Mixins = */
@@ -87,12 +86,12 @@ img {
   clear: both; }
 
 .container {
-  position: relative;
   margin-left: auto;
   margin-right: auto;
   max-width: 1024px;
   padding-left: 16px;
-  padding-right: 16px; }
+  padding-right: 16px;
+  position: relative; }
 
 .columns > * {
   display: block;
@@ -108,7 +107,7 @@ img {
       display: table-cell;
       vertical-align: top; }
     .columns > hr {
-      width: 1em; } }
+      width: 16px; } }
 .columns html.lt-ie9 {
   display: table;
   table-layout: fixed;
@@ -117,21 +116,21 @@ img {
     display: table-cell;
     vertical-align: top; }
   .columns html.lt-ie9 > hr {
-    width: 1em; }
+    width: 16px; }
 
 /* = Layout = */
 header.primary {
   background: #333333;
-  background: linear-gradient(to bottom, #2f3a42 0%, #333333 73%);
+  background: #333333 linear-gradient(to bottom, #2f3a42 0%, #333333 73%);
   margin-bottom: 1.5em; }
   header.primary .branding h1 {
     padding-bottom: 0; }
     header.primary .branding h1 a,
     header.primary .branding h1 a:hover {
+      color: #fcfcfc;
       display: block;
-      padding-top: .5em;
       padding-bottom: .5em;
-      color: #fcfcfc; }
+      padding-top: .5em; }
 
 .torso {
   margin-bottom: 1.5em; }
@@ -142,15 +141,15 @@ header.primary {
   margin-bottom: .5em;
   margin-top: -1em; }
 
+aside.primary {
+  display: none; }
+
 .main aside {
   background: #e4e4e4;
   color: #888888;
   font-size: .875em;
   margin-bottom: 1em;
   padding: 1.333em; }
-
-aside.primary {
-  display: none; }
 
 footer.primary {
   background: #333333;
@@ -274,14 +273,14 @@ article {
   padding: .67em;
   text-shadow: 0 1px 0 #fbfbfb; }
   .highlight a {
-    text-shadow: 0 1px 0 #b8ebff; }
+    text-shadow: 0 1px 0 #b8eafe; }
   .highlight p {
     margin-bottom: 0; }
 
 pre,
 code {
   font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', monospace;
-  font-size: .9em; }
+  font-size: .875em; }
 
 pre {
   white-space: pre;
@@ -303,7 +302,7 @@ hr {
   width: 75%; }
 
 a {
-  color: #0096d2;
+  color: #0394cd;
   text-decoration: none; }
   a:hover, a:active {
     color: #888888; }
@@ -348,6 +347,11 @@ sub {
 
 nav {
   position: relative; }
+  nav:before, nav:after {
+    content: '';
+    display: table; }
+  nav:after {
+    clear: both; }
   nav ul {
     list-style: none;
     padding-left: 0;
@@ -359,7 +363,12 @@ nav {
       float: left;
       display: block; }
       nav ul li a {
-        padding: .5em 16px; }
+        padding: .5em 10px; }
+  nav ul.container > li:first-child {
+    margin-left: -12px; }
+
+.main nav ul li ~ li {
+  border-left: 1px solid #dddddd; }
 
 /* = Iconography = */
 a.doc:before,
@@ -487,12 +496,9 @@ a.pdf:before,
   content: '\f16a'; }
 
 /* = Navigation = */
-header nav ul.container {
-  padding-left: 0;
-  padding-right: 0; }
-
 nav.primary {
-  background: #2e2e2e; }
+  background: #2e2e2e;
+  z-index: 1; }
   nav.primary:before,
   nav.primary ul:before {
     bottom: 100%;
@@ -525,7 +531,7 @@ nav.primary {
     background: #1a1a1a; }
     nav.primary ul li:hover > a,
     nav.primary ul li.active > a {
-      color: #0096d2; }
+      color: #0394cd; }
       nav.primary ul li:hover > a:before,
       nav.primary ul li.active > a:before {
         margin-right: -.5em; }
@@ -533,6 +539,8 @@ nav.primary {
     display: none; }
   nav.primary ul.focused li {
     display: block; }
+  nav.primary ul.container > li:first-child {
+    margin-left: -16px; }
 
 nav.secondary {
   display: none; }
@@ -645,9 +653,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-  background: #0096d2;
+  background: #0394cd;
   border: none;
-  border-bottom: 2px solid #0084b8;
+  border-bottom: 2px solid #0382b4;
   border-radius: 3px;
   color: #fff;
   display: inline-block;
@@ -663,8 +671,8 @@ a.button {
   input[type="reset"]:hover,
   input[type="submit"]:hover,
   a.button:hover {
-    background: #888888;
-    border-color: #7b7b7b;
+    background: #03a6e6;
+    border-color: #0394cd;
     cursor: pointer; }
   button:focus,
   input[type="button"]:focus,
@@ -698,17 +706,17 @@ input::-moz-focus-inner {
     width: 23px; }
 
 .success {
-  background: #ecfae8; }
+  background: #d2f8b0; }
   .success:before {
     content: '\f00c'; }
 
 .error {
-  background: #ffd7d7; }
+  background: #ffd8d9; }
   .error:before {
     content: '\f12a'; }
 
 .info {
-  background: #bde5f8; }
+  background: #b8e0f9; }
   .info:before {
     content: '\f129'; }
 
@@ -751,7 +759,7 @@ table {
       font-size: .75em; }
     nav.utility li.active a,
     nav.utility li:hover a {
-      color: #0096d2; }
+      color: #0394cd; }
 
   nav.secondary {
     display: block;
@@ -762,7 +770,7 @@ table {
       font-size: .75em; }
     nav.secondary li.active a,
     nav.secondary li:hover a {
-      color: #0096d2; }
+      color: #0394cd; }
 
   nav.primary:before,
   nav.primary ul:before {
@@ -806,7 +814,7 @@ html.lt-ie9 nav.utility {
     font-size: .75em; }
   html.lt-ie9 nav.utility li.active a,
   html.lt-ie9 nav.utility li:hover a {
-    color: #0096d2; }
+    color: #0394cd; }
 html.lt-ie9 nav.secondary {
   display: block;
   background: #eaeaea; }
@@ -816,7 +824,7 @@ html.lt-ie9 nav.secondary {
     font-size: .75em; }
   html.lt-ie9 nav.secondary li.active a,
   html.lt-ie9 nav.secondary li:hover a {
-    color: #0096d2; }
+    color: #0394cd; }
 html.lt-ie9 nav.primary:before,
 html.lt-ie9 nav.primary ul:before {
   display: none; }
@@ -854,7 +862,7 @@ html.lt-ie9 nav.primary ul li:hover {
   .torso aside.primary ~ .main {
     float: left;
     width: 75%;
-    padding-right: 1em; } }
+    padding-right: 2em; } }
 html.lt-ie9 .torso aside.primary {
   display: block;
   float: right;
@@ -862,7 +870,7 @@ html.lt-ie9 .torso aside.primary {
 html.lt-ie9 .torso aside.primary ~ .main {
   float: left;
   width: 75%;
-  padding-right: 1em; }
+  padding-right: 2em; }
 
 @media print {
   * {
