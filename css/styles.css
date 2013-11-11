@@ -121,7 +121,7 @@ img {
 /* = Layout = */
 header.primary {
   background: #333333;
-  background: #333333 linear-gradient(to bottom, #2f3a42 0%, #333333 73%);
+  background: #333333 -webkit-radial-gradient(50% 100%, 50% 100%, #1a1a1a, #2e2e2e);
   margin-bottom: 1.5em; }
   header.primary .branding h1 {
     padding-bottom: 0; }
@@ -364,8 +364,9 @@ nav {
       display: block; }
       nav ul li a {
         padding: .5em 10px; }
-  nav ul.container > li:first-child {
-    margin-left: -12px; }
+  nav ul.container {
+    padding-left: 6px;
+    padding-right: 6px; }
 
 .main nav ul li ~ li {
   border-left: 1px solid #dddddd; }
@@ -497,7 +498,6 @@ a.pdf:before,
 
 /* = Navigation = */
 nav.primary {
-  background: #2e2e2e;
   z-index: 1; }
   nav.primary:before,
   nav.primary ul:before {
@@ -513,6 +513,7 @@ nav.primary {
   nav.primary ul:before {
     color: #555555; }
   nav.primary ul li {
+    float: none;
     display: none; }
     nav.primary ul li .dropdown {
       display: none; }
@@ -539,8 +540,9 @@ nav.primary {
     display: none; }
   nav.primary ul.focused li {
     display: block; }
-  nav.primary ul.container > li:first-child {
-    margin-left: -16px; }
+  nav.primary ul.container {
+    padding-left: 0;
+    padding-right: 0; }
 
 nav.secondary {
   display: none; }
@@ -551,6 +553,10 @@ nav.utility {
 ul.supplemental {
   list-style: none;
   padding-left: 0; }
+  ul.supplemental a {
+    display: block; }
+    ul.supplemental a:hover {
+      color: #0394cd; }
   ul.supplemental > li {
     padding-bottom: .5em;
     border-bottom: 1px solid #dddddd; }
@@ -562,7 +568,8 @@ ul.supplemental {
       margin-bottom: 0; }
     ul.supplemental ul a {
       color: #888888;
-      font-size: .75em; }
+      font-size: .75em;
+      line-height: 2; }
 
 /* = Forms = */
 button,
@@ -604,7 +611,6 @@ fieldset .help {
 input[type="password"],
 input[type="text"],
 textarea {
-  border-radius: 3px;
   border: 1px solid #ccc;
   color: #555555;
   display: block;
@@ -655,12 +661,10 @@ input[type="submit"],
 a.button {
   background: #0394cd;
   border: none;
-  border-bottom: 2px solid #0382b4;
-  border-radius: 3px;
+  border: 1px solid #0382b4;
   color: #fff;
   display: inline-block;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 600;
   line-height: 1;
   margin-bottom: .5em;
   margin-right: .5em;
@@ -688,7 +692,6 @@ input::-moz-focus-inner {
 
 /* = Messaging = */
 .messaging {
-  border-radius: 5px;
   margin-bottom: 1.5em;
   padding: 1em 3.25em;
   position: relative; }
@@ -763,10 +766,10 @@ table {
 
   nav.secondary {
     display: block;
-    background: #eaeaea; }
+    background: #2e2e2e; }
     nav.secondary a {
       display: block;
-      color: #555555;
+      color: #bbbbbb;
       font-size: .75em; }
     nav.secondary li.active a,
     nav.secondary li:hover a {
@@ -792,7 +795,8 @@ table {
   nav.primary ul li:hover {
     background: none; }
   nav.primary ul li:hover {
-    position: relative; }
+    position: relative;
+    background: #2e2e2e; }
     nav.primary ul li:hover .dropdown {
       display: block;
       position: absolute;
@@ -817,10 +821,10 @@ html.lt-ie9 nav.utility {
     color: #0394cd; }
 html.lt-ie9 nav.secondary {
   display: block;
-  background: #eaeaea; }
+  background: #2e2e2e; }
   html.lt-ie9 nav.secondary a {
     display: block;
-    color: #555555;
+    color: #bbbbbb;
     font-size: .75em; }
   html.lt-ie9 nav.secondary li.active a,
   html.lt-ie9 nav.secondary li:hover a {
@@ -845,7 +849,8 @@ html.lt-ie9 nav.primary ul li.active,
 html.lt-ie9 nav.primary ul li:hover {
   background: none; }
 html.lt-ie9 nav.primary ul li:hover {
-  position: relative; }
+  position: relative;
+  background: #2e2e2e; }
   html.lt-ie9 nav.primary ul li:hover .dropdown {
     display: block;
     position: absolute;

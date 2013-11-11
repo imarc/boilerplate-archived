@@ -193,7 +193,7 @@ img {
 /* = Layout = */
 header.primary {
 	background: $matte;
-	background: $matte linear-gradient(to bottom, #2f3a42 0%, #333333 73%);
+	background: $matte -webkit-radial-gradient(50% 100%, 50% 100%, #1a1a1a, #2e2e2e);
 	margin-bottom: 1.5em;
 
 	.branding {
@@ -489,9 +489,8 @@ nav {
 	}
 
 	ul.container {
-		> li:first-child {
-			margin-left: -12px;
-		}
+		padding-left: 6px;
+		padding-right: 6px;
 	}
 }
 
@@ -642,7 +641,6 @@ a.pdf:before,
 
 /* = Navigation = */
 nav.primary {
-	background: #2e2e2e;
 	z-index: 1;
 
 	&:before,
@@ -664,6 +662,7 @@ nav.primary {
 		}
 
 		li {
+			float: none;
 			display: none;
 
 			.dropdown {
@@ -710,9 +709,8 @@ nav.primary {
 	}
 
 	ul.container {
-		> li:first-child {
-			margin-left: -16px;
-		}
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 
@@ -727,6 +725,14 @@ nav.utility {
 ul.supplemental {
 	list-style: none;
 	padding-left: 0;
+
+	a {
+		display: block;
+
+		&:hover {
+			color: $link;
+		}
+	}
 
 	> li {
 		padding-bottom: .5em;
@@ -745,6 +751,7 @@ ul.supplemental {
 		a {
 			color: $meta_text;
 			font-size: .75em;
+			line-height: 2;
 		}
 	}
 }
@@ -794,7 +801,6 @@ fieldset .help {
 input[type="password"],
 input[type="text"],
 textarea {
-	border-radius: 3px;
 	border: 1px solid #ccc;
 	color: $plain_text;
 	display: block;
@@ -852,12 +858,10 @@ input[type="submit"],
 a.button {
 	background: $link;
 	border: none;
-	border-bottom: 2px solid darken($link, 5%);
-	border-radius: 3px;
+	border: 1px solid darken($link, 5%);
 	color: #fff;
 	display: inline-block;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: 600;
 	line-height: 1;
 	margin-bottom: .5em;
 	margin-right: .5em;
@@ -884,7 +888,6 @@ input::-moz-focus-inner {
 /* = Messaging = */
 
 .messaging {
-	border-radius: 5px;
 	margin-bottom: 1.5em;
 	padding: 1em 3.25em;
 	position: relative;
@@ -995,11 +998,11 @@ table {
 
 	nav.secondary {
 		display: block;
-		background: #eaeaea;
+		background: #2e2e2e;
 
 		a {
 			display: block;
-			color: $plain_text;
+			color: #bbbbbb;
 			font-size: .75em;
 		}
 
@@ -1049,6 +1052,7 @@ table {
 
 			li:hover {
 				position: relative;
+				background: #2e2e2e;
 
 				.dropdown {
 					display: block;
