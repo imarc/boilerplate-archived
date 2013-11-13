@@ -781,7 +781,8 @@ table {
     nav.secondary a {
       display: block;
       color: #bbbbbb;
-      font-size: .75em; }
+      font-size: .8125em;
+      line-height: 2; }
     nav.secondary li.active a,
     nav.secondary li:hover a {
       color: #0394cd; }
@@ -836,7 +837,8 @@ html.lt-ie9 nav.secondary {
   html.lt-ie9 nav.secondary a {
     display: block;
     color: #bbbbbb;
-    font-size: .75em; }
+    font-size: .8125em;
+    line-height: 2; }
   html.lt-ie9 nav.secondary li.active a,
   html.lt-ie9 nav.secondary li:hover a {
     color: #0394cd; }
