@@ -25,7 +25,7 @@
  */
 
 /* = Variables = */
-$matte:      #333333; // Mine Shaft
+$matte:      #2a2a2a; // Mine Shaft
 $torso_bg:   #FCFCFC; // Alabaster
 $selection:  #FFF1B5; // Buttermilk
 
@@ -193,7 +193,14 @@ img {
 /* = Layout = */
 header.primary {
 	background: $matte;
-	background: $matte -webkit-radial-gradient(50% 100%, 50% 100%, #1a1a1a, #2e2e2e);
+	background: -moz-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2e2e2e), color-stop(100%,#1a1a1a));
+	background: -webkit-linear-gradient(top, #2e2e2e 0%,#1a1a1a 100%);
+	background: -o-linear-gradient(top, #2e2e2e 0%,#1a1a1a 100%);
+	background: -ms-linear-gradient(top, #2e2e2e 0%,#1a1a1a 100%);
+	background: linear-gradient(to bottom, #2e2e2e 0%,#1a1a1a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2e2e', endColorstr='#1a1a1a',GradientType=0 );
+
 	margin-bottom: 1.5em;
 
 	.branding {
@@ -725,8 +732,16 @@ ul.supplemental {
 	}
 
 	> li {
-		padding-bottom: .5em;
-		border-bottom: 1px solid $border;
+		> a {
+			padding-top: .25em;
+			padding-bottom: .25em;
+		}
+	}
+
+	> li ~ li {
+		border-top: 1px solid $border;
+		padding-top: .5em;
+
 	}
 
 	ul {
@@ -867,6 +882,16 @@ a.button {
 	&:focus {
 		background: #0084B8;
 	}
+}
+
+button.disabled,
+input[type="button"][disabled],
+input[type="reset"][disabled],
+input[type="submit"][disabled],
+a.button.disabled {
+	background: $meta_text;
+	border-color: darken($meta_text, 5%);
+	cursor: default;
 }
 
 button::-moz-focus-inner,
@@ -1043,14 +1068,14 @@ table {
 
 			li:hover {
 				position: relative;
-				background: #2e2e2e;
+				background: #333333;
 
 				.dropdown {
 					display: block;
 					position: absolute;
 					left: 0;
 					min-width: 100%;
-					background: #2e2e2e;
+					background: #333333;
 				}
 			}
 		}

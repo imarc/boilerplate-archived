@@ -53,7 +53,7 @@ article, aside, audio, canvas, footer, header, nav, section, video {
   display: block; }
 
 html {
-  background: #333333;
+  background: #2a2a2a;
   color: #555555;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -120,8 +120,14 @@ img {
 
 /* = Layout = */
 header.primary {
-  background: #333333;
-  background: #333333 -webkit-radial-gradient(50% 100%, 50% 100%, #1a1a1a, #2e2e2e);
+  background: #2a2a2a;
+  background: -moz-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2e2e2e), color-stop(100%, #1a1a1a));
+  background: -webkit-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
+  background: -o-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
+  background: -ms-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
+  background: linear-gradient(to bottom, #2e2e2e 0%, #1a1a1a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2e2e2e', endColorstr='#1a1a1a',GradientType=0 );
   margin-bottom: 1.5em; }
   header.primary .branding h1 {
     padding-bottom: 0; }
@@ -155,7 +161,7 @@ aside.primary {
   padding: 1.333em; }
 
 footer.primary {
-  background: #333333;
+  background: #2a2a2a;
   color: #888888;
   font-size: .875em;
   padding-top: 1em;
@@ -549,9 +555,12 @@ ul.supplemental {
     display: block; }
     ul.supplemental a:hover {
       color: #0394cd; }
-  ul.supplemental > li {
-    padding-bottom: .5em;
-    border-bottom: 1px solid #dddddd; }
+  ul.supplemental > li > a {
+    padding-top: .25em;
+    padding-bottom: .25em; }
+  ul.supplemental > li ~ li {
+    border-top: 1px solid #dddddd;
+    padding-top: .5em; }
   ul.supplemental ul {
     list-style: none;
     padding-left: 0;
@@ -677,6 +686,15 @@ a.button {
   a.button:focus {
     background: #0084B8; }
 
+button.disabled,
+input[type="button"][disabled],
+input[type="reset"][disabled],
+input[type="submit"][disabled],
+a.button.disabled {
+  background: #888888;
+  border-color: #7b7b7b;
+  cursor: default; }
+
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
@@ -789,13 +807,13 @@ table {
     background: none; }
   nav.primary ul li:hover {
     position: relative;
-    background: #2e2e2e; }
+    background: #333333; }
     nav.primary ul li:hover .dropdown {
       display: block;
       position: absolute;
       left: 0;
       min-width: 100%;
-      background: #2e2e2e; } }
+      background: #333333; } }
 html.lt-ie9 .main aside {
   float: right;
   margin-left: 1em;
@@ -843,13 +861,13 @@ html.lt-ie9 nav.primary ul li:hover {
   background: none; }
 html.lt-ie9 nav.primary ul li:hover {
   position: relative;
-  background: #2e2e2e; }
+  background: #333333; }
   html.lt-ie9 nav.primary ul li:hover .dropdown {
     display: block;
     position: absolute;
     left: 0;
     min-width: 100%;
-    background: #2e2e2e; }
+    background: #333333; }
 
 @media only screen and (min-width: 700px) {
   .torso aside.primary {
