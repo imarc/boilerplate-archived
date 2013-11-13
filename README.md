@@ -119,6 +119,10 @@ page.These elements
   to zero if the window is too skinny.
 * have fixed padding. This padding is preserved across all screen sizes.
 
+If you're going to increase the size of the container, make sure to consider whether your content is
+getting too wide. Boilerplate already is above the recommended maximum widths for keeping content easy to
+read.
+
 ### Columns
 **@columns and .columns** are used to make elements within behave as columns, as a cleaner alternative to
 defining classes such as `.one_of_three`, or `.second.fifth`. To create gutters  between columns,
