@@ -6,8 +6,7 @@ as a lighter, customized variant of something like Twitter Bootstrap or the
 HTML5 Boilerplate, by focusing on our uses, aligning things with our semantics,
 and being willing to allow for slightly more variance between browsers.
 
-We're targeting IE8+, Chrome, Safari, and Firefox. We're aiming for boilerplate to
-be functional in IE7, however we are willing to accept visual degradation.
+We're targeting IE8+, Chrome, Safari, and Firefox.
 
 Take a Look
 -----------
@@ -15,21 +14,57 @@ Take a Look
 * [See the Structure](http://imarc.github.io/boilerplate/structure)
 * [See the CSS](http://imarc.github.io/boilerplate/css/styles.css)
 
-Our Goals
----------
-We pay a lot of attention to the semantics of our elements and class names when building sites.
-HTML5 provides more semantic elements and we've worked with them enough to figure out how we want to
-adopt them into our sites going forward.
+Goals
+-----
 
-We wanted this file to be lighter than Twitter Bootstrap or the HTML5 Boilerplate and restructured
-in a way that was more fitting our mentality. Rather than layering our notions on top of one of
-these others, we wanted to take what we could from them create a base that fits us.
+### Consistent, Clean Markup
 
-We also wanted to be more read for the mobile world. For us, this not only meant we needed to
-include a place for media queries, but that we should be mindful of keeping font sizes, vertical
-padding and vertical margins relative to the font size when appropriate. We set the font-size to
-**16px** on the `body` element, and all other font sizes and most vertical padding and margins are
-relative to this.
+The most important goal of Boilerplate is try to build HTML and CSS conventions. Ideally, if
+everyone working on a project knows the project is being built from Boilerplate, then anyone
+involved with project will end up writing HTML and CSS in a consistent way. Keep the markup clean
+and consistent through out the site.
+
+We also take a lot of interest in our semantic use of elements, and Boilerplate should provide some
+acceptable conventions that are up to our semantic standards.
+
+
+### Works as a Placeholder
+
+Boilerplate is **not** meant to be the final look and feel that a site would launch with. It is
+meant to act a placeholder, that
+
+* Provides a client-friendly appearance that isn't distracting that we can for prototypes and sites
+  in progress.
+* Tolerable defaults for elements that might not be styled in the normal build out of the site
+  (tables, typographical elements like sup/sub/pre, etc.)
+
+
+### Light and Semantic
+
+Boilerplate aims to be lighter and more semantic than Twitter Bootstrap. We try to avoid using
+non-semantic class names when we can, which means that we do not have a grid system. Boilerplate is
+meant to encourage great markup.
+
+
+### Mobile Friendly, Mobile First
+
+Boilerplate is ready for the mobile world. Boilerplate was built to be 'mobile first' from the
+ground up. We have basic mobile, tablet, and desktop styling, as well as structure for media
+queries. 
+
+
+At a Glance
+===========
+
+* We default to **16 pixel text**. This size is comfortable for reading on a mobile or desktop
+  device. This points **95 characters per line** in our default width for main body content, which
+  is higher than [the recommended range of 50-75 characters per
+  line](http://baymard.com/blog/line-length-readability). Our default line-height is 1.5. All other
+font-sizes are **relative using em units**.
+
+* We default to **Open Sans for Headings** and **Arial** for body text.
+
+* Our page defaults to a maximum of **1056 pixels wide** (1024 pixels with 16 pixel padding on either size.)
 
 
 Our Stylesheet Sections
