@@ -201,8 +201,6 @@ header.primary {
 	background: linear-gradient(to bottom, #2e2e2e 0%,#1a1a1a 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2e2e', endColorstr='#1a1a1a',GradientType=0 );
 
-	margin-bottom: 1.5em;
-
 	.branding {
 		h1 {
 			padding-bottom: 0;
@@ -219,7 +217,8 @@ header.primary {
 }
 
 .torso {
-	margin-bottom: 1.5em;
+	padding-top: 1.5em;
+	padding-bottom: 1.5em;
 }
 
 .main section {
