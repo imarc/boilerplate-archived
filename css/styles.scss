@@ -718,44 +718,38 @@ nav.utility {
 	display: none;
 }
 
-ul.supplemental {
-	list-style: none;
-	padding-left: 0;
-
-	a {
-		display: block;
-
-		&:hover {
-			color: $link;
-		}
-	}
-
-	> li {
-		> a {
-			padding-top: .25em;
-			padding-bottom: .25em;
-		}
-	}
-
-	> li ~ li {
-		border-top: 1px solid $border;
-		padding-top: .5em;
-
-	}
-
+nav.supplemental {
 	ul {
-		list-style: none;
-		padding-left: 0;
-		margin-bottom: 0;
-
 		li {
-			margin-bottom: 0;
+			float: none;
+
+			a {
+				padding: .25em 0;
+				display: block;
+			}
+
+			a:hover {
+				color: $link;
+			}
 		}
 
-		a {
-			color: $meta_text;
-			font-size: .75em;
-			line-height: 2;
+		ul {
+			a {
+				padding: 0;
+				color: $meta_text;
+				font-size: .75em;
+				line-height: 2;
+			}
+		}
+	}
+
+	> ul {
+		> li {
+			padding-bottom: .5em;
+		}
+		> li ~ li {
+			padding-top: .5em;
+			border-top: 1px solid $border;
 		}
 	}
 }
