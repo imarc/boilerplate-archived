@@ -16,10 +16,10 @@
 			"imarc/app-base": {
 				"plugin/library/flourish.php" : "app/config/library/boilerplate.php",
 
-				"css/fonts/fontawesome-webfont.eot"  : "docroot/css/fonts/fontawesome-webfont.eot",
-				"css/fonts/fontawesome-webfont.svg"  : "docroot/css/fonts/fontawesome-webfont.svg",
-				"css/fonts/fontawesome-webfont.ttf"  : "docroot/css/fonts/fontawesome-webfont.ttf",
-				"css/fonts/fontawesome-webfont.woff" : "docroot/css/fonts/fontawesome-webfont.woff",
+				"fonts/fontawesome-webfont.eot"  : "docroot/css/fonts/fontawesome-webfont.eot",
+				"fonts/fontawesome-webfont.svg"  : "docroot/css/fonts/fontawesome-webfont.svg",
+				"fonts/fontawesome-webfont.ttf"  : "docroot/css/fonts/fontawesome-webfont.ttf",
+				"fonts/fontawesome-webfont.woff" : "docroot/css/fonts/fontawesome-webfont.woff",
 
 				"css/styles.css"  :  "docroot/css/screen.css",
 				"js/html5shiv.js" :  "docroot/js/html5shiv.js"
