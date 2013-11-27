@@ -176,6 +176,17 @@ img {
 	}
 }
 
+@mixin bg-linear-gradient($startColor, $endColor) {
+	background: $endColor;
+	background: -moz-linear-gradient(top, $startColor 0%, $endColor 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$startColor), color-stop(100%,$endColor));
+	background: -webkit-linear-gradient(top, $startColor 0%,$endColor 100%);
+	background: -o-linear-gradient(top, $startColor 0%,$endColor 100%);
+	background: -ms-linear-gradient(top, $startColor 0%,$endColor 100%);
+	background: linear-gradient(to bottom, $startColor 0%,$endColor 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+}
+
 /* = Grouping = */
 .group, .container {
 	@include grouping;
@@ -192,14 +203,7 @@ img {
 
 /* = Layout = */
 header.primary {
-	background: $matte;
-	background: -moz-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2e2e2e), color-stop(100%,#1a1a1a));
-	background: -webkit-linear-gradient(top, #2e2e2e 0%,#1a1a1a 100%);
-	background: -o-linear-gradient(top, #2e2e2e 0%,#1a1a1a 100%);
-	background: -ms-linear-gradient(top, #2e2e2e 0%,#1a1a1a 100%);
-	background: linear-gradient(to bottom, #2e2e2e 0%,#1a1a1a 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2e2e', endColorstr='#1a1a1a',GradientType=0 );
+	@include bg-linear-gradient(#2e2e2e, #1a1a1a);
 
 	.branding {
 		h1 {
@@ -402,7 +406,7 @@ hr {
 	display: block;
 	height: 0;
 	margin: 2em auto 3em;
-	width: 75%;
+	width: 100%;
 }
 
 a {
