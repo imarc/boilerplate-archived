@@ -101,10 +101,6 @@ img {
 	position: relative;
 }
 
-.columns > * {
-	display: block;
-	width: 100%;
-}
 .columns > hr {
 	display: none;
 }
@@ -119,19 +115,21 @@ img {
 		vertical-align: top;
 	}
 	.columns > hr {
+		display: table-cell;
 		width: 16px;
 	}
 }
-.columns html.lt-ie9 {
+html.lt-ie9 .columns {
 	display: table;
 	table-layout: fixed;
 	width: 100%;
 }
-.columns html.lt-ie9 > * {
+html.lt-ie9 .columns > * {
 	display: table-cell;
 	vertical-align: top;
 }
-.columns html.lt-ie9 > hr {
+html.lt-ie9 .columns > hr {
+	display: table-cell;
 	width: 16px;
 }
 
