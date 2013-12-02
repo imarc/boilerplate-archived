@@ -176,14 +176,14 @@ img {
 	}
 }
 
-@mixin bg-linear-gradient($startColor, $endColor) {
+@mixin bg-linear-gradient($startColor, $startPos, $endColor, $endPos) {
 	background: $endColor;
-	background: -moz-linear-gradient(top, $startColor 0%, $endColor 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$startColor), color-stop(100%,$endColor));
-	background: -webkit-linear-gradient(top, $startColor 0%,$endColor 100%);
-	background: -o-linear-gradient(top, $startColor 0%,$endColor 100%);
-	background: -ms-linear-gradient(top, $startColor 0%,$endColor 100%);
-	background: linear-gradient(to bottom, $startColor 0%,$endColor 100%);
+	background: -moz-linear-gradient(top, $startColor $startPos, $endColor $endPos);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop($startPos,$startColor), color-stop($endPos,$endColor));
+	background: -webkit-linear-gradient(top, $startColor $startPos,$endColor $endPos);
+	background: -o-linear-gradient(top, $startColor $startPos,$endColor $endPos);
+	background: -ms-linear-gradient(top, $startColor $startPos,$endColor $endPos);
+	background: linear-gradient(to bottom, $startColor $startPos,$endColor $endPos);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
 }
 
@@ -203,7 +203,7 @@ img {
 
 /* = Layout = */
 header.primary {
-	@include bg-linear-gradient(#2e2e2e, #1a1a1a);
+	@include bg-linear-gradient(#2e2e2e, 0%, #1a1a1a, 100%);
 
 	.branding {
 		h1 {
@@ -261,12 +261,7 @@ footer.primary {
 }
 
 /* = Typography = */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+%header-font {
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: normal;
 
@@ -285,6 +280,7 @@ h5 + h6 {
 }
 
 h1 {
+	@extend %header-font;
 	font-size: 2.5em;
 	line-height: 1.2;
 	padding-bottom: .6em;
@@ -292,6 +288,7 @@ h1 {
 }
 
 h2 {
+	@extend %header-font;
 	font-size: 2em;
 	line-height: 1.2;
 	padding-bottom: .75em;
@@ -299,6 +296,7 @@ h2 {
 }
 
 h3 {
+	@extend %header-font;
 	font-size: 1.5em;
 	line-height: 1.3;
 	padding-bottom: 1em;
@@ -306,10 +304,16 @@ h3 {
 }
 
 h4 {
+	@extend %header-font;
 	font-size: 1.25em;
 	line-height: 1.4;
 	padding-bottom: 1.2em;
 	padding-top: 1.2em;
+}
+
+h5,
+h6 {
+	@extend %header-font;
 }
 
 .meta {
@@ -858,8 +862,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	background: $link;
-	border: 1px solid darken($link, 5%);
+	@include bg-linear-gradient($link, 0%, darken($link, 10%), 100%);
+	border: 1px solid darken($link, 10%);
 	border-radius: 4px;
 	color: #fff;
 	display: inline-block;
@@ -871,7 +875,7 @@ a.button {
 	text-align: center;
 
 	&:hover {
-		background: lighten($link, 5%);
+		background: $link;
 		border-color: $link;
 		cursor: pointer;
 	}
@@ -886,8 +890,8 @@ input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
 a.button.disabled {
-	background: $meta_text;
-	border-color: darken($meta_text, 5%);
+	@include bg-linear-gradient($meta_text, 0%, darken($meta_text, 10%), 100%);
+	border-color: darken($meta_text, 10%);
 	cursor: default;
 }
 
@@ -899,7 +903,7 @@ input::-moz-focus-inner {
 
 /* = Messaging = */
 
-.messaging {
+%messaging {
 	border-radius: 4px;
 	margin-bottom: 1.5em;
 	padding: 1em 3.25em;
@@ -923,6 +927,7 @@ input::-moz-focus-inner {
 }
 
 .success {
+	@extend %messaging;
 	background: $success;
 
 	&:before {
@@ -931,6 +936,7 @@ input::-moz-focus-inner {
 }
 
 .error {
+	@extend %messaging;
 	background: $error;
 
 	&:before {
@@ -939,6 +945,7 @@ input::-moz-focus-inner {
 }
 
 .info {
+	@extend %messaging;
 	background: $info;
 
 	&:before {

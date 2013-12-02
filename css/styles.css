@@ -168,19 +168,11 @@ footer.primary {
   padding-bottom: 1em; }
 
 /* = Typography = */
-h1,
-h2,
-h3,
-h4,
-h5,
+h1, h2, h3, h4, h5,
 h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: normal; }
-  h1:first-child,
-  h2:first-child,
-  h3:first-child,
-  h4:first-child,
-  h5:first-child,
+  h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child,
   h6:first-child {
     padding-top: 0; }
 
@@ -654,8 +646,15 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-  background: #0394cd;
-  border: 1px solid #0382b4;
+  background: #02709b;
+  background: -moz-linear-gradient(top, #0394cd 0%, #02709b 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0394cd), color-stop(100%, #02709b));
+  background: -webkit-linear-gradient(top, #0394cd 0%, #02709b 100%);
+  background: -o-linear-gradient(top, #0394cd 0%, #02709b 100%);
+  background: -ms-linear-gradient(top, #0394cd 0%, #02709b 100%);
+  background: linear-gradient(to bottom, #0394cd 0%, #02709b 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+  border: 1px solid #02709b;
   border-radius: 4px;
   color: #fff;
   display: inline-block;
@@ -670,7 +669,7 @@ a.button {
   input[type="reset"]:hover,
   input[type="submit"]:hover,
   a.button:hover {
-    background: #03a6e6;
+    background: #0394cd;
     border-color: #0394cd;
     cursor: pointer; }
   button:focus,
@@ -685,8 +684,15 @@ input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
 a.button.disabled {
-  background: #888888;
-  border-color: #7b7b7b;
+  background: #6f6f6f;
+  background: -moz-linear-gradient(top, #888888 0%, #6f6f6f 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #888888), color-stop(100%, #6f6f6f));
+  background: -webkit-linear-gradient(top, #888888 0%, #6f6f6f 100%);
+  background: -o-linear-gradient(top, #888888 0%, #6f6f6f 100%);
+  background: -ms-linear-gradient(top, #888888 0%, #6f6f6f 100%);
+  background: linear-gradient(to bottom, #888888 0%, #6f6f6f 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+  border-color: #6f6f6f;
   cursor: default; }
 
 button::-moz-focus-inner,
@@ -695,14 +701,14 @@ input::-moz-focus-inner {
   padding: 0; }
 
 /* = Messaging = */
-.messaging {
+.success, .error, .info {
   border-radius: 4px;
   margin-bottom: 1.5em;
   padding: 1em 3.25em;
   position: relative; }
-  .messaging a {
+  .success a, .error a, .info a {
     text-decoration: underline; }
-  .messaging:before {
+  .success:before, .error:before, .info:before {
     content: '';
     display: block;
     font-family: 'FontAwesome';
