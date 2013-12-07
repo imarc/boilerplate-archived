@@ -2,7 +2,7 @@
 	"name": "imarc/boilerplate",
 	"description": "Default styling, js, and example html",
 	"keywords": ["frontend", "js", "css"],
-	"license": "MIT",
+	"license": "Apache License v2.0",
 	"type": "opus-package",
 	"authors": [
 		{

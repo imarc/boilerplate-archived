@@ -270,4 +270,4 @@ These rules are primarily from the HTML5 Boilerplate.
 License
 =======
 
-Boilerplate is released under the MIT license. See LICENSE for the full license.
+Boilerplate is released under the Apache License v2.0. See LICENSE.
