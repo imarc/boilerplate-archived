@@ -704,7 +704,7 @@ nav.primary {
 		}
 	}
 
-	ul.focused {
+	ul[data-focus="focus"] {
 		&:before {
 			display: none;
 		}
