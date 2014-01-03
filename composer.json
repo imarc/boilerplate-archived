@@ -15,7 +15,7 @@
 		"opus": {
 			"imarc/app-base": {
 				"plugin/library/flourish.php" : "app/config/library/boilerplate.php",
-				"fonts" : "docroot/css",
+				"fonts" : "docroot/css/fonts",
 				"css/styles.css"  :  "docroot/css/screen.css",
 				"js/html5shiv.js" :  "docroot/js/html5shiv.js"
 
