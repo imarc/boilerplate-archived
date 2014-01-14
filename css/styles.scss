@@ -33,6 +33,7 @@ $plain_text: #555555; // Emperor
 $meta_text:  #888888; // Gray
 $link:       #0394CD; // iMarc Blue
 $link_hover: #888888; // Gray
+$highlight:  #f2006d; // iMarc Pink
 
 $border:     #DDDDDD; // Alto
 
@@ -186,6 +187,17 @@ img {
 	}
 }
 
+@mixin bg-linear-gradient($startColor, $startPos, $endColor, $endPos) {
+	background: $endColor;
+	background: -moz-linear-gradient(top, $startColor $startPos, $endColor $endPos);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop($startPos,$startColor), color-stop($endPos,$endColor));
+	background: -webkit-linear-gradient(top, $startColor $startPos,$endColor $endPos);
+	background: -o-linear-gradient(top, $startColor $startPos,$endColor $endPos);
+	background: -ms-linear-gradient(top, $startColor $startPos,$endColor $endPos);
+	background: linear-gradient(to bottom, $startColor $startPos,$endColor $endPos);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+}
+
 /* = Grouping = */
 .group, .container {
 	@include grouping;
@@ -202,14 +214,7 @@ img {
 
 /* = Layout = */
 header.primary {
-	background: $matte;
-	background: -moz-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2e2e2e), color-stop(100%,#1a1a1a));
-	background: -webkit-linear-gradient(top, #2e2e2e 0%,#1a1a1a 100%);
-	background: -o-linear-gradient(top, #2e2e2e 0%,#1a1a1a 100%);
-	background: -ms-linear-gradient(top, #2e2e2e 0%,#1a1a1a 100%);
-	background: linear-gradient(to bottom, #2e2e2e 0%,#1a1a1a 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e2e2e', endColorstr='#1a1a1a',GradientType=0 );
+	@include bg-linear-gradient(#2e2e2e, 0%, #1a1a1a, 100%);
 
 	.branding {
 		h1 {
@@ -267,12 +272,7 @@ footer.primary {
 }
 
 /* = Typography = */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+%header-font {
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: normal;
 
@@ -291,6 +291,7 @@ h5 + h6 {
 }
 
 h1 {
+	@extend %header-font;
 	font-size: 2.5em;
 	line-height: 1.2;
 	padding-bottom: .6em;
@@ -298,6 +299,7 @@ h1 {
 }
 
 h2 {
+	@extend %header-font;
 	font-size: 2em;
 	line-height: 1.2;
 	padding-bottom: .75em;
@@ -305,6 +307,7 @@ h2 {
 }
 
 h3 {
+	@extend %header-font;
 	font-size: 1.5em;
 	line-height: 1.3;
 	padding-bottom: 1em;
@@ -312,10 +315,16 @@ h3 {
 }
 
 h4 {
+	@extend %header-font;
 	font-size: 1.25em;
 	line-height: 1.4;
 	padding-bottom: 1.2em;
 	padding-top: 1.2em;
+}
+
+h5,
+h6 {
+	@extend %header-font;
 }
 
 .meta {
@@ -412,7 +421,7 @@ hr {
 	display: block;
 	height: 0;
 	margin: 2em auto 3em;
-	width: 75%;
+	width: 100%;
 }
 
 a {
@@ -864,8 +873,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	background: $link;
-	border: 1px solid darken($link, 5%);
+	@include bg-linear-gradient($link, 0%, darken($link, 10%), 100%);
+	border: 1px solid darken($link, 10%);
 	border-radius: 4px;
 	color: #fff;
 	display: inline-block;
@@ -877,7 +886,7 @@ a.button {
 	text-align: center;
 
 	&:hover {
-		background: lighten($link, 5%);
+		background: $link;
 		border-color: $link;
 		cursor: pointer;
 	}
@@ -892,8 +901,8 @@ input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
 a.button.disabled {
-	background: $meta_text;
-	border-color: darken($meta_text, 5%);
+	@include bg-linear-gradient($meta_text, 0%, darken($meta_text, 10%), 100%);
+	border-color: darken($meta_text, 10%);
 	cursor: default;
 }
 
@@ -905,7 +914,7 @@ input::-moz-focus-inner {
 
 /* = Messaging = */
 
-.messaging {
+%messaging {
 	border-radius: 4px;
 	margin-bottom: 1.5em;
 	padding: 1em 3.25em;
@@ -929,6 +938,7 @@ input::-moz-focus-inner {
 }
 
 .success {
+	@extend %messaging;
 	background: $success;
 
 	&:before {
@@ -937,6 +947,7 @@ input::-moz-focus-inner {
 }
 
 .error {
+	@extend %messaging;
 	background: $error;
 
 	&:before {
@@ -945,6 +956,7 @@ input::-moz-focus-inner {
 }
 
 .info {
+	@extend %messaging;
 	background: $info;
 
 	&:before {
@@ -961,25 +973,32 @@ table {
 
 	caption {
 		font-size: .75em;
+		margin-bottom: .75em;
 	}
 
 	td,
 	th {
-		padding-top: .25em;
-		padding-bottom: .25em;
+		padding: .5em 1em;
 		text-align: left;
 		vertical-align: top;
 	}
 
 	th {
 		font-weight: bold;
+		background: $plain_text;
+		border: 1px solid $plain_text;
+		color: #fff;
+		text-transform: uppercase;
 	}
 
-	thead {
-		th {
-			border-bottom: 1px solid $meta_text;
-		}
+	td {
+		border: 1px solid #e3e3e3;
 	}
+	
+	tr:nth-child(even) td {
+		background: #f3f3f3;
+	}
+	
 }
 
 
