@@ -33,6 +33,7 @@ $plain_text: #555555; // Emperor
 $meta_text:  #888888; // Gray
 $link:       #0394CD; // iMarc Blue
 $link_hover: #888888; // Gray
+$highlight:  #f2006d; // iMarc Pink
 
 $border:     #DDDDDD; // Alto
 
@@ -962,25 +963,32 @@ table {
 
 	caption {
 		font-size: .75em;
+		margin-bottom: .75em;
 	}
 
 	td,
 	th {
-		padding-top: .25em;
-		padding-bottom: .25em;
+		padding: .5em 1em;
 		text-align: left;
 		vertical-align: top;
 	}
 
 	th {
 		font-weight: bold;
+		background: $plain_text;
+		border: 1px solid $plain_text;
+		color: #fff;
+		text-transform: uppercase;
 	}
 
-	thead {
-		th {
-			border-bottom: 1px solid $meta_text;
-		}
+	td {
+		border: 1px solid #e3e3e3;
 	}
+	
+	tr:nth-child(even) td {
+		background: #f3f3f3;
+	}
+	
 }
 
 
