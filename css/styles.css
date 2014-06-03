@@ -1,8 +1,7 @@
-@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
 /**
- * Built using iMarc Boilerplate v1.1.0
+ * Built using iMarc Boilerplate v1.2
  * 
- * Copyright 2013 iMarc LLC
+ * Copyright 2014 iMarc LLC
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -26,6 +25,7 @@
  */
 /* = Variables = */
 /* = Web Fonts = */
+@import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
 @font-face {
 	font-family: 'FontAwesome';
 	src: url("../fonts/fontawesome-webfont.eot");
@@ -33,7 +33,6 @@
 	font-weight: normal;
 	font-style: normal;
 }
-
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite,
 code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6,
@@ -87,11 +86,14 @@ img {
 
 /* = Mixins = */
 /* = Grouping = */
-.group:before, .group:after, .container:before, .container:after {
+.container:before, .container:after,
+.group:before,
+.group:after {
 	content: '';
 	display: table;
 }
-.group:after, .container:after {
+.container:after,
+.group:after {
 	clear: both;
 }
 
@@ -121,19 +123,6 @@ img {
 		display: table-cell;
 		width: 16px;
 	}
-}
-html.lt-ie9 .columns {
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-}
-html.lt-ie9 .columns > * {
-	display: table-cell;
-	vertical-align: top;
-}
-html.lt-ie9 .columns > hr {
-	display: table-cell;
-	width: 16px;
 }
 
 /* = Layout = */
@@ -180,7 +169,7 @@ aside.primary {
 	background: #e4e4e4;
 	border-radius: 4px;
 	color: #888888;
-	font-size: .875em;
+	font-size: 14px;
 	margin-bottom: 1em;
 	padding: 1.333em;
 }
@@ -188,22 +177,12 @@ aside.primary {
 footer.primary {
 	background: #2a2a2a;
 	color: #888888;
-	font-size: .875em;
+	font-size: 14px;
 	padding-top: 1em;
 	padding-bottom: 1em;
 }
 
 /* = Typography = */
-h1, h2, h3, h4, h5,
-h6 {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-weight: normal;
-}
-h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child,
-h6:first-child {
-	padding-top: 0;
-}
-
 h1 + h2,
 h2 + h3,
 h3 + h4,
@@ -214,36 +193,68 @@ h5 + h6 {
 }
 
 h1 {
-	font-size: 2.5em;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	font-size: 40px;
 	line-height: 1.2;
-	padding-bottom: .6em;
-	padding-top: 0.6em;
+}
+h1:first-child {
+	padding-top: 0;
 }
 
 h2 {
-	font-size: 2em;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	font-size: 32px;
 	line-height: 1.2;
-	padding-bottom: .75em;
-	padding-top: .75em;
+}
+h2:first-child {
+	padding-top: 0;
 }
 
 h3 {
-	font-size: 1.5em;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	font-size: 24px;
 	line-height: 1.3;
-	padding-bottom: 1em;
-	padding-top: 1em;
+}
+h3:first-child {
+	padding-top: 0;
 }
 
 h4 {
-	font-size: 1.25em;
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	padding-top: 24px;
+	padding-bottom: 24px;
+	font-size: 20px;
 	line-height: 1.4;
-	padding-bottom: 1.2em;
-	padding-top: 1.2em;
+}
+h4:first-child {
+	padding-top: 0;
+}
+
+h5,
+h6 {
+	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight: normal;
+	padding-top: 24px;
+	padding-bottom: 24px;
+}
+h5:first-child,
+h6:first-child {
+	padding-top: 0;
 }
 
 .meta {
 	color: #888888;
-	font-size: .75em;
+	font-size: 12px;
 	margin-bottom: .5em;
 	margin-top: -.667em;
 }
@@ -292,7 +303,7 @@ article {
 	color: #888888;
 }
 .intro p {
-	font-size: 1.25em;
+	font-size: 20px;
 	line-height: 1.6;
 	margin-bottom: .8em;
 }
@@ -301,7 +312,7 @@ article {
 	background: #e4e4e4;
 	border-radius: 4px;
 	color: #888888;
-	font-size: 1.5em;
+	font-size: 24px;
 	line-height: 1.34;
 	margin-bottom: 1em;
 	padding: .67em;
@@ -317,7 +328,7 @@ article {
 pre,
 code {
 	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', monospace;
-	font-size: .875em;
+	font-size: 14px;
 }
 
 pre {
@@ -442,7 +453,6 @@ a.word:before,
 	font-family: FontAwesome;
 	font-style: normal;
 	font-weight: normal;
-	line-height: 1;
 	speak: none;
 	text-transform: none;
 	-webkit-font-smoothing: antialiased;
@@ -597,12 +607,17 @@ nav.primary {
 }
 nav.primary:before,
 nav.primary ul:before {
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
 	bottom: 100%;
 	color: #000;
 	content: '\f0c9';
 	display: block;
-	font-family: 'FontAwesome';
-	font-size: 2.5em;
+	font-size: 40px;
 	padding: .35em .6em;
 	position: absolute;
 	right: 0;
@@ -620,14 +635,19 @@ nav.primary ul li .dropdown {
 nav.primary ul li a {
 	border-top: 1px solid #212121;
 	display: block;
-	padding: .5em 16px;
+	padding: 0.5em 16px;
 	color: #fff;
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 nav.primary ul li a:before {
-	font-family: 'FontAwesome';
-	float: right;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
 	content: '\f054';
+	float: right;
 }
 nav.primary ul li:hover,
 nav.primary ul li.active {
@@ -673,7 +693,7 @@ nav.supplemental ul li a:hover {
 nav.supplemental ul ul a {
 	padding: 0;
 	color: #888888;
-	font-size: .75em;
+	font-size: 12px;
 	line-height: 2;
 }
 nav.supplemental > ul > li {
@@ -720,7 +740,7 @@ label {
 fieldset .help {
 	color: #888888;
 	display: block;
-	font-size: .75em;
+	font-size: 12px;
 	line-height: 1.34;
 	margin: 0;
 	padding: 0;
@@ -733,7 +753,7 @@ textarea {
 	color: #555555;
 	display: block;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1em;
+	font-size: 16px;
 	margin: 0;
 	padding: 0.4em 1%;
 	width: 98%;
@@ -767,7 +787,7 @@ input[type="radio"] {
 input[type="file"] {
 	color: #333;
 	display: block;
-	font-size: 1em;
+	font-size: 16px;
 	width: 100%;
 }
 
@@ -845,19 +865,25 @@ input::-moz-focus-inner {
 }
 
 /* = Messaging = */
-.success, .error, .info {
+.success {
 	border-radius: 4px;
 	margin-bottom: 1.5em;
 	padding: 1em 3.25em;
 	position: relative;
+	background: #d2f8b0;
 }
-.success a, .error a, .info a {
+.success a {
 	text-decoration: underline;
 }
-.success:before, .error:before, .info:before {
+.success:before {
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
 	content: '';
 	display: block;
-	font-family: 'FontAwesome';
 	font-size: 20px;
 	height: 23px;
 	left: 1em;
@@ -865,23 +891,65 @@ input::-moz-focus-inner {
 	top: .6em;
 	width: 23px;
 }
-
-.success {
-	background: #d2f8b0;
-}
 .success:before {
 	content: '\f00c';
 }
 
 .error {
+	border-radius: 4px;
+	margin-bottom: 1.5em;
+	padding: 1em 3.25em;
+	position: relative;
 	background: #ffd8d9;
+}
+.error a {
+	text-decoration: underline;
+}
+.error:before {
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	content: '';
+	display: block;
+	font-size: 20px;
+	height: 23px;
+	left: 1em;
+	position: absolute;
+	top: .6em;
+	width: 23px;
 }
 .error:before {
 	content: '\f12a';
 }
 
 .info {
+	border-radius: 4px;
+	margin-bottom: 1.5em;
+	padding: 1em 3.25em;
+	position: relative;
 	background: #b8e0f9;
+}
+.info a {
+	text-decoration: underline;
+}
+.info:before {
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	content: '';
+	display: block;
+	font-size: 20px;
+	height: 23px;
+	left: 1em;
+	position: absolute;
+	top: .6em;
+	width: 23px;
 }
 .info:before {
 	content: '\f129';
@@ -895,7 +963,7 @@ table {
 	width: 100%;
 }
 table caption {
-	font-size: .75em;
+	font-size: 12px;
 	margin-bottom: .75em;
 }
 table td,
@@ -922,6 +990,22 @@ table tr:nth-child(even) td {
 /* = Page Specific = */
 /* = Media Queries = */
 @media only screen and (min-width: 600px) {
+	html.dev:before {
+		background: red;
+		color: #000;
+		content: "tablets-and-up";
+		filter: alpha(opacity=50);
+		font-size: .6em;
+		left: 0;
+		line-height: 1;
+		opacity: .5;
+		padding: 5px;
+		position: absolute;
+		top: 0;
+		width: auto;
+		z-index: 10000;
+	}
+
 	.main aside {
 		float: right;
 		margin-left: 1em;
@@ -937,7 +1021,7 @@ table tr:nth-child(even) td {
 	nav.utility a {
 		display: block;
 		color: #fff;
-		font-size: .75em;
+		font-size: 12px;
 	}
 	nav.utility li.active a,
 	nav.utility li:hover a {
@@ -951,7 +1035,7 @@ table tr:nth-child(even) td {
 	nav.secondary a {
 		display: block;
 		color: #bbbbbb;
-		font-size: .8125em;
+		font-size: 13px;
 		line-height: 2;
 	}
 	nav.secondary li.active a,
@@ -978,7 +1062,7 @@ table tr:nth-child(even) td {
 		float: none;
 	}
 	nav.primary ul li li a {
-		font-size: .8125em;
+		font-size: 13px;
 		font-family: inherit;
 	}
 	nav.primary ul li.active,
@@ -997,6 +1081,21 @@ table tr:nth-child(even) td {
 		background: #333333;
 	}
 }
+html.lt-ie9 html.dev:before {
+	background: red;
+	color: #000;
+	content: "tablets-and-up";
+	filter: alpha(opacity=50);
+	font-size: .6em;
+	left: 0;
+	line-height: 1;
+	opacity: .5;
+	padding: 5px;
+	position: absolute;
+	top: 0;
+	width: auto;
+	z-index: 10000;
+}
 html.lt-ie9 .main aside {
 	float: right;
 	margin-left: 1em;
@@ -1011,7 +1110,7 @@ html.lt-ie9 nav.utility {
 html.lt-ie9 nav.utility a {
 	display: block;
 	color: #fff;
-	font-size: .75em;
+	font-size: 12px;
 }
 html.lt-ie9 nav.utility li.active a,
 html.lt-ie9 nav.utility li:hover a {
@@ -1024,7 +1123,7 @@ html.lt-ie9 nav.secondary {
 html.lt-ie9 nav.secondary a {
 	display: block;
 	color: #bbbbbb;
-	font-size: .8125em;
+	font-size: 13px;
 	line-height: 2;
 }
 html.lt-ie9 nav.secondary li.active a,
@@ -1050,7 +1149,7 @@ html.lt-ie9 nav.primary ul li li {
 	float: none;
 }
 html.lt-ie9 nav.primary ul li li a {
-	font-size: .8125em;
+	font-size: 13px;
 	font-family: inherit;
 }
 html.lt-ie9 nav.primary ul li.active,
@@ -1070,6 +1169,22 @@ html.lt-ie9 nav.primary ul li:hover .dropdown {
 }
 
 @media only screen and (min-width: 700px) {
+	html.dev:before {
+		background: orange;
+		color: #000;
+		content: "desktops-and-up";
+		filter: alpha(opacity=50);
+		font-size: .6em;
+		left: 0;
+		line-height: 1;
+		opacity: .5;
+		padding: 5px;
+		position: absolute;
+		top: 0;
+		width: auto;
+		z-index: 10000;
+	}
+
 	.torso aside.primary {
 		display: block;
 		float: right;
@@ -1081,6 +1196,21 @@ html.lt-ie9 nav.primary ul li:hover .dropdown {
 		width: 75%;
 		padding-right: 2em;
 	}
+}
+html.lt-ie9 html.dev:before {
+	background: orange;
+	color: #000;
+	content: "desktops-and-up";
+	filter: alpha(opacity=50);
+	font-size: .6em;
+	left: 0;
+	line-height: 1;
+	opacity: .5;
+	padding: 5px;
+	position: absolute;
+	top: 0;
+	width: auto;
+	z-index: 10000;
 }
 html.lt-ie9 .torso aside.primary {
 	display: block;
@@ -1117,8 +1247,7 @@ html.lt-ie9 .torso aside.primary ~ .main {
 
 	@page {
 		margin: 0.5cm;
-}
-
+	}
 	p,
 	h2,
 	h3 {

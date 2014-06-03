@@ -307,12 +307,9 @@ aside.primary {
 	background: mix($torso-bg, $meta-text, 80%);
 	border-radius: 4px;
 	color: $meta-text;
-	//float: right;
 	font-size: .875 * $rem;
 	margin-bottom: 1em;
-	//margin-left: 1em;
 	padding: 1.333em;
-	//width: 33.33%;
 }
 
 footer.primary {
@@ -327,6 +324,9 @@ footer.primary {
 @mixin header-font {
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: normal;
+
+	padding-top: 1.5 * $rem;
+	padding-bottom: 1.5 * $rem;
 
 	&:first-child {
 		padding-top: 0;
@@ -346,32 +346,24 @@ h1 {
 	@include header-font;
 	font-size: 2.5 * $rem;
 	line-height: 1.2;
-	padding-bottom: .6em;
-	padding-top: 0.6em;
 }
 
 h2 {
 	@include header-font;
 	font-size: 2 * $rem;
 	line-height: 1.2;
-	padding-bottom: .75em;
-	padding-top: .75em;
 }
 
 h3 {
 	@include header-font;
 	font-size: 1.5 * $rem;
 	line-height: 1.3;
-	padding-bottom: 1em;
-	padding-top: 1em;
 }
 
 h4 {
 	@include header-font;
 	font-size: 1.25 * $rem;
 	line-height: 1.4;
-	padding-bottom: 1.2em;
-	padding-top: 1.2em;
 }
 
 h5,
