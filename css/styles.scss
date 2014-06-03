@@ -1,7 +1,7 @@
 /**
- * Built using iMarc Boilerplate v1.1.0
+ * Built using iMarc Boilerplate v1.2
  * 
- * Copyright 2013 iMarc LLC
+ * Copyright 2014 iMarc LLC
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -25,14 +25,16 @@
  */
 
 /* = Variables = */
+$rem:        16px;
+
 $matte:      #2a2a2a; // Mine Shaft
-$torso_bg:   #FCFCFC; // Alabaster
+$torso-bg:   #FCFCFC; // Alabaster
 $selection:  #FFF1B5; // Buttermilk
 
-$plain_text: #555555; // Emperor
-$meta_text:  #888888; // Gray
+$plain-text: #555555; // Emperor
+$meta-text:  #888888; // Gray
 $link:       #0394CD; // iMarc Blue
-$link_hover: #888888; // Gray
+$link-hover: #888888; // Gray
 $highlight:  #f2006d; // iMarc Pink
 
 $border:     #DDDDDD; // Alto
@@ -75,16 +77,16 @@ article, aside, audio, canvas, footer, header, nav, section, video {
 
 html {
 	background: $matte;
-	color: $plain_text;
+	color: $plain-text;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
+	font-size: $rem;
 	line-height: 1.5;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
 }
 
 body {
-	background: $torso_bg;
+	background: $torso-bg;
 	min-width: 300px;
 }
 
@@ -121,29 +123,78 @@ img {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 1024px;
-	padding-left: 16px;
-	padding-right: 16px;
+	padding-left: $rem;
+	padding-right: $rem;
 	position: relative;
 }
 
-@mixin columns {
+@mixin columns($query: 'min-width: 600px') {
 	> hr {
 		display: none;
 	}
 
-	@include for-tablets-and-up {
-		display: table;
-		table-layout: fixed;
-		width: 100%;
+	@media only screen and ($query) {
+		& {
+			display: table;
+			table-layout: fixed;
+			width: 100%;
 
-		> * {
-			display: table-cell;
-			vertical-align: top;
+			> * {
+				display: table-cell;
+				vertical-align: top;
+			}
+			> hr {
+				display: table-cell;
+				width: $rem;
+			}
 		}
-		> hr {
-			display: table-cell;
-			width: 16px;
-		}
+	}
+}
+
+@mixin fontawesome {
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+}
+
+@mixin no-bullets {
+	padding-left: 0;
+	list-style: none;
+
+	li:before {
+		display: none;
+	}
+}
+
+@mixin transition($properties: all, $duration: 250ms, $easing: ease-in-out) {
+	@if length($properties) > 1 {
+		-webkit-transition-property: $properties;
+		transition-property: $properties;
+	} @else {
+		-webkit-transition: $properties $duration $easing;
+		transition: $properties $duration $easing;
+	}
+}
+
+@mixin query-label($label, $bg: #666) {
+
+	html.dev:before {
+		background: $bg;
+		color: #000;
+		content: $label;
+		filter: alpha(opacity=50);
+		font-size: .6em;
+		left: 0;
+		line-height: 1;
+		opacity: .5;
+		padding: 5px;
+		position: absolute;
+		top: 0;
+		width: auto;
+		z-index: 10000;
 	}
 }
 
@@ -199,7 +250,8 @@ img {
 }
 
 /* = Grouping = */
-.group, .container {
+.container,
+.group {
 	@include grouping;
 }
 
@@ -222,7 +274,7 @@ header.primary {
 
 			a,
 			a:hover {
-				color: $torso_bg;
+				color: $torso-bg;
 				display: block;
 				padding-bottom: .5em;
 				padding-top: .5em;
@@ -252,11 +304,11 @@ aside.primary {
 }
 
 .main aside {
-	background: mix($torso_bg, $meta_text, 80%);
+	background: mix($torso-bg, $meta-text, 80%);
 	border-radius: 4px;
-	color: $meta_text;
+	color: $meta-text;
 	//float: right;
-	font-size: .875em;
+	font-size: .875 * $rem;
 	margin-bottom: 1em;
 	//margin-left: 1em;
 	padding: 1.333em;
@@ -265,14 +317,14 @@ aside.primary {
 
 footer.primary {
 	background: $matte;
-	color: $meta_text;
-	font-size: .875em;
+	color: $meta-text;
+	font-size: .875 * $rem;
 	padding-top: 1em;
 	padding-bottom: 1em;
 }
 
 /* = Typography = */
-%header-font {
+@mixin header-font {
 	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	font-weight: normal;
 
@@ -287,36 +339,36 @@ h3 + h4,
 h4 + h5,
 h5 + h6 {
 	padding-top: 0;
-	margin-top: -16px;
+	margin-top: -$rem;
 }
 
 h1 {
-	@extend %header-font;
-	font-size: 2.5em;
+	@include header-font;
+	font-size: 2.5 * $rem;
 	line-height: 1.2;
 	padding-bottom: .6em;
 	padding-top: 0.6em;
 }
 
 h2 {
-	@extend %header-font;
-	font-size: 2em;
+	@include header-font;
+	font-size: 2 * $rem;
 	line-height: 1.2;
 	padding-bottom: .75em;
 	padding-top: .75em;
 }
 
 h3 {
-	@extend %header-font;
-	font-size: 1.5em;
+	@include header-font;
+	font-size: 1.5 * $rem;
 	line-height: 1.3;
 	padding-bottom: 1em;
 	padding-top: 1em;
 }
 
 h4 {
-	@extend %header-font;
-	font-size: 1.25em;
+	@include header-font;
+	font-size: 1.25 * $rem;
 	line-height: 1.4;
 	padding-bottom: 1.2em;
 	padding-top: 1.2em;
@@ -324,12 +376,12 @@ h4 {
 
 h5,
 h6 {
-	@extend %header-font;
+	@include header-font;
 }
 
 .meta {
-	color: $meta_text;
-	font-size: .75em;
+	color: $meta-text;
+	font-size: .75 * $rem;
 	margin-bottom: .5em;
 	margin-top: -.667em;
 }
@@ -351,14 +403,14 @@ em {
 blockquote,
 pre {
 	@include grouping;
-	color: $meta_text;
+	color: $meta-text;
 	margin-bottom: 1.5em;
 }
 
 blockquote {
 	border-left: 1px solid $border;
 	font-style: italic;
-	padding-left: 16px;
+	padding-left: $rem;
 }
 
 article {
@@ -366,25 +418,25 @@ article {
 }
 
 .intro {
-	color: $meta_text;
+	color: $meta-text;
 
 	p {
-		font-size: 1.25em;
+		font-size: 1.25 * $rem;
 		line-height: 1.6;
 		margin-bottom: .8em;
 	}
 }
 
 .highlight {
-	background: mix($torso_bg, $meta_text, 80%);
+	background: mix($torso-bg, $meta-text, 80%);
 	border-radius: 4px;
-	color: $meta_text;
-	font-size: 1.5em;
+	color: $meta-text;
+	font-size: 1.5 * $rem;
 	line-height: 1.34;
 
 	margin-bottom: 1em;
 	padding: .67em;
-	text-shadow: 0 1px 0 lighten($meta_text, 45%);
+	text-shadow: 0 1px 0 lighten($meta-text, 45%);
 
 	a {
 		text-shadow: 0 1px 0 lighten($link, 45%);
@@ -398,7 +450,7 @@ article {
 pre,
 code {
 	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', monospace;
-	font-size: .875em;
+	font-size: .875 * $rem;
 }
 
 pre {
@@ -417,7 +469,7 @@ address {
 
 hr {
 	border: 0;
-	border-top: 1px solid $meta_text;
+	border-top: 1px solid $meta-text;
 	display: block;
 	height: 0;
 	margin: 2em auto 3em;
@@ -430,7 +482,7 @@ a {
 
 	&:hover,
 	&:active {
-		color: $link_hover;
+		color: $link-hover;
 	}
 
 	&:focus {
@@ -519,13 +571,7 @@ a.docx:before,
 a.pdf:before,
 a.word:before,
 [class*="icon-"]:before {
-	font-family: FontAwesome;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 1;
-	speak: none;
-	text-transform: none;
-	-webkit-font-smoothing: antialiased;
+	@include fontawesome;
 }
 
 a.doc:before,
@@ -544,7 +590,7 @@ a[class*="icon-"]:before {
 	font-size: 0;
 
 	&:before {
-		font-size: 32px;
+		font-size: 2 * $rem;
 	}
 }
 
@@ -559,7 +605,7 @@ a[class*="icon-"]:before {
 		a.pdf:before,
 		a.word:before,
 		a[class*="icon-"]:before {
-			color: $plain_text;
+			color: $plain-text;
 			padding-right: .5em;
 		}
 	}
@@ -660,12 +706,13 @@ nav.primary {
 
 	&:before,
 	ul:before {
+		@include fontawesome;
+
 		bottom: 100%;
 		color: #000;
 		content: '\f0c9';
 		display: block;
-		font-family: 'FontAwesome';
-		font-size: 2.5em;
+		font-size: 2.5 * $rem;
 		padding: .35em .6em;
 		position: absolute;
 		right: 0;
@@ -673,7 +720,7 @@ nav.primary {
 
 	ul {
 		&:before {
-			color: $plain_text;
+			color: $plain-text;
 		}
 
 		li {
@@ -687,14 +734,15 @@ nav.primary {
 			a {
 				border-top: 1px solid #212121;
 				display: block;
-				padding: .5em 16px;
+				padding: .5em $rem;
 				color: #fff;
 				font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 				&:before {
-					font-family: 'FontAwesome';
-					float: right;
+					@include fontawesome;
+
 					content: '\f054';
+					float: right;
 				}
 			}
 		}
@@ -755,8 +803,8 @@ nav.supplemental {
 		ul {
 			a {
 				padding: 0;
-				color: $meta_text;
-				font-size: .75em;
+				color: $meta-text;
+				font-size: .75 * $rem;
 				line-height: 2;
 			}
 		}
@@ -807,9 +855,9 @@ label {
 }
 
 fieldset .help {
-	color: $meta_text;
+	color: $meta-text;
 	display: block;
-	font-size: .75em;
+	font-size: .75 * $rem;
 	line-height: 1.34;
 	margin: 0;
 	padding: 0;
@@ -819,10 +867,10 @@ input[type="password"],
 input[type="text"],
 textarea {
 	border: 1px solid #ccc;
-	color: $plain_text;
+	color: $plain-text;
 	display: block;
 	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1em;
+	font-size: $rem;
 	margin: 0;
 	padding: 0.4em 1%;
 	width: 98%;
@@ -855,7 +903,7 @@ input[type="radio"] {
 input[type="file"] {
 	color: #333;
 	display: block;
-	font-size: 1em;
+	font-size: $rem;
 	width: 100%;
 }
 
@@ -901,8 +949,8 @@ input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
 a.button.disabled {
-	@include bg-linear-gradient($meta_text, 0%, darken($meta_text, 10%), 100%);
-	border-color: darken($meta_text, 10%);
+	@include bg-linear-gradient($meta-text, 0%, darken($meta-text, 10%), 100%);
+	border-color: darken($meta-text, 10%);
 	cursor: default;
 }
 
@@ -914,7 +962,7 @@ input::-moz-focus-inner {
 
 /* = Messaging = */
 
-%messaging {
+@mixin messaging {
 	border-radius: 4px;
 	margin-bottom: 1.5em;
 	padding: 1em 3.25em;
@@ -925,9 +973,10 @@ input::-moz-focus-inner {
 	}
 
 	&:before {
+		@include fontawesome;
+
 		content:'';
 		display: block;
-		font-family: 'FontAwesome';
 		font-size: 20px;
 		height: 23px;
 		left: 1em;
@@ -938,7 +987,7 @@ input::-moz-focus-inner {
 }
 
 .success {
-	@extend %messaging;
+	@include messaging;
 	background: $success;
 
 	&:before {
@@ -947,7 +996,7 @@ input::-moz-focus-inner {
 }
 
 .error {
-	@extend %messaging;
+	@include messaging;
 	background: $error;
 
 	&:before {
@@ -956,7 +1005,7 @@ input::-moz-focus-inner {
 }
 
 .info {
-	@extend %messaging;
+	@include messaging;
 	background: $info;
 
 	&:before {
@@ -972,7 +1021,7 @@ table {
 	width: 100%;
 
 	caption {
-		font-size: .75em;
+		font-size: .75 * $rem;
 		margin-bottom: .75em;
 	}
 
@@ -985,8 +1034,8 @@ table {
 
 	th {
 		font-weight: bold;
-		background: $plain_text;
-		border: 1px solid $plain_text;
+		background: $plain-text;
+		border: 1px solid $plain-text;
 		color: #fff;
 		text-transform: uppercase;
 	}
@@ -1008,6 +1057,9 @@ table {
 
 /* = Media Queries = */
 @include tablets-and-up {
+
+	@include query-label("tablets-and-up", red);
+
 	.main aside {
 		float: right;
 		margin-left: 1em;
@@ -1023,7 +1075,7 @@ table {
 		a {
 			display: block;
 			color: #fff;
-			font-size: .75em;
+			font-size: .75 * $rem;
 		}
 
 		li.active,
@@ -1041,7 +1093,7 @@ table {
 		a {
 			display: block;
 			color: #bbbbbb;
-			font-size: .8125em;
+			font-size: .8125 * $rem;
 			line-height: 2;
 		}
 
@@ -1078,7 +1130,7 @@ table {
 					float: none;
 
 					a {
-						font-size: .8125em;
+						font-size: .8125 * $rem;
 						font-family: inherit;
 					}
 				}
@@ -1106,6 +1158,9 @@ table {
 }
 
 @include desktops-and-up {
+
+	@include query-label("desktops-and-up", orange);
+
 	.torso aside.primary {
 		display: block;
 		float: right;
