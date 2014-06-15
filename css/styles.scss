@@ -54,8 +54,8 @@ $success:    #D2F8B0; // Gossip
 $error:      #FFD8D9; // Cosmos
 $info:       #B8E0F9; // Sail
 
-$bodyFonts:    "Helvetica Neue", Arial, sans-serif;
-$headingFonts: "Open Sans";
+$body-fonts:    "Helvetica Neue", Arial, sans-serif;
+$heading-fonts: "Open Sans";
 
 
 /* = Mixins = */
@@ -165,16 +165,16 @@ $headingFonts: "Open Sans";
 	}
 }
 
-@mixin bg-gradient($startColor, $endColor, $orientation: 'vertical') {
+@mixin bg-gradient($start-color, $end-color, $orientation: 'vertical') {
 	$direction: if($orientation == vertical, 0, 1);
-	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$direction}, startColorstr='#{ie-hex-str($startColor)}', endColorstr='#{ie-hex-str($endColor)}');
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$direction}, startColorStr='#{ie-hex-str($start-color)}', endColorStr='#{ie-hex-str($end-color)}');
 
 	$direction: if($orientation == vertical, top, left);
-	background-image: -webkit-linear-gradient($direction, $startColor, $endColor);
-	background-image: -o-linear-gradient($direction, $startColor, $endColor);
+	background-image: -webkit-linear-gradient($direction, $start-color, $end-color);
+	background-image: -o-linear-gradient($direction, $start-color, $end-color);
 
 	$direction: if($orientation == vertical, bottom, right);
-	background-image: linear-gradient(to $direction, $startColor, $endColor);
+	background-image: linear-gradient(to $direction, $start-color, $end-color);
 }
 
 
@@ -202,7 +202,7 @@ article, aside, audio, canvas, footer, header, nav, section, video {
 html {
 	background: $matte;
 	color: $plain-text;
-	font-family: $bodyFonts;
+	font-family: $body-fonts;
 	font-size: $rem;
 	line-height: 1.5;
 	-ms-text-size-adjust: 100%;
@@ -288,7 +288,7 @@ footer.primary {
 
 /* = Typography = */
 @mixin header-font {
-	font-family: $headingFonts;
+	font-family: $heading-fonts;
 	font-weight: normal;
 
 	padding-top: 1.5 * $rem;
@@ -694,7 +694,7 @@ nav.primary {
 				display: block;
 				padding: .5em $rem;
 				color: #fff;
-				font-family: $headingFonts;
+				font-family: $heading-fonts;
 
 				&:before {
 					@include fontawesome;
@@ -827,7 +827,7 @@ textarea {
 	border: 1px solid #ccc;
 	color: $plain-text;
 	display: block;
-	font-family: $bodyFonts;
+	font-family: $body-fonts;
 	font-size: $rem;
 	margin: 0;
 	padding: 0.4em 1%;
@@ -884,7 +884,7 @@ a.button {
 	border-radius: 4px;
 	color: #fff;
 	display: inline-block;
-	font-family: $headingFonts;
+	font-family: $heading-fonts;
 	line-height: 1;
 	margin-bottom: .5em;
 	margin-right: .5em;
@@ -1073,7 +1073,7 @@ table {
 				display: block;
 				a {
 					border-top: 0;
-					font-family: $headingFonts;
+					font-family: $heading-fonts;
 
 					&:before {
 						display: none;
