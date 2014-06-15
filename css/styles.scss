@@ -54,6 +54,9 @@ $success:    #D2F8B0; // Gossip
 $error:      #FFD8D9; // Cosmos
 $info:       #B8E0F9; // Sail
 
+$bodyFonts:    "Helvetica Neue", Arial, sans-serif;
+$headingFonts: "Open Sans";
+
 
 /* = Mixins = */
 @mixin grouping {
@@ -199,7 +202,7 @@ article, aside, audio, canvas, footer, header, nav, section, video {
 html {
 	background: $matte;
 	color: $plain-text;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $bodyFonts;
 	font-size: $rem;
 	line-height: 1.5;
 	-ms-text-size-adjust: 100%;
@@ -285,7 +288,7 @@ footer.primary {
 
 /* = Typography = */
 @mixin header-font {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $headingFonts;
 	font-weight: normal;
 
 	padding-top: 1.5 * $rem;
@@ -691,7 +694,7 @@ nav.primary {
 				display: block;
 				padding: .5em $rem;
 				color: #fff;
-				font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+				font-family: $headingFonts;
 
 				&:before {
 					@include fontawesome;
@@ -824,7 +827,7 @@ textarea {
 	border: 1px solid #ccc;
 	color: $plain-text;
 	display: block;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: $bodyFonts;
 	font-size: $rem;
 	margin: 0;
 	padding: 0.4em 1%;
@@ -881,7 +884,7 @@ a.button {
 	border-radius: 4px;
 	color: #fff;
 	display: inline-block;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: $headingFonts;
 	line-height: 1;
 	margin-bottom: .5em;
 	margin-right: .5em;
@@ -1070,7 +1073,7 @@ table {
 				display: block;
 				a {
 					border-top: 0;
-					font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+					font-family: $headingFonts;
 
 					&:before {
 						display: none;
