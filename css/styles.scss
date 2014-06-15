@@ -162,15 +162,16 @@ $info:       #B8E0F9; // Sail
 	}
 }
 
-@mixin bg-linear-gradient($startColor, $startPos, $endColor, $endPos) {
-	background: $endColor;
-	background: -moz-linear-gradient(top, $startColor $startPos, $endColor $endPos);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop($startPos,$startColor), color-stop($endPos,$endColor));
-	background: -webkit-linear-gradient(top, $startColor $startPos,$endColor $endPos);
-	background: -o-linear-gradient(top, $startColor $startPos,$endColor $endPos);
-	background: -ms-linear-gradient(top, $startColor $startPos,$endColor $endPos);
-	background: linear-gradient(to bottom, $startColor $startPos,$endColor $endPos);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+@mixin bg-gradient($startColor, $endColor, $orientation: 'vertical') {
+	$direction: if($orientation == vertical, 0, 1);
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$direction}, startColorstr='#{ie-hex-str($startColor)}', endColorstr='#{ie-hex-str($endColor)}');
+
+	$direction: if($orientation == vertical, top, left);
+	background-image: -webkit-linear-gradient($direction, $startColor, $endColor);
+	background-image: -o-linear-gradient($direction, $startColor, $endColor);
+
+	$direction: if($orientation == vertical, bottom, right);
+	background-image: linear-gradient(to $direction, $startColor, $endColor);
 }
 
 
@@ -228,7 +229,7 @@ img {
 
 /* = Layout = */
 header.primary {
-	@include bg-linear-gradient(#2e2e2e, 0%, #1a1a1a, 100%);
+	@include bg-gradient(#2e2e2e, #1a1a1a);
 
 	.branding {
 		h1 {
@@ -875,7 +876,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	@include bg-linear-gradient($link, 0%, darken($link, 10%), 100%);
+	@include bg-gradient($link, darken($link, 10%));
 	border: 1px solid darken($link, 10%);
 	border-radius: 4px;
 	color: #fff;
@@ -903,7 +904,7 @@ input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
 a.button.disabled {
-	@include bg-linear-gradient($meta-text, 0%, darken($meta-text, 10%), 100%);
+	@include bg-gradient($meta-text, darken($meta-text, 10%));
 	border-color: darken($meta-text, 10%);
 	cursor: default;
 }
