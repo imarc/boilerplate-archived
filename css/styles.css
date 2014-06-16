@@ -6,11 +6,10 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * = Table of Contents =
- * Variables
  * Web Fonts
- * Base
+ * Variables
  * Mixins
- * Grouping
+ * Base
  * Layout
  * Typography
  * Iconography
@@ -23,7 +22,6 @@
  * Media Queries
  * Print Styles
  */
-/* = Variables = */
 /* = Web Fonts = */
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
 @font-face {
@@ -33,59 +31,8 @@
 	font-weight: normal;
 	font-style: normal;
 }
-/* = Base = */
-a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite,
-code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6,
-header, html, hr, i, iframe, img, label, li, nav, object, ol, p, pre, section,
-span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
-	border: 0;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	font-size: 100%;
-	font: inherit;
-	margin: 0;
-	outline: 0;
-	padding: 0;
-	vertical-align: baseline;
-}
-
-article, aside, audio, canvas, footer, header, nav, section, video {
-	display: block;
-}
-
-html {
-	background: #2a2a2a;
-	color: #555555;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 16px;
-	line-height: 1.5;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
-}
-
-body {
-	background: #fcfcfc;
-	min-width: 300px;
-}
-
-img {
-	max-width: 100%;
-	vertical-align: middle;
-}
-
-::-moz-selection {
-	background: #fff1b5;
-	text-shadow: none;
-}
-
-::selection {
-	background: #fff1b5;
-	text-shadow: none;
-}
-
+/* = Variables = */
 /* = Mixins = */
-/* = Grouping = */
 .container:before, .container:after,
 .group:before,
 .group:after {
@@ -125,16 +72,63 @@ img {
 	}
 }
 
+/* = Base = */
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite,
+code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6,
+header, html, hr, i, iframe, img, label, li, nav, object, ol, p, pre, section,
+span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
+	border: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 100%;
+	font: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+
+article, aside, audio, canvas, footer, header, nav, section, video {
+	display: block;
+}
+
+html {
+	background: #2a2a2a;
+	color: #555555;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	background: #fcfcfc;
+	min-width: 300px;
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+::-moz-selection {
+	background: #fff1b5;
+	text-shadow: none;
+}
+
+::selection {
+	background: #fff1b5;
+	text-shadow: none;
+}
+
 /* = Layout = */
 header.primary {
-	background: #1a1a1a;
-	background: -moz-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2e2e2e), color-stop(100%, #1a1a1a));
-	background: -webkit-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
-	background: -o-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
-	background: -ms-linear-gradient(top, #2e2e2e 0%, #1a1a1a 100%);
-	background: linear-gradient(to bottom, #2e2e2e 0%, #1a1a1a 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr='#FF2E2E2E', endColorStr='#FF1A1A1A');
+	background-image: -webkit-linear-gradient(top, #2e2e2e, #1a1a1a);
+	background-image: -o-linear-gradient(top, #2e2e2e, #1a1a1a);
+	background-image: linear-gradient(to bottom, #2e2e2e, #1a1a1a);
 }
 header.primary .branding h1 {
 	padding-bottom: 0;
@@ -193,7 +187,7 @@ h5 + h6 {
 }
 
 h1 {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: "Open Sans";
 	font-weight: normal;
 	padding-top: 24px;
 	padding-bottom: 24px;
@@ -205,7 +199,7 @@ h1:first-child {
 }
 
 h2 {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: "Open Sans";
 	font-weight: normal;
 	padding-top: 24px;
 	padding-bottom: 24px;
@@ -217,7 +211,7 @@ h2:first-child {
 }
 
 h3 {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: "Open Sans";
 	font-weight: normal;
 	padding-top: 24px;
 	padding-bottom: 24px;
@@ -229,7 +223,7 @@ h3:first-child {
 }
 
 h4 {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: "Open Sans";
 	font-weight: normal;
 	padding-top: 24px;
 	padding-bottom: 24px;
@@ -242,7 +236,7 @@ h4:first-child {
 
 h5,
 h6 {
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: "Open Sans";
 	font-weight: normal;
 	padding-top: 24px;
 	padding-bottom: 24px;
@@ -451,11 +445,12 @@ a.pdf:before,
 a.word:before,
 [class*="icon-"]:before {
 	font-family: FontAwesome;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
 	text-transform: none;
-	-webkit-font-smoothing: antialiased;
 }
 
 a.doc:before,
@@ -608,11 +603,12 @@ nav.primary {
 nav.primary:before,
 nav.primary ul:before {
 	font-family: FontAwesome;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
 	text-transform: none;
-	-webkit-font-smoothing: antialiased;
 	bottom: 100%;
 	color: #000;
 	content: '\f0c9';
@@ -637,15 +633,16 @@ nav.primary ul li a {
 	display: block;
 	padding: 0.5em 16px;
 	color: #fff;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: "Open Sans";
 }
 nav.primary ul li a:before {
 	font-family: FontAwesome;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
 	text-transform: none;
-	-webkit-font-smoothing: antialiased;
 	content: '\f054';
 	float: right;
 }
@@ -752,7 +749,7 @@ textarea {
 	border: 1px solid #ccc;
 	color: #555555;
 	display: block;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: "Helvetica Neue", Arial, sans-serif;
 	font-size: 16px;
 	margin: 0;
 	padding: 0.4em 1%;
@@ -805,19 +802,15 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	background: #02709b;
-	background: -moz-linear-gradient(top, #0394cd 0%, #02709b 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0394cd), color-stop(100%, #02709b));
-	background: -webkit-linear-gradient(top, #0394cd 0%, #02709b 100%);
-	background: -o-linear-gradient(top, #0394cd 0%, #02709b 100%);
-	background: -ms-linear-gradient(top, #0394cd 0%, #02709b 100%);
-	background: linear-gradient(to bottom, #0394cd 0%, #02709b 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr='#FF0394CD', endColorStr='#FF02709B');
+	background-image: -webkit-linear-gradient(top, #0394cd, #02709b);
+	background-image: -o-linear-gradient(top, #0394cd, #02709b);
+	background-image: linear-gradient(to bottom, #0394cd, #02709b);
 	border: 1px solid #02709b;
 	border-radius: 4px;
 	color: #fff;
 	display: inline-block;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: "Open Sans";
 	line-height: 1;
 	margin-bottom: .5em;
 	margin-right: .5em;
@@ -846,14 +839,10 @@ input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
 a.button.disabled {
-	background: #6f6f6f;
-	background: -moz-linear-gradient(top, #888888 0%, #6f6f6f 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #888888), color-stop(100%, #6f6f6f));
-	background: -webkit-linear-gradient(top, #888888 0%, #6f6f6f 100%);
-	background: -o-linear-gradient(top, #888888 0%, #6f6f6f 100%);
-	background: -ms-linear-gradient(top, #888888 0%, #6f6f6f 100%);
-	background: linear-gradient(to bottom, #888888 0%, #6f6f6f 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$startColor', endColorstr='$endColor',GradientType=0 );
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr='#FF888888', endColorStr='#FF6F6F6F');
+	background-image: -webkit-linear-gradient(top, #888888, #6f6f6f);
+	background-image: -o-linear-gradient(top, #888888, #6f6f6f);
+	background-image: linear-gradient(to bottom, #888888, #6f6f6f);
 	border-color: #6f6f6f;
 	cursor: default;
 }
@@ -877,11 +866,12 @@ input::-moz-focus-inner {
 }
 .success:before {
 	font-family: FontAwesome;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
 	text-transform: none;
-	-webkit-font-smoothing: antialiased;
 	content: '';
 	display: block;
 	font-size: 20px;
@@ -907,11 +897,12 @@ input::-moz-focus-inner {
 }
 .error:before {
 	font-family: FontAwesome;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
 	text-transform: none;
-	-webkit-font-smoothing: antialiased;
 	content: '';
 	display: block;
 	font-size: 20px;
@@ -937,11 +928,12 @@ input::-moz-focus-inner {
 }
 .info:before {
 	font-family: FontAwesome;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	font-style: normal;
 	font-weight: normal;
 	speak: none;
 	text-transform: none;
-	-webkit-font-smoothing: antialiased;
 	content: '';
 	display: block;
 	font-size: 20px;
@@ -990,22 +982,6 @@ table tr:nth-child(even) td {
 /* = Page Specific = */
 /* = Media Queries = */
 @media only screen and (min-width: 600px) {
-	html.dev:before {
-		background: red;
-		color: #000;
-		content: "tablets-and-up";
-		filter: alpha(opacity=50);
-		font-size: .6em;
-		left: 0;
-		line-height: 1;
-		opacity: .5;
-		padding: 5px;
-		position: absolute;
-		top: 0;
-		width: auto;
-		z-index: 10000;
-	}
-
 	.main aside {
 		float: right;
 		margin-left: 1em;
@@ -1053,7 +1029,7 @@ table tr:nth-child(even) td {
 	}
 	nav.primary ul li a {
 		border-top: 0;
-		font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-family: "Open Sans";
 	}
 	nav.primary ul li a:before {
 		display: none;
@@ -1080,21 +1056,6 @@ table tr:nth-child(even) td {
 		min-width: 100%;
 		background: #333333;
 	}
-}
-html.lt-ie9 html.dev:before {
-	background: red;
-	color: #000;
-	content: "tablets-and-up";
-	filter: alpha(opacity=50);
-	font-size: .6em;
-	left: 0;
-	line-height: 1;
-	opacity: .5;
-	padding: 5px;
-	position: absolute;
-	top: 0;
-	width: auto;
-	z-index: 10000;
 }
 html.lt-ie9 .main aside {
 	float: right;
@@ -1140,7 +1101,7 @@ html.lt-ie9 nav.primary ul li {
 }
 html.lt-ie9 nav.primary ul li a {
 	border-top: 0;
-	font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-family: "Open Sans";
 }
 html.lt-ie9 nav.primary ul li a:before {
 	display: none;
@@ -1169,22 +1130,6 @@ html.lt-ie9 nav.primary ul li:hover .dropdown {
 }
 
 @media only screen and (min-width: 700px) {
-	html.dev:before {
-		background: orange;
-		color: #000;
-		content: "desktops-and-up";
-		filter: alpha(opacity=50);
-		font-size: .6em;
-		left: 0;
-		line-height: 1;
-		opacity: .5;
-		padding: 5px;
-		position: absolute;
-		top: 0;
-		width: auto;
-		z-index: 10000;
-	}
-
 	.torso aside.primary {
 		display: block;
 		float: right;
@@ -1196,21 +1141,6 @@ html.lt-ie9 nav.primary ul li:hover .dropdown {
 		width: 75%;
 		padding-right: 2em;
 	}
-}
-html.lt-ie9 html.dev:before {
-	background: orange;
-	color: #000;
-	content: "desktops-and-up";
-	filter: alpha(opacity=50);
-	font-size: .6em;
-	left: 0;
-	line-height: 1;
-	opacity: .5;
-	padding: 5px;
-	position: absolute;
-	top: 0;
-	width: auto;
-	z-index: 10000;
 }
 html.lt-ie9 .torso aside.primary {
 	display: block;
