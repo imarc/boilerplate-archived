@@ -20,15 +20,17 @@
 			elem = elem.parentNode;
 		}
 
-		if (!elem.attributes) {
+		if (!elem.attributes || elem.getAttribute('data-focus')) {
 			// the Document doesn't have attributes, so
 			// we can safely close the focusable area
 			elem = document.querySelector('['+dataAttr+']');
 			elem.setAttribute(dataAttr, '');
-			return;
+			return false;
 		}
 
 		// we're inside the focusable area, enable it
-		elem.setAttribute(dataAttr, attr);	
+		elem.setAttribute(dataAttr, attr);
+		
+		return false;
 	});
 })();
