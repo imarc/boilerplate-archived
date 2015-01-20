@@ -36,41 +36,36 @@
 
 
 /* = Variables = */
+$body-fonts:    "Helvetica Neue", Arial, sans-serif;
+$heading-fonts: "Open Sans";
+
 $baseSize:        16px;
-@mixin font-size($sizeValue: 1) {
-	font-size: $baseSize * $sizeValue;
-	font-size: $sizeValue + rem;
-}
 
-$dividers:   rgba(0, 0, 0, .12);
-$disabled:   rgba(0, 0, 0, .30);
-$secondary:  rgba(0, 0, 0, .70);
 $primary:    rgba(0, 0, 0, .87);
+$secondary:  rgba(0, 0, 0, .70);
+$disabled:   rgba(0, 0, 0, .30);
+$dividers:   rgba(0, 0, 0, .12);
 
-$brand:      #0394CD; // iMarc Blue
-$highlight:  #f2006d;
+$brand:      #0394cd; // iMarc Blue
+$matte:      #ffffff; // White
+$selection:  #fff1b5; // Buttermilk
+$link:       $brand;
 
-$matte:      #fff;
-$selection:  #FFF1B5; // Buttermilk
-
-
-$link: $brand;
-$plain-text: $primary;
-$meta-text: $secondary;
-
-$success:    #D2F8B0; // Gossip
-$error:      #FFD8D9; // Cosmos
-$info:       #B8E0F9; // Sail
+$success:    #d2f8b0; // Gossip
+$error:      #ffd8d9; // Cosmos
+$info:       #b8e0f9; // Sail
 
 $z-1: 0 0 3px rgba(0, 0, 0, .16), 0 2px 6px rgba(0, 0, 0, .36);
 $z-2: 0 0 6px rgba(0, 0, 0, .16), 0 4px 12px rgba(0, 0, 0, .36);
 $z-3: 0 0 22px rgba(0, 0, 0, .16), 0 16px 48px rgba(0, 0, 0, .36);
 
-$body-fonts:    "Helvetica Neue", Arial, sans-serif;
-$heading-fonts: "Open Sans";
-
 
 /* = Mixins = */
+@mixin font-size($sizeValue: 1) {
+	font-size: $baseSize * $sizeValue;
+	font-size: $sizeValue + rem;
+}
+
 @mixin grouping {
 	&:before,
 	&:after {
@@ -147,14 +142,8 @@ $heading-fonts: "Open Sans";
 	}
 }
 
-@mixin transition($properties: all, $duration: 250ms, $easing: ease-in-out) {
-	@if length($properties) > 1 {
-		-webkit-transition-property: $properties;
-		transition-property: $properties;
-	} @else {
-		-webkit-transition: $properties $duration $easing;
-		transition: $properties $duration $easing;
-	}
+@function hex($color, $bg: $matte) {
+	@return mix(opacify($color, 1), $bg, alpha($color) * 100%);
 }
 
 @mixin tablets-and-up {
@@ -201,7 +190,8 @@ article, aside, audio, canvas, footer, header, nav, section, video {
 
 html {
 	background: $matte;
-	color: $plain-text;
+	color: hex($primary);
+	color: $primary;
 	font-family: $body-fonts;
 	font-size: $baseSize;
 	line-height: 1.5;
@@ -219,11 +209,13 @@ img {
 }
 
 ::-moz-selection {
+	background: hex($selection);
 	background: $selection;
 	text-shadow: none;
 }
 
 ::selection {
+	background: hex($selection);
 	background: $selection;
 	text-shadow: none;
 }
@@ -231,6 +223,7 @@ img {
 
 /* = Layout = */
 header.primary {
+	background: hex($link);
 	background: $link;
 
 	.branding {
@@ -257,6 +250,7 @@ header.primary {
 	&:after {
 		content: '';
 		display: block;
+		background: hex($dividers);
 		background: $dividers;
 		margin-top: 1.5em;
 		margin-bottom: 1.5em;
@@ -269,7 +263,8 @@ aside.primary {
 }
 
 .main aside {
-	color: $meta-text;
+	color: hex($secondary);
+	color: $secondary;
 	@include font-size(.875);
 	margin-bottom: 1em;
 	padding: 1.333em;
@@ -277,7 +272,8 @@ aside.primary {
 
 footer.primary {
 	background: $matte;
-	color: $meta-text;
+	color: hex($secondary);
+	color: $secondary;
 	@include font-size(.875);
 	padding-top: 1em;
 	padding-bottom: 1em;
@@ -337,7 +333,8 @@ h6 {
 }
 
 .meta {
-	color: $meta-text;
+	color: hex($secondary);
+	color: $secondary;
 	@include font-size(.875);
 	margin-bottom: .5em;
 	margin-top: -.667em;
@@ -360,11 +357,13 @@ em {
 blockquote,
 pre {
 	@include grouping;
-	color: $meta-text;
+	color: hex($secondary);
+	color: $secondary;
 	margin-bottom: 1.5em;
 }
 
 blockquote {
+	border-left: 1px solid hex($dividers);
 	border-left: 1px solid $dividers;
 	font-style: italic;
 	padding-left: 16px;
@@ -375,7 +374,8 @@ article {
 }
 
 .intro {
-	color: $meta-text;
+	color: hex($secondary);
+	color: $secondary;
 
 	p {
 		@include font-size(1.25);
@@ -385,6 +385,7 @@ article {
 }
 
 .highlight {
+	background: hex($dividers);
 	background: $dividers;
 	border-radius: 2px;
 	box-shadow: $z-1;
@@ -421,7 +422,8 @@ address {
 
 hr {
 	border: 0;
-	border-top: 1px solid $meta-text;
+	border-top: 1px solid hex($secondary);
+	border-top: 1px solid $secondary;
 	display: block;
 	height: 0;
 	margin: 2em auto 3em;
@@ -429,6 +431,7 @@ hr {
 }
 
 a {
+	color: hex($link);
 	color: $link;
 	text-decoration: none;
 
@@ -513,6 +516,7 @@ nav {
 }
 
 .main nav ul li ~ li {
+	border-left: 1px solid hex($dividers);
 	border-left: 1px solid $dividers;
 }
 
@@ -556,7 +560,8 @@ a[class*="icon-"]:before {
 		a.pdf:before,
 		a.word:before,
 		a[class*="icon-"]:before {
-			color: $plain-text;
+			color: hex($primary);
+			color: $primary;
 			padding-right: .5em;
 		}
 	}
@@ -674,7 +679,8 @@ nav.primary {
 		background: #fff;
 		bottom: 0;
 		box-shadow: $z-1;
-		@include transition(left, 150ms, ease-in);
+		-webkit-transition: left 150ms ease-in;
+		transition: left 150ms ease-in;
 		left: 100%;
 		position: fixed;
 		right: 0;
@@ -701,6 +707,7 @@ nav.primary {
 		li.active {
 
 			a {
+				background: hex($brand);
 				background: $brand;
 				color: #fff;
 			}
@@ -711,7 +718,8 @@ nav.primary {
 
 		ul {
 			left: 56px;
-			@include transition(left, 300ms ease-out);
+			-webkit-transition: left 300ms ease-out;
+			transition: left 300ms ease-out;
 		}
 	}
 
@@ -740,6 +748,7 @@ nav.supplemental {
 			}
 
 			a:hover {
+				color: hex($link);
 				color: $link;
 			}
 		}
@@ -747,7 +756,8 @@ nav.supplemental {
 		ul {
 			a {
 				padding: 0;
-				color: $meta-text;
+				color: hex($secondary);
+				color: $secondary;
 				@include font-size(.75);
 				line-height: 2;
 			}
@@ -760,6 +770,7 @@ nav.supplemental {
 		}
 		> li ~ li {
 			padding-top: .5em;
+			border-top: 1px solid hex($dividers);
 			border-top: 1px solid $dividers;
 		}
 	}
@@ -799,7 +810,8 @@ label {
 }
 
 fieldset .help {
-	color: $meta-text;
+	color: hex($secondary);
+	color: $secondary;
 	display: block;
 	@include font-size(.75);
 	line-height: 1.34;
@@ -811,7 +823,8 @@ input[type="password"],
 input[type="text"],
 textarea {
 	border: 1px solid #ccc;
-	color: $plain-text;
+	color: hex($primary);
+	color: $primary;
 	display: block;
 	font-family: $body-fonts;
 	@include font-size(1);
@@ -845,7 +858,8 @@ input[type="radio"] {
 }
 
 input[type="file"] {
-	color: #333;
+	color: hex($primary);
+	color: $primary;
 	display: block;
 	@include font-size(1);
 	width: 100%;
@@ -865,8 +879,10 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
+	background: hex($link);
 	background: $link;
 	border: 0;
+	border-radius: 2px;
 	text-transform: uppercase;
 	color: #fff;
 	display: inline-block;
@@ -884,11 +900,13 @@ a.button {
 	}
 
 	&:active {
+		background: lighten(hex($link), 10%);
 		background: lighten($link, 10%);
 	}
 
 	&:focus {
-		background: #0084B8;
+		background: darken(hex($link), 5%);
+		background: darken($link, 5%);
 	}
 }
 
@@ -897,8 +915,8 @@ input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
 a.button.disabled {
+	background: hex($disabled);
 	background: $disabled;
-	border-color: darken($meta-text, 10%);
 	cursor: default;
 }
 
@@ -935,6 +953,7 @@ input::-moz-focus-inner {
 
 .success {
 	@include messaging;
+	background: hex($success);
 	background: $success;
 
 	&:before {
@@ -944,6 +963,7 @@ input::-moz-focus-inner {
 
 .error {
 	@include messaging;
+	background: hex($error);
 	background: $error;
 
 	&:before {
@@ -953,6 +973,7 @@ input::-moz-focus-inner {
 
 .info {
 	@include messaging;
+	background: hex($info);
 	background: $info;
 
 	&:before {
@@ -981,8 +1002,10 @@ table {
 
 	th {
 		font-weight: bold;
-		background: $plain-text;
-		border: 1px solid $plain-text;
+		background: hex($primary);
+		background: $primary;
+		border: 1px solid hex($primary);
+		border: 1px solid $primary;
 		color: #fff;
 		text-transform: uppercase;
 	}
@@ -1029,6 +1052,7 @@ table {
 		background: $matte;
 
 		li {
+			border-bottom: 1px solid hex($dividers);
 			border-bottom: 1px solid $dividers;
 
 			a {
@@ -1105,6 +1129,7 @@ table {
 				}
 
 				a:hover {
+					color: hex($brand);
 					color: $brand;
 				}
 
