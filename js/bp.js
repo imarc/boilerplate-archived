@@ -27,8 +27,9 @@
 
 			if (elem) {
 				elem.setAttribute(dataAttr, '');
-				return;
 			}
+
+			return;
 		}
 
 		// we're inside the focusable area, enable it
