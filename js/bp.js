@@ -24,8 +24,11 @@
 			// the Document doesn't have attributes, so
 			// we can safely close the focusable area
 			elem = document.querySelector('['+dataAttr+']');
-			elem.setAttribute(dataAttr, '');
-			return;
+
+			if (elem) {
+				elem.setAttribute(dataAttr, '');
+				return;
+			}
 		}
 
 		// we're inside the focusable area, enable it
