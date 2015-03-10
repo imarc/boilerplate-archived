@@ -71,6 +71,19 @@
 		width: 16px;
 	}
 }
+html.lt-ie9 .columns {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+html.lt-ie9 .columns > * {
+	display: table-cell;
+	vertical-align: top;
+}
+html.lt-ie9 .columns > hr {
+	display: table-cell;
+	width: 16px;
+}
 
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite,

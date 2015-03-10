@@ -89,25 +89,38 @@ $heading-fonts: "Open Sans";
 	@include container;
 }
 
-@mixin columns($query: 'min-width: 600px') {
+@mixin columns {
 	> hr {
 		display: none;
 	}
 
-	@media only screen and ($query) {
-		& {
-			display: table;
-			table-layout: fixed;
-			width: 100%;
+	@media only screen and (min-width: 600px) {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
 
-			> * {
-				display: table-cell;
-				vertical-align: top;
-			}
-			> hr {
-				display: table-cell;
-				width: $rem;
-			}
+		> * {
+			display: table-cell;
+			vertical-align: top;
+		}
+		> hr {
+			display: table-cell;
+			width: 16px;
+		}
+	}
+
+	html.lt-ie9 & {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+
+		> * {
+			display: table-cell;
+			vertical-align: top;
+		}
+		> hr {
+			display: table-cell;
+			width: 16px;
 		}
 	}
 }
