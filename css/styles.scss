@@ -390,6 +390,9 @@ article {
 		font-size: 1.25 * $rem;
 		line-height: 1.6;
 		margin-bottom: .8em;
+		strong a {
+			@include link-states(#f2006d);
+		}
 	}
 }
 
@@ -444,17 +447,7 @@ hr {
 
 a {
 	@include link-states($link);
-	color: $link;
 	text-decoration: none;
-
-	&:hover,
-	&:active {
-		color: $link-hover;
-	}
-
-	&:focus {
-		outline: thin dotted;
-	}
 }
 
 ol,

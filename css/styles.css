@@ -238,6 +238,12 @@ article {
     font-size: 20px;
     line-height: 1.6;
     margin-bottom: .8em; }
+    .intro p strong a {
+      color: #f2006d; }
+      .intro p strong a:visited {
+        color: #ff59a4; }
+      .intro p strong a:hover, .intro p strong a:focus {
+        color: #8c003f; }
 
 .highlight {
   background: #e4e4e4;
@@ -279,16 +285,11 @@ hr {
 
 a {
   color: #0394CD;
-  color: #0394CD;
   text-decoration: none; }
   a:visited {
     color: #3ac5fc; }
   a:hover, a:focus {
     color: #024b68; }
-  a:hover, a:active {
-    color: #888888; }
-  a:focus {
-    outline: thin dotted; }
 
 ol,
 ul,
