@@ -150,7 +150,7 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
 	}
 	&:hover,
 	&:focus {
-		color: darken($link, 20);
+		color: darken($link, 20%);
 	}
 }
 
