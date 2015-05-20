@@ -56,7 +56,6 @@ $info:       #B8E0F9; // Sail
 $body-fonts:    "Helvetica Neue", Arial, sans-serif;
 $heading-fonts: "Open Sans", Arial, sans-serif;
 
-
 /* = Mixins = */
 @mixin grouping {
 	&:before,
@@ -921,7 +920,6 @@ input::-moz-focus-inner {
 }
 
 /* = Messaging = */
-
 @mixin messaging {
 	border-radius: 4px;
 	margin-bottom: 1.5em;
@@ -1128,6 +1126,8 @@ table {
 		padding-right: 2em;
 	}
 }
+
+/* = Print Styles = */
 
 @media print {
 	* {
