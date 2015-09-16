@@ -1,6 +1,6 @@
 /**
  * Built using iMarc Boilerplate v1.2
- * 
+ *
  * Copyright 2014 iMarc LLC
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
@@ -27,18 +27,14 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 
 @font-face {
-  font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff') format('woff'), url('../fonts/fontawesome-webfont.ttf') format('truetype'), url('../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'FontAwesome';
+	src: url('../fonts/fontawesome-webfont.eot?v=4.3.0');
+	src: url('../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('../fonts/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('../fonts/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+	font-style: normal;
+	font-weight: normal;
 }
 
-
 /* = Variables = */
-$body-fonts:    "Helvetica Neue", Arial, sans-serif;
-$heading-fonts: "Open Sans";
-
 $baseSize:        16px;
 
 $primary:    rgba(0, 0, 0, .87);
@@ -59,6 +55,8 @@ $z-1: 0 0 3px rgba(0, 0, 0, .16), 0 2px 6px rgba(0, 0, 0, .36);
 $z-2: 0 0 6px rgba(0, 0, 0, .16), 0 4px 12px rgba(0, 0, 0, .36);
 $z-3: 0 0 22px rgba(0, 0, 0, .16), 0 16px 48px rgba(0, 0, 0, .36);
 
+$body-fonts:    "Helvetica Neue", Arial, sans-serif;
+$heading-fonts: "Open Sans", Arial, sans-serif;
 
 /* = Mixins = */
 @mixin font-size($sizeValue: 1) {
@@ -78,11 +76,6 @@ $z-3: 0 0 22px rgba(0, 0, 0, .16), 0 16px 48px rgba(0, 0, 0, .36);
 	}
 }
 
-.container,
-.group {
-	@include grouping;
-}
-
 @mixin container {
 	margin-left: auto;
 	margin-right: auto;
@@ -92,45 +85,49 @@ $z-3: 0 0 22px rgba(0, 0, 0, .16), 0 16px 48px rgba(0, 0, 0, .36);
 	position: relative;
 }
 
-.container {
-	@include container;
-}
-
-@mixin columns($query: 'min-width: 600px') {
+@mixin columns {
 	> hr {
 		display: none;
 	}
 
-	@media only screen and ($query) {
-		& {
-			display: table;
-			table-layout: fixed;
-			width: 100%;
+	@media only screen and (min-width: 600px) {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
 
-			> * {
-				display: table-cell;
-				vertical-align: top;
-			}
-			> hr {
-				display: table-cell;
-				width: 16px;
-			}
+		> * {
+			display: table-cell;
+			vertical-align: top;
+		}
+		> hr {
+			display: table-cell;
+			width: 16px;
+		}
+	}
+
+	html.lt-ie9 & {
+		display: table;
+		table-layout: fixed;
+		width: 100%;
+
+		> * {
+			display: table-cell;
+			vertical-align: top;
+		}
+		> hr {
+			display: table-cell;
+			width: 16px;
 		}
 	}
 }
 
-.columns {
-	@include columns;
-}
-
 @mixin fontawesome {
-	font-family: FontAwesome;
+	display: inline-block;
+	font: normal normal normal $baseSize/1 FontAwesome;
+	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-style: normal;
-	font-weight: normal;
-	speak: none;
-	text-transform: none;
+	transform: translate(0, 0);
 }
 
 @mixin no-bullets {
@@ -144,6 +141,37 @@ $z-3: 0 0 22px rgba(0, 0, 0, .16), 0 16px 48px rgba(0, 0, 0, .36);
 
 @function hex($color, $bg: $matte) {
 	@return mix(opacify($color, 1), $bg, alpha($color) * 100%);
+}
+
+@mixin header-font {
+	font-family: $heading-fonts;
+	font-weight: normal;
+	padding-bottom: 1.5 * $baseSize;
+	padding-top: 1.5 * $baseSize;
+	&:first-child {
+		padding-top: 0;
+	}
+}
+
+@mixin link-states($link) {
+	color: $link;
+	&:visited {
+		color: lighten($link, 20%);
+	}
+	&:hover,
+	&:focus {
+		color: darken($link, 20%);
+	}
+}
+
+@mixin transition($properties: all, $duration: 250ms, $easing: ease-in-out) {
+	@if length($properties) > 1 {
+		-webkit-transition-property: $properties;
+		transition-property: $properties;
+	} @else {
+		-webkit-transition: $properties $duration $easing;
+		transition: $properties $duration $easing;
+	}
 }
 
 @mixin tablets-and-up {
@@ -222,6 +250,19 @@ img {
 
 
 /* = Layout = */
+.container,
+.group {
+	@include grouping;
+}
+
+.container {
+	@include container;
+}
+
+.columns {
+	@include columns;
+}
+
 header.primary {
 	background: hex($link);
 	background: $link;
@@ -381,6 +422,9 @@ article {
 		@include font-size(1.25);
 		line-height: 1.6;
 		margin-bottom: .8em;
+		strong a {
+			@include link-states(#f2006d);
+		}
 	}
 }
 
@@ -431,17 +475,8 @@ hr {
 }
 
 a {
-	color: hex($link);
-	color: $link;
+	@include link-states($link);
 	text-decoration: none;
-
-	&:hover,
-	&:active {
-	}
-
-	&:focus {
-		outline: thin dotted;
-	}
 }
 
 ol,
@@ -686,7 +721,7 @@ nav.primary {
 		right: 0;
 		top: 0;
 		z-index: 1;
-		
+
 		padding-top: 56px;
 
 
@@ -927,12 +962,11 @@ input::-moz-focus-inner {
 }
 
 /* = Messaging = */
-
 @mixin messaging {
 	margin-bottom: 1.5em;
 	padding: 1em 3.25em;
 	position: relative;
-	
+
 	a {
 		text-decoration: underline;
 	}
@@ -1013,11 +1047,11 @@ table {
 	td {
 		border: 1px solid #e3e3e3;
 	}
-	
+
 	tr:nth-child(even) td {
 		background: #f3f3f3;
 	}
-	
+
 }
 
 
@@ -1095,7 +1129,7 @@ table {
 					}
 				}
 			}
-			
+
 			li {
 				li {
 					float: none;
@@ -1161,6 +1195,8 @@ table {
 		padding-right: 2em;
 	}
 }
+
+/* = Print Styles = */
 
 @media print {
 	* {

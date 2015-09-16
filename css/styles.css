@@ -1,6 +1,6 @@
 /**
  * Built using iMarc Boilerplate v1.2
- * 
+ *
  * Copyright 2014 iMarc LLC
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
@@ -26,43 +26,12 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg#fontawesomeregular") format("svg");
-  font-weight: normal;
-  font-style: normal; }
+  src: url("../fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("../fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+  font-style: normal;
+  font-weight: normal; }
 /* = Variables = */
 /* = Mixins = */
-.container:before, .container:after,
-.group:before,
-.group:after {
-  content: '';
-  display: table; }
-.container:after,
-.group:after {
-  clear: both; }
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1024px;
-  padding-left: 16px;
-  padding-right: 16px;
-  position: relative; }
-
-.columns > hr {
-  display: none; }
-@media only screen and (min-width: 600px) {
-  .columns {
-    display: table;
-    table-layout: fixed;
-    width: 100%; }
-    .columns > * {
-      display: table-cell;
-      vertical-align: top; }
-    .columns > hr {
-      display: table-cell;
-      width: 16px; } }
-
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite,
 code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6,
@@ -110,6 +79,47 @@ img {
   text-shadow: none; }
 
 /* = Layout = */
+.container:before, .container:after,
+.group:before,
+.group:after {
+  content: '';
+  display: table; }
+.container:after,
+.group:after {
+  clear: both; }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative; }
+
+.columns > hr {
+  display: none; }
+@media only screen and (min-width: 600px) {
+  .columns {
+    display: table;
+    table-layout: fixed;
+    width: 100%; }
+    .columns > * {
+      display: table-cell;
+      vertical-align: top; }
+    .columns > hr {
+      display: table-cell;
+      width: 16px; } }
+html.lt-ie9 .columns {
+  display: table;
+  table-layout: fixed;
+  width: 100%; }
+  html.lt-ie9 .columns > * {
+    display: table-cell;
+    vertical-align: top; }
+  html.lt-ie9 .columns > hr {
+    display: table-cell;
+    width: 16px; }
+
 header.primary {
   background: #0394cd;
   background: #0394cd; }
@@ -165,7 +175,7 @@ h5 + h6 {
   margin-top: -16px; }
 
 h1 {
-  font-family: "Open Sans";
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: normal;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -176,7 +186,7 @@ h1 {
     padding-top: 0; }
 
 h2 {
-  font-family: "Open Sans";
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: normal;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -187,7 +197,7 @@ h2 {
     padding-top: 0; }
 
 h3 {
-  font-family: "Open Sans";
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: normal;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -198,7 +208,7 @@ h3 {
     padding-top: 0; }
 
 h4 {
-  font-family: "Open Sans";
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: normal;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -210,7 +220,7 @@ h4 {
 
 h5,
 h6 {
-  font-family: "Open Sans";
+  font-family: "Open Sans", Arial, sans-serif;
   font-weight: normal;
   padding-top: 24px;
   padding-bottom: 24px;
@@ -271,6 +281,12 @@ article {
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: .8em; }
+    .intro p strong a {
+      color: #f2006d; }
+      .intro p strong a:visited {
+        color: #ff59a4; }
+      .intro p strong a:hover, .intro p strong a:focus {
+        color: #8c003f; }
 
 .highlight {
   background: #e0e0e0;
@@ -313,10 +329,11 @@ hr {
 
 a {
   color: #0394cd;
-  color: #0394cd;
   text-decoration: none; }
-  a:focus {
-    outline: thin dotted; }
+  a:visited {
+    color: #3ac5fc; }
+  a:hover, a:focus {
+    color: #024b68; }
 
 ol,
 ul,
@@ -387,13 +404,12 @@ a.docx:before,
 a.pdf:before,
 a.word:before,
 [class*="icon-"]:before {
-  font-family: FontAwesome;
+  display: inline-block;
+  font: normal normal normal 16px FontAwesome;
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-style: normal;
-  font-weight: normal;
-  speak: none;
-  text-transform: none; }
+  transform: translate(0, 0); }
 
 a.doc:before,
 a.docx:before,
@@ -513,13 +529,12 @@ nav.primary {
   box-shadow: 0 3px 9px -3px rgba(0, 0, 0, 0.16), 0 3px 9px -3px rgba(0, 0, 0, 0.23);
   z-index: 1; }
   nav.primary:before {
-    font-family: FontAwesome;
+    display: inline-block;
+    font: normal normal normal 16px FontAwesome;
+    text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    text-transform: none;
+    transform: translate(0, 0);
     bottom: 100%;
     color: #fff;
     content: '\f0c9';
@@ -690,7 +705,7 @@ a.button {
   text-transform: uppercase;
   color: #fff;
   display: inline-block;
-  font-family: "Open Sans";
+  font-family: "Open Sans", Arial, sans-serif;
   font-size: 14px;
   font-size: 0.875rem;
   font-weight: 600;
@@ -744,13 +759,12 @@ input::-moz-focus-inner {
   .success a {
     text-decoration: underline; }
   .success:before {
-    font-family: FontAwesome;
+    display: inline-block;
+    font: normal normal normal 16px FontAwesome;
+    text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    text-transform: none;
+    transform: translate(0, 0);
     content: '';
     display: block;
     font-size: 20px;
@@ -771,13 +785,12 @@ input::-moz-focus-inner {
   .error a {
     text-decoration: underline; }
   .error:before {
-    font-family: FontAwesome;
+    display: inline-block;
+    font: normal normal normal 16px FontAwesome;
+    text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    text-transform: none;
+    transform: translate(0, 0);
     content: '';
     display: block;
     font-size: 20px;
@@ -798,13 +811,12 @@ input::-moz-focus-inner {
   .info a {
     text-decoration: underline; }
   .info:before {
-    font-family: FontAwesome;
+    display: inline-block;
+    font: normal normal normal 16px FontAwesome;
+    text-rendering: auto;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-style: normal;
-    font-weight: normal;
-    speak: none;
-    text-transform: none;
+    transform: translate(0, 0);
     content: '';
     display: block;
     font-size: 20px;
@@ -891,7 +903,7 @@ table {
       display: block; }
       nav.primary ul li a {
         color: #fff;
-        font-family: "Open Sans"; }
+        font-family: "Open Sans", Arial, sans-serif; }
         nav.primary ul li a:before {
           display: none; }
     nav.primary ul li li {
@@ -965,7 +977,7 @@ html.lt-ie9 nav.primary ul {
     display: block; }
     html.lt-ie9 nav.primary ul li a {
       color: #fff;
-      font-family: "Open Sans"; }
+      font-family: "Open Sans", Arial, sans-serif; }
       html.lt-ie9 nav.primary ul li a:before {
         display: none; }
   html.lt-ie9 nav.primary ul li li {
@@ -1019,6 +1031,7 @@ html.lt-ie9 .torso aside.primary ~ .main {
   width: 75%;
   padding-right: 2em; }
 
+/* = Print Styles = */
 @media print {
   * {
     background: transparent !important;
