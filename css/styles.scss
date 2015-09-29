@@ -1,6 +1,6 @@
 /**
  * Built using iMarc Boilerplate v1.2
- * 
+ *
  * Copyright 2014 iMarc LLC
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
@@ -114,21 +114,18 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
 	}
 }
 
-@mixin fontawesome {
-	display: inline-block;
-	font: normal normal normal $rem/1 FontAwesome;
-	text-rendering: auto;
-	-webkit-font-smoothing: antialiased;
+@mixin fontawesome($character:"") {
+	font: normal normal normal $rem unquote("/") 1 FontAwesome;
 	-moz-osx-font-smoothing: grayscale;
-	transform: translate(0, 0);
-}
+	-webkit-font-smoothing: antialiased;
+	speak: none;
+	text-rendering: auto;
+	text-transform: none;
 
-@mixin no-bullets {
-	padding-left: 0;
-	list-style: none;
-
-	li:before {
-		display: none;
+	@if $character != "" {
+		content: $character;
+	} @else {
+		display: inline-block;
 	}
 }
 
@@ -139,17 +136,6 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
 	padding-top: 1.5 * $rem;
 	&:first-child {
 		padding-top: 0;
-	}
-}
-
-@mixin link-states($link) {
-	color: $link;
-	&:visited {
-		color: lighten($link, 20%);
-	}
-	&:hover,
-	&:focus {
-		color: darken($link, 20%);
 	}
 }
 
@@ -181,18 +167,6 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
 	html.lt-ie9 {
 		@content;
 	}
-}
-
-@mixin bg-gradient($start-color, $end-color, $orientation: 'vertical') {
-	$direction: if($orientation == vertical, 0, 1);
-	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$direction}, startColorStr='#{ie-hex-str($start-color)}', endColorStr='#{ie-hex-str($end-color)}');
-
-	$direction: if($orientation == vertical, top, left);
-	background-image: -webkit-linear-gradient($direction, $start-color, $end-color);
-	background-image: -o-linear-gradient($direction, $start-color, $end-color);
-
-	$direction: if($orientation == vertical, bottom, right);
-	background-image: linear-gradient(to $direction, $start-color, $end-color);
 }
 
 
@@ -263,7 +237,10 @@ img {
 }
 
 header.primary {
-	@include bg-gradient(#2e2e2e, #1a1a1a);
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr='#FF2E2E2E', endColorStr='#FF1A1A1A');
+	background-image: -webkit-linear-gradient(top, #2e2e2e, #1a1a1a);
+	background-image: -o-linear-gradient(top, #2e2e2e, #1a1a1a);
+	background-image: linear-gradient(to bottom, #2e2e2e, #1a1a1a);
 
 	.branding {
 		h1 {
@@ -390,7 +367,15 @@ article {
 		line-height: 1.6;
 		margin-bottom: .8em;
 		strong a {
-			@include link-states(#f2006d);
+			color: #f2006d;
+
+			&:visited {
+				color: lighten(#f2006d, 20%);
+			}
+			&:hover,
+			&:focus {
+				color: darken(#f2006d, 20%);
+			}
 		}
 	}
 }
@@ -445,7 +430,15 @@ hr {
 }
 
 a {
-	@include link-states($link);
+	color: $link;
+
+	&:visited {
+		color: lighten($link, 20%);
+	}
+	&:hover,
+	&:focus {
+		color: darken($link, 20%);
+	}
 	text-decoration: none;
 }
 
@@ -880,11 +873,14 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	@include bg-gradient($link, darken($link, 10%));
+	background-image: -webkit-linear-gradient(top, #0394CD, #02709b);
+	background-image: -o-linear-gradient(top, #0394CD, #02709b);
+	background-image: linear-gradient(to bottom, #0394CD, #02709b);
 	border: 1px solid darken($link, 10%);
 	border-radius: 4px;
 	color: #fff;
 	display: inline-block;
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr='#FF0394CD', endColorStr='#FF02709B');
 	font-family: $heading-fonts;
 	line-height: 1;
 	margin-bottom: .5em;
@@ -908,7 +904,10 @@ input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
 a.button.disabled {
-	@include bg-gradient($meta-text, darken($meta-text, 10%));
+	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr='#FF888888', endColorStr='#FF6F6F6F');
+	background-image: -webkit-linear-gradient(top, #888888, #6f6f6f);
+	background-image: -o-linear-gradient(top, #888888, #6f6f6f);
+	background-image: linear-gradient(to bottom, #888888, #6f6f6f);
 	border-color: darken($meta-text, 10%);
 	cursor: default;
 }
@@ -925,7 +924,7 @@ input::-moz-focus-inner {
 	margin-bottom: 1.5em;
 	padding: 1em 3.25em;
 	position: relative;
-	
+
 	a {
 		text-decoration: underline;
 	}
@@ -1001,11 +1000,11 @@ table {
 	td {
 		border: 1px solid #e3e3e3;
 	}
-	
+
 	tr:nth-child(even) td {
 		background: #f3f3f3;
 	}
-	
+
 }
 
 
@@ -1080,7 +1079,7 @@ table {
 					}
 				}
 			}
-			
+
 			li {
 				li {
 					float: none;
