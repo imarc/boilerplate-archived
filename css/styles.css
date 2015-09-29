@@ -1,6 +1,6 @@
 /**
  * Built using iMarc Boilerplate v1.2
- * 
+ *
  * Copyright 2014 iMarc LLC
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
@@ -359,12 +359,13 @@ a.docx:before,
 a.pdf:before,
 a.word:before,
 [class*="icon-"]:before {
-  display: inline-block;
-  font: normal normal normal 16px FontAwesome;
-  text-rendering: auto;
-  -webkit-font-smoothing: antialiased;
+  font: normal normal normal 16px / 1 FontAwesome;
   -moz-osx-font-smoothing: grayscale;
-  transform: translate(0, 0); }
+  -webkit-font-smoothing: antialiased;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  display: inline-block; }
 
 a.doc:before,
 a.docx:before,
@@ -482,12 +483,13 @@ nav.primary {
   z-index: 1; }
   nav.primary:before,
   nav.primary ul:before {
-    display: inline-block;
-    font: normal normal normal 16px FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+    font: normal normal normal 16px / 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0);
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+    display: inline-block;
     bottom: 100%;
     color: #000;
     content: '\f0c9';
@@ -510,12 +512,13 @@ nav.primary {
       color: #fff;
       font-family: "Open Sans", Arial, sans-serif; }
       nav.primary ul li a:before {
-        display: inline-block;
-        font: normal normal normal 16px FontAwesome;
-        text-rendering: auto;
-        -webkit-font-smoothing: antialiased;
+        font: normal normal normal 16px / 1 FontAwesome;
         -moz-osx-font-smoothing: grayscale;
-        transform: translate(0, 0);
+        -webkit-font-smoothing: antialiased;
+        speak: none;
+        text-rendering: auto;
+        text-transform: none;
+        display: inline-block;
         content: '\f054';
         float: right; }
   nav.primary ul li:hover,
@@ -647,7 +650,6 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr='#FF0394CD', endColorStr='#FF02709B');
   background-image: -webkit-linear-gradient(top, #0394CD, #02709b);
   background-image: -o-linear-gradient(top, #0394CD, #02709b);
   background-image: linear-gradient(to bottom, #0394CD, #02709b);
@@ -655,6 +657,7 @@ a.button {
   border-radius: 4px;
   color: #fff;
   display: inline-block;
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=0, startColorStr='#FF0394CD', endColorStr='#FF02709B');
   font-family: "Open Sans", Arial, sans-serif;
   line-height: 1;
   margin-bottom: .5em;
@@ -703,12 +706,13 @@ input::-moz-focus-inner {
   .success a {
     text-decoration: underline; }
   .success:before {
-    display: inline-block;
-    font: normal normal normal 16px FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+    font: normal normal normal 16px / 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0);
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+    display: inline-block;
     content: '';
     display: block;
     font-size: 20px;
@@ -729,12 +733,13 @@ input::-moz-focus-inner {
   .error a {
     text-decoration: underline; }
   .error:before {
-    display: inline-block;
-    font: normal normal normal 16px FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+    font: normal normal normal 16px / 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0);
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+    display: inline-block;
     content: '';
     display: block;
     font-size: 20px;
@@ -755,12 +760,13 @@ input::-moz-focus-inner {
   .info a {
     text-decoration: underline; }
   .info:before {
-    display: inline-block;
-    font: normal normal normal 16px FontAwesome;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
+    font: normal normal normal 16px / 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
-    transform: translate(0, 0);
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+    display: inline-block;
     content: '';
     display: block;
     font-size: 20px;
