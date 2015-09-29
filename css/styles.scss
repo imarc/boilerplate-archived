@@ -1,26 +1,9 @@
 /**
  * Built using iMarc Boilerplate v1.2
- * 
+ *
  * Copyright 2014 iMarc LLC
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
- *
- * = Table of Contents =
- * Web Fonts
- * Variables
- * Mixins
- * Base
- * Layout
- * Typography
- * Iconography
- * Navigation
- * Forms
- * Messaging
- * Tables
- * Section Specific
- * Page Specific
- * Media Queries
- * Print Styles
  */
 
 /* = Web Fonts = */
@@ -925,7 +908,7 @@ input::-moz-focus-inner {
 	margin-bottom: 1.5em;
 	padding: 1em 3.25em;
 	position: relative;
-	
+
 	a {
 		text-decoration: underline;
 	}
@@ -1001,11 +984,11 @@ table {
 	td {
 		border: 1px solid #e3e3e3;
 	}
-	
+
 	tr:nth-child(even) td {
 		background: #f3f3f3;
 	}
-	
+
 }
 
 
@@ -1080,7 +1063,7 @@ table {
 					}
 				}
 			}
-			
+
 			li {
 				li {
 					float: none;
