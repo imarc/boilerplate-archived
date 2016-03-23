@@ -1,7 +1,7 @@
 /**
- * Built using iMarc Boilerplate v1.2
+ * Built using Imarc Boilerplate v2.0
  *
- * Copyright 2014 iMarc LLC
+ * Copyright 2016 Imarc
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -36,21 +36,30 @@
 
 
 /* = Variables = */
-$matte:      #2A2A2A; // Mine Shaft
-$torso-bg:   #FCFCFC; // Alabaster
-$selection:  #FFF1B5; // Buttermilk
+$blue:        #0394CD;
+$black:       #2A2A2A;
+$dark-gray:   #555;
+$gray:        #888;
+$light-blue:  #B8E0F9;
+$light-green: #D2F8B0;
+$light-gray:  #DDD;
+$pink:        #F2006D;
+$white:       #FCFCFC;
+$light-pink:  #FFD8D9;
+$yellow:      #FFF1B5;
 
-$plain-text: #555; // Emperor
-$meta-text:  #888; // Gray
-$link:       #0394CD; // iMarc Blue
-$link-hover: #888; // Gray
-$highlight:  #F2006D; // iMarc Pink
-
-$border:     #DDD; // Alto
-
-$success:    #D2F8B0; // Gossip
-$error:      #FFD8D9; // Cosmos
-$info:       #B8E0F9; // Sail
+$matte:      $black;
+$torso-bg:   $white;
+$selection:  $yellow;
+$plain-text: $dark-gray;
+$meta-text:  $gray;
+$link:       $blue;
+$link-hover: $gray;
+$highlight:  $pink;
+$border:     $light-gray;
+$success:    $light-green;
+$error:      $light-pink;
+$info:       $light-blue;
 
 $body-fonts:    "Helvetica Neue", Arial, sans-serif;
 $heading-fonts: "Open Sans";
