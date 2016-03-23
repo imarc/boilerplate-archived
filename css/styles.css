@@ -149,7 +149,7 @@ aside.primary {
   display: none; }
 
 .main aside {
-  color: #4c4c4c;
+  color: #4d4d4d;
   color: rgba(0, 0, 0, 0.7);
   font-size: 14px;
   font-size: 0.875rem;
@@ -158,7 +158,7 @@ aside.primary {
 
 footer.primary {
   background: #ffffff;
-  color: #4c4c4c;
+  color: #4d4d4d;
   color: rgba(0, 0, 0, 0.7);
   font-size: 14px;
   font-size: 0.875rem;
@@ -232,7 +232,7 @@ h6 {
     padding-top: 0; }
 
 .meta {
-  color: #4c4c4c;
+  color: #4d4d4d;
   color: rgba(0, 0, 0, 0.7);
   font-size: 14px;
   font-size: 0.875rem;
@@ -252,7 +252,7 @@ em {
 
 blockquote,
 pre {
-  color: #4c4c4c;
+  color: #4d4d4d;
   color: rgba(0, 0, 0, 0.7);
   margin-bottom: 1.5em; }
   blockquote:before, blockquote:after,
@@ -274,7 +274,7 @@ article {
   margin-bottom: 3em; }
 
 .intro {
-  color: #4c4c4c;
+  color: #4d4d4d;
   color: rgba(0, 0, 0, 0.7); }
   .intro p {
     font-size: 20px;
@@ -320,7 +320,7 @@ address {
 
 hr {
   border: 0;
-  border-top: 1px solid #4c4c4c;
+  border-top: 1px solid #4d4d4d;
   border-top: 1px solid rgba(0, 0, 0, 0.7);
   display: block;
   height: 0;
@@ -592,7 +592,7 @@ nav.supplemental ul li {
     color: #0394cd; }
 nav.supplemental ul ul a {
   padding: 0;
-  color: #4c4c4c;
+  color: #4d4d4d;
   color: rgba(0, 0, 0, 0.7);
   font-size: 12px;
   font-size: 0.75rem;
@@ -634,7 +634,7 @@ label {
   color: #ac181b; }
 
 fieldset .help {
-  color: #4c4c4c;
+  color: #4d4d4d;
   color: rgba(0, 0, 0, 0.7);
   display: block;
   font-size: 12px;
@@ -740,7 +740,7 @@ input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
 a.button.disabled {
-  background: #b2b2b2;
+  background: #b3b3b3;
   background: rgba(0, 0, 0, 0.3);
   cursor: default; }
 
