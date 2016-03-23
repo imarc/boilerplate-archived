@@ -121,14 +121,19 @@ $heading-fonts: "Open Sans";
     @include columns;
 }
 
-@mixin fontawesome {
-    font-family: FontAwesome;
-    -webkit-font-smoothing: antialiased;
-    font-style: normal;
-    font-weight: normal;
-    -moz-osx-font-smoothing: grayscale;
-    speak: none;
-    text-transform: none;
+@mixin fontawesome($character:"") {
+	font: normal normal normal $rem unquote("/") 1 FontAwesome;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	speak: none;
+	text-rendering: auto;
+	text-transform: none;
+
+	@if $character != "" {
+		content: $character;
+	} @else {
+		display: inline-block;
+	}
 }
 
 @mixin no-bullets {
