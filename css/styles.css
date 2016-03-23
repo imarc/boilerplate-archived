@@ -1,7 +1,7 @@
 /*
 Error: Undefined variable: "$rem".
         on line 125 of css/styles.scss, in `fontawesome'
-        from line 510 of css/styles.scss
+        from line 501 of css/styles.scss
 
 120: .columns {
 121:     @include columns;
@@ -17,7 +17,7 @@ Error: Undefined variable: "$rem".
 
 Backtrace:
 css/styles.scss:125:in `fontawesome'
-css/styles.scss:510
+css/styles.scss:501
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/variable.rb:49:in `_perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/node.rb:50:in `perform'
 /var/lib/gems/2.1.0/gems/sass-3.4.21/lib/sass/script/tree/list_literal.rb:63:in `block in _perform'
@@ -90,4 +90,4 @@ css/styles.scss:510
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$rem\".\A         on line 125 of css/styles.scss, in `fontawesome'\A         from line 510 of css/styles.scss\A \A 120: .columns {\A 121:     @include columns;\A 122: }\A 123: \A 124: @mixin fontawesome($character:\"\") {\A 125: 	font: normal normal normal $rem unquote(\"/\") 1 FontAwesome;\A 126: 	-moz-osx-font-smoothing: grayscale;\A 127: 	-webkit-font-smoothing: antialiased;\A 128: 	speak: none;\A 129: 	text-rendering: auto;\A 130: 	text-transform: none;"; }
+  content: "Error: Undefined variable: \"$rem\".\A         on line 125 of css/styles.scss, in `fontawesome'\A         from line 501 of css/styles.scss\A \A 120: .columns {\A 121:     @include columns;\A 122: }\A 123: \A 124: @mixin fontawesome($character:\"\") {\A 125: 	font: normal normal normal $rem unquote(\"/\") 1 FontAwesome;\A 126: 	-moz-osx-font-smoothing: grayscale;\A 127: 	-webkit-font-smoothing: antialiased;\A 128: 	speak: none;\A 129: 	text-rendering: auto;\A 130: 	text-transform: none;"; }
