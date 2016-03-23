@@ -1,6 +1,6 @@
 /**
  * Built using iMarc Boilerplate v1.2
- * 
+ *
  * Copyright 2014 iMarc LLC
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
@@ -60,121 +60,121 @@ $heading-fonts: "Open Sans";
 
 /* = Mixins = */
 @mixin grouping {
-	&:before,
-	&:after {
-		content: '';
-		display: table;
-	}
+    &:before,
+    &:after {
+        content: '';
+        display: table;
+    }
 
-	&:after {
-		clear: both;
-	}
+    &:after {
+        clear: both;
+    }
 }
 
 .container,
 .group {
-	@include grouping;
+    @include grouping;
 }
 
 @mixin container {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 1024px;
-	padding-left: $rem;
-	padding-right: $rem;
-	position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1024px;
+    padding-left: $rem;
+    padding-right: $rem;
+    position: relative;
 }
 
 .container {
-	@include container;
+    @include container;
 }
 
 @mixin columns($query: 'min-width: 600px') {
-	> hr {
-		display: none;
-	}
+    > hr {
+        display: none;
+    }
 
-	@media only screen and ($query) {
-		& {
-			display: table;
-			table-layout: fixed;
-			width: 100%;
+    @media only screen and ($query) {
+        & {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
 
-			> * {
-				display: table-cell;
-				vertical-align: top;
-			}
-			> hr {
-				display: table-cell;
-				width: $rem;
-			}
-		}
-	}
+            > * {
+                display: table-cell;
+                vertical-align: top;
+            }
+            > hr {
+                display: table-cell;
+                width: $rem;
+            }
+        }
+    }
 }
 
 .columns {
-	@include columns;
+    @include columns;
 }
 
 @mixin fontawesome {
-	font-family: FontAwesome;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-style: normal;
-	font-weight: normal;
-	speak: none;
-	text-transform: none;
+    font-family: FontAwesome;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-style: normal;
+    font-weight: normal;
+    speak: none;
+    text-transform: none;
 }
 
 @mixin no-bullets {
-	padding-left: 0;
-	list-style: none;
+    padding-left: 0;
+    list-style: none;
 
-	li:before {
-		display: none;
-	}
+    li:before {
+        display: none;
+    }
 }
 
 @mixin transition($properties: all, $duration: 250ms, $easing: ease-in-out) {
-	@if length($properties) > 1 {
-		-webkit-transition-property: $properties;
-		transition-property: $properties;
-	} @else {
-		-webkit-transition: $properties $duration $easing;
-		transition: $properties $duration $easing;
-	}
+    @if length($properties) > 1 {
+        -webkit-transition-property: $properties;
+        transition-property: $properties;
+    } @else {
+        -webkit-transition: $properties $duration $easing;
+        transition: $properties $duration $easing;
+    }
 }
 
 @mixin tablets-and-up {
-	@media only screen and (min-width: 600px) {
-		@content;
-	}
+    @media only screen and (min-width: 600px) {
+        @content;
+    }
 
-	html.lt-ie9 {
-		@content;
-	}
+    html.lt-ie9 {
+        @content;
+    }
 }
 
 @mixin desktops-and-up {
-	@media only screen and (min-width: 700px) {
-		@content;
-	}
+    @media only screen and (min-width: 700px) {
+        @content;
+    }
 
-	html.lt-ie9 {
-		@content;
-	}
+    html.lt-ie9 {
+        @content;
+    }
 }
 
 @mixin bg-gradient($start-color, $end-color, $orientation: 'vertical') {
-	$direction: if($orientation == vertical, 0, 1);
-	filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$direction}, startColorStr='#{ie-hex-str($start-color)}', endColorStr='#{ie-hex-str($end-color)}');
+    $direction: if($orientation == vertical, 0, 1);
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$direction}, startColorStr='#{ie-hex-str($start-color)}', endColorStr='#{ie-hex-str($end-color)}');
 
-	$direction: if($orientation == vertical, top, left);
-	background-image: -webkit-linear-gradient($direction, $start-color, $end-color);
-	background-image: -o-linear-gradient($direction, $start-color, $end-color);
+    $direction: if($orientation == vertical, top, left);
+    background-image: -webkit-linear-gradient($direction, $start-color, $end-color);
+    background-image: -o-linear-gradient($direction, $start-color, $end-color);
 
-	$direction: if($orientation == vertical, bottom, right);
-	background-image: linear-gradient(to $direction, $start-color, $end-color);
+    $direction: if($orientation == vertical, bottom, right);
+    background-image: linear-gradient(to $direction, $start-color, $end-color);
 }
 
 
@@ -183,120 +183,120 @@ a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite,
 code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6,
 header, html, hr, i, iframe, img, label, li, nav, object, ol, p, pre, section,
 span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
-	border: 0;
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-	font-size: 100%;
-	font: inherit;
-	margin: 0;
-	outline: 0;
-	padding: 0;
-	vertical-align: baseline;
+    border: 0;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 100%;
+    font: inherit;
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
 }
 
 article, aside, audio, canvas, footer, header, nav, section, video {
-	display: block;
+    display: block;
 }
 
 html {
-	background: $matte;
-	color: $plain-text;
-	font-family: $body-fonts;
-	font-size: $rem;
-	line-height: 1.5;
-	-ms-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
+    background: $matte;
+    color: $plain-text;
+    font-family: $body-fonts;
+    font-size: $rem;
+    line-height: 1.5;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-	background: $torso-bg;
-	min-width: 300px;
+    background: $torso-bg;
+    min-width: 300px;
 }
 
 img {
-	max-width: 100%;
-	vertical-align: middle;
+    max-width: 100%;
+    vertical-align: middle;
 }
 
 ::-moz-selection {
-	background: $selection;
-	text-shadow: none;
+    background: $selection;
+    text-shadow: none;
 }
 
 ::selection {
-	background: $selection;
-	text-shadow: none;
+    background: $selection;
+    text-shadow: none;
 }
 
 
 /* = Layout = */
 header.primary {
-	@include bg-gradient(#2e2e2e, #1a1a1a);
+    @include bg-gradient(#2e2e2e, #1a1a1a);
 
-	.branding {
-		h1 {
-			padding-bottom: 0;
+    .branding {
+        h1 {
+            padding-bottom: 0;
 
-			a,
-			a:hover {
-				color: $torso-bg;
-				display: block;
-				padding-bottom: .5em;
-				padding-top: .5em;
-			}
-		}
-	}
+            a,
+            a:hover {
+                color: $torso-bg;
+                display: block;
+                padding-bottom: .5em;
+                padding-top: .5em;
+            }
+        }
+    }
 }
 
 .torso {
-	padding-top: 1.5em;
-	padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    padding-bottom: 1.5em;
 }
 
 .main section {
-	&:after {
-		content: '';
-		display: block;
-		background: $border;
-		margin-top: 1.5em;
-		margin-bottom: 1.5em;
-		height: 1px;
-	}
+    &:after {
+        content: '';
+        display: block;
+        background: $border;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+        height: 1px;
+    }
 }
 
 aside.primary {
-	display: none;
+    display: none;
 }
 
 .main aside {
-	background: mix($torso-bg, $meta-text, 80%);
-	border-radius: 4px;
-	color: $meta-text;
-	font-size: .875 * $rem;
-	margin-bottom: 1em;
-	padding: 1.333em;
+    background: mix($torso-bg, $meta-text, 80%);
+    border-radius: 4px;
+    color: $meta-text;
+    font-size: .875 * $rem;
+    margin-bottom: 1em;
+    padding: 1.333em;
 }
 
 footer.primary {
-	background: $matte;
-	color: $meta-text;
-	font-size: .875 * $rem;
-	padding-top: 1em;
-	padding-bottom: 1em;
+    background: $matte;
+    color: $meta-text;
+    font-size: .875 * $rem;
+    padding-top: 1em;
+    padding-bottom: 1em;
 }
 
 /* = Typography = */
 @mixin header-font {
-	font-family: $heading-fonts;
-	font-weight: normal;
+    font-family: $heading-fonts;
+    font-weight: normal;
 
-	padding-top: 1.5 * $rem;
-	padding-bottom: 1.5 * $rem;
+    padding-top: 1.5 * $rem;
+    padding-bottom: 1.5 * $rem;
 
-	&:first-child {
-		padding-top: 0;
-	}
+    &:first-child {
+        padding-top: 0;
+    }
 }
 
 h1 + h2,
@@ -304,223 +304,223 @@ h2 + h3,
 h3 + h4,
 h4 + h5,
 h5 + h6 {
-	padding-top: 0;
-	margin-top: -$rem;
+    padding-top: 0;
+    margin-top: -$rem;
 }
 
 h1 {
-	@include header-font;
-	font-size: 2.5 * $rem;
-	line-height: 1.2;
+    @include header-font;
+    font-size: 2.5 * $rem;
+    line-height: 1.2;
 }
 
 h2 {
-	@include header-font;
-	font-size: 2 * $rem;
-	line-height: 1.2;
+    @include header-font;
+    font-size: 2 * $rem;
+    line-height: 1.2;
 }
 
 h3 {
-	@include header-font;
-	font-size: 1.5 * $rem;
-	line-height: 1.3;
+    @include header-font;
+    font-size: 1.5 * $rem;
+    line-height: 1.3;
 }
 
 h4 {
-	@include header-font;
-	font-size: 1.25 * $rem;
-	line-height: 1.4;
+    @include header-font;
+    font-size: 1.25 * $rem;
+    line-height: 1.4;
 }
 
 h5,
 h6 {
-	@include header-font;
+    @include header-font;
 }
 
 .meta {
-	color: $meta-text;
-	font-size: .75 * $rem;
-	margin-bottom: .5em;
-	margin-top: -.667em;
+    color: $meta-text;
+    font-size: .75 * $rem;
+    margin-bottom: .5em;
+    margin-top: -.667em;
 }
 
 abbr[title] {
-	border-bottom: 1px dotted;
+    border-bottom: 1px dotted;
 }
 
 b,
 strong {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 i,
 em {
-	font-style: italic;
+    font-style: italic;
 }
 
 blockquote,
 pre {
-	@include grouping;
-	color: $meta-text;
-	margin-bottom: 1.5em;
+    @include grouping;
+    color: $meta-text;
+    margin-bottom: 1.5em;
 }
 
 blockquote {
-	border-left: 1px solid $border;
-	font-style: italic;
-	padding-left: $rem;
+    border-left: 1px solid $border;
+    font-style: italic;
+    padding-left: $rem;
 }
 
 article {
-	margin-bottom: 3em;
+    margin-bottom: 3em;
 }
 
 .intro {
-	color: $meta-text;
+    color: $meta-text;
 
-	p {
-		font-size: 1.25 * $rem;
-		line-height: 1.6;
-		margin-bottom: .8em;
-	}
+    p {
+        font-size: 1.25 * $rem;
+        line-height: 1.6;
+        margin-bottom: .8em;
+    }
 }
 
 .highlight {
-	background: mix($torso-bg, $meta-text, 80%);
-	border-radius: 4px;
-	color: $meta-text;
-	font-size: 1.5 * $rem;
-	line-height: 1.34;
+    background: mix($torso-bg, $meta-text, 80%);
+    border-radius: 4px;
+    color: $meta-text;
+    font-size: 1.5 * $rem;
+    line-height: 1.34;
 
-	margin-bottom: 1em;
-	padding: .67em;
-	text-shadow: 0 1px 0 lighten($meta-text, 45%);
+    margin-bottom: 1em;
+    padding: .67em;
+    text-shadow: 0 1px 0 lighten($meta-text, 45%);
 
-	a {
-		text-shadow: 0 1px 0 lighten($link, 45%);
-	}
+    a {
+        text-shadow: 0 1px 0 lighten($link, 45%);
+    }
 
-	p {
-		margin-bottom: 0;
-	}
+    p {
+        margin-bottom: 0;
+    }
 }
 
 pre,
 code {
-	font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', monospace;
-	font-size: .875 * $rem;
+    font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', monospace;
+    font-size: .875 * $rem;
 }
 
 pre {
-	white-space: pre;
-	white-space: pre-wrap;
-	word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 p {
-	margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 address {
-	margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 hr {
-	border: 0;
-	border-top: 1px solid $meta-text;
-	display: block;
-	height: 0;
-	margin: 2em auto 3em;
-	width: 100%;
+    border: 0;
+    border-top: 1px solid $meta-text;
+    display: block;
+    height: 0;
+    margin: 2em auto 3em;
+    width: 100%;
 }
 
 a {
-	color: $link;
-	text-decoration: none;
+    color: $link;
+    text-decoration: none;
 
-	&:hover,
-	&:active {
-		color: $link-hover;
-	}
+    &:hover,
+    &:active {
+        color: $link-hover;
+    }
 
-	&:focus {
-		outline: thin dotted;
-	}
+    &:focus {
+        outline: thin dotted;
+    }
 }
 
 ol,
 ul,
 dl {
-	margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 ol,
 ul {
-	padding-left: 2em;
+    padding-left: 2em;
 
-	li,
-	dt,
-	dd {
-		margin-bottom: .5em;
-	}
+    li,
+    dt,
+    dd {
+        margin-bottom: .5em;
+    }
 }
 
 ul {
-	list-style: disc;
+    list-style: disc;
 }
 
 dt {
-	font-weight: bold;
-	padding-left: .5em;
+    font-weight: bold;
+    padding-left: .5em;
 }
 
 dd {
-	padding-left: 2em;
+    padding-left: 2em;
 }
 
 sup,
 sub {
-	font-size: 80%;
+    font-size: 80%;
 }
 
 sup {
-	vertical-align: top;
+    vertical-align: top;
 }
 
 sub {
-	vertical-align: bottom;
+    vertical-align: bottom;
 }
 
 nav {
-	@include grouping;
-	position: relative;
+    @include grouping;
+    position: relative;
 
-	ul {
-		list-style: none;
-		padding-left: 0;
-		margin-bottom: 0;
-		position: relative;
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        position: relative;
 
-		li {
-			white-space: nowrap;
-			margin-bottom: 0;
-			float: left;
-			display: block;
+        li {
+            white-space: nowrap;
+            margin-bottom: 0;
+            float: left;
+            display: block;
 
-			a {
-				padding: .5em 10px;
-			}
-		}
-	}
+            a {
+                padding: .5em 10px;
+            }
+        }
+    }
 
-	ul.container {
-		padding-left: 6px;
-		padding-right: 6px;
-	}
+    ul.container {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
 }
 
 .main nav ul li ~ li {
-	border-left: 1px solid $border;
+    border-left: 1px solid $border;
 }
 
 /* = Iconography = */
@@ -529,7 +529,7 @@ a.docx:before,
 a.pdf:before,
 a.word:before,
 [class*="icon-"]:before {
-	@include fontawesome;
+    @include fontawesome;
 }
 
 a.doc:before,
@@ -537,48 +537,48 @@ a.docx:before,
 a.pdf:before,
 a.word:before,
 a[class*="icon-"]:before {
-	width: 1em;
-	padding-right: .1em;
-	text-align: center;
-	display: inline-block;
+    width: 1em;
+    padding-right: .1em;
+    text-align: center;
+    display: inline-block;
 }
 
 .icon-only {
-	overflow: visible;
-	font-size: 0;
+    overflow: visible;
+    font-size: 0;
 
-	&:before {
-		font-size: 2 * $rem;
-	}
+    &:before {
+        font-size: 2 * $rem;
+    }
 }
 
 .icons {
-	padding-left: 9px;
+    padding-left: 9px;
 
-	li {
-		list-style: none;
+    li {
+        list-style: none;
 
-		a.doc:before,
-		a.docx:before,
-		a.pdf:before,
-		a.word:before,
-		a[class*="icon-"]:before {
-			color: $plain-text;
-			padding-right: .5em;
-		}
-	}
+        a.doc:before,
+        a.docx:before,
+        a.pdf:before,
+        a.word:before,
+        a[class*="icon-"]:before {
+            color: $plain-text;
+            padding-right: .5em;
+        }
+    }
 }
 
 a.button[class*="icon-"]:before {
-	padding-right: .5em;
+    padding-right: .5em;
 }
 
 /* = Icon Definitions = */
 .icon-download-alt:before {
-	content: '\f019';
+    content: '\f019';
 }
 .icon-file:before {
-	content: '\f15b';
+    content: '\f15b';
 }
 
 a.doc:before,
@@ -586,197 +586,197 @@ a.word:before,
 a.docx:before,
 a.pdf:before,
 .icon-file-alt:before {
-	content: '\f016';
+    content: '\f016';
 }
 .icon-file-text:before {
-	content: '\f15c';
+    content: '\f15c';
 }
 .icon-file-text-alt:before {
-	content: '\f0f6';
+    content: '\f0f6';
 }
 
 .icon-exclamation:before {
-	content: '\f12a';
+    content: '\f12a';
 }
 .icon-info:before {
-	content: '\f129';
+    content: '\f129';
 }
 .icon-ok:before {
-	content: '\f00c';
+    content: '\f00c';
 }
 .icon-question:before {
-	content: '\f128';
+    content: '\f128';
 }
 .icon-remove:before {
-	content: '\f00d';
+    content: '\f00d';
 }
 
 .icon-envelope:before {
-	content: '\f0e0';
+    content: '\f0e0';
 }
 .icon-facebook:before {
-	content: '\f09a';
+    content: '\f09a';
 }
 .icon-rss:before {
-	content: '\f09e';
+    content: '\f09e';
 }
 .icon-linkedin:before {
-	content: '\f0e1';
+    content: '\f0e1';
 }
 .icon-twitter:before {
-	content: '\f099';
+    content: '\f099';
 }
 .icon-youtube:before {
-	content: '\f167';
+    content: '\f167';
 }
 
 .icon-cog:before {
-	content: '\f013';
+    content: '\f013';
 }
 .icon-comment:before {
-	content: '\f075';
+    content: '\f075';
 }
 .icon-globe:before {
-	content: '\f0ac';
+    content: '\f0ac';
 }
 .icon-map-marker:before {
-	content: '\f041';
+    content: '\f041';
 }
 .icon-mobile-phone:before {
-	content: '\f10b';
+    content: '\f10b';
 }
 .icon-phone:before {
-	content: '\f095';
+    content: '\f095';
 }
 .icon-play:before {
-	content: '\f04b';
+    content: '\f04b';
 }
 .icon-search:before {
-	content: '\f002';
+    content: '\f002';
 }
 .icon-youtube-play:before {
-	content: '\f16a';
+    content: '\f16a';
 }
 
 /* = Navigation = */
 nav.primary {
-	z-index: 1;
+    z-index: 1;
 
-	&:before,
-	ul:before {
-		@include fontawesome;
+    &:before,
+    ul:before {
+        @include fontawesome;
 
-		bottom: 100%;
-		color: #000;
-		content: '\f0c9';
-		display: block;
-		font-size: 2.5 * $rem;
-		padding: .35em .6em;
-		position: absolute;
-		right: 0;
-	}
+        bottom: 100%;
+        color: #000;
+        content: '\f0c9';
+        display: block;
+        font-size: 2.5 * $rem;
+        padding: .35em .6em;
+        position: absolute;
+        right: 0;
+    }
 
-	ul {
-		&:before {
-			color: $plain-text;
-		}
+    ul {
+        &:before {
+            color: $plain-text;
+        }
 
-		li {
-			float: none;
-			display: none;
+        li {
+            float: none;
+            display: none;
 
-			.dropdown {
-				display: none;
-			}
+            .dropdown {
+                display: none;
+            }
 
-			a {
-				border-top: 1px solid #212121;
-				display: block;
-				padding: .5em $rem;
-				color: #fff;
-				font-family: $heading-fonts;
+            a {
+                border-top: 1px solid #212121;
+                display: block;
+                padding: .5em $rem;
+                color: #fff;
+                font-family: $heading-fonts;
 
-				&:before {
-					@include fontawesome;
+                &:before {
+                    @include fontawesome;
 
-					content: '\f054';
-					float: right;
-				}
-			}
-		}
+                    content: '\f054';
+                    float: right;
+                }
+            }
+        }
 
-		li:hover,
-		li.active {
-			background: #1a1a1a;
+        li:hover,
+        li.active {
+            background: #1a1a1a;
 
-			> a {
-				color: $link;
+            > a {
+                color: $link;
 
-				&:before {
-					margin-right: -.5em;
-				}
-			}
-		}
-	}
+                &:before {
+                    margin-right: -.5em;
+                }
+            }
+        }
+    }
 
-	ul[data-focus="focus"] {
-		&:before {
-			display: none;
-		}
+    ul[data-focus="focus"] {
+        &:before {
+            display: none;
+        }
 
-		li {
-			display: block;
-		}
-	}
+        li {
+            display: block;
+        }
+    }
 
-	ul.container {
-		padding-left: 0;
-		padding-right: 0;
-	}
+    ul.container {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 nav.secondary {
-	display: none;
+    display: none;
 }
 
 nav.utility {
-	display: none;
+    display: none;
 }
 
 nav.supplemental {
-	ul {
-		li {
-			float: none;
+    ul {
+        li {
+            float: none;
 
-			a {
-				padding: .25em 0;
-				display: block;
-			}
+            a {
+                padding: .25em 0;
+                display: block;
+            }
 
-			a:hover {
-				color: $link;
-			}
-		}
+            a:hover {
+                color: $link;
+            }
+        }
 
-		ul {
-			a {
-				padding: 0;
-				color: $meta-text;
-				font-size: .75 * $rem;
-				line-height: 2;
-			}
-		}
-	}
+        ul {
+            a {
+                padding: 0;
+                color: $meta-text;
+                font-size: .75 * $rem;
+                line-height: 2;
+            }
+        }
+    }
 
-	> ul {
-		> li {
-			padding-bottom: .5em;
-		}
-		> li ~ li {
-			padding-top: .5em;
-			border-top: 1px solid $border;
-		}
-	}
+    > ul {
+        > li {
+            padding-bottom: .5em;
+        }
+        > li ~ li {
+            padding-top: .5em;
+            border-top: 1px solid $border;
+        }
+    }
 }
 
 /* = Forms = */
@@ -784,7 +784,7 @@ button,
 input,
 select,
 textarea {
-	font-size: 100%;
+    font-size: 100%;
 }
 
 .button,
@@ -797,81 +797,81 @@ textarea {
 .submit,
 .text,
 .textarea {
-	margin-bottom: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 label {
-	color: #333;
-	cursor: pointer;
-	display: block;
-	font-weight: bold;
-	line-height: 2;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    line-height: 2;
 }
 
 .required {
-	color: #ac181b;
+    color: #ac181b;
 }
 
 fieldset .help {
-	color: $meta-text;
-	display: block;
-	font-size: .75 * $rem;
-	line-height: 1.34;
-	margin: 0;
-	padding: 0;
+    color: $meta-text;
+    display: block;
+    font-size: .75 * $rem;
+    line-height: 1.34;
+    margin: 0;
+    padding: 0;
 }
 
 input[type="password"],
 input[type="text"],
 textarea {
-	border: 1px solid #ccc;
-	color: $plain-text;
-	display: block;
-	font-family: $body-fonts;
-	font-size: $rem;
-	margin: 0;
-	padding: 0.4em 1%;
-	width: 98%;
+    border: 1px solid #ccc;
+    color: $plain-text;
+    display: block;
+    font-family: $body-fonts;
+    font-size: $rem;
+    margin: 0;
+    padding: 0.4em 1%;
+    width: 98%;
 }
 
 select {
-	margin-bottom: 0;
+    margin-bottom: 0;
 }
 .multiple select {
-	padding-left: 5px;
-	padding-right: 10px;
+    padding-left: 5px;
+    padding-right: 10px;
 }
 
 textarea {
-	height: 12em;
-	overflow: auto;
-	resize: vertical;
+    height: 12em;
+    overflow: auto;
+    resize: vertical;
 }
 
 .radio,
 .checkbox {
-	font-weight: normal;
+    font-weight: normal;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-	padding: 0
+    padding: 0
 }
 
 input[type="file"] {
-	color: #333;
-	display: block;
-	font-size: $rem;
-	width: 100%;
+    color: #333;
+    display: block;
+    font-size: $rem;
+    width: 100%;
 }
 
 button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	-moz-appearance: button;
-	-webkit-appearance: button;
-	cursor: pointer;
+    -moz-appearance: button;
+    -webkit-appearance: button;
+    cursor: pointer;
 }
 
 button,
@@ -879,27 +879,27 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"],
 a.button {
-	@include bg-gradient($link, darken($link, 10%));
-	border: 1px solid darken($link, 10%);
-	border-radius: 4px;
-	color: #fff;
-	display: inline-block;
-	font-family: $heading-fonts;
-	line-height: 1;
-	margin-bottom: .5em;
-	margin-right: .5em;
-	padding: .6em .7em;
-	text-align: center;
+    @include bg-gradient($link, darken($link, 10%));
+    border: 1px solid darken($link, 10%);
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    font-family: $heading-fonts;
+    line-height: 1;
+    margin-bottom: .5em;
+    margin-right: .5em;
+    padding: .6em .7em;
+    text-align: center;
 
-	&:hover {
-		background: $link;
-		border-color: $link;
-		cursor: pointer;
-	}
+    &:hover {
+        background: $link;
+        border-color: $link;
+        cursor: pointer;
+    }
 
-	&:focus {
-		background: #0084B8;
-	}
+    &:focus {
+        background: #0084B8;
+    }
 }
 
 button.disabled,
@@ -907,105 +907,105 @@ input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled],
 a.button.disabled {
-	@include bg-gradient($meta-text, darken($meta-text, 10%));
-	border-color: darken($meta-text, 10%);
-	cursor: default;
+    @include bg-gradient($meta-text, darken($meta-text, 10%));
+    border-color: darken($meta-text, 10%);
+    cursor: default;
 }
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
+    border: 0;
+    padding: 0;
 }
 
 /* = Messaging = */
 
 @mixin messaging {
-	border-radius: 4px;
-	margin-bottom: 1.5em;
-	padding: 1em 3.25em;
-	position: relative;
-	
-	a {
-		text-decoration: underline;
-	}
+    border-radius: 4px;
+    margin-bottom: 1.5em;
+    padding: 1em 3.25em;
+    position: relative;
 
-	&:before {
-		@include fontawesome;
+    a {
+        text-decoration: underline;
+    }
 
-		content:'';
-		display: block;
-		font-size: 20px;
-		height: 23px;
-		left: 1em;
-		position: absolute;
-		top: .6em;
-		width: 23px;
-	}
+    &:before {
+        @include fontawesome;
+
+        content:'';
+        display: block;
+        font-size: 20px;
+        height: 23px;
+        left: 1em;
+        position: absolute;
+        top: .6em;
+        width: 23px;
+    }
 }
 
 .success {
-	@include messaging;
-	background: $success;
+    @include messaging;
+    background: $success;
 
-	&:before {
-		content: '\f00c';
-	}
+    &:before {
+        content: '\f00c';
+    }
 }
 
 .error {
-	@include messaging;
-	background: $error;
+    @include messaging;
+    background: $error;
 
-	&:before {
-		content: '\f12a';
-	}
+    &:before {
+        content: '\f12a';
+    }
 }
 
 .info {
-	@include messaging;
-	background: $info;
+    @include messaging;
+    background: $info;
 
-	&:before {
-		content: '\f129';
-	}
+    &:before {
+        content: '\f129';
+    }
 }
 
 /* = Tables = */
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	margin-bottom: 1.5em;
-	width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 1.5em;
+    width: 100%;
 
-	caption {
-		font-size: .75 * $rem;
-		margin-bottom: .75em;
-	}
+    caption {
+        font-size: .75 * $rem;
+        margin-bottom: .75em;
+    }
 
-	td,
-	th {
-		padding: .5em 1em;
-		text-align: left;
-		vertical-align: top;
-	}
+    td,
+    th {
+        padding: .5em 1em;
+        text-align: left;
+        vertical-align: top;
+    }
 
-	th {
-		font-weight: bold;
-		background: $plain-text;
-		border: 1px solid $plain-text;
-		color: #fff;
-		text-transform: uppercase;
-	}
+    th {
+        font-weight: bold;
+        background: $plain-text;
+        border: 1px solid $plain-text;
+        color: #fff;
+        text-transform: uppercase;
+    }
 
-	td {
-		border: 1px solid #e3e3e3;
-	}
-	
-	tr:nth-child(even) td {
-		background: #f3f3f3;
-	}
-	
+    td {
+        border: 1px solid #e3e3e3;
+    }
+
+    tr:nth-child(even) td {
+        background: #f3f3f3;
+    }
+
 }
 
 
@@ -1016,146 +1016,146 @@ table {
 /* = Media Queries = */
 @include tablets-and-up {
 
-	.main aside {
-		float: right;
-		margin-left: 1em;
-		width: 33.33%;
-	}
+    .main aside {
+        float: right;
+        margin-left: 1em;
+        width: 33.33%;
+    }
 
-	nav.utility {
-		display: block;
-		position: absolute;
-		right: 32px;
-		top: 1em;
+    nav.utility {
+        display: block;
+        position: absolute;
+        right: 32px;
+        top: 1em;
 
-		a {
-			display: block;
-			color: #fff;
-			font-size: .75 * $rem;
-		}
+        a {
+            display: block;
+            color: #fff;
+            font-size: .75 * $rem;
+        }
 
-		li.active,
-		li:hover {
-			a {
-				color: $link;
-			}
-		}
-	}
+        li.active,
+        li:hover {
+            a {
+                color: $link;
+            }
+        }
+    }
 
-	nav.secondary {
-		display: block;
-		background: #2e2e2e;
+    nav.secondary {
+        display: block;
+        background: #2e2e2e;
 
-		a {
-			display: block;
-			color: #bbbbbb;
-			font-size: .8125 * $rem;
-			line-height: 2;
-		}
+        a {
+            display: block;
+            color: #bbbbbb;
+            font-size: .8125 * $rem;
+            line-height: 2;
+        }
 
-		li.active,
-		li:hover {
-			a {
-				color: $link;
-			}
-		}
-	}
+        li.active,
+        li:hover {
+            a {
+                color: $link;
+            }
+        }
+    }
 
-	nav.primary {
-		&:before,
-		ul:before {
-			display: none;
-		}
+    nav.primary {
+        &:before,
+        ul:before {
+            display: none;
+        }
 
-		ul {
-			li {
-				float: left;
-				display: block;
-				a {
-					border-top: 0;
-					font-family: $heading-fonts;
+        ul {
+            li {
+                float: left;
+                display: block;
+                a {
+                    border-top: 0;
+                    font-family: $heading-fonts;
 
-					&:before {
-						display: none;
-					}
-				}
-			}
-			
-			li {
-				li {
-					float: none;
+                    &:before {
+                        display: none;
+                    }
+                }
+            }
 
-					a {
-						font-size: .8125 * $rem;
-						font-family: inherit;
-					}
-				}
-			}
+            li {
+                li {
+                    float: none;
 
-			li.active,
-			li:hover {
-				background: none;
-			}
+                    a {
+                        font-size: .8125 * $rem;
+                        font-family: inherit;
+                    }
+                }
+            }
 
-			li:hover {
-				position: relative;
-				background: #333333;
+            li.active,
+            li:hover {
+                background: none;
+            }
 
-				.dropdown {
-					display: block;
-					position: absolute;
-					left: 0;
-					min-width: 100%;
-					background: #333333;
-				}
-			}
-		}
-	}
+            li:hover {
+                position: relative;
+                background: #333333;
+
+                .dropdown {
+                    display: block;
+                    position: absolute;
+                    left: 0;
+                    min-width: 100%;
+                    background: #333333;
+                }
+            }
+        }
+    }
 }
 
 @include desktops-and-up {
 
-	.torso aside.primary {
-		display: block;
-		float: right;
-		width: 25%;
-	}
-	.torso aside.primary ~ .main {
-		float: left;
-		width: 75%;
-		padding-right: 2em;
-	}
+    .torso aside.primary {
+        display: block;
+        float: right;
+        width: 25%;
+    }
+    .torso aside.primary ~ .main {
+        float: left;
+        width: 75%;
+        padding-right: 2em;
+    }
 }
 
 @media print {
-	* {
-		background: transparent !important;
-		box-shadow: none !important;
-		color: #000 !important; /* Black prints faster: h5bp.com/s */
-		text-shadow: none !important;
-	}
+    * {
+        background: transparent !important;
+        box-shadow: none !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        text-shadow: none !important;
+    }
 
-	a,
-	a:visited {
-		text-decoration: underline;
-	}
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
 
-	pre, blockquote, tr, img, h1, h2, h3, h4, h5, h6 {
-		page-break-inside: avoid;
-	}
+    pre, blockquote, tr, img, h1, h2, h3, h4, h5, h6 {
+        page-break-inside: avoid;
+    }
 
-	thead {
-		display: table-header-group;
-	}
+    thead {
+        display: table-header-group;
+    }
 
-	@page {
-		margin: 0.5cm;
-	}
+    @page {
+        margin: 0.5cm;
+    }
 
-	p,
-	h2,
-	h3 {
-		orphans: 3;
-		widows: 3;
-	}
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
 }
