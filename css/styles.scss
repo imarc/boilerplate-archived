@@ -36,7 +36,6 @@
 
 
 /* = Variables = */
-$rem:        16px;
 $matte:      #2A2A2A; // Mine Shaft
 $torso-bg:   #FCFCFC; // Alabaster
 $selection:  #FFF1B5; // Buttermilk
@@ -77,8 +76,8 @@ $heading-fonts: "Open Sans";
     margin-left: auto;
     margin-right: auto;
     max-width: 1024px;
-    padding-left: $rem;
-    padding-right: $rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     position: relative;
 }
 
@@ -103,7 +102,7 @@ $heading-fonts: "Open Sans";
             }
             > hr {
                 display: table-cell;
-                width: $rem;
+                width: 1rem;
             }
         }
     }
@@ -196,7 +195,7 @@ html {
     background: $matte;
     color: $plain-text;
     font-family: $body-fonts;
-    font-size: $rem;
+    font-size: 1rem;
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -265,7 +264,7 @@ aside.primary {
     background: mix($torso-bg, $meta-text, 80%);
     border-radius: 4px;
     color: $meta-text;
-    font-size: 0.875 * $rem;
+    font-size: 0.875rem;
     margin-bottom: 1em;
     padding: 1.333em;
 }
@@ -273,7 +272,7 @@ aside.primary {
 footer.primary {
     background: $matte;
     color: $meta-text;
-    font-size: 0.875 * $rem;
+    font-size: 0.875rem;
     padding-bottom: 1em;
     padding-top: 1em;
 }
@@ -282,8 +281,8 @@ footer.primary {
 @mixin header-font {
     font-family: $heading-fonts;
     font-weight: normal;
-    padding-bottom: 1.5 * $rem;
-    padding-top: 1.5 * $rem;
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
 
     &:first-child {
         padding-top: 0;
@@ -291,35 +290,35 @@ footer.primary {
 }
 
 h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
-    margin-top: -$rem;
+    margin-top: -1rem;
     padding-top: 0;
 }
 
 h1 {
     @include header-font;
 
-    font-size: 2.5 * $rem;
+    font-size: 2.5rem;
     line-height: 1.2;
 }
 
 h2 {
     @include header-font;
 
-    font-size: 2 * $rem;
+    font-size: 2rem;
     line-height: 1.2;
 }
 
 h3 {
     @include header-font;
 
-    font-size: 1.5 * $rem;
+    font-size: 1.5rem;
     line-height: 1.3;
 }
 
 h4 {
     @include header-font;
 
-    font-size: 1.25 * $rem;
+    font-size: 1.25rem;
     line-height: 1.4;
 }
 
@@ -329,7 +328,7 @@ h5, h6 {
 
 .meta {
     color: $meta-text;
-    font-size: 0.75 * $rem;
+    font-size: 0.75rem;
     margin-bottom: 0.5em;
     margin-top: -0.667em;
 }
@@ -356,7 +355,7 @@ blockquote, pre {
 blockquote {
     border-left: 1px solid $border;
     font-style: italic;
-    padding-left: $rem;
+    padding-left: 1rem;
 }
 
 article {
@@ -367,7 +366,7 @@ article {
     color: $meta-text;
 
     p {
-        font-size: 1.25 * $rem;
+        font-size: 1.25rem;
         line-height: 1.6;
         margin-bottom: 0.8em;
     }
@@ -377,7 +376,7 @@ article {
     background: mix($torso-bg, $meta-text, 80%);
     border-radius: 4px;
     color: $meta-text;
-    font-size: 1.5 * $rem;
+    font-size: 1.5rem;
     line-height: 1.34;
     margin-bottom: 1em;
     padding: 0.67em;
@@ -394,7 +393,7 @@ article {
 
 pre, code {
     font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", monospace;
-    font-size: 0.875 * $rem;
+    font-size: 0.875rem;
 }
 
 pre {
@@ -520,7 +519,7 @@ a.doc:before, a.docx:before, a.pdf:before, a.word:before, a[class*="icon-"]:befo
     overflow: visible;
 
     &:before {
-        font-size: 2 * $rem;
+        font-size: 2rem;
     }
 }
 
@@ -633,7 +632,7 @@ nav.primary {
         color: #000;
         content: "\f0c9";
         display: block;
-        font-size: 2.5 * $rem;
+        font-size: 2.5rem;
         padding: 0.35em 0.6em;
         position: absolute;
         right: 0;
@@ -657,7 +656,7 @@ nav.primary {
                 color: #FFF;
                 display: block;
                 font-family: $heading-fonts;
-                padding: 0.5em $rem;
+                padding: 0.5em 1rem;
 
                 &:before {
                     @include fontawesome;
@@ -723,7 +722,7 @@ nav.supplemental {
         ul {
             a {
                 color: $meta-text;
-                font-size: 0.75 * $rem;
+                font-size: 0.75rem;
                 line-height: 2;
                 padding: 0;
             }
@@ -765,7 +764,7 @@ label {
 fieldset .help {
     color: $meta-text;
     display: block;
-    font-size: 0.75 * $rem;
+    font-size: 0.75rem;
     line-height: 1.34;
     margin: 0;
     padding: 0;
@@ -776,7 +775,7 @@ input[type="password"], input[type="text"], textarea {
     color: $plain-text;
     display: block;
     font-family: $body-fonts;
-    font-size: $rem;
+    font-size: 1rem;
     margin: 0;
     padding: 0.4em 1%;
     width: 98%;
@@ -807,7 +806,7 @@ input[type="checkbox"], input[type="radio"] {
 input[type="file"] {
     color: #333;
     display: block;
-    font-size: $rem;
+    font-size: 1rem;
     width: 100%;
 }
 
@@ -918,7 +917,7 @@ table {
     width: 100%;
 
     caption {
-        font-size: 0.75 * $rem;
+        font-size: 0.75rem;
         margin-bottom: 0.75em;
     }
 
@@ -967,7 +966,7 @@ table {
         a {
             color: #FFF;
             display: block;
-            font-size: 0.75 * $rem;
+            font-size: 0.75rem;
         }
 
         li.active, li:hover {
@@ -984,7 +983,7 @@ table {
         a {
             color: #BBB;
             display: block;
-            font-size: 0.8125 * $rem;
+            font-size: 0.8125rem;
             line-height: 2;
         }
 
@@ -1020,7 +1019,7 @@ table {
 
                     a {
                         font-family: inherit;
-                        font-size: 0.8125 * $rem;
+                        font-size: 0.8125rem;
                     }
                 }
             }

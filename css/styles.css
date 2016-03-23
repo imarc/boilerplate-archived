@@ -42,8 +42,8 @@
   margin-left: auto;
   margin-right: auto;
   max-width: 1024px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 1rem;
+  padding-right: 1rem;
   position: relative; }
 
 .columns > hr {
@@ -58,7 +58,7 @@
       vertical-align: top; }
     .columns > hr {
       display: table-cell;
-      width: 16px; } }
+      width: 1rem; } }
 
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
@@ -80,7 +80,7 @@ html {
   background: #2A2A2A;
   color: #555;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%; }
@@ -134,28 +134,28 @@ aside.primary {
   background: #e5e5e5;
   border-radius: 4px;
   color: #888;
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-bottom: 1em;
   padding: 1.333em; }
 
 footer.primary {
   background: #2A2A2A;
   color: #888;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding-bottom: 1em;
   padding-top: 1em; }
 
 /* = Typography = */
 h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
-  margin-top: -16px;
+  margin-top: -1rem;
   padding-top: 0; }
 
 h1 {
   font-family: "Open Sans";
   font-weight: normal;
-  padding-bottom: 24px;
-  padding-top: 24px;
-  font-size: 40px;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  font-size: 2.5rem;
   line-height: 1.2; }
   h1:first-child {
     padding-top: 0; }
@@ -163,9 +163,9 @@ h1 {
 h2 {
   font-family: "Open Sans";
   font-weight: normal;
-  padding-bottom: 24px;
-  padding-top: 24px;
-  font-size: 32px;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  font-size: 2rem;
   line-height: 1.2; }
   h2:first-child {
     padding-top: 0; }
@@ -173,9 +173,9 @@ h2 {
 h3 {
   font-family: "Open Sans";
   font-weight: normal;
-  padding-bottom: 24px;
-  padding-top: 24px;
-  font-size: 24px;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  font-size: 1.5rem;
   line-height: 1.3; }
   h3:first-child {
     padding-top: 0; }
@@ -183,9 +183,9 @@ h3 {
 h4 {
   font-family: "Open Sans";
   font-weight: normal;
-  padding-bottom: 24px;
-  padding-top: 24px;
-  font-size: 20px;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  font-size: 1.25rem;
   line-height: 1.4; }
   h4:first-child {
     padding-top: 0; }
@@ -193,14 +193,14 @@ h4 {
 h5, h6 {
   font-family: "Open Sans";
   font-weight: normal;
-  padding-bottom: 24px;
-  padding-top: 24px; }
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem; }
   h5:first-child, h6:first-child {
     padding-top: 0; }
 
 .meta {
   color: #888;
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-bottom: 0.5em;
   margin-top: -0.667em; }
 
@@ -225,7 +225,7 @@ blockquote, pre {
 blockquote {
   border-left: 1px solid #DDD;
   font-style: italic;
-  padding-left: 16px; }
+  padding-left: 1rem; }
 
 article {
   margin-bottom: 3em; }
@@ -233,7 +233,7 @@ article {
 .intro {
   color: #888; }
   .intro p {
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 0.8em; }
 
@@ -241,7 +241,7 @@ article {
   background: #e5e5e5;
   border-radius: 4px;
   color: #888;
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.34;
   margin-bottom: 1em;
   padding: 0.67em;
@@ -253,7 +253,7 @@ article {
 
 pre, code {
   font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", monospace;
-  font-size: 14px; }
+  font-size: 0.875rem; }
 
 pre {
   white-space: pre;
@@ -355,7 +355,7 @@ a.doc:before, a.docx:before, a.pdf:before, a.word:before, a[class*="icon-"]:befo
   font-size: 0;
   overflow: visible; }
   .icon-only:before {
-    font-size: 32px; }
+    font-size: 2rem; }
 
 .icons {
   padding-left: 9px; }
@@ -459,7 +459,7 @@ nav.primary {
     color: #000;
     content: "\f0c9";
     display: block;
-    font-size: 40px;
+    font-size: 2.5rem;
     padding: 0.35em 0.6em;
     position: absolute;
     right: 0; }
@@ -475,7 +475,7 @@ nav.primary {
       color: #FFF;
       display: block;
       font-family: "Open Sans";
-      padding: 0.5em 16px; }
+      padding: 0.5em 1rem; }
       nav.primary ul li a:before {
         font-family: FontAwesome;
         -webkit-font-smoothing: antialiased;
@@ -515,7 +515,7 @@ nav.supplemental ul li {
     color: #0394CD; }
 nav.supplemental ul ul a {
   color: #888;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 2;
   padding: 0; }
 nav.supplemental > ul > li {
@@ -544,7 +544,7 @@ label {
 fieldset .help {
   color: #888;
   display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.34;
   margin: 0;
   padding: 0; }
@@ -554,7 +554,7 @@ input[type="password"], input[type="text"], textarea {
   color: #555;
   display: block;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   margin: 0;
   padding: 0.4em 1%;
   width: 98%; }
@@ -580,7 +580,7 @@ input[type="checkbox"], input[type="radio"] {
 input[type="file"] {
   color: #333;
   display: block;
-  font-size: 16px;
+  font-size: 1rem;
   width: 100%; }
 
 button, input[type="button"], input[type="reset"], input[type="submit"] {
@@ -711,7 +711,7 @@ table {
   margin-bottom: 1.5em;
   width: 100%; }
   table caption {
-    font-size: 12px;
+    font-size: 0.75rem;
     margin-bottom: 0.75em; }
   table td, table th {
     padding: 0.5em 1em;
@@ -745,7 +745,7 @@ table {
     nav.utility a {
       color: #FFF;
       display: block;
-      font-size: 12px; }
+      font-size: 0.75rem; }
     nav.utility li.active a, nav.utility li:hover a {
       color: #0394CD; }
 
@@ -755,7 +755,7 @@ table {
     nav.secondary a {
       color: #BBB;
       display: block;
-      font-size: 13px;
+      font-size: 0.8125rem;
       line-height: 2; }
     nav.secondary li.active a, nav.secondary li:hover a {
       color: #0394CD; }
@@ -774,7 +774,7 @@ table {
     float: none; }
     nav.primary ul li li a {
       font-family: inherit;
-      font-size: 13px; }
+      font-size: 0.8125rem; }
   nav.primary ul li.active, nav.primary ul li:hover {
     background: none; }
   nav.primary ul li:hover {
@@ -798,7 +798,7 @@ html.lt-ie9 nav.utility {
   html.lt-ie9 nav.utility a {
     color: #FFF;
     display: block;
-    font-size: 12px; }
+    font-size: 0.75rem; }
   html.lt-ie9 nav.utility li.active a, html.lt-ie9 nav.utility li:hover a {
     color: #0394CD; }
 html.lt-ie9 nav.secondary {
@@ -807,7 +807,7 @@ html.lt-ie9 nav.secondary {
   html.lt-ie9 nav.secondary a {
     color: #BBB;
     display: block;
-    font-size: 13px;
+    font-size: 0.8125rem;
     line-height: 2; }
   html.lt-ie9 nav.secondary li.active a, html.lt-ie9 nav.secondary li:hover a {
     color: #0394CD; }
@@ -825,7 +825,7 @@ html.lt-ie9 nav.primary ul li li {
   float: none; }
   html.lt-ie9 nav.primary ul li li a {
     font-family: inherit;
-    font-size: 13px; }
+    font-size: 0.8125rem; }
 html.lt-ie9 nav.primary ul li.active, html.lt-ie9 nav.primary ul li:hover {
   background: none; }
 html.lt-ie9 nav.primary ul li:hover {
