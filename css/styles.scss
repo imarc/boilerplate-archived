@@ -170,17 +170,6 @@ $heading-fonts: "Open Sans";
     }
 }
 
-@mixin bg-gradient($start-color, $end-color, $orientation: "vertical") {
-    $direction: if($orientation == vertical, 0, 1);
-    $direction: if($orientation == vertical, top, left);
-    $direction: if($orientation == vertical, bottom, right);
-
-    background-image: -webkit-linear-gradient($direction, $start-color, $end-color);
-    background-image: -o-linear-gradient($direction, $start-color, $end-color);
-    background-image: linear-gradient(to $direction, $start-color, $end-color);
-    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$direction}, startColorStr='#{ie-hex-str($start-color)}', endColorStr='#{ie-hex-str($end-color)}');
-}
-
 
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
@@ -233,7 +222,7 @@ img {
 
 /* = Layout = */
 header.primary {
-    @include bg-gradient(#2E2E2E, #1A1A1A);
+    background: #1a1a1a;
 
     .branding {
         h1 {
@@ -826,7 +815,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
 }
 
 button, input[type="button"], input[type="reset"], input[type="submit"], a.button {
-    @include bg-gradient($link, darken($link, 10%));
+    background: $link;
 
     border: 1px solid darken($link, 10%);
     border-radius: 4px;
@@ -851,7 +840,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"], a.butto
 }
 
 button.disabled, input[type="button"][disabled], input[type="reset"][disabled], input[type="submit"][disabled], a.button.disabled {
-    @include bg-gradient($meta-text, darken($meta-text, 10%));
+    background: $meta-text;
 
     border-color: darken($meta-text, 10%);
     cursor: default;

@@ -103,10 +103,7 @@ img {
 
 /* = Layout = */
 header.primary {
-  background-image: -webkit-linear-gradient(bottom, #2E2E2E, #1A1A1A);
-  background-image: -o-linear-gradient(bottom, #2E2E2E, #1A1A1A);
-  background-image: linear-gradient(to bottom, #2E2E2E, #1A1A1A);
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=bottom, startColorStr='#FF2E2E2E', endColorStr='#FF1A1A1A'); }
+  background: #1a1a1a; }
   header.primary .branding h1 {
     padding-bottom: 0; }
     header.primary .branding h1 a, header.primary .branding h1 a:hover {
@@ -589,10 +586,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"] {
   cursor: pointer; }
 
 button, input[type="button"], input[type="reset"], input[type="submit"], a.button {
-  background-image: -webkit-linear-gradient(bottom, #0394CD, #02709b);
-  background-image: -o-linear-gradient(bottom, #0394CD, #02709b);
-  background-image: linear-gradient(to bottom, #0394CD, #02709b);
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=bottom, startColorStr='#FF0394CD', endColorStr='#FF02709B');
+  background: #0394CD;
   border: 1px solid #02709b;
   border-radius: 4px;
   color: #FFF;
@@ -611,10 +605,7 @@ button, input[type="button"], input[type="reset"], input[type="submit"], a.butto
     background: #0084B8; }
 
 button.disabled, input[type="button"][disabled], input[type="reset"][disabled], input[type="submit"][disabled], a.button.disabled {
-  background-image: -webkit-linear-gradient(bottom, #888, #6f6f6f);
-  background-image: -o-linear-gradient(bottom, #888, #6f6f6f);
-  background-image: linear-gradient(to bottom, #888, #6f6f6f);
-  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=bottom, startColorStr='#FF888888', endColorStr='#FF6F6F6F');
+  background: #888;
   border-color: #6f6f6f;
   cursor: default; }
 
