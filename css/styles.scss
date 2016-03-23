@@ -122,7 +122,7 @@ $heading-fonts: "Open Sans";
 }
 
 @mixin fontawesome($character:"") {
-	font: normal normal normal $rem unquote("/") 1 FontAwesome;
+	font: normal normal normal 1rem unquote("/") 1 FontAwesome;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
 	speak: none;
@@ -249,13 +249,10 @@ header.primary {
 }
 
 .main section {
-    &:after {
-        background: $border;
-        content: "";
-        display: block;
-        height: 1px;
+
+    &:not(:last-child) {
         margin-bottom: 1.5em;
-        margin-top: 1.5em;
+        border-bottom: 1px solid $border;
     }
 }
 
@@ -506,26 +503,6 @@ nav {
 }
 
 /* = Iconography = */
-a.doc:before, a.docx:before, a.pdf:before, a.word:before, [class*="icon-"]:before {
-    @include fontawesome;
-}
-
-a.doc:before, a.docx:before, a.pdf:before, a.word:before, a[class*="icon-"]:before {
-    display: inline-block;
-    padding-right: 0.1em;
-    text-align: center;
-    width: 1em;
-}
-
-.icon-only {
-    font-size: 0;
-    overflow: visible;
-
-    &:before {
-        font-size: 2rem;
-    }
-}
-
 .icons {
     padding-left: 9px;
 
@@ -544,85 +521,6 @@ a.button[class*="icon-"]:before {
 }
 
 /* = Icon Definitions = */
-.icon-download-alt:before {
-    content: "\f019";
-}
-.icon-file:before {
-    content: "\f15b";
-}
-
-a.doc:before, a.word:before, a.docx:before, a.pdf:before, .icon-file-alt:before {
-    content: "\f016";
-}
-.icon-file-text:before {
-    content: "\f15c";
-}
-.icon-file-text-alt:before {
-    content: "\f0f6";
-}
-
-.icon-exclamation:before {
-    content: "\f12a";
-}
-.icon-info:before {
-    content: "\f129";
-}
-.icon-ok:before {
-    content: "\f00c";
-}
-.icon-question:before {
-    content: "\f128";
-}
-.icon-remove:before {
-    content: "\f00d";
-}
-
-.icon-envelope:before {
-    content: "\f0e0";
-}
-.icon-facebook:before {
-    content: "\f09a";
-}
-.icon-rss:before {
-    content: "\f09e";
-}
-.icon-linkedin:before {
-    content: "\f0e1";
-}
-.icon-twitter:before {
-    content: "\f099";
-}
-.icon-youtube:before {
-    content: "\f167";
-}
-
-.icon-cog:before {
-    content: "\f013";
-}
-.icon-comment:before {
-    content: "\f075";
-}
-.icon-globe:before {
-    content: "\f0ac";
-}
-.icon-map-marker:before {
-    content: "\f041";
-}
-.icon-mobile-phone:before {
-    content: "\f10b";
-}
-.icon-phone:before {
-    content: "\f095";
-}
-.icon-play:before {
-    content: "\f04b";
-}
-.icon-search:before {
-    content: "\f002";
-}
-.icon-youtube-play:before {
-    content: "\f16a";
-}
 
 /* = Navigation = */
 nav.primary {
