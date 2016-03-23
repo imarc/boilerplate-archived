@@ -136,6 +136,15 @@ $heading-fonts: "Open Sans";
 	}
 }
 
+@mixin no-bullets {
+    list-style: none;
+    padding-left: 0;
+
+    li:before {
+        display: none;
+    }
+}
+
 @mixin transition($properties: all, $duration: 250ms, $easing: ease-in-out) {
     @if length($properties) > 1 {
         -webkit-transition-property: $properties;
