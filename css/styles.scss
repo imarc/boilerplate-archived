@@ -27,28 +27,27 @@
 @import url(//fonts.googleapis.com/css?family=Open+Sans:400,600);
 
 @font-face {
-  font-family: 'FontAwesome';
-  src: url('../fonts/fontawesome-webfont.eot');
-  src: url('../fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/fontawesome-webfont.woff') format('woff'), url('../fonts/fontawesome-webfont.ttf') format('truetype'), url('../fonts/fontawesome-webfont.svg#fontawesomeregular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+    font-family: "FontAwesome";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../fonts/fontawesome-webfont.eot");
+    src: url("../fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg#fontawesomeregular") format("svg");
 }
 
 
 /* = Variables = */
 $rem:        16px;
-
-$matte:      #2a2a2a; // Mine Shaft
+$matte:      #2A2A2A; // Mine Shaft
 $torso-bg:   #FCFCFC; // Alabaster
 $selection:  #FFF1B5; // Buttermilk
 
-$plain-text: #555555; // Emperor
-$meta-text:  #888888; // Gray
+$plain-text: #555; // Emperor
+$meta-text:  #888; // Gray
 $link:       #0394CD; // iMarc Blue
-$link-hover: #888888; // Gray
-$highlight:  #f2006d; // iMarc Pink
+$link-hover: #888; // Gray
+$highlight:  #F2006D; // iMarc Pink
 
-$border:     #DDDDDD; // Alto
+$border:     #DDD; // Alto
 
 $success:    #D2F8B0; // Gossip
 $error:      #FFD8D9; // Cosmos
@@ -60,9 +59,8 @@ $heading-fonts: "Open Sans";
 
 /* = Mixins = */
 @mixin grouping {
-    &:before,
-    &:after {
-        content: '';
+    &:before, &:after {
+        content: "";
         display: table;
     }
 
@@ -71,8 +69,7 @@ $heading-fonts: "Open Sans";
     }
 }
 
-.container,
-.group {
+.container, .group {
     @include grouping;
 }
 
@@ -89,7 +86,7 @@ $heading-fonts: "Open Sans";
     @include container;
 }
 
-@mixin columns($query: 'min-width: 600px') {
+@mixin columns($query: "min-width: 600px") {
     > hr {
         display: none;
     }
@@ -119,16 +116,16 @@ $heading-fonts: "Open Sans";
 @mixin fontawesome {
     font-family: FontAwesome;
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     font-style: normal;
     font-weight: normal;
+    -moz-osx-font-smoothing: grayscale;
     speak: none;
     text-transform: none;
 }
 
 @mixin no-bullets {
-    padding-left: 0;
     list-style: none;
+    padding-left: 0;
 
     li:before {
         display: none;
@@ -165,30 +162,26 @@ $heading-fonts: "Open Sans";
     }
 }
 
-@mixin bg-gradient($start-color, $end-color, $orientation: 'vertical') {
+@mixin bg-gradient($start-color, $end-color, $orientation: "vertical") {
     $direction: if($orientation == vertical, 0, 1);
-    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$direction}, startColorStr='#{ie-hex-str($start-color)}', endColorStr='#{ie-hex-str($end-color)}');
-
     $direction: if($orientation == vertical, top, left);
+    $direction: if($orientation == vertical, bottom, right);
+
     background-image: -webkit-linear-gradient($direction, $start-color, $end-color);
     background-image: -o-linear-gradient($direction, $start-color, $end-color);
-
-    $direction: if($orientation == vertical, bottom, right);
     background-image: linear-gradient(to $direction, $start-color, $end-color);
+    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$direction}, startColorStr='#{ie-hex-str($start-color)}', endColorStr='#{ie-hex-str($end-color)}');
 }
 
 
 /* = Base = */
-a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite,
-code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6,
-header, html, hr, i, iframe, img, label, li, nav, object, ol, p, pre, section,
-span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
     border: 0;
-    -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     box-sizing: border-box;
-    font-size: 100%;
     font: inherit;
+    font-size: 100%;
     margin: 0;
     outline: 0;
     padding: 0;
@@ -205,8 +198,8 @@ html {
     font-family: $body-fonts;
     font-size: $rem;
     line-height: 1.5;
-    -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
 }
 
 body {
@@ -232,36 +225,35 @@ img {
 
 /* = Layout = */
 header.primary {
-    @include bg-gradient(#2e2e2e, #1a1a1a);
+    @include bg-gradient(#2E2E2E, #1A1A1A);
 
     .branding {
         h1 {
             padding-bottom: 0;
 
-            a,
-            a:hover {
+            a, a:hover {
                 color: $torso-bg;
                 display: block;
-                padding-bottom: .5em;
-                padding-top: .5em;
+                padding-bottom: 0.5em;
+                padding-top: 0.5em;
             }
         }
     }
 }
 
 .torso {
-    padding-top: 1.5em;
     padding-bottom: 1.5em;
+    padding-top: 1.5em;
 }
 
 .main section {
     &:after {
-        content: '';
-        display: block;
         background: $border;
-        margin-top: 1.5em;
-        margin-bottom: 1.5em;
+        content: "";
+        display: block;
         height: 1px;
+        margin-bottom: 1.5em;
+        margin-top: 1.5em;
     }
 }
 
@@ -273,7 +265,7 @@ aside.primary {
     background: mix($torso-bg, $meta-text, 80%);
     border-radius: 4px;
     color: $meta-text;
-    font-size: .875 * $rem;
+    font-size: 0.875 * $rem;
     margin-bottom: 1em;
     padding: 1.333em;
 }
@@ -281,86 +273,82 @@ aside.primary {
 footer.primary {
     background: $matte;
     color: $meta-text;
-    font-size: .875 * $rem;
-    padding-top: 1em;
+    font-size: 0.875 * $rem;
     padding-bottom: 1em;
+    padding-top: 1em;
 }
 
 /* = Typography = */
 @mixin header-font {
     font-family: $heading-fonts;
     font-weight: normal;
-
-    padding-top: 1.5 * $rem;
     padding-bottom: 1.5 * $rem;
+    padding-top: 1.5 * $rem;
 
     &:first-child {
         padding-top: 0;
     }
 }
 
-h1 + h2,
-h2 + h3,
-h3 + h4,
-h4 + h5,
-h5 + h6 {
-    padding-top: 0;
+h1 + h2, h2 + h3, h3 + h4, h4 + h5, h5 + h6 {
     margin-top: -$rem;
+    padding-top: 0;
 }
 
 h1 {
     @include header-font;
+
     font-size: 2.5 * $rem;
     line-height: 1.2;
 }
 
 h2 {
     @include header-font;
+
     font-size: 2 * $rem;
     line-height: 1.2;
 }
 
 h3 {
     @include header-font;
+
     font-size: 1.5 * $rem;
     line-height: 1.3;
 }
 
 h4 {
     @include header-font;
+
     font-size: 1.25 * $rem;
     line-height: 1.4;
 }
 
-h5,
-h6 {
+h5, h6 {
     @include header-font;
 }
 
 .meta {
     color: $meta-text;
-    font-size: .75 * $rem;
-    margin-bottom: .5em;
-    margin-top: -.667em;
+    font-size: 0.75 * $rem;
+    margin-bottom: 0.5em;
+    margin-top: -0.667em;
 }
 
 abbr[title] {
     border-bottom: 1px dotted;
 }
 
-b,
-strong {
+b, strong {
     font-weight: bold;
 }
 
-i,
-em {
+i, em {
     font-style: italic;
 }
 
-blockquote,
-pre {
+blockquote, pre {
     @include grouping;
+
     color: $meta-text;
     margin-bottom: 1.5em;
 }
@@ -381,7 +369,7 @@ article {
     p {
         font-size: 1.25 * $rem;
         line-height: 1.6;
-        margin-bottom: .8em;
+        margin-bottom: 0.8em;
     }
 }
 
@@ -391,9 +379,8 @@ article {
     color: $meta-text;
     font-size: 1.5 * $rem;
     line-height: 1.34;
-
     margin-bottom: 1em;
-    padding: .67em;
+    padding: 0.67em;
     text-shadow: 0 1px 0 lighten($meta-text, 45%);
 
     a {
@@ -405,10 +392,9 @@ article {
     }
 }
 
-pre,
-code {
-    font-family: Menlo, 'Ubuntu Mono', Consolas, 'Courier New', monospace;
-    font-size: .875 * $rem;
+pre, code {
+    font-family: Menlo, "Ubuntu Mono", Consolas, "Courier New", monospace;
+    font-size: 0.875 * $rem;
 }
 
 pre {
@@ -438,8 +424,7 @@ a {
     color: $link;
     text-decoration: none;
 
-    &:hover,
-    &:active {
+    &:hover, &:active {
         color: $link-hover;
     }
 
@@ -448,20 +433,15 @@ a {
     }
 }
 
-ol,
-ul,
-dl {
+ol, ul, dl {
     margin-bottom: 1.5em;
 }
 
-ol,
-ul {
+ol, ul {
     padding-left: 2em;
 
-    li,
-    dt,
-    dd {
-        margin-bottom: .5em;
+    li, dt, dd {
+        margin-bottom: 0.5em;
     }
 }
 
@@ -471,15 +451,14 @@ ul {
 
 dt {
     font-weight: bold;
-    padding-left: .5em;
+    padding-left: 0.5em;
 }
 
 dd {
     padding-left: 2em;
 }
 
-sup,
-sub {
+sup, sub {
     font-size: 80%;
 }
 
@@ -493,22 +472,23 @@ sub {
 
 nav {
     @include grouping;
+
     position: relative;
 
     ul {
         list-style: none;
-        padding-left: 0;
         margin-bottom: 0;
+        padding-left: 0;
         position: relative;
 
         li {
-            white-space: nowrap;
-            margin-bottom: 0;
-            float: left;
             display: block;
+            float: left;
+            margin-bottom: 0;
+            white-space: nowrap;
 
             a {
-                padding: .5em 10px;
+                padding: 0.5em 10px;
             }
         }
     }
@@ -524,28 +504,20 @@ nav {
 }
 
 /* = Iconography = */
-a.doc:before,
-a.docx:before,
-a.pdf:before,
-a.word:before,
-[class*="icon-"]:before {
+a.doc:before, a.docx:before, a.pdf:before, a.word:before, [class*="icon-"]:before {
     @include fontawesome;
 }
 
-a.doc:before,
-a.docx:before,
-a.pdf:before,
-a.word:before,
-a[class*="icon-"]:before {
-    width: 1em;
-    padding-right: .1em;
-    text-align: center;
+a.doc:before, a.docx:before, a.pdf:before, a.word:before, a[class*="icon-"]:before {
     display: inline-block;
+    padding-right: 0.1em;
+    text-align: center;
+    width: 1em;
 }
 
 .icon-only {
-    overflow: visible;
     font-size: 0;
+    overflow: visible;
 
     &:before {
         font-size: 2 * $rem;
@@ -558,120 +530,111 @@ a[class*="icon-"]:before {
     li {
         list-style: none;
 
-        a.doc:before,
-        a.docx:before,
-        a.pdf:before,
-        a.word:before,
-        a[class*="icon-"]:before {
+        a.doc:before, a.docx:before, a.pdf:before, a.word:before, a[class*="icon-"]:before {
             color: $plain-text;
-            padding-right: .5em;
+            padding-right: 0.5em;
         }
     }
 }
 
 a.button[class*="icon-"]:before {
-    padding-right: .5em;
+    padding-right: 0.5em;
 }
 
 /* = Icon Definitions = */
 .icon-download-alt:before {
-    content: '\f019';
+    content: "\f019";
 }
 .icon-file:before {
-    content: '\f15b';
+    content: "\f15b";
 }
 
-a.doc:before,
-a.word:before,
-a.docx:before,
-a.pdf:before,
-.icon-file-alt:before {
-    content: '\f016';
+a.doc:before, a.word:before, a.docx:before, a.pdf:before, .icon-file-alt:before {
+    content: "\f016";
 }
 .icon-file-text:before {
-    content: '\f15c';
+    content: "\f15c";
 }
 .icon-file-text-alt:before {
-    content: '\f0f6';
+    content: "\f0f6";
 }
 
 .icon-exclamation:before {
-    content: '\f12a';
+    content: "\f12a";
 }
 .icon-info:before {
-    content: '\f129';
+    content: "\f129";
 }
 .icon-ok:before {
-    content: '\f00c';
+    content: "\f00c";
 }
 .icon-question:before {
-    content: '\f128';
+    content: "\f128";
 }
 .icon-remove:before {
-    content: '\f00d';
+    content: "\f00d";
 }
 
 .icon-envelope:before {
-    content: '\f0e0';
+    content: "\f0e0";
 }
 .icon-facebook:before {
-    content: '\f09a';
+    content: "\f09a";
 }
 .icon-rss:before {
-    content: '\f09e';
+    content: "\f09e";
 }
 .icon-linkedin:before {
-    content: '\f0e1';
+    content: "\f0e1";
 }
 .icon-twitter:before {
-    content: '\f099';
+    content: "\f099";
 }
 .icon-youtube:before {
-    content: '\f167';
+    content: "\f167";
 }
 
 .icon-cog:before {
-    content: '\f013';
+    content: "\f013";
 }
 .icon-comment:before {
-    content: '\f075';
+    content: "\f075";
 }
 .icon-globe:before {
-    content: '\f0ac';
+    content: "\f0ac";
 }
 .icon-map-marker:before {
-    content: '\f041';
+    content: "\f041";
 }
 .icon-mobile-phone:before {
-    content: '\f10b';
+    content: "\f10b";
 }
 .icon-phone:before {
-    content: '\f095';
+    content: "\f095";
 }
 .icon-play:before {
-    content: '\f04b';
+    content: "\f04b";
 }
 .icon-search:before {
-    content: '\f002';
+    content: "\f002";
 }
 .icon-youtube-play:before {
-    content: '\f16a';
+    content: "\f16a";
 }
 
 /* = Navigation = */
 nav.primary {
     z-index: 1;
 
-    &:before,
-    ul:before {
+    &:before, ul:before {
         @include fontawesome;
 
         bottom: 100%;
         color: #000;
-        content: '\f0c9';
+        content: "\f0c9";
         display: block;
         font-size: 2.5 * $rem;
-        padding: .35em .6em;
+        padding: 0.35em 0.6em;
         position: absolute;
         right: 0;
     }
@@ -682,8 +645,8 @@ nav.primary {
         }
 
         li {
-            float: none;
             display: none;
+            float: none;
 
             .dropdown {
                 display: none;
@@ -691,29 +654,28 @@ nav.primary {
 
             a {
                 border-top: 1px solid #212121;
+                color: #FFF;
                 display: block;
-                padding: .5em $rem;
-                color: #fff;
                 font-family: $heading-fonts;
+                padding: 0.5em $rem;
 
                 &:before {
                     @include fontawesome;
 
-                    content: '\f054';
+                    content: "\f054";
                     float: right;
                 }
             }
         }
 
-        li:hover,
-        li.active {
-            background: #1a1a1a;
+        li:hover, li.active {
+            background: #1A1A1A;
 
             > a {
                 color: $link;
 
                 &:before {
-                    margin-right: -.5em;
+                    margin-right: -0.5em;
                 }
             }
         }
@@ -749,8 +711,8 @@ nav.supplemental {
             float: none;
 
             a {
-                padding: .25em 0;
                 display: block;
+                padding: 0.25em 0;
             }
 
             a:hover {
@@ -760,43 +722,31 @@ nav.supplemental {
 
         ul {
             a {
-                padding: 0;
                 color: $meta-text;
-                font-size: .75 * $rem;
+                font-size: 0.75 * $rem;
                 line-height: 2;
+                padding: 0;
             }
         }
     }
 
     > ul {
         > li {
-            padding-bottom: .5em;
+            padding-bottom: 0.5em;
         }
         > li ~ li {
-            padding-top: .5em;
             border-top: 1px solid $border;
+            padding-top: 0.5em;
         }
     }
 }
 
 /* = Forms = */
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
     font-size: 100%;
 }
 
-.button,
-.checkboxes,
-.file,
-.password,
-.radios,
-.reset,
-.select,
-.submit,
-.text,
-.textarea {
+.button, .checkboxes, .file, .password, .radios, .reset, .select, .submit, .text, .textarea {
     margin-bottom: 1.5em;
 }
 
@@ -809,22 +759,20 @@ label {
 }
 
 .required {
-    color: #ac181b;
+    color: #AC181B;
 }
 
 fieldset .help {
     color: $meta-text;
     display: block;
-    font-size: .75 * $rem;
+    font-size: 0.75 * $rem;
     line-height: 1.34;
     margin: 0;
     padding: 0;
 }
 
-input[type="password"],
-input[type="text"],
-textarea {
-    border: 1px solid #ccc;
+input[type="password"], input[type="text"], textarea {
+    border: 1px solid #CCC;
     color: $plain-text;
     display: block;
     font-family: $body-fonts;
@@ -848,14 +796,12 @@ textarea {
     resize: vertical;
 }
 
-.radio,
-.checkbox {
+.radio, .checkbox {
     font-weight: normal;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
-    padding: 0
+input[type="checkbox"], input[type="radio"] {
+    padding: 0;
 }
 
 input[type="file"] {
@@ -865,30 +811,24 @@ input[type="file"] {
     width: 100%;
 }
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-    -moz-appearance: button;
+button, input[type="button"], input[type="reset"], input[type="submit"] {
     -webkit-appearance: button;
+    -moz-appearance: button;
     cursor: pointer;
 }
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"],
-a.button {
+button, input[type="button"], input[type="reset"], input[type="submit"], a.button {
     @include bg-gradient($link, darken($link, 10%));
+
     border: 1px solid darken($link, 10%);
     border-radius: 4px;
-    color: #fff;
+    color: #FFF;
     display: inline-block;
     font-family: $heading-fonts;
     line-height: 1;
-    margin-bottom: .5em;
-    margin-right: .5em;
-    padding: .6em .7em;
+    margin-bottom: 0.5em;
+    margin-right: 0.5em;
+    padding: 0.6em 0.7em;
     text-align: center;
 
     &:hover {
@@ -902,18 +842,14 @@ a.button {
     }
 }
 
-button.disabled,
-input[type="button"][disabled],
-input[type="reset"][disabled],
-input[type="submit"][disabled],
-a.button.disabled {
+button.disabled, input[type="button"][disabled], input[type="reset"][disabled], input[type="submit"][disabled], a.button.disabled {
     @include bg-gradient($meta-text, darken($meta-text, 10%));
+
     border-color: darken($meta-text, 10%);
     cursor: default;
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+button::-moz-focus-inner, input::-moz-focus-inner {
     border: 0;
     padding: 0;
 }
@@ -933,41 +869,44 @@ input::-moz-focus-inner {
     &:before {
         @include fontawesome;
 
-        content:'';
+        content:"";
         display: block;
         font-size: 20px;
         height: 23px;
         left: 1em;
         position: absolute;
-        top: .6em;
+        top: 0.6em;
         width: 23px;
     }
 }
 
 .success {
     @include messaging;
+
     background: $success;
 
     &:before {
-        content: '\f00c';
+        content: "\f00c";
     }
 }
 
 .error {
     @include messaging;
+
     background: $error;
 
     &:before {
-        content: '\f12a';
+        content: "\f12a";
     }
 }
 
 .info {
     @include messaging;
+
     background: $info;
 
     &:before {
-        content: '\f129';
+        content: "\f129";
     }
 }
 
@@ -979,33 +918,31 @@ table {
     width: 100%;
 
     caption {
-        font-size: .75 * $rem;
-        margin-bottom: .75em;
+        font-size: 0.75 * $rem;
+        margin-bottom: 0.75em;
     }
 
-    td,
-    th {
-        padding: .5em 1em;
+    td, th {
+        padding: 0.5em 1em;
         text-align: left;
         vertical-align: top;
     }
 
     th {
-        font-weight: bold;
         background: $plain-text;
         border: 1px solid $plain-text;
-        color: #fff;
+        color: #FFF;
+        font-weight: bold;
         text-transform: uppercase;
     }
 
     td {
-        border: 1px solid #e3e3e3;
+        border: 1px solid #E3E3E3;
     }
 
     tr:nth-child(even) td {
-        background: #f3f3f3;
+        background: #F3F3F3;
     }
-
 }
 
 
@@ -1015,7 +952,6 @@ table {
 
 /* = Media Queries = */
 @include tablets-and-up {
-
     .main aside {
         float: right;
         margin-left: 1em;
@@ -1029,13 +965,12 @@ table {
         top: 1em;
 
         a {
+            color: #FFF;
             display: block;
-            color: #fff;
-            font-size: .75 * $rem;
+            font-size: 0.75 * $rem;
         }
 
-        li.active,
-        li:hover {
+        li.active, li:hover {
             a {
                 color: $link;
             }
@@ -1043,18 +978,17 @@ table {
     }
 
     nav.secondary {
+        background: #2E2E2E;
         display: block;
-        background: #2e2e2e;
 
         a {
+            color: #BBB;
             display: block;
-            color: #bbbbbb;
-            font-size: .8125 * $rem;
+            font-size: 0.8125 * $rem;
             line-height: 2;
         }
 
-        li.active,
-        li:hover {
+        li.active, li:hover {
             a {
                 color: $link;
             }
@@ -1062,15 +996,14 @@ table {
     }
 
     nav.primary {
-        &:before,
-        ul:before {
+        &:before, ul:before {
             display: none;
         }
 
         ul {
             li {
-                float: left;
                 display: block;
+                float: left;
                 a {
                     border-top: 0;
                     font-family: $heading-fonts;
@@ -1086,27 +1019,26 @@ table {
                     float: none;
 
                     a {
-                        font-size: .8125 * $rem;
                         font-family: inherit;
+                        font-size: 0.8125 * $rem;
                     }
                 }
             }
 
-            li.active,
-            li:hover {
+            li.active, li:hover {
                 background: none;
             }
 
             li:hover {
+                background: #333;
                 position: relative;
-                background: #333333;
 
                 .dropdown {
+                    background: #333;
                     display: block;
-                    position: absolute;
                     left: 0;
                     min-width: 100%;
-                    background: #333333;
+                    position: absolute;
                 }
             }
         }
@@ -1114,7 +1046,6 @@ table {
 }
 
 @include desktops-and-up {
-
     .torso aside.primary {
         display: block;
         float: right;
@@ -1122,8 +1053,8 @@ table {
     }
     .torso aside.primary ~ .main {
         float: left;
-        width: 75%;
         padding-right: 2em;
+        width: 75%;
     }
 }
 
@@ -1135,8 +1066,7 @@ table {
         text-shadow: none !important;
     }
 
-    a,
-    a:visited {
+    a, a:visited {
         text-decoration: underline;
     }
 
@@ -1152,9 +1082,7 @@ table {
         margin: 0.5cm;
     }
 
-    p,
-    h2,
-    h3 {
+    p, h2, h3 {
         orphans: 3;
         widows: 3;
     }
