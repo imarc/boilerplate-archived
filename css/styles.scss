@@ -12,7 +12,6 @@
  * Base
  * Layout
  * Typography
- * Iconography
  * Navigation
  * Forms
  * Messaging
@@ -502,26 +501,6 @@ nav {
     border-left: 1px solid $border;
 }
 
-/* = Iconography = */
-.icons {
-    padding-left: 9px;
-
-    li {
-        list-style: none;
-
-        a.doc:before, a.docx:before, a.pdf:before, a.word:before, a[class*="icon-"]:before {
-            color: $plain-text;
-            padding-right: 0.5em;
-        }
-    }
-}
-
-a.button[class*="icon-"]:before {
-    padding-right: 0.5em;
-}
-
-/* = Icon Definitions = */
-
 /* = Navigation = */
 nav.primary {
     z-index: 1;
@@ -958,6 +937,7 @@ table {
     }
 }
 
+/* = Print Styles = */
 @media print {
     * {
         background: transparent !important;

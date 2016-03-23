@@ -12,7 +12,6 @@
  * Base
  * Layout
  * Typography
- * Iconography
  * Navigation
  * Forms
  * Messaging
@@ -328,19 +327,6 @@ nav {
 .main nav ul li ~ li {
   border-left: 1px solid #DDD; }
 
-/* = Iconography = */
-.icons {
-  padding-left: 9px; }
-  .icons li {
-    list-style: none; }
-    .icons li a.doc:before, .icons li a.docx:before, .icons li a.pdf:before, .icons li a.word:before, .icons li a[class*="icon-"]:before {
-      color: #555;
-      padding-right: 0.5em; }
-
-a.button[class*="icon-"]:before {
-  padding-right: 0.5em; }
-
-/* = Icon Definitions = */
 /* = Navigation = */
 nav.primary {
   z-index: 1; }
@@ -748,6 +734,7 @@ html.lt-ie9 .torso aside.primary ~ .main {
   padding-right: 2em;
   width: 75%; }
 
+/* = Print Styles = */
 @media print {
   * {
     background: transparent !important;
