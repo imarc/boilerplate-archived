@@ -1,0 +1,32 @@
+{
+  "always-semicolon": true,
+  "block-indent": "    ",
+  "color-case": "upper",
+  "color-shorthand": true,
+  "element-case": "lower",
+  "eof-newline": true,
+  "leading-zero": true,
+  "quotes": "double",
+  "remove-empty-rulesets": true,
+  "space-after-combinator": " ",
+  "space-after-opening-brace": "\n",
+  "space-after-selector-delimiter": " ",
+  "space-before-closing-brace": "\n",
+  "space-before-colon": "",
+  "space-before-combinator": " ",
+  "space-before-opening-brace": " ",
+  "space-before-selector-delimiter": "",
+  "space-between-declarations": "\n",
+  "strip-spaces": true,
+  "unitless-zero": true,
+  "vendor-prefix-align": false,
+  "sort-order-fallback": "abc",
+  "sort-order": [
+	[
+	  "$variable"
+	],
+	[
+	  "$include"
+	]
+  ]
+}
