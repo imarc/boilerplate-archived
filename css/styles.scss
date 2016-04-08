@@ -64,12 +64,12 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
 
 /* = Mixins = */
 @mixin grouping {
-    &:before, &:after {
+    &::before, &::after {
         content: "";
         display: table;
     }
 
-    &:after {
+    &::after {
         clear: both;
     }
 }
@@ -137,7 +137,7 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
     list-style: none;
     padding-left: 0;
 
-    li:before {
+    li::before {
         display: none;
     }
 }
@@ -537,7 +537,7 @@ nav {
 nav.primary {
     z-index: 1;
 
-    &:before, ul:before {
+    &::before, ul::before {
         @include fontawesome;
 
         bottom: 100%;
@@ -551,7 +551,7 @@ nav.primary {
     }
 
     ul {
-        &:before {
+        &::before {
             color: $plain-text;
         }
 
@@ -570,7 +570,7 @@ nav.primary {
                 font-family: $heading-fonts;
                 padding: 0.5em 1rem;
 
-                &:before {
+                &::before {
                     @include fontawesome;
 
                     content: "\f054";
@@ -585,7 +585,7 @@ nav.primary {
             > a {
                 color: $link;
 
-                &:before {
+                &::before {
                     margin-right: -0.5em;
                 }
             }
@@ -593,7 +593,7 @@ nav.primary {
     }
 
     ul[data-focus="focus"] {
-        &:before {
+        &::before {
             display: none;
         }
 
@@ -776,7 +776,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
         text-decoration: underline;
     }
 
-    &:before {
+    &::before {
         @include fontawesome;
 
         content:"";
@@ -795,7 +795,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
     background: $success;
 
-    &:before {
+    &::before {
         content: "\f00c";
     }
 }
@@ -805,7 +805,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
     background: $error;
 
-    &:before {
+    &::before {
         content: "\f12a";
     }
 }
@@ -815,7 +815,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
     background: $info;
 
-    &:before {
+    &::before {
         content: "\f129";
     }
 }
@@ -906,7 +906,7 @@ table {
     }
 
     nav.primary {
-        &:before, ul:before {
+        &::before, ul::before {
             display: none;
         }
 
@@ -918,7 +918,7 @@ table {
                     border-top: 0;
                     font-family: $heading-fonts;
 
-                    &:before {
+                    &::before {
                         display: none;
                     }
                 }

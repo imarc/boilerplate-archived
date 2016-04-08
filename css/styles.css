@@ -31,10 +31,10 @@
   src: url("../fonts/fontawesome-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg#fontawesomeregular") format("svg"); }
 /* = Variables = */
 /* = Mixins = */
-.container:before, .container:after, .group:before, .group:after {
+.container::before, .container::after, .group::before, .group::after {
   content: "";
   display: table; }
-.container:after, .group:after {
+.container::after, .group::after {
   clear: both; }
 
 .container {
@@ -101,13 +101,13 @@ img {
   text-shadow: none; }
 
 /* = Layout = */
-.container:before, .container:after,
-.group:before,
-.group:after {
+.container::before, .container::after,
+.group::before,
+.group::after {
   content: "";
   display: table; }
-.container:after,
-.group:after {
+.container::after,
+.group::after {
   clear: both; }
 
 .container {
@@ -239,10 +239,10 @@ i, em {
 blockquote, pre {
   color: #888;
   margin-bottom: 1.5em; }
-  blockquote:before, blockquote:after, pre:before, pre:after {
+  blockquote::before, blockquote::after, pre::before, pre::after {
     content: "";
     display: table; }
-  blockquote:after, pre:after {
+  blockquote::after, pre::after {
     clear: both; }
 
 blockquote {
@@ -334,10 +334,10 @@ sub {
 
 nav {
   position: relative; }
-  nav:before, nav:after {
+  nav::before, nav::after {
     content: "";
     display: table; }
-  nav:after {
+  nav::after {
     clear: both; }
   nav ul {
     list-style: none;
@@ -361,7 +361,7 @@ nav {
 /* = Navigation = */
 nav.primary {
   z-index: 1; }
-  nav.primary:before, nav.primary ul:before {
+  nav.primary::before, nav.primary ul::before {
     font: normal normal normal 1rem / 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -377,7 +377,7 @@ nav.primary {
     padding: 0.35em 0.6em;
     position: absolute;
     right: 0; }
-  nav.primary ul:before {
+  nav.primary ul::before {
     color: #555; }
   nav.primary ul li {
     display: none;
@@ -390,7 +390,7 @@ nav.primary {
       display: block;
       font-family: "Open Sans", Arial, sans-serif;
       padding: 0.5em 1rem; }
-      nav.primary ul li a:before {
+      nav.primary ul li a::before {
         font: normal normal normal 1rem / 1 FontAwesome;
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
@@ -404,9 +404,9 @@ nav.primary {
     background: #1A1A1A; }
     nav.primary ul li:hover > a, nav.primary ul li.active > a {
       color: #0394CD; }
-      nav.primary ul li:hover > a:before, nav.primary ul li.active > a:before {
+      nav.primary ul li:hover > a::before, nav.primary ul li.active > a::before {
         margin-right: -0.5em; }
-  nav.primary ul[data-focus="focus"]:before {
+  nav.primary ul[data-focus="focus"]::before {
     display: none; }
   nav.primary ul[data-focus="focus"] li {
     display: block; }
@@ -539,7 +539,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   background: #D2F8B0; }
   .success a {
     text-decoration: underline; }
-  .success:before {
+  .success::before {
     font: normal normal normal 1rem / 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -555,7 +555,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     position: absolute;
     top: 0.6em;
     width: 23px; }
-  .success:before {
+  .success::before {
     content: "\f00c"; }
 
 .error {
@@ -566,7 +566,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   background: #FFD8D9; }
   .error a {
     text-decoration: underline; }
-  .error:before {
+  .error::before {
     font: normal normal normal 1rem / 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -582,7 +582,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     position: absolute;
     top: 0.6em;
     width: 23px; }
-  .error:before {
+  .error::before {
     content: "\f12a"; }
 
 .info {
@@ -593,7 +593,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
   background: #B8E0F9; }
   .info a {
     text-decoration: underline; }
-  .info:before {
+  .info::before {
     font: normal normal normal 1rem / 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
@@ -609,7 +609,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     position: absolute;
     top: 0.6em;
     width: 23px; }
-  .info:before {
+  .info::before {
     content: "\f129"; }
 
 /* = Tables = */
@@ -668,7 +668,7 @@ table {
     nav.secondary li.active a, nav.secondary li:hover a {
       color: #0394CD; }
 
-  nav.primary:before, nav.primary ul:before {
+  nav.primary::before, nav.primary ul::before {
     display: none; }
   nav.primary ul li {
     display: block;
@@ -676,7 +676,7 @@ table {
     nav.primary ul li a {
       border-top: 0;
       font-family: "Open Sans", Arial, sans-serif; }
-      nav.primary ul li a:before {
+      nav.primary ul li a::before {
         display: none; }
   nav.primary ul li li {
     float: none; }
@@ -719,7 +719,7 @@ html.lt-ie9 nav.secondary {
     line-height: 2; }
   html.lt-ie9 nav.secondary li.active a, html.lt-ie9 nav.secondary li:hover a {
     color: #0394CD; }
-html.lt-ie9 nav.primary:before, html.lt-ie9 nav.primary ul:before {
+html.lt-ie9 nav.primary::before, html.lt-ie9 nav.primary ul::before {
   display: none; }
 html.lt-ie9 nav.primary ul li {
   display: block;
@@ -727,7 +727,7 @@ html.lt-ie9 nav.primary ul li {
   html.lt-ie9 nav.primary ul li a {
     border-top: 0;
     font-family: "Open Sans", Arial, sans-serif; }
-    html.lt-ie9 nav.primary ul li a:before {
+    html.lt-ie9 nav.primary ul li a::before {
       display: none; }
 html.lt-ie9 nav.primary ul li li {
   float: none; }
@@ -788,3 +788,5 @@ html.lt-ie9 .torso aside.primary ~ .main {
   p, h2, h3 {
     orphans: 3;
     widows: 3; } }
+
+/*# sourceMappingURL=styles.css.map */
