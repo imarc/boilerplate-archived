@@ -90,7 +90,7 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
     }
 
     @media only screen and ($query) {
-        & {
+        & {index.php?path=admin
             display: table;
             table-layout: fixed;
             width: 100%;
@@ -154,27 +154,6 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
         transition: $properties $duration $easing;
     }
 }
-
-@mixin tablets-and-up {
-    @media only screen and (min-width: 600px) {
-        @content;
-    }
-
-    html.lt-ie9 {
-        @content;
-    }
-}
-
-@mixin desktops-and-up {
-    @media only screen and (min-width: 700px) {
-        @content;
-    }
-
-    html.lt-ie9 {
-        @content;
-    }
-}
-
 
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
@@ -847,7 +826,7 @@ table {
 
 
 /* = Media Queries = */
-@include tablets-and-up {
+@media only screen and (min-width: 600px) {
     .main aside {
         float: right;
         margin-left: 1em;
@@ -941,7 +920,7 @@ table {
     }
 }
 
-@include desktops-and-up {
+@media only screen and (min-width: 700px) {
     .torso aside.primary {
         display: block;
         float: right;
