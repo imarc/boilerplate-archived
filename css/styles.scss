@@ -90,7 +90,7 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
     }
 
     @media only screen and ($query) {
-        & {index.php?path=admin
+        & {
             display: table;
             table-layout: fixed;
             width: 100%;
