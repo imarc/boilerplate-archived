@@ -38,18 +38,19 @@ $white:       #FCFCFC;
 $light-pink:  #FFD8D9;
 $yellow:      #FFF1B5;
 
-$matte:      $black;
-$torso-bg:   $white;
-$selection:  $yellow;
-$plain-text: $dark-gray;
-$meta-text:  $gray;
-$link:       $blue;
-$link-hover: $gray;
-$highlight:  $pink;
-$border:     $light-gray;
-$success:    $light-green;
-$error:      $light-pink;
-$info:       $light-blue;
+$matte:        $black;
+$torso-bg:     $white;
+$selection:    $yellow;
+$plain-text:   $dark-gray;
+$meta-text:    $gray;
+$link:         $blue;
+$link-hover:   $gray;
+$link-visited: darken($link, 20%);
+$highlight:    $pink;
+$border:       $light-gray;
+$success:      $light-green;
+$error:        $light-pink;
+$info:         $light-blue;
 
 $body-fonts:    "Helvetica Neue", Arial, sans-serif;
 $heading-fonts: "Open Sans", Arial, sans-serif;
@@ -141,17 +142,6 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
 	padding-top: 1.5 * $rem;
 	&:first-child {
 		padding-top: 0;
-	}
-}
-
-@mixin link-states($link) {
-	color: $link;
-	&:visited {
-		color: lighten($link, 20%);
-	}
-	&:hover,
-	&:focus {
-		color: darken($link, 20%);
 	}
 }
 
@@ -452,6 +442,10 @@ a {
 
     &:focus {
         outline: thin dotted;
+    }
+
+    &:visited {
+        color: $link-visited;
     }
 }
 

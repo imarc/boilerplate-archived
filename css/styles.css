@@ -298,6 +298,8 @@ a {
     color: #888; }
   a:focus {
     outline: thin dotted; }
+  a:visited {
+    color: #024b68; }
 
 ol, ul, dl {
   margin-bottom: 1.5em; }
