@@ -1,23 +1,22 @@
 /**
- * Built using Imarc Boilerplate v2.0
- *
- * Copyright 2016 Imarc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * = Table of Contents =
- * Variables
- * Mixins
- * Base
- * Layout
- * Typography
- * Navigations
- * Forms
- * Messaging
- * Tables
- * Media Queries
- * Print Styles
- */
+* Built using Imarc Boilerplate v2.0
+*
+* Copyright 2016 Imarc
+* Licensed under the Apache License v2.0
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* = Table of Contents =
+* Variables
+* Mixins
+* Base
+* Layout
+* Typography
+* Forms
+* Messaging
+* Tables
+* Media Queries
+* Print Styles
+*/
 /* = Variables = */
 /* = Mixins = */
 /* = Base = */
@@ -252,15 +251,11 @@ form.search {
 
 main section:not(:last-child) {
   border-bottom: 1px solid #DDD;
-  padding-bottom: 2rem;
-  margin-bottom: 3rem; }
+  margin-bottom: 3rem;
+  padding-bottom: 2rem; }
 
-main aside {
-  background-color: #eaeaea;
-  color: #999;
-  font-size: 0.875rem;
-  margin-bottom: 1em;
-  padding: 1.333em; }
+aside.primary {
+  margin-bottom: 2rem; }
 
 nav.supplemental ul li {
   display: block;
@@ -274,7 +269,7 @@ nav.supplemental ul li {
     color: #41322F; }
 nav.supplemental ul ul a {
   color: #999;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   line-height: 2;
   padding: 0; }
 nav.supplemental > ul > li {
@@ -375,15 +370,15 @@ a {
   a:focus {
     outline: thin dotted; }
 
-.button {
+a.button {
   background-color: #229AB7;
   color: #FFF;
   display: inline-block;
   font-weight: bold;
-  padding: 0.4em 0.8em; }
+  padding: 0.6em 1em; }
 
-.button:hover,
-.button:focus {
+a.button:hover,
+a.button:focus {
   background-color: #1a768c; }
 
 ol,
@@ -421,6 +416,7 @@ textarea {
   font: inherit;
   margin: 0; }
 
+.button,
 .checkboxes,
 .file,
 .password,
@@ -480,7 +476,6 @@ input[type="radio"] {
   padding: 0; }
 
 button,
-input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
@@ -495,20 +490,17 @@ input[type="submit"] {
   padding: 0.4em 0.6em;
   text-align: center; }
   button:hover,
-  input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
     background-color: #beb0a2;
     border-color: #229AB7;
     cursor: pointer; }
   button:focus,
-  input[type="button"]:focus,
   input[type="reset"]:focus,
   input[type="submit"]:focus {
     background-color: #beb0a2; }
 
 button.disabled,
-input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled] {
   background-color: silver;
@@ -637,8 +629,10 @@ table {
 
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
+  /* = Layout = */
   aside.primary {
     float: right;
+    margin-bottom: 0;
     width: 20%; }
     aside.primary nav ul {
       text-align: left; }
@@ -648,6 +642,7 @@ table {
     padding-right: 2rem;
     width: 80%; } }
 @media only screen and (min-width: 1024px) {
+  /* = Layout = */
   .branding {
     float: left;
     margin-bottom: 0;

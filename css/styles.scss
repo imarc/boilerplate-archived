@@ -1,4 +1,4 @@
-/**
+ /**
  * Built using Imarc Boilerplate v2.0
  *
  * Copyright 2016 Imarc
@@ -11,7 +11,6 @@
  * Base
  * Layout
  * Typography
- * Navigations
  * Forms
  * Messaging
  * Tables
@@ -350,17 +349,13 @@ form.search {
 main section {
     &:not(:last-child) {
         border-bottom: 1px solid $border;
-        padding-bottom: 2rem;
         margin-bottom: 3rem;
+        padding-bottom: 2rem;
     }
 }
 
-main aside {
-    background-color: mix($matte, $meta-text, 80%);
-    color: $meta-text;
-    font-size: 0.875rem;
-    margin-bottom: 1em;
-    padding: 1.333em;
+aside.primary {
+    margin-bottom: 2rem;
 }
 
 nav.supplemental {
@@ -381,7 +376,7 @@ nav.supplemental {
         ul {
             a {
                 color: $meta-text;
-                font-size: 0.75rem;
+                font-size: 0.8rem;
                 line-height: 2;
                 padding: 0;
             }
@@ -507,15 +502,15 @@ a {
     }
 }
 
-.button {
+a.button {
     background-color: $link;
     color: $matte;
     display: inline-block;
     font-weight: bold;
-    padding: 0.4em 0.8em;
+    padding: 0.6em 1em;
 }
-.button:hover,
-.button:focus {
+a.button:hover,
+a.button:focus {
     background-color: $link-hover;
 }
 
@@ -558,6 +553,7 @@ textarea {
   margin: 0;
 }
 
+.button,
 .checkboxes,
 .file,
 .password,
@@ -626,7 +622,6 @@ input[type="radio"] {
 }
 
 button,
-input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button;
@@ -651,7 +646,6 @@ input[type="submit"] {
 }
 
 button.disabled,
-input[type="button"][disabled],
 input[type="reset"][disabled],
 input[type="submit"][disabled] {
     background-color: desaturate($earth, 20%);
@@ -757,8 +751,11 @@ table {
 
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
+
+    /* = Layout = */
     aside.primary {
         float: right;
+        margin-bottom: 0;
         width: 20%;
         nav ul {
             text-align: left;
@@ -773,6 +770,8 @@ table {
 
 
 @media only screen and (min-width: 1024px) {
+
+    /* = Layout = */
     .branding {
         float: left;
         margin-bottom: 0;
