@@ -1,7 +1,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Boilerplate - A Simple &amp; Semantic Front-End - iMarc</title>
+        <title>Boilerplate - A Simple &amp; Semantic Front-End - Imarc</title>
         <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
         <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
         <meta name="viewport" content="width=device-width" />
@@ -13,81 +13,95 @@
         <header class="primary" role="banner">
             <div class="container">
                 <div class="branding">
-                    <h1>
-                        <a href="">Boilerplate</a>
-                    </h1>
+                    <a href="https://github.com/imarc/boilerplate">
+                        <img src="img/logo-boilerplate.png" alt="Imarc Boilerplate">
+                    </a>
                 </div>
-                <nav aria-label="utility" class="utility" role="navigation">
-                    <ul>
-                        <li><a href="">Careers</a></li>
-                        <li><a href="">Legal</a></li>
-                        <li><a href="">Log In</a></li>
-                    </ul>
-                </nav>
+                <div class="wrapper">
+                    <nav aria-label="Primary Navigation" class="primary" role="navigation">
+                        <ul>
+                            <li>
+                                <a href="">Maine</a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><a href="">Augusta</a></li>
+                                        <li><a href="">Eliot</a></li>
+                                        <li><a href="">Kittery</a></li>
+                                        <li><a href="">Portland</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <a href="#yup">Markup</a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><a href="#Typography">Typography</a></li>
+                                        <li><a href="#Articles">Articles</a></li>
+                                        <li><a href="#Lists">Lists</a></li>
+                                        <li><a href="#Tables">Tables</a></li>
+                                        <li><a href="#Forms">Forms</a></li>
+                                        <li><a href="#Breaks-and-Headings">Breaks and Headings</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="">New Hampshire</a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><a href="">Concord</a></li>
+                                        <li><a href="">Manchester</a></li>
+                                        <li><a href="">Portsmouth</a></li>
+                                        <li><a href="">Hampton</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="">Vermont</a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><a href="">Montpelier</a></li>
+                                        <li><a href="">Burlington</a></li>
+                                        <li><a href="">Killington</a></li>
+                                        <li><a href="">St. Johnsbury</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="utilities">
+                        <nav aria-label="Utility Navigation" class="utility" role="navigation">
+                            <ul>
+                                <li><a href="">Careers</a></li>
+                                <li><a href="">Legal</a></li>
+                                <li><a href="">Log In</a></li>
+                            </ul>
+                        </nav>
+                        <form class="search" method="post">
+                            <div class="text">
+                                <label for="search">Search the website</label>
+                                <input id="search" placeholder="Search the website" type="text" />
+                            </div>
+                            <div class="submit">
+                                <input type="submit" value="Search" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <nav aria-label="primary" class="primary" role="navigation">
-                <ul class="container" data-focus>
-                    <li>
-                        <a href="">Maine</a>
-                        <div class="dropdown">
-                            <ul>
-                                <li><a href="">Augusta</a></li>
-                                <li><a href="">Eliot</a></li>
-                                <li><a href="">Kittery</a></li>
-                                <li><a href="">Portland</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="active">
-                        <a href="#yup">Markup</a>
-                        <div class="dropdown">
-                            <ul>
-                                <li><a href="#Typography">Typography</a></li>
-                                <li><a href="#Articles">Articles</a></li>
-                                <li><a href="#Lists">Lists</a></li>
-                                <li><a href="#Tables">Tables</a></li>
-                                <li><a href="#Forms">Forms</a></li>
-                                <li><a href="#Breaks-and-Headings">Breaks and Headings</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="">New Hampshire</a>
-                        <div class="dropdown">
-                            <ul>
-                                <li><a href="">Concord</a></li>
-                                <li><a href="">Manchester</a></li>
-                                <li><a href="">Portsmouth</a></li>
-                                <li><a href="">Hampton</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="">Vermont</a>
-                        <div class="dropdown">
-                            <ul>
-                                <li><a href="">Montpelier</a></li>
-                                <li><a href="">Burlington</a></li>
-                                <li><a href="">Killington</a></li>
-                                <li><a href="">St. Johnsbury</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <nav aria-label="secondary" class="secondary" role="navigation">
-                <ul class="container">
-                    <li><a href="#Typography">Typography</a></li>
-                    <li><a href="#Articles">Articles</a></li>
-                    <li><a href="#Lists">Lists</a></li>
-                    <li class="active"><a href="#Tables">Tables</a></li>
-                    <li><a href="#Forms">Forms</a></li>
-                    <li><a href="#Breaks-and-Headings">Breaks and Headings</a></li>
-                </ul>
-            </nav>
         </header>
 
-        <div class="torso container">
+        <div class="hero">
+            <div class="copy">
+                <h1>
+                    Simple &amp; semantic frontend
+                </h1>
+                <a class="button" href="https://github.com/imarc/boilerplate">
+                    Boilerplate on Gibhub
+                </a>
+            </div>
+        </div>
+
+        <div class="torso">
             <aside class="primary" role="complementary">
                 <section>
                     <nav class="supplemental">
@@ -97,9 +111,6 @@
                                 <ul>
                                     <li><a href="#Typographical-Blocks">Typographical Blocks</a></li>
                                 </ul>
-                            </li>
-                            <li>
-                                <a href="#Articles">Articles</a>
                             </li>
                             <li>
                                 <a href="#Lists">Lists</a>
@@ -120,126 +131,28 @@
                                     <li><a href="#Buttons">Buttons</a></li>
                                 </ul>
                             </li>
-                            <li>
-                                <a href="#Breaks-and-Headings">Breaks and Headings</a>
-                                <ul>
-                                    <li><a href="#Breaks">Breaks</a></li>
-                                    <li><a href="#Headings">Headings</a></li>
-                                    <li><a href="#Adjacent-Headings">Adjacent Headings</a></li>
-                                </ul>
-                            </li>
                         </ul>
                     </nav>
                 </section>
-
-                <section>
-                    <h4>Browser Support</h4>
-                    <p>
-                        Modern Gecko and Webkit based browsers, as well as Internet Explorer 11
-                        and up.
-                    </p>
-                </section>
             </aside>
 
-            <div class="main" role="main">
-                <header>
-                    <h1>
-                        A Simple &amp; Semantic Front-End
-                    </h1>
-                </header>
-
-                <section class="intro">
-                    <p>
-                        Boilerplate by <a href="http://www.imarc.net">iMarc</a> provides some basic defaults for CSS and HTML
-                        structure. It uses some HTML5 elements as well as the HTML5Shiv and
-                        supports Chrome, Firefox, and Internet Explorer 11+. This project is
-                        released under the <strong><a href="http://www.apache.org/licenses/LICENSE-2.0.html">Apache License v2.0</a></strong>.
-                    </p>
-
-                    <a href="https://github.com/imarc/boilerplate" class="button">View on GitHub</a>
-                    <a href="http://www.imarc.net" class="button">Check out iMarc</a>
-
-                    <iframe src="http://ghbtns.com/github-btn.html?user=imarc&repo=boilerplate&type=watch&count=true&size=large"
-                        style="display: inline-block; vertical-align: middle; margin-bottom: 4px;"
-                        allowtransparency="true" frameborder="0" scrolling="0" width="130" height="30"></iframe>
-
-                    <iframe src="http://ghbtns.com/github-btn.html?user=imarc&repo=boilerplate&type=fork&count=true&size=large"
-                        style="display: inline-block; vertical-align: middle; margin-bottom: 4px;"
-                        allowtransparency="true" frameborder="0" scrolling="0" width="150" height="30"></iframe>
-                </section>
-
+            <main>
                 <section>
-                    <header>
-                        <h2 id="Typography">Typography</h2>
-                    </header>
+                    <h2 id="Typography">Typography</h2>
 
                     <p>
-                        <strong>Some UTF8 characters appear in this paragraph</strong>.
-                        Separation of content – better with an en-dash. iMarc’s motto: “Use
-                        curly quotes” and always © with the current year.
-                    </p>
-
-                    <div class="highlight">
-                        <p>
-                            Since 2013, this has been iMarc’s example of a page highlight. For more information, see iMarc’s <a href="http://handbook.imarc.net/frontend">frontend standards</a>.
-                        </p>
-                    </div>
-
-                    <p>
-                        <em>The basic paragraph</em> – might contain a number of different of
+                        A basic paragraph might contain a number of different of
                         HTML elements, including
                         <a href="http://www.imarc.net">a (link)</a>,
-                        <abbr title="Abbreviation">abbr</abbr>,
-                        <code>code</code>,
-                        <del>del</del>,
-                        <dfn>dfn</dfn>,
-                        <em>em</em>,
-                        <ins>ins</ins>,
-                        <span>span (no class here, so you probably shouldn't see any styling)</span>,
-                        <strong>strong</strong>,
-                        <sub>sub</sub>,
-                        <sup>sup</sup>, and times like
-                        <time>11:30</time>.
+                        <em>emphasized text</em>, and
+                        <strong>strong text</strong>.
                     </p>
-
-                    <p>
-                        This is a filler paragraph – Ignore this. These are scattered through
-                        out the markup to simulate content. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus
-                        velit, ornare sit amet blandit in, mattis eget nulla.
-                    </p>
-
 
                     <h3 id="Typographical-Blocks">Typographical Blocks</h3>
 
                     <p>
                         There's also some typographical elements which should be
                         treated as blocks, such as
-                    </p>
-
-                    <address>
-                        <strong>This is an Address Element</strong><br />
-                        123 Example Address<br />
-                        Newburyport, MA 01950
-                    </address>
-
-                    <p>
-                        This is a filler paragraph – Ignore this. These are scattered through
-                        out the markup to simulate content. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus
-                        velit, ornare sit amet blandit in, mattis eget nulla.
-                    </p>
-
-                    <aside>
-                        This is an example of an <em>aside</em>. Its related to the content at
-                        hand, however isn't part of the main content.
-                    </aside>
-
-                    <p>
-                        There's also an article element, meant for articles. This article has its
-                        own header and footer as well. Lorem ipsum dolor sit amet, consectetur
-                        adipiscing elit. Felis est, nec convallis dui. Nulla lectus velit,
-                        ornare sit amet blandit in, mattis eget nulla.
                     </p>
 
                     <p>
@@ -254,119 +167,12 @@
                         quotes from other sources. Lorem ipsum dolor sit amet,
                         consectetur adipiscing elit. Felis est, nec convallis dui.
                     </blockquote>
-
-                    <p>
-                        This is a filler paragraph – Ignore this. These are scattered through
-                        out the markup to simulate content. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus
-                        velit, ornare sit amet blandit in, mattis eget nulla.
-                    </p>
-
-                    <div class="highlight">
-                        This is a highlight. These highlight short pieces of text.
-                    </div>
-
-                    <p>
-                        This is a filler paragraph – Ignore this. These are scattered through
-                        out the markup to simulate content. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus
-                        velit, ornare sit amet blandit in, mattis eget nulla.
-                    </p>
-
-<pre>
-Here is a block of preformatted text in the pre element.
-
-There is a line of whitespace between these two sentences.
-</pre>
-
-                    <p>
-                        This is a filler paragraph – Ignore this. These are scattered through
-                        out the markup to simulate content. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus
-                        velit, ornare sit amet blandit in, mattis eget nulla.
-                    </p>
-
-
-                    <footer>
-                        <p>
-                            Lastly, each section can have its own footer like this one.
-                        </p>
-                    </footer>
-                </section>
-
-                <section>
-                    <header>
-                        <h2 id="Articles">Articles</h2>
-                        <h3>useful for news and blog articles</h3>
-                    </header>
-                    <p>
-                        Below are two examples of the content that might be found in an article tag.
-                        Articles are best used for news feeds, updates, blogs, press released, and other
-                        content expected to be viewed in a single page.
-                    </p>
-
-                    <article>
-                        <header>
-                            <h3>This is an Article</h3>
-                            <div class="meta">Friday, October 11, 2013</div>
-                        </header>
-
-                        <p>
-                            There's also an article element, meant for articles. This article has its
-                            own header and footer as well. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Felis est, nec convallis dui. Nulla lectus velit,
-                            ornare sit amet blandit in, mattis eget nulla.
-                        </p>
-
-                        <footer>
-                            <a href="#">read more »</a>
-                        </footer>
-                    </article>
-
-                    <article>
-                        <header>
-                            <h3>This is Another Article</h3>
-                            <div class="meta">Friday, October 11, 2013</div>
-                        </header>
-
-                        <p>
-                            There's also an article element, meant for articles. This article has its
-                            own header and footer as well. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Felis est, nec convallis dui. Nulla lectus velit,
-                            ornare sit amet blandit in, mattis eget nulla.
-                        </p>
-
-                        <aside>
-                            This is an example of an <em>aside</em>. Its related to the content
-                            at hand, however isn't part of the main content.
-                        </aside>
-
-                        <p>
-                            There's also an article element, meant for articles. This article has its
-                            own header and footer as well. Lorem ipsum dolor sit amet, consectetur
-                            adipiscing elit. Felis est, nec convallis dui. Nulla lectus velit,
-                            ornare sit amet blandit in, mattis eget nulla.
-                        </p>
-
-                        <footer>
-                            <a href="#">read more »</a>
-                        </footer>
-                    </article>
-
-                    <p>
-                        This is a filler paragraph – Ignore this. These are scattered through
-                        out the markup to simulate content. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus
-                        velit, ornare sit amet blandit in, mattis eget nulla.
-                    </p>
                 </section>
 
 
                 <section>
-                    <header>
-                        <h2 id="Lists">Lists</h2>
-                        <h3 id="Unordered-Lists">Unordered Lists</h3>
-                    </header>
+                    <h2 id="Lists">Lists</h2>
+                    <h3 id="Unordered-Lists">Unordered Lists</h3>
 
                     <ul>
                         <li>
@@ -401,19 +207,10 @@ There is a line of whitespace between these two sentences.
                         <dt>Walkman</dt>
                         <dd>Walkman is a Sony brand tradename originally used for portable audio cassette players. </dd>
                     </dl>
-
-                    <p>
-                        This is a filler paragraph – Ignore this. These are scattered through
-                        out the markup to simulate content. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus
-                        velit, ornare sit amet blandit in, mattis eget nulla.
-                    </p>
                 </section>
 
                 <section>
-                    <header>
-                        <h2 id="Tables">Tables</h2>
-                    </header>
+                    <h2 id="Tables">Tables</h2>
 
                     <p>
                         This table has a caption, colgroup, thead, tfoot, and tbody.
@@ -464,19 +261,11 @@ There is a line of whitespace between these two sentences.
                         </tbody>
                     </table>
 
-                    <p>
-                        This is a filler paragraph – Ignore this. These are scattered through
-                        out the markup to simulate content. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus
-                        velit, ornare sit amet blandit in, mattis eget nulla.
-                    </p>
                 </section>
 
                 <section>
-                    <header>
-                        <h2 id="Forms">Forms</h2>
-                        <h3 id="Messaging">Messaging</h3>
-                    </header>
+                    <h2 id="Forms">Forms</h2>
+                    <h3 id="Messaging">Messaging</h3>
 
                     <p>
                         The following are paragraph element using the various
@@ -487,22 +276,12 @@ There is a line of whitespace between these two sentences.
                         <p>
                             <strong>Success</strong> – Message with a <a href="http://imarc.net">link</a>.
                         </p>
-                        <ul>
-                            <li>Item one: message regarding item one</li>
-                            <li>Item two: message regarding item two</li>
-                            <li>Item three: message regarding item three</li>
-                        </ul>
                     </div>
 
                     <div class="info">
                         <p>
                             <strong>Info</strong> – Message with a <a href="http://imarc.net">link</a>.
                         </p>
-                        <ul>
-                            <li>Item one: message regarding item one</li>
-                            <li>Item two: message regarding item two</li>
-                            <li>Item three: message regarding item three</li>
-                        </ul>
                     </div>
 
                     <div class="error">
@@ -515,14 +294,6 @@ There is a line of whitespace between these two sentences.
                             <li>Item three: message regarding item three</li>
                         </ul>
                     </div>
-
-                    <p>
-                        This is a filler paragraph – Ignore this. These are scattered through
-                        out the markup to simulate content. Lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus
-                        velit, ornare sit amet blandit in, mattis eget nulla.
-                    </p>
-
 
                     <h3 id="Fields">Fields</h3>
                     <h4>Text Inputs</h4>
@@ -548,15 +319,15 @@ There is a line of whitespace between these two sentences.
                             <div class="radios group">
                                 <label>Choose one</label>
                                 <label class="radio">
-                                    <input id="sample_form-radio" type="radio" />
+                                    <input name="sample" type="radio" />
                                     radio
                                 </label>
                                 <label class="radio">
-                                    <input id="sample_form-radio_1" type="radio" />
+                                    <input name="sample" type="radio" />
                                     radio 1
                                 </label>
                                 <label class="radio">
-                                    <input id="sample_form-radio_2" type="radio" />
+                                    <input name="sample" type="radio" />
                                     radio 2
                                 </label>
                             </div>
@@ -583,7 +354,6 @@ There is a line of whitespace between these two sentences.
                                 <label for="sample_form-select">Select one</label>
                                 <select id="sample_form-select">
                                     <optgroup label="group">
-                                        <option value="option">Option</option>
                                         <option value="option 1">option 1</option>
                                         <option value="option 2" selected="selected">option 2</option>
                                     </optgroup>
@@ -599,7 +369,7 @@ There is a line of whitespace between these two sentences.
                             </div>
                             <div class="select multiple">
                                 <label for="sample_form-select_multiple">Select multiple</label>
-                                <select id="sample_form-select_multiple" multiple="multiple" size="2">
+                                <select id="sample_form-select_multiple" multiple="multiple">
                                     <optgroup label="group">
                                         <option value="option">Option</option>
                                         <option value="option 1">option 1</option>
@@ -618,14 +388,10 @@ There is a line of whitespace between these two sentences.
                         </fieldset>
 
                         <fieldset>
-                            <h4>Textareas and Files</h4>
+                            <h4>Textarea</h4>
                             <div class="textarea">
                                 <label for="sample_form-textarea">Textarea</label>
-                                <textarea id="sample_form-textarea" rows="20" cols="20">Textarea, 20 rows, 20 columns</textarea>
-                            </div>
-                            <div class="file">
-                                <label for="sample_form-file">Upload File</label>
-                                <input type="file" id="sample_form-file" />
+                                <textarea id="sample_form-textarea">Textarea</textarea>
                             </div>
                         </fieldset>
 
@@ -647,127 +413,37 @@ There is a line of whitespace between these two sentences.
                             <div class="button">
                                 <input type="button" disabled="disabled" value="Disabled" />
                             </div>
-                            <a href="" class="button">&lt;a&gt; as a button</a>
                         </fieldset>
                     </form>
-
-                    <h3>Navs</h3>
-                    <nav>
-                        <ul>
-                            <li><a href="#">add</a></li>
-                            <li><a href="#">edit</a></li>
-                            <li><a href="#">delete</a></li>
-                        </ul>
-                    </nav>
                 </section>
-
-                <section>
-                    <header>
-                        <h2 id="Breaks-and-Headings">Breaks and Headings</h2>
-                        <h3 id="Breaks">Breaks</h3>
-                    </header>
-
-                    <p>
-                        Below is a horizontal break.
-                    </p>
-                    <hr />
-                    <p>
-                        That's it.
-                    </p>
-
-
-                    <h2 id="Headings">Headings – This is an H2</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-                        felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
-                        in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
-                        nec, tempor in enim.
-                    </p>
-
-                    <h3>Three – This is an H3</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-                        felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
-                        in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
-                        nec, tempor in enim.
-                    </p>
-
-                    <h4>Four – This is an H4</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-                        felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
-                        in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
-                        nec, tempor in enim.
-                    </p>
-
-
-                    <h1>Breaking Multi-Line H1 Heading – Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</h1>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-                        felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
-                        in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
-                        nec, tempor in enim.
-                    </p>
-
-                    <h2>Breaking Multi-Line H2 Heading – Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-                        felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
-                        in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
-                        nec, tempor in enim.
-                    </p>
-
-                    <h3>Breaking Multi-Line H3 Heading – Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-                        felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
-                        in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
-                        nec, tempor in enim.
-                    </p>
-
-                    <h4>Breaking Multi-Line H4 Heading – Nulla vitae elit libero, a pharetra augue. Maecenas faucibus mollis interdum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-                        felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
-                        in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
-                        nec, tempor in enim.
-                    </p>
-
-
-                    <h1 id="Adjacent-Headings">H1 Adjacent Headings</h1>
-                    <h2>H2 Lorem ipsum dolor subheading</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-                        felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
-                        in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
-                        nec, tempor in enim.
-                    </p>
-
-                    <h2>H2 Adjacent Headings</h2>
-                    <h3>H3 Lorem ipsum dolor subheading</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-                        felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
-                        in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
-                        nec, tempor in enim.
-                    </p>
-
-                    <h3>H3 Adjacent Headings</h3>
-                    <h4>H4 Lorem ipsum dolor subheading</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur a
-                        felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit
-                        in, mattis eget nulla. Integer tellus ligula, consectetur sed tincidunt
-                        nec, tempor in enim.
-                    </p>
-                </section>
-            </div>
+            </main>
         </div>
 
-        <footer class="primary" role="contentinfo">
-            <div class="container">
-                <div class="copyright">©2016 iMarc LLC.</div>
-            </div>
+        <footer class="primary">
+          <div class="container">
+            <ul class="social">
+              <li>
+                <a href="https://github.com/imarc/boilerplate">
+                  <i class="fa fa-github"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/ImarcAgency">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.twitter.com/ImarcAgency">
+                  <i class="fa fa-twitter"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/imarc">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>  
         </footer>
     </body>
 </html>

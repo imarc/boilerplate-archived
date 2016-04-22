@@ -10,9 +10,10 @@
   "remove-empty-rulesets": true,
   "space-after-combinator": " ",
   "space-after-opening-brace": "\n",
-  "space-after-selector-delimiter": " ",
+  "space-after-selector-delimiter": "\n",
   "space-before-closing-brace": "\n",
   "space-before-colon": "",
+  "space-after-colon": " ",
   "space-before-combinator": " ",
   "space-before-opening-brace": " ",
   "space-before-selector-delimiter": "",
@@ -20,13 +21,10 @@
   "strip-spaces": true,
   "unitless-zero": true,
   "vendor-prefix-align": false,
-  "sort-order-fallback": "abc",
+  "sort-order-fallback" : "abc",
   "sort-order": [
-	[
-	  "$variable"
-	],
-	[
-	  "$include"
-	]
+      ["$variable"],
+      ["$include"],
+      ["src"]
   ]
 }
