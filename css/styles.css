@@ -1,5 +1,5 @@
 /**
-* Built using Imarc Boilerplate v2.0
+* Built using Imarc Boilerplate v2.1
 *
 * Copyright 2016 Imarc
 * Licensed under the Apache License v2.0
@@ -20,60 +20,7 @@
 /* = Variables = */
 /* = Mixins = */
 /* = Base = */
-a,
-abbr,
-address,
-article,
-aside,
-audio,
-b,
-blockquote,
-body,
-canvas,
-cite,
-code,
-dd,
-div,
-dl,
-dt,
-em,
-fieldset,
-footer,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-html,
-hr,
-i,
-iframe,
-img,
-label,
-li,
-main,
-nav,
-object,
-ol,
-p,
-pre,
-section,
-span,
-strong,
-sub,
-sup,
-table,
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr,
-ul,
-video {
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, main, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
   border: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -98,7 +45,7 @@ video {
 
 html {
   background-color: #FFF;
-  color: #41322F;
+  color: #15161A;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -148,7 +95,7 @@ img {
       width: 1rem; } }
 
 header.primary {
-  background-color: #FF675B;
+  background-color: #15161A;
   padding-bottom: 1rem;
   padding-top: 1rem; }
 
@@ -179,7 +126,7 @@ nav a {
   padding: 0 0.5rem; }
 nav li.active a,
 nav li:hover a {
-  color: #41322F; }
+  color: #69737B; }
 
 nav.primary {
   margin-bottom: 0.7rem; }
@@ -194,8 +141,8 @@ nav.utility {
     font-size: 0.8rem; }
 
 form.search {
-  display: -webkit-flex;
-  display: flex; }
+  display: flex;
+  display: -webkit-flex; }
   form.search .text,
   form.search .submit {
     margin-bottom: 0; }
@@ -231,13 +178,13 @@ form.search {
 
 .hero {
   background: url(../img/hero.jpg) no-repeat center top/cover;
-  display: -webkit-flex;
   display: flex;
+  display: -webkit-flex;
   -webkit-flex-direction: column;
   flex-direction: column;
+  height: 240px;
   -webkit-justify-content: center;
   justify-content: center;
-  height: 240px;
   text-align: center; }
   .hero .copy {
     margin-left: auto;
@@ -266,9 +213,9 @@ nav.supplemental ul li {
     display: block;
     padding: 0.25em 0; }
   nav.supplemental ul li a:hover {
-    color: #41322F; }
+    color: #15161A; }
 nav.supplemental ul ul a {
-  color: #999;
+  color: #69737B;
   font-size: 0.8rem;
   line-height: 2;
   padding: 0; }
@@ -279,19 +226,24 @@ nav.supplemental > ul > li ~ li {
   padding-top: 0.5em; }
 
 footer.primary {
-  background-color: #41322F;
-  color: #999;
+  background-color: #1F2024;
+  color: #69737B;
   font-size: 0.9rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
   text-align: center; }
+  footer.primary nav {
+    margin-bottom: 1rem; }
+  footer.primary p {
+    margin: 0; }
   footer.primary a {
     color: #FFF; }
 
 .social {
   list-style: none;
   margin: 0;
-  padding-left: 0; }
+  padding-left: 0;
+  margin-bottom: 1rem; }
   .social li::before {
     display: none; }
   .social li {
@@ -322,7 +274,7 @@ h3 {
   font-size: 1.3rem; }
 
 h4 {
-  font-size: 1.05rem; }
+  font-size: 1.1rem; }
 
 h5 {
   font-size: 1rem; }
@@ -335,7 +287,7 @@ em {
 
 blockquote {
   border-left: 1px solid #DDD;
-  color: #999;
+  color: #69737B;
   font-style: italic;
   margin-bottom: 1.5em;
   padding-left: 1rem; }
@@ -346,7 +298,7 @@ blockquote {
     clear: both; }
 
 .intro {
-  color: #999; }
+  color: #69737B; }
   .intro p {
     font-size: 1.3rem;
     margin-bottom: 0.8em; }
@@ -356,7 +308,7 @@ p {
 
 hr {
   border: 0;
-  border-top: 1px solid #999;
+  border-top: 1px solid #69737B;
   display: block;
   height: 0;
   margin: 2em auto 3em;
@@ -438,7 +390,7 @@ label {
   color: #DC143C; }
 
 fieldset .help {
-  color: #999;
+  color: #69737B;
   display: block;
   font-size: 0.8rem;
   margin: 0; }
@@ -450,7 +402,7 @@ input[type="email"],
 input[type="text"],
 textarea {
   border: 1px solid #DDD;
-  color: #41322F;
+  color: #15161A;
   display: block;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 0.9rem;
@@ -480,9 +432,9 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   -moz-appearance: button;
-  background-color: #CBBFB4;
+  background-color: #69737B;
   border: none;
-  color: #41322F;
+  color: #FFF;
   cursor: pointer;
   display: inline-block;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -492,19 +444,19 @@ input[type="submit"] {
   button:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    background-color: #beb0a2;
+    background-color: #5b646a;
     border-color: #229AB7;
     cursor: pointer; }
   button:focus,
   input[type="reset"]:focus,
   input[type="submit"]:focus {
-    background-color: #beb0a2; }
+    background-color: #5b646a; }
 
 button.disabled,
 input[type="reset"][disabled],
 input[type="submit"][disabled] {
-  background-color: silver;
-  color: #987771;
+  background-color: #727272;
+  color: #b3b3b3;
   cursor: default; }
 
 /* = Messaging = */
@@ -545,7 +497,7 @@ input[type="submit"][disabled] {
   margin-bottom: 2rem;
   padding: 1em 3em;
   position: relative;
-  background-color: #FBCE78; }
+  background-color: #DDD; }
   .info p:last-of-type,
   .info ul:last-of-type {
     margin-bottom: 0; }
@@ -599,9 +551,9 @@ input[type="submit"][disabled] {
   .error::before {
     content: "\f12a"; }
   .error a {
-    color: #FBCE78; }
+    color: #DDD; }
   .error a:hover {
-    color: #f9b32e; }
+    color: #b7b7b7; }
 
 /* = Tables = */
 table {
@@ -618,7 +570,7 @@ table {
     text-align: left;
     vertical-align: top; }
   table th {
-    background-color: #41322F;
+    background-color: #15161A;
     color: #FFF;
     font-weight: bold;
     text-transform: uppercase; }
@@ -672,7 +624,7 @@ table {
         display: block;
         float: none; }
       nav.primary ul .dropdown {
-        background-color: #41322F;
+        background-color: #15161A;
         left: 0;
         min-width: 180px;
         position: absolute;
@@ -685,7 +637,7 @@ table {
         color: #FFF;
         padding: 0.3rem 0.8rem; }
       nav.primary ul .dropdown li a:hover {
-        background-color: #5f4944; }
+        background-color: #2c2e36; }
 
   .utilities {
     float: right;
@@ -712,7 +664,7 @@ table {
     font-size: 1.6rem; }
 
   h4 {
-    font-size: 1.2rem; }
+    font-size: 1.25rem; }
 
   h5 {
     font-size: 1.15rem; } }

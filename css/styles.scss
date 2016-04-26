@@ -1,5 +1,5 @@
  /**
- * Built using Imarc Boilerplate v2.0
+ * Built using Imarc Boilerplate v2.1
  *
  * Copyright 2016 Imarc
  * Licensed under the Apache License v2.0
@@ -20,27 +20,23 @@
 
 
 /* = Variables = */
-$water:          #229AB7;
-$wood:           #41322F;
-$earth:          #CBBFB4;
-$fire:           #FF675B;
-$mercury:        #DDD;
-$metal:          #FBCE78;
-$pink:           #F2006D;
-$white:          #FFF;
-$dusty:          #999;
-$crimson:        #DC143C;
-
-$matte:          $white;
-$plain-text:     $wood;
-$meta-text:      $dusty;
-$link:           $water;
-$link-hover:     darken($link, 10%);
-$border:         $mercury;
-$success:        $water;
-$error:          $crimson;
-$info:           $metal;
-$font-stack:     "Helvetica Neue", Arial, sans-serif;
+$water: #229AB7;
+$woodsmoke: #15161A;
+$shark: #1F2024;
+$tuna: #383B3F;
+$nevada: #69737B;
+$mercury: #DDD;
+$crimson: #DC143C;
+$matte: #FFF;
+$plain-text: $woodsmoke;
+$meta-text: $nevada;
+$link: $water;
+$link-hover: darken($link, 10%);
+$border: $mercury;
+$success: $water;
+$error: $crimson;
+$info: $mercury;
+$font-stack: "Helvetica Neue", Arial, sans-serif;
 
 
 /* = Mixins = */
@@ -133,60 +129,7 @@ $font-stack:     "Helvetica Neue", Arial, sans-serif;
 }
 
 /* = Base = */
-a,
-abbr,
-address,
-article,
-aside,
-audio,
-b,
-blockquote,
-body,
-canvas,
-cite,
-code,
-dd,
-div,
-dl,
-dt,
-em,
-fieldset,
-footer,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-html,
-hr,
-i,
-iframe,
-img,
-label,
-li,
-main,
-nav,
-object,
-ol,
-p,
-pre,
-section,
-span,
-strong,
-sub,
-sup,
-table,
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr,
-ul,
-video {
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, main, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
     border: 0;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -246,7 +189,7 @@ img {
 }
 
 header.primary {
-    background-color: $fire;
+    background-color: $woodsmoke;
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
@@ -264,6 +207,7 @@ nav {
     @include grouping;
     ul {
         @include no-bullets;
+
         text-align: center;
     }
     li {
@@ -277,7 +221,7 @@ nav {
     li.active,
     li:hover {
         a {
-            color: $plain-text;
+            color: $nevada;
         }
     }
 }
@@ -302,14 +246,14 @@ nav.utility {
 }
 
 form.search {
-    display: -webkit-flex;
     display: flex;
+    display: -webkit-flex;
     .text,
     .submit {
         margin-bottom: 0;
     }
     .text {
-         width: 100%;
+        width: 100%;
     }
     label {
         @include visuallyhidden;
@@ -330,19 +274,19 @@ form.search {
 
 .hero {
     background: url(../img/hero.jpg) no-repeat center top / cover;
-    display: -webkit-flex;
     display: flex;
+    display: -webkit-flex;
     -webkit-flex-direction: column;
     flex-direction: column;
+    height: 240px;
     -webkit-justify-content: center;
     justify-content: center;
-    height: 240px;
     text-align: center;
     .copy {
-         @include container;
-         * {
+        @include container;
+        * {
             color: $matte;
-         }
+        }
     }
 }
 
@@ -394,12 +338,18 @@ nav.supplemental {
 }
 
 footer.primary {
-    background-color: $wood;
+    background-color: $shark;
     color: $meta-text;
     font-size: 0.9rem;
     padding-bottom: 1rem;
     padding-top: 1rem;
     text-align: center;
+    nav {
+        margin-bottom: 1rem;
+    }
+    p {
+        margin: 0;
+    }
     a {
         color: $matte;
     }
@@ -407,7 +357,7 @@ footer.primary {
 
 .social {
     @include no-bullets;
-
+    margin-bottom: 1rem;
     li {
         display: inline-block;
         font-size: 22px;
@@ -444,7 +394,7 @@ h3 {
 }
 
 h4 {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
 h5 {
@@ -549,8 +499,8 @@ input,
 optgroup,
 select,
 textarea {
-  font: inherit;
-  margin: 0;
+    font: inherit;
+    margin: 0;
 }
 
 .button,
@@ -626,9 +576,9 @@ input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button;
     -moz-appearance: button;
-    background-color: $earth;
+    background-color: $nevada;
     border: none;
-    color: $plain-text;
+    color: #FFF;
     cursor: pointer;
     display: inline-block;
     font-family: $font-stack;
@@ -636,20 +586,20 @@ input[type="submit"] {
     padding: 0.4em 0.6em;
     text-align: center;
     &:hover {
-        background-color: darken($earth, 6%);
+        background-color: darken($nevada, 6%);
         border-color: $link;
         cursor: pointer;
     }
     &:focus {
-        background-color: darken($earth, 6%);
+        background-color: darken($nevada, 6%);
     }
 }
 
 button.disabled,
 input[type="reset"][disabled],
 input[type="submit"][disabled] {
-    background-color: desaturate($earth, 20%);
-    color: lighten($plain-text, 30%);
+    background-color: desaturate($nevada, 20%);
+    color: darken(#FFF, 30%);
     cursor: default;
 }
 
@@ -682,10 +632,10 @@ input[type="submit"][disabled] {
 .success {
     @include messaging;
 
+    background-color: $success;
     &::before {
         content: "\f00c";
     }
-    background-color: $success;
     a {
         color: $matte;
     }
@@ -697,19 +647,19 @@ input[type="submit"][disabled] {
 .info {
     @include messaging;
 
+    background-color: $info;
     &::before {
         content: "\f129";
     }
-    background-color: $info;
 }
 
 .error {
     @include messaging;
 
+    background-color: $error;
     &::before {
         content: "\f12a";
     }
-    background-color: $error;
     a {
         color: $info;
     }
@@ -751,7 +701,6 @@ table {
 
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
-
     /* = Layout = */
     aside.primary {
         float: right;
@@ -770,7 +719,6 @@ table {
 
 
 @media only screen and (min-width: 1024px) {
-
     /* = Layout = */
     .branding {
         float: left;
@@ -837,7 +785,7 @@ table {
         nav.utility {
             margin-bottom: 0.4rem;
             ul {
-                text-align: right;   
+                text-align: right;
             }
         }
     }
@@ -863,7 +811,7 @@ table {
     }
 
     h4 {
-        font-size: 1.2rem;
+        font-size: 1.25rem;
     }
 
     h5 {
