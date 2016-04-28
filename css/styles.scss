@@ -86,10 +86,11 @@ $heading-fonts: "Open Sans", Arial, sans-serif;
 
 @mixin columns($query: "min-width: 600px") {
     > hr {
+        border: 0;
         display: none;
     }
 
-    @media only screen and ($query) {
+    @media only screen and (unquote($query)) {
         & {
             display: table;
             table-layout: fixed;
