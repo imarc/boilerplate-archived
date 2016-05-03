@@ -2,11 +2,11 @@ Boilerplate
 ===========
 
 We're currently developing a boilerplate for new sites. This is meant work
-as a lighter, customized variant of something like Twitter Bootstrap or the
+as a lighter, customized variant of something like Bootstrap or the
 HTML5 Boilerplate, by focusing on our uses, aligning things with our semantics,
 and being willing to allow for slightly more variance between browsers.
 
-We're targeting IE8+, Chrome, Safari, and Firefox.
+We're targeting IE11+, Chrome, Safari, and Firefox.
 
 Take a Look
 -----------
@@ -62,9 +62,9 @@ At a Glance
   line](http://baymard.com/blog/line-length-readability). Our default line-height is 1.5. All other
 font-sizes are **relative using em units**.
 
-* We default to **Open Sans for Headings** and **Arial** for body text.
+* We default to **Helvetica Neue** with **Arial** as a backup for body text.
 
-* Our page defaults to a maximum of **1056 pixels wide** (1024 pixels with 16 pixel padding on either size.)
+* Our page defaults to a maximum of **1200 pixels wide**
 
 
 Our Stylesheet Sections
@@ -82,9 +82,6 @@ the design. Typical variables might be
 * **Matte** – the matte color is background outside of the layout. This may
   either be the color that surrounds all the torso, or perhaps just the color
   of the header and footer.
-* **Torso Background** – this is the background color of the `.torso` element.
-* **Selection** – color used for selected text.
-
 * **Plain Text** – for the base text color.
 * **Meta Text** – a lower contrast text color for text that has less emphasis. Typically the color
   used for things like dates and references.
@@ -96,12 +93,6 @@ the design. Typical variables might be
 * **Success** – background color for success messages.
 * **Error** – background color for error messages.
 * **Info** – background color for info messages.
-
-Web Fonts
----------
-Web fonts is here because `@import` statements have to come first. We prefer including fonts from
-the CSS instead of from the HTML. It makes it easier to reuse the styles elsewhere or reference them
-from iframes (such as with TinyMCE.)
 
 Base
 ----
@@ -123,8 +114,7 @@ Some elements aren't defined as blocks in IE8/9 even though they should be.
 ([normalize.css:8](https://github.com/necolas/normalize.css/blob/master/normalize.css#L8))
 
 ### HTML
-Our default, web safe font stack looks for Arial and Helvetica. Boilerplate is designed to look best
-with a base font size of 16px. All other font sizes are relative to this one size by using ems.
+Our default, web safe font stack looks for Helvetica Neue and Arial. Boilerplate is designed to look best with a base font size of 16px. All other font sizes are relative to this one size by using ems.
 
 The two `text-size-adjust` rules address an issue with iOS where text size is increased in when
 orientation changes. ([normalize.css:62](https://github.com/necolas/normalize.css/blob/master/normalize.css#L62))
