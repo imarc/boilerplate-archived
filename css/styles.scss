@@ -221,7 +221,7 @@ nav {
     li.active,
     li:hover {
         a {
-            color: $nevada;
+            color: lighten($nevada, 20%);
         }
     }
 }
@@ -273,7 +273,7 @@ form.search {
 }
 
 .hero {
-    background: url(../img/hero.jpg) no-repeat center top / cover;
+    background: $plain-text url(../img/hero.jpg) no-repeat center top / cover;
     display: flex;
     display: -webkit-flex;
     -webkit-flex-direction: column;
@@ -548,6 +548,19 @@ textarea {
     margin: 0;
     padding: 0.4em 0.6em;
     width: 100%;
+}
+
+::-webkit-input-placeholder {
+    color: #4A4A4A;
+}
+::ms-input-placeholder {
+    color: #4A4A4A;
+}
+::-moz-placeholder {
+    color: #4A4A4A;
+}
+::-placeholder {
+    color: #4A4A4A;
 }
 
 .multiple select {

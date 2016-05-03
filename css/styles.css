@@ -126,7 +126,7 @@ nav a {
   padding: 0 0.5rem; }
 nav li.active a,
 nav li:hover a {
-  color: #69737B; }
+  color: #9ea6ac; }
 
 nav.primary {
   margin-bottom: 0.7rem; }
@@ -177,7 +177,7 @@ form.search {
     clear: both; }
 
 .hero {
-  background: url(../img/hero.jpg) no-repeat center top/cover;
+  background: #15161A url(../img/hero.jpg) no-repeat center top/cover;
   display: flex;
   display: -webkit-flex;
   -webkit-flex-direction: column;
@@ -409,6 +409,18 @@ textarea {
   margin: 0;
   padding: 0.4em 0.6em;
   width: 100%; }
+
+::-webkit-input-placeholder {
+  color: #4A4A4A; }
+
+::ms-input-placeholder {
+  color: #4A4A4A; }
+
+::-moz-placeholder {
+  color: #4A4A4A; }
+
+::-placeholder {
+  color: #4A4A4A; }
 
 .multiple select {
   padding-left: 5px;
