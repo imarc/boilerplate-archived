@@ -154,8 +154,7 @@ img {
 
 /* = Layout = */
 .container,
-.group,
-.columns {
+.group {
     @include grouping;
 }
 
@@ -244,7 +243,6 @@ form.search {
 }
 
 .torso {
-    @include container;
     @include grouping;
 
     padding-bottom: 3rem;
