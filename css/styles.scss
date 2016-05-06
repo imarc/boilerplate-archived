@@ -18,6 +18,8 @@
  * Print Styles
  */
 
+@import "_components";
+
 
 /* = Variables = */
 $water: #229AB7;
@@ -57,30 +59,6 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
     padding-left: 1rem;
     padding-right: 1rem;
     position: relative;
-}
-
-@mixin columns($query: "min-width: 669px") {
-    > hr {
-        border: 0;
-        display: none;
-    }
-
-    @media only screen and (unquote($query)) {
-        & {
-            display: table;
-            table-layout: fixed;
-            width: 100%;
-
-            > * {
-                display: table-cell;
-                vertical-align: top;
-            }
-            > hr {
-                display: table-cell;
-                width: 1rem;
-            }
-        }
-    }
 }
 
 @mixin fontawesome($character:"") {
@@ -176,8 +154,7 @@ img {
 
 /* = Layout = */
 .container,
-.group,
-.columns {
+.group {
     @include grouping;
 }
 
@@ -266,7 +243,6 @@ form.search {
 }
 
 .torso {
-    @include container;
     @include grouping;
 
     padding-bottom: 3rem;
