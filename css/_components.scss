@@ -39,3 +39,39 @@
         }
     }
 }
+
+/**
+ * The carousel mixin uses slick to create a carousel. It defaults to a rather
+ * basic, one-slide-at-a-time implementation with dots, but slick supports a
+ * good deal of configuration including showing multiple slides, breakpoints,
+ * syncing between slides, and plenty of javascript events and methods for
+ * integration.
+ *
+ * The implementation on Boilerplate is using a CDN to provide
+ *
+ * + slick.css
+ * + slick-theme.css
+ * + slick.min.js
+ *
+ * See http://kenwheeler.github.io/slick/ for more information.
+ */
+@mixin carousel() {
+    .slick-slide {
+        height: auto;
+        padding: 3rem;
+        color: #fff;
+    }
+
+    .slick-prev,
+    .slick-next {
+        z-index: 1;
+    }
+
+    .slick-prev {
+        left: 2rem;
+    }
+
+    .slick-next {
+        right: 2rem;
+    }
+}

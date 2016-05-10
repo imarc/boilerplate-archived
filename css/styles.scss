@@ -166,6 +166,10 @@ img {
     @include columns;
 }
 
+.carousel {
+    @include carousel;
+}
+
 header.primary {
     background-color: $woodsmoke;
     padding-bottom: 1rem;

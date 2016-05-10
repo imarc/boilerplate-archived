@@ -33,6 +33,21 @@
  * Additionally, it assumes the use of <hr> elements to create visual gutters
  * that are only visible while displayed as columns.
  */
+/**
+ * The carousel mixin uses slick to create a carousel. It defaults to a rather
+ * basic, one-slide-at-a-time implementation with dots, but slick supports a
+ * good deal of configuration including showing multiple slides, breakpoints,
+ * syncing between slides, and plenty of javascript events and methods for
+ * integration.
+ *
+ * The implementation on Boilerplate is using a CDN to provide
+ *
+ * + slick.css
+ * + slick-theme.css
+ * + slick.min.js
+ *
+ * See http://kenwheeler.github.io/slick/ for more information.
+ */
 /* = Variables = */
 /* = Mixins = */
 /* = Base = */
@@ -107,6 +122,18 @@ img {
     .columns > hr {
       display: table-cell;
       width: 1rem; } }
+
+.carousel .slick-slide {
+  height: auto;
+  padding: 3rem;
+  color: #fff; }
+.carousel .slick-prev,
+.carousel .slick-next {
+  z-index: 1; }
+.carousel .slick-prev {
+  left: 2rem; }
+.carousel .slick-next {
+  right: 2rem; }
 
 header.primary {
   background-color: #15161A;
