@@ -167,6 +167,7 @@ img {
 }
 
 header.primary {
+    @include header;
     background-color: $woodsmoke;
     padding-bottom: 1rem;
     padding-top: 1rem;
