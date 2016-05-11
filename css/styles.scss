@@ -170,7 +170,6 @@ img {
 }
 
 header.primary {
-    @include header;
     background-color: $woodsmoke;
     padding-bottom: 1rem;
     padding-top: 1rem;
@@ -697,6 +696,10 @@ table {
 /* Page Specific */
 
 /* Components */
+
+header.primary {
+    @include header;
+}
 
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {

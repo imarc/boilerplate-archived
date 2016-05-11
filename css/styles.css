@@ -121,11 +121,6 @@ img {
       width: 1rem; } }
 
 header.primary {
-  position: fixed;
-  top: 0;
-  transition: all 0.2s ease-in-out;
-  width: 100%;
-  z-index: 100;
   background-color: #15161A;
   padding-bottom: 1rem;
   padding-top: 1rem; }
@@ -619,6 +614,13 @@ table {
 /* Section Specific */
 /* Page Specific */
 /* Components */
+header.primary {
+  position: fixed;
+  top: 0;
+  transition: all 0.2s ease-in-out;
+  width: 100%;
+  z-index: 100; }
+
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
   /* = Layout = */
