@@ -14,6 +14,9 @@
 * Forms
 * Messaging
 * Tables
+* Section Specific
+* Page Specific
+* Components
 * Media Queries
 * Print Styles
 */
@@ -33,6 +36,15 @@
  * Additionally, it assumes the use of <hr> elements to create visual gutters
  * that are only visible while displayed as columns.
  */
+/**
+ * The header mixin works with js (sticky-header.js) to hide the header as you scroll down, and show it as you 
+ * scroll back up. This is responsive as the "top" value is dynamically set in the js based on the height of the
+ * header. Top padding is also added to the body dynamically via js so that the header doesn't overlap any
+ * content. 
+ * 
+ * Markup requires: header.primary
+ *
+ **/
 /* = Variables = */
 /* = Mixins = */
 /* = Base = */
@@ -117,8 +129,6 @@ header.primary {
   background-color: #15161A;
   padding-bottom: 1rem;
   padding-top: 1rem; }
-  header.primary.header-up {
-    top: -104px; }
 
 .branding {
   margin-bottom: 1rem;
@@ -606,6 +616,9 @@ table {
   table tr:nth-child(even) td {
     background-color: #F3F3F3; }
 
+/* Section Specific */
+/* Page Specific */
+/* Components */
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
   /* = Layout = */

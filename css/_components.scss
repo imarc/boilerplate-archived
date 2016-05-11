@@ -40,13 +40,22 @@
     }
 }
 
-@mixin header {
+/**
+ * The header mixin works with js (sticky-header.js) to hide the header as you scroll down, and show it as you 
+ * scroll back up. This is responsive as the "top" value is dynamically set in the js based on the height of the
+ * header. Top padding is also added to the body dynamically via js so that the header doesn't overlap any
+ * content. 
+ * 
+ * Markup requires: header.primary
+ *
+ **/
+
+@mixin header() {
     position: fixed;
     top: 0;
     transition: all 0.2s ease-in-out;
     width: 100%;
     z-index: 100;
-    &.header-up {
-        top: -104px;
-    }
 }
+
+

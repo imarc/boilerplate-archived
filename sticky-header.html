@@ -7,49 +7,6 @@
         <meta name="viewport" content="width=device-width" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
-        <script type="text/javascript">
-            $(function() {
-                // header hide and show
-                // Hide Header on on scroll down
-                var didScroll;
-                var lastScrollTop = 0;
-                var delta = 5;
-                var navbarHeight = $('header').outerHeight();
-
-                $(window).scroll(function(event){
-                    didScroll = true;
-                });
-
-                setInterval(function() {
-                    if (didScroll) {
-                        hasScrolled();
-                        didScroll = false;
-                    }
-                }, 250);
-
-                function hasScrolled() {
-                    var st = $(this).scrollTop();
-
-                    // Make sure they scroll more than delta
-                    if(Math.abs(lastScrollTop - st) <= delta)
-                        return;
-
-                    // If they scrolled down and are past the navbar, add class .header-up.
-                    // This is necessary so you never see what is "behind" the navbar.
-                    if (st > lastScrollTop && st > navbarHeight){
-                        // Scroll Down
-                        $('header').removeClass('header-down').addClass('header-up');
-                    } else {
-                        // Scroll Up
-                        if(st + $(window).height() < $(document).height()) {
-                            $('header').removeClass('header-up').addClass('header-down');
-                        }
-                    }
-
-                    lastScrollTop = st;
-                }
-            });
-        </script>
     </head>
     <body>
         <header class="primary">
@@ -257,5 +214,7 @@
                 ©2016 by Imarc
             </p>
         </footer>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script src="js/sticky-header.js"></script>
     </body>
 </html>
