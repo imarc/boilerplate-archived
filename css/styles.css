@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
 * Built using Imarc Boilerplate v2.1
 *
@@ -14,6 +15,9 @@
 * Forms
 * Messaging
 * Tables
+* Section Specific
+* Page Specific
+* Components
 * Media Queries
 * Print Styles
 */
@@ -25,6 +29,9 @@
  * + This file should not generate any CSS on it's own; it should only contain
  *   mixin and/or function definitions.
  */
+/*
+*  Media Queries
+*/
 /**
  * The columns mixin makes it so that immmediate child elements appear as
  * columns. It is responsive, allowing you to specify the media query at which
@@ -32,6 +39,11 @@
  *
  * Additionally, it assumes the use of <hr> elements to create visual gutters
  * that are only visible while displayed as columns.
+ */
+/**
+ * The features mixin is meant for column-based content that is introductory 
+ to a section. Often, these present a client’s “features“. You can pass 2, 3,
+ or 4 features to the mixin for a respective amount of columns.
  */
 /* = Variables = */
 /* = Mixins = */
@@ -598,6 +610,30 @@ table {
     border: 1px solid #DDD; }
   table tr:nth-child(even) td {
     background-color: #F3F3F3; }
+
+/* Section Specific */
+/* Page Specific */
+/* Components */
+.features .feature {
+  background-color: #EEE;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  text-align: center; }
+  .features .feature img,
+  .features .feature h3,
+  .features .feature p {
+    margin-bottom: 1rem; }
+  .features .feature .button {
+    margin-bottom: 0; }
+@media only screen and (min-width: 1024px) {
+  .features .feature {
+    float: left;
+    margin-left: 3%; }
+  .features .feature {
+    width: 30%; }
+  .features .feature:nth-child(3n+1) {
+    clear: both;
+    margin-left: 0; } }
 
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {

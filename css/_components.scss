@@ -7,6 +7,23 @@
  *   mixin and/or function definitions.
  */
 
+ /*
+ *  Media Queries
+ */
+
+@mixin mq($breakpoint) {
+    @if $breakpoint == "medium" {
+        @media only screen and (min-width: 669px) {
+            @content;
+        }
+    }
+    @else if $breakpoint == "large" {
+        @media only screen and (min-width: 1024px) {
+            @content;
+        }
+    }
+}
+
 
 /**
  * The columns mixin makes it so that immmediate child elements appear as
@@ -16,13 +33,13 @@
  * Additionally, it assumes the use of <hr> elements to create visual gutters
  * that are only visible while displayed as columns.
  */
-@mixin columns($query: "min-width: 669px") {
+@mixin columns() {
     > hr {
         border: 0;
         display: none;
     }
 
-    @media only screen and (unquote($query)) {
+    @include mq(medium) {
         & {
             display: table;
             table-layout: fixed;
@@ -35,6 +52,63 @@
             > hr {
                 display: table-cell;
                 width: 1rem;
+            }
+        }
+    }
+}
+
+
+/**
+ * The features mixin is meant for column-based content that is introductory 
+ to a section. Often, these present a client’s “features“. You can pass 2, 3,
+ or 4 features to the mixin for a respective amount of columns.
+ */
+@mixin features($count) {
+    & .feature {
+        background-color: #EEE;
+        margin-bottom: 2rem;
+        padding: 2rem;
+        text-align: center;
+        img,
+        h3,
+        p {
+            margin-bottom: 1rem;
+        }
+        .button {
+            margin-bottom: 0;
+        }
+    }
+
+    @include mq(large) {
+        & .feature {
+            float: left;
+            margin-left: 3%;
+        }        
+        @if $count == 2 {
+            & .feature {
+                width: 48.5%;
+            }
+            & .feature:nth-child(odd) {
+                clear: both;
+                margin-left: 0;
+            }
+        }
+        @if $count == 3 {
+            & .feature {
+                width: 30%;
+            }
+            & .feature:nth-child(3n+1) {
+                clear: both;
+                margin-left: 0;
+            }
+        }
+        @if $count == 4 {
+            & .feature {
+                width: 22.75%;
+            }
+            & .feature:nth-child(4n+1) {
+                clear: both;
+                margin-left: 0;
             }
         }
     }
