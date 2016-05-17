@@ -54,6 +54,23 @@
  * + slick.min.js
  *
  * See http://kenwheeler.github.io/slick/ for more information.
+ *
+ * The carousel() mixin should be included on a parent element that contains
+ * one div per slide. No additional classes are necessary – the slick classes
+ * referenced are added dynamically by slick.
+ *
+ * <div class="carousel">
+ *     <div>
+ *         <h2>A slide!</h2>
+ *         <p>Some text.</p>
+ *     </div>
+ * </div>
+ *
+ * Emmet: .carousel>div*3>h2+p
+ *
+ * While there's more information in slick's documentation, .slick-slide wraps
+ * slides while .slick-next and .slick-prev are used for the next/previous
+ * arrows.
  */
 @mixin carousel() {
     .slick-slide {
