@@ -39,6 +39,18 @@
  *
  * Additionally, it assumes the use of <hr> elements to create visual gutters
  * that are only visible while displayed as columns.
+ *
+ * <div class="columns">
+ *     <div>
+ *         <h2>A column</h2>
+ *     </div>
+ *     <hr />
+ *     <div>
+ *         <h2>Another column</h2>
+ *     </div>
+ * </div>
+ *
+ * Emmet: .colums>div+(hr+div)*2
  */
 /**
  * The features mixin is meant for column-based content that is introductory 
