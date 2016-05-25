@@ -52,5 +52,67 @@
     }
 }
 
+
+
+/**
+ * The background-video mixin styles an edge-to-edge background video with a
+ * height that conforms to the height of its foreground content.
+ *
+ * Emmet: .background-video>.hero>.panel{$1}+video
+ */
 @mixin background-video() {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1140px;
+        padding-left: 20px;
+        padding-right: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero {
+        overflow: hidden;
+        padding: 40px 0;
+        position: relative;
+        .panel {
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+            > div {
+                color: #FFF;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 30px;
+                max-width: 1140px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+        }
+        video {
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+    }
+
+    .hero::before {
+        content: "";
+        display: block;
+        padding-top: 33.333%;
+    }
+
+    @media only screen and (min-width: 1024px) {
+        .hero {
+            .panel {
+                > div {
+                    margin-top: 60px;
+                }
+            }
+        }
+    }
 }
