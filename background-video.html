@@ -15,10 +15,26 @@
                     <div class="container">
                         <h1>Background Video</h1>
                         <p>
-                            Below is an example of a background video.
+                            Below is an example of a background video. Because elements within <code>.hero</code> are absolutely positioned, <code>.hero</code>’s height gets wiped out. We assign it a faux-height via a <code>::before</code> pseudo element. Use both .webm and .mp4 formats for wider browser support.
                         </p>
                     </div>
-                    <div class="container background-video">
+                    <div class="background-video">
+                        <div class="hero">
+                            <div class="panel">
+                                <div>
+                                    <h1>
+                                        The best hero in town
+                                    </h1>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis accusamus, fuga consequatur.
+                                    </p>
+                                </div>
+                            </div>
+                             <video autoplay="autoplay" loop="loop" poster="http://components.imarc.net/components/background-video/video_placeholder.jpg">
+                                <source src="http://components.imarc.net/components/background-video/imarc_culture_video_1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                                <source src="http://components.imarc.net/components/background-video/imarc_culture_video_1.webmhd.webm" type='video/webm; codecs="vp8, vorbis"' />
+                            </video>
+                        </div>
                     </div>
                 </section>
             </main>
