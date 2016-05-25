@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
 * Built using Imarc Boilerplate v2.1
 *
@@ -44,6 +45,13 @@
  * </div>
  *
  * Emmet: .colums>div+(hr+div)*2
+ */
+/**
+ * The background-video mixin styles an edge-to-edge background video. Because 
+ * elements within .hero are absolutely positioned, .hero’s height gets wiped 
+ * out. We assign it a faux-height via a ::before pseudo element.
+ *
+ * Emmet: .background-video>.hero>.panel{$1}+video
  */
 /* = Variables = */
 /* = Mixins = */
@@ -119,6 +127,46 @@ img {
     .columns > hr {
       display: table-cell;
       width: 1rem; } }
+
+.background-video .container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1140px;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  z-index: 2; }
+.background-video .hero {
+  overflow: hidden;
+  padding: 40px 0;
+  position: relative; }
+  .background-video .hero .panel {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 3; }
+    .background-video .hero .panel > div {
+      color: #FFF;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 30px;
+      max-width: 1140px;
+      padding-left: 20px;
+      padding-right: 20px; }
+  .background-video .hero video {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1; }
+.background-video .hero::before {
+  content: "";
+  display: block;
+  padding-top: 33.333%; }
+@media only screen and (min-width: 1024px) {
+  .background-video .hero .panel > div {
+    margin-top: 60px; } }
 
 header.primary {
   background-color: #15161A;
