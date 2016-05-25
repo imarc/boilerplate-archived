@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
 * Built using Imarc Boilerplate v2.1
 *
@@ -46,8 +47,9 @@
  * Emmet: .colums>div+(hr+div)*2
  */
 /**
- * The background-video mixin styles an edge-to-edge background video with a
- * height that conforms to the height of its foreground container.
+ * The background-video mixin styles an edge-to-edge background video. Because 
+ * elements within .hero are absolutely positioned, .hero’s height gets wiped 
+ * out. We assign it a faux-height via a ::before pseudo element.
  *
  * Emmet: .background-video>.hero>.panel{$1}+video
  */
