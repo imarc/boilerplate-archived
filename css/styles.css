@@ -47,7 +47,7 @@
  */
 /**
  * The background-video mixin styles an edge-to-edge background video with a
- * height that conforms to the height of its foreground content.
+ * height that conforms to the height of its foreground container.
  *
  * Emmet: .background-video>.hero>.panel{$1}+video
  */
