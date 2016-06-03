@@ -20,24 +20,32 @@
 
 @import "_components";
 
-
 /* = Variables = */
-$water: #229AB7;
-$woodsmoke: #15161A;
-$shark: #1F2024;
-$tuna: #383B3F;
-$nevada: #69737B;
-$mercury: #DDD;
-$crimson: #DC143C;
-$matte: #FFF;
-$plain-text: $woodsmoke;
-$meta-text: $nevada;
-$link: $water;
-$link-hover: darken($link, 10%);
-$border: $mercury;
-$success: $water;
-$error: $crimson;
-$info: $mercury;
+$charcoal: #191919;
+
+/* The brand colors (name them the color) */
+$brand-blue: #0c96dd;
+$brand-dark-blue: #0c508a;
+$brand-orange: #eb7424;
+
+/* Message colors */
+$success: #48ac2c;
+$error: #ce2a2a;
+$info: #DDD;
+
+/* Applied colors */
+$plain-text: $charcoal;
+$meta-text: lighten($charcoal, 35%);
+$link: $brand-blue;
+$link-hover: $brand-orange;
+$border: lighten($charcoal, 80%);
+
+/* Social Network Colors */
+$facebook: #3664a2;
+$twitter: #55acee;
+$linkedin: #0077B5;
+$youtube: #cd201f;
+
 $font-stack: "Helvetica Neue", Arial, sans-serif;
 
 
@@ -134,7 +142,7 @@ video {
 }
 
 html {
-    background-color: $matte;
+    background-color: #fff;
     color: $plain-text;
     font-family: $font-stack;
     font-size: 1rem;
@@ -167,7 +175,7 @@ img {
 }
 
 header.primary {
-    background-color: $woodsmoke;
+    background-color: $charcoal;
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
@@ -192,14 +200,14 @@ nav {
         display: inline-block;
     }
     a {
-        color: $matte;
+        color: #fff;
         display: block;
         padding: 0 0.5rem;
     }
     li.active,
     li:hover {
         a {
-            color: lighten($nevada, 20%);
+            color: lighten($charcoal, 55%);
         }
     }
 }
@@ -262,7 +270,7 @@ form.search {
     .copy {
         @include container;
         * {
-            color: $matte;
+            color: #fff;
         }
     }
 }
@@ -315,7 +323,7 @@ nav.supplemental {
 }
 
 footer.primary {
-    background-color: $shark;
+    background-color: $charcoal;
     color: $meta-text;
     font-size: 0.9rem;
     padding-bottom: 1rem;
@@ -328,7 +336,7 @@ footer.primary {
         margin: 0;
     }
     a {
-        color: $matte;
+        color: #fff;
     }
 }
 
@@ -431,7 +439,7 @@ a {
 
 a.button {
     background-color: $link;
-    color: $matte;
+    color: #fff;
     display: inline-block;
     font-weight: bold;
     padding: 0.6em 1em;
@@ -566,7 +574,7 @@ input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button;
     -moz-appearance: button;
-    background-color: $nevada;
+    background-color: lighten($charcoal, 35%);
     border: none;
     color: #FFF;
     cursor: pointer;
@@ -576,20 +584,20 @@ input[type="submit"] {
     padding: 0.4em 0.6em;
     text-align: center;
     &:hover {
-        background-color: darken($nevada, 6%);
+        background-color: lighten($charcoal, 30%);
         border-color: $link;
         cursor: pointer;
     }
     &:focus {
-        background-color: darken($nevada, 6%);
+        background-color: lighten($charcoal, 30%);
     }
 }
 
 button.disabled,
 input[type="reset"][disabled],
 input[type="submit"][disabled] {
-    background-color: desaturate($nevada, 20%);
-    color: darken(#FFF, 30%);
+    background-color: lighten($charcoal, 45%);
+    color: darken(#FFF, 20%);
     cursor: default;
 }
 
@@ -627,10 +635,10 @@ input[type="submit"][disabled] {
         content: "\f00c";
     }
     a {
-        color: $matte;
+        color: #fff;
     }
     a:hover {
-        color: darken($matte, 15%);
+        color: darken(#fff, 15%);
     }
 }
 
@@ -760,7 +768,7 @@ table {
                 font-size: 0.9rem;
             }
             .dropdown li a {
-                color: $matte;
+                color: #fff;
                 padding: 0.3rem 0.8rem;
             }
             .dropdown li a:hover {
