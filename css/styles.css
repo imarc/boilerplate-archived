@@ -58,6 +58,10 @@
  or 4 features to the mixin for a respective amount of columns.
  */
 /* = Variables = */
+/* The brand colors (name them the color) */
+/* Message colors */
+/* Applied colors */
+/* Social Network Colors */
 /* = Mixins = */
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, main, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
@@ -84,8 +88,8 @@ video {
   display: block; }
 
 html {
-  background-color: #FFF;
-  color: #15161A;
+  background-color: #fff;
+  color: #191919;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 1rem;
   line-height: 1.5;
@@ -133,7 +137,7 @@ img {
       width: 1rem; } }
 
 header.primary {
-  background-color: #15161A;
+  background-color: #191919;
   padding-bottom: 1rem;
   padding-top: 1rem; }
 
@@ -159,12 +163,12 @@ nav ul {
 nav li {
   display: inline-block; }
 nav a {
-  color: #FFF;
+  color: #fff;
   display: block;
   padding: 0 0.5rem; }
 nav li.active a,
 nav li:hover a {
-  color: #9ea6ac; }
+  color: #a5a5a5; }
 
 nav.primary {
   margin-bottom: 0.7rem; }
@@ -209,7 +213,7 @@ form.search {
     clear: both; }
 
 .hero {
-  background: #15161A url(../img/hero.jpg) no-repeat center top/cover;
+  background: #191919 url(../img/hero.jpg) no-repeat center top/cover;
   display: flex;
   display: -webkit-flex;
   -webkit-flex-direction: column;
@@ -226,10 +230,10 @@ form.search {
     padding-right: 1rem;
     position: relative; }
     .hero .copy * {
-      color: #FFF; }
+      color: #fff; }
 
 main section:not(:last-child) {
-  border-bottom: 1px solid #DDD;
+  border-bottom: 1px solid #e5e5e5;
   margin-bottom: 3rem;
   padding-bottom: 2rem; }
 
@@ -241,25 +245,25 @@ nav.supplemental ul li {
   float: none;
   margin-bottom: 0; }
   nav.supplemental ul li a {
-    color: #229AB7;
+    color: #0c96dd;
     display: block;
     padding: 0.25em 0; }
   nav.supplemental ul li a:hover {
-    color: #15161A; }
+    color: #191919; }
 nav.supplemental ul ul a {
-  color: #69737B;
+  color: #727272;
   font-size: 0.8rem;
   line-height: 2;
   padding: 0; }
 nav.supplemental > ul > li {
   padding-bottom: 0.5em; }
 nav.supplemental > ul > li ~ li {
-  border-top: 1px solid #DDD;
+  border-top: 1px solid #e5e5e5;
   padding-top: 0.5em; }
 
 footer.primary {
-  background-color: #1F2024;
-  color: #69737B;
+  background-color: #191919;
+  color: #727272;
   font-size: 0.9rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
@@ -269,7 +273,7 @@ footer.primary {
   footer.primary p {
     margin: 0; }
   footer.primary a {
-    color: #FFF; }
+    color: #fff; }
 
 .social {
   list-style: none;
@@ -318,8 +322,8 @@ em {
   font-style: italic; }
 
 blockquote {
-  border-left: 1px solid #DDD;
-  color: #69737B;
+  border-left: 1px solid #e5e5e5;
+  color: #727272;
   font-style: italic;
   margin-bottom: 1.5em;
   padding-left: 1rem; }
@@ -330,7 +334,7 @@ blockquote {
     clear: both; }
 
 .intro {
-  color: #69737B; }
+  color: #727272; }
   .intro p {
     font-size: 1.3rem;
     margin-bottom: 0.8em; }
@@ -340,30 +344,30 @@ p {
 
 hr {
   border: 0;
-  border-top: 1px solid #69737B;
+  border-top: 1px solid #727272;
   display: block;
   height: 0;
   margin: 2em auto 3em;
   width: 100%; }
 
 a {
-  color: #229AB7;
+  color: #0c96dd;
   text-decoration: none; }
   a:hover, a:active {
-    color: #1a768c; }
+    color: #eb7424; }
   a:focus {
     outline: thin dotted; }
 
 a.button {
-  background-color: #229AB7;
-  color: #FFF;
+  background-color: #0c96dd;
+  color: #fff;
   display: inline-block;
   font-weight: bold;
   padding: 0.6em 1em; }
 
 a.button:hover,
 a.button:focus {
-  background-color: #1a768c; }
+  background-color: #eb7424; }
 
 ol,
 ul,
@@ -419,10 +423,10 @@ label {
   margin-bottom: 0.5em; }
 
 .required {
-  color: #DC143C; }
+  color: #ce2a2a; }
 
 fieldset .help {
-  color: #69737B;
+  color: #727272;
   display: block;
   font-size: 0.8rem;
   margin: 0; }
@@ -433,8 +437,8 @@ input[type="tel"],
 input[type="email"],
 input[type="text"],
 textarea {
-  border: 1px solid #DDD;
-  color: #15161A;
+  border: 1px solid #e5e5e5;
+  color: #191919;
   display: block;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 0.9rem;
@@ -476,7 +480,7 @@ input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   -moz-appearance: button;
-  background-color: #69737B;
+  background-color: #727272;
   border: none;
   color: #FFF;
   cursor: pointer;
@@ -488,19 +492,19 @@ input[type="submit"] {
   button:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    background-color: #5b646a;
-    border-color: #229AB7;
+    background-color: #666666;
+    border-color: #0c96dd;
     cursor: pointer; }
   button:focus,
   input[type="reset"]:focus,
   input[type="submit"]:focus {
-    background-color: #5b646a; }
+    background-color: #666666; }
 
 button.disabled,
 input[type="reset"][disabled],
 input[type="submit"][disabled] {
-  background-color: #727272;
-  color: #b3b3b3;
+  background-color: #8c8c8c;
+  color: #cccccc;
   cursor: default; }
 
 /* = Messaging = */
@@ -508,7 +512,7 @@ input[type="submit"][disabled] {
   margin-bottom: 2rem;
   padding: 1em 3em;
   position: relative;
-  background-color: #229AB7; }
+  background-color: #48ac2c; }
   .success p:last-of-type,
   .success ul:last-of-type {
     margin-bottom: 0; }
@@ -533,7 +537,7 @@ input[type="submit"][disabled] {
   .success::before {
     content: "\f00c"; }
   .success a {
-    color: #FFF; }
+    color: #fff; }
   .success a:hover {
     color: #d9d9d9; }
 
@@ -570,7 +574,7 @@ input[type="submit"][disabled] {
   margin-bottom: 2rem;
   padding: 1em 3em;
   position: relative;
-  background-color: #DC143C; }
+  background-color: #ce2a2a; }
   .error p:last-of-type,
   .error ul:last-of-type {
     margin-bottom: 0; }
@@ -614,12 +618,12 @@ table {
     text-align: left;
     vertical-align: top; }
   table th {
-    background-color: #15161A;
+    background-color: #191919;
     color: #FFF;
     font-weight: bold;
     text-transform: uppercase; }
   table td {
-    border: 1px solid #DDD; }
+    border: 1px solid #e5e5e5; }
   table tr:nth-child(even) td {
     background-color: #F3F3F3; }
 
@@ -692,7 +696,7 @@ table {
         display: block;
         float: none; }
       nav.primary ul .dropdown {
-        background-color: #15161A;
+        background-color: #191919;
         left: 0;
         min-width: 180px;
         position: absolute;
@@ -702,10 +706,10 @@ table {
       nav.primary ul .dropdown li {
         font-size: 0.9rem; }
       nav.primary ul .dropdown li a {
-        color: #FFF;
+        color: #fff;
         padding: 0.3rem 0.8rem; }
       nav.primary ul .dropdown li a:hover {
-        background-color: #2c2e36; }
+        background-color: #333333; }
 
   .utilities {
     float: right;
