@@ -705,7 +705,7 @@ table {
 
 /* Components */
 .features {
-    @include features(3);
+    @include features(center, 2rem);
 }
 
 

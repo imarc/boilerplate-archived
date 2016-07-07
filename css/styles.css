@@ -633,6 +633,9 @@ table {
 .features .feature {
   background-color: #EEE;
   margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
   padding: 2rem;
   text-align: center; }
   .features .feature img,
@@ -642,14 +645,18 @@ table {
   .features .feature .button {
     margin-bottom: 0; }
 @media only screen and (min-width: 1024px) {
+  .features {
+    display: flex;
+    justify-content: space-between; }
   .features .feature {
-    float: left;
-    margin-left: 3%; }
-  .features .feature {
-    width: 30%; }
-  .features .feature:nth-child(3n+1) {
-    clear: both;
-    margin-left: 0; } }
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem; }
+    .features .feature .button {
+      align-self: center;
+      margin-top: auto; } }
 
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
