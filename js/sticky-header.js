@@ -1,8 +1,8 @@
 $(function() {
     // header hide and show on scroll up/down
     var didScroll;
-    var lastScrollTop = 0;
-    var delta = 5;
+    var lastScrollTop       = 0;
+    var delta               = 5;
     var initialHeaderHeight = $('header.primary').outerHeight();
 
     // set top padding on body so header doesn't overlap content
@@ -12,16 +12,20 @@ $(function() {
         didScroll = true;
     });
 
-    setInterval(function() {
+    function scrollCheck() {
         if (didScroll) {
             hasScrolled();
             didScroll = false;
         }
-    }, 250);
+        requestAnimationFrame(scrollCheck);
+    };
+
+    requestAnimationFrame(scrollCheck);
 
     var hasScrolled = function() {
-        var headerHeight = $('header.primary').outerHeight();
-        var scrollPos = $(this).scrollTop();
+        var $headerPrimary = $('header.primary');
+        var headerHeight   = $headerPrimary.outerHeight();
+        var scrollPos      = $(this).scrollTop();
 
         // Make sure they scroll more than delta
         if(Math.abs(lastScrollTop - scrollPos) <= delta)
@@ -30,18 +34,23 @@ $(function() {
         // If they scrolled down and are past the header, add class .header-up.
         if (scrollPos > lastScrollTop && scrollPos > headerHeight){
             // Scroll Down
-            $('header.primary').addClass('header-up').css('top', -headerHeight);
+            $headerPrimary
+                .addClass('header-up')
+                .css('top', -headerHeight);
             $('body').css('padding-top', headerHeight);
         } else {
             // Scroll Up
-            $('header.primary').removeClass('header-up').css('top', '0');
+            $headerPrimary
+                .removeClass('header-up')
+                .css('top', '0');
         }
 
         lastScrollTop = scrollPos;
     }
 
     $(window).resize(function(){
-        var headerHeight = $('header.primary').outerHeight();
+        var $headerPrimary = $('header.primary');
+        var headerHeight   = $headerPrimary.outerHeight();
         hasScrolled();
         $('body').css('padding-top', headerHeight);
     });

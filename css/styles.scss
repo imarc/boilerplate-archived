@@ -698,7 +698,7 @@ table {
 /* Components */
 
 header.primary {
-    @include header;
+    @include sticky-header;
 }
 
 /* = Media Queries = */
