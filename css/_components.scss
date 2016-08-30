@@ -33,7 +33,7 @@
  *     </div>
  * </div>
  *
- * Emmet: .colums>div+(hr+div)*2
+ * Emmet: .columns>div+(hr+div)*2
  */
 @mixin columns() {
     > hr {
@@ -64,9 +64,11 @@
  * The features mixin is meant for column-based content that is introductory 
  to a section. Often, these present a client’s “features“. You can pass 2, 3,
  or 4 features to the mixin for a respective amount of columns.
+ *
+ * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 @mixin features($button-align, $gutter) {
-    & .feature {
+    & > * {
         background-color: #EEE;
         margin-bottom: 2rem;
         margin-left: auto;
@@ -83,13 +85,13 @@
         }
     }       
 
-    @media only screen and (min-width: $medium) {
+    @media only screen and (min-width: $large) {
         & {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
         }
-        & .feature {
+        & > * {
             display: flex;
             flex: 1 0 0;
             flex-direction: column;
