@@ -29,7 +29,7 @@ $brand-blue: #0c96dd;
 $brand-dark-blue: #0c508a;
 $brand-orange: #eb7424;
 
-/* Message colors */
+/* Messaging colors */
 $success: #48ac2c;
 $error: #ce2a2a;
 $info: #DDD;
@@ -51,6 +51,15 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
 
 
 /* = Mixins = */
+@mixin container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+}
+
 @mixin grouping {
     &::before, &::after {
         content: "";
@@ -59,15 +68,6 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
     &::after {
         clear: both;
     }
-}
-
-@mixin container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: relative;
 }
 
 @mixin fontawesome($character:"") {
@@ -141,6 +141,7 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
     width: 1px;
 }
 
+
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, main, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
     border: 0;
@@ -168,7 +169,7 @@ video {
 }
 
 html {
-    background-color: #fff;
+    background-color: #fff; 
     color: $plain-text;
     font-family: $font-stack;
     font-size: 1rem;
@@ -185,6 +186,7 @@ img {
     max-width: 100%;
     vertical-align: middle;
 }
+
 
 /* = Layout = */
 .container,
@@ -373,7 +375,6 @@ footer.primary {
         display: inline-block;
         font-size: 22px;
         margin-bottom: 0;
-        margin-left: 0.4rem;
         margin-right: 0.4rem;
     }
     a:hover {
@@ -438,10 +439,6 @@ blockquote {
     }
 }
 
-p {
-    margin-bottom: 2rem;
-}
-
 hr {
     border: 0;
     border-top: 1px solid $meta-text;
@@ -475,6 +472,7 @@ a.button:focus {
     background-color: $link-hover;
 }
 
+p,
 ol,
 ul,
 dl {
@@ -503,6 +501,7 @@ dt {
 dd {
     padding-left: 2em;
 }
+
 
 /* = Forms = */
 button,
@@ -580,7 +579,7 @@ textarea {
 }
 
 textarea {
-    height: 12em;
+    height: 8em;
     overflow: auto;
     resize: vertical;
 }
@@ -627,11 +626,13 @@ input[type="submit"][disabled] {
     cursor: default;
 }
 
+
 /* = Iconography = */
 .thumbs-up::before {
     @include fontawesome("\f087");
     margin-right: 0.5em;
 }
+
 
 /* = Messaging = */
 .success {
@@ -672,6 +673,7 @@ input[type="submit"][disabled] {
         color: darken($info, 15%);
     }
 }
+
 
 /* = Tables = */
 table {
