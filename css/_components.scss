@@ -9,6 +9,13 @@
 
 
 /**
+ * Media query breakpoints
+ */
+
+ $medium: 669px;
+ $large: 1024px;
+
+/**
  * The columns mixin makes it so that immmediate child elements appear as
  * columns. It is responsive, allowing you to specify the media query at which
  * to switch the layout from stacking to columns.
@@ -28,13 +35,13 @@
  *
  * Emmet: .colums>div+(hr+div)*2
  */
-@mixin columns($query: "min-width: 669px") {
+@mixin columns() {
     > hr {
         border: 0;
         display: none;
     }
 
-    @media only screen and (unquote($query)) {
+    @media only screen and (min-width: $medium) {
         & {
             display: table;
             table-layout: fixed;
@@ -49,5 +56,49 @@
                 width: 1rem;
             }
         }
+    }
+}
+
+
+/**
+ * The features mixin is meant for column-based content that is introductory 
+ to a section. Often, these present a client’s “features“. You can pass 2, 3,
+ or 4 features to the mixin for a respective amount of columns.
+ */
+@mixin features($button-align, $gutter) {
+    & .feature {
+        background-color: #EEE;
+        margin-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        text-align: center;
+        img,
+        h3,
+        p {
+            margin-bottom: 1rem;
+        }
+        .button {
+            margin-bottom: 0;
+        }
+    }       
+
+    @media only screen and (min-width: $medium) {
+        & {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        & .feature {
+            display: flex;
+            flex: 1 0 0;
+            flex-direction: column;
+            margin-left: $gutter;
+            margin-right: $gutter;
+            .button {
+                align-self: $button-align;
+                margin-top: auto;
+            }
+        }    
     }
 }

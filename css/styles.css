@@ -16,6 +16,9 @@
 * Iconography
 * Messaging
 * Tables
+* Section Specific
+* Page Specific
+* Components
 * Media Queries
 * Print Styles
 */
@@ -26,6 +29,9 @@
  *   include this file without including styles.scss.
  * + This file should not generate any CSS on it's own; it should only contain
  *   mixin and/or function definitions.
+ */
+/**
+ * Media query breakpoints
  */
 /**
  * The columns mixin makes it so that immmediate child elements appear as
@@ -46,6 +52,11 @@
  * </div>
  *
  * Emmet: .colums>div+(hr+div)*2
+ */
+/**
+ * The features mixin is meant for column-based content that is introductory 
+ to a section. Often, these present a client’s “features“. You can pass 2, 3,
+ or 4 features to the mixin for a respective amount of columns.
  */
 /* = Variables = */
 /* The brand colors (name them the color) */
@@ -553,7 +564,7 @@ input[type="submit"][disabled] {
   .info a {
     text-decoration: underline; }
   .info::before {
-    font: normal normal normal 1em / 1 FontAwesome;
+    font: normal normal normal 1rem / 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     speak: none;
@@ -627,6 +638,37 @@ table {
     border: 1px solid #e5e5e5; }
   table tr:nth-child(even) td {
     background-color: #F3F3F3; }
+
+/* Section Specific */
+/* Page Specific */
+/* Components */
+.features .feature {
+  background-color: #EEE;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  text-align: center; }
+  .features .feature img,
+  .features .feature h3,
+  .features .feature p {
+    margin-bottom: 1rem; }
+  .features .feature .button {
+    margin-bottom: 0; }
+@media only screen and (min-width: 669px) {
+  .features {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+  .features .feature {
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+    margin-left: 2rem;
+    margin-right: 2rem; }
+    .features .feature .button {
+      align-self: center;
+      margin-top: auto; } }
 
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {

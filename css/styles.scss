@@ -15,6 +15,9 @@
  * Iconography
  * Messaging
  * Tables
+ * Section Specific
+ * Page Specific
+ * Components
  * Media Queries
  * Print Styles
  */
@@ -703,6 +706,15 @@ table {
     tr:nth-child(even) td {
         background-color: #F3F3F3;
     }
+}
+
+/* Section Specific */
+
+/* Page Specific */
+
+/* Components */
+.features {
+    @include features(center, 2rem);
 }
 
 
