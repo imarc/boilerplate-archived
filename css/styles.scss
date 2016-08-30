@@ -12,6 +12,7 @@
  * Layout
  * Typography
  * Forms
+ * Iconography
  * Messaging
  * Tables
  * Media Queries
@@ -70,7 +71,7 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
 }
 
 @mixin fontawesome($character:"") {
-    font: normal normal normal 1rem unquote("/") 1 FontAwesome;
+    font: normal normal normal 1em unquote("/") 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     speak: none;
@@ -81,6 +82,31 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
         content: $character;
     } @else {
         display: inline-block;
+    }
+}
+
+@mixin messaging {
+    margin-bottom: 2rem;
+    padding: 1em 3em;
+    position: relative;
+    p:last-of-type,
+    ul:last-of-type {
+        margin-bottom: 0;
+    }
+    a {
+        text-decoration: underline;
+    }
+    &::before {
+        @include fontawesome;
+
+        content: "";
+        display: block;
+        font-size: 20px;
+        height: 23px;
+        left: 1em;
+        position: absolute;
+        top: 1em;
+        width: 23px;
     }
 }
 
@@ -601,32 +627,13 @@ input[type="submit"][disabled] {
     cursor: default;
 }
 
-/* = Messaging = */
-@mixin messaging {
-    margin-bottom: 2rem;
-    padding: 1em 3em;
-    position: relative;
-    p:last-of-type,
-    ul:last-of-type {
-        margin-bottom: 0;
-    }
-    a {
-        text-decoration: underline;
-    }
-    &::before {
-        @include fontawesome;
-
-        content: "";
-        display: block;
-        font-size: 20px;
-        height: 23px;
-        left: 1em;
-        position: absolute;
-        top: 1em;
-        width: 23px;
-    }
+/* = Iconography = */
+.thumbs-up::before {
+    @include fontawesome("\f087");
+    margin-right: 0.5em;
 }
 
+/* = Messaging = */
 .success {
     @include messaging;
 
