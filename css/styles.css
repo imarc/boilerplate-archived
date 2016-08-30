@@ -29,9 +29,9 @@
  * + This file should not generate any CSS on it's own; it should only contain
  *   mixin and/or function definitions.
  */
-/*
-*  Media Queries
-*/
+/**
+ * Media query breakpoints
+ */
 /**
  * The columns mixin makes it so that immmediate child elements appear as
  * columns. It is responsive, allowing you to specify the media query at which
@@ -635,7 +635,6 @@ table {
   margin-bottom: 2rem;
   margin-left: auto;
   margin-right: auto;
-  max-width: 600px;
   padding: 2rem;
   text-align: center; }
   .features .feature img,
@@ -644,9 +643,10 @@ table {
     margin-bottom: 1rem; }
   .features .feature .button {
     margin-bottom: 0; }
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 669px) {
   .features {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between; }
   .features .feature {
     display: flex;

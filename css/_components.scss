@@ -7,23 +7,13 @@
  *   mixin and/or function definitions.
  */
 
- /*
- *  Media Queries
+
+/**
+ * Media query breakpoints
  */
 
-@mixin mq($breakpoint) {
-    @if $breakpoint == "medium" {
-        @media only screen and (min-width: 669px) {
-            @content;
-        }
-    }
-    @else if $breakpoint == "large" {
-        @media only screen and (min-width: 1024px) {
-            @content;
-        }
-    }
-}
-
+ $medium: 669px;
+ $large: 1024px;
 
 /**
  * The columns mixin makes it so that immmediate child elements appear as
@@ -51,7 +41,7 @@
         display: none;
     }
 
-    @include mq(medium) {
+    @media only screen and (min-width: $medium) {
         & {
             display: table;
             table-layout: fixed;
@@ -81,7 +71,6 @@
         margin-bottom: 2rem;
         margin-left: auto;
         margin-right: auto;
-        max-width: 600px;
         padding: 2rem;
         text-align: center;
         img,
@@ -94,9 +83,10 @@
         }
     }       
 
-    @include mq(large) {
+    @media only screen and (min-width: $medium) {
         & {
             display: flex;
+            flex-flow: row wrap;
             justify-content: space-between;
         }
         & .feature {
