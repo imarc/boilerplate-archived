@@ -67,7 +67,7 @@
  *
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
-@mixin features($button-align, $gutter) {
+@mixin features($gutter) {
     & > * {
         background-color: #EEE;
         margin-bottom: 2rem;
@@ -98,7 +98,7 @@
             margin-left: $gutter;
             margin-right: $gutter;
             .button {
-                align-self: $button-align;
+                align-self: center;
                 margin-top: auto;
             }
         }    

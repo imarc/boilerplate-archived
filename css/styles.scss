@@ -25,6 +25,7 @@
 @import "_components";
 
 /* = Variables = */
+$font-stack: "Helvetica Neue", Arial, sans-serif;
 $charcoal: #191919;
 
 /* The brand colors (name them the color) */
@@ -50,7 +51,9 @@ $twitter: #55acee;
 $linkedin: #0077B5;
 $youtube: #cd201f;
 
-$font-stack: "Helvetica Neue", Arial, sans-serif;
+/* Breakpoint values */
+$medium: 669px;
+$large: 1024px;
 
 
 /* = Mixins = */
@@ -505,6 +508,13 @@ dd {
     padding-left: 2em;
 }
 
+code {
+    background-color: #41322f;
+    color: #fbce78;
+    font-family: 'Consolas', monospace;
+    padding: 2px 4px;
+}
+
 
 /* = Forms = */
 button,
@@ -714,12 +724,12 @@ table {
 
 /* Components */
 .features {
-    @include features(center, 1.5rem);
+    @include features(1.5rem);
 }
 
 
 /* = Media Queries = */
-@media only screen and (min-width: 669px) {
+@media only screen and (min-width: $medium) {
     /* = Layout = */
     aside.primary {
         float: right;
@@ -737,7 +747,7 @@ table {
 }
 
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: $large) {
     /* = Layout = */
     .branding {
         float: left;

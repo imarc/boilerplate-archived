@@ -65,6 +65,7 @@
 /* Messaging colors */
 /* Applied colors */
 /* Social Network Colors */
+/* Breakpoint values */
 /* = Mixins = */
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, main, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
@@ -394,6 +395,12 @@ dt {
 
 dd {
   padding-left: 2em; }
+
+code {
+  background-color: #41322f;
+  color: #fbce78;
+  font-family: 'Consolas', monospace;
+  padding: 2px 4px; }
 
 /* = Forms = */
 button,
