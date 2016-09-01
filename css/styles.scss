@@ -208,6 +208,10 @@ img {
     @include columns;
 }
 
+.carousel {
+    @include carousel;
+}
+
 header.primary {
     background-color: $charcoal;
     padding-bottom: 1rem;

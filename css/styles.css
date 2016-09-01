@@ -34,7 +34,39 @@
  * Media query breakpoints
  */
 /**
- * The columns mixin makes it so that immmediate child elements appear as
+ * CAROUSEL uses Slick to create a carousel. It defaults to a rather
+ * basic, one-slide-at-a-time implementation with dots, but slick supports a
+ * good deal of configuration including showing multiple slides, breakpoints,
+ * syncing between slides, and plenty of javascript events and methods for
+ * integration.
+ *
+ * The implementation on Boilerplate is using a CDN to provide
+ *
+ * + slick.css
+ * + slick-theme.css
+ * + slick.min.js
+ *
+ * See http://kenwheeler.github.io/slick/ for more information.
+ *
+ * The carousel() mixin should be included on a parent element that contains
+ * one div per slide. No additional classes are necessary – the slick classes
+ * referenced are added dynamically by slick.
+ *
+ * <div class="carousel">
+ *     <div>
+ *         <h2>A slide!</h2>
+ *         <p>Some text.</p>
+ *     </div>
+ * </div>
+ *
+ * Emmet: .carousel>div*3>h2+p
+ *
+ * While there's more information in slick's documentation, .slick-slide wraps
+ * slides while .slick-next and .slick-prev are used for the next/previous
+ * arrows.
+ */
+/**
+ * The COLUMNS mixin makes it so that immmediate child elements appear as
  * columns. It is responsive, allowing you to specify the media query at which
  * to switch the layout from stacking to columns.
  *
@@ -54,9 +86,9 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
- * The features mixin is meant for column-based content that is introductory 
- to a section. Often, these present a client’s “features“. You can pass 2, 3,
- or 4 features to the mixin for a respective amount of columns.
+ * FEATURES house three features in one row. Powered by flexbox, 
+ * this allows for a bottom alignment of each feature’s anchor. Use the 
+ * <code>$gutter</code> variable to pass you preferred gutter width.
  *
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
@@ -139,6 +171,18 @@ img {
     .columns > hr {
       display: table-cell;
       width: 1rem; } }
+
+.carousel .slick-slide {
+  height: auto;
+  padding: 3rem;
+  color: #fff; }
+.carousel .slick-prev,
+.carousel .slick-next {
+  z-index: 1; }
+.carousel .slick-prev {
+  left: 2rem; }
+.carousel .slick-next {
+  right: 2rem; }
 
 header.primary {
   background-color: #191919;
