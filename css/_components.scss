@@ -12,8 +12,8 @@
  * Media query breakpoints
  */
 
- $medium: 669px;
- $large:  1024px;
+$medium: 669px;
+$large: 1024px;
 
 
 /**
@@ -50,9 +50,9 @@
  */
 @mixin carousel() {
     .slick-slide {
+        color: #FFF;
         height: auto;
         padding: 3rem;
-        color: #fff;
     }
     .slick-prev,
     .slick-next {
@@ -92,7 +92,6 @@
         border: 0;
         display: none;
     }
-
     @media only screen and (min-width: $medium) {
         & {
             display: table;
@@ -134,8 +133,7 @@
         .button {
             margin-bottom: 0;
         }
-    }       
-
+    }
     @media only screen and (min-width: $large) {
         & {
             display: flex;
