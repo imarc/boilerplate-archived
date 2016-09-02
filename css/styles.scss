@@ -12,6 +12,7 @@
  * Layout
  * Typography
  * Forms
+ * Iconography
  * Messaging
  * Tables
  * Section Specific
@@ -23,28 +24,48 @@
 
 @import "_components";
 
-
 /* = Variables = */
-$water: #229AB7;
-$woodsmoke: #15161A;
-$shark: #1F2024;
-$tuna: #383B3F;
-$nevada: #69737B;
-$mercury: #DDD;
-$crimson: #DC143C;
-$matte: #FFF;
-$plain-text: $woodsmoke;
-$meta-text: $nevada;
-$link: $water;
-$link-hover: darken($link, 10%);
-$border: $mercury;
-$success: $water;
-$error: $crimson;
-$info: $mercury;
 $font-stack: "Helvetica Neue", Arial, sans-serif;
+$charcoal: #191919;
+
+/* The brand colors (name them the color) */
+$brand-blue: #0c96dd;
+$brand-dark-blue: #0c508a;
+$brand-orange: #eb7424;
+
+/* Messaging colors */
+$success: #48ac2c;
+$error: #ce2a2a;
+$info: #DDD;
+
+/* Applied colors */
+$plain-text: $charcoal;
+$meta-text: lighten($charcoal, 35%);
+$link: $brand-blue;
+$link-hover: $brand-orange;
+$border: lighten($charcoal, 80%);
+
+/* Social Network Colors */
+$facebook: #3664a2;
+$twitter: #55acee;
+$linkedin: #0077B5;
+$youtube: #cd201f;
+
+/* Breakpoint values */
+$medium: 669px;
+$large: 1024px;
 
 
 /* = Mixins = */
+@mixin container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    position: relative;
+}
+
 @mixin grouping {
     &::before, &::after {
         content: "";
@@ -55,17 +76,8 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
     }
 }
 
-@mixin container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    position: relative;
-}
-
 @mixin fontawesome($character:"") {
-    font: normal normal normal 1rem unquote("/") 1 FontAwesome;
+    font: normal normal normal 1em unquote("/") 1 FontAwesome;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
     speak: none;
@@ -76,6 +88,31 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
         content: $character;
     } @else {
         display: inline-block;
+    }
+}
+
+@mixin messaging {
+    margin-bottom: 2rem;
+    padding: 1em 3em;
+    position: relative;
+    p:last-of-type,
+    ul:last-of-type {
+        margin-bottom: 0;
+    }
+    a {
+        text-decoration: underline;
+    }
+    &::before {
+        @include fontawesome;
+
+        content: "";
+        display: block;
+        font-size: 20px;
+        height: 23px;
+        left: 1em;
+        position: absolute;
+        top: 1em;
+        width: 23px;
     }
 }
 
@@ -110,6 +147,7 @@ $font-stack: "Helvetica Neue", Arial, sans-serif;
     width: 1px;
 }
 
+
 /* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, main, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
     border: 0;
@@ -137,7 +175,7 @@ video {
 }
 
 html {
-    background-color: $matte;
+    background-color: #fff; 
     color: $plain-text;
     font-family: $font-stack;
     font-size: 1rem;
@@ -155,6 +193,7 @@ img {
     vertical-align: middle;
 }
 
+
 /* = Layout = */
 .container,
 .group {
@@ -169,8 +208,12 @@ img {
     @include columns;
 }
 
+.carousel {
+    @include carousel;
+}
+
 header.primary {
-    background-color: $woodsmoke;
+    background-color: $charcoal;
     padding-bottom: 1rem;
     padding-top: 1rem;
 }
@@ -195,14 +238,14 @@ nav {
         display: inline-block;
     }
     a {
-        color: $matte;
+        color: #fff;
         display: block;
         padding: 0 0.5rem;
     }
     li.active,
     li:hover {
         a {
-            color: lighten($nevada, 20%);
+            color: lighten($charcoal, 55%);
         }
     }
 }
@@ -265,7 +308,7 @@ form.search {
     .copy {
         @include container;
         * {
-            color: $matte;
+            color: #fff;
         }
     }
 }
@@ -318,7 +361,7 @@ nav.supplemental {
 }
 
 footer.primary {
-    background-color: $shark;
+    background-color: $charcoal;
     color: $meta-text;
     font-size: 0.9rem;
     padding-bottom: 1rem;
@@ -331,7 +374,7 @@ footer.primary {
         margin: 0;
     }
     a {
-        color: $matte;
+        color: #fff;
     }
 }
 
@@ -342,7 +385,6 @@ footer.primary {
         display: inline-block;
         font-size: 22px;
         margin-bottom: 0;
-        margin-left: 0.4rem;
         margin-right: 0.4rem;
     }
     a:hover {
@@ -407,10 +449,6 @@ blockquote {
     }
 }
 
-p {
-    margin-bottom: 2rem;
-}
-
 hr {
     border: 0;
     border-top: 1px solid $meta-text;
@@ -434,7 +472,7 @@ a {
 
 a.button {
     background-color: $link;
-    color: $matte;
+    color: #fff;
     display: inline-block;
     font-weight: bold;
     padding: 0.6em 1em;
@@ -444,6 +482,7 @@ a.button:focus {
     background-color: $link-hover;
 }
 
+p,
 ol,
 ul,
 dl {
@@ -472,6 +511,14 @@ dt {
 dd {
     padding-left: 2em;
 }
+
+code {
+    background-color: #41322f;
+    color: #fbce78;
+    font-family: 'Consolas', monospace;
+    padding: 2px 4px;
+}
+
 
 /* = Forms = */
 button,
@@ -549,7 +596,7 @@ textarea {
 }
 
 textarea {
-    height: 12em;
+    height: 8em;
     overflow: auto;
     resize: vertical;
 }
@@ -569,7 +616,7 @@ input[type="reset"],
 input[type="submit"] {
     -webkit-appearance: button;
     -moz-appearance: button;
-    background-color: $nevada;
+    background-color: lighten($charcoal, 35%);
     border: none;
     color: #FFF;
     cursor: pointer;
@@ -579,49 +626,32 @@ input[type="submit"] {
     padding: 0.4em 0.6em;
     text-align: center;
     &:hover {
-        background-color: darken($nevada, 6%);
+        background-color: lighten($charcoal, 30%);
         border-color: $link;
         cursor: pointer;
     }
     &:focus {
-        background-color: darken($nevada, 6%);
+        background-color: lighten($charcoal, 30%);
     }
 }
 
 button.disabled,
 input[type="reset"][disabled],
 input[type="submit"][disabled] {
-    background-color: desaturate($nevada, 20%);
-    color: darken(#FFF, 30%);
+    background-color: lighten($charcoal, 45%);
+    color: darken(#FFF, 20%);
     cursor: default;
 }
 
-/* = Messaging = */
-@mixin messaging {
-    margin-bottom: 2rem;
-    padding: 1em 3em;
-    position: relative;
-    p:last-of-type,
-    ul:last-of-type {
-        margin-bottom: 0;
-    }
-    a {
-        text-decoration: underline;
-    }
-    &::before {
-        @include fontawesome;
 
-        content: "";
-        display: block;
-        font-size: 20px;
-        height: 23px;
-        left: 1em;
-        position: absolute;
-        top: 1em;
-        width: 23px;
-    }
+/* = Iconography = */
+.thumbs-up::before {
+    @include fontawesome("\f087");
+    margin-right: 0.5em;
 }
 
+
+/* = Messaging = */
 .success {
     @include messaging;
 
@@ -630,10 +660,10 @@ input[type="submit"][disabled] {
         content: "\f00c";
     }
     a {
-        color: $matte;
+        color: #fff;
     }
     a:hover {
-        color: darken($matte, 15%);
+        color: darken(#fff, 15%);
     }
 }
 
@@ -660,6 +690,7 @@ input[type="submit"][disabled] {
         color: darken($info, 15%);
     }
 }
+
 
 /* = Tables = */
 table {
@@ -700,9 +731,13 @@ table {
 header.primary {
     @include sticky-header;
 }
+.features {
+    @include features(1.5rem);
+}
+
 
 /* = Media Queries = */
-@media only screen and (min-width: 669px) {
+@media only screen and (min-width: $medium) {
     /* = Layout = */
     aside.primary {
         float: right;
@@ -720,7 +755,7 @@ header.primary {
 }
 
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: $large) {
     /* = Layout = */
     .branding {
         float: left;
@@ -772,7 +807,7 @@ header.primary {
                 font-size: 0.9rem;
             }
             .dropdown li a {
-                color: $matte;
+                color: #fff;
                 padding: 0.3rem 0.8rem;
             }
             .dropdown li a:hover {

@@ -72,27 +72,21 @@ Our Stylesheet Sections
 
 A Table of Contents
 ------------------------
-We like our CSS with a table of contents as we find this helps keep everything more organized.
+We like our SCSS with a table of contents as we find this helps keep everything more organized.
 
 Variables
 ---------
-We use SASS for Boilerplate. We primarily use variables for identifying colors that repeat through
-the design. Typical variables might be
+We use SASS for Boilerplate. Mostly, we use variables for identifying colors that repeat through
+the design, but other variables could exist as well. Typical variable sections might be:
 
-* **Matte** – the matte color is background outside of the layout. This may
-  either be the color that surrounds all the torso, or perhaps just the color
-  of the header and footer.
-* **Plain Text** – for the base text color.
-* **Meta Text** – a lower contrast text color for text that has less emphasis. Typically the color
-  used for things like dates and references.
-* **Link** – the link color.
-* **Link Hover** – the link color while hovering over a link.
+* **Brand colors** – what are the definitive colors used in the design based on client brand?
+* **Messaging colors** – these define colors used in form messaging (errors, success, information)
+* **Applied colors** Body copy, link colors, borders. Note that these can utilize brand colors;
+they may not be values.
+* **Social network colors** Often used in conjunction with fontawesome for social media callouts.
+* **Font stacks** Rather than repeating a stack, we can set this to a variable.
 
-* **Border** – typically a low contrast color for borders, dividers, blockquote margins, etc.
 
-* **Success** – background color for success messages.
-* **Error** – background color for error messages.
-* **Info** – background color for info messages.
 
 Base
 ----
