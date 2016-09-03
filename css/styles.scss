@@ -730,7 +730,9 @@ table {
 .features {
     @include features(1.5rem);
 }
-
+.tabs {
+    @include tabs();
+}
 
 /* = Media Queries = */
 @media only screen and (min-width: $medium) {
