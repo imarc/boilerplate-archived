@@ -86,6 +86,11 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
+ * DROPDOWN (mega) 
+ *
+ * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+ */
+/**
  * FEATURES house three features in one row. Powered by flexbox, 
  * this allows for a bottom alignment of each feature’s anchor. Use the 
  * <code>$gutter</code> variable to pass you preferred gutter width.
@@ -227,8 +232,6 @@ nav.primary {
   margin-bottom: 0.7rem; }
   nav.primary ul li {
     margin-bottom: 0; }
-  nav.primary ul .dropdown {
-    display: none; }
 
 nav.utility {
   margin-bottom: 0.7rem; }
@@ -766,6 +769,22 @@ table {
       margin-left: 20px;
       text-align: left; } }
 
+.dropdown.mega {
+  left: 0;
+  position: absolute;
+  top: calc(100% + 1rem);
+  -webkit-transform: translateY(-100%);
+  width: 100%;
+  z-index: -1; }
+  .dropdown.mega.open {
+    -webkit-animation-name: slideDown;
+    animation-name: slideDown; }
+  .dropdown.mega.closed {
+    -webkit-animation-name: slideUp;
+    animation-name: slideUp; }
+  .dropdown.mega .foo {
+    background-color: gold; }
+
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
   /* = Layout = */
@@ -810,21 +829,6 @@ table {
       nav.primary ul li li {
         display: block;
         float: none; }
-      nav.primary ul .dropdown {
-        background-color: #191919;
-        left: 0;
-        min-width: 180px;
-        position: absolute;
-        z-index: 2; }
-      nav.primary ul li:hover .dropdown {
-        display: block; }
-      nav.primary ul .dropdown li {
-        font-size: 0.9rem; }
-      nav.primary ul .dropdown li a {
-        color: #fff;
-        padding: 0.3rem 0.8rem; }
-      nav.primary ul .dropdown li a:hover {
-        background-color: #333333; }
 
   .utilities {
     float: right;

@@ -256,9 +256,6 @@ nav.primary {
         li {
             margin-bottom: 0;
         }
-        .dropdown {
-            display: none;
-        }
     }
 }
 
@@ -724,7 +721,9 @@ table {
 
 /* Section Specific */
 
+
 /* Page Specific */
+
 
 /* Components */
 .features {
@@ -733,6 +732,10 @@ table {
 .tabs {
     @include tabs();
 }
+.dropdown.mega {
+    @include dropdown-mega();
+}
+
 
 /* = Media Queries = */
 @media only screen and (min-width: $medium) {
@@ -790,26 +793,6 @@ table {
             li li {
                 display: block;
                 float: none;
-            }
-            .dropdown {
-                background-color: $plain-text;
-                left: 0;
-                min-width: 180px;
-                position: absolute;
-                z-index: 2;
-            }
-            li:hover .dropdown {
-                display: block;
-            }
-            .dropdown li {
-                font-size: 0.9rem;
-            }
-            .dropdown li a {
-                color: #fff;
-                padding: 0.3rem 0.8rem;
-            }
-            .dropdown li a:hover {
-                background-color: lighten($plain-text, 10%);
             }
         }
     }

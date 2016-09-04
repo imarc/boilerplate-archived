@@ -109,6 +109,37 @@ $large: 1024px;
     }
 }
 
+/**
+ * DROPDOWN (mega) 
+ *
+ * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+ */
+
+
+@mixin dropdown-mega() {
+    & {
+        left: 0;
+        position: absolute;
+        top: calc(100% + 1rem);
+        -webkit-transform: translateY(-100%);
+        width: 100%;
+        z-index: -1;
+        
+        &.open {
+            -webkit-animation-name: slideDown;
+            animation-name: slideDown;
+        }
+        &.closed {
+            -webkit-animation-name: slideUp;
+            animation-name: slideUp;
+        }
+
+        .foo {
+            background-color: gold;
+        }
+    }
+}
+
 
 /**
  * FEATURES house three features in one row. Powered by flexbox, 
