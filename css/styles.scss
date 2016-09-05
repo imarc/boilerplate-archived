@@ -726,14 +726,17 @@ table {
 
 
 /* Components */
+.backgroundvideo {
+    @include backgroundvideo();
+}
+.dropdown.mega {
+    @include dropdown-mega();
+}
 .features {
     @include features(1.5rem);
 }
 .tabs {
     @include tabs();
-}
-.dropdown.mega {
-    @include dropdown-mega();
 }
 
 

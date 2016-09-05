@@ -16,6 +16,41 @@ $medium: 669px;
 $large: 1024px;
 
 
+
+/**
+ * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
+ * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
+ */
+@mixin backgroundvideo() {
+    & {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        .mold {
+            background-color: rgba(2255,255,255,0.6);
+            padding: 2em;
+            text-align: center;
+            z-index: 2;
+        }
+        video {
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
+    }
+    &::before {
+        content: "";
+        display: block;
+        padding-top: 30%;
+    }
+}
+
+
+
 /**
  * CAROUSEL uses Slick to create a carousel. It defaults to a rather
  * basic, one-slide-at-a-time implementation with dots, but slick supports a
