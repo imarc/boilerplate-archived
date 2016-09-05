@@ -34,6 +34,10 @@
  * Media query breakpoints
  */
 /**
+ * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
+ * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
+ */
+/**
  * CAROUSEL uses Slick to create a carousel. It defaults to a rather
  * basic, one-slide-at-a-time implementation with dots, but slick supports a
  * good deal of configuration including showing multiple slides, breakpoints,
@@ -765,6 +769,28 @@ table {
     .tabs nav ul {
       margin-left: 20px;
       text-align: left; } }
+
+.backgroundvideo {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  position: relative; }
+  .backgroundvideo .mold {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 2em;
+    text-align: center;
+    z-index: 2; }
+  .backgroundvideo video {
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1; }
+.backgroundvideo::before {
+  content: "";
+  display: block;
+  padding-top: 30%; }
 
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
