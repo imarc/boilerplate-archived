@@ -18,7 +18,7 @@ $large: 1024px;
 
 
 /**
- * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
+ * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
 @mixin backgroundvideo() {
@@ -146,8 +146,8 @@ $large: 1024px;
 
 
 /**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
+ * FEATURES house three features in one row. Powered by flexbox,
+ * this allows for a bottom alignment of each feature’s anchor. Use the
  * <code>$gutter</code> variable to pass you preferred gutter width.
  *
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
@@ -190,57 +190,273 @@ $large: 1024px;
 }
 
 /**
- * TABS 
+ * TABS
  *
- * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
+ * Emmet: nav.tabs>ul>li*3>a
  */
-@mixin tabs() {
-    position: relative;
-    nav {
-        border-bottom: 1px solid;
-        ul {
-            list-style: none;
-            margin-left: 20px;
-            padding: 0;
-            text-align: center;
+@mixin tabs {
+    a {
+        border-radius: 4px 4px 0 0;
+        border: 1px solid $border;
+        border-color: transparent transparent $border;
+    }
+
+    li.active {
+        a {
+            border-color: $border $border transparent;
         }
-        li {
-            background-color: #CBBFB4;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            cursor: pointer;
-            display: inline-block;
-            margin-bottom: 0;
-            margin-right: 0.5em;
-            padding: 0.5em 1em;
+    }
+
+    li:hover:not(.active) {
+        a {
+            background: $border;
         }
-        li.active {
-            background-color: #FFF;
-            border: 1px solid;
-            border-bottom: none;
-            position: relative;
+    }
+}
+
+
+/**
+ * BREADCRUMBS
+ *
+ * Emmet: nav.breadcrumbs>ul>li*3>a
+ */
+@mixin breadcrumbs {
+    li:not(:last-child) a {
+        padding-right: 0;
+
+        &::after {
+            padding-left: .5rem;
+            @include fontawesome("\f105");
+        }
+    }
+}
+
+/**
+ * PROGRESS
+ *
+ * Emmet: nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
+ */
+@mixin progress {
+    display: flex;
+
+    ul {
+        border: 1px solid $border;
+        border-radius: 2px;
+    }
+
+    a {
+        padding: .5rem .5rem .5rem 1.5rem;
+        position: relative;
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            right: -.25em;
+            width: .5em;
+            z-index: 1;
+            border-right: 1px solid $border;
+        }
+
+        &::before {
+            bottom: 0;
+            top: 50%;
+            transform: skewX(-20deg);
+        }
+
+        &::after {
+            bottom: 50%;
+            top: 0;
+            transform: skewX(20deg);
+        }
+    }
+
+    li:not(:last-child) a {
+        border-right: 1px solid $border;
+    }
+
+    li.active a {
+        background: $brand-blue;
+        color: #fff;
+        cursor: default;
+        pointer-events: none;
+
+        &::before,
+        &::after {
+            background: $brand-blue;
+        }
+
+        &:hover {
+            color: #fff;
+            background: $link-hover;
+
+            &::before,
             &::after {
-                background-color: #FFF;
-                bottom: -1px;
-                content: "";
-                height: 1px;
-                left: 0;
-                position: absolute;
-                width: 100%;
+                background: $link-hover;
             }
         }
     }
-    .panel {
-        display: none;
-        padding: 20px;
+
+    li.disabled a {
+        color: $border;
+        cursor: default;
+        pointer-events: none;
     }
-    .panel.active {
-        display: inherit;
+
+    li:first-child a {
+        padding-left: 1.5rem;
     }
-    @media only screen and (min-width: $large) {
-        nav ul {
-            margin-left: 20px;
-            text-align: left;
+
+    li:last-child a {
+        padding-right: 1.5rem;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+
+    li:hover:not(.active,.disabled) a {
+        color: $link-hover;
+    }
+
+    li:not(:last-child) a {
+        border: 0;
+    }
+
+    li.complete a {
+        background: #fff;
+        color: #ccc;
+
+        &::before,
+        &::after {
+            background: #fff;
+        }
+
+        &:hover {
+            color: $brand-blue;
+        }
+    }
+
+    li.active a {
+        background: $brand-blue;
+        color: #fff;
+
+        &::before,
+        &::after {
+            background: $brand-blue;
+            border-color: $brand-blue;
+        }
+
+        &:hover {
+            background: $link-hover;
+
+            &::before,
+            &::after {
+                background: $link-hover;
+            }
+        }
+    }
+}
+
+
+/**
+ * PAGINATION
+ *
+ * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
+ */
+@mixin pagination {
+    display: flex;
+
+    ul {
+        border: 1px solid $border;
+        border-radius: 2px;
+    }
+
+    a {
+        padding: .5rem 1rem;
+        position: relative;
+    }
+
+    li:not(:last-child) a {
+        border-right: 1px solid $border;
+    }
+
+    li.active a {
+        background: $brand-blue;
+        color: #fff;
+        cursor: default;
+        pointer-events: none;
+
+        &::before,
+        &::after {
+            background: $brand-blue;
+        }
+
+        &:hover {
+            color: #fff;
+            background: $link-hover;
+
+            &::before,
+            &::after {
+                background: $link-hover;
+            }
+        }
+    }
+
+    li.disabled a {
+        color: $border;
+        cursor: default;
+        pointer-events: none;
+    }
+
+    li:first-child a {
+        padding-left: 1.5rem;
+    }
+
+    li:last-child a {
+        padding-right: 1.5rem;
+    }
+
+    li.previous a,
+    li.next a {
+        position: relative;
+        visibility: hidden;
+        width: 1rem;
+
+        &::before {
+            display: block;
+            padding: 0.75rem 1rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+            visibility: visible;
+        }
+
+    }
+
+    li:hover:not(.active,.disabled) {
+        a {
+            color: #fff;
+            background: $link-hover;
+
+            &::before {
+                color: #fff;
+                background: $link-hover;
+            }
+        }
+    }
+
+    li.previous a {
+        &::before {
+            @include fontawesome("\f053");
+            border-right: 1px solid $border;
+        }
+    }
+
+    li.next a {
+        &::before {
+            @include fontawesome("\f054");
         }
     }
 }

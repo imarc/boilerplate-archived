@@ -34,7 +34,7 @@
  * Media query breakpoints
  */
 /**
- * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
+ * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
 /**
@@ -90,16 +90,31 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
+ * FEATURES house three features in one row. Powered by flexbox,
+ * this allows for a bottom alignment of each feature’s anchor. Use the
  * <code>$gutter</code> variable to pass you preferred gutter width.
  *
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
- * TABS 
+ * TABS
  *
- * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
+ * Emmet: nav.tabs>ul>li*3>a
+ */
+/**
+ * BREADCRUMBS
+ *
+ * Emmet: nav.breadcrumbs>ul>li*3>a
+ */
+/**
+ * PROGRESS
+ *
+ * Emmet: nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
+ */
+/**
+ * PAGINATION
+ *
+ * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
  */
 /* = Variables = */
 /* The brand colors (name them the color) */
@@ -205,27 +220,179 @@ header.primary {
     display: inline-block;
     max-width: 180px; }
 
-nav::before, nav::after {
-  content: "";
-  display: table; }
-nav::after {
-  clear: both; }
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-  text-align: center; }
-  nav ul li::before {
-    display: none; }
-nav li {
-  display: inline-block; }
-nav a {
-  color: #fff;
-  display: block;
-  padding: 0 0.5rem; }
-nav li.active a,
-nav li:hover a {
-  color: #a5a5a5; }
+nav {
+  margin-bottom: 2rem; }
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    display: flex; }
+    nav ul li::before {
+      display: none; }
+    nav ul li {
+      margin-bottom: 0; }
+  nav a {
+    display: block;
+    font-weight: normal;
+    padding: 0 0.5rem; }
+  nav li.active a,
+  nav li.active:hover a {
+    color: #191919; }
+  nav li:hover a {
+    color: #0c96dd; }
+  nav.tabs a {
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #e5e5e5;
+    border-color: transparent transparent #e5e5e5; }
+  nav.tabs li.active a {
+    border-color: #e5e5e5 #e5e5e5 transparent; }
+  nav.tabs li:hover:not(.active) a {
+    background: #e5e5e5; }
+  nav.breadcrumbs li:not(:last-child) a {
+    padding-right: 0; }
+    nav.breadcrumbs li:not(:last-child) a::after {
+      padding-left: .5rem;
+      font: normal normal normal 1em / 1 FontAwesome;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      speak: none;
+      text-rendering: auto;
+      text-transform: none;
+      content: ""; }
+  nav.pagination {
+    display: flex; }
+    nav.pagination ul {
+      border: 1px solid #e5e5e5;
+      border-radius: 2px; }
+    nav.pagination a {
+      padding: .5rem 1rem;
+      position: relative; }
+    nav.pagination li:not(:last-child) a {
+      border-right: 1px solid #e5e5e5; }
+    nav.pagination li.active a {
+      background: #0c96dd;
+      color: #fff;
+      cursor: default;
+      pointer-events: none; }
+      nav.pagination li.active a::before, nav.pagination li.active a::after {
+        background: #0c96dd; }
+      nav.pagination li.active a:hover {
+        color: #fff;
+        background: #eb7424; }
+        nav.pagination li.active a:hover::before, nav.pagination li.active a:hover::after {
+          background: #eb7424; }
+    nav.pagination li.disabled a {
+      color: #e5e5e5;
+      cursor: default;
+      pointer-events: none; }
+    nav.pagination li:first-child a {
+      padding-left: 1.5rem; }
+    nav.pagination li:last-child a {
+      padding-right: 1.5rem; }
+    nav.pagination li.previous a,
+    nav.pagination li.next a {
+      position: relative;
+      visibility: hidden;
+      width: 1rem; }
+      nav.pagination li.previous a::before,
+      nav.pagination li.next a::before {
+        display: block;
+        padding: 0.75rem 1rem;
+        position: absolute;
+        right: 0;
+        top: 0;
+        visibility: visible; }
+    nav.pagination li:hover:not(.active, .disabled) a {
+      color: #fff;
+      background: #eb7424; }
+      nav.pagination li:hover:not(.active, .disabled) a::before {
+        color: #fff;
+        background: #eb7424; }
+    nav.pagination li.previous a::before {
+      font: normal normal normal 1em / 1 FontAwesome;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      speak: none;
+      text-rendering: auto;
+      text-transform: none;
+      content: "";
+      border-right: 1px solid #e5e5e5; }
+    nav.pagination li.next a::before {
+      font: normal normal normal 1em / 1 FontAwesome;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      speak: none;
+      text-rendering: auto;
+      text-transform: none;
+      content: ""; }
+  nav.progress {
+    display: flex; }
+    nav.progress ul {
+      border: 1px solid #e5e5e5;
+      border-radius: 2px; }
+    nav.progress a {
+      padding: .5rem .5rem .5rem 1.5rem;
+      position: relative; }
+      nav.progress a::before, nav.progress a::after {
+        content: '';
+        position: absolute;
+        right: -.25em;
+        width: .5em;
+        z-index: 1;
+        border-right: 1px solid #e5e5e5; }
+      nav.progress a::before {
+        bottom: 0;
+        top: 50%;
+        transform: skewX(-20deg); }
+      nav.progress a::after {
+        bottom: 50%;
+        top: 0;
+        transform: skewX(20deg); }
+    nav.progress li:not(:last-child) a {
+      border-right: 1px solid #e5e5e5; }
+    nav.progress li.active a {
+      background: #0c96dd;
+      color: #fff;
+      cursor: default;
+      pointer-events: none; }
+      nav.progress li.active a::before, nav.progress li.active a::after {
+        background: #0c96dd; }
+      nav.progress li.active a:hover {
+        color: #fff;
+        background: #eb7424; }
+        nav.progress li.active a:hover::before, nav.progress li.active a:hover::after {
+          background: #eb7424; }
+    nav.progress li.disabled a {
+      color: #e5e5e5;
+      cursor: default;
+      pointer-events: none; }
+    nav.progress li:first-child a {
+      padding-left: 1.5rem; }
+    nav.progress li:last-child a {
+      padding-right: 1.5rem; }
+      nav.progress li:last-child a::before, nav.progress li:last-child a::after {
+        display: none; }
+    nav.progress li:hover:not(.active, .disabled) a {
+      color: #eb7424; }
+    nav.progress li:not(:last-child) a {
+      border: 0; }
+    nav.progress li.complete a {
+      background: #fff;
+      color: #ccc; }
+      nav.progress li.complete a::before, nav.progress li.complete a::after {
+        background: #fff; }
+      nav.progress li.complete a:hover {
+        color: #0c96dd; }
+    nav.progress li.active a {
+      background: #0c96dd;
+      color: #fff; }
+      nav.progress li.active a::before, nav.progress li.active a::after {
+        background: #0c96dd;
+        border-color: #0c96dd; }
+      nav.progress li.active a:hover {
+        background: #eb7424; }
+        nav.progress li.active a:hover::before, nav.progress li.active a:hover::after {
+          background: #eb7424; }
 
 nav.primary {
   margin-bottom: 0.7rem; }
@@ -729,46 +896,14 @@ table {
       align-self: center;
       margin-top: auto; } }
 
-.tabs {
-  position: relative; }
-  .tabs nav {
-    border-bottom: 1px solid; }
-    .tabs nav ul {
-      list-style: none;
-      margin-left: 20px;
-      padding: 0;
-      text-align: center; }
-    .tabs nav li {
-      background-color: #CBBFB4;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      cursor: pointer;
-      display: inline-block;
-      margin-bottom: 0;
-      margin-right: 0.5em;
-      padding: 0.5em 1em; }
-    .tabs nav li.active {
-      background-color: #FFF;
-      border: 1px solid;
-      border-bottom: none;
-      position: relative; }
-      .tabs nav li.active::after {
-        background-color: #FFF;
-        bottom: -1px;
-        content: "";
-        height: 1px;
-        left: 0;
-        position: absolute;
-        width: 100%; }
-  .tabs .panel {
-    display: none;
-    padding: 20px; }
-  .tabs .panel.active {
-    display: inherit; }
-  @media only screen and (min-width: 1024px) {
-    .tabs nav ul {
-      margin-left: 20px;
-      text-align: left; } }
+.tabs a {
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #e5e5e5;
+  border-color: transparent transparent #e5e5e5; }
+.tabs li.active a {
+  border-color: #e5e5e5 #e5e5e5 transparent; }
+.tabs li:hover:not(.active) a {
+  background: #e5e5e5; }
 
 .backgroundvideo {
   align-items: center;

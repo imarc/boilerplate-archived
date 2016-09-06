@@ -175,7 +175,7 @@ video {
 }
 
 html {
-    background-color: #fff; 
+    background-color: #fff;
     color: $plain-text;
     font-family: $font-stack;
     font-size: 1rem;
@@ -228,25 +228,46 @@ header.primary {
 }
 
 nav {
-    @include grouping;
+    margin-bottom: 2rem;
+
     ul {
         @include no-bullets;
+        display: flex;
 
-        text-align: center;
+        li {
+            margin-bottom: 0;
+        }
     }
-    li {
-        display: inline-block;
-    }
+
     a {
-        color: #fff;
         display: block;
+        font-weight: normal;
         padding: 0 0.5rem;
     }
-    li.active,
-    li:hover {
-        a {
-            color: lighten($charcoal, 55%);
-        }
+
+    li.active a,
+    li.active:hover a {
+        color: $charcoal;
+    }
+
+    li:hover a {
+        color: $brand-blue;
+    }
+
+    &.tabs {
+        @include tabs;
+    }
+
+    &.breadcrumbs {
+        @include breadcrumbs;
+    }
+
+    &.pagination {
+        @include pagination;
+    }
+
+    &.progress {
+        @include progress;
     }
 }
 
