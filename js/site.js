@@ -1,5 +1,4 @@
 /**
- * TABS
+ * DROPDOWN
  */
-
-$('.tabs').tabs();
+$('nav.primary').dropdown();

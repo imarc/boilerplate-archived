@@ -147,31 +147,48 @@ $large: 1024px;
 /**
  * DROPDOWN (mega) 
  *
- * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+ * Emmet: //
  */
-
-
 @mixin dropdown-mega() {
     & {
+        background-color: #2A2A2A;
+        bottom: calc(100% + 1rem);
+        color: #FFF;
         left: 0;
+        padding: 2rem 0;
         position: absolute;
-        top: calc(100% + 1rem);
-        -webkit-transform: translateY(-100%);
+        transition: top 2000ms ease, bottom 2000ms ease;
         width: 100%;
-        z-index: -1;
-        
-        &.open {
-            -webkit-animation-name: slideDown;
-            animation-name: slideDown;
+        z-index: 1;
+        .flex {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            > * {
+                border-left: 1px solid #777;
+                flex: 1 0 0;
+                padding: 0 3rem;
+            }
+            > *:first-child {
+                border-left: none;
+            }
+            li {
+                margin-bottom: 0.4em;
+            }
+            a {
+                color: #0C96DD;
+            }
+            a:hover,
+            a:focus {
+                color: darken(#0C96DD, 10%);
+            }
         }
-        &.closed {
-            -webkit-animation-name: slideUp;
-            animation-name: slideUp;
-        }
+    }
+    &.open {
+        bottom: auto;
+        top: calc(100% + 1rem);
+        transition: top 2000ms ease, bottom 2000ms ease;
 
-        .foo {
-            background-color: gold;
-        }
     }
 }
 

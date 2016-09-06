@@ -92,7 +92,7 @@
 /**
  * DROPDOWN (mega) 
  *
- * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+ * Emmet: //
  */
 /**
  * FEATURES house three features in one row. Powered by flexbox, 
@@ -228,14 +228,14 @@ nav a {
   color: #fff;
   display: block;
   padding: 0 0.5rem; }
-nav li.active a,
-nav li:hover a {
-  color: #a5a5a5; }
 
 nav.primary {
   margin-bottom: 0.7rem; }
-  nav.primary ul li {
+  nav.primary > ul li {
     margin-bottom: 0; }
+  nav.primary > ul li.active > a,
+  nav.primary > ul li:hover > a {
+    color: #a5a5a5; }
 
 nav.utility {
   margin-bottom: 0.7rem; }
@@ -727,20 +727,36 @@ table {
   padding-top: 30%; }
 
 .dropdown.mega {
+  background-color: #2A2A2A;
+  bottom: calc(100% + 1rem);
+  color: #FFF;
   left: 0;
+  padding: 2rem 0;
   position: absolute;
-  top: calc(100% + 1rem);
-  -webkit-transform: translateY(-100%);
+  transition: top 2000ms ease, bottom 2000ms ease;
   width: 100%;
-  z-index: -1; }
-  .dropdown.mega.open {
-    -webkit-animation-name: slideDown;
-    animation-name: slideDown; }
-  .dropdown.mega.closed {
-    -webkit-animation-name: slideUp;
-    animation-name: slideUp; }
-  .dropdown.mega .foo {
-    background-color: gold; }
+  z-index: 1; }
+  .dropdown.mega .flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+    .dropdown.mega .flex > * {
+      border-left: 1px solid #777;
+      flex: 1 0 0;
+      padding: 0 3rem; }
+    .dropdown.mega .flex > *:first-child {
+      border-left: none; }
+    .dropdown.mega .flex li {
+      margin-bottom: 0.4em; }
+    .dropdown.mega .flex a {
+      color: #0C96DD; }
+    .dropdown.mega .flex a:hover,
+    .dropdown.mega .flex a:focus {
+      color: #0975ad; }
+.dropdown.mega.open {
+  bottom: auto;
+  top: calc(100% + 1rem);
+  transition: top 2000ms ease, bottom 2000ms ease; }
 
 .features > * {
   background-color: #EEE;

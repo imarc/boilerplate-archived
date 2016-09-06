@@ -242,21 +242,22 @@ nav {
         display: block;
         padding: 0 0.5rem;
     }
-    li.active,
-    li:hover {
-        a {
-            color: lighten($charcoal, 55%);
-        }
-    }
 }
 
 nav.primary {
     margin-bottom: 0.7rem;
-    ul {
+    > ul {
         li {
             margin-bottom: 0;
         }
+        li.active,
+        li:hover {
+             > a {
+                color: lighten($charcoal, 55%);
+            }
+        }
     }
+
 }
 
 nav.utility {
