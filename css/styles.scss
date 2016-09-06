@@ -734,7 +734,12 @@ header.primary {
 .features {
     @include features(1.5rem);
 }
-
+.tabs {
+    @include tabs();
+}
+.backgroundvideo {
+    @include backgroundvideo();
+}
 
 /* = Media Queries = */
 @media only screen and (min-width: $medium) {

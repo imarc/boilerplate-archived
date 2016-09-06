@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Background Video Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="torso">
+            <main>
+                <section class="intro">
+                    <div class="container">
+                        <h1>Background Video</h1>
+                        <p>
+                            In order to achieve an edge-to-edge/cover effect for our video, we <code>position: absolute;</code> it within a parent container. We give it a faux-height via a padding value on this parent’s <code>::before</code> pseudo element. If you aim to have a 16:9 aspect ratio, this padding value would be 56.25% (9 / 16). Do not forget to add a <code>video</code> placeholder image that matches your desired aspect ratio. Use both .webm and .mp4 video file formats for the widest browser support.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+
+
+                    <!-- Begin component -->
+
+                    <div class="backgroundvideo">
+                        <div class="mold">
+                            <div>
+                                <h1>
+                                    Imarc loves background videos
+                                </h1>
+                                <p>
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit fuga.
+                                </p>
+                            </div>
+                        </div>
+                         <video autoplay="autoplay" loop="loop" poster="../img/video_placeholder.jpg">
+                            <source src="../img/imarc_culture_video_1.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
+                            <source src="../img/imarc_culture_video_1.webmhd.webm" type='video/webm; codecs="vp8, vorbis"' />
+                        </video>
+                    </div>
+
+                    <!-- end component -->
+
+
+                </section>
+            </main>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    </body>
+</html>
