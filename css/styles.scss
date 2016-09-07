@@ -728,17 +728,20 @@ table {
 
 /* Components */
 
-header.primary {
-    @include sticky-header;
+.backgroundvideo {
+    @include backgroundvideo();
 }
+
 .features {
     @include features(1.5rem);
 }
+
+header.primary {
+    @include sticky-header;
+}
+
 .tabs {
     @include tabs();
-}
-.backgroundvideo {
-    @include backgroundvideo();
 }
 
 /* = Media Queries = */

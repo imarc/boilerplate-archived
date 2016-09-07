@@ -2,10 +2,6 @@
     $.fn.stickyHeader = function (options) {
         var plugin = this;
 
-        this.defaults = {};
-
-        this.settings = $.extend({}, plugin.defaults, options);
-
         return this.each(function () {
 
             // header hide and show on scroll up/down
@@ -22,7 +18,7 @@
                 didScroll = true;
             });
 
-            function scrollCheck() {
+            var scrollCheck = function() {
                 if (didScroll) {
                     hasScrolled();
                     didScroll = false;
