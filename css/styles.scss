@@ -214,7 +214,6 @@ img {
 
 header.primary {
     background-color: $charcoal;
-    padding-bottom: 1rem;
     padding-top: 1rem;
 }
 
@@ -730,7 +729,7 @@ table {
 .backgroundvideo {
     @include backgroundvideo();
 }
-.dropdown.mega {
+nav.primary {
     @include dropdown-mega();
 }
 .features {
@@ -787,6 +786,7 @@ table {
         > ul > li {
             font-size: 1.3rem;
             margin-left: 1rem;
+            padding-bottom: 1rem;
             position: relative;
         }
         > ul > li:first-child {

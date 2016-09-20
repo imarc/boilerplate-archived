@@ -200,7 +200,6 @@ img {
 
 header.primary {
   background-color: #191919;
-  padding-bottom: 1rem;
   padding-top: 1rem; }
 
 .branding {
@@ -726,37 +725,43 @@ table {
   display: block;
   padding-top: 30%; }
 
-.dropdown.mega {
-  background-color: #2A2A2A;
-  bottom: calc(100% + 1rem);
-  color: #FFF;
-  left: 0;
-  padding: 2rem 0;
-  position: absolute;
-  transition: top 2000ms ease, bottom 2000ms ease;
-  width: 100%;
-  z-index: 1; }
-  .dropdown.mega .flex {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between; }
-    .dropdown.mega .flex > * {
-      border-left: 1px solid #777;
-      flex: 1 0 0;
-      padding: 0 3rem; }
-    .dropdown.mega .flex > *:first-child {
-      border-left: none; }
-    .dropdown.mega .flex li {
-      margin-bottom: 0.4em; }
-    .dropdown.mega .flex a {
-      color: #0C96DD; }
-    .dropdown.mega .flex a:hover,
-    .dropdown.mega .flex a:focus {
-      color: #0975ad; }
-.dropdown.mega.open {
-  bottom: auto;
-  top: calc(100% + 1rem);
-  transition: top 2000ms ease, bottom 2000ms ease; }
+nav.primary .dropdown {
+  display: none; }
+@media only screen and (min-width: 1024px) {
+  nav.primary .dropdown {
+    background-color: #2A2A2A;
+    color: #FFF;
+    display: block;
+    left: 0;
+    opacity: 0;
+    padding: 2rem 0;
+    position: absolute;
+    top: 100%;
+    transform: translate(0, -200%);
+    width: 100%;
+    z-index: 1; }
+    nav.primary .dropdown .flex {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between; }
+      nav.primary .dropdown .flex > * {
+        border-left: 1px solid #777;
+        flex-basis: 0;
+        flex-grow: 1;
+        padding: 0 3rem; }
+      nav.primary .dropdown .flex > *:first-child {
+        border-left: none; }
+      nav.primary .dropdown .flex li {
+        margin-bottom: 0.4em; }
+      nav.primary .dropdown .flex a {
+        color: #0C96DD; }
+      nav.primary .dropdown .flex a:hover,
+      nav.primary .dropdown .flex a:focus {
+        color: #0975ad; }
+  nav.primary .dropdown.open {
+    opacity: 1;
+    transform: translate(0, 0);
+    transition: transform 50ms, opacity 200ms; } }
 
 .features > * {
   background-color: #EEE;
@@ -863,6 +868,7 @@ table {
     nav.primary > ul > li {
       font-size: 1.3rem;
       margin-left: 1rem;
+      padding-bottom: 1rem;
       position: relative; }
     nav.primary > ul > li:first-child {
       margin-left: 0; }
