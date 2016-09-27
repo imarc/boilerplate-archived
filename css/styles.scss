@@ -182,7 +182,7 @@ html {
     background-color: #FFF;
     color: $plain-text;
     font-family: $font-stack;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -473,18 +473,6 @@ a {
     }
 }
 
-a.button {
-    background-color: $link;
-    color: #FFF;
-    display: inline-block;
-    font-weight: bold;
-    padding: 0.6em 1em;
-}
-a.button:hover,
-a.button:focus {
-    background-color: $link-hover;
-}
-
 p,
 ol,
 ul,
@@ -614,6 +602,19 @@ input[type="radio"] {
     padding: 0;
 }
 
+a.button {
+    background-color: $link;
+    color: #FFF;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.6em 1em;
+
+    &:hover,
+    &:focus {
+        background-color: $link-hover;
+    }
+}
+
 button,
 input[type="reset"],
 input[type="submit"] {
@@ -628,6 +629,7 @@ input[type="submit"] {
     font-size: 0.9rem;
     padding: 0.4em 0.6em;
     text-align: center;
+
     &:hover {
         background-color: lighten($charcoal, 30%);
         border-color: $link;
