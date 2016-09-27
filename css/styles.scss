@@ -625,8 +625,6 @@ a.button {
 button,
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button;
-    -moz-appearance: button;
     background-color: lighten($charcoal, 35%);
     border: none;
     color: #FFF;
