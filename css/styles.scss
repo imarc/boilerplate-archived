@@ -26,7 +26,15 @@
 
 /* = Variables = */
 $font-stack: "Helvetica Neue", Arial, sans-serif;
-$charcoal: #191919;
+
+
+/* Grays */
+$white:     #FFF;
+$lightgray: #DDD;
+$gray:      #808080;
+$darkgray:  #4A4A4A;
+$charcoal:  #191919;
+$black:     #000;
 
 /* The brand colors (name them the color) */
 $brand-blue: #0c96dd;
@@ -175,7 +183,7 @@ video {
 }
 
 html {
-    background-color: #fff; 
+    background-color: #fff;
     color: $plain-text;
     font-family: $font-stack;
     font-size: 1rem;
