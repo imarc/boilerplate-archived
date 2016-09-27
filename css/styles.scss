@@ -37,13 +37,13 @@ $charcoal:  #191919;
 $black:     #000;
 
 /* The brand colors (name them the color) */
-$brand-blue: #0c96dd;
-$brand-dark-blue: #0c508a;
-$brand-orange: #eb7424;
+$brand-blue: #0C96DD;
+$brand-dark-blue: #0C508A;
+$brand-orange: #EB7424;
 
 /* Messaging colors */
-$success: #48ac2c;
-$error: #ce2a2a;
+$success: #48AC2C;
+$error: #CE2A2A;
 $info: #DDD;
 
 /* Applied colors */
@@ -54,10 +54,10 @@ $link-hover: $brand-orange;
 $border: lighten($charcoal, 80%);
 
 /* Social Network Colors */
-$facebook: #3664a2;
-$twitter: #55acee;
+$facebook: #3664A2;
+$twitter: #55ACEE;
 $linkedin: #0077B5;
-$youtube: #cd201f;
+$youtube: #CD201F;
 
 /* Breakpoint values */
 $medium: 669px;
@@ -183,7 +183,7 @@ video {
 }
 
 html {
-    background-color: #fff;
+    background-color: #FFF;
     color: $plain-text;
     font-family: $font-stack;
     font-size: 1rem;
@@ -246,7 +246,7 @@ nav {
         display: inline-block;
     }
     a {
-        color: #fff;
+        color: #FFF;
         display: block;
         padding: 0 0.5rem;
     }
@@ -316,7 +316,7 @@ form.search {
     .copy {
         @include container;
         * {
-            color: #fff;
+            color: #FFF;
         }
     }
 }
@@ -382,7 +382,7 @@ footer.primary {
         margin: 0;
     }
     a {
-        color: #fff;
+        color: #FFF;
     }
 }
 
@@ -480,7 +480,7 @@ a {
 
 a.button {
     background-color: $link;
-    color: #fff;
+    color: #FFF;
     display: inline-block;
     font-weight: bold;
     padding: 0.6em 1em;
@@ -521,8 +521,8 @@ dd {
 }
 
 code {
-    background-color: #41322f;
-    color: #fbce78;
+    background-color: #41322F;
+    color: #FBCE78;
     font-family: 'Consolas', monospace;
     padding: 2px 4px;
 }
@@ -668,10 +668,10 @@ input[type="submit"][disabled] {
         content: "\f00c";
     }
     a {
-        color: #fff;
+        color: #FFF;
     }
     a:hover {
-        color: darken(#fff, 15%);
+        color: darken(#FFF, 15%);
     }
 }
 
@@ -823,7 +823,7 @@ header.primary {
                 font-size: 0.9rem;
             }
             .dropdown li a {
-                color: #fff;
+                color: #FFF;
                 padding: 0.3rem 0.8rem;
             }
             .dropdown li a:hover {
