@@ -191,6 +191,100 @@ $large: 1024px;
 
 
 /**
+ * PAGINATION
+ *
+ * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
+ */
+@mixin pagination {
+    display: flex;
+    justify-content: center;
+    ul {
+        border: 1px solid $border;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+    }
+    li {
+        margin-bottom: 0;
+    }
+    a {
+        color: $link;
+        padding: 0.5rem 1rem;
+        position: relative;
+    }
+    li:not(:last-child) a {
+        border-right: 1px solid $border;
+    }
+    li.active a {
+        background-color: $brand-blue;
+        color: #fff;
+        cursor: default;
+        pointer-events: none;
+        &::before,
+        &::after {
+            background-color: $brand-blue;
+        }
+        &:hover {
+            color: #fff;
+            background-color: $link-hover;
+            &::before,
+            &::after {
+                background-color: $link-hover;
+            }
+        }
+    }
+    li.disabled a {
+        color: $border;
+        cursor: default;
+        pointer-events: none;
+    }
+    li:first-child a {
+        padding-left: 1.5rem;
+    }
+    li:last-child a {
+        padding-right: 1.5rem;
+    }
+    li.previous a,
+    li.next a {
+        position: relative;
+        visibility: hidden;
+        width: 1rem;
+
+        &::before {
+            display: block;
+            padding: 0.75rem 1rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+            visibility: visible;
+        }
+    }
+    li:hover:not(.active,.disabled) {
+        a {
+            background-color: $link-hover;
+            color: #FFF;
+
+            &::before {
+                background-color: $link-hover;
+                color: #FFF;
+            }
+        }
+    }
+    li.previous a {
+        &::before {
+            @include fontawesome("\f053");
+            border-right: 1px solid $border;
+        }
+    }
+    li.next a {
+        &::before {
+            @include fontawesome("\f054");
+        }
+    }
+}
+
+
+/**
  * SEARCH LISTING shows a simple input/submit form along with a search
  * result listing.
  *

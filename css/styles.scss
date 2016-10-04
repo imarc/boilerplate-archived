@@ -746,11 +746,15 @@ table {
 }
 
 header.primary {
-    @include sticky-header;
+    @include sticky-header();
 }
 
 .listing.search {
     @include search-listing();
+}
+
+nav.pagination {
+    @include pagination();
 }
 
 .tabs {

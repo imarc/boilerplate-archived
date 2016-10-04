@@ -97,6 +97,11 @@
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
+ * PAGINATION
+ *
+ * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
+ */
+/**
  * SEARCH LISTING shows a simple input/submit form along with a search
  * result listing.
  *
@@ -817,6 +822,79 @@ header.primary {
       margin-top: -1em; }
     .listing.search ul li .summary p:last-of-type {
       margin-bottom: 0; }
+
+nav.pagination {
+  display: flex;
+  justify-content: center; }
+  nav.pagination ul {
+    border: 1px solid #e5e5e5;
+    border-radius: 2px;
+    display: flex;
+    justify-content: center; }
+  nav.pagination li {
+    margin-bottom: 0; }
+  nav.pagination a {
+    color: #0c96dd;
+    padding: 0.5rem 1rem;
+    position: relative; }
+  nav.pagination li:not(:last-child) a {
+    border-right: 1px solid #e5e5e5; }
+  nav.pagination li.active a {
+    background-color: #0c96dd;
+    color: #fff;
+    cursor: default;
+    pointer-events: none; }
+    nav.pagination li.active a::before, nav.pagination li.active a::after {
+      background-color: #0c96dd; }
+    nav.pagination li.active a:hover {
+      color: #fff;
+      background-color: #eb7424; }
+      nav.pagination li.active a:hover::before, nav.pagination li.active a:hover::after {
+        background-color: #eb7424; }
+  nav.pagination li.disabled a {
+    color: #e5e5e5;
+    cursor: default;
+    pointer-events: none; }
+  nav.pagination li:first-child a {
+    padding-left: 1.5rem; }
+  nav.pagination li:last-child a {
+    padding-right: 1.5rem; }
+  nav.pagination li.previous a,
+  nav.pagination li.next a {
+    position: relative;
+    visibility: hidden;
+    width: 1rem; }
+    nav.pagination li.previous a::before,
+    nav.pagination li.next a::before {
+      display: block;
+      padding: 0.75rem 1rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      visibility: visible; }
+  nav.pagination li:hover:not(.active, .disabled) a {
+    background-color: #eb7424;
+    color: #FFF; }
+    nav.pagination li:hover:not(.active, .disabled) a::before {
+      background-color: #eb7424;
+      color: #FFF; }
+  nav.pagination li.previous a::before {
+    font: normal normal normal 1em / 1 FontAwesome;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+    content: "";
+    border-right: 1px solid #e5e5e5; }
+  nav.pagination li.next a::before {
+    font: normal normal normal 1em / 1 FontAwesome;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+    content: ""; }
 
 .tabs {
   position: relative; }
