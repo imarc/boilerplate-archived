@@ -146,15 +146,23 @@ $large: 1024px;
 
 /**
  * DROPDOWN (mega) 
+ * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is 
+ * different than a simple dropdown that fills only its parent list item’s width.
+ * Note here that the position: relative; rule we are used to seeing on 
+ * nav.primary > ul > li is not there. It’s on header.primary > .container.
  *
- * Emmet: //
+ * Emmet: nav.primary>ul>li>a+.dropdown
  */
 @mixin dropdown-mega() {
-    & .dropdown {
+    .dropdown,
+    i.fa {
         display: none;
     }
     @media only screen and (min-width: $large) {
-        & .dropdown {
+        i.fa {
+            display: inline-block;
+        }
+        .dropdown {
             background-color: #2A2A2A;
             color: #FFF;
             display: block;
@@ -163,10 +171,10 @@ $large: 1024px;
             padding: 2rem 0;
             position: absolute;
             top: 100%;
-            transform: translate(0, -200%);
+            transition: opacity 400ms;
             width: 100%;
             z-index: 1;
-            .flex {
+            .menu {
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: space-between;
@@ -191,10 +199,9 @@ $large: 1024px;
                 }
             }
         }
-        & .dropdown.open {
+        .dropdown.open {
             opacity: 1;
-            transform: translate(0, 0);
-            transition: transform 50ms, opacity 200ms;
+            transition: opacity 200ms;
         }
     }
 }

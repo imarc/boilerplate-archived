@@ -91,8 +91,12 @@
  */
 /**
  * DROPDOWN (mega) 
+ * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is 
+ * different than a simple dropdown that fills only its parent list item’s width.
+ * Note here that the position: relative; rule we are used to seeing on 
+ * nav.primary > ul > li is not there. It’s on header.primary > .container.
  *
- * Emmet: //
+ * Emmet: nav.primary>ul>li>a+.dropdown
  */
 /**
  * FEATURES house three features in one row. Powered by flexbox, 
@@ -725,9 +729,12 @@ table {
   display: block;
   padding-top: 30%; }
 
-nav.primary .dropdown {
+nav.primary .dropdown,
+nav.primary i.fa {
   display: none; }
 @media only screen and (min-width: 1024px) {
+  nav.primary i.fa {
+    display: inline-block; }
   nav.primary .dropdown {
     background-color: #2A2A2A;
     color: #FFF;
@@ -737,31 +744,30 @@ nav.primary .dropdown {
     padding: 2rem 0;
     position: absolute;
     top: 100%;
-    transform: translate(0, -200%);
+    transition: opacity 400ms;
     width: 100%;
     z-index: 1; }
-    nav.primary .dropdown .flex {
+    nav.primary .dropdown .menu {
       display: flex;
       flex-flow: row wrap;
       justify-content: space-between; }
-      nav.primary .dropdown .flex > * {
+      nav.primary .dropdown .menu > * {
         border-left: 1px solid #777;
         flex-basis: 0;
         flex-grow: 1;
         padding: 0 3rem; }
-      nav.primary .dropdown .flex > *:first-child {
+      nav.primary .dropdown .menu > *:first-child {
         border-left: none; }
-      nav.primary .dropdown .flex li {
+      nav.primary .dropdown .menu li {
         margin-bottom: 0.4em; }
-      nav.primary .dropdown .flex a {
+      nav.primary .dropdown .menu a {
         color: #0C96DD; }
-      nav.primary .dropdown .flex a:hover,
-      nav.primary .dropdown .flex a:focus {
+      nav.primary .dropdown .menu a:hover,
+      nav.primary .dropdown .menu a:focus {
         color: #0975ad; }
   nav.primary .dropdown.open {
     opacity: 1;
-    transform: translate(0, 0);
-    transition: transform 50ms, opacity 200ms; } }
+    transition: opacity 200ms; } }
 
 .features > * {
   background-color: #EEE;

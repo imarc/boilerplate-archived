@@ -1,6 +1,5 @@
 ;(function($) {
     $.fn.dropdown = function() {
-        var $navPrimary = $(this);
         var $menuItem   = $('nav.primary > ul > li');
 
         $menuItem.hover(
