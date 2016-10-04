@@ -449,6 +449,15 @@ blockquote {
     }
 }
 
+.guide {
+    color: $meta-text;
+    font-size: 1.25rem;
+}
+
+.meta {
+    color: $meta-text;
+}
+
 hr {
     border: 0;
     border-top: 1px solid $meta-text;
@@ -567,7 +576,7 @@ input[type="tel"],
 input[type="email"],
 input[type="text"],
 textarea {
-    border: 1px solid $border;
+    border: 1px solid darken($border, 10%);
     color: $plain-text;
     display: block;
     font-family: $font-stack;
@@ -738,6 +747,10 @@ table {
 
 header.primary {
     @include sticky-header;
+}
+
+.listing.search {
+    @include search-listing();
 }
 
 .tabs {

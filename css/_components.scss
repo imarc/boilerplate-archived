@@ -144,27 +144,6 @@ $large: 1024px;
     }
 }
 
-/**
- * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
- * header as you scroll down, and show it as you scroll back up. This is 
- * responsive as the "top" value is dynamically set in the 
- * js based on the height of the header. Top padding is also added 
- * to the body dynamically via js so that the header doesn't overlap any
- * content. 
- * 
- * Emmet: header.primary
- *
- **/
-
-@mixin sticky-header() {
-    position: fixed;
-    top: 0;
-    transition: top 0.2s ease-in-out;
-    width: 100%;
-    z-index: 100;
-}
-
-
 
 /**
  * FEATURES house three features in one row. Powered by flexbox, 
@@ -209,6 +188,78 @@ $large: 1024px;
         }
     }
 }
+
+
+/**
+ * SEARCH LISTING shows a simple input/submit form along with a search
+ * result listing.
+ *
+ * Emmet: ..
+ */
+@mixin search-listing() {
+    form {
+        display: flex;
+        label {
+            @include visuallyhidden;
+        }
+        .text {
+            flex-grow: 1;
+        }
+        .submit {
+            flex-basis: 120px;
+            flex-shrink: 0;
+        }
+        .submit input {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            border-top: 4px solid $border;
+            margin-bottom: 0;
+            padding: 2rem 0;
+            .meta {
+                display: block;
+                font-size: 0.9rem;
+                margin-bottom: 1em;
+            }
+            h2 + .meta {
+                margin-top: -1em;
+            }
+            .summary {
+                p:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+/**
+ * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
+ * header as you scroll down, and show it as you scroll back up. This is 
+ * responsive as the "top" value is dynamically set in the 
+ * js based on the height of the header. Top padding is also added 
+ * to the body dynamically via js so that the header doesn't overlap any
+ * content. 
+ * 
+ * Emmet: header.primary
+ *
+ **/
+
+@mixin sticky-header() {
+    position: fixed;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+    z-index: 100;
+}
+
 
 /**
  * TABS 
