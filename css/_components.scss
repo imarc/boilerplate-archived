@@ -365,98 +365,35 @@ $large: 1024px;
  *
  * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
  */
-@mixin pagination {
+@mixin pagination($position) {
     display: flex;
-
+    justify-content: $position;
     ul {
-        border: 1px solid $border;
-        border-radius: 2px;
-    }
-
-    a {
-        padding: .5rem 1rem;
-        position: relative;
-    }
-
-    li:not(:last-child) a {
         border-right: 1px solid $border;
     }
-
-    li.active a {
-        background: $brand-blue;
-        color: #fff;
-        cursor: default;
-        pointer-events: none;
-
-        &::before,
-        &::after {
-            background: $brand-blue;
-        }
-
-        &:hover {
-            color: #fff;
-            background: $link-hover;
-
-            &::before,
-            &::after {
-                background: $link-hover;
-            }
-        }
+    li {
+        border: 1px solid $border;
+        border-right: none;
     }
-
-    li.disabled a {
-        color: $border;
-        cursor: default;
-        pointer-events: none;
-    }
-
-    li:first-child a {
-        padding-left: 1.5rem;
-    }
-
-    li:last-child a {
-        padding-right: 1.5rem;
-    }
-
-    li.previous a,
-    li.next a {
+    a {
+        padding: 0.5em 1em;
         position: relative;
-        visibility: hidden;
-        width: 1rem;
-
-        &::before {
-            display: block;
-            padding: 0.75rem 1rem;
-            position: absolute;
-            right: 0;
-            top: 0;
-            visibility: visible;
-        }
-
     }
-
-    li:hover:not(.active,.disabled) {
+    li.active a {
+        box-shadow: inset 0 -3px 0 #0C96DD;
+        color: lighten($plain-text, 50%);
+        cursor: default;
+        pointer-events: none;
+    }
+    li.disabled a {
+        color: darken($border, 15%);
+        cursor: default;
+        pointer-events: none;
+    }
+    li:hover:not(.active):not(.disabled) {
         a {
             color: #fff;
-            background: $link-hover;
-
-            &::before {
-                color: #fff;
-                background: $link-hover;
-            }
-        }
-    }
-
-    li.previous a {
-        &::before {
-            @include fontawesome("\f053");
-            border-right: 1px solid $border;
-        }
-    }
-
-    li.next a {
-        &::before {
-            @include fontawesome("\f054");
+            background-color: $link;
         }
     }
 }

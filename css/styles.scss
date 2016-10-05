@@ -263,7 +263,7 @@ nav {
     }
 
     &.pagination {
-        @include pagination;
+        @include pagination(center);
     }
 
     &.progress {
@@ -538,6 +538,10 @@ code {
     color: #fbce78;
     font-family: 'Consolas', monospace;
     padding: 2px 4px;
+}
+
+.sr-only {
+    @include visuallyhidden;
 }
 
 
