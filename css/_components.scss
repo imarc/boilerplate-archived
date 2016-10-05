@@ -165,7 +165,7 @@ $large: 1024px;
         .dropdown {
             background-color: #2A2A2A;
             color: #FFF;
-            display: block;
+            display: none;
             left: 0;
             opacity: 0;
             padding: 2rem 0;
@@ -200,6 +200,7 @@ $large: 1024px;
             }
         }
         .dropdown.open {
+            display: block;
             opacity: 1;
             transition: opacity 200ms;
         }

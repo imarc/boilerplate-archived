@@ -738,7 +738,7 @@ nav.primary i.fa {
   nav.primary .dropdown {
     background-color: #2A2A2A;
     color: #FFF;
-    display: block;
+    display: none;
     left: 0;
     opacity: 0;
     padding: 2rem 0;
@@ -766,6 +766,7 @@ nav.primary i.fa {
       nav.primary .dropdown .menu a:focus {
         color: #0975ad; }
   nav.primary .dropdown.open {
+    display: block;
     opacity: 1;
     transition: opacity 200ms; } }
 
