@@ -26,6 +26,7 @@ $large: 1024px;
         align-items: center;
         display: flex;
         justify-content: center;
+        height: auto;
         overflow: hidden;
         position: relative;
         .mold {
@@ -154,9 +155,11 @@ $large: 1024px;
  * Emmet: nav.primary>ul>li>a+.dropdown
  */
 @mixin dropdown-mega() {
-    .dropdown,
-    i.fa {
-        display: none;
+    @media only screen and (max-width: $large - 1px) {
+        .dropdown,
+        i.fa {
+            display: none;
+        }
     }
     @media only screen and (min-width: $large) {
         i.fa {
@@ -165,13 +168,13 @@ $large: 1024px;
         .dropdown {
             background-color: #2A2A2A;
             color: #FFF;
-            display: none;
+            display: block;
             left: 0;
             opacity: 0;
             padding: 2rem 0;
             position: absolute;
             top: 100%;
-            transition: opacity 400ms;
+            transition: opacity 300ms;
             width: 100%;
             z-index: 1;
             .menu {
@@ -200,9 +203,7 @@ $large: 1024px;
             }
         }
         .dropdown.open {
-            display: block;
             opacity: 1;
-            transition: opacity 200ms;
         }
     }
 }
