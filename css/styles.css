@@ -747,6 +747,7 @@ table {
     position: absolute;
     top: 100%;
     transition: opacity 300ms;
+    visibility: hidden;
     width: 100%;
     z-index: 1; }
     nav.primary .dropdown .menu {
@@ -768,7 +769,8 @@ table {
       nav.primary .dropdown .menu a:focus {
         color: #0975ad; }
   nav.primary .dropdown.open {
-    opacity: 1; } }
+    opacity: 1;
+    visibility: visible; } }
 
 .features > * {
   background-color: #EEE;

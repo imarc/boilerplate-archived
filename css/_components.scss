@@ -175,6 +175,7 @@ $large: 1024px;
             position: absolute;
             top: 100%;
             transition: opacity 300ms;
+            visibility: hidden;
             width: 100%;
             z-index: 1;
             .menu {
@@ -204,6 +205,7 @@ $large: 1024px;
         }
         .dropdown.open {
             opacity: 1;
+            visibility: visible;
         }
     }
 }
