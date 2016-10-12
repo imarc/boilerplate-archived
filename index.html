@@ -1,492 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Boilerplate - A Simple &amp; Semantic Front-End - Imarc</title>
-        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
-        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
-    </head>
-    <body>
-        <header class="primary">
-            <div class="container">
-                <div class="branding">
-                    <a href="https://github.com/imarc/boilerplate">
-                        <img src="img/logo-boilerplate.png" alt="Imarc Boilerplate">
-                    </a>
-                </div>
-                <div class="wrapper">
-                    <nav aria-label="Primary Navigation" class="primary">
-                        <ul>
-                            <li>
-                                <a href="">Maine</a>
-                                <div class="dropdown">
-                                    <ul>
-                                        <li><a href="">Augusta</a></li>
-                                        <li><a href="">Eliot</a></li>
-                                        <li><a href="">Kittery</a></li>
-                                        <li><a href="">Portland</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="active">
-                                <a href="#yup">Markup</a>
-                                <div class="dropdown">
-                                    <ul>
-                                        <li><a href="#Typography">Typography</a></li>
-                                        <li><a href="#Articles">Articles</a></li>
-                                        <li><a href="#Lists">Lists</a></li>
-                                        <li><a href="#Tables">Tables</a></li>
-                                        <li><a href="#Forms">Forms</a></li>
-                                        <li><a href="#Breaks-and-Headings">Breaks and Headings</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="">New Hampshire</a>
-                                <div class="dropdown">
-                                    <ul>
-                                        <li><a href="">Concord</a></li>
-                                        <li><a href="">Manchester</a></li>
-                                        <li><a href="">Portsmouth</a></li>
-                                        <li><a href="">Hampton</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="">Vermont</a>
-                                <div class="dropdown">
-                                    <ul>
-                                        <li><a href="">Montpelier</a></li>
-                                        <li><a href="">Burlington</a></li>
-                                        <li><a href="">Killington</a></li>
-                                        <li><a href="">St. Johnsbury</a></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div class="utilities">
-                        <nav aria-label="Utility Navigation" class="utility">
-                            <ul>
-                                <li><a href="">Careers</a></li>
-                                <li><a href="">Legal</a></li>
-                                <li><a href="">Log In</a></li>
-                            </ul>
-                        </nav>
-                        <form class="search" method="post">
-                            <div class="text">
-                                <label for="search">Search the website</label>
-                                <input id="search" placeholder="Search the website" type="text" />
-                            </div>
-                            <div class="submit">
-                                <input type="submit" value="Search" />
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </header>
+<head>
+	<meta charset="UTF-8" />
+	<title>Boilerplate - A Simple &amp; Semantic Front-End - Imarc</title>
+	<meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+	<meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+</head>
+<body>
+<div class="wrapper">
+	<header class="primary">
+		<div class="container">
+			<div class="header-content">
+				<div class="branding">
+					<a href="https://github.com/imarc/boilerplate">
+						<img src="img/logo-boilerplate.png" alt="Imarc Boilerplate">
+					</a>
+				</div>
+				<button class="menu-toggle"><i class="fa fa-bars"></i></button>
+				<div class="mobile">
+					<nav aria-label="Primary Navigation" class="primary">
+						<ul>
+							<li>
+								<a href="">Maine</a>
+								<div class="dropdown">
+									<ul>
+										<li><a href="">Augusta</a></li>
+										<li><a href="">Eliot</a></li>
+										<li><a href="">Kittery</a></li>
+										<li><a href="">Portland</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="active">
+								<a href="#yup">Markup</a>
+								<div class="dropdown">
+									<ul>
+										<li><a href="#Typography">Typography</a></li>
+										<li><a href="#Articles">Articles</a></li>
+										<li><a href="#Lists">Lists</a></li>
+										<li><a href="#Tables">Tables</a></li>
+										<li><a href="#Forms">Forms</a></li>
+										<li><a href="#Breaks-and-Headings">Breaks and Headings</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="">New Hampshire</a>
+								<div class="dropdown">
+									<ul>
+										<li><a href="">Concord</a></li>
+										<li><a href="">Manchester</a></li>
+										<li><a href="">Portsmouth</a></li>
+										<li><a href="">Hampton</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="">Vermont</a>
+								<div class="dropdown">
+									<ul>
+										<li><a href="">Montpelier</a></li>
+										<li><a href="">Burlington</a></li>
+										<li><a href="">Killington</a></li>
+										<li><a href="">St. Johnsbury</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</nav>
+					<div class="utilities">
+						<nav aria-label="Utility Navigation" class="utility">
+							<ul>
+								<li><a href="">Careers</a></li>
+								<li><a href="">Legal</a></li>
+								<li><a href="">Log In</a></li>
+							</ul>
+						</nav>
+						<form class="search" method="post">
+							<div class="text">
+								<label for="search">Search the website</label>
+								<input id="search" placeholder="Search the website" type="text" />
+							</div>
+							<div class="submit">
+								<input type="submit" value="Search" />
+							</div>
+						</form>
+					</div>
+				</div>
+				<div class="desktop">
+					<nav aria-label="Primary Navigation" class="primary">
+						<ul>
+							<li>
+								<a href="">Maine</a>
+								<div class="dropdown">
+									<ul>
+										<li><a href="">Augusta</a></li>
+										<li><a href="">Eliot</a></li>
+										<li><a href="">Kittery</a></li>
+										<li><a href="">Portland</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="active">
+								<a href="#yup">Markup</a>
+								<div class="dropdown">
+									<ul>
+										<li><a href="#Typography">Typography</a></li>
+										<li><a href="#Articles">Articles</a></li>
+										<li><a href="#Lists">Lists</a></li>
+										<li><a href="#Tables">Tables</a></li>
+										<li><a href="#Forms">Forms</a></li>
+										<li><a href="#Breaks-and-Headings">Breaks and Headings</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="">New Hampshire</a>
+								<div class="dropdown">
+									<ul>
+										<li><a href="">Concord</a></li>
+										<li><a href="">Manchester</a></li>
+										<li><a href="">Portsmouth</a></li>
+										<li><a href="">Hampton</a></li>
+									</ul>
+								</div>
+							</li>
+							<li>
+								<a href="">Vermont</a>
+								<div class="dropdown">
+									<ul>
+										<li><a href="">Montpelier</a></li>
+										<li><a href="">Burlington</a></li>
+										<li><a href="">Killington</a></li>
+										<li><a href="">St. Johnsbury</a></li>
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</nav>
+					<div class="utilities">
+						<nav aria-label="Utility Navigation" class="utility">
+							<ul>
+								<li><a href="">Careers</a></li>
+								<li><a href="">Legal</a></li>
+								<li><a href="">Log In</a></li>
+							</ul>
+						</nav>
+						<form class="search" method="post">
+							<div class="text">
+								<label for="search">Search the website</label>
+								<input id="search" placeholder="Search the website" type="text" />
+							</div>
+							<div class="submit">
+								<input type="submit" value="Search" />
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
 
-        <div class="hero">
-            <div class="copy">
-                <h1>
-                    Simple &amp; semantic frontend
-                </h1>
-                <a class="button" href="https://github.com/imarc/boilerplate">
-                    Boilerplate on Github
-                </a>
-            </div>
-        </div>
+	<div class="hero">
+		<div class="copy">
+			<h1>
+				Simple &amp; semantic frontend
+			</h1>
+			<a class="button" href="https://github.com/imarc/boilerplate">
+				Boilerplate on Github
+			</a>
+		</div>
+	</div>
 
-        <div class="torso">
-            <div class="container">
-                <aside class="primary">
-                    <section>
-                        <nav class="supplemental">
-                            <ul>
-                                <li>
-                                    <a href="#Typography">Typography</a>
-                                    <ul>
-                                        <li><a href="#Typographical-Blocks">Typographical Blocks</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#Lists">Lists</a>
-                                    <ul>
-                                        <li><a href="#Unordered-Lists">Unordered Lists</a></li>
-                                        <li><a href="#Ordered-Lists">Ordered Lists</a></li>
-                                        <li><a href="#Definition-Lists">Definition Lists</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#Tables">Tables</a>
-                                </li>
-                                <li>
-                                    <a href="#Forms">Forms</a>
-                                    <ul>
-                                        <li><a href="#Messaging">Messaging</a></li>
-                                        <li><a href="#Fields">Fields</a></li>
-                                        <li><a href="#Buttons">Buttons</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#Iconography">Iconography</a>
-                                    <ul>
-                                        <li><a href="#Dedicated-element">Dedicated Element</a></li>
-                                        <li><a href="#Pseudo-element">Pseudo Element</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </section>
-                </aside>
+	<div class="torso">
+		<div class="container">
+			<aside class="primary">
+				<section>
+					<nav class="supplemental">
+						<ul>
+							<li>
+								<a href="#Typography">Typography</a>
+								<ul>
+									<li><a href="#Typographical-Blocks">Typographical Blocks</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#Lists">Lists</a>
+								<ul>
+									<li><a href="#Unordered-Lists">Unordered Lists</a></li>
+									<li><a href="#Ordered-Lists">Ordered Lists</a></li>
+									<li><a href="#Definition-Lists">Definition Lists</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#Tables">Tables</a>
+							</li>
+							<li>
+								<a href="#Forms">Forms</a>
+								<ul>
+									<li><a href="#Messaging">Messaging</a></li>
+									<li><a href="#Fields">Fields</a></li>
+									<li><a href="#Buttons">Buttons</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#Iconography">Iconography</a>
+								<ul>
+									<li><a href="#Dedicated-element">Dedicated Element</a></li>
+									<li><a href="#Pseudo-element">Pseudo Element</a></li>
+								</ul>
+							</li>
+						</ul>
+					</nav>
+				</section>
+			</aside>
 
-                <main>
-                    <section>
-                        <h2 id="Typography">Typography</h2>
+			<main>
+				<section>
+					<h2 id="Typography">Typography</h2>
 
-                        <p>
-                            A basic paragraph might contain a number of different of
-                            HTML elements, including
-                            <a href="http://www.imarc.net">a (link)</a>,
-                            <em>emphasized text</em>, and
-                            <strong>strong text</strong>.
-                        </p>
+					<p>
+						A basic paragraph might contain a number of different of
+						HTML elements, including
+						<a href="http://www.imarc.net">a (link)</a>,
+						<em>emphasized text</em>, and
+						<strong>strong text</strong>.
+					</p>
 
-                        <h3 id="Typographical-Blocks">Typographical Blocks</h3>
+					<h3 id="Typographical-Blocks">Typographical Blocks</h3>
 
-                        <h1>
-                            Headline One
-                        </h1>
-                        
-                        <p>
-                            This is a filler paragraph – Ignore this. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus velit, ornare sit amet blandit in, mattis eget nulla.
-                        </p>
+					<h1>
+						Headline One
+					</h1>
 
-                        <h2>
-                            Headline Two
-                        </h2>
-                        
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus velit, ornare sit amet blandit in, mattis eget null
-                        </p>
+					<p>
+						This is a filler paragraph – Ignore this. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit in, mattis eget nulla.
+					</p>
 
-                        <h3>
-                            Headline Three
-                        </h3>
-                        
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus velit, ornare sit amet blandit in, mattis eget null
-                        </p>
+					<h2>
+						Headline Two
+					</h2>
 
-                        <h4>
-                            Headline Four
-                        </h4>
-                        
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis est, nec convallis dui.  Nulla lectus velit, ornare sit amet blandit in, mattis eget null
-                        </p>
-                        
-                        <blockquote>
-                            This, on the otherhand, is a blockquote, meant for large
-                            quotes from other sources. Lorem ipsum dolor sit amet,
-                            consectetur adipiscing elit. Felis est, nec convallis dui.
-                        </blockquote>
-                    </section>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit in, mattis eget null
+					</p>
+
+					<h3>
+						Headline Three
+					</h3>
+
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit in, mattis eget null
+					</p>
+
+					<h4>
+						Headline Four
+					</h4>
+
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Felis est, nec convallis dui. Nulla lectus velit, ornare sit amet blandit in, mattis eget null
+					</p>
+
+					<blockquote>
+						This, on the otherhand, is a blockquote, meant for large
+						quotes from other sources. Lorem ipsum dolor sit amet,
+						consectetur adipiscing elit. Felis est, nec convallis dui.
+					</blockquote>
+				</section>
 
 
-                    <section>
-                        <h2 id="Lists">Lists</h2>
-                        <h3 id="Unordered-Lists">Unordered Lists</h3>
+				<section>
+					<h2 id="Lists">Lists</h2>
+					<h3 id="Unordered-Lists">Unordered Lists</h3>
 
-                        <ul>
-                            <li>
-                                This is an unordered list – ipsum dolor sit amet, consectetur adipiscing
-                                elit fringilla libero id quam semper semper.
-                            </li>
-                            <li>
-                                Bar is listed second – Cras fringilla libero id quam semper semper ipsum dolor sit amet, consectetur adipiscing elit fringilla libero id quam semper semper.
-                            </li>
-                        </ul>
+					<ul>
+						<li>
+							This is an unordered list – ipsum dolor sit amet, consectetur adipiscing
+							elit fringilla libero id quam semper semper.
+						</li>
+						<li>
+							Bar is listed second – Cras fringilla libero id quam semper semper ipsum dolor sit amet, consectetur adipiscing elit fringilla libero id quam semper semper.
+						</li>
+					</ul>
 
-                        <h3 id="Ordered-Lists">Ordered Lists</h3>
+					<h3 id="Ordered-Lists">Ordered Lists</h3>
 
-                        <ol>
-                            <li>Wake up in the morning</li>
-                            <li>Freshen up and go downstairs</li>
-                            <li>Have a bowl of cereal</li>
-                            <li>Go to the bus stop</li>
-                        </ol>
+					<ol>
+						<li>Wake up in the morning</li>
+						<li>Freshen up and go downstairs</li>
+						<li>Have a bowl of cereal</li>
+						<li>Go to the bus stop</li>
+					</ol>
 
-                        <h3 id="Definition-Lists">Definition Lists</h3>
+					<h3 id="Definition-Lists">Definition Lists</h3>
 
-                        <dl>
-                            <dt>iPod</dt>
-                            <dd>The iPod is a line of portable media players designed and marketed by Apple Inc.</dd>
+					<dl>
+						<dt>iPod</dt>
+						<dd>The iPod is a line of portable media players designed and marketed by Apple Inc.</dd>
 
-                            <dt>VCR</dt>
-                            <dd>The VCR is an electro-mechanical device that records analog audio and analog video from broadcast television on a removable tape. </dd>
+						<dt>VCR</dt>
+						<dd>The VCR is an electro-mechanical device that records analog audio and analog video from broadcast television on a removable tape.</dd>
 
-                            <dt>Walkman</dt>
-                            <dd>Walkman is a Sony brand tradename originally used for portable audio cassette players. </dd>
-                        </dl>
-                    </section>
+						<dt>Walkman</dt>
+						<dd>Walkman is a Sony brand tradename originally used for portable audio cassette players.</dd>
+					</dl>
+				</section>
 
-                    <section>
-                        <h2 id="Tables">Tables</h2>
+				<section>
+					<h2 id="Tables">Tables</h2>
 
-                        <p>
-                            This table has a caption, colgroup, thead, tfoot, and tbody.
-                        </p>
+					<p>
+						This table has a caption, colgroup, thead, tfoot, and tbody.
+					</p>
 
-                        <table>
-                            <caption>Table with caption, colgroup, thead, tfoot, and tbody</caption>
-                            <colgroup>
-                                <col />
-                                <col />
-                                <col />
-                            </colgroup>
-                            <thead>
-                                <tr>
-                                    <th>header 1</th>
-                                    <th>header 2</th>
-                                    <th>header 3</th>
-                                </tr>
-                            </thead>
-                            <tfoot>
-                                <tr>
-                                    <td>footer 1</td>
-                                    <td>footer 2</td>
-                                    <td>footer 3</td>
-                                </tr>
-                            </tfoot>
-                            <tbody>
-                                <tr>
-                                    <td>body 1</td>
-                                    <td>body 2</td>
-                                    <td>body 3</td>
-                                </tr>
-                                <tr>
-                                    <td>body 1</td>
-                                    <td>body 2</td>
-                                    <td>body 3</td>
-                                </tr>
-                                <tr>
-                                    <td>body 1</td>
-                                    <td>body 2</td>
-                                    <td>body 3</td>
-                                </tr>
-                                <tr>
-                                    <td>body 1</td>
-                                    <td>body 2</td>
-                                    <td>body 3</td>
-                                </tr>
-                            </tbody>
-                        </table>
+					<table>
+						<caption>Table with caption, colgroup, thead, tfoot, and tbody</caption>
+						<colgroup>
+							<col />
+							<col />
+							<col />
+						</colgroup>
+						<thead>
+						<tr>
+							<th>header 1</th>
+							<th>header 2</th>
+							<th>header 3</th>
+						</tr>
+						</thead>
+						<tfoot>
+						<tr>
+							<td>footer 1</td>
+							<td>footer 2</td>
+							<td>footer 3</td>
+						</tr>
+						</tfoot>
+						<tbody>
+						<tr>
+							<td>body 1</td>
+							<td>body 2</td>
+							<td>body 3</td>
+						</tr>
+						<tr>
+							<td>body 1</td>
+							<td>body 2</td>
+							<td>body 3</td>
+						</tr>
+						<tr>
+							<td>body 1</td>
+							<td>body 2</td>
+							<td>body 3</td>
+						</tr>
+						<tr>
+							<td>body 1</td>
+							<td>body 2</td>
+							<td>body 3</td>
+						</tr>
+						</tbody>
+					</table>
 
-                    </section>
+				</section>
 
-                    <section>
-                        <h2 id="Forms">Forms</h2>
-                        <h3 id="Messaging">Messaging</h3>
+				<section>
+					<h2 id="Forms">Forms</h2>
+					<h3 id="Messaging">Messaging</h3>
 
-                        <p>
-                            The following are paragraph element using the various
-                            <a href="http://handbook.imarc.net/frontend#Messaging">messaging styles defined in handbook</a>.
-                        </p>
+					<p>
+						The following are paragraph element using the various
+						<a href="http://handbook.imarc.net/frontend#Messaging">messaging styles defined in handbook</a>.
+					</p>
 
-                        <div class="success">
-                            <p>
-                                <strong>Success</strong> – Message with a <a href="http://imarc.net">link</a>.
-                            </p>
-                        </div>
+					<div class="success">
+						<p>
+							<strong>Success</strong> – Message with a <a href="http://imarc.net">link</a>.
+						</p>
+					</div>
 
-                        <div class="info">
-                            <p>
-                                <strong>Info</strong> – Message with a <a href="http://imarc.net">link</a>.
-                            </p>
-                        </div>
+					<div class="info">
+						<p>
+							<strong>Info</strong> – Message with a <a href="http://imarc.net">link</a>.
+						</p>
+					</div>
 
-                        <div class="error">
-                            <p>
-                                <strong>Error</strong> – Message with a <a href="http://imarc.net">link</a>.
-                            </p>
-                            <ul>
-                                <li>Item one: message regarding item one</li>
-                                <li>Item two: message regarding item two</li>
-                                <li>Item three: message regarding item three</li>
-                            </ul>
-                        </div>
+					<div class="error">
+						<p>
+							<strong>Error</strong> – Message with a <a href="http://imarc.net">link</a>.
+						</p>
+						<ul>
+							<li>Item one: message regarding item one</li>
+							<li>Item two: message regarding item two</li>
+							<li>Item three: message regarding item three</li>
+						</ul>
+					</div>
 
-                        <h3 id="Fields">Fields</h3>
-                        <h4>Text Inputs</h4>
-                        <form method="post">
-                            <fieldset>
-                                <p>
-                                    Through out the fields, you will also see <code>span.help</code>
-                                    elements. These are used for help text relevant to fields.
-                                </p>
-                                <div class="text">
-                                    <label for="sample_form-text">Text <span class="required">*</span></label>
-                                    <input id="sample_form-text" type="text" />
-                                    <span class="help">only numbers and letters</span>
-                                </div>
-                                <div class="password">
-                                    <label for="sample_form-password">Password <span class="required">*</span></label>
-                                    <input id="sample_form-password" type="password" />
-                                </div>
-                            </fieldset>
+					<h3 id="Fields">Fields</h3>
+					<h4>Text Inputs</h4>
+					<form method="post">
+						<fieldset>
+							<p>
+								Through out the fields, you will also see <code>span.help</code>
+								elements. These are used for help text relevant to fields.
+							</p>
+							<div class="text">
+								<label for="sample_form-text">Text <span class="required">*</span></label>
+								<input id="sample_form-text" type="text" />
+								<span class="help">only numbers and letters</span>
+							</div>
+							<div class="password">
+								<label for="sample_form-password">Password <span class="required">*</span></label>
+								<input id="sample_form-password" type="password" />
+							</div>
+						</fieldset>
 
-                            <fieldset>
-                                <h4>Radios and Checkboxes</h4>
-                                <div class="radios group">
-                                    <label>Choose one</label>
-                                    <label class="radio">
-                                        <input name="sample" type="radio" />
-                                        radio 1
-                                    </label>
-                                    <label class="radio">
-                                        <input name="sample" type="radio" />
-                                        radio 2
-                                    </label>
-                                </div>
-                                <div class="checkboxes group">
-                                    <label>Check all that apply</label>
-                                    <label class="checkbox">
-                                        <input type="checkbox" />
-                                        checkbox 1
-                                    </label>
-                                    <label class="checkbox">
-                                        <input type="checkbox" />
-                                        checkbox 2
-                                    </label>
-                                </div>
-                            </fieldset>
+						<fieldset>
+							<h4>Radios and Checkboxes</h4>
+							<div class="radios group">
+								<label>Choose one</label>
+								<label class="radio">
+									<input name="sample" type="radio" />
+									radio 1
+								</label>
+								<label class="radio">
+									<input name="sample" type="radio" />
+									radio 2
+								</label>
+							</div>
+							<div class="checkboxes group">
+								<label>Check all that apply</label>
+								<label class="checkbox">
+									<input type="checkbox" />
+									checkbox 1
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" />
+									checkbox 2
+								</label>
+							</div>
+						</fieldset>
 
-                            <fieldset>
-                                <h4>Selects</h4>
-                                <div class="select">
-                                    <label for="sample_form-select">Select one</label>
-                                    <select id="sample_form-select">
-                                        <optgroup label="group">
-                                            <option value="option 1">option 1</option>
-                                            <option value="option 2" selected="selected">option 2</option>
-                                        </optgroup>
-                                        <optgroup label="group 1">
-                                            <option value="option 3">option 3</option>
-                                            <option value="option 4">option 4</option>
-                                            <option value="option 5">option 5</option>
-                                            <option value="option 6">option 6</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                                <div class="select multiple">
-                                    <label for="sample_form-select_multiple">Select multiple</label>
-                                    <select id="sample_form-select_multiple" multiple="multiple">
-                                        <optgroup label="group">
-                                            <option value="option">Option</option>
-                                            <option value="option 1">option 1</option>
-                                            <option value="option 2" selected="selected">option 2</option>
-                                        </optgroup>
-                                        <optgroup label="group 1">
-                                            <option value="option 3">option 3</option>
-                                            <option value="option 4">option 4</option>
-                                            <option value="option 5">option 5</option>
-                                            <option value="option 6">option 6</option>
-                                            <option value="option 7">option 7</option>
-                                            <option value="option 8">option 8</option>
-                                        </optgroup>
-                                    </select>
-                                </div>
-                            </fieldset>
+						<fieldset>
+							<h4>Selects</h4>
+							<div class="select">
+								<label for="sample_form-select">Select one</label>
+								<select id="sample_form-select">
+									<optgroup label="group">
+										<option value="option 1">option 1</option>
+										<option value="option 2" selected="selected">option 2</option>
+									</optgroup>
+									<optgroup label="group 1">
+										<option value="option 3">option 3</option>
+										<option value="option 4">option 4</option>
+										<option value="option 5">option 5</option>
+										<option value="option 6">option 6</option>
+									</optgroup>
+								</select>
+							</div>
+							<div class="select multiple">
+								<label for="sample_form-select_multiple">Select multiple</label>
+								<select id="sample_form-select_multiple" multiple="multiple">
+									<optgroup label="group">
+										<option value="option">Option</option>
+										<option value="option 1">option 1</option>
+										<option value="option 2" selected="selected">option 2</option>
+									</optgroup>
+									<optgroup label="group 1">
+										<option value="option 3">option 3</option>
+										<option value="option 4">option 4</option>
+										<option value="option 5">option 5</option>
+										<option value="option 6">option 6</option>
+										<option value="option 7">option 7</option>
+										<option value="option 8">option 8</option>
+									</optgroup>
+								</select>
+							</div>
+						</fieldset>
 
-                            <fieldset>
-                                <h4>Textarea</h4>
-                                <div class="textarea">
-                                    <label for="sample_form-textarea">Textarea</label>
-                                    <textarea id="sample_form-textarea">Textarea</textarea>
-                                </div>
-                            </fieldset>
+						<fieldset>
+							<h4>Textarea</h4>
+							<div class="textarea">
+								<label for="sample_form-textarea">Textarea</label>
+								<textarea id="sample_form-textarea">Textarea</textarea>
+							</div>
+						</fieldset>
 
-                            <fieldset>
-                                <h3 id="Buttons">Buttons</h3>
-                                <div class="submit">
-                                    <input type="submit" value="Submit" />
-                                </div>
-                                <div class="reset">
-                                    <input type="reset" value="Reset" />
-                                </div>
-                                <div class="button">
-                                    <button>Button Element</button>
-                                </div>
-                                <div class="button">
-                                    <input type="submit" disabled="disabled" value="Disabled" />
-                                </div>
-                            </fieldset>
-                        </form>
-                    </section>
+						<fieldset>
+							<h3 id="Buttons">Buttons</h3>
+							<div class="submit">
+								<input type="submit" value="Submit" />
+							</div>
+							<div class="reset">
+								<input type="reset" value="Reset" />
+							</div>
+							<div class="button">
+								<button>Button Element</button>
+							</div>
+							<div class="button">
+								<input type="submit" disabled="disabled" value="Disabled" />
+							</div>
+						</fieldset>
+					</form>
+				</section>
 
-                    <section>
-                        <h2 id="Iconography">Iconography</h2>
-                        <h3 id="Dedicated-element">Dedicated Element</h3>
-                        <p>
-                            Visit Imarc on <a href="https://www.facebook.com/iMarcAgency/"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
-                        </p>
+				<section>
+					<h2 id="Iconography">Iconography</h2>
+					<h3 id="Dedicated-element">Dedicated Element</h3>
+					<p>
+						Visit Imarc on
+						<a href="https://www.facebook.com/iMarcAgency/"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
+					</p>
 
-                        <h3 id="Pseudo-element">Pseudo Element</h3>
-                        <a href="https://github.com/imarc/boilerplate" class="button thumbs-up">Boilerplate is great!</a>
-                    </section>
-                </main>
-            </div>
-        </div>
+					<h3 id="Pseudo-element">Pseudo Element</h3>
+					<a href="https://github.com/imarc/boilerplate" class="button thumbs-up">Boilerplate is great!</a>
+				</section>
+			</main>
+		</div>
+	</div>
 
-        <footer class="primary">
-            <div class="container">
-                <nav aria-label="Footer Navigation">
-                    <ul>
-                        <li>
-                            <a href="">Maine</a>
-                        </li>
-                        <li>
-                            <a href="">Markup</a>
-                        </li>
-                        <li>
-                            <a href="">New Hampshire</a>
-                        </li>
-                        <li>
-                            <a href="">Vermont</a>
-                        </li>
-                    </ul>
-                </nav>          
-                <ul class="social">
-                    <li>
-                        <a href="https://github.com/imarc/boilerplate">
-                            <i class="fa fa-github"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/ImarcAgency">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.twitter.com/ImarcAgency">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/company/imarc">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>  
-            <p>
-                ©2016 by Imarc
-            </p>
-        </footer>
-    </body>
+	<footer class="primary">
+		<div class="container">
+			<nav aria-label="Footer Navigation">
+				<ul>
+					<li>
+						<a href="">Maine</a>
+					</li>
+					<li>
+						<a href="">Markup</a>
+					</li>
+					<li>
+						<a href="">New Hampshire</a>
+					</li>
+					<li>
+						<a href="">Vermont</a>
+					</li>
+				</ul>
+			</nav>
+			<ul class="social">
+				<li>
+					<a href="https://github.com/imarc/boilerplate">
+						<i class="fa fa-github"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.facebook.com/ImarcAgency">
+						<i class="fa fa-facebook"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.twitter.com/ImarcAgency">
+						<i class="fa fa-twitter"></i>
+					</a>
+				</li>
+				<li>
+					<a href="https://www.linkedin.com/company/imarc">
+						<i class="fa fa-linkedin"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<p>
+			©2016 by Imarc
+		</p>
+	</footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous"></script>
+<script src="/js/mobileNavigation.jquery.js" type="text/javascript"></script>
+<script src="/js/site.js" type="text/javascript"></script>
+</body>
 </html>

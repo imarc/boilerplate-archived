@@ -215,6 +215,11 @@ img {
     @include carousel;
 }
 
+.wrapper {
+    overflow: hidden;
+    padding-top: 65px;
+}
+
 header.primary {
     background-color: $charcoal;
     padding-bottom: 1rem;
@@ -222,8 +227,6 @@ header.primary {
 }
 
 .branding {
-    margin-bottom: 1rem;
-    text-align: center;
     a {
         display: inline-block;
         max-width: 180px;
@@ -270,6 +273,38 @@ nav.utility {
     a {
         font-size: 0.8rem;
     }
+}
+
+.mobile {
+    @include mobileNavigation;
+}
+.filters {
+    @include mobileNavigation;
+}
+
+.desktop {
+    display: none;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-basis: 80%;
+    max-width: 80%;
+
+    nav.primary {
+        flex-basis: 70%;
+        max-width: 70%;
+    }
+    .utilities {
+        flex-basis: 30%;
+        max-width: 30%;
+    }
+}
+
+.header-content {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-end;
+    justify-content: space-between;
 }
 
 form.search {
@@ -775,15 +810,9 @@ header.primary {
 
 @media only screen and (min-width: $large) {
     /* = Layout = */
-    .branding {
-        float: left;
-        margin-bottom: 0;
-        margin-top: 2rem;
-    }
-
     .wrapper {
-        float: right;
-        width: 80%;
+        overflow: auto;
+        padding-top: 102px;
     }
 
     nav {
@@ -793,10 +822,7 @@ header.primary {
     }
 
     nav.primary {
-        float: left;
         margin-bottom: 0;
-        margin-top: 2.2rem;
-        width: 65%;
         > ul > li {
             font-size: 1.3rem;
             margin-left: 1rem;
@@ -835,14 +861,20 @@ header.primary {
     }
 
     .utilities {
-        float: right;
-        width: 30%;
         nav.utility {
             margin-bottom: 0.4rem;
             ul {
                 text-align: right;
             }
         }
+    }
+
+    .desktop {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: none;
     }
 
     aside.primary {

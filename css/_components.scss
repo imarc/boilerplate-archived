@@ -265,3 +265,34 @@ $large: 1024px;
         }
     }
 }
+
+@mixin mobileNavigation() {
+    background-color: $charcoal;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    padding: 1em;
+    transition: transform .25s;
+    z-index: 1000;
+    &.left {
+        right: auto;
+        left: 0;
+        transform: translateX(-100%);
+    }
+    &.right {
+        left: auto;
+        right: 0;
+        transform: translateX(100%);
+    }
+    &.open {
+        transform: translateX(0);
+        transition: transform .25s;
+    }
+    ul {
+        li {
+            text-align: left;
+            display: block;
+        }
+    }
+}
