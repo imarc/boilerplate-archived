@@ -275,6 +275,7 @@ $large: 1024px;
     padding: 1em;
     transition: transform .25s;
     z-index: 1000;
+    opacity: 0;
     &.left {
         right: auto;
         left: 0;
@@ -289,10 +290,44 @@ $large: 1024px;
         transform: translateX(0);
         transition: transform .25s;
     }
-    ul {
-        li {
-            text-align: left;
-            display: block;
+    &.init {
+        display: block;
+        opacity: 1;
+    }
+    nav {
+       &.utility {
+           ul li {
+             border-bottom: none;
+             a {
+               padding: .25em 0;
+             }
+           }
+       }
+        ul li {
+          text-align: left;
+          display: block;
+          border-bottom: 1px solid #8a8a8a;
+          display: flex;
+          flex-flow: row nowrap;
+          align-items: center;
+          justify-content: space-between;
+
+          a {
+              display: block;
+              padding: 1em 0;
+          }
+
         }
     }
+
+
+    @media only screen and (min-width: $large) {
+        &.open.left {
+            transform: translateX(-100%);
+        }
+        &.open.right {
+            transform: translateX(100%);
+        }
+    }
+
 }

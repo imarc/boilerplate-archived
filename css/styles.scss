@@ -278,9 +278,19 @@ nav.utility {
 .mobile {
     @include mobileNavigation;
 }
+
 .filters {
     @include mobileNavigation;
 }
+
+.header-content > .dropdown {
+    @include mobileNavigation;
+    z-index: 1001;
+    .dropdown {
+        z-index: 1002;
+    }
+}
+
 
 .desktop {
     display: none;

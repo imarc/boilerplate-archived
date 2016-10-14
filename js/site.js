@@ -1,6 +1,11 @@
 'use strict';
 
 $(function(){
+	// Mobile Navigation
 	var $mobile = $('.mobile');
-	$mobile.mobileNavigation();
+
+	if($mobile.length){
+		$mobile.mobileNavigation();
+	}
+
 });
