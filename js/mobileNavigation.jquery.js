@@ -2,9 +2,9 @@
 
 /**
  *
- * jQuery Mobile Navigation PLugin
+ * jQuery Mobile Navigation Plugin
  *
- *Version: 0.0.0
+ *Version: 0.1.0
  *Author: Tommy Chanthaboune <tommy@imarc.com>
  */
 
@@ -17,16 +17,26 @@
 			toggleClass: 'menu-toggle',
 			menuToggleClass: 'open',
 			wrapperClass: 'wrapper',
-			childClass: 'dropdown',
+			subMenuClass: 'dropdown',
 			directionFrom: 'left'
 		};
 
 		this.settings = $.extend({}, defaults, options);
 
+		/**
+		 *
+		 * Return CSS selector from class name.
+		 *
+		 */
 		var toSelector = function (className) {
 			return '.' + className
 		}
 
+		/**
+		 *
+		 * Validate optionals params when initializing library.
+		 *
+		 */
 		var validateOptions = function () {
 
 			var classRegExp = new RegExp(/^\./);
@@ -49,6 +59,12 @@
 			});
 		}
 
+		/**
+		 *
+		 * Toggles menu
+		 * .init sets the menu opacity to 1 to prevent FOUT.
+		 *
+		 */
 		var toggle = function () {
 			if (!$(this).hasClass('init')) {
 				$(this).addClass('init');
@@ -57,23 +73,34 @@
 			$(this).toggleClass(plugin.settings.menuToggleClass);
 		};
 
+		/**
+		 *
+		 * Sets the direction from where the menu animates from.
+		 *
+		 */
 		var setMenuDirection = function () {
-			var childClass = toSelector(plugin.settings.childClass);
+			var subMenuClass = toSelector(plugin.settings.subMenuClass);
 
 			$(this)
 				.addClass(plugin.settings.directionFrom)
-				.find(childClass).addClass(plugin.settings.directionFrom);
+				.find(subMenuClass)
+				.addClass(plugin.settings.directionFrom);
 		};
 
+		/**
+		 *
+		 * Toggles the main menu. Closes other sub menus if they're open.
+		 *
+		 */
 		var bindToggle = function () {
 			var toggleSelector = toSelector(plugin.settings.toggleClass);
-			var childClass     = toSelector(plugin.settings.childClass);
+			var subMenuClass     = toSelector(plugin.settings.subMenuClass);
 			var $toggle        = $(toggleSelector);
 
 			$toggle.on('click', $.proxy(function () {
 
 				$(plugin[0].parentNode)
-					.find(childClass)
+					.find(subMenuClass)
 					.each(function () {
 						if ($(this).hasClass(plugin.settings.menuToggleClass)) {
 							toggle.call(this);
@@ -84,43 +111,58 @@
 			}, this));
 		};
 
-		var bindChildToggle = function () {
-			var childClass    = toSelector(plugin.settings.childClass);
+		/**
+		 *
+		 * Toggle sub menus. 
+		 *
+		 */
+		var bindSubMenuToggle = function () {
+			var subMenuClass    = toSelector(plugin.settings.subMenuClass);
 			var $pluginParent = $(plugin[0].parentNode);
 
 			$(this)
-				.find('.secondary-toggle')
+				.find('.sub-menu-toggle')
 				.on('click', $pluginParent, function () {
 					var text = $(this).data('menu');
-					toggle.call($(childClass+'[data-menu="'+text+'"'));
+					toggle.call($(subMenuClass + '[data-menu="' + text + '"'));
 
 				});
 
 		};
 
+		/**
+		 * 
+		 * Append buttons to list items with subMenu menus. Add back buttons to menus.
+		 * 
+		 */
 		var appendControl = function () {
-			var childClass = toSelector(plugin.settings.childClass);
-			var text = $(this).find('> a').text();
+			var subMenuClass = toSelector(plugin.settings.subMenuClass);
+			var text       = $(this).find('> a').text();
 
 			$(this)
-				.append('<button class="secondary-toggle" data-menu="' + text + '"><i class="fa fa-angle-right"></i></button>');
+				.append('<button class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-right"></i></button>');
 
 			$(this)
-				.find('>'+ childClass+ '> ul')
-				.prepend('<li><button class="secondary-toggle" data-menu="' + text + '"><i class="fa fa-angle-left"></i></button></li>')
+				.find('>' + subMenuClass + '> ul')
+				.prepend('<li><button class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-left"></i> ' + text + '</button></li>')
 
 
 		};
 
+		/**
+		 * 
+		 * Find all sub menus and append as a sibling of library's initialized class.
+		 * 
+		 */
 		var cloneAndAppendMenu = function () {
-			var childClass   = toSelector(plugin.settings.childClass);
+			var subMenuClass   = toSelector(plugin.settings.subMenuClass);
 			var clone        = $(this).clone(true, true);
 			var pluginParent = plugin[0].parentNode;
 
-			$(clone).find(childClass).remove();
+			$(clone).find(subMenuClass).remove();
 
-			if($(this).find(childClass).length > 0){
-				cloneAndAppendMenu.call($(this).find(childClass));
+			if ($(this).find(subMenuClass).length > 0) {
+				cloneAndAppendMenu.call($(this).find(subMenuClass));
 			}
 
 			$(this)
@@ -130,12 +172,17 @@
 				.remove();
 		};
 
-		var setMenuId = function (index) {
-			var childClass = toSelector(plugin.settings.childClass);
-			var text = $(this).siblings('a').text();
+		/**
+		 *
+		 *  Set unique identifier on each menu.
+		 *
+		 */
+		var setMenuId = function () {
+			var subMenuClass = toSelector(plugin.settings.subMenuClass);
+			var text       = $(this).siblings('a').text();
 
 			$(this)
-				.find(childClass)
+				.find(subMenuClass)
 				.each(function () {
 					var text = $(this).siblings('a').text();
 					$(this).attr('data-menu', text).addClass('tertiary');
@@ -144,19 +191,24 @@
 				.attr('data-menu', text);
 		}
 
-		var initChildren = function () {
-			var childClass = toSelector(plugin.settings.childClass);
+		/**
+		 *
+		 * Set up sub menu
+		 *
+		 */
+		var initSubMenu = function () {
+			var subMenuClass = toSelector(plugin.settings.subMenuClass);
 			var $menuItems = $(this).find('nav ul li');
 
 			$menuItems.each(function (index) {
-				if ($(this).find(childClass).length == 0) {
+				if ($(this).find(subMenuClass).length == 0) {
 					return true;
 				}
 				appendControl.call(this);
-				bindChildToggle.call(this);
+				bindSubMenuToggle.call(this);
 			});
 
-			$(this).find(childClass).each(function (index) {
+			$(this).find(subMenuClass).each(function (index) {
 				setMenuId.call(this, index);
 				cloneAndAppendMenu.call(this);
 			});
@@ -164,16 +216,26 @@
 
 		}
 
+		/**
+		 *
+		 * Set up main menu
+		 *
+		 */
 		var init = function () {
 			validateOptions();
 			setMenuDirection.call(this);
 			bindToggle.call(this);
 		};
 
+		/**
+		 *
+		 * Do this each time the library is initialized
+		 *
+		 */
 		return this.each(function () {
 
 			init.call(this);
-			initChildren.call(this);
+			initSubMenu.call(this);
 
 		});
 	};
