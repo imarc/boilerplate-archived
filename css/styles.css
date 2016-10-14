@@ -380,7 +380,7 @@ nav.utility {
       transform: translateX(-100%); }
     .header-content > .dropdown.open.right {
       transform: translateX(100%); } }
-  .header-content > .dropdown .dropdown {
+  .header-content > .dropdown.tertiary {
     z-index: 1002; }
 
 .desktop {

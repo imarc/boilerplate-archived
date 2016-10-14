@@ -286,7 +286,8 @@ nav.utility {
 .header-content > .dropdown {
     @include mobileNavigation;
     z-index: 1001;
-    .dropdown {
+
+    &.tertiary {
         z-index: 1002;
     }
 }

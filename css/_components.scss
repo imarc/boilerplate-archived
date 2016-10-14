@@ -320,7 +320,6 @@ $large: 1024px;
         }
     }
 
-
     @media only screen and (min-width: $large) {
         &.open.left {
             transform: translateX(-100%);

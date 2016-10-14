@@ -23,7 +23,7 @@
 
 		this.settings = $.extend({}, defaults, options);
 
-		var createSelector = function (className) {
+		var toSelector = function (className) {
 			return '.' + className
 		}
 
@@ -57,13 +57,17 @@
 			$(this).toggleClass(plugin.settings.menuToggleClass);
 		};
 
-		var setDirection = function () {
-			$(this).addClass(plugin.settings.directionFrom);
+		var setMenuDirection = function () {
+			var childClass = toSelector(plugin.settings.childClass);
+
+			$(this)
+				.addClass(plugin.settings.directionFrom)
+				.find(childClass).addClass(plugin.settings.directionFrom);
 		};
 
 		var bindToggle = function () {
-			var toggleSelector = createSelector(plugin.settings.toggleClass);
-			var childClass     = createSelector(plugin.settings.childClass);
+			var toggleSelector = toSelector(plugin.settings.toggleClass);
+			var childClass     = toSelector(plugin.settings.childClass);
 			var $toggle        = $(toggleSelector);
 
 			$toggle.on('click', $.proxy(function () {
@@ -81,68 +85,80 @@
 		};
 
 		var bindChildToggle = function () {
-			var childClass    = createSelector(plugin.settings.childClass);
+			var childClass    = toSelector(plugin.settings.childClass);
 			var $pluginParent = $(plugin[0].parentNode);
 
 			$(this)
 				.find('.secondary-toggle')
-				.on('click', $pluginParent, $.proxy(function () {
-					var index = $(this).index();
-					var menu  = $(childClass + '[data-menu="' + index + '"]');
+				.on('click', $pluginParent, function () {
+					var text = $(this).data('menu');
+					toggle.call($(childClass+'[data-menu="'+text+'"'));
 
-					toggle.call($(childClass + '[data-menu="' + index + '"]'));
-
-				}, this));
+				});
 
 		};
 
-		var appendChildControls = function () {
+		var appendControl = function () {
+			var childClass = toSelector(plugin.settings.childClass);
+			var text = $(this).find('> a').text();
 
 			$(this)
-				.append('<button class="secondary-toggle" data-menu="' + $(this).index() + '"><i class="fa fa-angle-right"></i></button>')
-				.find('.dropdown ul')
-				.prepend('<li><button class="secondary-toggle" data-menu="' + $(this).index() + '"><i class="fa fa-angle-left"></i></button></li>');
+				.append('<button class="secondary-toggle" data-menu="' + text + '"><i class="fa fa-angle-right"></i></button>');
+
+			$(this)
+				.find('>'+ childClass+ '> ul')
+				.prepend('<li><button class="secondary-toggle" data-menu="' + text + '"><i class="fa fa-angle-left"></i></button></li>')
+
+
 		};
 
-		var cloneAndAppendChild = function () {
-			var childClass   = createSelector(plugin.settings.childClass);
-			var clone        = $(this).find(childClass).clone(true, true);
+		var cloneAndAppendMenu = function () {
+			var childClass   = toSelector(plugin.settings.childClass);
+			var clone        = $(this).clone(true, true);
 			var pluginParent = plugin[0].parentNode;
+
+			$(clone).find(childClass).remove();
+
+			if($(this).find(childClass).length > 0){
+				cloneAndAppendMenu.call($(this).find(childClass));
+			}
+
+			$(this)
+				.closest(pluginParent)
+				.append(clone)
+				.end()
+				.remove();
+		};
+
+		var setMenuId = function (index) {
+			var childClass = toSelector(plugin.settings.childClass);
+			var text = $(this).siblings('a').text();
 
 			$(this)
 				.find(childClass)
-				.remove()
+				.each(function () {
+					var text = $(this).siblings('a').text();
+					$(this).attr('data-menu', text).addClass('tertiary');
+				})
 				.end()
-				.closest(pluginParent)
-				.append(clone);
-
-		};
-
-		var setMenuIndex = function () {
-			var childClass = createSelector(plugin.settings.childClass);
-
-			$(this).find(childClass).attr('data-menu', $(this).index());
+				.attr('data-menu', text);
 		}
 
 		var initChildren = function () {
-			var childClass      = createSelector(plugin.settings.childClass);
-			var pluginParent    = plugin[0].parentNode;
-			var $child          = $(pluginParent).find(childClass);
-			var $secondaryItems = $(this).find('nav ul li');
+			var childClass = toSelector(plugin.settings.childClass);
+			var $menuItems = $(this).find('nav ul li');
 
-			$child.each(function () {
-				setDirection.call(this);
-			});
-
-			$secondaryItems.each(function () {
+			$menuItems.each(function (index) {
 				if ($(this).find(childClass).length == 0) {
 					return true;
 				}
-
-				setMenuIndex.call(this);
-				appendChildControls.call(this);
+				appendControl.call(this);
 				bindChildToggle.call(this);
-				cloneAndAppendChild.call(this);
+			});
+
+			$(this).find(childClass).each(function (index) {
+				setMenuId.call(this, index);
+				cloneAndAppendMenu.call(this);
 			});
 
 
@@ -150,7 +166,7 @@
 
 		var init = function () {
 			validateOptions();
-			setDirection.call(this);
+			setMenuDirection.call(this);
 			bindToggle.call(this);
 		};
 
