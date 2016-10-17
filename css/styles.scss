@@ -287,7 +287,7 @@ nav.utility {
     @include mobileNavigation;
     z-index: 1001;
     background: lighten($charcoal, 5%);
-    &.tertiary {
+    &.sub-menu {
         z-index: 1002;
         background: lighten($charcoal, 10%);
     }

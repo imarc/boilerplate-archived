@@ -73,6 +73,7 @@
 			$(this).toggleClass(plugin.settings.menuToggleClass);
 		};
 
+
 		/**
 		 *
 		 * Sets the direction from where the menu animates from.
@@ -94,10 +95,12 @@
 		 */
 		var bindToggle = function () {
 			var toggleSelector = toSelector(plugin.settings.toggleClass);
-			var subMenuClass     = toSelector(plugin.settings.subMenuClass);
+			var subMenuClass   = toSelector(plugin.settings.subMenuClass);
 			var $toggle        = $(toggleSelector);
 
-			$toggle.on('click', $.proxy(function () {
+			$toggle.on('click', $.proxy(function (el) {
+
+				$(toggleSelector).find('i').toggleClass('fa-bars fa-close');
 
 				$(plugin[0].parentNode)
 					.find(subMenuClass)
@@ -113,31 +116,34 @@
 
 		/**
 		 *
-		 * Toggle sub menus. 
+		 * Toggle sub menus.
 		 *
 		 */
 		var bindSubMenuToggle = function () {
-			var subMenuClass    = toSelector(plugin.settings.subMenuClass);
+			var subMenuClass  = toSelector(plugin.settings.subMenuClass);
 			var $pluginParent = $(plugin[0].parentNode);
 
 			$(this)
 				.find('.sub-menu-toggle')
 				.on('click', $pluginParent, function () {
 					var text = $(this).data('menu');
-					toggle.call($(subMenuClass + '[data-menu="' + text + '"'));
-
+					toggle.call($(subMenuClass + '[data-menu="' + text + '"]'));
 				});
 
 		};
 
 		/**
-		 * 
+		 *
 		 * Append buttons to list items with subMenu menus. Add back buttons to menus.
-		 * 
+		 *
 		 */
 		var appendControl = function () {
 			var subMenuClass = toSelector(plugin.settings.subMenuClass);
-			var text       = $(this).find('> a').text();
+			var text         = $(this).find('> a').text();
+
+			if ($(this).find(subMenuClass).length == 0) {
+				return true;
+			}
 
 			$(this)
 				.append('<button class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-right"></i></button>');
@@ -150,21 +156,24 @@
 		};
 
 		/**
-		 * 
+		 *
 		 * Find all sub menus and append as a sibling of library's initialized class.
-		 * 
+		 *
 		 */
 		var cloneAndAppendMenu = function () {
-			var subMenuClass   = toSelector(plugin.settings.subMenuClass);
+			var subMenuClass = toSelector(plugin.settings.subMenuClass);
 			var clone        = $(this).clone(true, true);
 			var pluginParent = plugin[0].parentNode;
 
+			// Remove sub menus from mark up
 			$(clone).find(subMenuClass).remove();
 
+			// Checks for sub menu of another sub menu and call function recursively
 			if ($(this).find(subMenuClass).length > 0) {
 				cloneAndAppendMenu.call($(this).find(subMenuClass));
 			}
 
+			// Remove after cloning and appending
 			$(this)
 				.closest(pluginParent)
 				.append(clone)
@@ -179,13 +188,13 @@
 		 */
 		var setMenuId = function () {
 			var subMenuClass = toSelector(plugin.settings.subMenuClass);
-			var text       = $(this).siblings('a').text();
+			var text         = $(this).siblings('a').text();
 
 			$(this)
 				.find(subMenuClass)
 				.each(function () {
 					var text = $(this).siblings('a').text();
-					$(this).attr('data-menu', text).addClass('tertiary');
+					$(this).attr('data-menu', text).addClass('sub-menu');
 				})
 				.end()
 				.attr('data-menu', text);
@@ -198,20 +207,22 @@
 		 */
 		var initSubMenu = function () {
 			var subMenuClass = toSelector(plugin.settings.subMenuClass);
-			var $menuItems = $(this).find('nav ul li');
+			var $menuItems   = $(this).find('nav ul li');
 
-			$menuItems.each(function (index) {
-				if ($(this).find(subMenuClass).length == 0) {
-					return true;
-				}
-				appendControl.call(this);
-				bindSubMenuToggle.call(this);
-			});
+			// For each menu item
+			$menuItems
+				.each(function () {
+					appendControl.call(this);
+					bindSubMenuToggle.call(this);
+				});
 
-			$(this).find(subMenuClass).each(function (index) {
-				setMenuId.call(this, index);
-				cloneAndAppendMenu.call(this);
-			});
+			// For each menu
+			$(this)
+				.find(subMenuClass)
+				.each(function (index) {
+					setMenuId.call(this, index);
+					cloneAndAppendMenu.call(this);
+				});
 
 
 		}
@@ -233,10 +244,8 @@
 		 *
 		 */
 		return this.each(function () {
-
 			init.call(this);
 			initSubMenu.call(this);
-
 		});
 	};
 
