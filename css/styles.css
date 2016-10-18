@@ -807,6 +807,46 @@ header.primary {
       margin-left: 20px;
       text-align: left; } }
 
+.user-profile {
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid #DDD;
+  padding: 1em; }
+  .user-profile .name, .user-profile .title {
+    margin-bottom: 0; }
+  .user-profile .portrait {
+    flex-basis: 100%;
+    max-width: 100%;
+    text-align: center; }
+    .user-profile .portrait img {
+      margin-bottom: 1em; }
+  .user-profile .portrait.rounded img {
+    border-radius: 50%; }
+  .user-profile .biography {
+    flex-basis: 100%;
+    max-width: 100%;
+    padding: 0 1em; }
+  .user-profile header {
+    flex-basis: 100%;
+    max-width: 100%; }
+  .user-profile footer {
+    flex-basis: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-flow: row-wrap;
+    justify-content: space-between;
+    padding: 1em 0; }
+    .user-profile footer .contact a {
+      display: block; }
+  @media only screen and (min-width: 669px) {
+    .user-profile .portrait {
+      flex-basis: 20%;
+      max-width: 20%;
+      text-align: center; }
+    .user-profile .biography {
+      flex-basis: 80%;
+      max-width: 80%; } }
+
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
   /* = Layout = */

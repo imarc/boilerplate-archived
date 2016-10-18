@@ -265,3 +265,58 @@ $large: 1024px;
         }
     }
 }
+
+@mixin userProfile {
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid $lightgray;
+    padding: 1em;
+    .name,.title {
+      margin-bottom: 0;
+    }
+
+    .portrait {
+      flex-basis: 100%;
+      max-width: 100%;
+      text-align: center;
+      img {
+        margin-bottom: 1em;
+      }
+    }
+    .portrait.rounded {
+      img {
+        border-radius: 50%;
+      }
+    }
+    .biography {
+      flex-basis: 100%;
+      max-width: 100%;
+      padding: 0 1em;
+    }
+    header {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+    footer {
+      flex-basis: 100%;
+      max-width: 100%;
+      display: flex;
+      flex-flow: row-wrap;
+      justify-content: space-between;
+      padding: 1em 0;
+      .contact a{
+        display: block;
+      }
+    }
+    @media only screen and (min-width: $medium) {
+      .portrait {
+        flex-basis: 20%;
+        max-width: 20%;
+        text-align: center;
+      }
+      .biography {
+        flex-basis: 80%;
+        max-width: 80%;
+      }
+    }
+}

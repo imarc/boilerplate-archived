@@ -754,6 +754,9 @@ header.primary {
     @include tabs();
 }
 
+.user-profile{
+    @include userProfile;
+}
 /* = Media Queries = */
 @media only screen and (min-width: $medium) {
     /* = Layout = */
