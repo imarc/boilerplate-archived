@@ -3,3 +3,5 @@
  */
 
 $('.tabs').tabs();
+
+$('header.primary').stickyHeader();
