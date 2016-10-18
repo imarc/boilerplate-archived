@@ -7,7 +7,6 @@
  *   mixin and/or function definitions.
  */
 
-
 /**
  * Media query breakpoints
  */
@@ -15,41 +14,37 @@
 $medium: 669px;
 $large: 1024px;
 
-
-
 /**
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
 @mixin backgroundvideo() {
-    & {
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-        .mold {
-            background-color: rgba(2255,255,255,0.6);
-            padding: 2em;
-            text-align: center;
-            z-index: 2;
-        }
-        video {
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 1;
-        }
+  & {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    .mold {
+      background-color: rgba(2255, 255, 255, 0.6);
+      padding: 2em;
+      text-align: center;
+      z-index: 2;
     }
-    &::before {
-        content: "";
-        display: block;
-        padding-top: 30%;
+    video {
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
     }
+  }
+  &::before {
+    content: "";
+    display: block;
+    padding-top: 30%;
+  }
 }
-
-
 
 /**
  * CAROUSEL uses Slick to create a carousel. It defaults to a rather
@@ -84,23 +79,22 @@ $large: 1024px;
  * arrows.
  */
 @mixin carousel() {
-    .slick-slide {
-        color: #FFF;
-        height: auto;
-        padding: 3rem;
-    }
-    .slick-prev,
-    .slick-next {
-        z-index: 1;
-    }
-    .slick-prev {
-        left: 2rem;
-    }
-    .slick-next {
-        right: 2rem;
-    }
+  .slick-slide {
+    color: #FFF;
+    height: auto;
+    padding: 3rem;
+  }
+  .slick-prev,
+  .slick-next {
+    z-index: 1;
+  }
+  .slick-prev {
+    left: 2rem;
+  }
+  .slick-next {
+    right: 2rem;
+  }
 }
-
 
 /**
  * The COLUMNS mixin makes it so that immmediate child elements appear as
@@ -123,25 +117,25 @@ $large: 1024px;
  * Emmet: .columns>div+(hr+div)*2
  */
 @mixin columns() {
-    > hr {
-        border: 0;
-        display: none;
+  > hr {
+    border: 0;
+    display: none;
+  }
+  @media only screen and (min-width: $medium) {
+    & {
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      > * {
+        display: table-cell;
+        vertical-align: top;
+      }
+      > hr {
+        display: table-cell;
+        width: 1rem;
+      }
     }
-    @media only screen and (min-width: $medium) {
-        & {
-            display: table;
-            table-layout: fixed;
-            width: 100%;
-            > * {
-                display: table-cell;
-                vertical-align: top;
-            }
-            > hr {
-                display: table-cell;
-                width: 1rem;
-            }
-        }
-    }
+  }
 }
 
 /**
@@ -157,14 +151,12 @@ $large: 1024px;
  **/
 
 @mixin sticky-header() {
-    position: fixed;
-    top: 0;
-    transition: top 0.2s ease-in-out;
-    width: 100%;
-    z-index: 100;
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+  z-index: 100;
 }
-
-
 
 /**
  * FEATURES house three features in one row. Powered by flexbox, 
@@ -174,40 +166,40 @@ $large: 1024px;
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 @mixin features($gutter) {
+  & > * {
+    background-color: #EEE;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2rem;
+    text-align: center;
+    img,
+    h3,
+    p {
+      margin-bottom: 1rem;
+    }
+    .button {
+      margin-bottom: 0;
+    }
+  }
+  @media only screen and (min-width: $large) {
+    & {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+    }
     & > * {
-        background-color: #EEE;
-        margin-bottom: 2rem;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 2rem;
-        text-align: center;
-        img,
-        h3,
-        p {
-            margin-bottom: 1rem;
-        }
-        .button {
-            margin-bottom: 0;
-        }
+      display: flex;
+      flex: 1 0 0;
+      flex-direction: column;
+      margin-left: $gutter;
+      margin-right: $gutter;
+      .button {
+        align-self: center;
+        margin-top: auto;
+      }
     }
-    @media only screen and (min-width: $large) {
-        & {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-        }
-        & > * {
-            display: flex;
-            flex: 1 0 0;
-            flex-direction: column;
-            margin-left: $gutter;
-            margin-right: $gutter;
-            .button {
-                align-self: center;
-                margin-top: auto;
-            }
-        }
-    }
+  }
 }
 
 /**
@@ -216,52 +208,98 @@ $large: 1024px;
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
 @mixin tabs() {
-    position: relative;
-    nav {
-        border-bottom: 1px solid;
-        ul {
-            list-style: none;
-            margin-left: 20px;
-            padding: 0;
-            text-align: center;
-        }
-        li {
-            background-color: #CBBFB4;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            cursor: pointer;
-            display: inline-block;
-            margin-bottom: 0;
-            margin-right: 0.5em;
-            padding: 0.5em 1em;
-        }
-        li.active {
-            background-color: #FFF;
-            border: 1px solid;
-            border-bottom: none;
-            position: relative;
-            &::after {
-                background-color: #FFF;
-                bottom: -1px;
-                content: "";
-                height: 1px;
-                left: 0;
-                position: absolute;
-                width: 100%;
-            }
-        }
+  position: relative;
+  nav {
+    border-bottom: 1px solid;
+    ul {
+      list-style: none;
+      margin-left: 20px;
+      padding: 0;
+      text-align: center;
     }
-    .panel {
+    li {
+      background-color: #CBBFB4;
+      border-top-left-radius: 4px;
+      border-top-right-radius: 4px;
+      cursor: pointer;
+      display: inline-block;
+      margin-bottom: 0;
+      margin-right: 0.5em;
+      padding: 0.5em 1em;
+    }
+    li.active {
+      background-color: #FFF;
+      border: 1px solid;
+      border-bottom: none;
+      position: relative;
+      &::after {
+        background-color: #FFF;
+        bottom: -1px;
+        content: "";
+        height: 1px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
+    }
+  }
+  .panel {
+    display: none;
+    padding: 20px;
+  }
+  .panel.active {
+    display: inherit;
+  }
+  @media only screen and (min-width: $large) {
+    nav ul {
+      margin-left: 20px;
+      text-align: left;
+    }
+  }
+}
+
+/**
+*
+* Accordion
+*
+* Emmet: .accordion>.accordion-group>(button{header}+div>{lorem ipsum})
+*
+*/
+
+@mixin accordion() {
+  .accordion-group {
+    > button {
+      margin-top: .5em;
+      cursor: pointer;
+      background: $lightgray;
+      text-align: left;
+      color: $plain-text;
+      width: 100%;
+      padding: .5em 1em;
+      font-size: 1em;
+      position: relative;
+      &:hover {
+        background: darken($lightgray, 5%);
+      }
+      &::after {
+        position: absolute;
+        right: 1em;
+        margin: auto 0;
+        content: '\f067';
+        font-family: FontAwesome;
+      }
+      &.active {
+        background: darken($lightgray, 5%);
+        &::after {
+          content: '\f068';
+        }
+      }
+    }
+    > div {
+      padding: 1em 0;
+      &.hidden {
         display: none;
-        padding: 20px;
+      }
     }
-    .panel.active {
-        display: inherit;
-    }
-    @media only screen and (min-width: $large) {
-        nav ul {
-            margin-left: 20px;
-            text-align: left;
-        }
-    }
+  }
 }

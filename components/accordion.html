@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Tabs Component - Imarc</title>
+	<meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+	<meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+</head>
+<body>
+<div class="torso">
+	<main>
+		<section class="intro">
+			<div class="container">
+				<h1>Accordion</h1>
+				<p>Emmet</p>
+				<code>.accordion>.accordion-group>(button{header}+div>{lorem ipsum})</code>
+				<br>
+				<p>Plugin Options</p>
+				<table>
+					<tr>
+						<td>Option</td>
+						<td>Type</td>
+						<td>Default</td>
+						<td>Description</td>
+					</tr>
+					<tr>
+						<td>hiddenOnLoad</td>
+						<td>Boolean</td>
+						<td>true</td>
+						<td>Hide contents on Load</td>
+					</tr>
+					<tr>
+						<td>singleOpen</td>
+						<td>Boolean</td>
+						<td>true</td>
+						<td>Only open one at a time.</td>
+					</tr>
+				</table>
+				<p>JS Example</p>
+				<code>
+$(function () {
+	var $accordion = $('.accordion');
+	$accordion.accordion({
+		hiddenOnLoad: true,
+		singleOpen: true
+	});
+;});</code>
+
+			</div>
+		</section>
+		<section>
+			<div class="container">
+				<!-- Begin component -->
+
+				<div class="accordion">
+					<div class="accordion-group">
+						<button>Content 1</button>
+						<div>
+							<h3>Content Header 1</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias blanditiis culpa cum distinctio doloribus dolorum enim id ipsa iste itaque laborum, neque nihil quae quam quisquam rerum vitae voluptas.</p>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<button>Content 2</button>
+						<div>
+							<h3>Content Header 2</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias blanditiis culpa cum distinctio doloribus dolorum enim id ipsa iste itaque laborum, neque nihil quae quam quisquam rerum vitae voluptas.</p>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<button>Content 3</button>
+						<div>
+							<h3>Content Header 3</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias blanditiis culpa cum distinctio doloribus dolorum enim id ipsa iste itaque laborum, neque nihil quae quam quisquam rerum vitae voluptas.</p>
+						</div>
+					</div>
+					<div class="accordion-group">
+						<button>Content 4</button>
+						<div>
+							<h3>Content Header 3</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias blanditiis culpa cum distinctio doloribus dolorum enim id ipsa iste itaque laborum, neque nihil quae quam quisquam rerum vitae voluptas.</p>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- /end component-->
+
+			</div>
+		</section>
+	</main>
+</div>
+
+<script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+<script src="../js/accordion.jquery.js"></script>
+<script src="../js/site.js"></script>
+</body>
+</html>

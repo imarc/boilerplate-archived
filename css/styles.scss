@@ -504,10 +504,13 @@ dd {
 }
 
 code {
-    background-color: #41322F;
-    color: #FBCE78;
+    background-color: $darkgray;
+    color: $white;
     font-family: 'Consolas', monospace;
-    padding: 2px 4px;
+    padding: 1em;
+    display: block;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 
@@ -752,6 +755,10 @@ header.primary {
 
 .tabs {
     @include tabs();
+}
+
+.accordion {
+    @include accordion();
 }
 
 /* = Media Queries = */

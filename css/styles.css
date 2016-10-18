@@ -112,6 +112,13 @@
  *
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
+/**
+*
+* Accordion
+*
+* Emmet: .accordion>.accordion-group>(button{header}+div>{lorem ipsum})
+*
+*/
 /* = Variables = */
 /* Grays */
 /* The brand colors (name them the color) */
@@ -444,10 +451,13 @@ dd {
   padding-left: 2em; }
 
 code {
-  background-color: #41322F;
-  color: #FBCE78;
+  background-color: #4A4A4A;
+  color: #FFF;
   font-family: 'Consolas', monospace;
-  padding: 2px 4px; }
+  padding: 1em;
+  display: block;
+  white-space: pre-wrap;
+  word-wrap: break-word; }
 
 /* = Forms = */
 button,
@@ -806,6 +816,33 @@ header.primary {
     .tabs nav ul {
       margin-left: 20px;
       text-align: left; } }
+
+.accordion .accordion-group > button {
+  margin-top: .5em;
+  cursor: pointer;
+  background: #DDD;
+  text-align: left;
+  color: #191919;
+  width: 100%;
+  padding: .5em 1em;
+  font-size: 1em;
+  position: relative; }
+  .accordion .accordion-group > button:hover {
+    background: #d0d0d0; }
+  .accordion .accordion-group > button::after {
+    position: absolute;
+    right: 1em;
+    margin: auto 0;
+    content: '\f067';
+    font-family: FontAwesome; }
+  .accordion .accordion-group > button.active {
+    background: #d0d0d0; }
+    .accordion .accordion-group > button.active::after {
+      content: '\f068'; }
+.accordion .accordion-group > div {
+  padding: 1em 0; }
+  .accordion .accordion-group > div.hidden {
+    display: none; }
 
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
