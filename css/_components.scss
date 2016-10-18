@@ -146,7 +146,7 @@ $large: 1024px;
 
 
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo, copyright, simple navigation (as opposed to a "super footer"), legal links, social icons/links, and contact information.
+ * The FOOTER mixin is a basic implementation of a footer with the company logo, copyright, simple navigation (as opposed to a "super footer"), legal links, social icons/links, and contact information. This is currently included in the footer.primary in the main .scss file.
  *
  * It uses flexbox for layout, and stacks for "medium" (669px) screens and below.
  *
