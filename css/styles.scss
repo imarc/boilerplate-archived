@@ -361,21 +361,7 @@ nav.supplemental {
 }
 
 footer.primary {
-    background-color: $charcoal;
-    color: $meta-text;
-    font-size: 0.9rem;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
-    text-align: center;
-    nav {
-        margin-bottom: 1rem;
-    }
-    p {
-        margin: 0;
-    }
-    a {
-        color: #fff;
-    }
+    @include footer;
 }
 
 .social {

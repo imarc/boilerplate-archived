@@ -144,26 +144,83 @@ $large: 1024px;
     }
 }
 
+
 /**
- * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
- * header as you scroll down, and show it as you scroll back up. This is 
- * responsive as the "top" value is dynamically set in the 
- * js based on the height of the header. Top padding is also added 
- * to the body dynamically via js so that the header doesn't overlap any
- * content. 
- * 
- * Emmet: header.primary
+ * The FOOTER mixin is a basic implementation of a footer with the company logo, copyright, simple navigation (as opposed to a "super footer"), legal links, social icons/links, and contact information.
  *
- **/
+ * It uses flexbox for layout, and stacks for "medium" (669px) screens and below.
+ *
+ *
+ * Emmet: footer.primary>.container>div>(div.branding>a>img)+(div>(nav>ul>li>a)+p.copyright>a)+(div.contact>(ul.social>li>a>i)+p)
+ */
+@mixin footer {
+    background-color: $charcoal;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 3rem 0;
+    text-align: center;
+    nav {
+        margin-bottom: 1rem;
+        li:hover {
+            a {
+                color: #fff;
+            }
+        }
+        li a:hover {
+            color: lighten($charcoal, 55%);
+        }
+    }
+    a {
+        color: #fff;
+        &:hover {
+            color: lighten($charcoal, 55%); 
+        }
+    }
+    .branding {
+        float: none;
+        margin-top: 0;
+        a {
+            margin-bottom: 2rem;
+        }
+    }
+    .legal {
+        display: flex;
+        font-size: 0.8125rem;
+        a {
+            color: lighten($charcoal, 55%);
+            flex-basis: 25%;
+        }
+    }
+    .copyright {
+        color: $meta-text;
+        font-size: 0.875rem;
+        padding-left: 0.5rem;
+        a {
+            color: lighten($charcoal, 55%);
+            flex-basis: 25%;
+        }
+    }
+    .contact p {
+        margin-bottom: 0;
+    }
 
-@mixin sticky-header() {
-    position: fixed;
-    top: 0;
-    transition: top 0.2s ease-in-out;
-    width: 100%;
-    z-index: 100;
+    @media only screen and (min-width: $medium) {
+        text-align: left;
+        .container > div {
+            display: flex;
+            > div {
+                flex-basis: 33%; /* change this value for different # of columns */
+            }
+        }
+        .branding {
+            text-align: left;
+        }
+        .contact {
+            margin-top: -1rem;
+            text-align: right;
+        }
+    }
 }
-
 
 
 /**
@@ -208,6 +265,27 @@ $large: 1024px;
             }
         }
     }
+}
+
+
+/**
+ * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
+ * header as you scroll down, and show it as you scroll back up. This is 
+ * responsive as the "top" value is dynamically set in the 
+ * js based on the height of the header. Top padding is also added 
+ * to the body dynamically via js so that the header doesn't overlap any
+ * content. 
+ * 
+ * Emmet: header.primary
+ *
+ **/
+
+@mixin sticky-header() {
+    position: fixed;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+    z-index: 100;
 }
 
 /**
