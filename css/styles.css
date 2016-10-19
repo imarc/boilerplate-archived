@@ -34,7 +34,7 @@
  * Media query breakpoints
  */
 /**
- * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
+ * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
 /**
@@ -90,27 +90,32 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
- * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
- * header as you scroll down, and show it as you scroll back up. This is 
- * responsive as the "top" value is dynamically set in the 
- * js based on the height of the header. Top padding is also added 
+ * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
+ * header as you scroll down, and show it as you scroll back up. This is
+ * responsive as the "top" value is dynamically set in the
+ * js based on the height of the header. Top padding is also added
  * to the body dynamically via js so that the header doesn't overlap any
- * content. 
- * 
+ * content.
+ *
  * Emmet: header.primary
  *
  **/
 /**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
+ * FEATURES house three features in one row. Powered by flexbox,
+ * this allows for a bottom alignment of each feature’s anchor. Use the
  * <code>$gutter</code> variable to pass you preferred gutter width.
  *
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
- * TABS 
+ * TABS
  *
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
+ */
+/**
+ * TABS
+ *
+ * Emmet: .user-profile>(.portrait>img+h3.name+p.title+(a*2)+ul.social)+.biography
  */
 /* = Variables = */
 /* Grays */
@@ -190,8 +195,7 @@ img {
   color: #FFF;
   height: auto;
   padding: 3rem; }
-.carousel .slick-prev,
-.carousel .slick-next {
+.carousel .slick-prev, .carousel .slick-next {
   z-index: 1; }
 .carousel .slick-prev {
   left: 2rem; }
@@ -738,9 +742,7 @@ table {
   margin-right: auto;
   padding: 2rem;
   text-align: center; }
-  .features > * img,
-  .features > * h3,
-  .features > * p {
+  .features > * img, .features > * h3, .features > * p {
     margin-bottom: 1rem; }
   .features > * .button {
     margin-bottom: 0; }
@@ -808,36 +810,36 @@ header.primary {
       text-align: left; } }
 
 .user-profile {
+  border: 1px solid #DDD;
   display: flex;
   flex-flow: row wrap;
-  border: 1px solid #DDD;
   padding: 1em; }
+  .user-profile header {
+    flex-basis: 100%;
+    max-width: 100%; }
+  .user-profile footer {
+    display: flex;
+    flex-basis: 100%;
+    flex-flow: row-wrap;
+    justify-content: space-between;
+    max-width: 100%;
+    padding: 1em 0; }
+    .user-profile footer .contact a {
+      display: block; }
   .user-profile .name, .user-profile .title {
-    margin-bottom: 0; }
+    margin-bottom: 0.25em; }
   .user-profile .portrait {
     flex-basis: 100%;
     max-width: 100%;
     text-align: center; }
     .user-profile .portrait img {
       margin-bottom: 1em; }
-  .user-profile .portrait.rounded img {
-    border-radius: 50%; }
+    .user-profile .portrait.rounded img {
+      border-radius: 50%; }
   .user-profile .biography {
     flex-basis: 100%;
     max-width: 100%;
-    padding: 0 1em; }
-  .user-profile header {
-    flex-basis: 100%;
-    max-width: 100%; }
-  .user-profile footer {
-    flex-basis: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-flow: row-wrap;
-    justify-content: space-between;
-    padding: 1em 0; }
-    .user-profile footer .contact a {
-      display: block; }
+    padding: 0; }
   @media only screen and (min-width: 669px) {
     .user-profile .portrait {
       flex-basis: 20%;
@@ -845,7 +847,8 @@ header.primary {
       text-align: center; }
     .user-profile .biography {
       flex-basis: 80%;
-      max-width: 80%; } }
+      max-width: 80%;
+      padding: 0 2em; } }
 
 /* = Media Queries = */
 @media only screen and (min-width: 669px) {
