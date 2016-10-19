@@ -26,16 +26,24 @@
 
 /* = Variables = */
 $font-stack: "Helvetica Neue", Arial, sans-serif;
-$charcoal: #191919;
+
+
+/* Grays */
+$white:     #FFF;
+$lightgray: #DDD;
+$gray:      #808080;
+$darkgray:  #4A4A4A;
+$charcoal:  #191919;
+$black:     #000;
 
 /* The brand colors (name them the color) */
-$brand-blue: #0c96dd;
-$brand-dark-blue: #0c508a;
-$brand-orange: #eb7424;
+$brand-blue: #0C96DD;
+$brand-dark-blue: #0C508A;
+$brand-orange: #EB7424;
 
 /* Messaging colors */
-$success: #48ac2c;
-$error: #ce2a2a;
+$success: #48AC2C;
+$error: #CE2A2A;
 $info: #DDD;
 
 /* Applied colors */
@@ -46,10 +54,10 @@ $link-hover: $brand-orange;
 $border: lighten($charcoal, 80%);
 
 /* Social Network Colors */
-$facebook: #3664a2;
-$twitter: #55acee;
+$facebook: #3664A2;
+$twitter: #55ACEE;
 $linkedin: #0077B5;
-$youtube: #cd201f;
+$youtube: #CD201F;
 
 /* Breakpoint values */
 $medium: 669px;
@@ -149,36 +157,32 @@ $large: 1024px;
 
 
 /* = Base = */
-a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, main, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
-    border: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+/* Not Included:
+ *   - bi-directional elements: bdi, bdo
+ *   - ruby elements: data, output, rp, rt, rtc, ruby, samp, time, var
+ *   - typographical elements: del, dfn, ins, kbd, mark, s, small, wbr
+ *   - HTML5 elements: col, colgroup, details, dialog, map, menu, menuitem, summary
+ */
+a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
     box-sizing: border-box;
-    font: inherit;
-    font-size: 100%;
     margin: 0;
-    outline: 0;
     padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
     vertical-align: baseline;
 }
 
-article,
-aside,
-audio,
-canvas,
-footer,
-header,
-nav,
-section,
-video {
+article, aside, audio, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, video {
     display: block;
 }
 
 html {
-    background-color: #fff; 
+    background-color: #FFF;
     color: $plain-text;
     font-family: $font-stack;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -195,7 +199,6 @@ img {
 
 
 /* = Layout = */
-.container,
 .group {
     @include grouping;
 }
@@ -238,7 +241,7 @@ nav {
         display: inline-block;
     }
     a {
-        color: #fff;
+        color: #FFF;
         display: block;
         padding: 0 0.5rem;
     }
@@ -308,7 +311,7 @@ form.search {
     .copy {
         @include container;
         * {
-            color: #fff;
+            color: #FFF;
         }
     }
 }
@@ -374,7 +377,7 @@ footer.primary {
         margin: 0;
     }
     a {
-        color: #fff;
+        color: #FFF;
     }
 }
 
@@ -470,18 +473,6 @@ a {
     }
 }
 
-a.button {
-    background-color: $link;
-    color: #fff;
-    display: inline-block;
-    font-weight: bold;
-    padding: 0.6em 1em;
-}
-a.button:hover,
-a.button:focus {
-    background-color: $link-hover;
-}
-
 p,
 ol,
 ul,
@@ -513,8 +504,8 @@ dd {
 }
 
 code {
-    background-color: #41322f;
-    color: #fbce78;
+    background-color: #41322F;
+    color: #FBCE78;
     font-family: 'Consolas', monospace;
     padding: 2px 4px;
 }
@@ -561,11 +552,18 @@ fieldset .help {
     margin: 0;
 }
 
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
-input[type="email"],
 input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
 textarea {
     border: 1px solid $border;
     color: $plain-text;
@@ -611,11 +609,22 @@ input[type="radio"] {
     padding: 0;
 }
 
+a.button {
+    background-color: $link;
+    color: #FFF;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.6em 1em;
+
+    &:hover,
+    &:focus {
+        background-color: $link-hover;
+    }
+}
+
 button,
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button;
-    -moz-appearance: button;
     background-color: lighten($charcoal, 35%);
     border: none;
     color: #FFF;
@@ -625,6 +634,7 @@ input[type="submit"] {
     font-size: 0.9rem;
     padding: 0.4em 0.6em;
     text-align: center;
+
     &:hover {
         background-color: lighten($charcoal, 30%);
         border-color: $link;
@@ -660,10 +670,10 @@ input[type="submit"][disabled] {
         content: "\f00c";
     }
     a {
-        color: #fff;
+        color: #FFF;
     }
     a:hover {
-        color: darken(#fff, 15%);
+        color: darken(#FFF, 15%);
     }
 }
 
@@ -744,6 +754,9 @@ header.primary {
     @include tabs();
 }
 
+.user-profile{
+    @include userProfile;
+}
 /* = Media Queries = */
 @media only screen and (min-width: $medium) {
     /* = Layout = */
@@ -815,7 +828,7 @@ header.primary {
                 font-size: 0.9rem;
             }
             .dropdown li a {
-                color: #fff;
+                color: #FFF;
                 padding: 0.3rem 0.8rem;
             }
             .dropdown li a:hover {
