@@ -1,4 +1,8 @@
 /**
  * DROPDOWN
  */
-$('nav.primary').dropdown();
+
+;$(function() {
+    $('nav.primary').dropdown();
+});
+
