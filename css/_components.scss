@@ -16,7 +16,6 @@ $medium: 669px;
 $large: 1024px;
 
 
-
 /**
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
@@ -26,6 +25,7 @@ $large: 1024px;
         align-items: center;
         display: flex;
         justify-content: center;
+        height: auto;
         overflow: hidden;
         position: relative;
         .mold {
@@ -48,7 +48,6 @@ $large: 1024px;
         padding-top: 30%;
     }
 }
-
 
 
 /**
@@ -144,6 +143,73 @@ $large: 1024px;
     }
 }
 
+
+/**
+ * DROPDOWN (mega) 
+ * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is 
+ * different than a simple dropdown that fills only its parent list item’s width.
+ * Note here that the position: relative; rule we are used to seeing on 
+ * nav.primary > ul > li is not there. It’s on header.primary > .container.
+ *
+ * Emmet: nav.primary>ul>li>a+.dropdown
+ */
+@mixin dropdown-mega() {
+    @media only screen and (max-width: $large - 1px) {
+        .dropdown,
+        i.fa {
+            display: none;
+        }
+    }
+    @media only screen and (min-width: $large) {
+        i.fa {
+            display: inline-block;
+        }
+        .dropdown {
+            background-color: #2A2A2A;
+            color: #FFF;
+            display: block;
+            left: 0;
+            opacity: 0;
+            padding: 2rem 0;
+            position: absolute;
+            top: 100%;
+            transition: opacity 300ms;
+            visibility: hidden;
+            width: 100%;
+            z-index: 1;
+            .menu {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                > * {
+                    border-left: 1px solid #777;
+                    flex-basis: 0;
+                    flex-grow: 1;
+                    padding: 0 3rem;
+                }
+                > *:first-child {
+                    border-left: none;
+                }
+                li {
+                    margin-bottom: 0.4em;
+                }
+                a {
+                    color: #0C96DD;
+                }
+                a:hover,
+                a:focus {
+                    color: darken(#0C96DD, 10%);
+                }
+            }
+        }
+        .dropdown.open {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+
 /**
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
  * header as you scroll down, and show it as you scroll back up. This is 
@@ -163,7 +229,6 @@ $large: 1024px;
     width: 100%;
     z-index: 100;
 }
-
 
 
 /**
@@ -209,6 +274,7 @@ $large: 1024px;
         }
     }
 }
+
 
 /**
  * TABS 

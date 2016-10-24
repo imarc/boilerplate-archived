@@ -214,7 +214,6 @@ img {
 
 header.primary {
     background-color: $charcoal;
-    padding-bottom: 1rem;
     padding-top: 1rem;
 }
 
@@ -242,24 +241,22 @@ nav {
         display: block;
         padding: 0 0.5rem;
     }
-    li.active,
-    li:hover {
-        a {
-            color: lighten($charcoal, 55%);
-        }
-    }
 }
 
 nav.primary {
     margin-bottom: 0.7rem;
-    ul {
+    > ul {
         li {
             margin-bottom: 0;
         }
-        .dropdown {
-            display: none;
+        li.active,
+        li:hover {
+             > a {
+                color: lighten($charcoal, 55%);
+            }
         }
     }
+
 }
 
 nav.utility {
@@ -724,10 +721,11 @@ table {
 
 /* Section Specific */
 
+
 /* Page Specific */
 
-/* Components */
 
+/* Components */
 .backgroundvideo {
     @include backgroundvideo();
 }
@@ -738,6 +736,10 @@ table {
 
 header.primary {
     @include sticky-header;
+}
+
+nav.primary {
+    @include dropdown-mega();
 }
 
 .tabs {
@@ -790,7 +792,7 @@ header.primary {
         > ul > li {
             font-size: 1.3rem;
             margin-left: 1rem;
-            position: relative;
+            padding-bottom: 1rem;
         }
         > ul > li:first-child {
             margin-left: 0;
@@ -800,26 +802,6 @@ header.primary {
             li li {
                 display: block;
                 float: none;
-            }
-            .dropdown {
-                background-color: $plain-text;
-                left: 0;
-                min-width: 180px;
-                position: absolute;
-                z-index: 2;
-            }
-            li:hover .dropdown {
-                display: block;
-            }
-            .dropdown li {
-                font-size: 0.9rem;
-            }
-            .dropdown li a {
-                color: #fff;
-                padding: 0.3rem 0.8rem;
-            }
-            .dropdown li a:hover {
-                background-color: lighten($plain-text, 10%);
             }
         }
     }
