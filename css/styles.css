@@ -99,6 +99,17 @@
  * Emmet: nav.primary>ul>li>a+.dropdown
  */
 /**
+ * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
+ * header as you scroll down, and show it as you scroll back up. This is 
+ * responsive as the "top" value is dynamically set in the 
+ * js based on the height of the header. Top padding is also added 
+ * to the body dynamically via js so that the header doesn't overlap any
+ * content. 
+ * 
+ * Emmet: header.primary
+ *
+ **/
+/**
  * FEATURES house three features in one row. Powered by flexbox, 
  * this allows for a bottom alignment of each feature’s anchor. Use the 
  * <code>$gutter</code> variable to pass you preferred gutter width.
@@ -730,6 +741,41 @@ table {
   display: block;
   padding-top: 30%; }
 
+.features > * {
+  background-color: #EEE;
+  margin-bottom: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 2rem;
+  text-align: center; }
+  .features > * img,
+  .features > * h3,
+  .features > * p {
+    margin-bottom: 1rem; }
+  .features > * .button {
+    margin-bottom: 0; }
+@media only screen and (min-width: 1024px) {
+  .features {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between; }
+  .features > * {
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: column;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem; }
+    .features > * .button {
+      align-self: center;
+      margin-top: auto; } }
+
+header.primary {
+  position: fixed;
+  top: 0;
+  transition: top 0.2s ease-in-out;
+  width: 100%;
+  z-index: 100; }
+
 @media only screen and (max-width: 1023px) {
   nav.primary .dropdown,
   nav.primary i.fa {
@@ -771,34 +817,6 @@ table {
   nav.primary .dropdown.open {
     opacity: 1;
     visibility: visible; } }
-
-.features > * {
-  background-color: #EEE;
-  margin-bottom: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 2rem;
-  text-align: center; }
-  .features > * img,
-  .features > * h3,
-  .features > * p {
-    margin-bottom: 1rem; }
-  .features > * .button {
-    margin-bottom: 0; }
-@media only screen and (min-width: 1024px) {
-  .features {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between; }
-  .features > * {
-    display: flex;
-    flex: 1 0 0;
-    flex-direction: column;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem; }
-    .features > * .button {
-      align-self: center;
-      margin-top: auto; } }
 
 .tabs {
   position: relative; }

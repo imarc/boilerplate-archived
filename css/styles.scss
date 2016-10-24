@@ -729,16 +729,22 @@ table {
 .backgroundvideo {
     @include backgroundvideo();
 }
-nav.primary {
-    @include dropdown-mega();
-}
+
 .features {
     @include features(1.5rem);
 }
+
+header.primary {
+    @include sticky-header;
+}
+
+nav.primary {
+    @include dropdown-mega();
+}
+
 .tabs {
     @include tabs();
 }
-
 
 /* = Media Queries = */
 @media only screen and (min-width: $medium) {

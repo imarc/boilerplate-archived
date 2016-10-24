@@ -16,7 +16,6 @@ $medium: 669px;
 $large: 1024px;
 
 
-
 /**
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
@@ -49,7 +48,6 @@ $large: 1024px;
         padding-top: 30%;
     }
 }
-
 
 
 /**
@@ -145,6 +143,7 @@ $large: 1024px;
     }
 }
 
+
 /**
  * DROPDOWN (mega) 
  * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is 
@@ -212,6 +211,27 @@ $large: 1024px;
 
 
 /**
+ * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
+ * header as you scroll down, and show it as you scroll back up. This is 
+ * responsive as the "top" value is dynamically set in the 
+ * js based on the height of the header. Top padding is also added 
+ * to the body dynamically via js so that the header doesn't overlap any
+ * content. 
+ * 
+ * Emmet: header.primary
+ *
+ **/
+
+@mixin sticky-header() {
+    position: fixed;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+    z-index: 100;
+}
+
+
+/**
  * FEATURES house three features in one row. Powered by flexbox, 
  * this allows for a bottom alignment of each feature’s anchor. Use the 
  * <code>$gutter</code> variable to pass you preferred gutter width.
@@ -254,6 +274,7 @@ $large: 1024px;
         }
     }
 }
+
 
 /**
  * TABS 
