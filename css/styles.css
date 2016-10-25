@@ -830,9 +830,13 @@ header.primary {
   .accordions .accordion > button:hover {
     background: #d0d0d0; }
   .accordions .accordion > button:after {
+    bottom: 0;
+    height: 1em;
+    margin: auto 0;
     position: absolute;
     right: 1em;
-    margin: auto 0; }
+    top: 0;
+    width: 1em; }
   .accordions .accordion > button.open {
     background: #d0d0d0; }
     .accordions .accordion > button.open::after {

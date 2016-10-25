@@ -282,9 +282,14 @@ $large: 1024px;
                 background: darken($lightgray, 5%);
             }
             &:after {
+                bottom: 0;
+                height: 1em;
+                margin: auto 0;
                 position: absolute;
                 right: 1em;
-                margin: auto 0;
+                top: 0;
+                width: 1em;
+
             }
             &.open {
                 background: darken($lightgray, 5%);
