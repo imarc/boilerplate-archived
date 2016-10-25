@@ -1,6 +1,7 @@
 (function ($) {
     $.fn.stickyHeader = function (options) {
         var plugin = this;
+        var $body = $('body');
 
         return this.each(function () {
 
@@ -12,7 +13,7 @@
             var $header       = $(this);
 
             // set top padding on body so header doesn't overlap content
-            $('body').css('padding-top', initialHeight);
+            $body.css('padding-top', initialHeight);
 
             $(window).scroll(function(event){
                 didScroll = true;
@@ -44,7 +45,7 @@
                     $header
                         .addClass('header-up')
                         .css('top', -height);
-                    $('body').css('padding-top', height);
+                    $body.css('padding-top', height);
                 } else {
                     // Scroll Up
                     $header
@@ -59,13 +60,10 @@
             $(window).resize(function(){
                 var height   = $(this).outerHeight();
                 hasScrolled();
-                $('body').css('padding-top', height);
+                $body.css('padding-top', height);
             });
 
         });
     };
 
 })(jQuery);
-
-
-$('header.primary').stickyHeader();
