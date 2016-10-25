@@ -269,19 +269,19 @@ $large: 1024px;
 @mixin accordion() {
     .accordion {
         > button {
-            margin-top: .5em;
-            cursor: pointer;
             background: $lightgray;
-            text-align: left;
             color: $plain-text;
-            width: 100%;
-            padding: .5em 1em;
+            cursor: pointer;
             font-size: 1em;
+            margin-top: .5em;
+            padding: .5em 1em;
             position: relative;
+            text-align: left;
+            width: 100%;
             &:hover {
                 background: darken($lightgray, 5%);
             }
-            &:after {
+            &::after {
                 bottom: 0;
                 height: 1em;
                 margin: auto 0;

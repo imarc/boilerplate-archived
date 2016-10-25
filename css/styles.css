@@ -818,18 +818,18 @@ header.primary {
       text-align: left; } }
 
 .accordions .accordion > button {
-  margin-top: .5em;
-  cursor: pointer;
   background: #DDD;
-  text-align: left;
   color: #191919;
-  width: 100%;
-  padding: .5em 1em;
+  cursor: pointer;
   font-size: 1em;
-  position: relative; }
+  margin-top: .5em;
+  padding: .5em 1em;
+  position: relative;
+  text-align: left;
+  width: 100%; }
   .accordions .accordion > button:hover {
     background: #d0d0d0; }
-  .accordions .accordion > button:after {
+  .accordions .accordion > button::after {
     bottom: 0;
     height: 1em;
     margin: auto 0;
