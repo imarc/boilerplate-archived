@@ -1,261 +1,261 @@
 /**
- * _components.scss contains solely the mixin definitions for components.
- *
- * + This file should not depend on styles.scss; we should be able to use
- *   include this file without including styles.scss.
- * + This file should not generate any CSS on it's own; it should only contain
- *   mixin and/or function definitions.
- */
+* _components.scss contains solely the mixin definitions for components.
+*
+* + This file should not depend on styles.scss; we should be able to use
+*   include this file without including styles.scss.
+* + This file should not generate any CSS on it's own; it should only contain
+*   mixin and/or function definitions.
+*/
 
 /**
- * Media query breakpoints
- */
+* Media query breakpoints
+*/
 
 $medium: 669px;
 $large: 1024px;
 
 /**
- * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
- * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
- */
+* BACKGROUND VIDEO plays a video (without sound) in the background of an element.
+* Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
+*/
 @mixin backgroundvideo() {
-  & {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-    .mold {
-      background-color: rgba(2255, 255, 255, 0.6);
-      padding: 2em;
-      text-align: center;
-      z-index: 2;
-    }
-    video {
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 1;
-    }
-  }
-  &::before {
-    content: "";
-    display: block;
-    padding-top: 30%;
-  }
-}
-
-/**
- * CAROUSEL uses Slick to create a carousel. It defaults to a rather
- * basic, one-slide-at-a-time implementation with dots, but slick supports a
- * good deal of configuration including showing multiple slides, breakpoints,
- * syncing between slides, and plenty of javascript events and methods for
- * integration.
- *
- * The implementation on Boilerplate is using a CDN to provide
- *
- * + slick.css
- * + slick-theme.css
- * + slick.min.js
- *
- * See http://kenwheeler.github.io/slick/ for more information.
- *
- * The carousel() mixin should be included on a parent element that contains
- * one div per slide. No additional classes are necessary – the slick classes
- * referenced are added dynamically by slick.
- *
- * <div class="carousel">
- *     <div>
- *         <h2>A slide!</h2>
- *         <p>Some text.</p>
- *     </div>
- * </div>
- *
- * Emmet: .carousel>div*3>h2+p
- *
- * While there's more information in slick's documentation, .slick-slide wraps
- * slides while .slick-next and .slick-prev are used for the next/previous
- * arrows.
- */
-@mixin carousel() {
-  .slick-slide {
-    color: #FFF;
-    height: auto;
-    padding: 3rem;
-  }
-  .slick-prev,
-  .slick-next {
-    z-index: 1;
-  }
-  .slick-prev {
-    left: 2rem;
-  }
-  .slick-next {
-    right: 2rem;
-  }
-}
-
-/**
- * The COLUMNS mixin makes it so that immmediate child elements appear as
- * columns. It is responsive, allowing you to specify the media query at which
- * to switch the layout from stacking to columns.
- *
- * Additionally, it assumes the use of <hr> elements to create visual gutters
- * that are only visible while displayed as columns.
- *
- * <div class="columns">
- *     <div>
- *         <h2>A column</h2>
- *     </div>
- *     <hr />
- *     <div>
- *         <h2>Another column</h2>
- *     </div>
- * </div>
- *
- * Emmet: .columns>div+(hr+div)*2
- */
-@mixin columns() {
-  > hr {
-    border: 0;
-    display: none;
-  }
-  @media only screen and (min-width: $medium) {
     & {
-      display: table;
-      table-layout: fixed;
-      width: 100%;
-      > * {
-        display: table-cell;
-        vertical-align: top;
-      }
-      > hr {
-        display: table-cell;
-        width: 1rem;
-      }
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        position: relative;
+        .mold {
+            background-color: rgba(2255, 255, 255, 0.6);
+            padding: 2em;
+            text-align: center;
+            z-index: 2;
+        }
+        video {
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+        }
     }
-  }
+    &::before {
+        content: "";
+        display: block;
+        padding-top: 30%;
+    }
 }
 
 /**
- * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
- * header as you scroll down, and show it as you scroll back up. This is 
- * responsive as the "top" value is dynamically set in the 
- * js based on the height of the header. Top padding is also added 
- * to the body dynamically via js so that the header doesn't overlap any
- * content. 
- * 
- * Emmet: header.primary
- *
- **/
+* CAROUSEL uses Slick to create a carousel. It defaults to a rather
+* basic, one-slide-at-a-time implementation with dots, but slick supports a
+* good deal of configuration including showing multiple slides, breakpoints,
+* syncing between slides, and plenty of javascript events and methods for
+* integration.
+*
+* The implementation on Boilerplate is using a CDN to provide
+*
+* + slick.css
+* + slick-theme.css
+* + slick.min.js
+*
+* See http://kenwheeler.github.io/slick/ for more information.
+*
+* The carousel() mixin should be included on a parent element that contains
+* one div per slide. No additional classes are necessary – the slick classes
+* referenced are added dynamically by slick.
+*
+* <div class="carousel">
+*     <div>
+*         <h2>A slide!</h2>
+*         <p>Some text.</p>
+*     </div>
+* </div>
+*
+* Emmet: .carousel>div*3>h2+p
+*
+* While there's more information in slick's documentation, .slick-slide wraps
+* slides while .slick-next and .slick-prev are used for the next/previous
+* arrows.
+*/
+@mixin carousel() {
+    .slick-slide {
+        color: #FFF;
+        height: auto;
+        padding: 3rem;
+    }
+    .slick-prev,
+    .slick-next {
+        z-index: 1;
+    }
+    .slick-prev {
+        left: 2rem;
+    }
+    .slick-next {
+        right: 2rem;
+    }
+}
+
+/**
+* The COLUMNS mixin makes it so that immmediate child elements appear as
+* columns. It is responsive, allowing you to specify the media query at which
+* to switch the layout from stacking to columns.
+*
+* Additionally, it assumes the use of <hr> elements to create visual gutters
+* that are only visible while displayed as columns.
+*
+* <div class="columns">
+*     <div>
+*         <h2>A column</h2>
+*     </div>
+*     <hr />
+*     <div>
+*         <h2>Another column</h2>
+*     </div>
+* </div>
+*
+* Emmet: .columns>div+(hr+div)*2
+*/
+@mixin columns() {
+    > hr {
+        border: 0;
+        display: none;
+    }
+    @media only screen and (min-width: $medium) {
+        & {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            > * {
+                display: table-cell;
+                vertical-align: top;
+            }
+            > hr {
+                display: table-cell;
+                width: 1rem;
+            }
+        }
+    }
+}
+
+/**
+* The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
+* header as you scroll down, and show it as you scroll back up. This is
+* responsive as the "top" value is dynamically set in the
+* js based on the height of the header. Top padding is also added
+* to the body dynamically via js so that the header doesn't overlap any
+* content.
+*
+* Emmet: header.primary
+*
+**/
 
 @mixin sticky-header() {
-  position: fixed;
-  top: 0;
-  transition: top 0.2s ease-in-out;
-  width: 100%;
-  z-index: 100;
+    position: fixed;
+    top: 0;
+    transition: top 0.2s ease-in-out;
+    width: 100%;
+    z-index: 100;
 }
 
 /**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
- * <code>$gutter</code> variable to pass you preferred gutter width.
- *
- * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
- */
+* FEATURES house three features in one row. Powered by flexbox,
+* this allows for a bottom alignment of each feature’s anchor. Use the
+* <code>$gutter</code> variable to pass you preferred gutter width.
+*
+* Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+*/
 @mixin features($gutter) {
-  & > * {
-    background-color: #EEE;
-    margin-bottom: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 2rem;
-    text-align: center;
-    img,
-    h3,
-    p {
-      margin-bottom: 1rem;
-    }
-    .button {
-      margin-bottom: 0;
-    }
-  }
-  @media only screen and (min-width: $large) {
-    & {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between;
-    }
     & > * {
-      display: flex;
-      flex: 1 0 0;
-      flex-direction: column;
-      margin-left: $gutter;
-      margin-right: $gutter;
-      .button {
-        align-self: center;
-        margin-top: auto;
-      }
+        background-color: #EEE;
+        margin-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        text-align: center;
+        img,
+        h3,
+        p {
+            margin-bottom: 1rem;
+        }
+        .button {
+            margin-bottom: 0;
+        }
     }
-  }
+    @media only screen and (min-width: $large) {
+        & {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        & > * {
+            display: flex;
+            flex: 1 0 0;
+            flex-direction: column;
+            margin-left: $gutter;
+            margin-right: $gutter;
+            .button {
+                align-self: center;
+                margin-top: auto;
+            }
+        }
+    }
 }
 
 /**
- * TABS 
- *
- * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
- */
+* TABS
+*
+* Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
+*/
 @mixin tabs() {
-  position: relative;
-  nav {
-    border-bottom: 1px solid;
-    ul {
-      list-style: none;
-      margin-left: 20px;
-      padding: 0;
-      text-align: center;
+    position: relative;
+    nav {
+        border-bottom: 1px solid;
+        ul {
+            list-style: none;
+            margin-left: 20px;
+            padding: 0;
+            text-align: center;
+        }
+        li {
+            background-color: #CBBFB4;
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 0;
+            margin-right: 0.5em;
+            padding: 0.5em 1em;
+        }
+        li.active {
+            background-color: #FFF;
+            border: 1px solid;
+            border-bottom: none;
+            position: relative;
+            &::after {
+                background-color: #FFF;
+                bottom: -1px;
+                content: "";
+                height: 1px;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
+        }
     }
-    li {
-      background-color: #CBBFB4;
-      border-top-left-radius: 4px;
-      border-top-right-radius: 4px;
-      cursor: pointer;
-      display: inline-block;
-      margin-bottom: 0;
-      margin-right: 0.5em;
-      padding: 0.5em 1em;
+    .panel {
+        display: none;
+        padding: 20px;
     }
-    li.active {
-      background-color: #FFF;
-      border: 1px solid;
-      border-bottom: none;
-      position: relative;
-      &::after {
-        background-color: #FFF;
-        bottom: -1px;
-        content: "";
-        height: 1px;
-        left: 0;
-        position: absolute;
-        width: 100%;
-      }
+    .panel.active {
+        display: inherit;
     }
-  }
-  .panel {
-    display: none;
-    padding: 20px;
-  }
-  .panel.active {
-    display: inherit;
-  }
-  @media only screen and (min-width: $large) {
-    nav ul {
-      margin-left: 20px;
-      text-align: left;
+    @media only screen and (min-width: $large) {
+        nav ul {
+            margin-left: 20px;
+            text-align: left;
+        }
     }
-  }
 }
 
 /**
@@ -267,39 +267,42 @@ $large: 1024px;
 */
 
 @mixin accordion() {
-  .accordion-group {
-    > button {
-      margin-top: .5em;
-      cursor: pointer;
-      background: $lightgray;
-      text-align: left;
-      color: $plain-text;
-      width: 100%;
-      padding: .5em 1em;
-      font-size: 1em;
-      position: relative;
-      &:hover {
-        background: darken($lightgray, 5%);
-      }
-      &::after {
-        position: absolute;
-        right: 1em;
-        margin: auto 0;
-        content: '\f067';
-        font-family: FontAwesome;
-      }
-      &.active {
-        background: darken($lightgray, 5%);
-        &::after {
-          content: '\f068';
+    .accordion {
+        > button {
+            margin-top: .5em;
+            cursor: pointer;
+            background: $lightgray;
+            text-align: left;
+            color: $plain-text;
+            width: 100%;
+            padding: .5em 1em;
+            font-size: 1em;
+            position: relative;
+            &:hover {
+                background: darken($lightgray, 5%);
+            }
+            &:after {
+                position: absolute;
+                right: 1em;
+                margin: auto 0;
+            }
+            &.open {
+                background: darken($lightgray, 5%);
+                &::after {
+                    @include fontawesome("\f068");
+                }
+            }
+            &.close {
+                &::after {
+                    @include fontawesome("\f067");
+                }
+            }
         }
-      }
+        > div {
+            padding: 1em 0;
+            &.hidden {
+                display: none;
+            }
+        }
     }
-    > div {
-      padding: 1em 0;
-      &.hidden {
-        display: none;
-      }
-    }
-  }
 }

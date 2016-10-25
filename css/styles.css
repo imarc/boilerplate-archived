@@ -23,95 +23,95 @@
 * Print Styles
 */
 /**
- * _components.scss contains solely the mixin definitions for components.
- *
- * + This file should not depend on styles.scss; we should be able to use
- *   include this file without including styles.scss.
- * + This file should not generate any CSS on it's own; it should only contain
- *   mixin and/or function definitions.
- */
+* _components.scss contains solely the mixin definitions for components.
+*
+* + This file should not depend on styles.scss; we should be able to use
+*   include this file without including styles.scss.
+* + This file should not generate any CSS on it's own; it should only contain
+*   mixin and/or function definitions.
+*/
 /**
- * Media query breakpoints
- */
+* Media query breakpoints
+*/
 /**
- * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
- * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
- */
+* BACKGROUND VIDEO plays a video (without sound) in the background of an element.
+* Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
+*/
 /**
- * CAROUSEL uses Slick to create a carousel. It defaults to a rather
- * basic, one-slide-at-a-time implementation with dots, but slick supports a
- * good deal of configuration including showing multiple slides, breakpoints,
- * syncing between slides, and plenty of javascript events and methods for
- * integration.
- *
- * The implementation on Boilerplate is using a CDN to provide
- *
- * + slick.css
- * + slick-theme.css
- * + slick.min.js
- *
- * See http://kenwheeler.github.io/slick/ for more information.
- *
- * The carousel() mixin should be included on a parent element that contains
- * one div per slide. No additional classes are necessary – the slick classes
- * referenced are added dynamically by slick.
- *
- * <div class="carousel">
- *     <div>
- *         <h2>A slide!</h2>
- *         <p>Some text.</p>
- *     </div>
- * </div>
- *
- * Emmet: .carousel>div*3>h2+p
- *
- * While there's more information in slick's documentation, .slick-slide wraps
- * slides while .slick-next and .slick-prev are used for the next/previous
- * arrows.
- */
+* CAROUSEL uses Slick to create a carousel. It defaults to a rather
+* basic, one-slide-at-a-time implementation with dots, but slick supports a
+* good deal of configuration including showing multiple slides, breakpoints,
+* syncing between slides, and plenty of javascript events and methods for
+* integration.
+*
+* The implementation on Boilerplate is using a CDN to provide
+*
+* + slick.css
+* + slick-theme.css
+* + slick.min.js
+*
+* See http://kenwheeler.github.io/slick/ for more information.
+*
+* The carousel() mixin should be included on a parent element that contains
+* one div per slide. No additional classes are necessary – the slick classes
+* referenced are added dynamically by slick.
+*
+* <div class="carousel">
+*     <div>
+*         <h2>A slide!</h2>
+*         <p>Some text.</p>
+*     </div>
+* </div>
+*
+* Emmet: .carousel>div*3>h2+p
+*
+* While there's more information in slick's documentation, .slick-slide wraps
+* slides while .slick-next and .slick-prev are used for the next/previous
+* arrows.
+*/
 /**
- * The COLUMNS mixin makes it so that immmediate child elements appear as
- * columns. It is responsive, allowing you to specify the media query at which
- * to switch the layout from stacking to columns.
- *
- * Additionally, it assumes the use of <hr> elements to create visual gutters
- * that are only visible while displayed as columns.
- *
- * <div class="columns">
- *     <div>
- *         <h2>A column</h2>
- *     </div>
- *     <hr />
- *     <div>
- *         <h2>Another column</h2>
- *     </div>
- * </div>
- *
- * Emmet: .columns>div+(hr+div)*2
- */
+* The COLUMNS mixin makes it so that immmediate child elements appear as
+* columns. It is responsive, allowing you to specify the media query at which
+* to switch the layout from stacking to columns.
+*
+* Additionally, it assumes the use of <hr> elements to create visual gutters
+* that are only visible while displayed as columns.
+*
+* <div class="columns">
+*     <div>
+*         <h2>A column</h2>
+*     </div>
+*     <hr />
+*     <div>
+*         <h2>Another column</h2>
+*     </div>
+* </div>
+*
+* Emmet: .columns>div+(hr+div)*2
+*/
 /**
- * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
- * header as you scroll down, and show it as you scroll back up. This is 
- * responsive as the "top" value is dynamically set in the 
- * js based on the height of the header. Top padding is also added 
- * to the body dynamically via js so that the header doesn't overlap any
- * content. 
- * 
- * Emmet: header.primary
- *
- **/
+* The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
+* header as you scroll down, and show it as you scroll back up. This is
+* responsive as the "top" value is dynamically set in the
+* js based on the height of the header. Top padding is also added
+* to the body dynamically via js so that the header doesn't overlap any
+* content.
+*
+* Emmet: header.primary
+*
+**/
 /**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
- * <code>$gutter</code> variable to pass you preferred gutter width.
- *
- * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
- */
+* FEATURES house three features in one row. Powered by flexbox,
+* this allows for a bottom alignment of each feature’s anchor. Use the
+* <code>$gutter</code> variable to pass you preferred gutter width.
+*
+* Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+*/
 /**
- * TABS 
- *
- * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
- */
+* TABS
+*
+* Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
+*/
 /**
 *
 * Accordion
@@ -817,7 +817,7 @@ header.primary {
       margin-left: 20px;
       text-align: left; } }
 
-.accordion .accordion-group > button {
+.accordions .accordion > button {
   margin-top: .5em;
   cursor: pointer;
   background: #DDD;
@@ -827,21 +827,33 @@ header.primary {
   padding: .5em 1em;
   font-size: 1em;
   position: relative; }
-  .accordion .accordion-group > button:hover {
+  .accordions .accordion > button:hover {
     background: #d0d0d0; }
-  .accordion .accordion-group > button::after {
+  .accordions .accordion > button:after {
     position: absolute;
     right: 1em;
-    margin: auto 0;
-    content: '\f067';
-    font-family: FontAwesome; }
-  .accordion .accordion-group > button.active {
+    margin: auto 0; }
+  .accordions .accordion > button.open {
     background: #d0d0d0; }
-    .accordion .accordion-group > button.active::after {
-      content: '\f068'; }
-.accordion .accordion-group > div {
+    .accordions .accordion > button.open::after {
+      font: normal normal normal 1em / 1 FontAwesome;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      speak: none;
+      text-rendering: auto;
+      text-transform: none;
+      content: ""; }
+  .accordions .accordion > button.close::after {
+    font: normal normal normal 1em / 1 FontAwesome;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+    content: ""; }
+.accordions .accordion > div {
   padding: 1em 0; }
-  .accordion .accordion-group > div.hidden {
+  .accordions .accordion > div.hidden {
     display: none; }
 
 /* = Media Queries = */

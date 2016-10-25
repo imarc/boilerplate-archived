@@ -23,25 +23,26 @@
 
 		return this.each(function () {
 
-			var $header  = $(this).find('.accordion-group > button')
-			var $content = $(this).find('.accordion-group > div')
+			var $header  = $(this).find('.accordion > button');
+			var $content = $(this).find('.accordion > div');
 
 
 			if (plugin.settings.hiddenOnLoad) {
 				$content.addClass('hidden');
-			} else {
-				$header.addClass('active')
+                $header.addClass('close');
+            } else {
+				$header.addClass('open');
 			}
 
 			$header.on('click', function () {
 
-				if(!$(this).hasClass('active') && plugin.settings.singleOpen){
-					$header.removeClass('active');
+				if(!$(this).hasClass('open') && plugin.settings.singleOpen){
+					$header.removeClass('open').addClass('close');
 					$content.slideUp();
 				}
 
 				$(this)
-					.toggleClass('active')
+					.toggleClass('open close')
 					.siblings('div')
 					.slideToggle();
 
@@ -53,6 +54,6 @@
 })(jQuery);
 
 $(function () {
-	var $accordion = $('.accordion');
+	var $accordion = $('.accordions');
 	$accordion.accordion();
 });

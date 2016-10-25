@@ -1,40 +1,38 @@
- /**
- * Built using Imarc Boilerplate v2.1
- *
- * Copyright 2016 Imarc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * = Table of Contents =
- * Variables
- * Mixins
- * Base
- * Layout
- * Typography
- * Forms
- * Iconography
- * Messaging
- * Tables
- * Section Specific
- * Page Specific
- * Components
- * Media Queries
- * Print Styles
- */
-
+/**
+* Built using Imarc Boilerplate v2.1
+*
+* Copyright 2016 Imarc
+* Licensed under the Apache License v2.0
+* http://www.apache.org/licenses/LICENSE-2.0
+*
+* = Table of Contents =
+* Variables
+* Mixins
+* Base
+* Layout
+* Typography
+* Forms
+* Iconography
+* Messaging
+* Tables
+* Section Specific
+* Page Specific
+* Components
+* Media Queries
+* Print Styles
+*/
 @import "_components";
 
 /* = Variables = */
 $font-stack: "Helvetica Neue", Arial, sans-serif;
 
-
 /* Grays */
-$white:     #FFF;
+$white: #FFF;
 $lightgray: #DDD;
-$gray:      #808080;
-$darkgray:  #4A4A4A;
-$charcoal:  #191919;
-$black:     #000;
+$gray: #808080;
+$darkgray: #4A4A4A;
+$charcoal: #191919;
+$black: #000;
 
 /* The brand colors (name them the color) */
 $brand-blue: #0C96DD;
@@ -62,7 +60,6 @@ $youtube: #CD201F;
 /* Breakpoint values */
 $medium: 669px;
 $large: 1024px;
-
 
 /* = Mixins = */
 @mixin container {
@@ -155,7 +152,6 @@ $large: 1024px;
     width: 1px;
 }
 
-
 /* = Base = */
 /* Not Included:
  *   - bi-directional elements: bdi, bdo
@@ -196,7 +192,6 @@ img {
     max-width: 100%;
     vertical-align: middle;
 }
-
 
 /* = Layout = */
 .group {
@@ -395,7 +390,6 @@ footer.primary {
     }
 }
 
-
 /* = Typography = */
 h1,
 h2,
@@ -513,7 +507,6 @@ code {
     word-wrap: break-word;
 }
 
-
 /* = Forms = */
 button,
 input,
@@ -581,12 +574,15 @@ textarea {
 ::-webkit-input-placeholder {
     color: #4A4A4A;
 }
+
 ::ms-input-placeholder {
     color: #4A4A4A;
 }
+
 ::-moz-placeholder {
     color: #4A4A4A;
 }
+
 ::-placeholder {
     color: #4A4A4A;
 }
@@ -656,13 +652,11 @@ input[type="submit"][disabled] {
     cursor: default;
 }
 
-
 /* = Iconography = */
 .thumbs-up::before {
     @include fontawesome("\f087");
     margin-right: 0.5em;
 }
-
 
 /* = Messaging = */
 .success {
@@ -703,7 +697,6 @@ input[type="submit"][disabled] {
         color: darken($info, 15%);
     }
 }
-
 
 /* = Tables = */
 table {
@@ -757,7 +750,7 @@ header.primary {
     @include tabs();
 }
 
-.accordion {
+.accordions {
     @include accordion();
 }
 
@@ -778,7 +771,6 @@ header.primary {
         width: 80%;
     }
 }
-
 
 @media only screen and (min-width: $large) {
     /* = Layout = */
