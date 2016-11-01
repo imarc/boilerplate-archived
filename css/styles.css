@@ -99,6 +99,21 @@
  * Emmet: nav.primary>ul>li>a+.dropdown
  */
 /**
+ * The FOOTER mixin is a basic implementation of a footer with the company logo, copyright, simple navigation (as opposed to a "super footer"), legal links, social icons/links, and contact information. This is currently included in the footer.primary in the main .scss file.
+ *
+ * It uses flexbox for layout, and stacks for "medium" (669px) screens and below.
+ *
+ *
+ * Emmet: footer.primary>.container>div>(div.branding>a>img)+(div>(nav>ul>li>a)+p.copyright>a)+(div.contact>(ul.social>li>a>i)+p)
+ */
+/**
+ * FEATURES house three features in one row. Powered by flexbox, 
+ * this allows for a bottom alignment of each feature’s anchor. Use the 
+ * <code>$gutter</code> variable to pass you preferred gutter width.
+ *
+ * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+ */
+/**
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
  * header as you scroll down, and show it as you scroll back up. This is 
  * responsive as the "top" value is dynamically set in the 
@@ -109,13 +124,6 @@
  * Emmet: header.primary
  *
  **/
-/**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
- * <code>$gutter</code> variable to pass you preferred gutter width.
- *
- * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
- */
 /**
  * TABS 
  *
@@ -337,17 +345,46 @@ nav.supplemental > ul > li ~ li {
 
 footer.primary {
   background-color: #191919;
-  color: #727272;
+  color: #fff;
   font-size: 0.9rem;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+  padding: 3rem 0;
   text-align: center; }
-  footer.primary nav {
-    margin-bottom: 1rem; }
-  footer.primary p {
-    margin: 0; }
+  footer.primary .branding {
+    float: none;
+    margin-top: 0; }
+    footer.primary .branding a {
+      margin-bottom: 1rem; }
   footer.primary a {
-    color: #fff; }
+    color: #0c96dd; }
+    footer.primary a:hover {
+      color: #0975ad; }
+  footer.primary nav ul {
+    margin-bottom: 2rem;
+    text-align: center; }
+  footer.primary .social a {
+    color: #FFF;
+    font-size: 1.5rem;
+    margin-left: 0.5rem; }
+  footer.primary .legal {
+    text-align: center; }
+    footer.primary .legal p {
+      margin-bottom: 0.25rem; }
+    footer.primary .legal a {
+      margin-left: 0.35rem;
+      margin-right: 0.35rem; }
+  @media only screen and (min-width: 1024px) {
+    footer.primary .container > div {
+      display: flex;
+      justify-content: space-between; }
+      footer.primary .container > div > * {
+        flex: 1 0 0; }
+      footer.primary .container > div > nav {
+        flex-grow: 2;
+        margin-bottom: 0; }
+    footer.primary .branding {
+      text-align: left; }
+    footer.primary .social {
+      text-align: right; } }
 
 .social {
   list-style: none;
