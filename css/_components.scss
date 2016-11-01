@@ -24,8 +24,8 @@ $large: 1024px;
     & {
         align-items: center;
         display: flex;
-        justify-content: center;
         height: auto;
+        justify-content: center;
         overflow: hidden;
         position: relative;
         .mold {
@@ -265,7 +265,7 @@ $large: 1024px;
  */
 @mixin footer {
     background-color: $charcoal;
-    color: #fff;
+    color: #FFF;
     font-size: 0.9rem;
     padding: 3rem 0;
     text-align: center;
@@ -279,7 +279,7 @@ $large: 1024px;
     a {
         color: $link;
         &:hover {
-            color: darken($link, 10%)
+            color: darken($link, 10%);
         }
     }
     nav ul {

@@ -17,10 +17,10 @@ To get started working on boilerplate, you should have `node` and `npm` installe
     npm install
     npm run serve
 
-This will watch all your files and run BrowserSync, both compiling sass and reloading your browser on any changes.
+This will watch all your files and run BrowserSync, both compiling SCSS and reloading your browser on any changes.
 After launching, view in your browser at [localhost:3000](http://localhost:3000).
 
-Occassionally, clean the scss file with csscomb by running:
+Occasionally, clean the SCSS file with CSSComb by running:
 
     npm run clean
 

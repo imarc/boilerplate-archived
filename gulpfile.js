@@ -11,7 +11,7 @@ var autoprefixer = require('gulp-autoprefixer');
 
 var options = {
     autoprefixer: [
-        'Android >= 4.1',
+        'Android >= 4.4',
         'last 5 Chrome versions',
         'last 5 Firefox versions',
         'Explorer >= 11',
