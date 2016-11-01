@@ -156,6 +156,12 @@ img {
   max-width: 100%;
   vertical-align: middle; }
 
+::selection {
+  background: #e5e5e5; }
+
+::-moz-selection {
+  background: #e5e5e5; }
+
 /* = Layout = */
 .group::before, .group::after {
   content: "";
