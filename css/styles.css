@@ -92,10 +92,18 @@
 /**
  * DROPDOWN
  * The DROPDOWN mixin allows for dropdown menus. By default, a single
- * column dropdown is used. If a primary navigation list item has
- * a mega class, a full-width, mega menu is then implemented.
+ * column dropdown is used. It is positioned to its parent.
  *
- * Emmet: nav.primary>ul>li>a+.dropdown
+ * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu>ul>li>(a{link name})*3
+ */
+/**
+ * DROPDOWN (mega)
+ * The DROPDOWN (mega) mixin allows for full-width mega dropdown 
+ * menus. Call this mixin on a list item rather than nav.primary. 
+ * The menu is positioned to header.primary instead of its parent
+ * list item.
+ *
+ * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
  */
 /**
  * The FOOTER mixin is a basic implementation of a footer with the company logo, 
@@ -843,22 +851,24 @@ header.primary {
   nav.primary .dropdown.open {
     opacity: 1;
     visibility: visible; } }
-@media only screen and (min-width: 1024px) {
-  nav.primary .mega .dropdown {
-    left: 0;
-    top: 100%;
-    width: 100%; }
-    nav.primary .mega .dropdown .menu {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: space-between; }
-      nav.primary .mega .dropdown .menu > * {
-        border-left: 1px solid #777;
-        flex-basis: 0;
-        flex-grow: 1;
-        padding: 0 3rem; }
-      nav.primary .mega .dropdown .menu > *:first-child {
-        border-left: none; } }
+nav.primary li.mega {
+  position: static; }
+  @media only screen and (min-width: 1024px) {
+    nav.primary li.mega .dropdown {
+      left: 0;
+      top: 100%;
+      width: 100%; }
+      nav.primary li.mega .dropdown .menu {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between; }
+        nav.primary li.mega .dropdown .menu > * {
+          border-left: 1px solid #777;
+          flex-basis: 0;
+          flex-grow: 1;
+          padding: 0 3rem; }
+        nav.primary li.mega .dropdown .menu > *:first-child {
+          border-left: none; } }
 
 .tabs {
   position: relative; }
