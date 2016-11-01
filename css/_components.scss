@@ -145,15 +145,14 @@ $large: 1024px;
 
 
 /**
- * DROPDOWN (mega) 
- * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is 
- * different than a simple dropdown that fills only its parent list item’s width.
- * Note here that the position: relative; rule we are used to seeing on 
- * nav.primary > ul > li is not there. It’s on header.primary > .container.
+ * DROPDOWN
+ * The DROPDOWN mixin allows for dropdown menus. By default, a single
+ * column dropdown is used. If a primary navigation list item has
+ * a mega class, a full-width, mega menu is then implemented.
  *
  * Emmet: nav.primary>ul>li>a+.dropdown
  */
-@mixin dropdown-mega() {
+@mixin dropdown() {
     @media only screen and (max-width: $large - 1px) {
         .dropdown,
         i.fa {
@@ -168,27 +167,18 @@ $large: 1024px;
             background-color: #2A2A2A;
             color: #FFF;
             display: block;
-            left: 0;
+            font-size: 1rem;
+            min-width: 260px;
             opacity: 0;
             padding: 2rem 0;
             position: absolute;
             top: 100%;
             transition: opacity 300ms;
             visibility: hidden;
-            width: 100%;
             z-index: 1;
             .menu {
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: space-between;
                 > * {
-                    border-left: 1px solid #777;
-                    flex-basis: 0;
-                    flex-grow: 1;
-                    padding: 0 3rem;
-                }
-                > *:first-child {
-                    border-left: none;
+                    padding: 0 1rem;
                 }
                 li {
                     margin-bottom: 0.4em;
@@ -205,6 +195,31 @@ $large: 1024px;
         .dropdown.open {
             opacity: 1;
             visibility: visible;
+        }
+    }
+
+    // mega dropdown
+    .mega {
+        @media only screen and (min-width: $large) {
+            .dropdown {
+                left: 0;
+                top: 100%;
+                width: 100%;
+                .menu {
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-between;
+                    > * {
+                        border-left: 1px solid #777;
+                        flex-basis: 0;
+                        flex-grow: 1;
+                        padding: 0 3rem;
+                    }
+                    > *:first-child {
+                        border-left: none;
+                    }
+                }
+            }
         }
     }
 }

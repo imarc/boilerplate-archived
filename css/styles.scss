@@ -725,7 +725,7 @@ header.primary {
 }
 
 nav.primary {
-    @include dropdown-mega();
+    @include dropdown();
 }
 
 .tabs {
