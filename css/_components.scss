@@ -211,6 +211,52 @@ $large: 1024px;
 
 
 /**
+ * FEATURES house three features in one row. Powered by flexbox, 
+ * this allows for a bottom alignment of each feature’s anchor. Use the 
+ * <code>$gutter</code> variable to pass you preferred gutter width.
+ *
+ * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+ */
+@mixin features($gutter) {
+    > * {
+        background-color: #EEE;
+        margin-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        text-align: center;
+        img,
+        h3,
+        p {
+            margin-bottom: 1rem;
+        }
+        .button {
+            margin-bottom: 0;
+        }
+    }
+    @media only screen and (min-width: $large) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        > * {
+            display: flex;
+            flex: 1 0 0;
+            flex-direction: column;
+            margin-left: $gutter;
+            margin-right: 0;
+            .button {
+                align-self: center;
+                margin-top: auto;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+/**
  * The FOOTER mixin is a basic implementation of a footer with the company logo, 
  * copyright, simple navigation (as opposed to a "super footer"), legal links, 
  * social icons, and contact information.
@@ -273,51 +319,6 @@ $large: 1024px;
         }
         .social {
             text-align: right;
-        }
-    }
-}
-
-
-/**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
- * <code>$gutter</code> variable to pass you preferred gutter width.
- *
- * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
- */
-@mixin features($gutter) {
-    & > * {
-        background-color: #EEE;
-        margin-bottom: 2rem;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 2rem;
-        text-align: center;
-        img,
-        h3,
-        p {
-            margin-bottom: 1rem;
-        }
-        .button {
-            margin-bottom: 0;
-        }
-    }
-    @media only screen and (min-width: $large) {
-        & {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-        }
-        & > * {
-            display: flex;
-            flex: 1 0 0;
-            flex-direction: column;
-            margin-left: $gutter;
-            margin-right: $gutter;
-            .button {
-                align-self: center;
-                margin-top: auto;
-            }
         }
     }
 }
