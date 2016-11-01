@@ -343,49 +343,42 @@ footer.primary {
   font-size: 0.9rem;
   padding: 3rem 0;
   text-align: center; }
-  footer.primary nav {
-    margin-bottom: 1rem; }
-    footer.primary nav li:hover a {
-      color: #fff; }
-    footer.primary nav li a:hover {
-      color: #a5a5a5; }
-  footer.primary a {
-    color: #fff; }
-    footer.primary a:hover {
-      color: #a5a5a5; }
   footer.primary .branding {
     float: none;
     margin-top: 0; }
     footer.primary .branding a {
-      margin-bottom: 2rem; }
+      margin-bottom: 1rem; }
+  footer.primary a {
+    color: #0c96dd; }
+    footer.primary a:hover {
+      color: #0975ad; }
+  footer.primary nav ul {
+    margin-bottom: 2rem;
+    text-align: center; }
+  footer.primary .social a {
+    color: #FFF;
+    font-size: 1.5rem;
+    margin-left: 0.5rem; }
   footer.primary .legal {
-    display: flex;
-    font-size: 0.8125rem; }
+    text-align: center; }
+    footer.primary .legal p {
+      margin-bottom: 0.25rem; }
     footer.primary .legal a {
-      color: #a5a5a5;
-      flex-basis: 25%; }
-  footer.primary .copyright {
-    color: #727272;
-    font-size: 0.875rem;
-    padding-left: 0.5rem; }
-    footer.primary .copyright a {
-      color: #a5a5a5;
-      flex-basis: 25%; }
-  footer.primary .contact p {
-    margin-bottom: 0; }
-  @media only screen and (min-width: 669px) {
-    footer.primary {
+      margin-left: 0.35rem;
+      margin-right: 0.35rem; }
+  @media only screen and (min-width: 1024px) {
+    footer.primary .container > div {
+      display: flex;
+      justify-content: space-between; }
+      footer.primary .container > div > * {
+        flex: 1 0 0; }
+      footer.primary .container > div > nav {
+        flex-grow: 2;
+        margin-bottom: 0; }
+    footer.primary .branding {
       text-align: left; }
-      footer.primary .container > div {
-        display: flex; }
-        footer.primary .container > div > div {
-          flex-basis: 33%;
-          /* change this value for different # of columns */ }
-      footer.primary .branding {
-        text-align: left; }
-      footer.primary .contact {
-        margin-top: -1rem;
-        text-align: right; } }
+    footer.primary .social {
+      text-align: right; } }
 
 .social {
   list-style: none;

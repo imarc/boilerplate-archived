@@ -159,64 +159,55 @@ $large: 1024px;
     font-size: 0.9rem;
     padding: 3rem 0;
     text-align: center;
-    nav {
-        margin-bottom: 1rem;
-        li:hover {
-            a {
-                color: #fff;
-            }
-        }
-        li a:hover {
-            color: lighten($charcoal, 55%);
-        }
-    }
-    a {
-        color: #fff;
-        &:hover {
-            color: lighten($charcoal, 55%); 
-        }
-    }
     .branding {
         float: none;
         margin-top: 0;
         a {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
+    }
+    a {
+        color: $link;
+        &:hover {
+            color: darken($link, 10%)
+        }
+    }
+    nav ul {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .social a {
+        color: #FFF;
+        font-size: 1.5rem;
+        margin-left: 0.5rem;
     }
     .legal {
-        display: flex;
-        font-size: 0.8125rem;
-        a {
-            color: lighten($charcoal, 55%);
-            flex-basis: 25%;
+        text-align: center;
+        p {
+            margin-bottom: 0.25rem;
         }
-    }
-    .copyright {
-        color: $meta-text;
-        font-size: 0.875rem;
-        padding-left: 0.5rem;
         a {
-            color: lighten($charcoal, 55%);
-            flex-basis: 25%;
+            margin-left: 0.35rem;
+            margin-right: 0.35rem;
         }
-    }
-    .contact p {
-        margin-bottom: 0;
     }
 
-    @media only screen and (min-width: $medium) {
-        text-align: left;
+    @media only screen and (min-width: $large) {
         .container > div {
             display: flex;
-            > div {
-                flex-basis: 33%; /* change this value for different # of columns */
+            justify-content: space-between;
+            > * {
+                flex: 1 0 0;
+            }
+            > nav {
+                flex-grow: 2;
+                margin-bottom: 0;
             }
         }
         .branding {
             text-align: left;
         }
-        .contact {
-            margin-top: -1rem;
+        .social {
             text-align: right;
         }
     }
