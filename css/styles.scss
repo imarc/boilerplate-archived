@@ -197,6 +197,14 @@ img {
     vertical-align: middle;
 }
 
+::selection {
+    background: $border;
+}
+
+::-moz-selection {
+    background: $border;
+}
+
 
 /* = Layout = */
 .group {
