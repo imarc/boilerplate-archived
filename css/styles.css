@@ -546,40 +546,48 @@ a.button {
   background-color: #0C96DD;
   color: #FFF;
   display: inline-block;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
-  padding: 0.6em 1em; }
+  padding: 0.6em 1em;
+  text-align: center; }
   a.button:hover, a.button:focus {
     background-color: #EB7424; }
+  a.button.disabled, a.button[disabled] {
+    background-color: #8c8c8c;
+    color: #cccccc;
+    pointer-events: none; }
 
 button,
+input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  background-color: #727272;
-  border: none;
+  background-color: #0C96DD;
   color: #FFF;
-  cursor: pointer;
   display: inline-block;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.9rem;
-  padding: 0.4em 0.6em;
-  text-align: center; }
-  button:hover,
+  font-weight: bold;
+  padding: 0.6em 1em;
+  text-align: center;
+  border: none;
+  cursor: pointer; }
+  button:hover, button:focus,
+  input[type="button"]:hover,
+  input[type="button"]:focus,
   input[type="reset"]:hover,
-  input[type="submit"]:hover {
-    background-color: #666666;
-    border-color: #0C96DD;
-    cursor: pointer; }
-  button:focus,
   input[type="reset"]:focus,
+  input[type="submit"]:hover,
   input[type="submit"]:focus {
-    background-color: #666666; }
-
-button.disabled,
-input[type="reset"][disabled],
-input[type="submit"][disabled] {
-  background-color: #8c8c8c;
-  color: #cccccc;
-  cursor: default; }
+    background-color: #EB7424; }
+  button.disabled, button[disabled],
+  input[type="button"].disabled,
+  input[type="button"][disabled],
+  input[type="reset"].disabled,
+  input[type="reset"][disabled],
+  input[type="submit"].disabled,
+  input[type="submit"][disabled] {
+    background-color: #8c8c8c;
+    color: #cccccc;
+    pointer-events: none; }
 
 /* = Iconography = */
 .thumbs-up::before {

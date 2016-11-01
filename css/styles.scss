@@ -617,48 +617,39 @@ input[type="radio"] {
     padding: 0;
 }
 
-a.button {
+@mixin button {
     background-color: $link;
     color: #FFF;
     display: inline-block;
+    font-family: $font-stack;
     font-weight: bold;
     padding: 0.6em 1em;
+    text-align: center;
 
     &:hover,
     &:focus {
         background-color: $link-hover;
     }
+
+    &.disabled,
+    &[disabled] {
+        background-color: lighten($charcoal, 45%);
+        color: darken(#FFF, 20%);
+        pointer-events: none;
+    }
+}
+
+a.button {
+    @include button;
 }
 
 button,
+input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    background-color: lighten($charcoal, 35%);
+    @include button;
     border: none;
-    color: #FFF;
     cursor: pointer;
-    display: inline-block;
-    font-family: $font-stack;
-    font-size: 0.9rem;
-    padding: 0.4em 0.6em;
-    text-align: center;
-
-    &:hover {
-        background-color: lighten($charcoal, 30%);
-        border-color: $link;
-        cursor: pointer;
-    }
-    &:focus {
-        background-color: lighten($charcoal, 30%);
-    }
-}
-
-button.disabled,
-input[type="reset"][disabled],
-input[type="submit"][disabled] {
-    background-color: lighten($charcoal, 45%);
-    color: darken(#FFF, 20%);
-    cursor: default;
 }
 
 
