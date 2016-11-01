@@ -90,6 +90,15 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
+ * DROPDOWN (mega) 
+ * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is 
+ * different than a simple dropdown that fills only its parent list item’s width.
+ * Note here that the position: relative; rule we are used to seeing on 
+ * nav.primary > ul > li is not there. It’s on header.primary > .container.
+ *
+ * Emmet: nav.primary>ul>li>a+.dropdown
+ */
+/**
  * The FOOTER mixin is a basic implementation of a footer with the company logo, copyright, simple navigation (as opposed to a "super footer"), legal links, social icons/links, and contact information. This is currently included in the footer.primary in the main .scss file.
  *
  * It uses flexbox for layout, and stacks for "medium" (669px) screens and below.
@@ -214,7 +223,6 @@ img {
 
 header.primary {
   background-color: #191919;
-  padding-bottom: 1rem;
   padding-top: 1rem; }
 
 .branding {
@@ -242,16 +250,14 @@ nav a {
   color: #fff;
   display: block;
   padding: 0 0.5rem; }
-nav li.active a,
-nav li:hover a {
-  color: #a5a5a5; }
 
 nav.primary {
   margin-bottom: 0.7rem; }
-  nav.primary ul li {
+  nav.primary > ul li {
     margin-bottom: 0; }
-  nav.primary ul .dropdown {
-    display: none; }
+  nav.primary > ul li.active > a,
+  nav.primary > ul li:hover > a {
+    color: #a5a5a5; }
 
 nav.utility {
   margin-bottom: 0.7rem; }
@@ -753,6 +759,7 @@ table {
   align-items: center;
   display: flex;
   justify-content: center;
+  height: auto;
   overflow: hidden;
   position: relative; }
   .backgroundvideo .mold {
@@ -805,6 +812,48 @@ header.primary {
   transition: top 0.2s ease-in-out;
   width: 100%;
   z-index: 100; }
+
+@media only screen and (max-width: 1023px) {
+  nav.primary .dropdown,
+  nav.primary i.fa {
+    display: none; } }
+@media only screen and (min-width: 1024px) {
+  nav.primary i.fa {
+    display: inline-block; }
+  nav.primary .dropdown {
+    background-color: #2A2A2A;
+    color: #FFF;
+    display: block;
+    left: 0;
+    opacity: 0;
+    padding: 2rem 0;
+    position: absolute;
+    top: 100%;
+    transition: opacity 300ms;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1; }
+    nav.primary .dropdown .menu {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between; }
+      nav.primary .dropdown .menu > * {
+        border-left: 1px solid #777;
+        flex-basis: 0;
+        flex-grow: 1;
+        padding: 0 3rem; }
+      nav.primary .dropdown .menu > *:first-child {
+        border-left: none; }
+      nav.primary .dropdown .menu li {
+        margin-bottom: 0.4em; }
+      nav.primary .dropdown .menu a {
+        color: #0C96DD; }
+      nav.primary .dropdown .menu a:hover,
+      nav.primary .dropdown .menu a:focus {
+        color: #0975ad; }
+  nav.primary .dropdown.open {
+    opacity: 1;
+    visibility: visible; } }
 
 .tabs {
   position: relative; }
@@ -883,7 +932,7 @@ header.primary {
     nav.primary > ul > li {
       font-size: 1.3rem;
       margin-left: 1rem;
-      position: relative; }
+      padding-bottom: 1rem; }
     nav.primary > ul > li:first-child {
       margin-left: 0; }
     nav.primary ul {
@@ -891,21 +940,6 @@ header.primary {
       nav.primary ul li li {
         display: block;
         float: none; }
-      nav.primary ul .dropdown {
-        background-color: #191919;
-        left: 0;
-        min-width: 180px;
-        position: absolute;
-        z-index: 2; }
-      nav.primary ul li:hover .dropdown {
-        display: block; }
-      nav.primary ul .dropdown li {
-        font-size: 0.9rem; }
-      nav.primary ul .dropdown li a {
-        color: #fff;
-        padding: 0.3rem 0.8rem; }
-      nav.primary ul .dropdown li a:hover {
-        background-color: #333333; }
 
   .utilities {
     float: right;
