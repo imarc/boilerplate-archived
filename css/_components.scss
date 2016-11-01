@@ -211,12 +211,11 @@ $large: 1024px;
 
 
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo, copyright, simple navigation (as opposed to a "super footer"), legal links, social icons/links, and contact information. This is currently included in the footer.primary in the main .scss file.
+ * The FOOTER mixin is a basic implementation of a footer with the company logo, 
+ * copyright, simple navigation (as opposed to a "super footer"), legal links, 
+ * social icons, and contact information.
  *
- * It uses flexbox for layout, and stacks for "medium" (669px) screens and below.
- *
- *
- * Emmet: footer.primary>.container>div>(div.branding>a>img)+(div>(nav>ul>li>a)+p.copyright>a)+(div.contact>(ul.social>li>a>i)+p)
+ * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
  */
 @mixin footer {
     background-color: $charcoal;
