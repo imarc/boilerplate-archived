@@ -931,7 +931,10 @@ header.primary {
     nav.primary > ul > li {
       font-size: 1.3rem;
       margin-left: 1rem;
-      padding-bottom: 1rem; }
+      padding-bottom: 1rem;
+      position: relative; }
+      nav.primary > ul > li.mega {
+        position: static; }
     nav.primary > ul > li:first-child {
       margin-left: 0; }
     nav.primary ul {
