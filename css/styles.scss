@@ -724,6 +724,10 @@ header.primary {
     @include sticky-header;
 }
 
+.login {
+    @include login;
+}
+
 nav.primary {
     @include dropdown-mega();
 }

@@ -99,6 +99,13 @@
  * Emmet: nav.primary>ul>li>a+.dropdown
  */
 /**
+ * The LOGIN mixin is a basic implementation of a login module that includes a
+ * username input, password input, submit button, forgot password link, and
+ * remember me checkbox
+ *
+ * Emmet: .login>form>(div.text>label{Username}+input[text])+(div.text>label{Password}input[text])+div.submit>input[submit]+div.actions>a+label{lorem}>input[hidden]+input[checkbox]
+ */
+/**
  * The FOOTER mixin is a basic implementation of a footer with the company logo, 
  * copyright, simple navigation (as opposed to a "super footer"), legal links, 
  * social icons, and contact information.
@@ -811,6 +818,22 @@ header.primary {
   transition: top 0.2s ease-in-out;
   width: 100%;
   z-index: 100; }
+
+.login {
+  border: 1px solid #ccc;
+  padding: 2rem; }
+  .login input:focus {
+    box-shadow: 0 0 5px rgba(114, 164, 0, 0.7); }
+  .login .submit {
+    text-align: center; }
+  .login .actions {
+    text-align: center; }
+    .login .actions > * {
+      padding: 1rem 0; }
+  @media only screen and (min-width: 669px) {
+    .login .actions {
+      display: flex;
+      justify-content: space-around; } }
 
 @media only screen and (max-width: 1023px) {
   nav.primary .dropdown,
