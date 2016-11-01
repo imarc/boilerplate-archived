@@ -343,49 +343,6 @@ nav.supplemental > ul > li ~ li {
   border-top: 1px solid #e5e5e5;
   padding-top: 0.5em; }
 
-footer.primary {
-  background-color: #191919;
-  color: #fff;
-  font-size: 0.9rem;
-  padding: 3rem 0;
-  text-align: center; }
-  footer.primary .branding {
-    float: none;
-    margin-top: 0; }
-    footer.primary .branding a {
-      margin-bottom: 1rem; }
-  footer.primary a {
-    color: #0c96dd; }
-    footer.primary a:hover {
-      color: #0975ad; }
-  footer.primary nav ul {
-    margin-bottom: 2rem;
-    text-align: center; }
-  footer.primary .social a {
-    color: #FFF;
-    font-size: 1.5rem;
-    margin-left: 0.5rem; }
-  footer.primary .legal {
-    text-align: center; }
-    footer.primary .legal p {
-      margin-bottom: 0.25rem; }
-    footer.primary .legal a {
-      margin-left: 0.35rem;
-      margin-right: 0.35rem; }
-  @media only screen and (min-width: 1024px) {
-    footer.primary .container > div {
-      display: flex;
-      justify-content: space-between; }
-      footer.primary .container > div > * {
-        flex: 1 0 0; }
-      footer.primary .container > div > nav {
-        flex-grow: 2;
-        margin-bottom: 0; }
-    footer.primary .branding {
-      text-align: left; }
-    footer.primary .social {
-      text-align: right; } }
-
 .social {
   list-style: none;
   margin: 0;
@@ -805,6 +762,49 @@ table {
     .features > * .button {
       align-self: center;
       margin-top: auto; } }
+
+footer.primary {
+  background-color: #191919;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 3rem 0;
+  text-align: center; }
+  footer.primary .branding {
+    float: none;
+    margin-top: 0; }
+    footer.primary .branding a {
+      margin-bottom: 1rem; }
+  footer.primary a {
+    color: #0c96dd; }
+    footer.primary a:hover {
+      color: #0975ad; }
+  footer.primary nav ul {
+    margin-bottom: 2rem;
+    text-align: center; }
+  footer.primary .social a {
+    color: #FFF;
+    font-size: 1.5rem;
+    margin-left: 0.5rem; }
+  footer.primary .legal {
+    text-align: center; }
+    footer.primary .legal p {
+      margin-bottom: 0.25rem; }
+    footer.primary .legal a {
+      margin-left: 0.35rem;
+      margin-right: 0.35rem; }
+  @media only screen and (min-width: 1024px) {
+    footer.primary .container > div {
+      display: flex;
+      justify-content: space-between; }
+      footer.primary .container > div > * {
+        flex: 1 0 0; }
+      footer.primary .container > div > nav {
+        flex-grow: 2;
+        margin-bottom: 0; }
+    footer.primary .branding {
+      text-align: left; }
+    footer.primary .social {
+      text-align: right; } }
 
 header.primary {
   position: fixed;

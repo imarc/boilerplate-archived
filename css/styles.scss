@@ -357,10 +357,6 @@ nav.supplemental {
     }
 }
 
-footer.primary {
-    @include footer;
-}
-
 .social {
     @include no-bullets;
     margin-bottom: 1rem;
@@ -718,6 +714,10 @@ table {
 
 .features {
     @include features(1.5rem);
+}
+
+footer.primary {
+    @include footer();
 }
 
 header.primary {
