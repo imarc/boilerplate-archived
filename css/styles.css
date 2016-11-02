@@ -34,7 +34,7 @@
  * Media query breakpoints
  */
 /**
- * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
+ * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
 /**
@@ -90,41 +90,41 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
- * DROPDOWN (mega) 
- * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is 
+ * DROPDOWN (mega)
+ * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is
  * different than a simple dropdown that fills only its parent list item’s width.
- * Note here that the position: relative; rule we are used to seeing on 
+ * Note here that the position: relative; rule we are used to seeing on
  * nav.primary > ul > li is not there. It’s on header.primary > .container.
  *
  * Emmet: nav.primary>ul>li>a+.dropdown
  */
 /**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
+ * FEATURES house three features in one row. Powered by flexbox,
+ * this allows for a bottom alignment of each feature’s anchor. Use the
  * <code>$gutter</code> variable to pass you preferred gutter width.
  *
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo, 
- * copyright, simple navigation (as opposed to a "super footer"), legal links, 
+ * The FOOTER mixin is a basic implementation of a footer with the company logo,
+ * copyright, simple navigation (as opposed to a "super footer"), legal links,
  * social icons, and contact information.
  *
  * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
  */
 /**
- * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
- * header as you scroll down, and show it as you scroll back up. This is 
- * responsive as the "top" value is dynamically set in the 
- * js based on the height of the header. Top padding is also added 
+ * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
+ * header as you scroll down, and show it as you scroll back up. This is
+ * responsive as the "top" value is dynamically set in the
+ * js based on the height of the header. Top padding is also added
  * to the body dynamically via js so that the header doesn't overlap any
- * content. 
- * 
+ * content.
+ *
  * Emmet: header.primary
  *
  **/
 /**
- * TABS 
+ * TABS
  *
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
