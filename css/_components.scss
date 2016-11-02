@@ -339,14 +339,14 @@ $large: 1024px;
 @mixin sticky-header() {
     position: fixed;
     top: 0;
-    transition: top 0.2s ease-in-out;
+    transition: top 0.13s cubic-bezier(0, .40,.65,1);
     width: 100%;
     z-index: 100;
 }
 
 
 /**
- * TABS 
+ * TABS
  *
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
