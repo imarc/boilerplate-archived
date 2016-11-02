@@ -1103,7 +1103,7 @@ footer.primary .legal a {
 header.primary {
   position: fixed;
   top: 0;
-  transition: top 0.13s cubic-bezier(0, 0.4, 0.65, 1);
+  transition: top 0.16s cubic-bezier(0, 0.4, 0.7, 1);
   width: 100%;
   z-index: 100;
 }
