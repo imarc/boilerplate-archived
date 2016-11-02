@@ -1,23 +1,23 @@
 {
-	"name": "imarc/boilerplate",
-	"description": "Default styling, js, and example html",
-	"keywords": ["frontend", "js", "css"],
-	"license": "Apache License v2.0",
-	"type": "opus-package",
-	"authors": [
-		{
-			"name": "Kevin Hamer",
-			"email": "kevin@imarc.net",
-			"role": "Developer"
-		}
-	],
-	"extra": {
-		"opus": {
-			"imarc/app-base": {
-				"plugin/library/flourish.php" : "app/config/library/boilerplate.php",
-				"css/styles.css"  :  "docroot/css/styles.css",
-				"css/styles.scss"  :  "docroot/css/styles.scss"
-			}
-		}
-	}
+    "name": "imarc/boilerplate",
+    "description": "Default styling, js, and example html",
+    "keywords": ["frontend", "js", "css"],
+    "license": "Apache License v2.0",
+    "type": "opus-package",
+    "authors": [
+        {
+            "name": "Kevin Hamer",
+            "email": "kevin@imarc.net",
+            "role": "Developer"
+        }
+    ],
+    "extra": {
+        "opus": {
+            "imarc/app-base": {
+                "plugin/library/flourish.php" : "app/config/library/boilerplate.php",
+                "css/styles.css"  :  "docroot/css/styles.css",
+                "css/styles.scss"  :  "docroot/css/styles.scss"
+            }
+        }
+    }
 }

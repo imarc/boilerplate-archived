@@ -17,15 +17,15 @@ $large: 1024px;
 
 
 /**
- * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
+ * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
 @mixin backgroundvideo() {
     & {
         align-items: center;
         display: flex;
-        justify-content: center;
         height: auto;
+        justify-content: center;
         overflow: hidden;
         position: relative;
         .mold {
@@ -145,10 +145,10 @@ $large: 1024px;
 
 
 /**
- * DROPDOWN (mega) 
- * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is 
+ * DROPDOWN (mega)
+ * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is
  * different than a simple dropdown that fills only its parent list item’s width.
- * Note here that the position: relative; rule we are used to seeing on 
+ * Note here that the position: relative; rule we are used to seeing on
  * nav.primary > ul > li is not there. It’s on header.primary > .container.
  *
  * Emmet: nav.primary>ul>li>a+.dropdown
@@ -243,15 +243,61 @@ $large: 1024px;
 
 
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo, 
- * copyright, simple navigation (as opposed to a "super footer"), legal links, 
+ * FEATURES house three features in one row. Powered by flexbox,
+ * this allows for a bottom alignment of each feature’s anchor. Use the
+ * <code>$gutter</code> variable to pass you preferred gutter width.
+ *
+ * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+ */
+@mixin features($gutter) {
+    > * {
+        background-color: #EEE;
+        margin-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        text-align: center;
+        img,
+        h3,
+        p {
+            margin-bottom: 1rem;
+        }
+        .button {
+            margin-bottom: 0;
+        }
+    }
+    @media only screen and (min-width: $large) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        > * {
+            display: flex;
+            flex: 1 0 0;
+            flex-direction: column;
+            margin-left: $gutter;
+            margin-right: 0;
+            .button {
+                align-self: center;
+                margin-top: auto;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+/**
+ * The FOOTER mixin is a basic implementation of a footer with the company logo,
+ * copyright, simple navigation (as opposed to a "super footer"), legal links,
  * social icons, and contact information.
  *
  * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
  */
 @mixin footer {
     background-color: $charcoal;
-    color: #fff;
+    color: #FFF;
     font-size: 0.9rem;
     padding: 3rem 0;
     text-align: center;
@@ -265,7 +311,7 @@ $large: 1024px;
     a {
         color: $link;
         &:hover {
-            color: darken($link, 10%)
+            color: darken($link, 10%);
         }
     }
     nav ul {
@@ -311,58 +357,13 @@ $large: 1024px;
 
 
 /**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
- * <code>$gutter</code> variable to pass you preferred gutter width.
- *
- * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
- */
-@mixin features($gutter) {
-    & > * {
-        background-color: #EEE;
-        margin-bottom: 2rem;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 2rem;
-        text-align: center;
-        img,
-        h3,
-        p {
-            margin-bottom: 1rem;
-        }
-        .button {
-            margin-bottom: 0;
-        }
-    }
-    @media only screen and (min-width: $large) {
-        & {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-        }
-        & > * {
-            display: flex;
-            flex: 1 0 0;
-            flex-direction: column;
-            margin-left: $gutter;
-            margin-right: $gutter;
-            .button {
-                align-self: center;
-                margin-top: auto;
-            }
-        }
-    }
-}
-
-
-/**
- * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
- * header as you scroll down, and show it as you scroll back up. This is 
- * responsive as the "top" value is dynamically set in the 
- * js based on the height of the header. Top padding is also added 
+ * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
+ * header as you scroll down, and show it as you scroll back up. This is
+ * responsive as the "top" value is dynamically set in the
+ * js based on the height of the header. Top padding is also added
  * to the body dynamically via js so that the header doesn't overlap any
- * content. 
- * 
+ * content.
+ *
  * Emmet: header.primary
  *
  **/
@@ -370,14 +371,14 @@ $large: 1024px;
 @mixin sticky-header() {
     position: fixed;
     top: 0;
-    transition: top 0.2s ease-in-out;
+    transition: top 0.16s cubic-bezier(0, .40,.70,1);
     width: 100%;
     z-index: 100;
 }
 
 
 /**
- * TABS 
+ * TABS
  *
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
