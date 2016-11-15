@@ -217,8 +217,9 @@ $large: 1024px;
  * Emmet: .login>form>(div.text>label{Username}+input[text])+(div.text>label{Password}input[text])+div.submit>input[submit]+div.actions>a+label{lorem}>input[hidden]+input[checkbox]
  */
 @mixin login {
-    border: 1px solid #ccc;
-    padding: 2rem;
+    background: #eee;
+    max-width: 600px;
+    padding: 3rem;
     input {
         &:focus {
             box-shadow: 0 0 5px rgba(114,164,0,0.7);
@@ -228,16 +229,29 @@ $large: 1024px;
         text-align: center;
     }
     .actions {
-        text-align: center;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
         > * {
-            padding: 1rem 0;
+            margin: 0;
+            padding: 0;
         }
+        label {
+            margin-left: 1em;
+        }
+        a {
+            display: block;
+            margin-left: auto;
+            text-align: right;
+        }
+
     }
     @media only screen and (min-width: $medium) {
-        .actions {
-            display: flex;
-            justify-content: space-around;
-        }
+        // .actions {
+        //     display: flex;
+        //     justify-content: flex-start;
+        // }
     }
 }
 
