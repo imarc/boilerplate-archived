@@ -469,9 +469,11 @@ hr {
     width: 100%;
 }
 
-a {
+@mixin link {
     color: $link;
+    cursor: pointer;
     text-decoration: none;
+
     &:hover,
     &:active {
         color: $link-hover;
@@ -479,6 +481,16 @@ a {
     &:focus {
         outline: thin dotted;
     }
+
+    &.disabled,
+    &[disabled] {
+        color: darken(#FFF, 20%);
+        cursor: default;
+        pointer-events: none;
+    }
+}
+a {
+    @include link;
 }
 
 p,
@@ -625,6 +637,7 @@ input[type="radio"] {
     font-weight: bold;
     padding: 0.6em 1em;
     text-align: center;
+    vertical-align: top;
 
     &:hover,
     &:focus {
@@ -641,15 +654,25 @@ input[type="radio"] {
 
 a.button {
     @include button;
+    margin-bottom: 0;
 }
 
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
+button:not(.link),
+input[type="button"]:not(.link),
+input[type="reset"]:not(.link),
+input[type="submit"]:not(.link) {
     @include button;
     border: none;
     cursor: pointer;
+}
+
+button.link,
+input[type=button].link,
+input[type="button"].link,
+input[type="reset"].link,
+input[type="submit"].link {
+    @include link;
+    background: transparent;
 }
 
 
