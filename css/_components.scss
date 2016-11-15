@@ -209,6 +209,53 @@ $large: 1024px;
     }
 }
 
+/**
+ * The LOGIN mixin is a basic implementation of a login module that includes a
+ * username input, password input, submit button, forgot password link, and
+ * remember me checkbox
+ *
+ * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
+ */
+@mixin login {
+    background: #EEE;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    padding: 3rem;
+    input {
+        &:focus {
+            box-shadow: 0 0 5px rgba(114,164,0,0.7);
+        }
+    }
+    .submit {
+        text-align: center;
+    }
+    .actions {
+        text-align: center;
+
+    }
+    @media only screen and (min-width: $medium) {
+        .actions {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+            > * {
+                margin: 0;
+                padding: 0;
+            }
+            label {
+                margin-left: 1em;
+            }
+            a {
+                display: block;
+                margin-left: auto;
+                text-align: right;
+            }
+        }
+    }
+}
+
 
 /**
  * FEATURES house three features in one row. Powered by flexbox,

@@ -584,6 +584,7 @@ input[type="url"],
 input[type="week"],
 textarea {
     border: 1px solid $border;
+    box-sizing: border-box;
     color: $plain-text;
     display: block;
     font-family: $font-stack;
@@ -774,6 +775,10 @@ footer.primary {
 
 header.primary {
     @include sticky-header;
+}
+
+.login {
+    @include login;
 }
 
 nav.primary {

@@ -99,6 +99,13 @@
  * Emmet: nav.primary>ul>li>a+.dropdown
  */
 /**
+ * The LOGIN mixin is a basic implementation of a login module that includes a
+ * username input, password input, submit button, forgot password link, and
+ * remember me checkbox
+ *
+ * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
+ */
+/**
  * FEATURES house three features in one row. Powered by flexbox,
  * this allows for a bottom alignment of each feature’s anchor. Use the
  * <code>$gutter</code> variable to pass you preferred gutter width.
@@ -657,6 +664,7 @@ input[type="url"],
 input[type="week"],
 textarea {
   border: 1px solid #e5e5e5;
+  box-sizing: border-box;
   color: #191919;
   display: block;
   font-family: "Helvetica Neue", Arial, sans-serif;
@@ -1150,6 +1158,51 @@ header.primary {
   transition: top 0.16s cubic-bezier(0, 0.4, 0.7, 1);
   width: 100%;
   z-index: 100;
+}
+
+.login {
+  background: #EEE;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  padding: 3rem;
+}
+
+.login input:focus {
+  box-shadow: 0 0 5px rgba(114, 164, 0, 0.7);
+}
+
+.login .submit {
+  text-align: center;
+}
+
+.login .actions {
+  text-align: center;
+}
+
+@media only screen and (min-width: 669px) {
+  .login .actions {
+    -webkit-align-items: center;
+            align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .login .actions > * {
+    margin: 0;
+    padding: 0;
+  }
+  .login .actions label {
+    margin-left: 1em;
+  }
+  .login .actions a {
+    display: block;
+    margin-left: auto;
+    text-align: right;
+  }
 }
 
 @media only screen and (max-width: 1023px) {
