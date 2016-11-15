@@ -129,6 +129,7 @@
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
 /* = Variables = */
+/* Grays */
 /* The brand colors (name them the color) */
 /* Messaging colors */
 /* Applied colors */
@@ -136,79 +137,24 @@
 /* Breakpoint values */
 /* = Mixins = */
 /* = Base = */
-a,
-abbr,
-address,
-article,
-aside,
-audio,
-b,
-blockquote,
-body,
-canvas,
-cite,
-code,
-dd,
-div,
-dl,
-dt,
-em,
-fieldset,
-footer,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-html,
-hr,
-i,
-iframe,
-img,
-label,
-li,
-main,
-nav,
-object,
-ol,
-p,
-pre,
-section,
-span,
-strong,
-sub,
-sup,
-table,
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr,
-ul,
-video {
-  border: 0;
+/* Not Included:
+ *   - bi-directional elements: bdi, bdo
+ *   - ruby elements: data, output, rp, rt, rtc, ruby, samp, time, var
+ *   - typographical elements: del, dfn, ins, kbd, mark, s, small, wbr
+ *   - HTML5 elements: col, colgroup, details, dialog, map, menu, menuitem, summary
+ */
+a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
   box-sizing: border-box;
-  font: inherit;
-  font-size: 100%;
   margin: 0;
-  outline: 0;
   padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
   vertical-align: baseline;
 }
 
-article,
-aside,
-audio,
-canvas,
-footer,
-header,
-nav,
-section,
-video {
+article, aside, audio, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, video {
   display: block;
 }
 
@@ -216,7 +162,7 @@ html {
   background-color: #FFF;
   color: #191919;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -231,15 +177,24 @@ img {
   vertical-align: middle;
 }
 
+::-moz-selection {
+  background: #e5e5e5;
+}
+
+::selection {
+  background: #e5e5e5;
+}
+
+::-moz-selection {
+  background: #e5e5e5;
+}
+
 /* = Layout = */
-.container::before, .container::after,
-.group::before,
-.group::after {
+.group::before, .group::after {
   content: "";
   display: table;
 }
 
-.container::after,
 .group::after {
   clear: both;
 }
@@ -470,6 +425,27 @@ nav.supplemental > ul > li ~ li {
   padding-top: 0.5em;
 }
 
+footer.primary {
+  background-color: #191919;
+  color: #727272;
+  font-size: 0.9rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+footer.primary nav {
+  margin-bottom: 1rem;
+}
+
+footer.primary p {
+  margin: 0;
+}
+
+footer.primary a {
+  color: #FFF;
+}
+
 .social {
   list-style: none;
   margin: 0;
@@ -567,6 +543,7 @@ hr {
 
 a {
   color: #0C96DD;
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -578,17 +555,10 @@ a:focus {
   outline: thin dotted;
 }
 
-a.button {
-  background-color: #0C96DD;
-  color: #FFF;
-  display: inline-block;
-  font-weight: bold;
-  padding: 0.6em 1em;
-}
-
-a.button:hover,
-a.button:focus {
-  background-color: #EB7424;
+a.disabled, a[disabled] {
+  color: #cccccc;
+  cursor: default;
+  pointer-events: none;
 }
 
 p,
@@ -673,11 +643,18 @@ fieldset .help {
   margin: 0;
 }
 
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
-input[type="email"],
 input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
 textarea {
   border: 1px solid #e5e5e5;
   color: #191919;
@@ -726,42 +703,109 @@ input[type="radio"] {
   padding: 0;
 }
 
-button,
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  background-color: #727272;
-  border: none;
+a.button {
+  background-color: #0C96DD;
   color: #FFF;
-  cursor: pointer;
   display: inline-block;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.9rem;
-  padding: 0.4em 0.6em;
+  font-weight: bold;
+  padding: 0.6em 1em;
   text-align: center;
+  vertical-align: top;
+  margin-bottom: 0;
 }
 
-button:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  background-color: #666666;
-  border-color: #0C96DD;
+a.button:hover, a.button:focus {
+  background-color: #EB7424;
+}
+
+a.button.disabled, a.button[disabled] {
+  background-color: #8c8c8c;
+  color: #cccccc;
+  pointer-events: none;
+}
+
+button:not(.link),
+input[type="button"]:not(.link),
+input[type="reset"]:not(.link),
+input[type="submit"]:not(.link) {
+  background-color: #0C96DD;
+  color: #FFF;
+  display: inline-block;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
+  padding: 0.6em 1em;
+  text-align: center;
+  vertical-align: top;
+  border: none;
   cursor: pointer;
 }
 
-button:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus {
-  background-color: #666666;
+button:not(.link):hover, button:not(.link):focus,
+input[type="button"]:not(.link):hover,
+input[type="button"]:not(.link):focus,
+input[type="reset"]:not(.link):hover,
+input[type="reset"]:not(.link):focus,
+input[type="submit"]:not(.link):hover,
+input[type="submit"]:not(.link):focus {
+  background-color: #EB7424;
 }
 
-button.disabled,
-input[type="reset"][disabled],
-input[type="submit"][disabled] {
+button:not(.link).disabled, button:not(.link)[disabled],
+input[type="button"]:not(.link).disabled,
+input[type="button"]:not(.link)[disabled],
+input[type="reset"]:not(.link).disabled,
+input[type="reset"]:not(.link)[disabled],
+input[type="submit"]:not(.link).disabled,
+input[type="submit"]:not(.link)[disabled] {
   background-color: #8c8c8c;
   color: #cccccc;
+  pointer-events: none;
+}
+
+button.link,
+input[type=button].link,
+input[type="button"].link,
+input[type="reset"].link,
+input[type="submit"].link {
+  color: #0C96DD;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+}
+
+button.link:hover, button.link:active,
+input[type=button].link:hover,
+input[type=button].link:active,
+input[type="button"].link:hover,
+input[type="button"].link:active,
+input[type="reset"].link:hover,
+input[type="reset"].link:active,
+input[type="submit"].link:hover,
+input[type="submit"].link:active {
+  color: #EB7424;
+}
+
+button.link:focus,
+input[type=button].link:focus,
+input[type="button"].link:focus,
+input[type="reset"].link:focus,
+input[type="submit"].link:focus {
+  outline: thin dotted;
+}
+
+button.link.disabled, button.link[disabled],
+input[type=button].link.disabled,
+input[type=button].link[disabled],
+input[type="button"].link.disabled,
+input[type="button"].link[disabled],
+input[type="reset"].link.disabled,
+input[type="reset"].link[disabled],
+input[type="submit"].link.disabled,
+input[type="submit"].link[disabled] {
+  color: #cccccc;
   cursor: default;
+  pointer-events: none;
 }
 
 /* = Iconography = */
@@ -1283,6 +1327,26 @@ header.primary {
   nav.primary ul li li {
     display: block;
     float: none;
+  }
+  nav.primary ul .dropdown {
+    background-color: #191919;
+    left: 0;
+    min-width: 180px;
+    position: absolute;
+    z-index: 2;
+  }
+  nav.primary ul li:hover .dropdown {
+    display: block;
+  }
+  nav.primary ul .dropdown li {
+    font-size: 0.9rem;
+  }
+  nav.primary ul .dropdown li a {
+    color: #FFF;
+    padding: 0.3rem 0.8rem;
+  }
+  nav.primary ul .dropdown li a:hover {
+    background-color: #333333;
   }
   .utilities {
     float: right;

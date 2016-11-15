@@ -26,7 +26,15 @@
 
 /* = Variables = */
 $font-stack: "Helvetica Neue", Arial, sans-serif;
-$charcoal: #191919;
+
+
+/* Grays */
+$white:     #FFF;
+$lightgray: #DDD;
+$gray:      #808080;
+$darkgray:  #4A4A4A;
+$charcoal:  #191919;
+$black:     #000;
 
 /* The brand colors (name them the color) */
 $brand-blue: #0C96DD;
@@ -150,81 +158,24 @@ $large: 1024px;
 
 
 /* = Base = */
-a,
-abbr,
-address,
-article,
-aside,
-audio,
-b,
-blockquote,
-body,
-canvas,
-cite,
-code,
-dd,
-div,
-dl,
-dt,
-em,
-fieldset,
-footer,
-form,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-header,
-html,
-hr,
-i,
-iframe,
-img,
-label,
-li,
-main,
-nav,
-object,
-ol,
-p,
-pre,
-section,
-span,
-strong,
-sub,
-sup,
-table,
-tbody,
-td,
-tfoot,
-th,
-thead,
-tr,
-ul,
-video {
-    border: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+/* Not Included:
+ *   - bi-directional elements: bdi, bdo
+ *   - ruby elements: data, output, rp, rt, rtc, ruby, samp, time, var
+ *   - typographical elements: del, dfn, ins, kbd, mark, s, small, wbr
+ *   - HTML5 elements: col, colgroup, details, dialog, map, menu, menuitem, summary
+ */
+a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
     box-sizing: border-box;
-    font: inherit;
-    font-size: 100%;
     margin: 0;
-    outline: 0;
     padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
     vertical-align: baseline;
 }
 
-article,
-aside,
-audio,
-canvas,
-footer,
-header,
-nav,
-section,
-video {
+article, aside, audio, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, video {
     display: block;
 }
 
@@ -232,7 +183,7 @@ html {
     background-color: #FFF;
     color: $plain-text;
     font-family: $font-stack;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -247,9 +198,16 @@ img {
     vertical-align: middle;
 }
 
+::selection {
+    background: $border;
+}
+
+::-moz-selection {
+    background: $border;
+}
+
 
 /* = Layout = */
-.container,
 .group {
     @include grouping;
 }
@@ -410,6 +368,24 @@ nav.supplemental {
     }
 }
 
+footer.primary {
+    background-color: $charcoal;
+    color: $meta-text;
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    text-align: center;
+    nav {
+        margin-bottom: 1rem;
+    }
+    p {
+        margin: 0;
+    }
+    a {
+        color: #FFF;
+    }
+}
+
 .social {
     @include no-bullets;
 
@@ -491,9 +467,11 @@ hr {
     width: 100%;
 }
 
-a {
+@mixin link {
     color: $link;
+    cursor: pointer;
     text-decoration: none;
+
     &:hover,
     &:active {
         color: $link-hover;
@@ -501,18 +479,16 @@ a {
     &:focus {
         outline: thin dotted;
     }
-}
 
-a.button {
-    background-color: $link;
-    color: #FFF;
-    display: inline-block;
-    font-weight: bold;
-    padding: 0.6em 1em;
+    &.disabled,
+    &[disabled] {
+        color: darken(#FFF, 20%);
+        cursor: default;
+        pointer-events: none;
+    }
 }
-a.button:hover,
-a.button:focus {
-    background-color: $link-hover;
+a {
+    @include link;
 }
 
 p,
@@ -594,11 +570,18 @@ fieldset .help {
     margin: 0;
 }
 
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
-input[type="email"],
 input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
 textarea {
     border: 1px solid $border;
     color: $plain-text;
@@ -644,36 +627,50 @@ input[type="radio"] {
     padding: 0;
 }
 
-button,
-input[type="reset"],
-input[type="submit"] {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    background-color: lighten($charcoal, 35%);
-    border: none;
+@mixin button {
+    background-color: $link;
     color: #FFF;
-    cursor: pointer;
     display: inline-block;
     font-family: $font-stack;
-    font-size: 0.9rem;
-    padding: 0.4em 0.6em;
+    font-weight: bold;
+    padding: 0.6em 1em;
     text-align: center;
-    &:hover {
-        background-color: lighten($charcoal, 30%);
-        border-color: $link;
-        cursor: pointer;
-    }
+    vertical-align: top;
+
+    &:hover,
     &:focus {
-        background-color: lighten($charcoal, 30%);
+        background-color: $link-hover;
+    }
+
+    &.disabled,
+    &[disabled] {
+        background-color: lighten($charcoal, 45%);
+        color: darken(#FFF, 20%);
+        pointer-events: none;
     }
 }
 
-button.disabled,
-input[type="reset"][disabled],
-input[type="submit"][disabled] {
-    background-color: lighten($charcoal, 45%);
-    color: darken(#FFF, 20%);
-    cursor: default;
+a.button {
+    @include button;
+    margin-bottom: 0;
+}
+
+button:not(.link),
+input[type="button"]:not(.link),
+input[type="reset"]:not(.link),
+input[type="submit"]:not(.link) {
+    @include button;
+    border: none;
+    cursor: pointer;
+}
+
+button.link,
+input[type=button].link,
+input[type="button"].link,
+input[type="reset"].link,
+input[type="submit"].link {
+    @include link;
+    background: transparent;
 }
 
 
@@ -847,6 +844,26 @@ nav.primary {
             li li {
                 display: block;
                 float: none;
+            }
+            .dropdown {
+                background-color: $plain-text;
+                left: 0;
+                min-width: 180px;
+                position: absolute;
+                z-index: 2;
+            }
+            li:hover .dropdown {
+                display: block;
+            }
+            .dropdown li {
+                font-size: 0.9rem;
+            }
+            .dropdown li a {
+                color: #FFF;
+                padding: 0.3rem 0.8rem;
+            }
+            .dropdown li a:hover {
+                background-color: lighten($plain-text, 10%);
             }
         }
     }
