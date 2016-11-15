@@ -16,8 +16,9 @@
             <div class="container">
                 <h1>Accordion</h1>
                 <p>Emmet</p>
-                <code>.accordions>.accordion>(button{header}+div>h3{header}+p{lorem ipsum})</code>
-                <br>
+                <p>
+                    <code>.accordions>.accordion>(button{header}+div>h3{header}+p{lorem ipsum})</code>
+                </p>
                 <p>Plugin Options</p>
                 <table>
                     <tr>
@@ -40,15 +41,13 @@
                     </tr>
                 </table>
                 <p>JS Example</p>
-                <code>
-$(function () {
+                <pre><code>$(function () {
 	var $accordions = $('.accordions');
 	$accordions.accordion({
 		hiddenOnLoad: true,
 		singleOpen: true
 	});
-;});
-                </code>
+});</code></pre>
             </div>
         </section>
         <section>

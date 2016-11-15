@@ -519,11 +519,23 @@ dd {
     padding-left: 2em;
 }
 
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background-color: $darkgray;
+    padding: 1em;
+    & > code {
+        background-color: none;
+        padding: 0;
+    }
+}
+
 code {
-    background-color: #41322F;
-    color: #FBCE78;
+    padding: .25em .5em;
+    background-color: $darkgray;
+    font-size: 16px;
+    color: #ffffff;
     font-family: "Consolas", monospace;
-    padding: 2px 4px;
 }
 
 /* = Forms = */
