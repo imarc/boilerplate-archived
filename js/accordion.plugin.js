@@ -2,7 +2,7 @@
 
 /**
  *
- * jQuery Mobile Navigation Plugin
+ * jQuery Accordion Plugin
  *
  *Version: 0.1.0
  *Author: Tommy Chanthaboune <tommy@imarc.com>
