@@ -11,7 +11,7 @@ var autoprefixer = require('gulp-autoprefixer');
 
 var options = {
     autoprefixer: [
-        'Android >= 4.1',
+        'Android >= 4.4',
         'last 5 Chrome versions',
         'last 5 Firefox versions',
         'Explorer >= 11',
@@ -23,8 +23,8 @@ var options = {
     sassOutput: './css',
 
     sassCompiler: {
-      errLogToConsole: true,
-      outputStyle: 'expanded'
+        errLogToConsole: true,
+        outputStyle: 'expanded'
     },
 
     browserSync: {
@@ -34,6 +34,11 @@ var options = {
     }
 };
 
+// Tasks
+
+/**
+ * Compiles scss files, autoprefixes, and writes sourcemaps
+ */
 gulp.task('sass', function () {
     return gulp.src(options.sassInput)
         .pipe(sourcemaps.init())
@@ -44,18 +49,30 @@ gulp.task('sass', function () {
         .pipe(browsersync.reload({stream: true}));
 });
 
+/**
+ * Cleans scss files with csscomb
+ */
 gulp.task('clean', function () {
     return gulp.src('./css/**/*.scss')
         .pipe(csscomb())
         .pipe(gulp.dest('./css/'));
 });
 
+/**
+ * Runs all necessary build tasks
+ */
 gulp.task('build', ['sass']);
 
+/**
+ * Watches files and builds on events
+ */
 gulp.task('watch', ['build'], function () {
     gulp.watch("./css/**/*.scss", ['build']);
 });
 
+/**
+ * Watches files and starts a browsersync server
+ */
 gulp.task('serve', ['watch'], function () {
     browsersync.init(options.browserSync);
 
@@ -67,4 +84,7 @@ gulp.task('serve', ['watch'], function () {
     ]).on('change', browsersync.reload);
 });
 
+/**
+ * Default task
+ */
 gulp.task('default', ['build']);

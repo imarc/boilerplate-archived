@@ -75,7 +75,8 @@ $large: 1024px;
 }
 
 @mixin grouping {
-    &::before, &::after {
+    &::before,
+    &::after {
         content: "";
         display: table;
     }
@@ -84,10 +85,10 @@ $large: 1024px;
     }
 }
 
-@mixin fontawesome($character:"") {
+@mixin fontawesome($character: "") {
     font: normal normal normal 1em unquote("/") 1 FontAwesome;
-    -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     speak: none;
     text-rendering: auto;
     text-transform: none;
@@ -262,12 +263,11 @@ nav.primary {
         }
         li.active,
         li:hover {
-             > a {
+            > a {
                 color: lighten($charcoal, 55%);
             }
         }
     }
-
 }
 
 nav.utility {
@@ -278,8 +278,8 @@ nav.utility {
 }
 
 form.search {
-    display: flex;
     display: -webkit-flex;
+    display: flex;
     .text,
     .submit {
         margin-bottom: 0;
@@ -305,8 +305,8 @@ form.search {
 
 .hero {
     background: $plain-text url(../img/hero.jpg) no-repeat center top / cover;
-    display: flex;
     display: -webkit-flex;
+    display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     height: 240px;
@@ -388,6 +388,7 @@ footer.primary {
 
 .social {
     @include no-bullets;
+
     margin-bottom: 1rem;
     li {
         display: inline-block;
@@ -523,7 +524,7 @@ dd {
 code {
     background-color: #41322F;
     color: #FBCE78;
-    font-family: 'Consolas', monospace;
+    font-family: "Consolas", monospace;
     padding: 2px 4px;
 }
 
@@ -676,6 +677,7 @@ input[type="submit"].link {
 /* = Iconography = */
 .thumbs-up::before {
     @include fontawesome("\f087");
+
     margin-right: 0.5em;
 }
 

@@ -9,4 +9,4 @@ services:
     ports:
       - "3000:3000"
       - "3001:3001"
-    command: "bash -c 'npm install -g yarn && yarn && npm run dev'"
+    command: "bash -c 'npm install -g yarn && yarn && npm run serve'"

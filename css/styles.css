@@ -34,7 +34,7 @@
  * Media query breakpoints
  */
 /**
- * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
+ * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
 /**
@@ -90,41 +90,41 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
- * DROPDOWN (mega) 
- * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is 
+ * DROPDOWN (mega)
+ * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is
  * different than a simple dropdown that fills only its parent list item’s width.
- * Note here that the position: relative; rule we are used to seeing on 
+ * Note here that the position: relative; rule we are used to seeing on
  * nav.primary > ul > li is not there. It’s on header.primary > .container.
  *
  * Emmet: nav.primary>ul>li>a+.dropdown
  */
 /**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
+ * FEATURES house three features in one row. Powered by flexbox,
+ * this allows for a bottom alignment of each feature’s anchor. Use the
  * <code>$gutter</code> variable to pass you preferred gutter width.
  *
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo, 
- * copyright, simple navigation (as opposed to a "super footer"), legal links, 
+ * The FOOTER mixin is a basic implementation of a footer with the company logo,
+ * copyright, simple navigation (as opposed to a "super footer"), legal links,
  * social icons, and contact information.
  *
  * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
  */
 /**
- * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
- * header as you scroll down, and show it as you scroll back up. This is 
- * responsive as the "top" value is dynamically set in the 
- * js based on the height of the header. Top padding is also added 
+ * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
+ * header as you scroll down, and show it as you scroll back up. This is
+ * responsive as the "top" value is dynamically set in the
+ * js based on the height of the header. Top padding is also added
  * to the body dynamically via js so that the header doesn't overlap any
- * content. 
- * 
+ * content.
+ *
  * Emmet: header.primary
  *
  **/
 /**
- * TABS 
+ * TABS
  *
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
@@ -315,9 +315,8 @@ nav.utility a {
 }
 
 form.search {
-  display: -webkit-box;
-  display: flex;
   display: -webkit-flex;
+  display: flex;
 }
 
 form.search .text,
@@ -361,17 +360,13 @@ form.search input {
 
 .hero {
   background: #191919 url(../img/hero.jpg) no-repeat center top/cover;
-  display: -webkit-box;
-  display: flex;
   display: -webkit-flex;
+  display: flex;
   -webkit-flex-direction: column;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-          flex-direction: column;
+  flex-direction: column;
   height: 240px;
   -webkit-justify-content: center;
-  -webkit-box-pack: center;
-          justify-content: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -603,7 +598,7 @@ dd {
 code {
   background-color: #41322F;
   color: #FBCE78;
-  font-family: 'Consolas', monospace;
+  font-family: "Consolas", monospace;
   padding: 2px 4px;
 }
 
@@ -816,8 +811,8 @@ input[type="submit"].link[disabled] {
 /* = Iconography = */
 .thumbs-up::before {
   font: normal normal normal 1em / 1 FontAwesome;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
@@ -844,8 +839,8 @@ input[type="submit"].link[disabled] {
 
 .success::before {
   font: normal normal normal 1em / 1 FontAwesome;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
@@ -890,8 +885,8 @@ input[type="submit"].link[disabled] {
 
 .info::before {
   font: normal normal normal 1em / 1 FontAwesome;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
@@ -928,8 +923,8 @@ input[type="submit"].link[disabled] {
 
 .error::before {
   font: normal normal normal 1em / 1 FontAwesome;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
@@ -995,16 +990,13 @@ table tr:nth-child(even) td {
 /* Page Specific */
 /* Components */
 .backgroundvideo {
-  -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-pack: center;
+  height: auto;
   -webkit-justify-content: center;
           justify-content: center;
-  height: auto;
   overflow: hidden;
   position: relative;
 }
@@ -1051,24 +1043,18 @@ table tr:nth-child(even) td {
 
 @media only screen and (min-width: 1024px) {
   .features {
-    display: -webkit-box;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
             flex-flow: row wrap;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
             justify-content: space-between;
   }
   .features > * {
-    display: -webkit-box;
     display: -webkit-flex;
     display: flex;
-    -webkit-box-flex: 1;
     -webkit-flex: 1 0 0;
             flex: 1 0 0;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
     -webkit-flex-direction: column;
             flex-direction: column;
     margin-left: 3rem;
@@ -1087,7 +1073,7 @@ table tr:nth-child(even) td {
 
 footer.primary {
   background-color: #191919;
-  color: #fff;
+  color: #FFF;
   font-size: 0.9rem;
   padding: 3rem 0;
   text-align: center;
@@ -1136,20 +1122,16 @@ footer.primary .legal a {
 
 @media only screen and (min-width: 1024px) {
   footer.primary .container > div {
-    display: -webkit-box;
     display: -webkit-flex;
     display: flex;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
             justify-content: space-between;
   }
   footer.primary .container > div > * {
-    -webkit-box-flex: 1;
     -webkit-flex: 1 0 0;
             flex: 1 0 0;
   }
   footer.primary .container > div > nav {
-    -webkit-box-flex: 2;
     -webkit-flex-grow: 2;
             flex-grow: 2;
     margin-bottom: 0;
@@ -1165,8 +1147,7 @@ footer.primary .legal a {
 header.primary {
   position: fixed;
   top: 0;
-  -webkit-transition: top 0.2s ease-in-out;
-  transition: top 0.2s ease-in-out;
+  transition: top 0.16s cubic-bezier(0, 0.4, 0.7, 1);
   width: 100%;
   z-index: 100;
 }
@@ -1191,19 +1172,16 @@ header.primary {
     padding: 2rem 0;
     position: absolute;
     top: 100%;
-    -webkit-transition: opacity 300ms;
     transition: opacity 300ms;
     visibility: hidden;
     width: 100%;
     z-index: 1;
   }
   nav.primary .dropdown .menu {
-    display: -webkit-box;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-flow: row wrap;
             flex-flow: row wrap;
-    -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
             justify-content: space-between;
   }
@@ -1211,7 +1189,6 @@ header.primary {
     border-left: 1px solid #777;
     -webkit-flex-basis: 0;
             flex-basis: 0;
-    -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
             flex-grow: 1;
     padding: 0 3rem;
