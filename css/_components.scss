@@ -16,7 +16,6 @@ $medium: 669px;
 $large: 1024px;
 
 
-
 /**
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
@@ -26,6 +25,7 @@ $large: 1024px;
         align-items: center;
         display: flex;
         justify-content: center;
+        height: auto;
         overflow: hidden;
         position: relative;
         .mold {
@@ -48,7 +48,6 @@ $large: 1024px;
         padding-top: 30%;
     }
 }
-
 
 
 /**
@@ -144,6 +143,187 @@ $large: 1024px;
     }
 }
 
+
+/**
+ * DROPDOWN (mega) 
+ * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is 
+ * different than a simple dropdown that fills only its parent list item’s width.
+ * Note here that the position: relative; rule we are used to seeing on 
+ * nav.primary > ul > li is not there. It’s on header.primary > .container.
+ *
+ * Emmet: nav.primary>ul>li>a+.dropdown
+ */
+@mixin dropdown-mega() {
+    @media only screen and (max-width: $large - 1px) {
+        .dropdown,
+        i.fa {
+            display: none;
+        }
+    }
+    @media only screen and (min-width: $large) {
+        i.fa {
+            display: inline-block;
+        }
+        .dropdown {
+            background-color: #2A2A2A;
+            color: #FFF;
+            display: block;
+            left: 0;
+            opacity: 0;
+            padding: 2rem 0;
+            position: absolute;
+            top: 100%;
+            transition: opacity 300ms;
+            visibility: hidden;
+            width: 100%;
+            z-index: 1;
+            .menu {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                > * {
+                    border-left: 1px solid #777;
+                    flex-basis: 0;
+                    flex-grow: 1;
+                    padding: 0 3rem;
+                }
+                > *:first-child {
+                    border-left: none;
+                }
+                li {
+                    margin-bottom: 0.4em;
+                }
+                a {
+                    color: #0C96DD;
+                }
+                a:hover,
+                a:focus {
+                    color: darken(#0C96DD, 10%);
+                }
+            }
+        }
+        .dropdown.open {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+
+/**
+ * FEATURES house three features in one row. Powered by flexbox, 
+ * this allows for a bottom alignment of each feature’s anchor. Use the 
+ * <code>$gutter</code> variable to pass you preferred gutter width.
+ *
+ * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+ */
+@mixin features($gutter) {
+    > * {
+        background-color: #EEE;
+        margin-bottom: 2rem;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 2rem;
+        text-align: center;
+        img,
+        h3,
+        p {
+            margin-bottom: 1rem;
+        }
+        .button {
+            margin-bottom: 0;
+        }
+    }
+    @media only screen and (min-width: $large) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        > * {
+            display: flex;
+            flex: 1 0 0;
+            flex-direction: column;
+            margin-left: $gutter;
+            margin-right: 0;
+            .button {
+                align-self: center;
+                margin-top: auto;
+            }
+            &:first-child {
+                margin-left: 0;
+            }
+        }
+    }
+}
+
+
+/**
+ * The FOOTER mixin is a basic implementation of a footer with the company logo, 
+ * copyright, simple navigation (as opposed to a "super footer"), legal links, 
+ * social icons, and contact information.
+ *
+ * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
+ */
+@mixin footer {
+    background-color: $charcoal;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 3rem 0;
+    text-align: center;
+    .branding {
+        float: none;
+        margin-top: 0;
+        a {
+            margin-bottom: 1rem;
+        }
+    }
+    a {
+        color: $link;
+        &:hover {
+            color: darken($link, 10%)
+        }
+    }
+    nav ul {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .social a {
+        color: #FFF;
+        font-size: 1.5rem;
+        margin-left: 0.5rem;
+    }
+    .legal {
+        text-align: center;
+        p {
+            margin-bottom: 0.25rem;
+        }
+        a {
+            margin-left: 0.35rem;
+            margin-right: 0.35rem;
+        }
+    }
+
+    @media only screen and (min-width: $large) {
+        .container > div {
+            display: flex;
+            justify-content: space-between;
+            > * {
+                flex: 1 0 0;
+            }
+            > nav {
+                flex-grow: 2;
+                margin-bottom: 0;
+            }
+        }
+        .branding {
+            text-align: left;
+        }
+        .social {
+            text-align: right;
+        }
+    }
+}
+
+
 /**
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the 
  * header as you scroll down, and show it as you scroll back up. This is 
@@ -164,51 +344,6 @@ $large: 1024px;
     z-index: 100;
 }
 
-
-
-/**
- * FEATURES house three features in one row. Powered by flexbox, 
- * this allows for a bottom alignment of each feature’s anchor. Use the 
- * <code>$gutter</code> variable to pass you preferred gutter width.
- *
- * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
- */
-@mixin features($gutter) {
-    & > * {
-        background-color: #EEE;
-        margin-bottom: 2rem;
-        margin-left: auto;
-        margin-right: auto;
-        padding: 2rem;
-        text-align: center;
-        img,
-        h3,
-        p {
-            margin-bottom: 1rem;
-        }
-        .button {
-            margin-bottom: 0;
-        }
-    }
-    @media only screen and (min-width: $large) {
-        & {
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: space-between;
-        }
-        & > * {
-            display: flex;
-            flex: 1 0 0;
-            flex-direction: column;
-            margin-left: $gutter;
-            margin-right: $gutter;
-            .button {
-                align-self: center;
-                margin-top: auto;
-            }
-        }
-    }
-}
 
 /**
  * TABS 

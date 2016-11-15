@@ -225,7 +225,6 @@ img {
 
 header.primary {
     background-color: $charcoal;
-    padding-bottom: 1rem;
     padding-top: 1rem;
 }
 
@@ -253,24 +252,22 @@ nav {
         display: block;
         padding: 0 0.5rem;
     }
-    li.active,
-    li:hover {
-        a {
-            color: lighten($charcoal, 55%);
-        }
-    }
 }
 
 nav.primary {
     margin-bottom: 0.7rem;
-    ul {
+    > ul {
         li {
             margin-bottom: 0;
         }
-        .dropdown {
-            display: none;
+        li.active,
+        li:hover {
+             > a {
+                color: lighten($charcoal, 55%);
+            }
         }
     }
+
 }
 
 nav.utility {
@@ -756,20 +753,29 @@ table {
 
 /* Section Specific */
 
+
 /* Page Specific */
 
-/* Components */
 
+/* Components */
 .backgroundvideo {
     @include backgroundvideo();
 }
 
 .features {
-    @include features(1.5rem);
+    @include features(3rem);
+}
+
+footer.primary {
+    @include footer();
 }
 
 header.primary {
     @include sticky-header;
+}
+
+nav.primary {
+    @include dropdown-mega();
 }
 
 .tabs {
@@ -822,7 +828,11 @@ header.primary {
         > ul > li {
             font-size: 1.3rem;
             margin-left: 1rem;
+            padding-bottom: 1rem;
             position: relative;
+            &.mega {
+                position: static;
+            }
         }
         > ul > li:first-child {
             margin-left: 0;
