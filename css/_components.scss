@@ -229,29 +229,27 @@ $large: 1024px;
         text-align: center;
     }
     .actions {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-        flex-flow: row wrap;
-        > * {
-            margin: 0;
-            padding: 0;
-        }
-        label {
-            margin-left: 1em;
-        }
-        a {
-            display: block;
-            margin-left: auto;
-            text-align: right;
-        }
+        text-align: center;
 
     }
     @media only screen and (min-width: $medium) {
-        // .actions {
-        //     display: flex;
-        //     justify-content: flex-start;
-        // }
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+            > * {
+                margin: 0;
+                padding: 0;
+            }
+            label {
+                margin-left: 1em;
+            }
+            a {
+                display: block;
+                margin-left: auto;
+                text-align: right;
+            }
+        }
     }
 }
 

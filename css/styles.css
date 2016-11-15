@@ -884,19 +884,21 @@ header.primary {
   .login .submit {
     text-align: center; }
   .login .actions {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row wrap; }
-    .login .actions > * {
-      margin: 0;
-      padding: 0; }
-    .login .actions label {
-      margin-left: 1em; }
-    .login .actions a {
-      display: block;
-      margin-left: auto;
-      text-align: right; }
+    text-align: center; }
+  @media only screen and (min-width: 669px) {
+    .login .actions {
+      display: flex;
+      justify-content: space-between;
+      flex-flow: row wrap; }
+      .login .actions > * {
+        margin: 0;
+        padding: 0; }
+      .login .actions label {
+        margin-left: 1em; }
+      .login .actions a {
+        display: block;
+        margin-left: auto;
+        text-align: right; } }
 
 @media only screen and (max-width: 1023px) {
   nav.primary .dropdown,
