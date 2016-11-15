@@ -79,7 +79,7 @@
                         <form class="search" method="post">
                             <div class="text">
                                 <label for="search">Search the website</label>
-                                <input id="search" placeholder="Search the website" type="text" />
+                                <input id="search" placeholder="Search the website" type="search" />
                             </div>
                             <div class="submit">
                                 <input type="submit" value="Search" />
@@ -493,11 +493,22 @@
                     </div>
                 </div>
             </div>
+
+
             <div class="legal">
                 <p>©2016 by Imarc</p>
                 <a href="">Terms</a>
                 <a href="">Privacy Policy</a>
             </div>
         </footer>
+
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script src="js/stickyHeader.plugin.js"></script>
+
+        <script>
+            $(function() {
+                $('header.primary').stickyHeader();
+            });
+        </script>
     </body>
 </html>
