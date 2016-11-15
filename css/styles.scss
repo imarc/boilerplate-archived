@@ -193,6 +193,15 @@ img {
     vertical-align: middle;
 }
 
+
+::selection {
+    background: $border;
+}
+
+::-moz-selection {
+    background: $border;
+}
+
 /* = Layout = */
 .group {
     @include grouping;
@@ -455,9 +464,11 @@ hr {
     width: 100%;
 }
 
-a {
+@mixin link {
     color: $link;
+    cursor: pointer;
     text-decoration: none;
+
     &:hover,
     &:active {
         color: $link-hover;
@@ -465,6 +476,17 @@ a {
     &:focus {
         outline: thin dotted;
     }
+
+    &.disabled,
+    &[disabled] {
+        color: darken(#FFF, 20%);
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+a {
+    @include link;
 }
 
 p,
@@ -498,13 +520,10 @@ dd {
 }
 
 code {
-    background-color: $darkgray;
-    color: $white;
-    font-family: 'Consolas', monospace;
-    padding: 1em;
-    display: block;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    background-color: #41322F;
+    color: #FBCE78;
+    font-family: "Consolas", monospace;
+    padding: 2px 4px;
 }
 
 /* = Forms = */
@@ -608,48 +627,50 @@ input[type="radio"] {
     padding: 0;
 }
 
-a.button {
+@mixin button {
     background-color: $link;
     color: #FFF;
     display: inline-block;
+    font-family: $font-stack;
     font-weight: bold;
     padding: 0.6em 1em;
+    text-align: center;
+    vertical-align: top;
 
     &:hover,
     &:focus {
         background-color: $link-hover;
     }
+
+    &.disabled,
+    &[disabled] {
+        background-color: lighten($charcoal, 45%);
+        color: darken(#FFF, 20%);
+        pointer-events: none;
+    }
 }
 
-button,
-input[type="reset"],
-input[type="submit"] {
-    background-color: lighten($charcoal, 35%);
+a.button {
+    @include button;
+    margin-bottom: 0;
+}
+
+button:not(.link),
+input[type="button"]:not(.link),
+input[type="reset"]:not(.link),
+input[type="submit"]:not(.link) {
+    @include button;
     border: none;
-    color: #FFF;
     cursor: pointer;
-    display: inline-block;
-    font-family: $font-stack;
-    font-size: 0.9rem;
-    padding: 0.4em 0.6em;
-    text-align: center;
-
-    &:hover {
-        background-color: lighten($charcoal, 30%);
-        border-color: $link;
-        cursor: pointer;
-    }
-    &:focus {
-        background-color: lighten($charcoal, 30%);
-    }
 }
 
-button.disabled,
-input[type="reset"][disabled],
-input[type="submit"][disabled] {
-    background-color: lighten($charcoal, 45%);
-    color: darken(#FFF, 20%);
-    cursor: default;
+button.link,
+input[type=button].link,
+input[type="button"].link,
+input[type="reset"].link,
+input[type="submit"].link {
+    @include link;
+    background: transparent;
 }
 
 /* = Iconography = */

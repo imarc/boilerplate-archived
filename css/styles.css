@@ -168,6 +168,18 @@ img {
   vertical-align: middle;
 }
 
+::-moz-selection {
+  background: #e5e5e5;
+}
+
+::selection {
+  background: #e5e5e5;
+}
+
+::-moz-selection {
+  background: #e5e5e5;
+}
+
 /* = Layout = */
 .group::before, .group::after {
   content: "";
@@ -527,6 +539,7 @@ hr {
 
 a {
   color: #0C96DD;
+  cursor: pointer;
   text-decoration: none;
 }
 
@@ -536,6 +549,12 @@ a:hover, a:active {
 
 a:focus {
   outline: thin dotted;
+}
+
+a.disabled, a[disabled] {
+  color: #cccccc;
+  cursor: default;
+  pointer-events: none;
 }
 
 p,
@@ -573,13 +592,10 @@ dd {
 }
 
 code {
-  background-color: #4A4A4A;
-  color: #FFF;
-  font-family: 'Consolas', monospace;
-  padding: 1em;
-  display: block;
-  white-space: pre-wrap;
-  word-wrap: break-word;
+  background-color: #41322F;
+  color: #FBCE78;
+  font-family: "Consolas", monospace;
+  padding: 2px 4px;
 }
 
 /* = Forms = */
@@ -687,48 +703,105 @@ a.button {
   background-color: #0C96DD;
   color: #FFF;
   display: inline-block;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
   padding: 0.6em 1em;
+  text-align: center;
+  vertical-align: top;
+  margin-bottom: 0;
 }
 
 a.button:hover, a.button:focus {
   background-color: #EB7424;
 }
 
-button,
-input[type="reset"],
-input[type="submit"] {
-  background-color: #727272;
-  border: none;
-  color: #FFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.9rem;
-  padding: 0.4em 0.6em;
-  text-align: center;
-}
-
-button:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-  background-color: #666666;
-  border-color: #0C96DD;
-  cursor: pointer;
-}
-
-button:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus {
-  background-color: #666666;
-}
-
-button.disabled,
-input[type="reset"][disabled],
-input[type="submit"][disabled] {
+a.button.disabled, a.button[disabled] {
   background-color: #8c8c8c;
   color: #cccccc;
+  pointer-events: none;
+}
+
+button:not(.link),
+input[type="button"]:not(.link),
+input[type="reset"]:not(.link),
+input[type="submit"]:not(.link) {
+  background-color: #0C96DD;
+  color: #FFF;
+  display: inline-block;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-weight: bold;
+  padding: 0.6em 1em;
+  text-align: center;
+  vertical-align: top;
+  border: none;
+  cursor: pointer;
+}
+
+button:not(.link):hover, button:not(.link):focus,
+input[type="button"]:not(.link):hover,
+input[type="button"]:not(.link):focus,
+input[type="reset"]:not(.link):hover,
+input[type="reset"]:not(.link):focus,
+input[type="submit"]:not(.link):hover,
+input[type="submit"]:not(.link):focus {
+  background-color: #EB7424;
+}
+
+button:not(.link).disabled, button:not(.link)[disabled],
+input[type="button"]:not(.link).disabled,
+input[type="button"]:not(.link)[disabled],
+input[type="reset"]:not(.link).disabled,
+input[type="reset"]:not(.link)[disabled],
+input[type="submit"]:not(.link).disabled,
+input[type="submit"]:not(.link)[disabled] {
+  background-color: #8c8c8c;
+  color: #cccccc;
+  pointer-events: none;
+}
+
+button.link,
+input[type=button].link,
+input[type="button"].link,
+input[type="reset"].link,
+input[type="submit"].link {
+  color: #0C96DD;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+}
+
+button.link:hover, button.link:active,
+input[type=button].link:hover,
+input[type=button].link:active,
+input[type="button"].link:hover,
+input[type="button"].link:active,
+input[type="reset"].link:hover,
+input[type="reset"].link:active,
+input[type="submit"].link:hover,
+input[type="submit"].link:active {
+  color: #EB7424;
+}
+
+button.link:focus,
+input[type=button].link:focus,
+input[type="button"].link:focus,
+input[type="reset"].link:focus,
+input[type="submit"].link:focus {
+  outline: thin dotted;
+}
+
+button.link.disabled, button.link[disabled],
+input[type=button].link.disabled,
+input[type=button].link[disabled],
+input[type="button"].link.disabled,
+input[type="button"].link[disabled],
+input[type="reset"].link.disabled,
+input[type="reset"].link[disabled],
+input[type="submit"].link.disabled,
+input[type="submit"].link[disabled] {
+  color: #cccccc;
   cursor: default;
+  pointer-events: none;
 }
 
 /* = Iconography = */
