@@ -445,48 +445,70 @@
 
         <footer class="primary">
             <div class="container">
-                <nav aria-label="Footer Navigation">
-                    <ul>
-                        <li>
-                            <a href="">Maine</a>
-                        </li>
-                        <li>
-                            <a href="">Markup</a>
-                        </li>
-                        <li>
-                            <a href="">New Hampshire</a>
-                        </li>
-                        <li>
-                            <a href="">Vermont</a>
-                        </li>
-                    </ul>
-                </nav>          
-                <ul class="social">
-                    <li>
+                <div>
+                    <div class="branding">
                         <a href="https://github.com/imarc/boilerplate">
-                            <i class="fa fa-github"></i>
+                            <img src="img/logo-boilerplate.png" alt="Imarc Boilerplate" />
                         </a>
-                    </li>
-                    <li>
-                        <a href="https://www.facebook.com/ImarcAgency">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.twitter.com/ImarcAgency">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/company/imarc">
-                            <i class="fa fa-linkedin"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>  
-            <p>
-                ©2016 by Imarc
-            </p>
+                        <p>
+                            21 Water St., First Floor <br>
+                            Amesbury, MA 01913 <br>
+                            978-462-8848
+                        </p>
+                    </div>
+                    <nav aria-label="Footer Navigation">
+                        <ul>
+                            <li>
+                                <a href="">Maine</a>
+                            </li>
+                            <li>
+                                <a href="">Markup</a>
+                            </li>
+                            <li>
+                                <a href="">New Hampshire</a>
+                            </li>
+                            <li>
+                                <a href="">Vermont</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div>
+                        <ul class="social">
+                            <li>
+                                <a href="https://www.facebook.com/ImarcAgency">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.twitter.com/ImarcAgency">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/company/imarc">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="legal">
+                <p>©2016 by Imarc</p>
+                <a href="">Terms</a>
+                <a href="">Privacy Policy</a>
+            </div>
         </footer>
+
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script src="js/stickyHeader.plugin.js"></script>
+
+        <script>
+            $(function() {
+                $('header.primary').stickyHeader();
+            });
+        </script>
     </body>
 </html>
