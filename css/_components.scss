@@ -219,6 +219,9 @@ $large: 1024px;
                 display: flex;
                 flex-flow: row wrap;
                 justify-content: space-between;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 1168px;
                 > * {
                     border-left: 1px solid #777;
                     flex-basis: 0;
@@ -227,6 +230,10 @@ $large: 1024px;
                 }
                 > *:first-child {
                     border-left: none;
+                    padding-left: 0;
+                }
+                > *:last-child {
+                    padding-right: 0;
                 }
             }
         }
