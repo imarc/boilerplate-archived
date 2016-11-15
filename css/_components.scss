@@ -145,15 +145,13 @@ $large: 1024px;
 
 
 /**
- * DROPDOWN (mega)
- * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is
- * different than a simple dropdown that fills only its parent list item’s width.
- * Note here that the position: relative; rule we are used to seeing on
- * nav.primary > ul > li is not there. It’s on header.primary > .container.
+ * DROPDOWN
+ * The DROPDOWN mixin allows for dropdown menus. By default, a single
+ * column dropdown is used. It is positioned to its parent.
  *
- * Emmet: nav.primary>ul>li>a+.dropdown
+ * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu>ul>li>(a{link name})*3
  */
-@mixin dropdown-mega() {
+@mixin dropdown() {
     @media only screen and (max-width: $large - 1px) {
         .dropdown,
         i.fa {
@@ -168,27 +166,18 @@ $large: 1024px;
             background-color: #2A2A2A;
             color: #FFF;
             display: block;
-            left: 0;
+            font-size: 1rem;
+            min-width: 260px;
             opacity: 0;
             padding: 2rem 0;
             position: absolute;
             top: 100%;
             transition: opacity 300ms;
             visibility: hidden;
-            width: 100%;
             z-index: 1;
             .menu {
-                display: flex;
-                flex-flow: row wrap;
-                justify-content: space-between;
                 > * {
-                    border-left: 1px solid #777;
-                    flex-basis: 0;
-                    flex-grow: 1;
-                    padding: 0 3rem;
-                }
-                > *:first-child {
-                    border-left: none;
+                    padding: 0 1rem;
                 }
                 li {
                     margin-bottom: 0.4em;
@@ -258,6 +247,49 @@ $large: 1024px;
 
 
 /**
+ * DROPDOWN (mega)
+ * The DROPDOWN (mega) mixin allows for full-width mega dropdown 
+ * menus. Call this mixin on a list item rather than nav.primary. 
+ * The menu is positioned to header.primary instead of its parent
+ * list item.
+ *
+ * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
+ */
+@mixin dropdown-mega() {
+    position: static;
+    @media only screen and (min-width: $large) {
+        .dropdown {
+            left: 0;
+            top: 100%;
+            width: 100%;
+            .menu {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 1168px;
+                > * {
+                    border-left: 1px solid #777;
+                    flex-basis: 0;
+                    flex-grow: 1;
+                    padding: 0 3rem;
+                }
+                > *:first-child {
+                    border-left: none;
+                    padding-left: 0;
+                }
+                > *:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+
+
+
+/**
  * FEATURES house three features in one row. Powered by flexbox,
  * this allows for a bottom alignment of each feature’s anchor. Use the
  * <code>$gutter</code> variable to pass you preferred gutter width.
@@ -303,9 +335,10 @@ $large: 1024px;
 }
 
 
+
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo,
- * copyright, simple navigation (as opposed to a "super footer"), legal links,
+ * The FOOTER mixin is a basic implementation of a footer with the company logo, 
+ * copyright, simple navigation (as opposed to a "super footer"), legal links, 
  * social icons, and contact information.
  *
  * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}

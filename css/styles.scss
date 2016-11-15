@@ -227,6 +227,9 @@ img {
 header.primary {
     background-color: $charcoal;
     padding-top: 1rem;
+    .container {
+        position: static;
+    }
 }
 
 .branding {
@@ -782,7 +785,10 @@ header.primary {
 }
 
 nav.primary {
-    @include dropdown-mega();
+    @include dropdown();
+    li.mega {
+        @include dropdown-mega();
+    }
 }
 
 .tabs {
@@ -837,9 +843,6 @@ nav.primary {
             margin-left: 1rem;
             padding-bottom: 1rem;
             position: relative;
-            &.mega {
-                position: static;
-            }
         }
         > ul > li:first-child {
             margin-left: 0;
@@ -849,26 +852,6 @@ nav.primary {
             li li {
                 display: block;
                 float: none;
-            }
-            .dropdown {
-                background-color: $plain-text;
-                left: 0;
-                min-width: 180px;
-                position: absolute;
-                z-index: 2;
-            }
-            li:hover .dropdown {
-                display: block;
-            }
-            .dropdown li {
-                font-size: 0.9rem;
-            }
-            .dropdown li a {
-                color: #FFF;
-                padding: 0.3rem 0.8rem;
-            }
-            .dropdown li a:hover {
-                background-color: lighten($plain-text, 10%);
             }
         }
     }

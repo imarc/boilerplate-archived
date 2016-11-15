@@ -90,13 +90,11 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
- * DROPDOWN (mega)
- * The DROPDOWN (mega) mixin allows for a full-width, mega-menu dropdown. This is
- * different than a simple dropdown that fills only its parent list item’s width.
- * Note here that the position: relative; rule we are used to seeing on
- * nav.primary > ul > li is not there. It’s on header.primary > .container.
+ * DROPDOWN
+ * The DROPDOWN mixin allows for dropdown menus. By default, a single
+ * column dropdown is used. It is positioned to its parent.
  *
- * Emmet: nav.primary>ul>li>a+.dropdown
+ * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu>ul>li>(a{link name})*3
  */
 /**
  * The LOGIN mixin is a basic implementation of a login module that includes a
@@ -106,6 +104,15 @@
  * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
  */
 /**
+ * DROPDOWN (mega)
+ * The DROPDOWN (mega) mixin allows for full-width mega dropdown 
+ * menus. Call this mixin on a list item rather than nav.primary. 
+ * The menu is positioned to header.primary instead of its parent
+ * list item.
+ *
+ * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
+ */
+/**
  * FEATURES house three features in one row. Powered by flexbox,
  * this allows for a bottom alignment of each feature’s anchor. Use the
  * <code>$gutter</code> variable to pass you preferred gutter width.
@@ -113,8 +120,8 @@
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo,
- * copyright, simple navigation (as opposed to a "super footer"), legal links,
+ * The FOOTER mixin is a basic implementation of a footer with the company logo, 
+ * copyright, simple navigation (as opposed to a "super footer"), legal links, 
  * social icons, and contact information.
  *
  * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
@@ -258,6 +265,10 @@ img {
 header.primary {
   background-color: #191919;
   padding-top: 1rem;
+}
+
+header.primary .container {
+  position: static;
 }
 
 .branding {
@@ -1220,34 +1231,18 @@ header.primary {
     background-color: #2A2A2A;
     color: #FFF;
     display: block;
-    left: 0;
+    font-size: 1rem;
+    min-width: 260px;
     opacity: 0;
     padding: 2rem 0;
     position: absolute;
     top: 100%;
     transition: opacity 300ms;
     visibility: hidden;
-    width: 100%;
     z-index: 1;
   }
-  nav.primary .dropdown .menu {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-justify-content: space-between;
-            justify-content: space-between;
-  }
   nav.primary .dropdown .menu > * {
-    border-left: 1px solid #777;
-    -webkit-flex-basis: 0;
-            flex-basis: 0;
-    -webkit-flex-grow: 1;
-            flex-grow: 1;
-    padding: 0 3rem;
-  }
-  nav.primary .dropdown .menu > *:first-child {
-    border-left: none;
+    padding: 0 1rem;
   }
   nav.primary .dropdown .menu li {
     margin-bottom: 0.4em;
@@ -1262,6 +1257,44 @@ header.primary {
   nav.primary .dropdown.open {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+nav.primary li.mega {
+  position: static;
+}
+
+@media only screen and (min-width: 1024px) {
+  nav.primary li.mega .dropdown {
+    left: 0;
+    top: 100%;
+    width: 100%;
+  }
+  nav.primary li.mega .dropdown .menu {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1168px;
+  }
+  nav.primary li.mega .dropdown .menu > * {
+    border-left: 1px solid #777;
+    -webkit-flex-basis: 0;
+            flex-basis: 0;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
+    padding: 0 3rem;
+  }
+  nav.primary li.mega .dropdown .menu > *:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+  nav.primary li.mega .dropdown .menu > *:last-child {
+    padding-right: 0;
   }
 }
 
@@ -1368,9 +1401,6 @@ header.primary {
     padding-bottom: 1rem;
     position: relative;
   }
-  nav.primary > ul > li.mega {
-    position: static;
-  }
   nav.primary > ul > li:first-child {
     margin-left: 0;
   }
@@ -1380,26 +1410,6 @@ header.primary {
   nav.primary ul li li {
     display: block;
     float: none;
-  }
-  nav.primary ul .dropdown {
-    background-color: #191919;
-    left: 0;
-    min-width: 180px;
-    position: absolute;
-    z-index: 2;
-  }
-  nav.primary ul li:hover .dropdown {
-    display: block;
-  }
-  nav.primary ul .dropdown li {
-    font-size: 0.9rem;
-  }
-  nav.primary ul .dropdown li a {
-    color: #FFF;
-    padding: 0.3rem 0.8rem;
-  }
-  nav.primary ul .dropdown li a:hover {
-    background-color: #333333;
   }
   .utilities {
     float: right;
