@@ -1,6 +1,5 @@
 (function ($) {
     var $window = $(window);
-
     $.fn.stickyHeader = function (options) {
         var plugin = this;
         var $body = $('body');
