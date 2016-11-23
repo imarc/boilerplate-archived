@@ -62,7 +62,7 @@
             };
 
             $window.resize(function(){
-                var height   = $(this).outerHeight();
+                var height   = $header.outerHeight();
                 hasScrolled();
                 $body.css('padding-top', height);
             });
