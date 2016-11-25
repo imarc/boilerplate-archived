@@ -1,6 +1,8 @@
 (function ($) {
+    var $window = $(window);
     $.fn.stickyHeader = function (options) {
         var plugin = this;
+        var $body = $('body');
 
         return this.each(function () {
 
@@ -12,9 +14,9 @@
             var $header       = $(this);
 
             // set top padding on body so header doesn't overlap content
-            $('body').css('padding-top', initialHeight);
+            $body.css('padding-top', initialHeight);
 
-            $(window).scroll(function(event){
+            $window.scroll(function(event){
                 didScroll = true;
             });
 
@@ -27,13 +29,17 @@
             };
 
             requestAnimationFrame(scrollCheck);
-            
+
             var hasScrolled = function() {
                 var height     = $header.outerHeight();
-                var scrollPos  = $(window).scrollTop();
+                var scrollPos  = $window.scrollTop();
 
-                // Make sure they scroll more than delta
-                if(Math.abs(lastScrollTop - scrollPos) <= delta) {
+                var doNothing = (
+                    scrollPos == lastScrollTop ||
+                    Math.abs(lastScrollTop - scrollPos) <= delta
+                );
+
+                if(doNothing) {
                     return;
                 }
 
@@ -44,7 +50,7 @@
                     $header
                         .addClass('header-up')
                         .css('top', -height);
-                    $('body').css('padding-top', height);
+                    $body.css('padding-top', height);
                 } else {
                     // Scroll Up
                     $header
@@ -53,19 +59,15 @@
                 }
 
                 lastScrollTop = scrollPos;
-
             };
 
-            $(window).resize(function(){
-                var height   = $(this).outerHeight();
+            $window.resize(function(){
+                var height   = $header.outerHeight();
                 hasScrolled();
-                $('body').css('padding-top', height);
+                $body.css('padding-top', height);
             });
 
         });
     };
 
 })(jQuery);
-
-
-$('header.primary').stickyHeader();

@@ -26,16 +26,24 @@
 
 /* = Variables = */
 $font-stack: "Helvetica Neue", Arial, sans-serif;
-$charcoal: #191919;
+
+
+/* Grays */
+$white:     #FFF;
+$lightgray: #DDD;
+$gray:      #808080;
+$darkgray:  #4A4A4A;
+$charcoal:  #191919;
+$black:     #000;
 
 /* The brand colors (name them the color) */
-$brand-blue: #0c96dd;
-$brand-dark-blue: #0c508a;
-$brand-orange: #eb7424;
+$brand-blue: #0C96DD;
+$brand-dark-blue: #0C508A;
+$brand-orange: #EB7424;
 
 /* Messaging colors */
-$success: #48ac2c;
-$error: #ce2a2a;
+$success: #48AC2C;
+$error: #CE2A2A;
 $info: #DDD;
 
 /* Applied colors */
@@ -46,10 +54,10 @@ $link-hover: $brand-orange;
 $border: lighten($charcoal, 80%);
 
 /* Social Network Colors */
-$facebook: #3664a2;
-$twitter: #55acee;
+$facebook: #3664A2;
+$twitter: #55ACEE;
 $linkedin: #0077B5;
-$youtube: #cd201f;
+$youtube: #CD201F;
 
 /* Breakpoint values */
 $medium: 669px;
@@ -57,6 +65,30 @@ $large: 1024px;
 
 
 /* = Mixins = */
+
+@mixin button {
+    background-color: $link;
+    color: #FFF;
+    display: inline-block;
+    font-family: $font-stack;
+    font-weight: bold;
+    padding: 0.4em 1em;
+    text-align: center;
+    vertical-align: top;
+
+    &:hover,
+    &:focus {
+        background-color: $link-hover;
+    }
+
+    &.disabled,
+    &[disabled] {
+        background-color: lighten($charcoal, 45%);
+        color: darken(#FFF, 20%);
+        pointer-events: none;
+    }
+}
+
 @mixin container {
     margin-left: auto;
     margin-right: auto;
@@ -67,7 +99,8 @@ $large: 1024px;
 }
 
 @mixin grouping {
-    &::before, &::after {
+    &::before,
+    &::after {
         content: "";
         display: table;
     }
@@ -76,10 +109,10 @@ $large: 1024px;
     }
 }
 
-@mixin fontawesome($character:"") {
+@mixin fontawesome($character: "") {
     font: normal normal normal 1em unquote("/") 1 FontAwesome;
-    -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     speak: none;
     text-rendering: auto;
     text-transform: none;
@@ -149,36 +182,32 @@ $large: 1024px;
 
 
 /* = Base = */
-a, abbr, address, article, aside, audio, b, blockquote, body, canvas, cite, code, dd, div, dl, dt, em, fieldset, footer, form, h1, h2, h3, h4, h5, h6, header, html, hr, i, iframe, img, label, li, main, nav, object, ol, p, pre, section, span, strong, sub, sup, table, tbody, td, tfoot, th, thead, tr, ul, video {
-    border: 0;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+/* Not Included:
+ *   - bi-directional elements: bdi, bdo
+ *   - ruby elements: data, output, rp, rt, rtc, ruby, samp, time, var
+ *   - typographical elements: del, dfn, ins, kbd, mark, s, small, wbr
+ *   - HTML5 elements: col, colgroup, details, dialog, map, menu, menuitem, summary
+ */
+a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
     box-sizing: border-box;
-    font: inherit;
-    font-size: 100%;
     margin: 0;
-    outline: 0;
     padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    font: inherit;
     vertical-align: baseline;
 }
 
-article,
-aside,
-audio,
-canvas,
-footer,
-header,
-nav,
-section,
-video {
+article, aside, audio, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, video {
     display: block;
 }
 
 html {
-    background-color: #fff; 
+    background-color: #FFF;
     color: $plain-text;
     font-family: $font-stack;
-    font-size: 1rem;
+    font-size: 16px;
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -193,9 +222,16 @@ img {
     vertical-align: middle;
 }
 
+::selection {
+    background: $border;
+}
+
+::-moz-selection {
+    background: $border;
+}
+
 
 /* = Layout = */
-.container,
 .group {
     @include grouping;
 }
@@ -214,8 +250,10 @@ img {
 
 header.primary {
     background-color: $charcoal;
-    padding-bottom: 1rem;
     padding-top: 1rem;
+    .container {
+        position: static;
+    }
 }
 
 .branding {
@@ -238,26 +276,23 @@ nav {
         display: inline-block;
     }
     a {
-        color: #fff;
+        color: #FFF;
         display: block;
         padding: 0 0.5rem;
-    }
-    li.active,
-    li:hover {
-        a {
-            color: lighten($charcoal, 55%);
-        }
     }
 }
 
 nav.primary {
     margin-bottom: 0.7rem;
-    ul {
+    > ul {
         li {
             margin-bottom: 0;
         }
-        .dropdown {
-            display: none;
+        li.active,
+        li:hover {
+            > a {
+                color: lighten($charcoal, 55%);
+            }
         }
     }
 }
@@ -270,8 +305,8 @@ nav.utility {
 }
 
 form.search {
-    display: flex;
     display: -webkit-flex;
+    display: flex;
     .text,
     .submit {
         margin-bottom: 0;
@@ -297,8 +332,8 @@ form.search {
 
 .hero {
     background: $plain-text url(../img/hero.jpg) no-repeat center top / cover;
-    display: flex;
     display: -webkit-flex;
+    display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     height: 240px;
@@ -308,7 +343,7 @@ form.search {
     .copy {
         @include container;
         * {
-            color: #fff;
+            color: #FFF;
         }
     }
 }
@@ -374,12 +409,13 @@ footer.primary {
         margin: 0;
     }
     a {
-        color: #fff;
+        color: #FFF;
     }
 }
 
 .social {
     @include no-bullets;
+
     margin-bottom: 1rem;
     li {
         display: inline-block;
@@ -467,9 +503,11 @@ hr {
     width: 100%;
 }
 
-a {
+@mixin link {
     color: $link;
+    cursor: pointer;
     text-decoration: none;
+
     &:hover,
     &:active {
         color: $link-hover;
@@ -477,18 +515,16 @@ a {
     &:focus {
         outline: thin dotted;
     }
-}
 
-a.button {
-    background-color: $link;
-    color: #fff;
-    display: inline-block;
-    font-weight: bold;
-    padding: 0.6em 1em;
+    &.disabled,
+    &[disabled] {
+        color: darken(#FFF, 20%);
+        cursor: default;
+        pointer-events: none;
+    }
 }
-a.button:hover,
-a.button:focus {
-    background-color: $link-hover;
+a {
+    @include link;
 }
 
 p,
@@ -522,9 +558,9 @@ dd {
 }
 
 code {
-    background-color: #41322f;
-    color: #fbce78;
-    font-family: 'Consolas', monospace;
+    background-color: #41322F;
+    color: #FBCE78;
+    font-family: "Consolas", monospace;
     padding: 2px 4px;
 }
 
@@ -570,17 +606,24 @@ fieldset .help {
     margin: 0;
 }
 
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
 input[type="password"],
 input[type="search"],
 input[type="tel"],
-input[type="email"],
 input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
 textarea {
-    border: 1px solid darken($border, 10%);
+    border: 1px solid $border;
+    box-sizing: border-box;
     color: $plain-text;
     display: block;
     font-family: $font-stack;
-    font-size: 0.9rem;
     margin: 0;
     padding: 0.4em 0.6em;
     width: 100%;
@@ -620,42 +663,34 @@ input[type="radio"] {
     padding: 0;
 }
 
-button,
-input[type="reset"],
-input[type="submit"] {
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    background-color: lighten($charcoal, 35%);
-    border: none;
-    color: #FFF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: $font-stack;
-    font-size: 0.9rem;
-    padding: 0.4em 0.6em;
-    text-align: center;
-    &:hover {
-        background-color: lighten($charcoal, 30%);
-        border-color: $link;
-        cursor: pointer;
-    }
-    &:focus {
-        background-color: lighten($charcoal, 30%);
-    }
+a.button {
+    @include button;
+    margin-bottom: 0;
 }
 
-button.disabled,
-input[type="reset"][disabled],
-input[type="submit"][disabled] {
-    background-color: lighten($charcoal, 45%);
-    color: darken(#FFF, 20%);
-    cursor: default;
+button:not(.link),
+input[type="button"]:not(.link),
+input[type="reset"]:not(.link),
+input[type="submit"]:not(.link) {
+    @include button;
+    border: none;
+    cursor: pointer;
+}
+
+button.link,
+input[type=button].link,
+input[type="button"].link,
+input[type="reset"].link,
+input[type="submit"].link {
+    @include link;
+    background: transparent;
 }
 
 
 /* = Iconography = */
 .thumbs-up::before {
     @include fontawesome("\f087");
+
     margin-right: 0.5em;
 }
 
@@ -669,10 +704,10 @@ input[type="submit"][disabled] {
         content: "\f00c";
     }
     a {
-        color: #fff;
+        color: #FFF;
     }
     a:hover {
-        color: darken(#fff, 15%);
+        color: darken(#FFF, 15%);
     }
 }
 
@@ -733,16 +768,21 @@ table {
 
 /* Section Specific */
 
+
 /* Page Specific */
 
-/* Components */
 
+/* Components */
 .backgroundvideo {
     @include backgroundvideo();
 }
 
 .features {
-    @include features(1.5rem);
+    @include features(3rem);
+}
+
+footer.primary {
+    @include footer();
 }
 
 header.primary {
@@ -755,6 +795,17 @@ header.primary {
 
 nav.pagination {
     @include pagination();
+}
+
+.login {
+    @include login;
+}
+
+nav.primary {
+    @include dropdown();
+    li.mega {
+        @include dropdown-mega();
+    }
 }
 
 .tabs {
@@ -807,6 +858,7 @@ nav.pagination {
         > ul > li {
             font-size: 1.3rem;
             margin-left: 1rem;
+            padding-bottom: 1rem;
             position: relative;
         }
         > ul > li:first-child {
@@ -817,26 +869,6 @@ nav.pagination {
             li li {
                 display: block;
                 float: none;
-            }
-            .dropdown {
-                background-color: $plain-text;
-                left: 0;
-                min-width: 180px;
-                position: absolute;
-                z-index: 2;
-            }
-            li:hover .dropdown {
-                display: block;
-            }
-            .dropdown li {
-                font-size: 0.9rem;
-            }
-            .dropdown li a {
-                color: #fff;
-                padding: 0.3rem 0.8rem;
-            }
-            .dropdown li a:hover {
-                background-color: lighten($plain-text, 10%);
             }
         }
     }
