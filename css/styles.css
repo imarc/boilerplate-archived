@@ -97,13 +97,6 @@
  * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu>ul>li>(a{link name})*3
  */
 /**
- * The LOGIN mixin is a basic implementation of a login module that includes a
- * username input, password input, submit button, forgot password link, and
- * remember me checkbox
- *
- * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
- */
-/**
  * DROPDOWN (mega)
  * The DROPDOWN (mega) mixin allows for full-width mega dropdown 
  * menus. Call this mixin on a list item rather than nav.primary. 
@@ -125,6 +118,24 @@
  * social icons, and contact information.
  *
  * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
+ */
+/**
+ * The LOGIN mixin is a basic implementation of a login module that includes a
+ * username input, password input, submit button, forgot password link, and
+ * remember me checkbox
+ *
+ * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
+ */
+/**
+ * PAGINATION
+ *
+ * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
+ */
+/**
+ * SEARCH LISTING shows a simple input/submit form along with a search
+ * result listing.
+ *
+ * Emmet: ..
  */
 /**
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
@@ -550,6 +561,15 @@ blockquote::after {
   margin-bottom: 0.8em;
 }
 
+.guide {
+  color: #727272;
+  font-size: 1.25rem;
+}
+
+.meta {
+  color: #727272;
+}
+
 hr {
   border: 0;
   border-top: 1px solid #727272;
@@ -679,7 +699,6 @@ textarea {
   color: #191919;
   display: block;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.9rem;
   margin: 0;
   padding: 0.4em 0.6em;
   width: 100%;
@@ -728,7 +747,7 @@ a.button {
   display: inline-block;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
-  padding: 0.6em 1em;
+  padding: 0.4em 1em;
   text-align: center;
   vertical-align: top;
   margin-bottom: 0;
@@ -753,7 +772,7 @@ input[type="submit"]:not(.link) {
   display: inline-block;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
-  padding: 0.6em 1em;
+  padding: 0.4em 1em;
   text-align: center;
   vertical-align: top;
   border: none;
@@ -1169,6 +1188,177 @@ header.primary {
   transition: top 0.16s cubic-bezier(0, 0.4, 0.7, 1);
   width: 100%;
   z-index: 100;
+}
+
+.listing.search form {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.listing.search form label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.listing.search form .text {
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+}
+
+.listing.search form .submit {
+  -webkit-flex-basis: 120px;
+          flex-basis: 120px;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+}
+
+.listing.search form .submit input {
+  height: 100%;
+  width: 100%;
+}
+
+.listing.search ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listing.search ul li {
+  border-top: 4px solid #e5e5e5;
+  margin-bottom: 0;
+  padding: 2rem 0;
+}
+
+.listing.search ul li .meta {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 1em;
+}
+
+.listing.search ul li h2 + .meta {
+  margin-top: -1em;
+}
+
+.listing.search ul li .summary p:last-of-type {
+  margin-bottom: 0;
+}
+
+nav.pagination {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+nav.pagination ul {
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+nav.pagination li {
+  margin-bottom: 0;
+}
+
+nav.pagination a {
+  color: #0C96DD;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+nav.pagination li:not(:last-child) a {
+  border-right: 1px solid #e5e5e5;
+}
+
+nav.pagination li.active a {
+  background-color: #0C96DD;
+  color: #fff;
+  cursor: default;
+  pointer-events: none;
+}
+
+nav.pagination li.active a::before, nav.pagination li.active a::after {
+  background-color: #0C96DD;
+}
+
+nav.pagination li.active a:hover {
+  color: #fff;
+  background-color: #EB7424;
+}
+
+nav.pagination li.active a:hover::before, nav.pagination li.active a:hover::after {
+  background-color: #EB7424;
+}
+
+nav.pagination li.disabled a {
+  color: #e5e5e5;
+  cursor: default;
+  pointer-events: none;
+}
+
+nav.pagination li:first-child a {
+  padding-left: 1.5rem;
+}
+
+nav.pagination li:last-child a {
+  padding-right: 1.5rem;
+}
+
+nav.pagination li.previous a,
+nav.pagination li.next a {
+  position: relative;
+  visibility: hidden;
+  width: 1rem;
+}
+
+nav.pagination li.previous a::before,
+nav.pagination li.next a::before {
+  display: block;
+  padding: 0.75rem 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: visible;
+}
+
+nav.pagination li:hover:not(.active, .disabled) a {
+  background-color: #EB7424;
+  color: #FFF;
+}
+
+nav.pagination li:hover:not(.active, .disabled) a::before {
+  background-color: #EB7424;
+  color: #FFF;
+}
+
+nav.pagination li.previous a::before {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+  border-right: 1px solid #e5e5e5;
+}
+
+nav.pagination li.next a::before {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
 }
 
 .login {

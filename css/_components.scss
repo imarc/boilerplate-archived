@@ -198,53 +198,6 @@ $large: 1024px;
     }
 }
 
-/**
- * The LOGIN mixin is a basic implementation of a login module that includes a
- * username input, password input, submit button, forgot password link, and
- * remember me checkbox
- *
- * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
- */
-@mixin login {
-    background: #EEE;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 600px;
-    padding: 3rem;
-    input {
-        &:focus {
-            box-shadow: 0 0 5px rgba(114,164,0,0.7);
-        }
-    }
-    .submit {
-        text-align: center;
-    }
-    .actions {
-        text-align: center;
-
-    }
-    @media only screen and (min-width: $medium) {
-        .actions {
-            align-items: center;
-            display: flex;
-            justify-content: space-between;
-            flex-flow: row wrap;
-            > * {
-                margin: 0;
-                padding: 0;
-            }
-            label {
-                margin-left: 1em;
-            }
-            a {
-                display: block;
-                margin-left: auto;
-                text-align: right;
-            }
-        }
-    }
-}
-
 
 /**
  * DROPDOWN (mega)
@@ -286,7 +239,6 @@ $large: 1024px;
         }
     }
 }
-
 
 
 /**
@@ -333,7 +285,6 @@ $large: 1024px;
         }
     }
 }
-
 
 
 /**
@@ -405,6 +356,198 @@ $large: 1024px;
 
 
 /**
+ * The LOGIN mixin is a basic implementation of a login module that includes a
+ * username input, password input, submit button, forgot password link, and
+ * remember me checkbox
+ *
+ * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
+ */
+@mixin login {
+    background: #EEE;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 600px;
+    padding: 3rem;
+    input {
+        &:focus {
+            box-shadow: 0 0 5px rgba(114,164,0,0.7);
+        }
+    }
+    .submit {
+        text-align: center;
+    }
+    .actions {
+        text-align: center;
+
+    }
+    @media only screen and (min-width: $medium) {
+        .actions {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+            > * {
+                margin: 0;
+                padding: 0;
+            }
+            label {
+                margin-left: 1em;
+            }
+            a {
+                display: block;
+                margin-left: auto;
+                text-align: right;
+            }
+        }
+    }
+}
+
+
+/**
+ * PAGINATION
+ *
+ * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
+ */
+@mixin pagination {
+    display: flex;
+    justify-content: center;
+    ul {
+        border: 1px solid $border;
+        border-radius: 2px;
+        display: flex;
+        justify-content: center;
+    }
+    li {
+        margin-bottom: 0;
+    }
+    a {
+        color: $link;
+        padding: 0.5rem 1rem;
+        position: relative;
+    }
+    li:not(:last-child) a {
+        border-right: 1px solid $border;
+    }
+    li.active a {
+        background-color: $brand-blue;
+        color: #fff;
+        cursor: default;
+        pointer-events: none;
+        &::before,
+        &::after {
+            background-color: $brand-blue;
+        }
+        &:hover {
+            color: #fff;
+            background-color: $link-hover;
+            &::before,
+            &::after {
+                background-color: $link-hover;
+            }
+        }
+    }
+    li.disabled a {
+        color: $border;
+        cursor: default;
+        pointer-events: none;
+    }
+    li:first-child a {
+        padding-left: 1.5rem;
+    }
+    li:last-child a {
+        padding-right: 1.5rem;
+    }
+    li.previous a,
+    li.next a {
+        position: relative;
+        visibility: hidden;
+        width: 1rem;
+
+        &::before {
+            display: block;
+            padding: 0.75rem 1rem;
+            position: absolute;
+            right: 0;
+            top: 0;
+            visibility: visible;
+        }
+    }
+    li:hover:not(.active,.disabled) {
+        a {
+            background-color: $link-hover;
+            color: #FFF;
+
+            &::before {
+                background-color: $link-hover;
+                color: #FFF;
+            }
+        }
+    }
+    li.previous a {
+        &::before {
+            @include fontawesome("\f053");
+            border-right: 1px solid $border;
+        }
+    }
+    li.next a {
+        &::before {
+            @include fontawesome("\f054");
+        }
+    }
+}
+
+
+/**
+ * SEARCH LISTING shows a simple input/submit form along with a search
+ * result listing.
+ *
+ * Emmet: ..
+ */
+@mixin search-listing() {
+    form {
+        display: flex;
+        label {
+            @include visuallyhidden;
+        }
+        .text {
+            flex-grow: 1;
+        }
+        .submit {
+            flex-basis: 120px;
+            flex-shrink: 0;
+        }
+        .submit input {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            border-top: 4px solid $border;
+            margin-bottom: 0;
+            padding: 2rem 0;
+            .meta {
+                display: block;
+                font-size: 0.9rem;
+                margin-bottom: 1em;
+            }
+            h2 + .meta {
+                margin-top: -1em;
+            }
+            .summary {
+                p:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+/**
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
  * header as you scroll down, and show it as you scroll back up. This is
  * responsive as the "top" value is dynamically set in the
@@ -415,7 +558,6 @@ $large: 1024px;
  * Emmet: header.primary
  *
  **/
-
 @mixin sticky-header() {
     position: fixed;
     top: 0;
