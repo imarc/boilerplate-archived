@@ -451,47 +451,25 @@ $large: 1024px;
         cursor: default;
         pointer-events: none;
     }
-    li:first-child a {
-        padding-left: 1.5rem;
-    }
-    li:last-child a {
-        padding-right: 1.5rem;
-    }
-    li.previous a,
-    li.next a {
-        position: relative;
-        visibility: hidden;
-        width: 1rem;
-
+    li.previous a {
         &::before {
-            display: block;
-            padding: 0.75rem 1rem;
-            position: absolute;
-            right: 0;
-            top: 0;
-            visibility: visible;
+            @include fontawesome("\f100");
         }
     }
-    li:hover:not(.active,.disabled) {
+    li.next a {
+        &::before {
+            @include fontawesome("\f101");
+        }
+    }
+    li:hover:not(.active):not(.disabled) {
         a {
-            background-color: $link-hover;
+            background-color: $link;
             color: #FFF;
 
             &::before {
-                background-color: $link-hover;
+                background-color: $link;
                 color: #FFF;
             }
-        }
-    }
-    li.previous a {
-        &::before {
-            @include fontawesome("\f053");
-            border-right: 1px solid $border;
-        }
-    }
-    li.next a {
-        &::before {
-            @include fontawesome("\f054");
         }
     }
 }

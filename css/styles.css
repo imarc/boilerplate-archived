@@ -273,6 +273,17 @@ img {
   right: 2rem;
 }
 
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 header.primary {
   background-color: #191919;
   padding-top: 1rem;
@@ -1305,41 +1316,6 @@ nav.pagination li.disabled a {
   pointer-events: none;
 }
 
-nav.pagination li:first-child a {
-  padding-left: 1.5rem;
-}
-
-nav.pagination li:last-child a {
-  padding-right: 1.5rem;
-}
-
-nav.pagination li.previous a,
-nav.pagination li.next a {
-  position: relative;
-  visibility: hidden;
-  width: 1rem;
-}
-
-nav.pagination li.previous a::before,
-nav.pagination li.next a::before {
-  display: block;
-  padding: 0.75rem 1rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-  visibility: visible;
-}
-
-nav.pagination li:hover:not(.active, .disabled) a {
-  background-color: #EB7424;
-  color: #FFF;
-}
-
-nav.pagination li:hover:not(.active, .disabled) a::before {
-  background-color: #EB7424;
-  color: #FFF;
-}
-
 nav.pagination li.previous a::before {
   font: normal normal normal 1em / 1 FontAwesome;
   -webkit-font-smoothing: antialiased;
@@ -1347,8 +1323,7 @@ nav.pagination li.previous a::before {
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  content: "";
-  border-right: 1px solid #e5e5e5;
+  content: "";
 }
 
 nav.pagination li.next a::before {
@@ -1358,7 +1333,17 @@ nav.pagination li.next a::before {
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  content: "";
+  content: "";
+}
+
+nav.pagination li:hover:not(.active):not(.disabled) a {
+  background-color: #0C96DD;
+  color: #FFF;
+}
+
+nav.pagination li:hover:not(.active):not(.disabled) a::before {
+  background-color: #0C96DD;
+  color: #FFF;
 }
 
 .login {

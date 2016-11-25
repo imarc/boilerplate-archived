@@ -248,6 +248,10 @@ img {
     @include carousel;
 }
 
+.sr-only {
+    @include visuallyhidden;
+}
+
 header.primary {
     background-color: $charcoal;
     padding-top: 1rem;
