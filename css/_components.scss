@@ -267,7 +267,7 @@ $large: 1024px;
     }
     @media only screen and (min-width: $large) {
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
         justify-content: space-between;
         > * {
             display: flex;
