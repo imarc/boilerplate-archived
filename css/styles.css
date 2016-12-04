@@ -154,8 +154,11 @@
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
 /**
- * The TILES mixin uses flexbox to create a 
- * multiple column / multiple row layout of modules.
+ *  Tiles helps you create an equal-width column grid layout without the use of row wrappers. 
+ *  Tiles is similar to the Features component, expect that Tiles’s items can wrap. 
+ *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the 
+ *  specified $column amount only is respected at the large breakpoint. Tiles will automatically 
+ *  two-up your items at the medium breakpoint, and stack them at the small breakpoint.
  *
  *
  * Emmet: .tiles>.tiles
