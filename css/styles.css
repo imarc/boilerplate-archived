@@ -1094,8 +1094,8 @@ table tr:nth-child(even) td {
   .features {
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-flow: row wrap;
-            flex-flow: row wrap;
+    -webkit-flex-flow: row nowrap;
+            flex-flow: row nowrap;
     -webkit-justify-content: space-between;
             justify-content: space-between;
   }
