@@ -561,8 +561,14 @@ dd {
     padding-left: 2em;
 }
 
+pre {
+    background-color: #4A4A4A;
+    padding: 1em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
 code {
-    background-color: #41322F;
     color: #FBCE78;
     font-family: "Consolas", monospace;
     padding: 2px 4px;
@@ -814,6 +820,10 @@ nav.primary {
 
 .tabs {
     @include tabs();
+}
+
+.tiles {
+    @include tiles();
 }
 
 /* = Media Queries = */

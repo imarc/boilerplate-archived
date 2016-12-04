@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Tiles Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+    </head>
+    <body>
+        <div class="torso">
+            <main>
+               <section class="intro">
+                   <div class="container">
+                        <h1>Tiles</h1>
+                        <p>
+                            Tiles helps you create an equal-width column grid layout without the use of row wrappers. 
+                            Tiles is similar to the Features component, expect that Tiles’s items can wrap. 
+                            Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the 
+                            specified $column amount only is respected at the large breakpoint. Tiles will automatically 
+                            two-up your items at the medium breakpoint, and stack them at the small breakpoint.
+                        </p>
+                        <p>Emmet shorthand</p>
+                        <p>
+                            <pre><code>.tiles > .tiles</code></pre>
+                        </p>
+
+                        <p>Mixin usage</p>
+                        <p>
+                            <pre>
+                                <code>
+div {
+    @include tiles($gutter: 2rem, $columns: 4);
+}</code>
+                            </pre>
+                        </p>
+                   </div>
+                </section>
+                <section>
+                    <div class="container">
+
+
+                        <!-- Begin component -->
+
+                        <div class="tiles">
+                            <div class="tile">
+                                <h4>One Great Headline</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos et voluptatum aliquam neque beatae.</p>
+                            </div>
+                            <div class="tile">
+                                <h4>One Great Headline</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                            <div class="tile">
+                                <h4>One Great Headline</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos et voluptatum aliquam neque beatae tempora distinctio numquam iusto sed iure impedit Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                            <div class="tile">
+                                <h4>One Great Headline</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos et voluptatum aliquam neque beatae tempora distinctio numquam iusto sed iure impedit.</p>
+                            </div>
+                            <div class="tile">
+                                <h4>One Great Headline</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos et voluptatum aliquam neque beatae tempora distinctio numquam iusto sed iure impedit.</p>
+                            </div>
+                            <div class="tile">
+                                <h4>One Great Headline</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos et voluptatum aliquam neque beatae tempora distinctio numquam iusto sed iure impedit.</p>
+                            </div>
+                            <div class="tile">
+                                <h4>One Great Headline</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos et voluptatum aliquam neque beatae tempora distinctio numquam iusto sed iure impedit.</p>
+                            </div>
+                            <div class="tile">
+                                <h4>One Great Headline</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos et voluptatum aliquam neque beatae tempora distinctio numquam iusto sed iure impedit.</p>
+                            </div>
+                            <div class="tile">
+                                <h4>One Great Headline</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos et voluptatum aliquam neque beatae tempora distinctio numquam iusto sed iure impedit.</p>
+                            </div>
+                            <div class="tile">
+                                <h4>One Great Headline</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+                        </div>
+
+                        <!-- /end component-->
+
+
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    </body>
+</html>

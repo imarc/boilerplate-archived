@@ -153,6 +153,17 @@
  *
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
+/**
+ *  Tiles helps you create an equal-width column grid layout without the use of row wrappers. 
+ *  Tiles is similar to the Features component, expect that Tiles’s items can wrap. 
+ *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the 
+ *  specified $column amount only is respected at the large breakpoint. Tiles will automatically 
+ *  two-up your items at the medium breakpoint, and stack them at the small breakpoint.
+ *
+ *
+ * Emmet: .tiles>.tiles
+ *
+ **/
 /* = Variables = */
 /* Grays */
 /* The brand colors (name them the color) */
@@ -644,8 +655,14 @@ dd {
   padding-left: 2em;
 }
 
+pre {
+  background-color: #4A4A4A;
+  padding: 1em;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
 code {
-  background-color: #41322F;
   color: #FBCE78;
   font-family: "Consolas", monospace;
   padding: 2px 4px;
@@ -1529,6 +1546,43 @@ nav.primary li.mega {
   .tabs nav ul {
     margin-left: 20px;
     text-align: left;
+  }
+}
+
+.tiles > * {
+  background-color: #EEE;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  text-align: left;
+}
+
+.tiles > * p:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 669px) {
+  .tiles {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  .tiles > * {
+    -webkit-flex-basis: calc(50% - 2rem);
+            flex-basis: calc(50% - 2rem);
+    -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .tiles > * {
+    -webkit-flex-basis: calc((100% / 4) - (2rem));
+            flex-basis: calc((100% / 4) - (2rem));
   }
 }
 
