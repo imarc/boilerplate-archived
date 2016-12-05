@@ -149,7 +149,7 @@ $large: 1024px;
  *
  * Emmet: .dossiers>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
  */
-@mixin dossier($gutter: 2rem, $direction: row) {
+@mixin dossier($gutter: 2rem, $photoWidth: 25%, $direction: row) {
     > * {
         text-align: center;
         .photo {
@@ -164,7 +164,7 @@ $large: 1024px;
             margin-bottom: 4rem;
             text-align: left;
             .photo {
-                flex: 0 0 25%;
+                flex: 0 0 $photoWidth;
                 margin-bottom: 0;
                 margin-right: $gutter;
                 @if $direction == row-reverse {
