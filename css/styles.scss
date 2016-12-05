@@ -788,7 +788,7 @@ table {
 }
 
 .features {
-    @include features(3rem);
+    @include features($gutter: 3rem);
 }
 
 footer.primary {

@@ -248,7 +248,7 @@ $large: 1024px;
  *
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
-@mixin features($gutter) {
+@mixin features($gutter: 3rem) {
     > * {
         background-color: #EEE;
         margin-bottom: 2rem;
