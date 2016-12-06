@@ -1,0 +1,36 @@
+{
+  "name": "boilerplate",
+  "version": "1.0.0",
+  "description": "Responsive CSS, HTML and JavaScript front-end starting point.",
+  "author": "Imarc",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imarc/boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imarc/boilerplate/issues"
+  },
+  "homepage": "https://github.com/imarc/boilerplate#readme",
+  "private": true,
+
+  "scripts": {
+    "clean": "gulp clean",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "serve": "gulp serve"
+  },
+
+  "dependencies": {
+  },
+
+  "devDependencies": {
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-csscomb": "^3.0.8",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^2.2.0",
+    "node-sass": "^3.10.1"
+  }
+}

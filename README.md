@@ -1,18 +1,28 @@
 Boilerplate
 ===========
 
-We're currently developing a boilerplate for new sites. This is meant work
-as a lighter, customized variant of something like Bootstrap or the
-HTML5 Boilerplate, by focusing on our uses, aligning things with our semantics,
-and being willing to allow for slightly more variance between browsers.
+Imarc Boilerplate is a light, customizable front-end starter kit and component library.
 
-We're targeting IE11+, Chrome, Safari, and Firefox.
+Supported Browsers: IE11+, Chrome, Firefox, and Safari.
 
-Take a Look
------------
 * [See the Markup](http://imarc.github.io/boilerplate)
 * [See the Structure](http://imarc.github.io/boilerplate/structure)
 * [See the CSS](http://imarc.github.io/boilerplate/css/styles.css)
+
+Development
+-----------
+
+To get started working on boilerplate, you should have `node` and `npm` installed.
+
+    npm install
+    npm run serve
+
+This will watch all your files and run BrowserSync, both compiling SCSS and reloading your browser on any changes.
+After launching, view in your browser at [localhost:3000](http://localhost:3000).
+
+Occasionally, clean the SCSS file with CSSComb by running:
+
+    npm run clean
 
 Goals
 -----
@@ -50,7 +60,7 @@ meant to encourage great markup.
 
 Boilerplate is ready for the mobile world. Boilerplate was built to be 'mobile first' from the
 ground up. We have basic mobile, tablet, and desktop styling, as well as structure for media
-queries. 
+queries.
 
 
 At a Glance
@@ -65,63 +75,6 @@ font-sizes are **relative using em units**.
 * We default to **Helvetica Neue** with **Arial** as a backup for body text.
 
 * Our page defaults to a maximum of **1200 pixels wide**
-
-
-Our Stylesheet Sections
-=======================
-
-A Table of Contents
-------------------------
-We like our SCSS with a table of contents as we find this helps keep everything more organized.
-
-Variables
----------
-We use SASS for Boilerplate. Mostly, we use variables for identifying colors that repeat through
-the design, but other variables could exist as well. Typical variable sections might be:
-
-* **Brand colors** – what are the definitive colors used in the design based on client brand?
-* **Messaging colors** – these define colors used in form messaging (errors, success, information)
-* **Applied colors** Body copy, link colors, borders. Note that these can utilize brand colors;
-they may not be values.
-* **Social network colors** Often used in conjunction with fontawesome for social media callouts.
-* **Font stacks** Rather than repeating a stack, we can set this to a variable.
-
-
-
-Base
-----
-This is mostly our reset. Our reset is inspired by both the HTML5 Boilerplate reset as well as Eric
-Meyers reset, however we've tweaked it to only include elements we intend to use and restyle.
-
-### No * reset
-We only reset tags we know we're going to define new behavior for. Elements that we aren't going to
-define are excluded from our reset.
-
-### Border Box
-By default, we change elements to use the border-box box model. We prefer working with the
-border-box model, and since Boilerplate is an IE8+ project, we can safely include this. See [Paul
-Irish's article recommending this](http://www.paulirish.com/2012/box-sizing-border-box-ftw/) for
-more information.
-
-### Block Elements
-Some elements aren't defined as blocks in IE8/9 even though they should be.
-([normalize.css:8](https://github.com/necolas/normalize.css/blob/master/normalize.css#L8))
-
-### HTML
-Our default, web safe font stack looks for Helvetica Neue and Arial. Boilerplate is designed to look best with a base font size of 16px. All other font sizes are relative to this one size by using ems.
-
-The two `text-size-adjust` rules address an issue with iOS where text size is increased in when
-orientation changes. ([normalize.css:62](https://github.com/necolas/normalize.css/blob/master/normalize.css#L62))
-
-### BODY
-It's important to have a min-width specified on the body element so that Mobile Safari will infer
-the correct size to use for the viewport. ([Stack Overflow](http://stackoverflow.com/a/6697166),
-([Apple Documentation](https://developer.apple.com/library/safari/documentation/appleapplications/reference/safariwebcontent/usingtheviewport/usingtheviewport.html))
-
-### ::-moz-selection and ::selection
-Both need to be specified, separately, for these to work, as Firefox still requires the prefix and
-all other browsers will skip the selection as invalid for containing the vendor prefix. ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/::selection))
-
 
 Mixins
 ------

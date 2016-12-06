@@ -1,0 +1,12 @@
+version: '2'
+
+services:
+  gulp:
+    image: node:7
+    volumes:
+      - "./:/var/www"
+    working_dir: "/var/www"
+    ports:
+      - "3000:3000"
+      - "3001:3001"
+    command: "bash -c 'npm install -g yarn && yarn && npm run serve'"

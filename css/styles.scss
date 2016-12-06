@@ -65,6 +65,30 @@ $large: 1024px;
 
 
 /* = Mixins = */
+
+@mixin button {
+    background-color: $link;
+    color: #FFF;
+    display: inline-block;
+    font-family: $font-stack;
+    font-weight: bold;
+    padding: 0.4em 1em;
+    text-align: center;
+    vertical-align: top;
+
+    &:hover,
+    &:focus {
+        background-color: $link-hover;
+    }
+
+    &.disabled,
+    &[disabled] {
+        background-color: lighten($charcoal, 45%);
+        color: darken(#FFF, 20%);
+        pointer-events: none;
+    }
+}
+
 @mixin container {
     margin-left: auto;
     margin-right: auto;
@@ -75,7 +99,8 @@ $large: 1024px;
 }
 
 @mixin grouping {
-    &::before, &::after {
+    &::before,
+    &::after {
         content: "";
         display: table;
     }
@@ -84,10 +109,10 @@ $large: 1024px;
     }
 }
 
-@mixin fontawesome($character:"") {
+@mixin fontawesome($character: "") {
     font: normal normal normal 1em unquote("/") 1 FontAwesome;
-    -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     speak: none;
     text-rendering: auto;
     text-transform: none;
@@ -197,6 +222,14 @@ img {
     vertical-align: middle;
 }
 
+::selection {
+    background: $border;
+}
+
+::-moz-selection {
+    background: $border;
+}
+
 
 /* = Layout = */
 .group {
@@ -220,10 +253,16 @@ img {
     padding-top: 65px;
 }
 
+.sr-only {
+    @include visuallyhidden;
+}
+
 header.primary {
     background-color: $charcoal;
-    padding-bottom: 1rem;
     padding-top: 1rem;
+    .container {
+        position: static;
+    }
 }
 
 .branding {
@@ -248,22 +287,19 @@ nav {
         display: block;
         padding: 0 0.5rem;
     }
-    li.active,
-    li:hover {
-        a {
-            color: lighten($charcoal, 55%);
-        }
-    }
 }
 
 nav.primary {
     margin-bottom: 0.7rem;
-    ul {
+    > ul {
         li {
             margin-bottom: 0;
         }
-        .dropdown {
-            display: none;
+        li.active,
+        li:hover {
+            > a {
+                color: lighten($charcoal, 55%);
+            }
         }
     }
 }
@@ -321,8 +357,8 @@ nav.utility {
 }
 
 form.search {
-    display: flex;
     display: -webkit-flex;
+    display: flex;
     .text,
     .submit {
         margin-bottom: 0;
@@ -348,8 +384,8 @@ form.search {
 
 .hero {
     background: $plain-text url(../img/hero.jpg) no-repeat center top / cover;
-    display: flex;
     display: -webkit-flex;
+    display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     height: 240px;
@@ -431,6 +467,7 @@ footer.primary {
 
 .social {
     @include no-bullets;
+
     margin-bottom: 1rem;
     li {
         display: inline-block;
@@ -500,6 +537,15 @@ blockquote {
     }
 }
 
+.guide {
+    color: $meta-text;
+    font-size: 1.25rem;
+}
+
+.meta {
+    color: $meta-text;
+}
+
 hr {
     border: 0;
     border-top: 1px solid $meta-text;
@@ -509,9 +555,11 @@ hr {
     width: 100%;
 }
 
-a {
+@mixin link {
     color: $link;
+    cursor: pointer;
     text-decoration: none;
+
     &:hover,
     &:active {
         color: $link-hover;
@@ -519,6 +567,16 @@ a {
     &:focus {
         outline: thin dotted;
     }
+
+    &.disabled,
+    &[disabled] {
+        color: darken(#FFF, 20%);
+        cursor: default;
+        pointer-events: none;
+    }
+}
+a {
+    @include link;
 }
 
 p,
@@ -551,10 +609,16 @@ dd {
     padding-left: 2em;
 }
 
+pre {
+    background-color: #4A4A4A;
+    padding: 1em;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
 code {
-    background-color: #41322F;
     color: #FBCE78;
-    font-family: 'Consolas', monospace;
+    font-family: "Consolas", monospace;
     padding: 2px 4px;
 }
 
@@ -614,10 +678,10 @@ input[type="url"],
 input[type="week"],
 textarea {
     border: 1px solid $border;
+    box-sizing: border-box;
     color: $plain-text;
     display: block;
     font-family: $font-stack;
-    font-size: 0.9rem;
     margin: 0;
     padding: 0.4em 0.6em;
     width: 100%;
@@ -658,53 +722,33 @@ input[type="radio"] {
 }
 
 a.button {
-    background-color: $link;
-    color: #FFF;
-    display: inline-block;
-    font-weight: bold;
-    padding: 0.6em 1em;
-
-    &:hover,
-    &:focus {
-        background-color: $link-hover;
-    }
+    @include button;
+    margin-bottom: 0;
 }
 
-button,
-input[type="reset"],
-input[type="submit"] {
-    background-color: lighten($charcoal, 35%);
+button:not(.link),
+input[type="button"]:not(.link),
+input[type="reset"]:not(.link),
+input[type="submit"]:not(.link) {
+    @include button;
     border: none;
-    color: #FFF;
     cursor: pointer;
-    display: inline-block;
-    font-family: $font-stack;
-    font-size: 0.9rem;
-    padding: 0.4em 0.6em;
-    text-align: center;
-
-    &:hover {
-        background-color: lighten($charcoal, 30%);
-        border-color: $link;
-        cursor: pointer;
-    }
-    &:focus {
-        background-color: lighten($charcoal, 30%);
-    }
 }
 
-button.disabled,
-input[type="reset"][disabled],
-input[type="submit"][disabled] {
-    background-color: lighten($charcoal, 45%);
-    color: darken(#FFF, 20%);
-    cursor: default;
+button.link,
+input[type=button].link,
+input[type="button"].link,
+input[type="reset"].link,
+input[type="submit"].link {
+    @include link;
+    background: transparent;
 }
 
 
 /* = Iconography = */
 .thumbs-up::before {
     @include fontawesome("\f087");
+
     margin-right: 0.5em;
 }
 
@@ -782,24 +826,52 @@ table {
 
 /* Section Specific */
 
+
 /* Page Specific */
 
-/* Components */
 
+/* Components */
 .backgroundvideo {
     @include backgroundvideo();
 }
 
 .features {
-    @include features(1.5rem);
+    @include features($gutter: 3rem);
+}
+
+footer.primary {
+    @include footer();
 }
 
 header.primary {
-    @include sticky-header;
+    @include sticky-header();
+}
+
+.listing.search {
+    @include search-listing();
+}
+
+nav.pagination {
+    @include pagination();
+}
+
+.login {
+    @include login;
+}
+
+nav.primary {
+    @include dropdown();
+    li.mega {
+        @include dropdown-mega();
+    }
 }
 
 .tabs {
     @include tabs();
+}
+
+.tiles {
+    @include tiles();
 }
 
 /* = Media Queries = */
@@ -839,6 +911,7 @@ header.primary {
         > ul > li {
             font-size: 1.3rem;
             margin-left: 1rem;
+            padding-bottom: 1rem;
             position: relative;
         }
         > ul > li:first-child {
@@ -849,26 +922,6 @@ header.primary {
             li li {
                 display: block;
                 float: none;
-            }
-            .dropdown {
-                background-color: $plain-text;
-                left: 0;
-                min-width: 180px;
-                position: absolute;
-                z-index: 2;
-            }
-            li:hover .dropdown {
-                display: block;
-            }
-            .dropdown li {
-                font-size: 0.9rem;
-            }
-            .dropdown li a {
-                color: #FFF;
-                padding: 0.3rem 0.8rem;
-            }
-            .dropdown li a:hover {
-                background-color: lighten($plain-text, 10%);
             }
         }
     }

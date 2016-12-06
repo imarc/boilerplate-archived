@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dropdown (simple) Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+    </head>
+    <body>
+
+        <header class="primary">
+            <div class="container">
+                <div class="branding">
+                    <a href="https://github.com/imarc/boilerplate">
+                        <img src="../img/logo-boilerplate.png" alt="Imarc Boilerplate">
+                    </a>
+                </div>
+                <div class="wrapper">
+                    <nav aria-label="Primary Navigation" class="primary">
+                        <ul>
+                            <li>
+                                <a href="">Maine</a> 
+                            </li>
+                            <li>
+                                <a href="">Markup <i class="fa fa-caret-down" aria-hidden="true"></i></a> 
+
+                                <!-- Begin component -->
+
+                                <div class="dropdown">
+                                    <div class="menu">
+                                        <div>
+                                            <ul>
+                                                <li>
+                                                    <a href="">Hello World</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">Lorem Ipsum Amat</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">HTML is on version 5</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+          
+                                <!-- /end component-->
+
+
+                            </li>
+                            <li>
+                                <a href="">New Hampshire</a>
+                            </li>
+                            <li>
+                                <a href="">Vermont</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="utilities">
+                        <nav aria-label="Utility Navigation" class="utility">
+                            <ul>
+                                <li><a href="">Careers</a></li>
+                                <li><a href="">Legal</a></li>
+                                <li><a href="">Log In</a></li>
+                            </ul>
+                        </nav>
+                        <form class="search" method="post">
+                            <div class="text">
+                                <label for="search">Search the website</label>
+                                <input id="search" placeholder="Search the website" type="text" />
+                            </div>
+                            <div class="submit">
+                                <input type="submit" value="Search" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="torso">
+            <main>
+               <section class="intro">
+                   <div class="container">
+                        <h1>Dropdown (simple)</h1>
+                        <p>
+                            The Dropdown (simple) component.
+                        </p>
+                   </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <p>
+                            Mouseover the primary navigation’s first menu item to see the dropdown.
+                        </p>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script src="../js/dropdown.plugin.js"></script>
+        <script>
+            $(function() {
+                $('nav.primary').dropdown();
+            });
+        </script>
+    </body>
+</html>
