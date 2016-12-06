@@ -34,6 +34,17 @@
  * Media query breakpoints
  */
 /**
+*
+* This component requires the accordion.plugin.js file. Within the .accordion
+* class each accordion item requires a div wrapper. Within the div wrapper
+* there is a .header class and a .content class. The .header class is the
+* clickable element that will reveal what is hidden in the .content class.
+* By default .content is hidden by javascript just in case javascript is not available.
+*
+* Emmet: .accordion>div>(.header{header}+.content>{lorem ipsum})
+*
+*/
+/**
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
@@ -98,8 +109,8 @@
  */
 /**
  * DROPDOWN (mega)
- * The DROPDOWN (mega) mixin allows for full-width mega dropdown 
- * menus. Call this mixin on a list item rather than nav.primary. 
+ * The DROPDOWN (mega) mixin allows for full-width mega dropdown
+ * menus. Call this mixin on a list item rather than nav.primary.
  * The menu is positioned to header.primary instead of its parent
  * list item.
  *
@@ -113,8 +124,8 @@
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo, 
- * copyright, simple navigation (as opposed to a "super footer"), legal links, 
+ * The FOOTER mixin is a basic implementation of a footer with the company logo,
+ * copyright, simple navigation (as opposed to a "super footer"), legal links,
  * social icons, and contact information.
  *
  * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
@@ -154,10 +165,10 @@
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
 /**
- *  Tiles helps you create an equal-width column grid layout without the use of row wrappers. 
- *  Tiles is similar to the Features component, expect that Tiles’s items can wrap. 
- *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the 
- *  specified $column amount only is respected at the large breakpoint. Tiles will automatically 
+ *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.
+ *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
+ *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the
+ *  specified $column amount only is respected at the large breakpoint. Tiles will automatically
  *  two-up your items at the medium breakpoint, and stack them at the small breakpoint.
  *
  *
@@ -1584,6 +1595,64 @@ nav.primary li.mega {
     -webkit-flex-basis: calc((100% / 4) - (2rem));
             flex-basis: calc((100% / 4) - (2rem));
   }
+}
+
+.accordions > div .header {
+  background: #DDD;
+  color: #191919;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: .5em;
+  padding: .5em 1em;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.accordions > div .header:hover {
+  background: #d0d0d0;
+}
+
+.accordions > div .header::after {
+  bottom: 0;
+  height: 1em;
+  margin: auto 0;
+  position: absolute;
+  right: 1em;
+  top: 0;
+  width: 1em;
+}
+
+.accordions > div .header.open {
+  background: #d0d0d0;
+}
+
+.accordions > div .header.open::after {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+}
+
+.accordions > div .header.close::after {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+}
+
+.accordions > div .content {
+  padding: 1em 0;
+}
+
+.accordions > div .content.hidden {
+  display: none;
 }
 
 /* = Media Queries = */
