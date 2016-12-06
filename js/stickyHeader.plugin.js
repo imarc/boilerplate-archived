@@ -1,6 +1,5 @@
 (function ($) {
     var $window = $(window);
-
     $.fn.stickyHeader = function (options) {
         var plugin = this;
         var $body = $('body');
@@ -63,7 +62,7 @@
             };
 
             $window.resize(function(){
-                var height   = $(this).outerHeight();
+                var height   = $header.outerHeight();
                 hasScrolled();
                 $body.css('padding-top', height);
             });

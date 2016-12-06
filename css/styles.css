@@ -1,117 +1,169 @@
 @charset "UTF-8";
 /**
-* Built using Imarc Boilerplate v2.1
-*
-* Copyright 2016 Imarc
-* Licensed under the Apache License v2.0
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* = Table of Contents =
-* Variables
-* Mixins
-* Base
-* Layout
-* Typography
-* Forms
-* Iconography
-* Messaging
-* Tables
-* Section Specific
-* Page Specific
-* Components
-* Media Queries
-* Print Styles
-*/
+ * Built using Imarc Boilerplate v2.1
+ *
+ * Copyright 2016 Imarc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * = Table of Contents =
+ * Variables
+ * Mixins
+ * Base
+ * Layout
+ * Typography
+ * Forms
+ * Iconography
+ * Messaging
+ * Tables
+ * Section Specific
+ * Page Specific
+ * Components
+ * Media Queries
+ * Print Styles
+ */
 /**
-* _components.scss contains solely the mixin definitions for components.
-*
-* + This file should not depend on styles.scss; we should be able to use
-*   include this file without including styles.scss.
-* + This file should not generate any CSS on it's own; it should only contain
-*   mixin and/or function definitions.
-*/
+ * _components.scss contains solely the mixin definitions for components.
+ *
+ * + This file should not depend on styles.scss; we should be able to use
+ *   include this file without including styles.scss.
+ * + This file should not generate any CSS on it's own; it should only contain
+ *   mixin and/or function definitions.
+ */
 /**
-* Media query breakpoints
-*/
+ * Media query breakpoints
+ */
 /**
-* BACKGROUND VIDEO plays a video (without sound) in the background of an element.
-* Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
-*/
+ * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
+ * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
+ */
 /**
-* CAROUSEL uses Slick to create a carousel. It defaults to a rather
-* basic, one-slide-at-a-time implementation with dots, but slick supports a
-* good deal of configuration including showing multiple slides, breakpoints,
-* syncing between slides, and plenty of javascript events and methods for
-* integration.
-*
-* The implementation on Boilerplate is using a CDN to provide
-*
-* + slick.css
-* + slick-theme.css
-* + slick.min.js
-*
-* See http://kenwheeler.github.io/slick/ for more information.
-*
-* The carousel() mixin should be included on a parent element that contains
-* one div per slide. No additional classes are necessary – the slick classes
-* referenced are added dynamically by slick.
-*
-* <div class="carousel">
-*     <div>
-*         <h2>A slide!</h2>
-*         <p>Some text.</p>
-*     </div>
-* </div>
-*
-* Emmet: .carousel>div*3>h2+p
-*
-* While there's more information in slick's documentation, .slick-slide wraps
-* slides while .slick-next and .slick-prev are used for the next/previous
-* arrows.
-*/
+ * CAROUSEL uses Slick to create a carousel. It defaults to a rather
+ * basic, one-slide-at-a-time implementation with dots, but slick supports a
+ * good deal of configuration including showing multiple slides, breakpoints,
+ * syncing between slides, and plenty of javascript events and methods for
+ * integration.
+ *
+ * The implementation on Boilerplate is using a CDN to provide
+ *
+ * + slick.css
+ * + slick-theme.css
+ * + slick.min.js
+ *
+ * See http://kenwheeler.github.io/slick/ for more information.
+ *
+ * The carousel() mixin should be included on a parent element that contains
+ * one div per slide. No additional classes are necessary – the slick classes
+ * referenced are added dynamically by slick.
+ *
+ * <div class="carousel">
+ *     <div>
+ *         <h2>A slide!</h2>
+ *         <p>Some text.</p>
+ *     </div>
+ * </div>
+ *
+ * Emmet: .carousel>div*3>h2+p
+ *
+ * While there's more information in slick's documentation, .slick-slide wraps
+ * slides while .slick-next and .slick-prev are used for the next/previous
+ * arrows.
+ */
 /**
-* The COLUMNS mixin makes it so that immmediate child elements appear as
-* columns. It is responsive, allowing you to specify the media query at which
-* to switch the layout from stacking to columns.
-*
-* Additionally, it assumes the use of <hr> elements to create visual gutters
-* that are only visible while displayed as columns.
-*
-* <div class="columns">
-*     <div>
-*         <h2>A column</h2>
-*     </div>
-*     <hr />
-*     <div>
-*         <h2>Another column</h2>
-*     </div>
-* </div>
-*
-* Emmet: .columns>div+(hr+div)*2
-*/
+ * The COLUMNS mixin makes it so that immmediate child elements appear as
+ * columns. It is responsive, allowing you to specify the media query at which
+ * to switch the layout from stacking to columns.
+ *
+ * Additionally, it assumes the use of <hr> elements to create visual gutters
+ * that are only visible while displayed as columns.
+ *
+ * <div class="columns">
+ *     <div>
+ *         <h2>A column</h2>
+ *     </div>
+ *     <hr />
+ *     <div>
+ *         <h2>Another column</h2>
+ *     </div>
+ * </div>
+ *
+ * Emmet: .columns>div+(hr+div)*2
+ */
 /**
-* The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
-* header as you scroll down, and show it as you scroll back up. This is
-* responsive as the "top" value is dynamically set in the
-* js based on the height of the header. Top padding is also added
-* to the body dynamically via js so that the header doesn't overlap any
-* content.
-*
-* Emmet: header.primary
-*
-**/
+ * DROPDOWN
+ * The DROPDOWN mixin allows for dropdown menus. By default, a single
+ * column dropdown is used. It is positioned to its parent.
+ *
+ * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu>ul>li>(a{link name})*3
+ */
 /**
-* FEATURES house three features in one row. Powered by flexbox,
-* this allows for a bottom alignment of each feature’s anchor. Use the
-* <code>$gutter</code> variable to pass you preferred gutter width.
-*
-* Emmet: .features>(div>(.icon>img)+h4+p+a)*3
-*/
+ * DROPDOWN (mega)
+ * The DROPDOWN (mega) mixin allows for full-width mega dropdown
+ * menus. Call this mixin on a list item rather than nav.primary.
+ * The menu is positioned to header.primary instead of its parent
+ * list item.
+ *
+ * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
+ */
 /**
-* TABS
-*
-* Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
-*/
+ * FEATURES house three features in one row. Powered by flexbox,
+ * this allows for a bottom alignment of each feature’s anchor. Use the
+ * <code>$gutter</code> variable to pass you preferred gutter width.
+ *
+ * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
+ */
+/**
+ * The FOOTER mixin is a basic implementation of a footer with the company logo,
+ * copyright, simple navigation (as opposed to a "super footer"), legal links,
+ * social icons, and contact information.
+ *
+ * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
+ */
+/**
+ * The LOGIN mixin is a basic implementation of a login module that includes a
+ * username input, password input, submit button, forgot password link, and
+ * remember me checkbox
+ *
+ * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
+ */
+/**
+ * PAGINATION
+ *
+ * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
+ */
+/**
+ * SEARCH LISTING shows a simple input/submit form along with a search
+ * result listing.
+ *
+ * Emmet: ..
+ */
+/**
+ * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
+ * header as you scroll down, and show it as you scroll back up. This is
+ * responsive as the "top" value is dynamically set in the
+ * js based on the height of the header. Top padding is also added
+ * to the body dynamically via js so that the header doesn't overlap any
+ * content.
+ *
+ * Emmet: header.primary
+ *
+ **/
+/**
+ * TABS
+ *
+ * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
+ */
+/**
+ *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.
+ *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
+ *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the
+ *  specified $column amount only is respected at the large breakpoint. Tiles will automatically
+ *  two-up your items at the medium breakpoint, and stack them at the small breakpoint.
+ *
+ *
+ * Emmet: .tiles>.tiles
+ *
+ **/
 /**
 *
 * This component requires the accordion.plugin.js file. Within the .accordions class each accordion item requires a div
@@ -242,10 +294,24 @@ img {
   right: 2rem;
 }
 
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 header.primary {
   background-color: #191919;
-  padding-bottom: 1rem;
   padding-top: 1rem;
+}
+
+header.primary .container {
+  position: static;
 }
 
 .branding {
@@ -288,21 +354,17 @@ nav a {
   padding: 0 0.5rem;
 }
 
-nav li.active a,
-nav li:hover a {
-  color: #a5a5a5;
-}
-
 nav.primary {
   margin-bottom: 0.7rem;
 }
 
-nav.primary ul li {
+nav.primary > ul li {
   margin-bottom: 0;
 }
 
-nav.primary ul .dropdown {
-  display: none;
+nav.primary > ul li.active > a,
+nav.primary > ul li:hover > a {
+  color: #a5a5a5;
 }
 
 nav.utility {
@@ -314,8 +376,8 @@ nav.utility a {
 }
 
 form.search {
-  display: flex;
   display: -webkit-flex;
+  display: flex;
 }
 
 form.search .text,
@@ -359,8 +421,8 @@ form.search input {
 
 .hero {
   background: #191919 url(../img/hero.jpg) no-repeat center top/cover;
-  display: flex;
   display: -webkit-flex;
+  display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
   height: 240px;
@@ -531,6 +593,15 @@ blockquote::after {
   margin-bottom: 0.8em;
 }
 
+.guide {
+  color: #727272;
+  font-size: 1.25rem;
+}
+
+.meta {
+  color: #727272;
+}
+
 hr {
   border: 0;
   border-top: 1px solid #727272;
@@ -595,23 +666,16 @@ dd {
 }
 
 pre {
-  white-space: pre-wrap;
-  word-wrap: break-word;
   background-color: #4A4A4A;
   padding: 1em;
-}
-
-pre > code {
-  background-color: none;
-  padding: 0;
+  white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 code {
-  padding: .25em .5em;
-  background-color: #4A4A4A;
-  font-size: 16px;
-  color: #ffffff;
+  color: #FBCE78;
   font-family: "Consolas", monospace;
+  padding: 2px 4px;
 }
 
 /* = Forms = */
@@ -669,10 +733,10 @@ input[type="url"],
 input[type="week"],
 textarea {
   border: 1px solid #e5e5e5;
+  box-sizing: border-box;
   color: #191919;
   display: block;
   font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 0.9rem;
   margin: 0;
   padding: 0.4em 0.6em;
   width: 100%;
@@ -721,7 +785,7 @@ a.button {
   display: inline-block;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
-  padding: 0.6em 1em;
+  padding: 0.4em 1em;
   text-align: center;
   vertical-align: top;
   margin-bottom: 0;
@@ -746,7 +810,7 @@ input[type="submit"]:not(.link) {
   display: inline-block;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
-  padding: 0.6em 1em;
+  padding: 0.4em 1em;
   text-align: center;
   vertical-align: top;
   border: none;
@@ -823,8 +887,8 @@ input[type="submit"].link[disabled] {
 /* = Iconography = */
 .thumbs-up::before {
   font: normal normal normal 1em / 1 FontAwesome;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
@@ -851,8 +915,8 @@ input[type="submit"].link[disabled] {
 
 .success::before {
   font: normal normal normal 1em / 1 FontAwesome;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
@@ -897,8 +961,8 @@ input[type="submit"].link[disabled] {
 
 .info::before {
   font: normal normal normal 1em / 1 FontAwesome;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
@@ -935,8 +999,8 @@ input[type="submit"].link[disabled] {
 
 .error::before {
   font: normal normal normal 1em / 1 FontAwesome;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
@@ -1006,6 +1070,7 @@ table tr:nth-child(even) td {
           align-items: center;
   display: -webkit-flex;
   display: flex;
+  height: auto;
   -webkit-justify-content: center;
           justify-content: center;
   overflow: hidden;
@@ -1056,8 +1121,8 @@ table tr:nth-child(even) td {
   .features {
     display: -webkit-flex;
     display: flex;
-    -webkit-flex-flow: row wrap;
-            flex-flow: row wrap;
+    -webkit-flex-flow: row nowrap;
+            flex-flow: row nowrap;
     -webkit-justify-content: space-between;
             justify-content: space-between;
   }
@@ -1068,8 +1133,8 @@ table tr:nth-child(even) td {
             flex: 1 0 0;
     -webkit-flex-direction: column;
             flex-direction: column;
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
+    margin-left: 3rem;
+    margin-right: 0;
   }
   .features > * .button {
     -webkit-align-self: center;
@@ -1077,14 +1142,362 @@ table tr:nth-child(even) td {
             align-self: center;
     margin-top: auto;
   }
+  .features > *:first-child {
+    margin-left: 0;
+  }
+}
+
+footer.primary {
+  background-color: #191919;
+  color: #FFF;
+  font-size: 0.9rem;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+footer.primary .branding {
+  float: none;
+  margin-top: 0;
+}
+
+footer.primary .branding a {
+  margin-bottom: 1rem;
+}
+
+footer.primary a {
+  color: #0C96DD;
+}
+
+footer.primary a:hover {
+  color: #0975ad;
+}
+
+footer.primary nav ul {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+footer.primary .social a {
+  color: #FFF;
+  font-size: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+footer.primary .legal {
+  text-align: center;
+}
+
+footer.primary .legal p {
+  margin-bottom: 0.25rem;
+}
+
+footer.primary .legal a {
+  margin-left: 0.35rem;
+  margin-right: 0.35rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  footer.primary .container > div {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+  }
+  footer.primary .container > div > * {
+    -webkit-flex: 1 0 0;
+            flex: 1 0 0;
+  }
+  footer.primary .container > div > nav {
+    -webkit-flex-grow: 2;
+            flex-grow: 2;
+    margin-bottom: 0;
+  }
+  footer.primary .branding {
+    text-align: left;
+  }
+  footer.primary .social {
+    text-align: right;
+  }
 }
 
 header.primary {
   position: fixed;
   top: 0;
-  transition: top 0.2s ease-in-out;
+  transition: top 0.16s cubic-bezier(0, 0.4, 0.7, 1);
   width: 100%;
   z-index: 100;
+}
+
+.listing.search form {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.listing.search form label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.listing.search form .text {
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+}
+
+.listing.search form .submit {
+  -webkit-flex-basis: 120px;
+          flex-basis: 120px;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+}
+
+.listing.search form .submit input {
+  height: 100%;
+  width: 100%;
+}
+
+.listing.search ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listing.search ul li {
+  border-top: 4px solid #e5e5e5;
+  margin-bottom: 0;
+  padding: 2rem 0;
+}
+
+.listing.search ul li .meta {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 1em;
+}
+
+.listing.search ul li h2 + .meta {
+  margin-top: -1em;
+}
+
+.listing.search ul li .summary p:last-of-type {
+  margin-bottom: 0;
+}
+
+nav.pagination {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+nav.pagination ul {
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+
+nav.pagination li {
+  margin-bottom: 0;
+}
+
+nav.pagination a {
+  color: #0C96DD;
+  padding: 0.5rem 1rem;
+  position: relative;
+}
+
+nav.pagination li:not(:last-child) a {
+  border-right: 1px solid #e5e5e5;
+}
+
+nav.pagination li.active a {
+  background-color: #0C96DD;
+  color: #fff;
+  cursor: default;
+  pointer-events: none;
+}
+
+nav.pagination li.active a::before, nav.pagination li.active a::after {
+  background-color: #0C96DD;
+}
+
+nav.pagination li.active a:hover {
+  color: #fff;
+  background-color: #EB7424;
+}
+
+nav.pagination li.active a:hover::before, nav.pagination li.active a:hover::after {
+  background-color: #EB7424;
+}
+
+nav.pagination li.disabled a {
+  color: #e5e5e5;
+  cursor: default;
+  pointer-events: none;
+}
+
+nav.pagination li.previous a::before {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+}
+
+nav.pagination li.next a::before {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+}
+
+nav.pagination li:hover:not(.active):not(.disabled) a {
+  background-color: #0C96DD;
+  color: #FFF;
+}
+
+nav.pagination li:hover:not(.active):not(.disabled) a::before {
+  background-color: #0C96DD;
+  color: #FFF;
+}
+
+.login {
+  background: #EEE;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  padding: 3rem;
+}
+
+.login input:focus {
+  box-shadow: 0 0 5px rgba(114, 164, 0, 0.7);
+}
+
+.login .submit {
+  text-align: center;
+}
+
+.login .actions {
+  text-align: center;
+}
+
+@media only screen and (min-width: 669px) {
+  .login .actions {
+    -webkit-align-items: center;
+            align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .login .actions > * {
+    margin: 0;
+    padding: 0;
+  }
+  .login .actions label {
+    margin-left: 1em;
+  }
+  .login .actions a {
+    display: block;
+    margin-left: auto;
+    text-align: right;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  nav.primary .dropdown,
+  nav.primary i.fa {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  nav.primary i.fa {
+    display: inline-block;
+  }
+  nav.primary .dropdown {
+    background-color: #2A2A2A;
+    color: #FFF;
+    display: block;
+    font-size: 1rem;
+    min-width: 260px;
+    opacity: 0;
+    padding: 2rem 0;
+    position: absolute;
+    top: 100%;
+    transition: opacity 300ms;
+    visibility: hidden;
+    z-index: 1;
+  }
+  nav.primary .dropdown .menu > * {
+    padding: 0 1rem;
+  }
+  nav.primary .dropdown .menu li {
+    margin-bottom: 0.4em;
+  }
+  nav.primary .dropdown .menu a {
+    color: #0C96DD;
+  }
+  nav.primary .dropdown .menu a:hover,
+  nav.primary .dropdown .menu a:focus {
+    color: #0975ad;
+  }
+  nav.primary .dropdown.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+nav.primary li.mega {
+  position: static;
+}
+
+@media only screen and (min-width: 1024px) {
+  nav.primary li.mega .dropdown {
+    left: 0;
+    top: 100%;
+    width: 100%;
+  }
+  nav.primary li.mega .dropdown .menu {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1168px;
+  }
+  nav.primary li.mega .dropdown .menu > * {
+    border-left: 1px solid #777;
+    -webkit-flex-basis: 0;
+            flex-basis: 0;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
+    padding: 0 3rem;
+  }
+  nav.primary li.mega .dropdown .menu > *:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+  nav.primary li.mega .dropdown .menu > *:last-child {
+    padding-right: 0;
+  }
 }
 
 .tabs {
@@ -1146,6 +1559,43 @@ header.primary {
   }
 }
 
+.tiles > * {
+  background-color: #EEE;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  text-align: left;
+}
+
+.tiles > * p:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 669px) {
+  .tiles {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+    margin-left: -1rem;
+    margin-right: -1rem;
+  }
+  .tiles > * {
+    -webkit-flex-basis: calc(50% - 2rem);
+            flex-basis: calc(50% - 2rem);
+    -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .tiles > * {
+    -webkit-flex-basis: calc((100% / 4) - (2rem));
+            flex-basis: calc((100% / 4) - (2rem));
+  }
+}
+
 .accordions > div .header {
   background: #DDD;
   color: #191919;
@@ -1178,8 +1628,8 @@ header.primary {
 
 .accordions > div .header.open::after {
   font: normal normal normal 1em / 1 FontAwesome;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
@@ -1188,8 +1638,8 @@ header.primary {
 
 .accordions > div .header.close::after {
   font: normal normal normal 1em / 1 FontAwesome;
-  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
@@ -1245,6 +1695,7 @@ header.primary {
   nav.primary > ul > li {
     font-size: 1.3rem;
     margin-left: 1rem;
+    padding-bottom: 1rem;
     position: relative;
   }
   nav.primary > ul > li:first-child {
@@ -1256,26 +1707,6 @@ header.primary {
   nav.primary ul li li {
     display: block;
     float: none;
-  }
-  nav.primary ul .dropdown {
-    background-color: #191919;
-    left: 0;
-    min-width: 180px;
-    position: absolute;
-    z-index: 2;
-  }
-  nav.primary ul li:hover .dropdown {
-    display: block;
-  }
-  nav.primary ul .dropdown li {
-    font-size: 0.9rem;
-  }
-  nav.primary ul .dropdown li a {
-    color: #FFF;
-    padding: 0.3rem 0.8rem;
-  }
-  nav.primary ul .dropdown li a:hover {
-    background-color: #333333;
   }
   .utilities {
     float: right;

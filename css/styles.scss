@@ -1,38 +1,40 @@
-/**
-* Built using Imarc Boilerplate v2.1
-*
-* Copyright 2016 Imarc
-* Licensed under the Apache License v2.0
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* = Table of Contents =
-* Variables
-* Mixins
-* Base
-* Layout
-* Typography
-* Forms
-* Iconography
-* Messaging
-* Tables
-* Section Specific
-* Page Specific
-* Components
-* Media Queries
-* Print Styles
-*/
+ /**
+ * Built using Imarc Boilerplate v2.1
+ *
+ * Copyright 2016 Imarc
+ * Licensed under the Apache License v2.0
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * = Table of Contents =
+ * Variables
+ * Mixins
+ * Base
+ * Layout
+ * Typography
+ * Forms
+ * Iconography
+ * Messaging
+ * Tables
+ * Section Specific
+ * Page Specific
+ * Components
+ * Media Queries
+ * Print Styles
+ */
+
 @import "_components";
 
 /* = Variables = */
 $font-stack: "Helvetica Neue", Arial, sans-serif;
 
+
 /* Grays */
-$white: #FFF;
+$white:     #FFF;
 $lightgray: #DDD;
-$gray: #808080;
-$darkgray: #4A4A4A;
-$charcoal: #191919;
-$black: #000;
+$gray:      #808080;
+$darkgray:  #4A4A4A;
+$charcoal:  #191919;
+$black:     #000;
 
 /* The brand colors (name them the color) */
 $brand-blue: #0C96DD;
@@ -61,7 +63,32 @@ $youtube: #CD201F;
 $medium: 669px;
 $large: 1024px;
 
+
 /* = Mixins = */
+
+@mixin button {
+    background-color: $link;
+    color: #FFF;
+    display: inline-block;
+    font-family: $font-stack;
+    font-weight: bold;
+    padding: 0.4em 1em;
+    text-align: center;
+    vertical-align: top;
+
+    &:hover,
+    &:focus {
+        background-color: $link-hover;
+    }
+
+    &.disabled,
+    &[disabled] {
+        background-color: lighten($charcoal, 45%);
+        color: darken(#FFF, 20%);
+        pointer-events: none;
+    }
+}
+
 @mixin container {
     margin-left: auto;
     margin-right: auto;
@@ -72,7 +99,8 @@ $large: 1024px;
 }
 
 @mixin grouping {
-    &::before, &::after {
+    &::before,
+    &::after {
         content: "";
         display: table;
     }
@@ -81,10 +109,10 @@ $large: 1024px;
     }
 }
 
-@mixin fontawesome($character:"") {
+@mixin fontawesome($character: "") {
     font: normal normal normal 1em unquote("/") 1 FontAwesome;
-    -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     speak: none;
     text-rendering: auto;
     text-transform: none;
@@ -152,6 +180,7 @@ $large: 1024px;
     width: 1px;
 }
 
+
 /* = Base = */
 /* Not Included:
  *   - bi-directional elements: bdi, bdo
@@ -193,7 +222,6 @@ img {
     vertical-align: middle;
 }
 
-
 ::selection {
     background: $border;
 }
@@ -201,6 +229,7 @@ img {
 ::-moz-selection {
     background: $border;
 }
+
 
 /* = Layout = */
 .group {
@@ -219,10 +248,16 @@ img {
     @include carousel;
 }
 
+.sr-only {
+    @include visuallyhidden;
+}
+
 header.primary {
     background-color: $charcoal;
-    padding-bottom: 1rem;
     padding-top: 1rem;
+    .container {
+        position: static;
+    }
 }
 
 .branding {
@@ -249,22 +284,19 @@ nav {
         display: block;
         padding: 0 0.5rem;
     }
-    li.active,
-    li:hover {
-        a {
-            color: lighten($charcoal, 55%);
-        }
-    }
 }
 
 nav.primary {
     margin-bottom: 0.7rem;
-    ul {
+    > ul {
         li {
             margin-bottom: 0;
         }
-        .dropdown {
-            display: none;
+        li.active,
+        li:hover {
+            > a {
+                color: lighten($charcoal, 55%);
+            }
         }
     }
 }
@@ -277,8 +309,8 @@ nav.utility {
 }
 
 form.search {
-    display: flex;
     display: -webkit-flex;
+    display: flex;
     .text,
     .submit {
         margin-bottom: 0;
@@ -304,8 +336,8 @@ form.search {
 
 .hero {
     background: $plain-text url(../img/hero.jpg) no-repeat center top / cover;
-    display: flex;
     display: -webkit-flex;
+    display: flex;
     -webkit-flex-direction: column;
     flex-direction: column;
     height: 240px;
@@ -387,6 +419,7 @@ footer.primary {
 
 .social {
     @include no-bullets;
+
     margin-bottom: 1rem;
     li {
         display: inline-block;
@@ -398,6 +431,7 @@ footer.primary {
         opacity: 0.7;
     }
 }
+
 
 /* = Typography = */
 h1,
@@ -455,6 +489,15 @@ blockquote {
     }
 }
 
+.guide {
+    color: $meta-text;
+    font-size: 1.25rem;
+}
+
+.meta {
+    color: $meta-text;
+}
+
 hr {
     border: 0;
     border-top: 1px solid $meta-text;
@@ -484,7 +527,6 @@ hr {
         pointer-events: none;
     }
 }
-
 a {
     @include link;
 }
@@ -520,23 +562,18 @@ dd {
 }
 
 pre {
+    background-color: #4A4A4A;
+    padding: 1em;
     white-space: pre-wrap;
     word-wrap: break-word;
-    background-color: $darkgray;
-    padding: 1em;
-    & > code {
-        background-color: none;
-        padding: 0;
-    }
 }
 
 code {
-    padding: .25em .5em;
-    background-color: $darkgray;
-    font-size: 16px;
-    color: #ffffff;
+    color: #FBCE78;
     font-family: "Consolas", monospace;
+    padding: 2px 4px;
 }
+
 
 /* = Forms = */
 button,
@@ -593,10 +630,10 @@ input[type="url"],
 input[type="week"],
 textarea {
     border: 1px solid $border;
+    box-sizing: border-box;
     color: $plain-text;
     display: block;
     font-family: $font-stack;
-    font-size: 0.9rem;
     margin: 0;
     padding: 0.4em 0.6em;
     width: 100%;
@@ -605,15 +642,12 @@ textarea {
 ::-webkit-input-placeholder {
     color: #4A4A4A;
 }
-
 ::ms-input-placeholder {
     color: #4A4A4A;
 }
-
 ::-moz-placeholder {
     color: #4A4A4A;
 }
-
 ::-placeholder {
     color: #4A4A4A;
 }
@@ -639,29 +673,6 @@ input[type="radio"] {
     padding: 0;
 }
 
-@mixin button {
-    background-color: $link;
-    color: #FFF;
-    display: inline-block;
-    font-family: $font-stack;
-    font-weight: bold;
-    padding: 0.6em 1em;
-    text-align: center;
-    vertical-align: top;
-
-    &:hover,
-    &:focus {
-        background-color: $link-hover;
-    }
-
-    &.disabled,
-    &[disabled] {
-        background-color: lighten($charcoal, 45%);
-        color: darken(#FFF, 20%);
-        pointer-events: none;
-    }
-}
-
 a.button {
     @include button;
     margin-bottom: 0;
@@ -685,11 +696,14 @@ input[type="submit"].link {
     background: transparent;
 }
 
+
 /* = Iconography = */
 .thumbs-up::before {
     @include fontawesome("\f087");
+
     margin-right: 0.5em;
 }
+
 
 /* = Messaging = */
 .success {
@@ -731,6 +745,7 @@ input[type="submit"].link {
     }
 }
 
+
 /* = Tables = */
 table {
     border-collapse: collapse;
@@ -763,24 +778,52 @@ table {
 
 /* Section Specific */
 
+
 /* Page Specific */
 
-/* Components */
 
+/* Components */
 .backgroundvideo {
     @include backgroundvideo();
 }
 
 .features {
-    @include features(1.5rem);
+    @include features($gutter: 3rem);
+}
+
+footer.primary {
+    @include footer();
 }
 
 header.primary {
-    @include sticky-header;
+    @include sticky-header();
+}
+
+.listing.search {
+    @include search-listing();
+}
+
+nav.pagination {
+    @include pagination();
+}
+
+.login {
+    @include login;
+}
+
+nav.primary {
+    @include dropdown();
+    li.mega {
+        @include dropdown-mega();
+    }
 }
 
 .tabs {
     @include tabs();
+}
+
+.tiles {
+    @include tiles();
 }
 
 .accordions {
@@ -804,6 +847,7 @@ header.primary {
         width: 80%;
     }
 }
+
 
 @media only screen and (min-width: $large) {
     /* = Layout = */
@@ -832,6 +876,7 @@ header.primary {
         > ul > li {
             font-size: 1.3rem;
             margin-left: 1rem;
+            padding-bottom: 1rem;
             position: relative;
         }
         > ul > li:first-child {
@@ -842,26 +887,6 @@ header.primary {
             li li {
                 display: block;
                 float: none;
-            }
-            .dropdown {
-                background-color: $plain-text;
-                left: 0;
-                min-width: 180px;
-                position: absolute;
-                z-index: 2;
-            }
-            li:hover .dropdown {
-                display: block;
-            }
-            .dropdown li {
-                font-size: 0.9rem;
-            }
-            .dropdown li a {
-                color: #FFF;
-                padding: 0.3rem 0.8rem;
-            }
-            .dropdown li a:hover {
-                background-color: lighten($plain-text, 10%);
             }
         }
     }

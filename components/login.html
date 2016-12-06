@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Login Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+    </head>
+    <body>
+        <div class="torso">
+            <main>
+                <section class="intro">
+                    <div class="container">
+                        <h1>Login Component</h1>
+                        <p>
+                            Below is an example of a login component.
+                        </p>
+                        <h4>Emmet:</h4>
+                        <code>
+                            .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <!-- Begin component -->
+                        <div class="login">
+                            <form action="">
+                                <div class="text">
+                                    <label for="username">Username</label>
+                                    <input type="text" name="username" />
+                                </div>
+                                <div class="password">
+                                    <label for="password">Password</label>
+                                    <input type="password" name="password" />
+                                </div>
+                                <div class="actions">
+                                    <div class="submit">
+                                        <button type="submit">Login</button>
+                                    </div>
+                                    <label for="remember_me">
+                                        <input type="hidden" name="remember_me" value="no" />
+                                        <input type="checkbox" name="remember_me" value="yes" id="remember_me" />
+                                        Remember me
+                                    </label>
+                                    <a href="#">Forgot Your Password?</a>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /end component-->
+                    </div>
+                </section>
+            </main>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    </body>
+</html>
