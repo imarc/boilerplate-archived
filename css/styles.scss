@@ -822,6 +822,10 @@ nav.primary {
     @include tabs();
 }
 
+.testimonial {
+    @include testimonial;
+}
+
 .tiles {
     @include tiles();
 }

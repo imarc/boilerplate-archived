@@ -201,8 +201,8 @@ $large: 1024px;
 
 /**
  * DROPDOWN (mega)
- * The DROPDOWN (mega) mixin allows for full-width mega dropdown 
- * menus. Call this mixin on a list item rather than nav.primary. 
+ * The DROPDOWN (mega) mixin allows for full-width mega dropdown
+ * menus. Call this mixin on a list item rather than nav.primary.
  * The menu is positioned to header.primary instead of its parent
  * list item.
  *
@@ -288,8 +288,8 @@ $large: 1024px;
 
 
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo, 
- * copyright, simple navigation (as opposed to a "super footer"), legal links, 
+ * The FOOTER mixin is a basic implementation of a footer with the company logo,
+ * copyright, simple navigation (as opposed to a "super footer"), legal links,
  * social icons, and contact information.
  *
  * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
@@ -602,11 +602,51 @@ $large: 1024px;
 }
 
 
+@mixin testimonial {
+    background: #262626;
+    margin: 4rem 0 4rem;
+    padding: 4rem 0 4rem;
+    text-align: center;
+    width: 100%;
+    blockquote {
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        padding: 0 7.125rem;
+        position: relative;
+        &:before,
+        &:after {
+            @include fontawesome;
+            color: $brand-orange;
+            font-size: 3.375rem;
+            position: absolute;
+        }
+        &:before {
+            content: "\f10d";
+            left: 0;
+            top: 0;
+        }
+        &:after {
+            content: "\f10e";
+            right: 0;
+            bottom: 0;
+        }
+        + p {
+            color: $meta-text;
+            margin-bottom: 0;
+            padding: 0 7.125rem;
+            position: relative;
+        }
+    }
+}
+
+
 /**
- *  Tiles helps you create an equal-width column grid layout without the use of row wrappers. 
- *  Tiles is similar to the Features component, expect that Tiles’s items can wrap. 
- *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the 
- *  specified $column amount only is respected at the large breakpoint. Tiles will automatically 
+ *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.
+ *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
+ *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the
+ *  specified $column amount only is respected at the large breakpoint. Tiles will automatically
  *  two-up your items at the medium breakpoint, and stack them at the small breakpoint.
  *
  *
