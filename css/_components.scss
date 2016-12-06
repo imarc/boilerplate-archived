@@ -260,15 +260,18 @@ $large: 1024px;
 
 /**
 *
-* Accordion
+* This component requires the accordion.plugin.js file. Within the .accordions class each accordion item requires a div
+* wrapper. Within the div wrapper there is a .header class and a .content class. The .header class is the clickable
+* element that will reveal what is hidden in the .content class. By default .content is hidden by javascript just in case
+* javascript is not available.
 *
-* Emmet: .accordion>.accordion-group>(button{header}+div>{lorem ipsum})
+* Emmet: .accordion>.accordion-group>(.header{header}+.content>{lorem ipsum})
 *
 */
 
 @mixin accordion() {
-    .accordion {
-        > button {
+    & > div {
+        .header {
             background: $lightgray;
             color: $plain-text;
             cursor: pointer;
@@ -303,7 +306,7 @@ $large: 1024px;
                 }
             }
         }
-        > div {
+        .content {
             padding: 1em 0;
             &.hidden {
                 display: none;
