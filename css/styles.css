@@ -35,7 +35,7 @@
  */
 /**
 *
-* This component requires the accordion.plugin.js file. Within the .accordion
+* ACCORDION requires the accordion.plugin.js file. Within the .accordion
 * class each accordion item requires a div wrapper. Within the div wrapper
 * there is a .header class and a .content class. The .header class is the
 * clickable element that will reveal what is hidden in the .content class.
