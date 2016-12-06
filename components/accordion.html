@@ -16,7 +16,7 @@
             <div class="container">
                 <h1>Accordion</h1>
                 <p>
-                    This component requires the accordion.plugin.js file. Within the .accordions class each accordion item requires a div wrapper. Within the div wrapper there is a .header class and a .content class. The .header class is the clickable element that will reveal what is hidden in the .content class. By default .content is hidden by javascript just in case javascript is not available.
+                    This component requires the accordion.plugin.js file. Within the .accordion class each accordion item requires a div wrapper. Within the div wrapper there is a .header class and a .content class. The .header class is the clickable element that will reveal what is hidden in the .content class. By default .content is hidden by javascript just in case javascript is not available.
                 </p>
             </div>
         </section>
@@ -24,7 +24,7 @@
             <div class="container">
                 <h2>Emmet</h2>
                 <p>
-                    <code>.accordions>div>(.header{header}+.content>{lorem ipsum})</code>
+                    <code>.accordion>div>(.header{header}+.content>{lorem ipsum})</code>
                 </p>
                 <h2>Plugin Options</h2>
                 <table>
@@ -49,8 +49,8 @@
                 </table>
                 <h2>JS Example</h2>
                 <pre><code>$(function () {
-	var $accordions = $('.accordions');
-	$accordions.accordion({
+	var $accordion = $('.accordion');
+	$accordion.accordion({
 		hiddenOnLoad: true,
 		singleOpen: true
 	});
@@ -62,7 +62,7 @@
 
                 <!-- Begin component -->
 
-                <div class="accordions">
+                <div class="accordion">
                     <div>
                         <div class="header">Content 1</div>
                         <div class="content">

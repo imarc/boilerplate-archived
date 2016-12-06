@@ -34,6 +34,17 @@
  * Media query breakpoints
  */
 /**
+*
+* This component requires the accordion.plugin.js file. Within the .accordion
+* class each accordion item requires a div wrapper. Within the div wrapper
+* there is a .header class and a .content class. The .header class is the
+* clickable element that will reveal what is hidden in the .content class.
+* By default .content is hidden by javascript just in case javascript is not available.
+*
+* Emmet: .accordion>div>(.header{header}+.content>{lorem ipsum})
+*
+*/
+/**
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
@@ -164,16 +175,6 @@
  * Emmet: .tiles>.tiles
  *
  **/
-/**
-*
-* This component requires the accordion.plugin.js file. Within the .accordions class each accordion item requires a div
-* wrapper. Within the div wrapper there is a .header class and a .content class. The .header class is the clickable
-* element that will reveal what is hidden in the .content class. By default .content is hidden by javascript just in case
-* javascript is not available.
-*
-* Emmet: .accordions>div>(.header{header}+.content>{lorem ipsum})
-*
-*/
 /* = Variables = */
 /* Grays */
 /* The brand colors (name them the color) */
