@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Filter Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+    </head>
+    <body>
+        <div class="torso">
+            <main>
+                <section class="intro">
+                    <div class="container">
+                        <h1>Filter Component</h1>
+                        <p>
+                            The FILTERS mixin is a basic implementation of the button style filters using hidden checkbox inputs with adjacent span tags. Recommended use of wrapping in div with class "filters".
+                        </p>
+                        <h4>Emmet:</h4>
+                        <code>
+                            div.filters>label>input[type="checkbox"]+span{filter name}
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <!-- Begin component -->
+                        <form action="">
+                            <div class="filters">
+                                <label>
+                                    <input type="checkbox"><span>case study</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox"><span>event</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox"><span>infographic</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox"><span>report</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox"><span>video</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox"><span>white paper</span>
+                                </label>
+                            </div>
+                        </form>
+                        <!-- /end component-->
+                    </div>
+                </section>
+            </main>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    </body>
+</html>

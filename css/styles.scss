@@ -791,6 +791,10 @@ table {
     @include features($gutter: 3rem);
 }
 
+.filters {
+    @include filters;
+}
+
 footer.primary {
     @include footer();
 }
