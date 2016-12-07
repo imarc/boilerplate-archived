@@ -34,6 +34,17 @@
  * Media query breakpoints
  */
 /**
+*
+* ACCORDION requires the accordion.plugin.js file. Within the .accordion
+* class each accordion item requires a div wrapper. Within the div wrapper
+* there is a .header class and a .content class. The .header class is the
+* clickable element that will reveal what is hidden in the .content class.
+* By default .content is hidden by javascript just in case javascript is not available.
+*
+* Emmet: .accordion>div>(.header{header}+.content>{lorem ipsum})
+*
+*/
+/**
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
@@ -1866,6 +1877,64 @@ nav.primary li.mega {
     -webkit-flex-basis: calc((100% / 4) - (2rem));
             flex-basis: calc((100% / 4) - (2rem));
   }
+}
+
+.accordions > div .header {
+  background: #DDD;
+  color: #191919;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: .5em;
+  padding: .5em 1em;
+  position: relative;
+  text-align: left;
+  width: 100%;
+}
+
+.accordions > div .header:hover {
+  background: #d0d0d0;
+}
+
+.accordions > div .header::after {
+  bottom: 0;
+  height: 1em;
+  margin: auto 0;
+  position: absolute;
+  right: 1em;
+  top: 0;
+  width: 1em;
+}
+
+.accordions > div .header.open {
+  background: #d0d0d0;
+}
+
+.accordions > div .header.open::after {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+}
+
+.accordions > div .header.close::after {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+}
+
+.accordions > div .content {
+  padding: 1em 0;
+}
+
+.accordions > div .content.hidden {
+  display: none;
 }
 
 /* = Media Queries = */
