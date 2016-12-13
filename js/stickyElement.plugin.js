@@ -23,7 +23,8 @@
      *     });
      *
      *
-     * Options
+     *
+     * OPTIONS
      *
      *     startOffset (integer, default: 0)
      *         How many pixels from the top of the viewport to start sticking.
