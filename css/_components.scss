@@ -253,9 +253,10 @@ $large: 1024px;
 /**
  * DROPDOWN (mega)
  * The DROPDOWN (mega) mixin allows for full-width mega dropdown
- * menus. Call this mixin on a list item rather than nav.primary.
- * The menu is positioned to header.primary instead of its parent
- * list item.
+ * menus. Call this mixin on a list item. Note that the simple 
+ * dropdown component is a dependency of this mega dropdown. 
+ * The mega dropdown is positioned to header.primary instead 
+ * of its parent list item.
  *
  * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
  */
@@ -727,7 +728,7 @@ $large: 1024px;
         margin-bottom: $gutter;
         padding: 2rem;
         text-align: left;
-        p:last-child {
+        *:last-child {
             margin-bottom: 0;
         }
     }
