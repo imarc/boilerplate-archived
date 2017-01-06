@@ -604,11 +604,11 @@ $large: 1024px;
 /**
 * The TESTIMONIAL mixin is a basic implementation of a testimonial design.
 * Emmet: div.testimonial>div.container>blockquote+p
-* To use the TESTIMONIAL WITH ASSET component, you simply need to add the class "asset" in addition to the "testimonial" class on the parent div.
+* To use the TESTIMONIAL WITH ASSET component, you simply need to add additional html markup, see emmet below.
 * Emmet: div.testimonial.asset>div.container>(div>img)+blockquote+p
 */
 
-@mixin testimonial {
+@mixin testimonial($gutterWidth: 4rem) {
     background: $charcoal;
     margin: 4rem 0 4rem;
     padding: 4rem 0 4rem;
@@ -623,18 +623,17 @@ $large: 1024px;
         position: relative;
         &:before,
         &:after {
-            @include fontawesome;
             color: $brand-orange;
-            font-size: 2rem;
+            font-size: 4rem;
             position: absolute;
         }
         &:before {
-            content: "\f10d";
+            content: "“";
             left: 0;
             top: 0;
         }
         &:after {
-            content: "\f10e";
+            content: "”";
             right: 0;
             bottom: 0;
         }
@@ -658,26 +657,25 @@ $large: 1024px;
             }
         }
     }
-    .container::after {
-        clear: both;
-        content: "";
-        display: table;
-    }
     .container > div {
         margin-bottom: 2rem;
-        & + blockquote,
-        & + blockquote + p {
-            text-align: center;
+        .asset {
+            margin-bottom: 2rem;
+            &+ div blockquote,
+            &+ div p {
+                text-align: center;
+            }
         }
         @media only screen and (min-width: $medium) {
-            float: left;
-            margin-bottom: 0;
-            width: 33%;
-            & + blockquote,
-            & + blockquote + p {
-                float: right;
+            display: flex;
+            justify-content: space-between;
+            .asset {
+                flex-basis: 33%;
+                margin-right: $gutterWidth;
+                margin-bottom: 0;
+            }
+            .asset + div blockquote {
                 text-align: left;
-                width: 66%;
             }
         }
     }

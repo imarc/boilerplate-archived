@@ -156,7 +156,7 @@
 /**
 * The TESTIMONIAL mixin is a basic implementation of a testimonial design.
 * Emmet: div.testimonial>div.container>blockquote+p
-* To use the TESTIMONIAL WITH ASSET component, you simply need to add the class "asset" in addition to the "testimonial" class on the parent div.
+* To use the TESTIMONIAL WITH ASSET component, you simply need to add additional html markup, see emmet below.
 * Emmet: div.testimonial.asset>div.container>(div>img)+blockquote+p
 */
 /**
@@ -1573,26 +1573,19 @@ nav.primary li.mega {
 }
 
 .testimonial blockquote:before, .testimonial blockquote:after {
-  font: normal normal normal 1em / 1 FontAwesome;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  speak: none;
-  text-rendering: auto;
-  text-transform: none;
-  display: inline-block;
   color: #EB7424;
-  font-size: 2rem;
+  font-size: 4rem;
   position: absolute;
 }
 
 .testimonial blockquote:before {
-  content: "\f10d";
+  content: "“";
   left: 0;
   top: 0;
 }
 
 .testimonial blockquote:after {
-  content: "\f10e";
+  content: "”";
   right: 0;
   bottom: 0;
 }
@@ -1619,32 +1612,34 @@ nav.primary li.mega {
   }
 }
 
-.testimonial .container::after {
-  clear: both;
-  content: "";
-  display: table;
-}
-
 .testimonial .container > div {
   margin-bottom: 2rem;
 }
 
-.testimonial .container > div + blockquote,
-.testimonial .container > div + blockquote + p {
+.testimonial .container > div .asset {
+  margin-bottom: 2rem;
+}
+
+.testimonial .container > div .asset + div blockquote,
+.testimonial .container > div .asset + div p {
   text-align: center;
 }
 
 @media only screen and (min-width: 669px) {
   .testimonial .container > div {
-    float: left;
-    margin-bottom: 0;
-    width: 33%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
   }
-  .testimonial .container > div + blockquote,
-  .testimonial .container > div + blockquote + p {
-    float: right;
+  .testimonial .container > div .asset {
+    -webkit-flex-basis: 33%;
+            flex-basis: 33%;
+    margin-right: 4rem;
+    margin-bottom: 0;
+  }
+  .testimonial .container > div .asset + div blockquote {
     text-align: left;
-    width: 66%;
   }
 }
 
