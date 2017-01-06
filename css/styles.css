@@ -166,12 +166,14 @@
  * Emmet: nav.tabs>ul>li*3>a
  */
 /**
- * BREADCRUMBS
+ * The breadcrumb mixin provides basic breadcrumb styling, complete with
+ * fontawesome icons being used as separators between crumbs.
  *
  * Emmet: nav.breadcrumbs>ul>li*3>a
  */
 /**
- * PROGRESS
+ * the progress mixin provides a basic, pill-style progress nav bar like you
+ * might find as part of an e-commerce or registration process.
  *
  * Emmet: nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
  */
@@ -499,24 +501,6 @@ nav.progress li.complete a::before, nav.progress li.complete a::after {
 
 nav.progress li.complete a:hover {
   color: #0C96DD;
-}
-
-nav.progress li.active a {
-  background: #0C96DD;
-  color: #fff;
-}
-
-nav.progress li.active a::before, nav.progress li.active a::after {
-  background: #0C96DD;
-  border-color: #0C96DD;
-}
-
-nav.progress li.active a:hover {
-  background: #EB7424;
-}
-
-nav.progress li.active a:hover::before, nav.progress li.active a:hover::after {
-  background: #EB7424;
 }
 
 nav.primary {

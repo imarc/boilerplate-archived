@@ -617,7 +617,8 @@ $large: 1024px;
 
 
 /**
- * BREADCRUMBS
+ * The breadcrumb mixin provides basic breadcrumb styling, complete with
+ * fontawesome icons being used as separators between crumbs.
  *
  * Emmet: nav.breadcrumbs>ul>li*3>a
  */
@@ -633,7 +634,8 @@ $large: 1024px;
 }
 
 /**
- * PROGRESS
+ * the progress mixin provides a basic, pill-style progress nav bar like you
+ * might find as part of an e-commerce or registration process.
  *
  * Emmet: nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
  */
@@ -740,26 +742,6 @@ $large: 1024px;
 
         &:hover {
             color: $brand-blue;
-        }
-    }
-
-    li.active a {
-        background: $brand-blue;
-        color: #fff;
-
-        &::before,
-        &::after {
-            background: $brand-blue;
-            border-color: $brand-blue;
-        }
-
-        &:hover {
-            background: $link-hover;
-
-            &::before,
-            &::after {
-                background: $link-hover;
-            }
         }
     }
 }
