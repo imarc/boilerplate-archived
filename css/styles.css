@@ -154,6 +154,12 @@
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
 /**
+* The TESTIMONIAL mixin is a basic implementation of a testimonial design.
+* Emmet: div.testimonial>div.container>blockquote+p
+* To use the TESTIMONIAL WITH ASSET component, you simply need to add the class "asset" in addition to the "testimonial" class on the parent div.
+* Emmet: div.testimonial.asset>div.container>(div>img)+blockquote+p
+*/
+/**
  *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.
  *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
  *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the
@@ -1550,7 +1556,7 @@ nav.primary li.mega {
 }
 
 .testimonial {
-  background: #262626;
+  background: #191919;
   margin: 4rem 0 4rem;
   padding: 4rem 0 4rem;
   text-align: center;
@@ -1560,9 +1566,9 @@ nav.primary li.mega {
 .testimonial blockquote {
   border: none;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   margin-bottom: 1rem;
-  padding: 0 7.125rem;
+  padding: 0 2.5rem;
   position: relative;
 }
 
@@ -1575,7 +1581,7 @@ nav.primary li.mega {
   text-transform: none;
   display: inline-block;
   color: #EB7424;
-  font-size: 3.375rem;
+  font-size: 2rem;
   position: absolute;
 }
 
@@ -1593,9 +1599,53 @@ nav.primary li.mega {
 
 .testimonial blockquote + p {
   color: #727272;
+  font-size: 0.875rem;
   margin-bottom: 0;
-  padding: 0 7.125rem;
+  padding: 0 2.5rem;
   position: relative;
+}
+
+@media only screen and (min-width: 669px) {
+  .testimonial blockquote {
+    font-size: 1.5rem;
+    padding: 0 7.125rem;
+  }
+  .testimonial blockquote:before, .testimonial blockquote:after {
+    font-size: 3.375rem;
+  }
+  .testimonial blockquote + p {
+    font-size: 1rem;
+    padding: 0 7.125rem;
+  }
+}
+
+.testimonial .container::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.testimonial .container > div {
+  margin-bottom: 2rem;
+}
+
+.testimonial .container > div + blockquote,
+.testimonial .container > div + blockquote + p {
+  text-align: center;
+}
+
+@media only screen and (min-width: 669px) {
+  .testimonial .container > div {
+    float: left;
+    margin-bottom: 0;
+    width: 33%;
+  }
+  .testimonial .container > div + blockquote,
+  .testimonial .container > div + blockquote + p {
+    float: right;
+    text-align: left;
+    width: 66%;
+  }
 }
 
 .tiles > * {

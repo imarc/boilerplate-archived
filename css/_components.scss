@@ -601,9 +601,15 @@ $large: 1024px;
     }
 }
 
+/**
+* The TESTIMONIAL mixin is a basic implementation of a testimonial design.
+* Emmet: div.testimonial>div.container>blockquote+p
+* To use the TESTIMONIAL WITH ASSET component, you simply need to add the class "asset" in addition to the "testimonial" class on the parent div.
+* Emmet: div.testimonial.asset>div.container>(div>img)+blockquote+p
+*/
 
 @mixin testimonial {
-    background: #262626;
+    background: $charcoal;
     margin: 4rem 0 4rem;
     padding: 4rem 0 4rem;
     text-align: center;
@@ -611,15 +617,15 @@ $large: 1024px;
     blockquote {
         border: none;
         color: #fff;
-        font-size: 1.5rem;
+        font-size: 1.125rem;
         margin-bottom: 1rem;
-        padding: 0 7.125rem;
+        padding: 0 2.5rem;
         position: relative;
         &:before,
         &:after {
             @include fontawesome;
             color: $brand-orange;
-            font-size: 3.375rem;
+            font-size: 2rem;
             position: absolute;
         }
         &:before {
@@ -634,9 +640,45 @@ $large: 1024px;
         }
         + p {
             color: $meta-text;
+            font-size: 0.875rem;
             margin-bottom: 0;
-            padding: 0 7.125rem;
+            padding: 0 2.5rem;
             position: relative;
+        }
+        @media only screen and (min-width: $medium) {
+            font-size: 1.5rem;
+            padding: 0 7.125rem;
+            &:before,
+            &:after {
+                font-size: 3.375rem;
+            }
+            + p {
+                font-size: 1rem;
+                padding: 0 7.125rem;
+            }
+        }
+    }
+    .container::after {
+        clear: both;
+        content: "";
+        display: table;
+    }
+    .container > div {
+        margin-bottom: 2rem;
+        & + blockquote,
+        & + blockquote + p {
+            text-align: center;
+        }
+        @media only screen and (min-width: $medium) {
+            float: left;
+            margin-bottom: 0;
+            width: 33%;
+            & + blockquote,
+            & + blockquote + p {
+                float: right;
+                text-align: left;
+                width: 66%;
+            }
         }
     }
 }
