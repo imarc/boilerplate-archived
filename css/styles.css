@@ -1568,7 +1568,7 @@ nav.primary li.mega {
   text-align: left;
 }
 
-.tiles > * p:last-child {
+.tiles > * *:last-child {
   margin-bottom: 0;
 }
 

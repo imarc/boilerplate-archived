@@ -664,7 +664,7 @@ $large: 1024px;
         margin-bottom: $gutter;
         padding: 2rem;
         text-align: left;
-        p:last-child {
+        *:last-child {
             margin-bottom: 0;
         }
     }
