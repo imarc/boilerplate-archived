@@ -806,16 +806,20 @@ footer.primary {
     @include footer();
 }
 
+header.primary {
+    @include sticky-header();
+}
+
+.listing {
+    @include listing();
+}
+
 .login {
     @include login;
 }
 
 nav.pagination {
     @include pagination();
-}
-
-.listing.search {
-    @include search-listing();
 }
 
 header.primary {
