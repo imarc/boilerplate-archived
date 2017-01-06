@@ -799,8 +799,8 @@ header.primary {
     @include sticky-header();
 }
 
-.listing.search {
-    @include search-listing();
+.listing {
+    @include listing();
 }
 
 nav.pagination {
@@ -816,10 +816,6 @@ nav.primary {
     li.mega {
         @include dropdown-mega();
     }
-}
-
-.search-filters {
-    @include search-filters;
 }
 
 .tabs {

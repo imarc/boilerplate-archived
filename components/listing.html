@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Search Listing Component - Imarc</title>
+        <title>Listing Component - Imarc</title>
         <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
         <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
         <meta name="viewport" content="width=device-width" />
@@ -14,25 +14,13 @@
             <main>
                <section class="intro">
                    <div class="container">
-                        <h1>Search and Filters Component(s)</h1>
-                        <p>This is two components in one: a search listing that includes a simple search box and basic filters. See below for details. </p>
-                        <h2>Search Listing</h2>
-                        <p>
-                            The SEARCH LISTING component provides a starting point for a basic search results page..
-                        </p>
-                        <h4>Emmet for listing only, does not include search-filters:</h4>
-                        <code>
-                            div.search.listing>ul>li>(h2>a)+a.meta+div.summary>p
-                        </code>
-                        <hr>
-                        <h2>Search-Filters Component</h2>
-                        <p>
-                            The SEARCH-FILTERS component is a basic implementation of the button style filters using hidden checkbox inputs with adjacent span tags. Recommended use of wrapping in div with class "filters".
-                        </p>
+                        <h1>Listing</h1>
+                        <p>LISTING shows a listing of entries. It includes an optional search form with filters. 
+                        Remove the search form elements for a simple list with pagination.</p>
                         <h4>Emmet:</h4>
-                        <code>
-                            form.search-filters>(div.search>(div.text>label+input[type="search"])+(div.submit>input[type="submit"]))+(div.filters>(label>input[type="checkbox"]+span{filter name})*3)
-                        </code>
+                        <pre>
+<code>.listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}</code>
+                        </pre>
                    </div>
                 </section>
                 <section>
@@ -40,8 +28,8 @@
 
                         <!-- Begin component -->
 
-                        <div class="listing search">
-                            <form class="search-filters">
+                        <div class="listing">
+                            <form>
                                 <div class="search">
                                     <div class="text">
                                         <label for="search">Search the website</label>

@@ -144,15 +144,10 @@
  * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
  */
 /**
- * The SEARCH-FILTERS mixin is a basic implementation of a search box and button style filters using hidden checkbox inputs with adjacent span tags. Recommended use of wrapping in form with class "search-filters".
+ * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * Remove the search form elements for a simple list.
  *
- * Emmet: form.search-filters>(div.search>(div.text>label+input[type="search"])+(div.submit>input[type="submit"]))+(div.filters>(label>input[type="checkbox"]+span{filter name})*3)
- */
-/**
- * SEARCH LISTING shows a simple input/submit form along with a search
- * result listing.
- *
- * Emmet (for listing only, does not include search-filters): div.search.listing>ul>li>(h2>a)+a.meta+div.summary>p
+ * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
  */
 /**
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
@@ -1235,29 +1230,91 @@ header.primary {
   z-index: 100;
 }
 
-.listing.search ul {
+.listing {
+  margin-bottom: 2rem;
+}
+
+.listing form .search {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.listing form .search label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.listing form .search .text {
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+}
+
+.listing form .search .submit {
+  -webkit-flex-basis: 120px;
+          flex-basis: 120px;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+}
+
+.listing form .search .submit input {
+  height: 100%;
+  width: 100%;
+}
+
+.listing form .filters {
+  margin-bottom: 2rem;
+}
+
+.listing form .filters label {
+  display: inline;
+}
+
+.listing form .filters span {
+  background-color: #0C508A;
+  border-radius: 0.5rem;
+  color: #fff;
+  display: inline-block;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.5rem 1rem;
+}
+
+.listing form .filters input[type="checkbox"]:checked + span {
+  background-color: #0C96DD;
+}
+
+.listing form .filters input[type="checkbox"] {
+  display: none;
+}
+
+.listing ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.listing.search ul li {
+.listing ul li {
   border-top: 4px solid #e5e5e5;
   margin-bottom: 0;
   padding: 2rem 0;
 }
 
-.listing.search ul li .meta {
+.listing ul li .meta {
   display: block;
   font-size: 0.9rem;
   margin-bottom: 1em;
 }
 
-.listing.search ul li h2 + .meta {
+.listing ul li h2 + .meta {
   margin-top: -1em;
 }
 
-.listing.search ul li .summary p:last-of-type {
+.listing ul li .summary p:last-of-type {
   margin-bottom: 0;
 }
 
@@ -1472,65 +1529,6 @@ nav.primary li.mega {
   nav.primary li.mega .dropdown .menu > *:last-child {
     padding-right: 0;
   }
-}
-
-.search-filters {
-  margin-bottom: 2rem;
-}
-
-.search-filters .search {
-  display: -webkit-flex;
-  display: flex;
-}
-
-.search-filters .search label {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.search-filters .text {
-  -webkit-flex-grow: 1;
-          flex-grow: 1;
-}
-
-.search-filters .submit {
-  -webkit-flex-basis: 120px;
-          flex-basis: 120px;
-  -webkit-flex-shrink: 0;
-          flex-shrink: 0;
-}
-
-.search-filters .submit input {
-  height: 100%;
-  width: 100%;
-}
-
-.search-filters label {
-  display: inline;
-}
-
-.search-filters span {
-  transition: all 250ms ease-in-out;
-  background-color: #0C508A;
-  border-radius: 0.5rem;
-  color: #fff;
-  display: inline-block;
-  margin: 0 0.5rem 0.5rem 0;
-  padding: 0.5rem 1rem;
-}
-
-.search-filters input[type="checkbox"]:checked + span {
-  background-color: #0C96DD;
-}
-
-.search-filters input[type="checkbox"] {
-  display: none;
 }
 
 .tabs {

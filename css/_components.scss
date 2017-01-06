@@ -523,65 +523,53 @@ $large: 1024px;
 }
 
 /**
- * The SEARCH-FILTERS mixin is a basic implementation of a search box and button style filters using hidden checkbox inputs with adjacent span tags. Recommended use of wrapping in form with class "search-filters".
+ * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * Remove the search form elements for a simple list.
  *
- * Emmet: form.search-filters>(div.search>(div.text>label+input[type="search"])+(div.submit>input[type="submit"]))+(div.filters>(label>input[type="checkbox"]+span{filter name})*3)
+ * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
  */
-
-@mixin search-filters {
+@mixin listing() {
     margin-bottom: 2rem;
-
-    .search {
-       display: flex;
-       label {
-            @include visuallyhidden;
+    form {
+        .search {
+            display: flex;
+            label {
+                @include visuallyhidden;
+            }
+            .text {
+                flex-grow: 1;
+            }
+            .submit {
+                flex-basis: 120px;
+                flex-shrink: 0;
+            }
+            .submit input {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .filters {
+            margin-bottom: 2rem;
+            label {
+                display: inline;
+            }
+            span {
+                background-color: $brand-dark-blue;
+                border-radius: 0.5rem;
+                color: #fff;
+                display: inline-block;
+                margin: 0 0.5rem 0.5rem 0;
+                padding: 0.5rem 1rem;
+            }
+            input[type="checkbox"]:checked + span {
+                background-color: $brand-blue;
+            }
+            input[type="checkbox"] {
+                display: none;
+            }
         }
     }
 
-    .text {
-        flex-grow: 1;
-    }
-
-    .submit {
-        flex-basis: 120px;
-        flex-shrink: 0;
-    }
-
-    .submit input {
-        height: 100%;
-        width: 100%;
-    }
-
-    label {
-        display: inline;
-    }
-
-    span {
-        @include transition;
-        background-color: $brand-dark-blue;
-        border-radius: 0.5rem;
-        color: #fff;
-        display: inline-block;
-        margin: 0 0.5rem 0.5rem 0;
-        padding: 0.5rem 1rem;
-    }
-
-    input[type="checkbox"]:checked+span {
-        background-color: $brand-blue;
-    }
-
-    input[type="checkbox"] {
-        display: none;
-    }
-}
-
-/**
- * SEARCH LISTING shows a simple input/submit form along with a search
- * result listing.
- *
- * Emmet (for listing only, does not include search-filters): div.search.listing>ul>li>(h2>a)+a.meta+div.summary>p
- */
-@mixin search-listing() {
     ul {
         list-style: none;
         padding: 0;
