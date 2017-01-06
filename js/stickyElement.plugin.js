@@ -30,8 +30,8 @@
      *         How many pixels from the top of the viewport to start sticking.
      *
      *     endOffset (integer)
-     *         If specified and different than startOffset, the element will
-     *         animate with scrolled from the startOffset to the endOffset
+     *         If specified and different than startOffset, the sticky element will
+     *         animate as you scroll from the startOffset to the endOffset
      *         while the element is fixed.
      *
      *     duration (integer)
@@ -39,8 +39,8 @@
      *         pixels has been scrolled.
      *
      *     until (selector)
-     *         If specified, when the element specified scrolls into view, this
-     *         elment unsticks.
+     *         If specified, the sticky element unsticks when this element scrolls even 
+     *         with the sticked element.
      *
      *     stopEarly (integer, default 0)
      *         If specified, unsticks the element when it reaches this distance
