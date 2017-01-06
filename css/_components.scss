@@ -253,9 +253,9 @@ $large: 1024px;
 /**
  * DROPDOWN (mega)
  * The DROPDOWN (mega) mixin allows for full-width mega dropdown
- * menus. Call this mixin on a list item. Note that the simple 
- * dropdown component is a dependency of this mega dropdown. 
- * The mega dropdown is positioned to header.primary instead 
+ * menus. Call this mixin on a list item. Note that the simple
+ * dropdown component is a dependency of this mega dropdown.
+ * The mega dropdown is positioned to header.primary instead
  * of its parent list item.
  *
  * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
@@ -503,6 +503,9 @@ $large: 1024px;
             display: block;
             padding: 1em 0;
         }
+        i.fa {
+            display: inline-block;
+        }
 
     }
     @media only screen and (min-width: $large) {
@@ -513,6 +516,21 @@ $large: 1024px;
             transform: translateX(100%);
         }
     }
+}
+
+.mobile-overlay {
+    display: none;
+    background: #000000;
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    opacity: .4;
+    position: fixed;
+    right: 0;
+    top: 0;
+    -webkit-transition: opacity .5s;
+    transition:  opacity .5s;
+    width: 100%;
 }
 
 /**
