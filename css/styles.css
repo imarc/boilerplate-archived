@@ -154,10 +154,10 @@
  * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
  */
 /**
- * SEARCH LISTING shows a simple input/submit form along with a search
- * result listing.
+ * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * Remove the search form elements for a simple list.
  *
- * Emmet: ..
+ * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
  */
 /**
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
@@ -1635,6 +1635,102 @@ footer.primary .legal a {
   }
 }
 
+header.primary {
+  position: fixed;
+  top: 0;
+  transition: top 0.16s cubic-bezier(0, 0.4, 0.7, 1);
+  width: 100%;
+  z-index: 100;
+}
+
+.listing {
+  margin-bottom: 2rem;
+}
+
+.listing form .search {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.listing form .search label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.listing form .search .text {
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+}
+
+.listing form .search .submit {
+  -webkit-flex-basis: 120px;
+          flex-basis: 120px;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+}
+
+.listing form .search .submit input {
+  height: 100%;
+  width: 100%;
+}
+
+.listing form .filters {
+  margin-bottom: 2rem;
+}
+
+.listing form .filters label {
+  display: inline;
+}
+
+.listing form .filters span {
+  background-color: #0C508A;
+  border-radius: 0.5rem;
+  color: #fff;
+  display: inline-block;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.5rem 1rem;
+}
+
+.listing form .filters input[type="checkbox"]:checked + span {
+  background-color: #0C96DD;
+}
+
+.listing form .filters input[type="checkbox"] {
+  display: none;
+}
+
+.listing ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.listing ul li {
+  border-top: 4px solid #e5e5e5;
+  margin-bottom: 0;
+  padding: 2rem 0;
+}
+
+.listing ul li .meta {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 1em;
+}
+
+.listing ul li h2 + .meta {
+  margin-top: -1em;
+}
+
+.listing ul li .summary p:last-of-type {
+  margin-bottom: 0;
+}
+
 .login {
   background: #EEE;
   margin-left: auto;
@@ -1764,65 +1860,6 @@ nav.pagination li:hover:not(.active):not(.disabled) a {
 nav.pagination li:hover:not(.active):not(.disabled) a::before {
   background-color: #0C96DD;
   color: #FFF;
-}
-
-.listing.search form {
-  display: -webkit-flex;
-  display: flex;
-}
-
-.listing.search form label {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.listing.search form .text {
-  -webkit-flex-grow: 1;
-          flex-grow: 1;
-}
-
-.listing.search form .submit {
-  -webkit-flex-basis: 120px;
-          flex-basis: 120px;
-  -webkit-flex-shrink: 0;
-          flex-shrink: 0;
-}
-
-.listing.search form .submit input {
-  height: 100%;
-  width: 100%;
-}
-
-.listing.search ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.listing.search ul li {
-  border-top: 4px solid #e5e5e5;
-  margin-bottom: 0;
-  padding: 2rem 0;
-}
-
-.listing.search ul li .meta {
-  display: block;
-  font-size: 0.9rem;
-  margin-bottom: 1em;
-}
-
-.listing.search ul li h2 + .meta {
-  margin-top: -1em;
-}
-
-.listing.search ul li .summary p:last-of-type {
-  margin-bottom: 0;
 }
 
 header.primary {
