@@ -101,6 +101,11 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
+ * The DOSSIER mixin displays an individual’s biography and photograph.
+ *
+ * Emmet: .dossiers>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
+ */
+/**
  * DROPDOWN
  * The DROPDOWN mixin allows for dropdown menus. By default, a single
  * column dropdown is used. It is positioned to its parent.
@@ -143,20 +148,6 @@
  *
  * Emmet
  */
-.mobile-overlay {
-  display: none;
-  background: #000000;
-  bottom: 0;
-  height: 100%;
-  left: 0;
-  opacity: .4;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transition: opacity .5s;
-  width: 100%;
-}
-
 /**
  * PAGINATION
  *
@@ -1373,9 +1364,9 @@ table tr:nth-child(even) td {
   background-color: #F3F3F3;
 }
 
-/* Section Specific */
-/* Page Specific */
-/* Components */
+/* = Section Specific = */
+/* =  Page Specific = */
+/* = Components = */
 .backgroundvideo {
   -webkit-align-items: center;
           align-items: center;
@@ -1407,6 +1398,119 @@ table tr:nth-child(even) td {
   content: "";
   display: block;
   padding-top: 30%;
+}
+
+.dossier > * {
+  text-align: center;
+}
+
+.dossier > * .photo {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 669px) {
+  .dossier > * {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+            flex-direction: row;
+    -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+    margin-bottom: 4rem;
+    text-align: left;
+  }
+  .dossier > * .photo {
+    -webkit-flex: 0 0 25%;
+            flex: 0 0 25%;
+    margin-bottom: 0;
+    margin-right: 2rem;
+  }
+  .dossier > * .bio .title {
+    color: #727272;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 1023px) {
+  nav.primary .dropdown,
+  nav.primary i.fa {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  nav.primary i.fa {
+    display: inline-block;
+  }
+  nav.primary .dropdown {
+    background-color: #2A2A2A;
+    color: #FFF;
+    display: block;
+    font-size: 1rem;
+    min-width: 260px;
+    opacity: 0;
+    padding: 2rem 0;
+    position: absolute;
+    top: 100%;
+    transition: opacity 300ms;
+    visibility: hidden;
+    z-index: 1;
+  }
+  nav.primary .dropdown .menu > * {
+    padding: 0 1rem;
+  }
+  nav.primary .dropdown .menu li {
+    margin-bottom: 0.4em;
+  }
+  nav.primary .dropdown .menu a {
+    color: #0C96DD;
+  }
+  nav.primary .dropdown .menu a:hover,
+  nav.primary .dropdown .menu a:focus {
+    color: #0975ad;
+  }
+  nav.primary .dropdown.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+nav.primary li.mega {
+  position: static;
+}
+
+@media only screen and (min-width: 1024px) {
+  nav.primary li.mega .dropdown {
+    left: 0;
+    top: 100%;
+    width: 100%;
+  }
+  nav.primary li.mega .dropdown .menu {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1168px;
+  }
+  nav.primary li.mega .dropdown .menu > * {
+    border-left: 1px solid #777;
+    -webkit-flex-basis: 0;
+            flex-basis: 0;
+    -webkit-flex-grow: 1;
+            flex-grow: 1;
+    padding: 0 3rem;
+  }
+  nav.primary li.mega .dropdown .menu > *:first-child {
+    border-left: none;
+    padding-left: 0;
+  }
+  nav.primary li.mega .dropdown .menu > *:last-child {
+    padding-right: 0;
+  }
 }
 
 .features > * {
@@ -1531,71 +1635,49 @@ footer.primary .legal a {
   }
 }
 
-header.primary {
-  position: fixed;
-  top: 0;
-  transition: top 0.16s cubic-bezier(0, 0.4, 0.7, 1);
-  width: 100%;
-  z-index: 100;
+.login {
+  background: #EEE;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
+  padding: 3rem;
 }
 
-.listing.search form {
-  display: -webkit-flex;
-  display: flex;
+.login input:focus {
+  box-shadow: 0 0 5px rgba(114, 164, 0, 0.7);
 }
 
-.listing.search form label {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
+.login .submit {
+  text-align: center;
 }
 
-.listing.search form .text {
-  -webkit-flex-grow: 1;
-          flex-grow: 1;
+.login .actions {
+  text-align: center;
 }
 
-.listing.search form .submit {
-  -webkit-flex-basis: 120px;
-          flex-basis: 120px;
-  -webkit-flex-shrink: 0;
-          flex-shrink: 0;
-}
-
-.listing.search form .submit input {
-  height: 100%;
-  width: 100%;
-}
-
-.listing.search ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.listing.search ul li {
-  border-top: 4px solid #e5e5e5;
-  margin-bottom: 0;
-  padding: 2rem 0;
-}
-
-.listing.search ul li .meta {
-  display: block;
-  font-size: 0.9rem;
-  margin-bottom: 1em;
-}
-
-.listing.search ul li h2 + .meta {
-  margin-top: -1em;
-}
-
-.listing.search ul li .summary p:last-of-type {
-  margin-bottom: 0;
+@media only screen and (min-width: 669px) {
+  .login .actions {
+    -webkit-align-items: center;
+            align-items: center;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+    -webkit-flex-flow: row wrap;
+            flex-flow: row wrap;
+  }
+  .login .actions > * {
+    margin: 0;
+    padding: 0;
+  }
+  .login .actions label {
+    margin-left: 1em;
+  }
+  .login .actions a {
+    display: block;
+    margin-left: auto;
+    text-align: right;
+  }
 }
 
 nav.pagination {
@@ -1684,131 +1766,71 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   color: #FFF;
 }
 
-.login {
-  background: #EEE;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 600px;
-  padding: 3rem;
+.listing.search form {
+  display: -webkit-flex;
+  display: flex;
 }
 
-.login input:focus {
-  box-shadow: 0 0 5px rgba(114, 164, 0, 0.7);
+.listing.search form label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
-.login .submit {
-  text-align: center;
+.listing.search form .text {
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
 }
 
-.login .actions {
-  text-align: center;
+.listing.search form .submit {
+  -webkit-flex-basis: 120px;
+          flex-basis: 120px;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
 }
 
-@media only screen and (min-width: 669px) {
-  .login .actions {
-    -webkit-align-items: center;
-            align-items: center;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-justify-content: space-between;
-            justify-content: space-between;
-    -webkit-flex-flow: row wrap;
-            flex-flow: row wrap;
-  }
-  .login .actions > * {
-    margin: 0;
-    padding: 0;
-  }
-  .login .actions label {
-    margin-left: 1em;
-  }
-  .login .actions a {
-    display: block;
-    margin-left: auto;
-    text-align: right;
-  }
+.listing.search form .submit input {
+  height: 100%;
+  width: 100%;
 }
 
-@media only screen and (max-width: 1023px) {
-  nav.primary .dropdown,
-  nav.primary i.fa {
-    display: none;
-  }
+.listing.search ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-@media only screen and (min-width: 1024px) {
-  nav.primary i.fa {
-    display: inline-block;
-  }
-  nav.primary .dropdown {
-    background-color: #2A2A2A;
-    color: #FFF;
-    display: block;
-    font-size: 1rem;
-    min-width: 260px;
-    opacity: 0;
-    padding: 2rem 0;
-    position: absolute;
-    top: 100%;
-    transition: opacity 300ms;
-    visibility: hidden;
-    z-index: 1;
-  }
-  nav.primary .dropdown .menu > * {
-    padding: 0 1rem;
-  }
-  nav.primary .dropdown .menu li {
-    margin-bottom: 0.4em;
-  }
-  nav.primary .dropdown .menu a {
-    color: #0C96DD;
-  }
-  nav.primary .dropdown .menu a:hover,
-  nav.primary .dropdown .menu a:focus {
-    color: #0975ad;
-  }
-  nav.primary .dropdown.open {
-    opacity: 1;
-    visibility: visible;
-  }
+.listing.search ul li {
+  border-top: 4px solid #e5e5e5;
+  margin-bottom: 0;
+  padding: 2rem 0;
 }
 
-nav.primary li.mega {
-  position: static;
+.listing.search ul li .meta {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 1em;
 }
 
-@media only screen and (min-width: 1024px) {
-  nav.primary li.mega .dropdown {
-    left: 0;
-    top: 100%;
-    width: 100%;
-  }
-  nav.primary li.mega .dropdown .menu {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -webkit-justify-content: space-between;
-            justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1168px;
-  }
-  nav.primary li.mega .dropdown .menu > * {
-    border-left: 1px solid #777;
-    -webkit-flex-basis: 0;
-            flex-basis: 0;
-    -webkit-flex-grow: 1;
-            flex-grow: 1;
-    padding: 0 3rem;
-  }
-  nav.primary li.mega .dropdown .menu > *:first-child {
-    border-left: none;
-    padding-left: 0;
-  }
-  nav.primary li.mega .dropdown .menu > *:last-child {
-    padding-right: 0;
-  }
+.listing.search ul li h2 + .meta {
+  margin-top: -1em;
+}
+
+.listing.search ul li .summary p:last-of-type {
+  margin-bottom: 0;
+}
+
+header.primary {
+  position: fixed;
+  top: 0;
+  transition: top 0.16s cubic-bezier(0, 0.4, 0.7, 1);
+  width: 100%;
+  z-index: 100;
 }
 
 .tabs {

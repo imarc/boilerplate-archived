@@ -495,6 +495,7 @@ $large: 1024px;
  *
  * Emmet
  */
+
 @mixin mobileNavigation() {
     background-color: $charcoal;
     position: fixed;
@@ -555,21 +556,6 @@ $large: 1024px;
             transform: translateX(100%);
         }
     }
-}
-
-.mobile-overlay {
-    display: none;
-    background: #000000;
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    opacity: .4;
-    position: fixed;
-    right: 0;
-    top: 0;
-    -webkit-transition: opacity .5s;
-    transition:  opacity .5s;
-    width: 100%;
 }
 
 /**

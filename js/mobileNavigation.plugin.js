@@ -13,11 +13,23 @@
 
         var defaults = {
             toggleClass: 'menu-toggle',
-            menuToggleClass: 'open',
             wrapperClass: 'wrapper',
             subMenuClass: 'dropdown',
-            directionFrom: 'left'
+            directionFrom: 'left',
+            overlayCss: {
+                display: 'none',
+                background: '#000000',
+                bottom: '0%',
+                height: '100%',
+                left: '0%',
+                opacity: '.4',
+                position: 'fixed',
+                right: '0%',
+                top: '0%',
+                width: '100%'
+            }
         };
+
 
         this.settings = $.extend({}, defaults, options);
 
@@ -26,6 +38,7 @@
          * Return CSS selector from class name.
          *
          */
+
         var toSelector = function(className) {
             return '.' + className;
         };
@@ -35,6 +48,7 @@
          * Validate optionals params when initializing library.
          *
          */
+
         var validateOptions = function() {
 
             var classRegExp = new RegExp(/^\./);
@@ -59,21 +73,43 @@
 
         /**
          *
-         * Toggles menu
+         * Toggles Individual Menu
          * .init sets the menu opacity to 1 to prevent FOUC.
          *
          */
-        var toggle = function() {
-            var $overlay = $(toSelector(plugin.settings.wrapperClass)).find('.mobile-overlay');
 
+        var toggleMenu = function() {
             if(!$(this).hasClass('init')) {
                 $(this).addClass('init');
             }
 
-            $(this).toggleClass(plugin.settings.menuToggleClass);
+            $(this).toggleClass('open');
+        };
 
-            // Trigger Overlay
+        /**
+         *
+         *  Toggles All Menus
+         *
+         */
+
+        var toggleAll = function() {
+            var toggleSelector = toSelector(plugin.settings.toggleClass);
+            var subMenuClass   = toSelector(plugin.settings.subMenuClass);
+            var $overlay       = $(toSelector(plugin.settings.wrapperClass)).find('.mobile-overlay');
+
             $overlay.toggle();
+
+            $(toggleSelector).find('i').toggleClass('fa-bars fa-close');
+
+            $(plugin[0].parentNode)
+                .find(subMenuClass)
+                .each(function() {
+                    if($(this).hasClass('open')) {
+                        toggleMenu.call(this);
+                    }
+                });
+
+            toggleMenu.call(plugin[0]);
         };
 
 
@@ -97,32 +133,14 @@
          *
          */
         var bindToggle = function() {
-            var toggleSelector = toSelector(plugin.settings.toggleClass);
-            var subMenuClass   = toSelector(plugin.settings.subMenuClass);
-            var $toggle        = $(toggleSelector);
-            var $overlay       = $(toSelector(plugin.settings.wrapperClass)).find('.mobile-overlay');
+            var $toggle = $(toSelector(plugin.settings.toggleClass));
 
-            $toggle
-                .add($overlay) // On overlay click, close 
-                .on('click', $.proxy(function(el) {
-
-                    $(toggleSelector).find('i').toggleClass('fa-bars fa-close');
-
-                    $(plugin[0].parentNode)
-                        .find(subMenuClass)
-                        .each(function() {
-                            if($(this).hasClass(plugin.settings.menuToggleClass)) {
-                                toggle.call(this);
-                            }
-                        });
-
-                    toggle.call(this);
-                }, this));
+            $toggle.on('click', toggleAll);
         };
 
         /**
          *
-         * Toggle sub menus.
+         * Bind sub menu button to toggle child menu.
          *
          */
         var bindSubMenuToggle = function() {
@@ -133,7 +151,7 @@
                 .find('.sub-menu-toggle')
                 .on('click', $pluginParent, function() {
                     var text = $(this).data('menu');
-                    toggle.call($(subMenuClass + '[data-menu="' + text + '"]'));
+                    toggleMenu.call($(subMenuClass + '[data-menu="' + text + '"]'));
                 });
 
         };
@@ -166,6 +184,7 @@
          * Find all sub menus and append as a sibling of library's initialized class.
          *
          */
+
         var cloneAndAppendMenu = function() {
             var subMenuClass = toSelector(plugin.settings.subMenuClass);
             var clone        = $(this).clone(true, true);
@@ -234,12 +253,20 @@
 
         /**
          *
-         * Insert overlay
+         * Insert overlay and bind it to close  all menus on click
          *
          */
 
         var addOverlay = function() {
-            $(toSelector(plugin.settings.wrapperClass)).append('<div class="mobile-overlay"></div>');
+            var overlay = '<div class="mobile-overlay"></div>';
+            overlay     = $(overlay).css(plugin.settings.overlayCss);
+
+            $(toSelector(plugin.settings.wrapperClass)).append($(overlay));
+
+            $(overlay).on('click', function() {
+                toggleAll();
+            });
+
         };
 
         /**
@@ -259,6 +286,7 @@
          * Do this each time the library is initialized
          *
          */
+
         return this.each(function() {
             init.call(this);
             initSubMenu.call(this);
@@ -266,3 +294,8 @@
     };
 
 })(jQuery);
+
+$(function(){
+    // Mobile Navigation
+    $('.mobile').mobileNavigation();
+});
