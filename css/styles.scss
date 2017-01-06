@@ -776,15 +776,26 @@ table {
     }
 }
 
-/* Section Specific */
+/* = Section Specific = */
 
 
-/* Page Specific */
+/* =  Page Specific = */
 
 
-/* Components */
+/* = Components = */
 .backgroundvideo {
     @include backgroundvideo();
+}
+
+.dossier {
+    @include dossier($gutter: 2rem, $photoWidth: 25%, $direction: row);
+}
+
+nav.primary {
+    @include dropdown();
+    li.mega {
+        @include dropdown-mega();
+    }
 }
 
 .features {
@@ -795,27 +806,20 @@ footer.primary {
     @include footer();
 }
 
-header.primary {
-    @include sticky-header();
-}
-
-.listing.search {
-    @include search-listing();
+.login {
+    @include login;
 }
 
 nav.pagination {
     @include pagination();
 }
 
-.login {
-    @include login;
+.listing.search {
+    @include search-listing();
 }
 
-nav.primary {
-    @include dropdown();
-    li.mega {
-        @include dropdown-mega();
-    }
+header.primary {
+    @include sticky-header();
 }
 
 .tabs {
@@ -824,6 +828,10 @@ nav.primary {
 
 .tiles {
     @include tiles();
+}
+
+.accordions {
+    @include accordion();
 }
 
 /* = Media Queries = */

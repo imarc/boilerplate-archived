@@ -7,7 +7,6 @@
  *   mixin and/or function definitions.
  */
 
-
 /**
  * Media query breakpoints
  */
@@ -15,6 +14,62 @@
 $medium: 669px;
 $large: 1024px;
 
+/**
+*
+* ACCORDION requires the accordion.plugin.js file. Within the .accordion
+* class each accordion item requires a div wrapper. Within the div wrapper
+* there is a .header class and a .content class. The .header class is the
+* clickable element that will reveal what is hidden in the .content class.
+* By default .content is hidden by javascript just in case javascript is not available.
+*
+* Emmet: .accordion>div>(.header{header}+.content>{lorem ipsum})
+*
+*/
+
+@mixin accordion() {
+    > div {
+        .header {
+            background: $lightgray;
+            color: $plain-text;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: .5em;
+            padding: .5em 1em;
+            position: relative;
+            text-align: left;
+            width: 100%;
+            &:hover {
+                background: darken($lightgray, 5%);
+            }
+            &::after {
+                bottom: 0;
+                height: 1em;
+                margin: auto 0;
+                position: absolute;
+                right: 1em;
+                top: 0;
+                width: 1em;
+            }
+            &.open {
+                background: darken($lightgray, 5%);
+                &::after {
+                    @include fontawesome("\f068");
+                }
+            }
+            &.close {
+                &::after {
+                    @include fontawesome("\f067");
+                }
+            }
+        }
+        .content {
+            padding: 1em 0;
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+}
 
 /**
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
@@ -29,7 +84,7 @@ $large: 1024px;
         overflow: hidden;
         position: relative;
         .mold {
-            background-color: rgba(2255,255,255,0.6);
+            background-color: rgba(2255, 255, 255, 0.6);
             padding: 2em;
             text-align: center;
             z-index: 2;
@@ -48,7 +103,6 @@ $large: 1024px;
         padding-top: 30%;
     }
 }
-
 
 /**
  * CAROUSEL uses Slick to create a carousel. It defaults to a rather
@@ -100,7 +154,6 @@ $large: 1024px;
     }
 }
 
-
 /**
  * The COLUMNS mixin makes it so that immmediate child elements appear as
  * columns. It is responsive, allowing you to specify the media query at which
@@ -138,6 +191,44 @@ $large: 1024px;
             > hr {
                 display: table-cell;
                 width: 1rem;
+            }
+        }
+    }
+}
+
+/**
+ * The DOSSIER mixin displays an individual’s biography and photograph.
+ *
+ * Emmet: .dossiers>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
+ */
+@mixin dossier($gutter: 2rem, $photoWidth: 25%, $direction: row) {
+    > * {
+        text-align: center;
+        .photo {
+            margin-bottom: 2rem;
+        }
+    }
+    @media only screen and (min-width: $medium) {
+        > * {
+            display: flex;
+            flex-direction: $direction;
+            flex-wrap: nowrap;
+            margin-bottom: 4rem;
+            text-align: left;
+            .photo {
+                flex: 0 0 $photoWidth;
+                margin-bottom: 0;
+                margin-right: $gutter;
+                @if $direction == row-reverse {
+                    margin-left: $gutter;
+                    margin-right: 0;
+                }
+            }
+            .bio {
+                .title {
+                    color: $meta-text;
+                    text-transform: uppercase;
+                }
             }
         }
     }
@@ -198,13 +289,13 @@ $large: 1024px;
     }
 }
 
-
 /**
  * DROPDOWN (mega)
- * The DROPDOWN (mega) mixin allows for full-width mega dropdown 
- * menus. Call this mixin on a list item rather than nav.primary. 
- * The menu is positioned to header.primary instead of its parent
- * list item.
+ * The DROPDOWN (mega) mixin allows for full-width mega dropdown
+ * menus. Call this mixin on a list item. Note that the simple 
+ * dropdown component is a dependency of this mega dropdown. 
+ * The mega dropdown is positioned to header.primary instead 
+ * of its parent list item.
  *
  * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
  */
@@ -239,7 +330,6 @@ $large: 1024px;
         }
     }
 }
-
 
 /**
  * FEATURES house three features in one row. Powered by flexbox,
@@ -286,10 +376,9 @@ $large: 1024px;
     }
 }
 
-
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo, 
- * copyright, simple navigation (as opposed to a "super footer"), legal links, 
+ * The FOOTER mixin is a basic implementation of a footer with the company logo,
+ * copyright, simple navigation (as opposed to a "super footer"), legal links,
  * social icons, and contact information.
  *
  * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
@@ -354,7 +443,6 @@ $large: 1024px;
     }
 }
 
-
 /**
  * The LOGIN mixin is a basic implementation of a login module that includes a
  * username input, password input, submit button, forgot password link, and
@@ -370,7 +458,7 @@ $large: 1024px;
     padding: 3rem;
     input {
         &:focus {
-            box-shadow: 0 0 5px rgba(114,164,0,0.7);
+            box-shadow: 0 0 5px rgba(114, 164, 0, 0.7);
         }
     }
     .submit {
@@ -401,7 +489,6 @@ $large: 1024px;
         }
     }
 }
-
 
 /**
  * PAGINATION
@@ -474,7 +561,6 @@ $large: 1024px;
     }
 }
 
-
 /**
  * SEARCH LISTING shows a simple input/submit form along with a search
  * result listing.
@@ -524,7 +610,6 @@ $large: 1024px;
     }
 }
 
-
 /**
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
  * header as you scroll down, and show it as you scroll back up. This is
@@ -539,11 +624,10 @@ $large: 1024px;
 @mixin sticky-header() {
     position: fixed;
     top: 0;
-    transition: top 0.16s cubic-bezier(0, .40,.70,1);
+    transition: top 0.16s cubic-bezier(0, .40, .70, 1);
     width: 100%;
     z-index: 100;
 }
-
 
 /**
  * TABS
@@ -601,12 +685,11 @@ $large: 1024px;
     }
 }
 
-
 /**
- *  Tiles helps you create an equal-width column grid layout without the use of row wrappers. 
- *  Tiles is similar to the Features component, expect that Tiles’s items can wrap. 
- *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the 
- *  specified $column amount only is respected at the large breakpoint. Tiles will automatically 
+ *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.
+ *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
+ *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the
+ *  specified $column amount only is respected at the large breakpoint. Tiles will automatically
  *  two-up your items at the medium breakpoint, and stack them at the small breakpoint.
  *
  *
@@ -620,7 +703,7 @@ $large: 1024px;
         margin-bottom: $gutter;
         padding: 2rem;
         text-align: left;
-        p:last-child {
+        *:last-child {
             margin-bottom: 0;
         }
     }
