@@ -630,29 +630,53 @@ $large: 1024px;
 }
 
 /**
- * SEARCH LISTING shows a simple input/submit form along with a search
- * result listing.
+ * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * Remove the search form elements for a simple list.
  *
- * Emmet: ..
+ * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
  */
-@mixin search-listing() {
+@mixin listing() {
+    margin-bottom: 2rem;
     form {
-        display: flex;
-        label {
-            @include visuallyhidden;
+        .search {
+            display: flex;
+            label {
+                @include visuallyhidden;
+            }
+            .text {
+                flex-grow: 1;
+            }
+            .submit {
+                flex-basis: 120px;
+                flex-shrink: 0;
+            }
+            .submit input {
+                height: 100%;
+                width: 100%;
+            }
         }
-        .text {
-            flex-grow: 1;
-        }
-        .submit {
-            flex-basis: 120px;
-            flex-shrink: 0;
-        }
-        .submit input {
-            height: 100%;
-            width: 100%;
+        .filters {
+            margin-bottom: 2rem;
+            label {
+                display: inline;
+            }
+            span {
+                background-color: $brand-dark-blue;
+                border-radius: 0.5rem;
+                color: #fff;
+                display: inline-block;
+                margin: 0 0.5rem 0.5rem 0;
+                padding: 0.5rem 1rem;
+            }
+            input[type="checkbox"]:checked + span {
+                background-color: $brand-blue;
+            }
+            input[type="checkbox"] {
+                display: none;
+            }
         }
     }
+
     ul {
         list-style: none;
         padding: 0;
