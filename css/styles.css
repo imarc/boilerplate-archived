@@ -357,7 +357,6 @@ nav ul li {
 }
 
 nav a {
-  color: #FFF;
   display: block;
   font-weight: normal;
   padding: 0 0.5rem;
@@ -366,10 +365,6 @@ nav a {
 nav li.active a,
 nav li.active:hover a {
   color: #191919;
-}
-
-nav li:hover a {
-  color: #0C96DD;
 }
 
 nav.tabs a {
@@ -437,6 +432,10 @@ nav.progress a::after {
   top: 0;
   -webkit-transform: skewX(20deg);
           transform: skewX(20deg);
+}
+
+nav.progress a:hover {
+  color: #EB7424;
 }
 
 nav.progress li:not(:last-child) a {
@@ -524,6 +523,14 @@ nav.primary {
   margin-bottom: 0.7rem;
 }
 
+nav.primary a {
+  color: #FFF;
+}
+
+nav.primary li:hover a {
+  color: #0C96DD;
+}
+
 nav.primary > ul li {
   margin-bottom: 0;
 }
@@ -538,6 +545,7 @@ nav.utility {
 }
 
 nav.utility a {
+  color: #FFF;
   font-size: 0.8rem;
 }
 

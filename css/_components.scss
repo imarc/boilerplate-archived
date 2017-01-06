@@ -670,6 +670,10 @@ $large: 1024px;
             top: 0;
             transform: skewX(20deg);
         }
+
+        &:hover {
+            color: $link-hover;
+        }
     }
 
     li:not(:last-child) a {
