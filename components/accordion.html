@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Accordion Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+    </head>
+    <body>
+        <div class="torso">
+            <main>
+                <section class="intro">
+                    <div class="container">
+                        <h1>Accordion</h1>
+                        <p>
+                            This component requires the accordion.plugin.js file. Within the .accordion class each accordion item requires a div wrapper. Within the div wrapper there is a .header class and a .content class. The .header class is the clickable element that will reveal what is hidden in the .content class. By default .content is hidden by javascript just in case javascript is not available.
+                        </p>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <h2>Emmet</h2>
+                        <p>
+                            <code>.accordion>div>(.header{header}+.content>p{lorem ipsum})</code>
+                        </p>
+                        <h2>Plugin Options</h2>
+                        <table>
+                            <tr>
+                                <th>Option</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                            <tr>
+                                <td>hiddenOnLoad</td>
+                                <td>Boolean</td>
+                                <td>true</td>
+                                <td>Hide contents on Load</td>
+                            </tr>
+                            <tr>
+                                <td>singleOpen</td>
+                                <td>Boolean</td>
+                                <td>true</td>
+                                <td>Only open one at a time.</td>
+                            </tr>
+                        </table>
+                        <h2>JS Example</h2>
+                        <pre><code>$(function () {
+        	var $accordion = $('.accordion');
+        	$accordion.accordion({
+        		hiddenOnLoad: true,
+        		singleOpen: true
+        	});
+        });</code></pre>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+
+                        <!-- Begin component -->
+
+                        <div class="accordion">
+                            <div>
+                                <div class="header">Content 1</div>
+                                <div class="content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias blanditiis culpa cum distinctio doloribus dolorum enim id ipsa iste itaque laborum, neque nihil quae quam quisquam rerum vitae voluptas.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="header">Content 2</div>
+                                <div class="content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias blanditiis culpa cum distinctio doloribus dolorum enim id ipsa iste itaque laborum, neque nihil quae quam quisquam rerum vitae voluptas.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="header">Content 3</div>
+                                <div class="content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias blanditiis culpa cum distinctio doloribus dolorum enim id ipsa iste itaque laborum, neque nihil quae quam quisquam rerum vitae voluptas.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="header">Content 4</div>
+                                <div class="content">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci alias blanditiis culpa cum distinctio doloribus dolorum enim id ipsa iste itaque laborum, neque nihil quae quam quisquam rerum vitae voluptas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- /end component-->
+
+
+                    </div>
+                </section>
+            </main>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script src="../js/accordion.plugin.js"></script>
+    </body>
+</html>

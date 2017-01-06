@@ -799,7 +799,7 @@ nav.primary {
 }
 
 .features {
-    @include features(3rem);
+    @include features($gutter: 3rem);
 }
 
 footer.primary {
@@ -828,6 +828,10 @@ header.primary {
 
 .tiles {
     @include tiles();
+}
+
+.accordions {
+    @include accordion();
 }
 
 /* = Media Queries = */
