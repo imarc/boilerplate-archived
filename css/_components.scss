@@ -337,37 +337,6 @@ $large: 1024px;
     }
 }
 
-
-/**
- * The FILTERS mixin is a basic implementation of the button style filters using hidden checkbox inputs with adjacent span tags. Recommended use of wrapping in div with class "filters".
- *
- * Emmet: div.filters>label>input[type="checkbox"]+span{filter name}
- */
-
-@mixin filters {
-    label {
-        display: inline;
-    }
-
-    span {
-        @include transition;
-        background-color: $brand-dark-blue;
-        border-radius: 0.5rem;
-        color: #fff;
-        display: inline-block;
-        margin: 0 0.5rem 0.5rem 0;
-        padding: 0.5rem 1rem;
-    }
-
-    input[type="checkbox"]:checked+span {
-        background-color: $brand-blue;
-    }
-
-    input[type="checkbox"] {
-        display: none;
-    }
-}
-
 /**
  * The FOOTER mixin is a basic implementation of a footer with the company logo,
  * copyright, simple navigation (as opposed to a "super footer"), legal links,
@@ -554,29 +523,65 @@ $large: 1024px;
 }
 
 /**
+ * The SEARCH-FILTERS mixin is a basic implementation of a search box and button style filters using hidden checkbox inputs with adjacent span tags. Recommended use of wrapping in form with class "search-filters".
+ *
+ * Emmet: form.search-filters>(div.search>(div.text>label+input[type="search"])+(div.submit>input[type="submit"]))+(div.filters>(label>input[type="checkbox"]+span{filter name})*3)
+ */
+
+@mixin search-filters {
+    margin-bottom: 2rem;
+
+    .search {
+       display: flex;
+       label {
+            @include visuallyhidden;
+        }
+    }
+
+    .text {
+        flex-grow: 1;
+    }
+
+    .submit {
+        flex-basis: 120px;
+        flex-shrink: 0;
+    }
+
+    .submit input {
+        height: 100%;
+        width: 100%;
+    }
+
+    label {
+        display: inline;
+    }
+
+    span {
+        @include transition;
+        background-color: $brand-dark-blue;
+        border-radius: 0.5rem;
+        color: #fff;
+        display: inline-block;
+        margin: 0 0.5rem 0.5rem 0;
+        padding: 0.5rem 1rem;
+    }
+
+    input[type="checkbox"]:checked+span {
+        background-color: $brand-blue;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+}
+
+/**
  * SEARCH LISTING shows a simple input/submit form along with a search
  * result listing.
  *
- * Emmet: ..
+ * Emmet (for listing only, does not include search-filters): div.search.listing>ul>li>(h2>a)+a.meta+div.summary>p
  */
 @mixin search-listing() {
-    form {
-        display: flex;
-        label {
-            @include visuallyhidden;
-        }
-        .text {
-            flex-grow: 1;
-        }
-        .submit {
-            flex-basis: 120px;
-            flex-shrink: 0;
-        }
-        .submit input {
-            height: 100%;
-            width: 100%;
-        }
-    }
     ul {
         list-style: none;
         padding: 0;

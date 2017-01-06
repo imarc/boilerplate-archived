@@ -125,11 +125,6 @@
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
- * The FILTERS mixin is a basic implementation of the button style filters using hidden checkbox inputs with adjacent span tags. Recommended use of wrapping in div with class "filters".
- *
- * Emmet: div.filters>label>input[type="checkbox"]+span{filter name}
- */
-/**
  * The FOOTER mixin is a basic implementation of a footer with the company logo,
  * copyright, simple navigation (as opposed to a "super footer"), legal links,
  * social icons, and contact information.
@@ -149,10 +144,15 @@
  * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
  */
 /**
+ * The SEARCH-FILTERS mixin is a basic implementation of a search box and button style filters using hidden checkbox inputs with adjacent span tags. Recommended use of wrapping in form with class "search-filters".
+ *
+ * Emmet: form.search-filters>(div.search>(div.text>label+input[type="search"])+(div.submit>input[type="submit"]))+(div.filters>(label>input[type="checkbox"]+span{filter name})*3)
+ */
+/**
  * SEARCH LISTING shows a simple input/submit form along with a search
  * result listing.
  *
- * Emmet: ..
+ * Emmet (for listing only, does not include search-filters): div.search.listing>ul>li>(h2>a)+a.meta+div.summary>p
  */
 /**
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
@@ -1154,28 +1154,6 @@ table tr:nth-child(even) td {
   }
 }
 
-.filters label {
-  display: inline;
-}
-
-.filters span {
-  transition: all 250ms ease-in-out;
-  background-color: #0C508A;
-  border-radius: 0.5rem;
-  color: #fff;
-  display: inline-block;
-  margin: 0 0.5rem 0.5rem 0;
-  padding: 0.5rem 1rem;
-}
-
-.filters input[type="checkbox"]:checked + span {
-  background-color: #0C96DD;
-}
-
-.filters input[type="checkbox"] {
-  display: none;
-}
-
 footer.primary {
   background-color: #191919;
   color: #FFF;
@@ -1255,39 +1233,6 @@ header.primary {
   transition: top 0.16s cubic-bezier(0, 0.4, 0.7, 1);
   width: 100%;
   z-index: 100;
-}
-
-.listing.search form {
-  display: -webkit-flex;
-  display: flex;
-}
-
-.listing.search form label {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-}
-
-.listing.search form .text {
-  -webkit-flex-grow: 1;
-          flex-grow: 1;
-}
-
-.listing.search form .submit {
-  -webkit-flex-basis: 120px;
-          flex-basis: 120px;
-  -webkit-flex-shrink: 0;
-          flex-shrink: 0;
-}
-
-.listing.search form .submit input {
-  height: 100%;
-  width: 100%;
 }
 
 .listing.search ul {
@@ -1527,6 +1472,65 @@ nav.primary li.mega {
   nav.primary li.mega .dropdown .menu > *:last-child {
     padding-right: 0;
   }
+}
+
+.search-filters {
+  margin-bottom: 2rem;
+}
+
+.search-filters .search {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.search-filters .search label {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.search-filters .text {
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+}
+
+.search-filters .submit {
+  -webkit-flex-basis: 120px;
+          flex-basis: 120px;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
+}
+
+.search-filters .submit input {
+  height: 100%;
+  width: 100%;
+}
+
+.search-filters label {
+  display: inline;
+}
+
+.search-filters span {
+  transition: all 250ms ease-in-out;
+  background-color: #0C508A;
+  border-radius: 0.5rem;
+  color: #fff;
+  display: inline-block;
+  margin: 0 0.5rem 0.5rem 0;
+  padding: 0.5rem 1rem;
+}
+
+.search-filters input[type="checkbox"]:checked + span {
+  background-color: #0C96DD;
+}
+
+.search-filters input[type="checkbox"] {
+  display: none;
 }
 
 .tabs {

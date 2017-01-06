@@ -791,10 +791,6 @@ table {
     @include features($gutter: 3rem);
 }
 
-.filters {
-    @include filters;
-}
-
 footer.primary {
     @include footer();
 }
@@ -820,6 +816,10 @@ nav.primary {
     li.mega {
         @include dropdown-mega();
     }
+}
+
+.search-filters {
+    @include search-filters;
 }
 
 .tabs {
