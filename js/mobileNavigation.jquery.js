@@ -46,14 +46,14 @@
                 if (key === 'directionFrom') {
 
                     if (value !== 'left' && value !== 'right') {
-                        $.error('Wrong direction. Choose  "left" or "right".')
+                        $.error('Wrong direction. Choose  "left" or "right".');
                     }
 
                     return true;
                 }
 
                 if (classRegExp.test(value)) {
-                    $.error('The value ' + value + ' for ' + key + ' just needs the class name not css selector.')
+                    $.error('The value ' + value + ' for ' + key + ' just needs the class name not css selector.');
                 }
 
             });
@@ -62,7 +62,7 @@
         /**
          *
          * Toggles menu
-         * .init sets the menu opacity to 1 to prevent FOUT.
+         * .init sets the menu opacity to 1 to prevent FOUC.
          *
          */
         var toggle = function () {

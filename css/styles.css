@@ -303,7 +303,6 @@ img {
 
 .wrapper {
   overflow: hidden;
-  padding-top: 65px;
 }
 
 .sr-only {
@@ -319,7 +318,7 @@ img {
 
 header.primary {
   background-color: #191919;
-  padding-top: 1rem;
+  padding: 1rem 0;
 }
 
 header.primary .container {
@@ -625,8 +624,8 @@ nav.utility a {
 
 .desktop {
   display: none;
-  -webkit-flex-flow: row wrap;
-          flex-flow: row wrap;
+  -webkit-flex-flow: column wrap;
+          flex-flow: column wrap;
   -webkit-align-items: flex-end;
           align-items: flex-end;
   -webkit-justify-content: space-between;
@@ -640,6 +639,8 @@ nav.utility a {
   -webkit-flex-basis: 70%;
           flex-basis: 70%;
   max-width: 70%;
+  -webkit-align-self: flex-start;
+          align-self: flex-start;
 }
 
 .desktop .utilities {
@@ -1960,7 +1961,6 @@ nav.primary li.mega {
   /* = Layout = */
   .wrapper {
     overflow: auto;
-    padding-top: 102px;
   }
   nav ul {
     text-align: left;
@@ -1971,7 +1971,6 @@ nav.primary li.mega {
   nav.primary > ul > li {
     font-size: 1.3rem;
     margin-left: 1rem;
-    padding-bottom: 1rem;
     position: relative;
   }
   nav.primary > ul > li:first-child {
@@ -1994,7 +1993,7 @@ nav.primary li.mega {
     display: -webkit-flex;
     display: flex;
   }
-  .menu-toggle {
+  button.menu-toggle {
     display: none;
   }
   aside.primary {
