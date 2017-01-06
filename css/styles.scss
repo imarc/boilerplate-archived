@@ -262,10 +262,6 @@ nav {
         @include breadcrumbs;
     }
 
-    &.pagination {
-        @include pagination(center);
-    }
-
     &.progress {
         @include progress;
     }
