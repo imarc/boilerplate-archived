@@ -491,6 +491,74 @@ $large: 1024px;
 }
 
 /**
+ * Mobile Navigation
+ *
+ * Emmet
+ */
+
+@mixin mobileNavigation() {
+    background-color: $charcoal;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    padding: 1em;
+    transition: transform .25s;
+    z-index: 1000;
+    opacity: 0;
+    &.left {
+        right: auto;
+        left: 0;
+        transform: translateX(-100%);
+    }
+    &.right {
+        left: auto;
+        right: 0;
+        transform: translateX(100%);
+    }
+    &.open {
+        transform: translateX(0);
+        transition: transform .25s;
+    }
+    &.init {
+        display: block;
+        opacity: 1;
+    }
+    nav.utility {
+        ul li a {
+            padding: .75em 0;
+        }
+    }
+    ul {
+        padding-left: 0;
+    }
+    ul li {
+        text-align: left;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            color: #fff;
+            display: block;
+            padding: 1em 0;
+        }
+        i.fa {
+            display: inline-block;
+        }
+
+    }
+    @media only screen and (min-width: $large) {
+        &.open.left {
+            transform: translateX(-100%);
+        }
+        &.open.right {
+            transform: translateX(100%);
+        }
+    }
+}
+
+/**
  * PAGINATION
  *
  * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
