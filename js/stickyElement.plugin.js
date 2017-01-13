@@ -96,12 +96,11 @@
         };
 
         that.release = function(top) {
-            console.log('release', top);
             state = 'released';
             elem.css({
                 position: 'absolute',
                 top: '',
-                transform: 'translate(0, ' + top + 'px)'
+                transform: 'translateZ(0) translate(0, ' + top + 'px)'
             });
         };
 
@@ -141,7 +140,6 @@
             } else {
                 if (state == 'fixed' || state == 'init') {
                     if ('endOffset' in options) {
-                        console.log(scrollTop, end, start);
                         that.release(end + options.endOffset - options.startOffset - start);
                     } else {
                         that.release(end - start);
