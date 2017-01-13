@@ -677,6 +677,7 @@ $large: 1024px;
             justify-content: space-between;
             .asset {
                 flex-basis: 33%;
+                flex-shrink: 0;
                 margin-right: $gutterWidth;
                 margin-bottom: 0;
             }

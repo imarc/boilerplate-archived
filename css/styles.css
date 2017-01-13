@@ -1644,6 +1644,8 @@ nav.primary li.mega {
   .testimonial .container > div .asset {
     -webkit-flex-basis: 33%;
             flex-basis: 33%;
+    -webkit-flex-shrink: 0;
+            flex-shrink: 0;
     margin-right: 4rem;
     margin-bottom: 0;
   }
