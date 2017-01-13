@@ -1556,11 +1556,10 @@ nav.primary li.mega {
 }
 
 .testimonial {
-  background: #191919;
-  margin: 4rem 0 4rem;
+  background-color: #191919;
+  margin-bottom: 4rem;
   padding: 4rem 0 4rem;
   text-align: center;
-  width: 100%;
 }
 
 .testimonial blockquote {
@@ -1572,25 +1571,34 @@ nav.primary li.mega {
   position: relative;
 }
 
-.testimonial blockquote:before, .testimonial blockquote:after {
-  color: #EB7424;
-  font-size: 4rem;
+.testimonial blockquote::before, .testimonial blockquote::after {
+  color: #727272;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-content: flex-end;
+          align-content: flex-end;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  font-family: Georgia, serif;
+  font-size: 3.375rem;
+  height: 1rem;
+  line-height: 1;
   position: absolute;
 }
 
-.testimonial blockquote:before {
+.testimonial blockquote::before {
   content: "“";
   left: 0;
   top: 0;
 }
 
-.testimonial blockquote:after {
+.testimonial blockquote::after {
   content: "”";
   right: 0;
   bottom: 0;
 }
 
-.testimonial blockquote + p {
+.testimonial blockquote ~ p {
   color: #727272;
   font-size: 0.875rem;
   margin-bottom: 0;
@@ -1603,8 +1611,9 @@ nav.primary li.mega {
     font-size: 1.5rem;
     padding: 0 7.125rem;
   }
-  .testimonial blockquote:before, .testimonial blockquote:after {
-    font-size: 3.375rem;
+  .testimonial blockquote::before, .testimonial blockquote::after {
+    font-size: 7rem;
+    height: 3rem;
   }
   .testimonial blockquote + p {
     font-size: 1rem;

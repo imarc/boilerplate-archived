@@ -16,13 +16,13 @@
                     <div class="container">
                         <h1>Testimonial Components</h1>
                         <p>This component includes a simple testimonial component, plus an additioanl layout allowing for an asset floated to the left. </p>
-                        <h2> Simple Testimonial Component</h2>
+                        <h2>Simple Testimonial Component</h2>
                         <p>
                             The TESTIMONIAL mixin is a basic implementation of a testimonial design.
                         </p>
                         <h4>Emmet:</h4>
                         <code>
-                            div.testimonial>div.container>.asset>img^blockquote
+                            div.testimonial>div.container>blockquote+p
                         </code>
                     </div>
                 </section>
@@ -34,7 +34,7 @@
                                 It was an honor to work with Imarc. They demonstrated, very early on, a true ability to understand our business and solve for our needs—create a new intranet site, one that would increase engagement and foster community. Imarc delivered incredible results, taking our former site to new heights. We couldn’t be happier with their work and subject matter expertise.
                             </blockquote>
                             <p>
-                                – Jonathan Weitz, Former Digital and Online Communications Manager
+                                – John Smith, Chief Marketing Officer, Acme Co
                             </p>
                         </div>
                     </div>
@@ -46,11 +46,11 @@
                         <div class="container">
                             <h2>Testimonial w/ Asset Component</h2>
                             <p>
-                                To use the TESTIMONIAL WITH ASSET component, you simply need to add the class "asset" in addition to the "testimonial" class on the parent div.
+                                To use the TESTIMONIAL WITH ASSET component, you simply need to add a div.asset on the same level as the blockquote and include your image within.
                             </p>
                             <h4>Emmet:</h4>
                             <code>
-                                div.testimonial>div.container>(div.asset>img)+blockquote+p
+                                div.testimonial>div.container>.asset>img^blockquote+p
                             </code>
                         </div>
                     </section>
@@ -59,14 +59,14 @@
                         <div class="container">
                             <div>
                                 <div class="asset">
-                                    <img src="http://dummyimage.com/300x300/ff675b/fff.png&text=Company logo or headshot" alt="" />
+                                    <img src="http://dummyimage.com/900x900/ff675b/fff.png&text=Company logo or headshot" alt="" />
                                 </div>
                                 <div>
                                     <blockquote>
                                         It was an honor to work with Imarc. They demonstrated, very early on, a true ability to understand our business and solve for our needs—create a new intranet site, one that would increase engagement and foster community. Imarc delivered incredible results, taking our former site to new heights. We couldn’t be happier with their work and subject matter expertise.
                                     </blockquote>
                                     <p>
-                                        – Jonathan Weitz, Former Digital and Online Communications Manager
+                                        – John Smith, Chief Marketing Officer, Acme Co
                                     </p>
                                 </div>
                             </div>

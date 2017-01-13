@@ -609,11 +609,10 @@ $large: 1024px;
 */
 
 @mixin testimonial($gutterWidth: 4rem) {
-    background: $charcoal;
-    margin: 4rem 0 4rem;
+    background-color: $charcoal;
+    margin-bottom: 4rem;
     padding: 4rem 0 4rem;
     text-align: center;
-    width: 100%;
     blockquote {
         border: none;
         color: #fff;
@@ -621,23 +620,29 @@ $large: 1024px;
         margin-bottom: 1rem;
         padding: 0 2.5rem;
         position: relative;
-        &:before,
-        &:after {
-            color: $brand-orange;
-            font-size: 4rem;
+        &::before,
+        &::after {
+            color: $meta-text;
+            display: flex;
+            align-content: flex-end;
+            flex-direction: column;
+            font-family: Georgia, serif;
+            font-size: 3.375rem;
+            height: 1rem;
+            line-height: 1;
             position: absolute;
         }
-        &:before {
+        &::before {
             content: "“";
             left: 0;
             top: 0;
         }
-        &:after {
+        &::after {
             content: "”";
             right: 0;
             bottom: 0;
         }
-        + p {
+        ~ p {
             color: $meta-text;
             font-size: 0.875rem;
             margin-bottom: 0;
@@ -647,9 +652,10 @@ $large: 1024px;
         @media only screen and (min-width: $medium) {
             font-size: 1.5rem;
             padding: 0 7.125rem;
-            &:before,
-            &:after {
-                font-size: 3.375rem;
+            &::before,
+            &::after {
+                font-size: 7rem;
+                height: 3rem;
             }
             + p {
                 font-size: 1rem;
