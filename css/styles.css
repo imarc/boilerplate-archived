@@ -115,10 +115,9 @@
 /**
  * DROPDOWN (mega)
  * The DROPDOWN (mega) mixin allows for full-width mega dropdown
- * menus. Call this mixin on a list item. Note that the simple
- * dropdown component is a dependency of this mega dropdown.
- * The mega dropdown is positioned to header.primary instead
- * of its parent list item.
+ * menus. Call this mixin on a list item rather than nav.primary.
+ * The menu is positioned to header.primary instead of its parent
+ * list item.
  *
  * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
  */
@@ -175,6 +174,12 @@
  *
  * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
  */
+/**
+* The TESTIMONIAL mixin is a basic implementation of a testimonial design.
+* Emmet: div.testimonial>div.container>blockquote+p
+* To use the TESTIMONIAL WITH ASSET component, you simply need to add additional html markup, see emmet below.
+* Emmet: div.testimonial.asset>div.container>(div>img)+blockquote+p
+*/
 /**
  *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.
  *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
@@ -793,15 +798,6 @@ blockquote {
   font-style: italic;
   margin-bottom: 1.5em;
   padding-left: 1rem;
-}
-
-blockquote::before, blockquote::after {
-  content: "";
-  display: table;
-}
-
-blockquote::after {
-  clear: both;
 }
 
 .intro {
@@ -1844,6 +1840,92 @@ header.primary {
   .tabs nav ul {
     margin-left: 20px;
     text-align: left;
+  }
+}
+
+.testimonial {
+  background-color: #191919;
+  margin-bottom: 4rem;
+  padding: 4rem 0 4rem;
+  text-align: center;
+}
+
+.testimonial .asset {
+  margin-bottom: 2rem;
+}
+
+.testimonial .asset img {
+  max-width: 280px;
+}
+
+.testimonial blockquote {
+  border: none;
+  color: #fff;
+  font-size: 1.125rem;
+  margin-bottom: 1rem;
+  padding: 0 2.5rem;
+  position: relative;
+}
+
+.testimonial blockquote::before, .testimonial blockquote::after {
+  color: #727272;
+  font-family: Georgia, serif;
+  font-size: 3.375rem;
+  position: absolute;
+}
+
+.testimonial blockquote::before {
+  content: "“";
+  left: 0;
+  line-height: 1;
+  top: 0;
+}
+
+.testimonial blockquote::after {
+  content: "”";
+  line-height: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.testimonial blockquote ~ p {
+  color: #727272;
+  font-size: 0.875rem;
+  margin-bottom: 0;
+  padding: 0 2.5rem;
+}
+
+@media only screen and (min-width: 1024px) {
+  .testimonial {
+    text-align: left;
+  }
+  .testimonial .container > div {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+  }
+  .testimonial .asset {
+    -webkit-flex-basis: 33%;
+            flex-basis: 33%;
+    -webkit-flex-shrink: 0;
+            flex-shrink: 0;
+    margin-bottom: 0;
+    margin-right: 4rem;
+  }
+  .testimonial .asset img {
+    max-width: 100%;
+  }
+  .testimonial blockquote {
+    font-size: 1.5rem;
+    padding: 0 6rem;
+  }
+  .testimonial blockquote::before, .testimonial blockquote::after {
+    font-size: 7rem;
+  }
+  .testimonial blockquote ~ p {
+    font-size: 1rem;
+    padding: 0 6rem;
   }
 }
 
