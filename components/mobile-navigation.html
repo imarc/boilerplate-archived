@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Mobile Navigation Component - Imarc</title>
+    <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+    <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+</head>
+<body>
+<div class="wrapper">
+    <header class="primary">
+        <div class="container">
+            <div class="header-content">
+                <div class="branding">
+                    <a href="https://github.com/imarc/boilerplate">
+                        <img src="../img/logo-boilerplate.png" alt="Imarc Boilerplate">
+                    </a>
+                </div>
+                <button class="menu-toggle"><i class="fa fa-bars"></i></button>
+                <div class="mobile">
+                    <nav aria-label="Primary Mobile Navigation" class="primary">
+                        <ul>
+                            <li>
+                                <a href="">Maine</a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><a href="">Augusta</a></li>
+                                        <li><a href="">Eliot</a></li>
+                                        <li><a href="">Kittery</a></li>
+                                        <li><a href="">Portland</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="active">
+                                <a href="#yup">Markup</a>
+                            </li>
+                            <li>
+                                <a href="">New Hampshire</a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><a href="">Concord</a></li>
+                                        <li><a href="">Manchester</a></li>
+                                        <li><a href="">Portsmouth</a>
+                                            <div class="dropdown">
+                                                <ul>
+                                                    <li><a href="#">Main Street</a></li>
+                                                    <li><a href="#">Woodbury Ave</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="">Hampton</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="">Vermont</a>
+                                <div class="dropdown">
+                                    <ul>
+                                        <li><a href="">Montpelier</a></li>
+                                        <li><a href="">Burlington</a></li>
+                                        <li><a href="">Killington</a></li>
+                                        <li><a href="">St. Johnsbury</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="utilities">
+                        <nav aria-label="Utility Navigation" class="utility">
+                            <ul>
+                                <li><a href="">Careers</a></li>
+                                <li><a href="">Legal</a></li>
+                                <li><a href="">Log In</a></li>
+                            </ul>
+                        </nav>
+                        <form class="search" method="post">
+                            <div class="text">
+                                <label for="search">Search the website</label>
+                                <input id="search" placeholder="Search the website" type="text" />
+                            </div>
+                            <div class="submit">
+                                <input type="submit" value="Search" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="desktop">
+                    <div class="utilities">
+                        <nav aria-label="Utility Navigation" class="utility">
+                            <ul>
+                                <li><a href="">Careers</a></li>
+                                <li><a href="">Legal</a></li>
+                                <li><a href="">Log In</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <nav aria-label="Primary Desktop Navigation" class="primary">
+                        <ul>
+                            <li class="mega">
+                                <a href="">Maine <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                <div class="dropdown">
+                                    <div class="menu">
+                                        <div>
+                                            <ul>
+                                                <li>
+                                                    <a href="">Products</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">Services</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">Blog</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">About Us</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h3>Lorem Ipsum Dolar Amat</h3>
+                                            <p>
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis
+                                                dignissimos quisquam numquam veniam eos reprehenderit, nemo sunt nihil
+                                                rem suscipit.
+                                            </p>
+                                            <p>
+                                                Nemo sunt nihil rem lorem amat fuga consectetur adipisicing elit.
+                                            </p>
+                                        </div>
+                                        <div>
+                                            <img src="http://dummyimage.com/600x400/ff665b/ffffff.png&text=Just an image placeholder " alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="#yup">Markup <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                <div class="dropdown">
+                                    <div class="menu">
+                                        <div>
+                                            <ul>
+                                                <li>
+                                                    <a href="">Hello World</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">Lorem Ipsum Amat</a>
+                                                </li>
+                                                <li>
+                                                    <a href="">HTML is on version 5</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a href="">New Hampshire</a>
+                            </li>
+                            <li>
+                                <a href="">Vermont</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="torso">
+
+        <section class="intro">
+            <div class="container">
+                <h1>Mobile Navigation</h1>
+                <p>
+                    This component requires the mobileNavigation.plugin.js file.
+                </p>
+                <h2>HTML</h2>
+                <p>The mobile navigation shares similar markup to the desktop navigation. In theory, 
+                you can abstract this mark up into a partial and include the partial within 
+                <code>.mobile</code> and <code>.desktop</code> classes.
+                </p>
+                <p> This component requires the site to be wrapped in a wrapper class. 
+                By default this is <code>.wrapper</code>.
+                </p>
+                <pre>
+                <code>
+&lt;body&gt;
+&lt;div class="wrapper"&gt; &lt;!--- Wrapper Class ---&gt;
+    &lt;header class="primary"&gt;
+        &lt;div class="container"&gt;
+            &lt;div class="header-content"&gt;
+                &lt;div class="branding"&gt;&lt;/div&gt;
+                &lt;button class="menu-toggle"&gt;&lt;/button&gt;
+
+                &lt;div class="mobile"&gt;
+                    &lt;div class="utilities"&gt;&lt;/div&gt;
+                    &lt;nav class="primary"&gt;&lt;/nav&gt;
+                &lt;/div&gt;
+
+                &lt;div class="desktop"&gt;
+                    &lt;div class="utilities"&gt;&lt;/div&gt;
+                    &lt;nav class="primary"&gt;&lt;/nav&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;!-- Rest of Site---&gt;
+
+&lt;/div&gt;
+&lt;/body&gt;
+                </code>
+                </pre>
+                <br />
+                <br />
+
+                <p>The Mobile Navigation sub menus are created for every nested <code>.dropdown</code> up to 3 or more levels in <code>nav.primary</code>.</p>
+                <br />
+                <br />
+                <pre>
+                <code>
+&lt;nav class="primary"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;a href=""&gt;Maine&lt;/a&gt;
+            &lt;div class="dropdown"&gt; &lt;!--- 2nd Level  ---&gt;
+                &lt;ul&gt;
+                    &lt;li&gt;
+                        &lt;a href=""&gt;Augusta&lt;/a&gt;
+                        &lt;div class="dropdown"&gt; &lt;!--- 3rd Level ---&gt;
+                            &lt;ul&gt;
+                                &lt;li&gt;&lt;a href=""&gt;Main Street&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=""&gt;Oak Street&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=""&gt;Elm Street&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;&lt;a href=""&gt;Eliot&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=""&gt;Kittery&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href=""&gt;Portland&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+
+        &lt;!--- More Menu Items ---&gt;
+
+    &lt;ul&gt;
+&lt;/nav&gt;
+                </code>
+                </pre>
+                <br />
+                <h2>SCSS</h2>
+                <br />
+                <pre>
+                <code>
+.mobile {
+    @include mobileNavigation;
+}
+                </code>
+                </pre>
+                <br />
+                <h2>JS</h2>
+                <p>You can have more than one instance of this component. For example, you may 
+                want something for faceted search. Just make sure you change the 
+                <code>toggleClass</code> option.</p>
+                <p>By default, there is an overlay that gets inserted into the DOM by 
+                the library. You can change the css properties for this overlay by altering 
+                the <code>overlayCss</code> property.</p>
+                <br />
+                <pre>
+                <code>
+$(function () {
+        $('.mobile').mobileNavigation();
+
+        $('.filters').mobileNavigation({
+            toggleClass: 'open-filter'
+            overlayCss: {
+                opacity: '.8'
+            }}
+        });
+});
+                </code>
+                </pre>
+            </div>
+        </section>
+        <br />
+        <br />
+        <section>
+            <div class="container">
+                <h2>Plugin Options</h2>
+                <p>All available options for this library.</p>
+                <table>
+                    <tr>
+                        <th>Option</th>
+                        <th>Type</th>
+                        <th>Default</th>
+                        <th>Description</th>
+                    </tr>
+
+                    <tr>
+                        <td>toggleClass</td>
+                        <td>string</td>
+                        <td>'menu-toggle'</td>
+                        <td>This is the class of the element that users will click on to open up the menu.</td>
+                    </tr>
+                    <tr>
+                        <td>wrapperClass</td>
+                        <td>string</td>
+                        <td>'wrapper'</td>
+                        <td>This is the wrapper class for the entire site. If for some reason this changes, please
+                            change this option to match.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>subMenuClass</td>
+                        <td>string</td>
+                        <td>'dropdown'</td>
+                        <td>This is the class name for the submenu.</td>
+                    </tr>
+                    <tr>
+                        <td>directionFrom</td>
+                        <td>string</td>
+                        <td>'left'</td>
+                        <td>You can make the menu open up from the left or right.</td>
+                    </tr>
+                    <tr>
+                        <td>overlayCss</td>
+                        <td>object</td>
+                        <td>
+                            <code>
+{
+    display: 'none',
+    background: '#000000',
+    bottom: '0%',
+    height: '100%',
+    left: '0%',
+    opacity: '.4',
+    position: 'fixed',
+    right: '0%',
+    top: '0%',
+    width: '100%'
+}
+                            </code>
+                        </td>
+                        <td>
+                            These are the default styles for the overlay that get inserted.
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+    </div>
+    <footer class="primary">
+        <div class="container">
+            <div>
+                <div class="branding">
+                    <a href="https://github.com/imarc/boilerplate">
+                        <img src="../img/logo-boilerplate.png" alt="Imarc Boilerplate" />
+                    </a>
+                    <p>
+                        21 Water St., First Floor <br>
+                        Amesbury, MA 01913 <br>
+                        978-462-8848
+                    </p>
+                </div>
+                <nav aria-label="Footer Navigation">
+                    <ul>
+                        <li>
+                            <a href="">Maine</a>
+                        </li>
+                        <li>
+                            <a href="">Markup</a>
+                        </li>
+                        <li>
+                            <a href="">New Hampshire</a>
+                        </li>
+                        <li>
+                            <a href="">Vermont</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div>
+                    <ul class="social">
+                        <li>
+                            <a href="https://www.facebook.com/ImarcAgency">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/ImarcAgency">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com/company/imarc">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="legal">
+            <p>©2016 by Imarc</p>
+            <a href="">Terms</a>
+            <a href="">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <script src="../js/mobileNavigation.plugin.js" type="text/javascript"></script>
+    <script src="../js/dropdown.plugin.js"></script>
+    <script src="../js/stickyHeader.plugin.js"></script>
+    <script>
+        $(function() {
+            $('header.primary').stickyHeader();
+            $('nav.primary').dropdown();
+        });
+    </script>
+</body>
+</html>

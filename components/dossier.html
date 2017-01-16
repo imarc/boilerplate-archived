@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Dossier Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+    </head>
+    <body>
+        <div class="torso">
+            <main>
+               <section class="intro">
+                   <div class="container">
+                        <h1>Dossier</h1>
+                        <p>
+                            Dossier displays an individual’s biography and photograph. Choose if the photograph appears on the left (row) or the right (row-reverse) by using the $direction parameter.
+                        </p>
+                        <p>Emmet shorthand</p>
+                        <p>
+                            <pre><code>.dossiers > div > (.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})</code></pre>
+                        </p>
+
+                        <p>Mixin usage</p>
+                        <p>
+                            <pre>
+                                <code>
+.dossier {
+    @include dossier($direction: row);
+}</code>
+                            </pre>
+                        </p>
+                   </div>
+                </section>
+                <section>
+                    <div class="container">
+
+
+                        <!-- Begin component -->
+
+                        <div class="dossier">
+                            <div>
+                                <div class="photo">
+                                    <img src="../img/dossier-1.jpg" alt="Jane Doe" />
+                                </div>
+                                <div class="bio">
+                                    <h2>
+                                        Jane Doe
+                                    </h2>
+                                    <p class="title">
+                                        Executive Vice President of Operations
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quidem, soluta quisquam est velit praesentium ex, vero perspiciatis ad autem sapiente. Sed amet et voluptates, inventore corrupti quas assumenda nemo quibusdam magni officia ut, aperiam quo, quae! Eos, unde ea placeat ab earum molestias a veritatis architecto quas.
+                                    </p>
+                                    <p>
+                                        Magnam quidem, soluta quisquam est velit praesentium ex, vero perspiciatis ad autem sapiente. Sed amet et voluptates, inventore corrupti quas assumenda nemo quibusdam magni officia ut, aperiam quo quae! Eos unde ea placeat.
+                                    </p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="photo">
+                                    <img src="../img/dossier-2.jpg" alt="Jonathan Doe" />
+                                </div>
+                                <div class="bio">
+                                    <h2>
+                                        Jonathan Doe
+                                    </h2>
+                                    <p class="title">
+                                        Executive Vice President of Finances
+                                    </p>
+                                    <p>
+                                        Magnam quidem, soluta quisquam est velit praesentium ex, vero perspiciatis ad autem sapiente. Sed amet et voluptates, inventore corrupti quas assumenda nemo quibusdam magni officia ut, aperiam quo quae! Eos unde ea placeat.
+                                    </p>
+                                    <p>
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam quidem, soluta quisquam est velit praesentium ex, vero perspiciatis ad autem sapiente. Sed amet et voluptates, inventore corrupti quas assumenda nemo quibusdam magni officia ut, aperiam quo, quae! Eos, unde ea placeat ab earum molestias a veritatis architecto quas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- /end component-->
+
+
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    </body>
+</html>

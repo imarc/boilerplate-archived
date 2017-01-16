@@ -7,13 +7,69 @@
  *   mixin and/or function definitions.
  */
 
-
 /**
  * Media query breakpoints
  */
 
 $medium: 669px;
 $large: 1024px;
+
+/**
+*
+* ACCORDION requires the accordion.plugin.js file. Within the .accordion
+* class each accordion item requires a div wrapper. Within the div wrapper
+* there is a .header class and a .content class. The .header class is the
+* clickable element that will reveal what is hidden in the .content class.
+* By default .content is hidden by javascript just in case javascript is not available.
+*
+* Emmet: .accordion>div>(.header{header}+.content>{lorem ipsum})
+*
+*/
+
+@mixin accordion() {
+    > div {
+        .header {
+            background: $lightgray;
+            color: $plain-text;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: .5em;
+            padding: .5em 1em;
+            position: relative;
+            text-align: left;
+            width: 100%;
+            &:hover {
+                background: darken($lightgray, 5%);
+            }
+            &::after {
+                bottom: 0;
+                height: 1em;
+                margin: auto 0;
+                position: absolute;
+                right: 1em;
+                top: 0;
+                width: 1em;
+            }
+            &.open {
+                background: darken($lightgray, 5%);
+                &::after {
+                    @include fontawesome("\f068");
+                }
+            }
+            &.close {
+                &::after {
+                    @include fontawesome("\f067");
+                }
+            }
+        }
+        .content {
+            padding: 1em 0;
+            &.hidden {
+                display: none;
+            }
+        }
+    }
+}
 
 
 /**
@@ -29,7 +85,7 @@ $large: 1024px;
         overflow: hidden;
         position: relative;
         .mold {
-            background-color: rgba(2255,255,255,0.6);
+            background-color: rgba(2255, 255, 255, 0.6);
             padding: 2em;
             text-align: center;
             z-index: 2;
@@ -138,6 +194,45 @@ $large: 1024px;
             > hr {
                 display: table-cell;
                 width: 1rem;
+            }
+        }
+    }
+}
+
+
+/**
+ * The DOSSIER mixin displays an individual’s biography and photograph.
+ *
+ * Emmet: .dossiers>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
+ */
+@mixin dossier($gutter: 2rem, $photoWidth: 25%, $direction: row) {
+    > * {
+        text-align: center;
+        .photo {
+            margin-bottom: 2rem;
+        }
+    }
+    @media only screen and (min-width: $medium) {
+        > * {
+            display: flex;
+            flex-direction: $direction;
+            flex-wrap: nowrap;
+            margin-bottom: 4rem;
+            text-align: left;
+            .photo {
+                flex: 0 0 $photoWidth;
+                margin-bottom: 0;
+                margin-right: $gutter;
+                @if $direction == row-reverse {
+                    margin-left: $gutter;
+                    margin-right: 0;
+                }
+            }
+            .bio {
+                .title {
+                    color: $meta-text;
+                    text-transform: uppercase;
+                }
             }
         }
     }
@@ -370,7 +465,7 @@ $large: 1024px;
     padding: 3rem;
     input {
         &:focus {
-            box-shadow: 0 0 5px rgba(114,164,0,0.7);
+            box-shadow: 0 0 5px rgba(114, 164, 0, 0.7);
         }
     }
     .submit {
@@ -398,6 +493,75 @@ $large: 1024px;
                 margin-left: auto;
                 text-align: right;
             }
+        }
+    }
+}
+
+
+/**
+ * Mobile Navigation
+ *
+ * Emmet
+ */
+
+@mixin mobileNavigation() {
+    background-color: $charcoal;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    padding: 1em;
+    transition: transform .25s;
+    z-index: 1000;
+    opacity: 0;
+    &.left {
+        right: auto;
+        left: 0;
+        transform: translateX(-100%);
+    }
+    &.right {
+        left: auto;
+        right: 0;
+        transform: translateX(100%);
+    }
+    &.open {
+        transform: translateX(0);
+        transition: transform .25s;
+    }
+    &.init {
+        display: block;
+        opacity: 1;
+    }
+    nav.utility {
+        ul li a {
+            padding: .75em 0;
+        }
+    }
+    ul {
+        padding-left: 0;
+    }
+    ul li {
+        text-align: left;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            color: #fff;
+            display: block;
+            padding: 1em 0;
+        }
+        i.fa {
+            display: inline-block;
+        }
+
+    }
+    @media only screen and (min-width: $large) {
+        &.open.left {
+            transform: translateX(-100%);
+        }
+        &.open.right {
+            transform: translateX(100%);
         }
     }
 }
@@ -476,29 +640,53 @@ $large: 1024px;
 
 
 /**
- * SEARCH LISTING shows a simple input/submit form along with a search
- * result listing.
+ * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * Remove the search form elements for a simple list.
  *
- * Emmet: ..
+ * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
  */
-@mixin search-listing() {
+@mixin listing() {
+    margin-bottom: 2rem;
     form {
-        display: flex;
-        label {
-            @include visuallyhidden;
+        .search {
+            display: flex;
+            label {
+                @include visuallyhidden;
+            }
+            .text {
+                flex-grow: 1;
+            }
+            .submit {
+                flex-basis: 120px;
+                flex-shrink: 0;
+            }
+            .submit input {
+                height: 100%;
+                width: 100%;
+            }
         }
-        .text {
-            flex-grow: 1;
-        }
-        .submit {
-            flex-basis: 120px;
-            flex-shrink: 0;
-        }
-        .submit input {
-            height: 100%;
-            width: 100%;
+        .filters {
+            margin-bottom: 2rem;
+            label {
+                display: inline;
+            }
+            span {
+                background-color: $brand-dark-blue;
+                border-radius: 0.5rem;
+                color: #fff;
+                display: inline-block;
+                margin: 0 0.5rem 0.5rem 0;
+                padding: 0.5rem 1rem;
+            }
+            input[type="checkbox"]:checked + span {
+                background-color: $brand-blue;
+            }
+            input[type="checkbox"] {
+                display: none;
+            }
         }
     }
+
     ul {
         list-style: none;
         padding: 0;
@@ -539,7 +727,7 @@ $large: 1024px;
 @mixin sticky-header() {
     position: fixed;
     top: 0;
-    transition: top 0.16s cubic-bezier(0, .40,.70,1);
+    transition: top 0.16s cubic-bezier(0, .40, .70, 1);
     width: 100%;
     z-index: 100;
 }
@@ -600,6 +788,7 @@ $large: 1024px;
         }
     }
 }
+
 
 /**
 * The TESTIMONIAL mixin is a basic implementation of a testimonial design.
@@ -701,7 +890,7 @@ $large: 1024px;
         margin-bottom: $gutter;
         padding: 2rem;
         text-align: left;
-        p:last-child {
+        *:last-child {
             margin-bottom: 0;
         }
     }
