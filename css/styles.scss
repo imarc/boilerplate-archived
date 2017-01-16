@@ -472,8 +472,6 @@ em {
 }
 
 blockquote {
-    @include grouping;
-
     border-left: 1px solid $border;
     color: $meta-text;
     font-style: italic;

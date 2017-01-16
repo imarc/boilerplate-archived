@@ -571,15 +571,6 @@ blockquote {
   padding-left: 1rem;
 }
 
-blockquote::before, blockquote::after {
-  content: "";
-  display: table;
-}
-
-blockquote::after {
-  clear: both;
-}
-
 .intro {
   color: #727272;
 }
@@ -1562,6 +1553,14 @@ nav.primary li.mega {
   text-align: center;
 }
 
+.testimonial .asset {
+  margin-bottom: 2rem;
+}
+
+.testimonial .asset img {
+  max-width: 280px;
+}
+
 .testimonial blockquote {
   border: none;
   color: #fff;
@@ -1573,27 +1572,21 @@ nav.primary li.mega {
 
 .testimonial blockquote::before, .testimonial blockquote::after {
   color: #727272;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-content: flex-end;
-          align-content: flex-end;
-  -webkit-flex-direction: column;
-          flex-direction: column;
   font-family: Georgia, serif;
   font-size: 3.375rem;
-  height: 1rem;
-  line-height: 1;
   position: absolute;
 }
 
 .testimonial blockquote::before {
   content: "“";
   left: 0;
+  line-height: 1;
   top: 0;
 }
 
 .testimonial blockquote::after {
   content: "”";
+  line-height: 0;
   right: 0;
   bottom: 0;
 }
@@ -1603,54 +1596,39 @@ nav.primary li.mega {
   font-size: 0.875rem;
   margin-bottom: 0;
   padding: 0 2.5rem;
-  position: relative;
 }
 
-@media only screen and (min-width: 669px) {
-  .testimonial blockquote {
-    font-size: 1.5rem;
-    padding: 0 7.125rem;
+@media only screen and (min-width: 1024px) {
+  .testimonial {
+    text-align: left;
   }
-  .testimonial blockquote::before, .testimonial blockquote::after {
-    font-size: 7rem;
-    height: 3rem;
-  }
-  .testimonial blockquote + p {
-    font-size: 1rem;
-    padding: 0 7.125rem;
-  }
-}
-
-.testimonial .container > div {
-  margin-bottom: 2rem;
-}
-
-.testimonial .container > div .asset {
-  margin-bottom: 2rem;
-}
-
-.testimonial .container > div .asset + div blockquote,
-.testimonial .container > div .asset + div p {
-  text-align: center;
-}
-
-@media only screen and (min-width: 669px) {
   .testimonial .container > div {
     display: -webkit-flex;
     display: flex;
     -webkit-justify-content: space-between;
             justify-content: space-between;
   }
-  .testimonial .container > div .asset {
+  .testimonial .asset {
     -webkit-flex-basis: 33%;
             flex-basis: 33%;
     -webkit-flex-shrink: 0;
             flex-shrink: 0;
-    margin-right: 4rem;
     margin-bottom: 0;
+    margin-right: 4rem;
   }
-  .testimonial .container > div .asset + div blockquote {
-    text-align: left;
+  .testimonial .asset img {
+    max-width: 100%;
+  }
+  .testimonial blockquote {
+    font-size: 1.5rem;
+    padding: 0 6rem;
+  }
+  .testimonial blockquote::before, .testimonial blockquote::after {
+    font-size: 7rem;
+  }
+  .testimonial blockquote ~ p {
+    font-size: 1rem;
+    padding: 0 6rem;
   }
 }
 

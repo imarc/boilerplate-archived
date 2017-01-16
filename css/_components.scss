@@ -613,6 +613,12 @@ $large: 1024px;
     margin-bottom: 4rem;
     padding: 4rem 0 4rem;
     text-align: center;
+    .asset {
+        margin-bottom: 2rem;
+        img {
+            max-width: 280px;
+        }
+    }
     blockquote {
         border: none;
         color: #fff;
@@ -623,22 +629,19 @@ $large: 1024px;
         &::before,
         &::after {
             color: $meta-text;
-            display: flex;
-            align-content: flex-end;
-            flex-direction: column;
             font-family: Georgia, serif;
             font-size: 3.375rem;
-            height: 1rem;
-            line-height: 1;
             position: absolute;
         }
         &::before {
             content: "“";
             left: 0;
+            line-height: 1;
             top: 0;
         }
         &::after {
             content: "”";
+            line-height: 0;
             right: 0;
             bottom: 0;
         }
@@ -647,42 +650,33 @@ $large: 1024px;
             font-size: 0.875rem;
             margin-bottom: 0;
             padding: 0 2.5rem;
-            position: relative;
         }
-        @media only screen and (min-width: $medium) {
+    }
+    @media only screen and (min-width: $large) {
+        text-align: left;
+        .container > div {
+            display: flex;
+            justify-content: space-between;
+        }
+        .asset {
+            flex-basis: 33%;
+            flex-shrink: 0;
+            margin-bottom: 0;
+            margin-right: $gutterWidth;
+            img {
+                max-width: 100%;
+            }
+        }
+        blockquote {
             font-size: 1.5rem;
-            padding: 0 7.125rem;
+            padding: 0 6rem;
             &::before,
             &::after {
                 font-size: 7rem;
-                height: 3rem;
             }
-            + p {
+            ~ p {
                 font-size: 1rem;
-                padding: 0 7.125rem;
-            }
-        }
-    }
-    .container > div {
-        margin-bottom: 2rem;
-        .asset {
-            margin-bottom: 2rem;
-            &+ div blockquote,
-            &+ div p {
-                text-align: center;
-            }
-        }
-        @media only screen and (min-width: $medium) {
-            display: flex;
-            justify-content: space-between;
-            .asset {
-                flex-basis: 33%;
-                flex-shrink: 0;
-                margin-right: $gutterWidth;
-                margin-bottom: 0;
-            }
-            .asset + div blockquote {
-                text-align: left;
+                padding: 0 6rem;
             }
         }
     }
