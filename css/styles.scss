@@ -299,11 +299,11 @@ nav {
     }
 
     &.breadcrumbs {
-        @include breadcrumbs;
+        @include breadcrumbs();
     }
 
     &.progress {
-        @include progress;
+        @include progress();
     }
 }
 

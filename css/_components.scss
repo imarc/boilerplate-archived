@@ -766,13 +766,13 @@ $large: 1024px;
  *
  * Emmet: nav.breadcrumbs>ul>li*3>a
  */
-@mixin breadcrumbs {
+@mixin breadcrumbs() {
     li:not(:last-child) a {
         padding-right: 0;
 
         &::after {
-            padding-left: .5rem;
             @include fontawesome("\f105");
+            padding-left: .5rem;
         }
     }
 }
@@ -783,7 +783,7 @@ $large: 1024px;
  *
  * Emmet: nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
  */
-@mixin progress {
+@mixin progress() {
     display: flex;
 
     ul {
@@ -797,12 +797,12 @@ $large: 1024px;
 
         &::before,
         &::after {
+            border-right: 1px solid $border;
             content: '';
             position: absolute;
             right: -.25em;
             width: .5em;
             z-index: 1;
-            border-right: 1px solid $border;
         }
 
         &::before {
@@ -827,23 +827,24 @@ $large: 1024px;
     }
 
     li.active a {
-        background: $brand-blue;
+        background-color: $brand-blue;
         color: #fff;
         cursor: default;
         pointer-events: none;
 
         &::before,
         &::after {
-            background: $brand-blue;
+            background-color: $brand-blue;
+            border-right: none;
         }
 
         &:hover {
             color: #fff;
-            background: $link-hover;
+            background-color: $link-hover;
 
             &::before,
             &::after {
-                background: $link-hover;
+                background-color: $link-hover;
             }
         }
     }
@@ -876,12 +877,12 @@ $large: 1024px;
     }
 
     li.complete a {
-        background: #fff;
+        background-color: #fff;
         color: #ccc;
 
         &::before,
         &::after {
-            background: #fff;
+            background-color: #fff;
         }
 
         &:hover {

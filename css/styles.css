@@ -403,7 +403,6 @@ nav.breadcrumbs li:not(:last-child) a {
 }
 
 nav.breadcrumbs li:not(:last-child) a::after {
-  padding-left: .5rem;
   font: normal normal normal 1em / 1 FontAwesome;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -411,6 +410,7 @@ nav.breadcrumbs li:not(:last-child) a::after {
   text-rendering: auto;
   text-transform: none;
   content: "";
+  padding-left: .5rem;
 }
 
 nav.progress {
@@ -429,12 +429,12 @@ nav.progress a {
 }
 
 nav.progress a::before, nav.progress a::after {
+  border-right: 1px solid #e5e5e5;
   content: '';
   position: absolute;
   right: -.25em;
   width: .5em;
   z-index: 1;
-  border-right: 1px solid #e5e5e5;
 }
 
 nav.progress a::before {
@@ -460,23 +460,24 @@ nav.progress li:not(:last-child) a {
 }
 
 nav.progress li.active a {
-  background: #0C96DD;
+  background-color: #0C96DD;
   color: #fff;
   cursor: default;
   pointer-events: none;
 }
 
 nav.progress li.active a::before, nav.progress li.active a::after {
-  background: #0C96DD;
+  background-color: #0C96DD;
+  border-right: none;
 }
 
 nav.progress li.active a:hover {
   color: #fff;
-  background: #EB7424;
+  background-color: #EB7424;
 }
 
 nav.progress li.active a:hover::before, nav.progress li.active a:hover::after {
-  background: #EB7424;
+  background-color: #EB7424;
 }
 
 nav.progress li.disabled a {
@@ -506,12 +507,12 @@ nav.progress li:not(:last-child) a {
 }
 
 nav.progress li.complete a {
-  background: #fff;
+  background-color: #fff;
   color: #ccc;
 }
 
 nav.progress li.complete a::before, nav.progress li.complete a::after {
-  background: #fff;
+  background-color: #fff;
 }
 
 nav.progress li.complete a:hover {
