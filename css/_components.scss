@@ -71,6 +71,7 @@ $large: 1024px;
     }
 }
 
+
 /**
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
@@ -103,6 +104,7 @@ $large: 1024px;
         padding-top: 30%;
     }
 }
+
 
 /**
  * CAROUSEL uses Slick to create a carousel. It defaults to a rather
@@ -154,6 +156,7 @@ $large: 1024px;
     }
 }
 
+
 /**
  * The COLUMNS mixin makes it so that immmediate child elements appear as
  * columns. It is responsive, allowing you to specify the media query at which
@@ -195,6 +198,46 @@ $large: 1024px;
         }
     }
 }
+
+
+/**
+ * The DOSSIER mixin displays an individual’s biography and photograph.
+ *
+ * Emmet: .dossiers>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
+ */
+@mixin dossier($gutter: 2rem, $photoWidth: 25%, $direction: row) {
+    > * {
+        text-align: center;
+        .photo {
+            margin-bottom: 2rem;
+        }
+    }
+    @media only screen and (min-width: $medium) {
+        > * {
+            display: flex;
+            flex-direction: $direction;
+            flex-wrap: nowrap;
+            margin-bottom: 4rem;
+            text-align: left;
+            .photo {
+                flex: 0 0 $photoWidth;
+                margin-bottom: 0;
+                margin-right: $gutter;
+                @if $direction == row-reverse {
+                    margin-left: $gutter;
+                    margin-right: 0;
+                }
+            }
+            .bio {
+                .title {
+                    color: $meta-text;
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+}
+
 
 /**
  * DROPDOWN
@@ -250,6 +293,7 @@ $large: 1024px;
     }
 }
 
+
 /**
  * DROPDOWN (mega)
  * The DROPDOWN (mega) mixin allows for full-width mega dropdown
@@ -291,6 +335,7 @@ $large: 1024px;
         }
     }
 }
+
 
 /**
  * FEATURES house three features in one row. Powered by flexbox,
@@ -336,6 +381,7 @@ $large: 1024px;
         }
     }
 }
+
 
 /**
  * The FOOTER mixin is a basic implementation of a footer with the company logo,
@@ -404,6 +450,7 @@ $large: 1024px;
     }
 }
 
+
 /**
  * The LOGIN mixin is a basic implementation of a login module that includes a
  * username input, password input, submit button, forgot password link, and
@@ -450,6 +497,76 @@ $large: 1024px;
         }
     }
 }
+
+
+/**
+ * Mobile Navigation
+ *
+ * Emmet
+ */
+
+@mixin mobileNavigation() {
+    background-color: $charcoal;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    padding: 1em;
+    transition: transform .25s;
+    z-index: 1000;
+    opacity: 0;
+    &.left {
+        right: auto;
+        left: 0;
+        transform: translateX(-100%);
+    }
+    &.right {
+        left: auto;
+        right: 0;
+        transform: translateX(100%);
+    }
+    &.open {
+        transform: translateX(0);
+        transition: transform .25s;
+    }
+    &.init {
+        display: block;
+        opacity: 1;
+    }
+    nav.utility {
+        ul li a {
+            padding: .75em 0;
+        }
+    }
+    ul {
+        padding-left: 0;
+    }
+    ul li {
+        text-align: left;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        justify-content: space-between;
+        a {
+            color: #fff;
+            display: block;
+            padding: 1em 0;
+        }
+        i.fa {
+            display: inline-block;
+        }
+
+    }
+    @media only screen and (min-width: $large) {
+        &.open.left {
+            transform: translateX(-100%);
+        }
+        &.open.right {
+            transform: translateX(100%);
+        }
+    }
+}
+
 
 /**
  * PAGINATION
@@ -522,30 +639,55 @@ $large: 1024px;
     }
 }
 
+
 /**
- * SEARCH LISTING shows a simple input/submit form along with a search
- * result listing.
+ * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * Remove the search form elements for a simple list.
  *
- * Emmet: ..
+ * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
  */
-@mixin search-listing() {
+@mixin listing() {
+    margin-bottom: 2rem;
     form {
-        display: flex;
-        label {
-            @include visuallyhidden;
+        .search {
+            display: flex;
+            label {
+                @include visuallyhidden;
+            }
+            .text {
+                flex-grow: 1;
+            }
+            .submit {
+                flex-basis: 120px;
+                flex-shrink: 0;
+            }
+            .submit input {
+                height: 100%;
+                width: 100%;
+            }
         }
-        .text {
-            flex-grow: 1;
-        }
-        .submit {
-            flex-basis: 120px;
-            flex-shrink: 0;
-        }
-        .submit input {
-            height: 100%;
-            width: 100%;
+        .filters {
+            margin-bottom: 2rem;
+            label {
+                display: inline;
+            }
+            span {
+                background-color: $brand-dark-blue;
+                border-radius: 0.5rem;
+                color: #fff;
+                display: inline-block;
+                margin: 0 0.5rem 0.5rem 0;
+                padding: 0.5rem 1rem;
+            }
+            input[type="checkbox"]:checked + span {
+                background-color: $brand-blue;
+            }
+            input[type="checkbox"] {
+                display: none;
+            }
         }
     }
+
     ul {
         list-style: none;
         padding: 0;
@@ -571,6 +713,7 @@ $large: 1024px;
     }
 }
 
+
 /**
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
  * header as you scroll down, and show it as you scroll back up. This is
@@ -589,6 +732,7 @@ $large: 1024px;
     width: 100%;
     z-index: 100;
 }
+
 
 /**
  * TABS
@@ -745,6 +889,89 @@ $large: 1024px;
         }
     }
 }
+
+
+/**
+* The TESTIMONIAL mixin is a basic implementation of a testimonial design.
+* Emmet: div.testimonial>div.container>blockquote+p
+* To use the TESTIMONIAL WITH ASSET component, you simply need to add additional html markup, see emmet below.
+* Emmet: div.testimonial.asset>div.container>(div>img)+blockquote+p
+*/
+
+@mixin testimonial($gutterWidth: 4rem) {
+    background-color: $charcoal;
+    margin-bottom: 4rem;
+    padding: 4rem 0 4rem;
+    text-align: center;
+    .asset {
+        margin-bottom: 2rem;
+        img {
+            max-width: 280px;
+        }
+    }
+    blockquote {
+        border: none;
+        color: #fff;
+        font-size: 1.125rem;
+        margin-bottom: 1rem;
+        padding: 0 2.5rem;
+        position: relative;
+        &::before,
+        &::after {
+            color: $meta-text;
+            font-family: Georgia, serif;
+            font-size: 3.375rem;
+            position: absolute;
+        }
+        &::before {
+            content: "“";
+            left: 0;
+            line-height: 1;
+            top: 0;
+        }
+        &::after {
+            content: "”";
+            line-height: 0;
+            right: 0;
+            bottom: 0;
+        }
+        ~ p {
+            color: $meta-text;
+            font-size: 0.875rem;
+            margin-bottom: 0;
+            padding: 0 2.5rem;
+        }
+    }
+    @media only screen and (min-width: $large) {
+        text-align: left;
+        .container > div {
+            display: flex;
+            justify-content: space-between;
+        }
+        .asset {
+            flex-basis: 33%;
+            flex-shrink: 0;
+            margin-bottom: 0;
+            margin-right: $gutterWidth;
+            img {
+                max-width: 100%;
+            }
+        }
+        blockquote {
+            font-size: 1.5rem;
+            padding: 0 6rem;
+            &::before,
+            &::after {
+                font-size: 7rem;
+            }
+            ~ p {
+                font-size: 1rem;
+                padding: 0 6rem;
+            }
+        }
+    }
+}
+
 
 /**
  *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Testimonial Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+    </head>
+    <body>
+        <div class="torso">
+            <main>
+                <section class="intro">
+                    <div class="container">
+                        <h1>Testimonial Components</h1>
+                        <p>This component includes a simple testimonial component, plus an additioanl layout allowing for an asset floated to the left. </p>
+                        <h2>Simple Testimonial Component</h2>
+                        <p>
+                            The TESTIMONIAL mixin is a basic implementation of a testimonial design.
+                        </p>
+                        <h4>Emmet:</h4>
+                        <code>
+                            div.testimonial>div.container>blockquote+p
+                        </code>
+                    </div>
+                </section>
+                <section>
+                    <!-- Begin component -->
+                    <div class="testimonial">
+                        <div class="container">
+                            <blockquote>
+                                It was an honor to work with Imarc. They demonstrated, very early on, a true ability to understand our business and solve for our needs—create a new intranet site, one that would increase engagement and foster community. Imarc delivered incredible results, taking our former site to new heights. We couldn’t be happier with their work and subject matter expertise.
+                            </blockquote>
+                            <p>
+                                – John Smith, Chief Marketing Officer, Acme Co
+                            </p>
+                        </div>
+                    </div>
+                    <!-- /end component-->
+
+                </section>
+                <section>
+                    <section class="intro">
+                        <div class="container">
+                            <h2>Testimonial w/ Asset Component</h2>
+                            <p>
+                                To use the TESTIMONIAL WITH ASSET component, you simply need to add a div.asset on the same level as the blockquote and include your image within.
+                            </p>
+                            <h4>Emmet:</h4>
+                            <code>
+                                div.testimonial>div.container>.asset>img^blockquote+p
+                            </code>
+                        </div>
+                    </section>
+                    <!-- Begin component -->
+                    <div class="testimonial">
+                        <div class="container">
+                            <div>
+                                <div class="asset">
+                                    <img src="http://dummyimage.com/900x900/ff675b/fff.png&text=Company logo or headshot" alt="" />
+                                </div>
+                                <div>
+                                    <blockquote>
+                                        It was an honor to work with Imarc. They demonstrated, very early on, a true ability to understand our business and solve for our needs—create a new intranet site, one that would increase engagement and foster community. Imarc delivered incredible results, taking our former site to new heights. We couldn’t be happier with their work and subject matter expertise.
+                                    </blockquote>
+                                    <p>
+                                        – John Smith, Chief Marketing Officer, Acme Co
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /end component-->
+                </section>
+            </main>
+        </div>
+        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    </body>
+</html>

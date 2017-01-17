@@ -2,5 +2,3 @@
 _site
 .sass-cache
 node_modules
-styles.css
-styles.css.map
