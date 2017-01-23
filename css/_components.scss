@@ -514,6 +514,8 @@ $large: 1024px;
     transition: transform .25s;
     z-index: 1000;
     opacity: 0;
+    overflow-y: auto;
+
     &.left {
         right: auto;
         left: 0;

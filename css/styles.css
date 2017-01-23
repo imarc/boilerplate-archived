@@ -403,6 +403,7 @@ nav.utility a {
   transition: transform .25s, -webkit-transform .25s;
   z-index: 1000;
   opacity: 0;
+  overflow-y: auto;
 }
 
 .mobile.left {
@@ -485,6 +486,7 @@ nav.utility a {
   transition: transform .25s, -webkit-transform .25s;
   z-index: 1000;
   opacity: 0;
+  overflow-y: auto;
   z-index: 1001;
   background: #262626;
 }
