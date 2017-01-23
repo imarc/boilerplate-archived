@@ -215,6 +215,10 @@ html {
 
 body {
     min-width: 300px;
+    &.menu-open {
+        overflow: hidden;
+        position: fixed;
+    }
 }
 
 img {

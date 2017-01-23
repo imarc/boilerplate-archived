@@ -235,6 +235,11 @@ body {
   min-width: 300px;
 }
 
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+}
+
 img {
   max-width: 100%;
   vertical-align: middle;

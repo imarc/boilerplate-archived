@@ -96,6 +96,9 @@
             var toggleSelector = toSelector(plugin.settings.toggleClass);
             var subMenuClass   = toSelector(plugin.settings.subMenuClass);
             var $overlay       = $(toSelector(plugin.settings.wrapperClass)).find('.mobile-overlay');
+            var $body          = $('body');
+
+            $body.toggleClass('menu-open');
 
             $overlay.toggle();
 
