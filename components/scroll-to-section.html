@@ -16,22 +16,55 @@
                    <div class="container">
                         <h1>Scroll to Section</h1>
                         <p>
-                            Scroll to Section allows smooth scrolling for anchored navigation links.
+                            Scroll to Section leverages the <a href="https://github.com/cferdinandi/smooth-scroll">smooth scroll script</a> to implement smooth scrolling to anchor links.
                         </p>
-                        <p>Emmet shorthand</p>
+                        <h2>Usage</h2>
                         <p>
-                            <pre><code>.foo</code></pre>
+                            Add a <code>data-scroll</code> data attribute to an element which when clicked will smooth-scroll to your anchor link.
+                        </p>
+                        <p>
+                            <pre><code>&lt;a data-scroll href="#foo">I am a smooth scroll link&lt;/a&gt;</code></pre>
+                        </p>
+                        <p>
+                            Initialize the script
+                        </p>
+                        <p>
+                            <pre><code>smoothScroll.init();</code></pre>
                         </p>
 
-                        <p>Mixin usage</p>
+                        <h2>Options and Settings</h2>
                         <p>
                             <pre>
                                 <code>
-div {
-    @include tiles($gutter: 2rem, $columns: 4);
-}</code>
+smoothScroll.init({
+    selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+    selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+    speed: 500, // Integer. How fast to complete the scroll in milliseconds
+    easing: 'easeInOutCubic', // Easing pattern to use
+    offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+    callback: function ( anchor, toggle ) {} // Function to run after scrolling
+});</code>
                             </pre>
                         </p>
+                        <p>
+                            You can also override options with data attributes via HTML
+                        </p>
+                        <p>
+                            <pre>
+                                <code>
+&lt;a data-scroll
+    data-options='{
+        "speed": 500,
+        "easing": "easeInOutCubic",
+        "offset": 0
+    }'
+    >
+   I am a smooth scroll link
+&lt;/a&gt;
+                                </code>
+                            </pre>
+                        </p>
+
                    </div>
                 </section>
                 <section>
@@ -130,10 +163,12 @@ div {
         </div>
 
         <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
-        <script src="../js/scrollToSection.plugin.js"></script>
+        <script src="../js/smooth-scroll.js"></script>
 
         <script>
+
             smoothScroll.init();
+
         </script>
 
     </body>
