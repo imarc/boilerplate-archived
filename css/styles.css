@@ -235,11 +235,6 @@ body {
   min-width: 300px;
 }
 
-body.menu-open {
-  overflow: hidden;
-  position: fixed;
-}
-
 img {
   max-width: 100%;
   vertical-align: middle;
@@ -426,7 +421,7 @@ nav.utility a {
           transform: translateX(100%);
 }
 
-.mobile.open {
+.mobile.left.open, .mobile.right.open {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   transition: -webkit-transform .25s;
@@ -514,7 +509,7 @@ nav.utility a {
           transform: translateX(100%);
 }
 
-.header-content > .dropdown.open {
+.header-content > .dropdown.left.open, .header-content > .dropdown.right.open {
   -webkit-transform: translateX(0);
           transform: translateX(0);
   transition: -webkit-transform .25s;

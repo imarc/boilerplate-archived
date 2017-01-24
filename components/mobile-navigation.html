@@ -354,6 +354,41 @@ $(function () {
                 </table>
             </div>
         </section>
+        <br />
+        <br />
+        <section>
+            <div class="container">
+                <h2>Plugin Methods</h2>
+                <p>All available methods for this library.</p>
+                <table>
+                    <tr>
+                        <th>Method</th>
+                        <th>Description</th>
+                    </tr>
+
+                    <tr>
+                        <td>closeAll</td>
+                        <td>Close the entire menu. You can bind this to custom close buttons or trigger it programmatically </td>
+                    </tr>
+
+                </table>
+
+                <pre>
+                <code>
+$(function () {
+     // initialize secondary mobile nav
+    var filters = $('.filters').mobileNavigation({
+        directionFrom: 'right'
+    });
+
+    $('.close').on('click', function(){
+        filters.closeAll()
+    })
+});
+                </code>
+                </pre>
+            </div>
+        </section>
     </div>
     <footer class="primary">
         <div class="container">

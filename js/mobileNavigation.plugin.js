@@ -33,6 +33,10 @@
 
         this.settings = $.extend({}, defaults, options);
 
+        this.closeAll = function(){
+            toggleAll();
+        };
+
         /**
          *
          * Return CSS selector from class name.
@@ -96,11 +100,10 @@
             var toggleSelector = toSelector(plugin.settings.toggleClass);
             var subMenuClass   = toSelector(plugin.settings.subMenuClass);
             var $overlay       = $(toSelector(plugin.settings.wrapperClass)).find('.mobile-overlay');
-            var $body          = $('body');
-
-            $body.toggleClass('menu-open');
 
             $overlay.toggle();
+
+            toggleFreezeFrame();
 
             $(toggleSelector).find('i').toggleClass('fa-bars fa-close');
 
@@ -114,7 +117,6 @@
 
             toggleMenu.call(plugin[0]);
         };
-
 
         /**
          *
@@ -272,6 +274,25 @@
 
         };
 
+        /*
+         *
+         * Freeze frame toggle
+         */
+
+        var toggleFreezeFrame = function() {
+            var scroll = {
+                'height': '100%',
+                'overflow': 'hidden'
+            };
+
+            if($(plugin[0]).hasClass('open')) {
+                scroll.overflow = 'auto';
+            }
+
+            $('html, body').css(scroll);
+
+        };
+
         /**
          *
          * Set up main menu
@@ -296,9 +317,11 @@
         });
     };
 
-})(jQuery);
+})
+(jQuery);
 
-$(function(){
+$(function() {
     // Mobile Navigation
     $('.mobile').mobileNavigation();
+
 });
