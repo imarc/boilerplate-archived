@@ -315,6 +315,10 @@ nav.utility {
 }
 
 .header-content {
+    align-items: flex-end;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
     .menu-toggle:hover,
     .menu-toggle:focus {
         background-color: $link;
@@ -331,29 +335,21 @@ nav.utility {
 }
 
 .desktop {
-    display: none;
-    flex-flow: column wrap;
     align-items: flex-end;
-    justify-content: space-between;
+    display: none;
     flex-basis: 80%;
+    flex-flow: column wrap;
+    justify-content: space-between;
     max-width: 80%;
-
     nav.primary {
+        align-self: flex-start;
         flex-basis: 70%;
         max-width: 70%;
-        align-self: flex-start;
     }
     .utilities {
         flex-basis: 30%;
         max-width: 30%;
     }
-}
-
-.header-content {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-end;
-    justify-content: space-between;
 }
 
 form.search {

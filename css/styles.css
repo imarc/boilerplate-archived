@@ -477,6 +477,17 @@ nav.utility a {
   }
 }
 
+.header-content {
+  -webkit-align-items: flex-end;
+          align-items: flex-end;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+
 .header-content .menu-toggle:hover,
 .header-content .menu-toggle:focus {
   background-color: #0C96DD;
@@ -576,41 +587,30 @@ nav.utility a {
 }
 
 .desktop {
-  display: none;
-  -webkit-flex-flow: column wrap;
-          flex-flow: column wrap;
   -webkit-align-items: flex-end;
           align-items: flex-end;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
+  display: none;
   -webkit-flex-basis: 80%;
           flex-basis: 80%;
+  -webkit-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
   max-width: 80%;
 }
 
 .desktop nav.primary {
+  -webkit-align-self: flex-start;
+          align-self: flex-start;
   -webkit-flex-basis: 70%;
           flex-basis: 70%;
   max-width: 70%;
-  -webkit-align-self: flex-start;
-          align-self: flex-start;
 }
 
 .desktop .utilities {
   -webkit-flex-basis: 30%;
           flex-basis: 30%;
   max-width: 30%;
-}
-
-.header-content {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-align-items: flex-end;
-          align-items: flex-end;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
 }
 
 form.search {
