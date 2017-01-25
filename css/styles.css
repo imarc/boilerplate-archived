@@ -326,6 +326,39 @@ img {
   width: 1px;
 }
 
+.search-drawer {
+  background-color: #4A4A4A;
+}
+
+.search-drawer > div {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 150ms ease;
+}
+
+.search-drawer > div.open {
+  max-height: 80px;
+}
+
+.search-drawer form {
+  display: -webkit-flex;
+  display: flex;
+  padding: 1rem 0;
+}
+
+.search-drawer form > * {
+  margin-bottom: 0;
+}
+
+.search-drawer form .text {
+  -webkit-flex: 1 1 auto;
+          flex: 1 1 auto;
+}
+
+.search-drawer form .submit input {
+  height: 100%;
+}
+
 header.primary {
   background-color: #191919;
   padding: 1rem 0;
@@ -335,18 +368,12 @@ header.primary .container {
   position: static;
 }
 
-.branding a {
-  display: inline-block;
+.branding {
+  -webkit-flex-basis: 180px;
+          flex-basis: 180px;
+  -webkit-flex-shrink: 0;
+          flex-shrink: 0;
   max-width: 180px;
-}
-
-nav::before, nav::after {
-  content: "";
-  display: table;
-}
-
-nav::after {
-  clear: both;
 }
 
 nav ul {
@@ -572,29 +599,6 @@ nav.utility a {
 
 .desktop {
   display: none;
-  -webkit-flex-flow: column wrap;
-          flex-flow: column wrap;
-  -webkit-align-items: flex-end;
-          align-items: flex-end;
-  -webkit-justify-content: space-between;
-          justify-content: space-between;
-  -webkit-flex-basis: 80%;
-          flex-basis: 80%;
-  max-width: 80%;
-}
-
-.desktop nav.primary {
-  -webkit-flex-basis: 70%;
-          flex-basis: 70%;
-  max-width: 70%;
-  -webkit-align-self: flex-start;
-          align-self: flex-start;
-}
-
-.desktop .utilities {
-  -webkit-flex-basis: 30%;
-          flex-basis: 30%;
-  max-width: 30%;
 }
 
 .header-content {
@@ -2061,6 +2065,25 @@ header.primary {
   .wrapper {
     overflow: auto;
   }
+  .branding {
+    margin-right: 2rem;
+  }
+  .desktop {
+    -webkit-align-items: flex-end;
+            align-items: flex-end;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex: 1 1 auto;
+            flex: 1 1 auto;
+    -webkit-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-justify-content: space-between;
+            justify-content: space-between;
+  }
+  .desktop nav.primary {
+    -webkit-align-self: flex-start;
+            align-self: flex-start;
+  }
   nav ul {
     text-align: left;
   }
@@ -2068,7 +2091,7 @@ header.primary {
     margin-bottom: 0;
   }
   nav.primary > ul > li {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-left: 1rem;
     position: relative;
   }
@@ -2087,10 +2110,6 @@ header.primary {
   }
   .utilities nav.utility ul {
     text-align: right;
-  }
-  .desktop {
-    display: -webkit-flex;
-    display: flex;
   }
   button.menu-toggle {
     display: none;

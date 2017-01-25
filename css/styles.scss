@@ -256,6 +256,31 @@ img {
     @include visuallyhidden;
 }
 
+.search-drawer {
+    background-color: $darkgray;
+    > div {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 150ms ease;
+        &.open {
+            max-height: 80px;
+        }
+    }
+    form {
+        display: flex;
+        padding: 1rem 0;
+        > * {
+            margin-bottom: 0;
+        }
+        .text {
+            flex: 1 1 auto;
+        }
+        .submit input {
+            height: 100%;
+        }
+    }
+}
+
 header.primary {
     background-color: $charcoal;
     padding: 1rem 0;
@@ -265,14 +290,12 @@ header.primary {
 }
 
 .branding {
-    a {
-        display: inline-block;
-        max-width: 180px;
-    }
+    flex-basis: 180px;
+    flex-shrink: 0;
+    max-width: 180px;
 }
 
 nav {
-    @include grouping;
     ul {
         @include no-bullets;
 
@@ -327,21 +350,6 @@ nav.utility {
 
 .desktop {
     display: none;
-    flex-flow: column wrap;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-basis: 80%;
-    max-width: 80%;
-
-    nav.primary {
-        flex-basis: 70%;
-        max-width: 70%;
-        align-self: flex-start;
-    }
-    .utilities {
-        flex-basis: 30%;
-        max-width: 30%;
-    }
 }
 
 .header-content {
@@ -914,15 +922,32 @@ header.primary {
         overflow: auto;
     }
 
+    .branding {
+        margin-right: 2rem;
+    }
+
+    .desktop {
+        align-items: flex-end;
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        nav.primary {
+            align-self: flex-start;
+        }
+    }
+
     nav {
         ul {
             text-align: left;
         }
     }
+
     nav.primary {
         margin-bottom: 0;
         > ul > li {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-left: 1rem;
             position: relative;
         }
@@ -947,10 +972,6 @@ header.primary {
         }
     }
 
-    .desktop {
-        display: flex;
-    }
-
     button.menu-toggle {
         display: none;
     }
@@ -958,6 +979,7 @@ header.primary {
     aside.primary {
         width: 25%;
     }
+
     aside.primary ~ main {
         width: 75%;
     }
