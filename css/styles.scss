@@ -310,10 +310,6 @@ nav.utility {
     }
 }
 
-.mobile {
-    @include mobileNavigation;
-}
-
 .header-content {
     align-items: flex-end;
     display: flex;
@@ -850,6 +846,10 @@ nav.primary {
     li.mega {
         @include dropdown-mega();
     }
+}
+
+.mobile {
+    @include mobileNavigation;
 }
 
 .features {
