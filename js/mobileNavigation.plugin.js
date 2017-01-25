@@ -253,7 +253,7 @@
 
         /**
          *
-         * Insert overlay and bind it to close  all menus on click
+         * Insert overlay and bind it to close all menus on click
          *
          */
 

@@ -680,6 +680,12 @@ textarea {
     width: 100%;
 }
 
+input[type="reset"],
+input[type="search"],
+input[type="submit"] {
+    -webkit-appearance: none;
+}
+
 ::-webkit-input-placeholder {
     color: #4A4A4A;
 }
