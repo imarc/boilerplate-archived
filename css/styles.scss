@@ -320,7 +320,6 @@ nav.utility {
         background-color: $link;
     }
     > .dropdown {
-        @include mobileNavigation;
         background-color: lighten($charcoal, 5%);
         z-index: 1001;    
         &.sub-menu {
@@ -848,6 +847,7 @@ nav.primary {
     }
 }
 
+.header-content > .dropdown,
 .mobile {
     @include mobileNavigation;
 }
