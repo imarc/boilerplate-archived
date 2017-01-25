@@ -314,15 +314,20 @@ nav.utility {
     @include mobileNavigation;
 }
 
-.header-content > .dropdown {
-    @include mobileNavigation;
-    z-index: 1001;
-    background: lighten($charcoal, 5%);
-    &.sub-menu {
-        z-index: 1002;
-        background: lighten($charcoal, 10%);
+.header-content {
+    .menu-toggle:hover,
+    .menu-toggle:focus {
+        background-color: $link;
     }
-
+    > .dropdown {
+        @include mobileNavigation;
+        background-color: lighten($charcoal, 5%);
+        z-index: 1001;    
+        &.sub-menu {
+            background-color: lighten($charcoal, 10%);
+            z-index: 1002;
+        }
+    }
 }
 
 .desktop {
@@ -352,7 +357,6 @@ nav.utility {
 }
 
 form.search {
-    display: -webkit-flex;
     display: flex;
     .text,
     .submit {
@@ -363,6 +367,10 @@ form.search {
     }
     label {
         @include visuallyhidden;
+    }
+    .submit {
+        flex-basis: 33%;
+        flex-shrink: 0;
     }
     input {
         border: none;
@@ -671,6 +679,7 @@ input[type="url"],
 input[type="week"],
 textarea {
     border: 1px solid $border;
+    border-radius: 0;
     box-sizing: border-box;
     color: $plain-text;
     display: block;
@@ -682,7 +691,9 @@ textarea {
 
 input[type="reset"],
 input[type="search"],
+input[type="text"],
 input[type="submit"] {
+    border-radius: 0;
     -webkit-appearance: none;
 }
 
@@ -958,6 +969,7 @@ header.primary {
     aside.primary {
         width: 25%;
     }
+
     aside.primary ~ main {
         width: 75%;
     }
