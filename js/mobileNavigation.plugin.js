@@ -13,7 +13,7 @@
 
         var defaults = {
             toggleClass: 'menu-toggle',
-            wrapperClass: 'wrapper',
+            wrapperClass: 'shell',
             subMenuClass: 'dropdown',
             directionFrom: 'left',
             overlayCss: {
