@@ -306,33 +306,36 @@ nav.utility {
     }
 }
 
-.mobile {
-    @include mobileNavigation;
-}
-
-.header-content > .dropdown {
-    @include mobileNavigation;
-    z-index: 1001;
-    background: lighten($charcoal, 5%);
-    &.sub-menu {
-        z-index: 1002;
-        background: lighten($charcoal, 10%);
+.header-content {
+    align-items: flex-end;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .menu-toggle:hover,
+    .menu-toggle:focus {
+        background-color: $link;
     }
-
+    > .dropdown {
+        background-color: lighten($charcoal, 5%);
+        z-index: 1001;    
+        &.sub-menu {
+            background-color: lighten($charcoal, 10%);
+            z-index: 1002;
+        }
+    }
 }
 
 .desktop {
-    display: none;
-    flex-flow: column wrap;
     align-items: flex-end;
-    justify-content: space-between;
+    display: none;
     flex-basis: 80%;
+    flex-flow: column wrap;
+    justify-content: space-between;
     max-width: 80%;
-
     nav.primary {
+        align-self: flex-start;
         flex-basis: 70%;
         max-width: 70%;
-        align-self: flex-start;
     }
     .utilities {
         flex-basis: 30%;
@@ -340,15 +343,7 @@ nav.utility {
     }
 }
 
-.header-content {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-end;
-    justify-content: space-between;
-}
-
 form.search {
-    display: -webkit-flex;
     display: flex;
     .text,
     .submit {
@@ -359,6 +354,10 @@ form.search {
     }
     label {
         @include visuallyhidden;
+    }
+    .submit {
+        flex-basis: 33%;
+        flex-shrink: 0;
     }
     input {
         border: none;
@@ -667,6 +666,7 @@ input[type="url"],
 input[type="week"],
 textarea {
     border: 1px solid $border;
+    border-radius: 0;
     box-sizing: border-box;
     color: $plain-text;
     display: block;
@@ -678,7 +678,9 @@ textarea {
 
 input[type="reset"],
 input[type="search"],
+input[type="text"],
 input[type="submit"] {
+    border-radius: 0;
     -webkit-appearance: none;
 }
 
@@ -848,6 +850,11 @@ table {
 
 .dossier {
     @include dossier($gutter: 2rem, $photoWidth: 25%, $direction: row);
+}
+
+.header-content > .dropdown,
+.mobile {
+    @include mobileNavigation;
 }
 
 .features {

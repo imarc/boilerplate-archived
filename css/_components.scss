@@ -526,7 +526,7 @@ $large: 1024px;
         right: 0;
         transform: translateX(100%);
     }
-    &.open {
+    &.left.open, &.right.open {
         transform: translateX(0);
         transition: transform .25s;
     }
