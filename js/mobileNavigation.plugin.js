@@ -13,7 +13,7 @@
 
         var defaults = {
             toggleClass: 'menu-toggle',
-            wrapperClass: 'wrapper',
+            wrapperClass: 'shell',
             subMenuClass: 'dropdown',
             directionFrom: 'left',
             overlayCss: {
@@ -32,6 +32,10 @@
 
 
         this.settings = $.extend({}, defaults, options);
+
+        this.closeAll = function(){
+            toggleAll();
+        };
 
         /**
          *
@@ -99,6 +103,8 @@
 
             $overlay.toggle();
 
+            toggleFreezeFrame();
+
             $(toggleSelector).find('i').toggleClass('fa-bars fa-close');
 
             $(plugin[0].parentNode)
@@ -111,7 +117,6 @@
 
             toggleMenu.call(plugin[0]);
         };
-
 
         /**
          *
@@ -269,6 +274,25 @@
 
         };
 
+        /*
+         *
+         * Freeze frame toggle
+         */
+
+        var toggleFreezeFrame = function() {
+            var scroll = {
+                'height': '100%',
+                'overflow': 'hidden'
+            };
+
+            if($(plugin[0]).hasClass('open')) {
+                scroll.overflow = 'auto';
+            }
+
+            $('html, body').css(scroll);
+
+        };
+
         /**
          *
          * Set up main menu
@@ -293,9 +317,11 @@
         });
     };
 
-})(jQuery);
+})
+(jQuery);
 
-$(function(){
+$(function() {
     // Mobile Navigation
     $('.mobile').mobileNavigation();
+
 });
