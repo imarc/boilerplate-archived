@@ -1114,7 +1114,7 @@ table tr:nth-child(even) td {
 /* = Section Specific = */
 /* =  Page Specific = */
 /* = Components = */
-.accordions > div .header {
+.accordion > div .header {
   background: #DDD;
   color: #191919;
   cursor: pointer;
@@ -1126,11 +1126,11 @@ table tr:nth-child(even) td {
   width: 100%;
 }
 
-.accordions > div .header:hover {
+.accordion > div .header:hover {
   background: #d0d0d0;
 }
 
-.accordions > div .header::after {
+.accordion > div .header::after {
   bottom: 0;
   height: 1em;
   margin: auto 0;
@@ -1140,11 +1140,11 @@ table tr:nth-child(even) td {
   width: 1em;
 }
 
-.accordions > div .header.open {
+.accordion > div .header.open {
   background: #d0d0d0;
 }
 
-.accordions > div .header.open::after {
+.accordion > div .header.open::after {
   font: normal normal normal 1em / 1 FontAwesome;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1154,7 +1154,7 @@ table tr:nth-child(even) td {
   content: "";
 }
 
-.accordions > div .header.close::after {
+.accordion > div .header.close::after {
   font: normal normal normal 1em / 1 FontAwesome;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1164,11 +1164,11 @@ table tr:nth-child(even) td {
   content: "";
 }
 
-.accordions > div .content {
+.accordion > div .content {
   padding: 1em 0;
 }
 
-.accordions > div .content.hidden {
+.accordion > div .content.hidden {
   display: none;
 }
 
