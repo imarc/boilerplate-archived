@@ -1,35 +1,45 @@
- /**
- * Built using Imarc Boilerplate v2.1
- *
- * Copyright 2016 Imarc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * = Table of Contents =
- * Variables
- * Mixins
- * Base
- * Layout
- * Typography
- * Forms
- * Iconography
- * Messaging
- * Tables
- * Section Specific
- * Page Specific
- * Components
- * Media Queries
- * Print Styles
- */
+////
+/// Imarc Boilerplate v2.1
+///
+/// Copyright 2016 Imarc
+/// Licensed under the Apache License v2.0
+/// http://www.apache.org/licenses/LICENSE-2.0
+///
+/// @group styles
+////
+
+///
+/// = Table of Contents =
+/// Variables
+/// Mixins
+/// Base
+/// Layout
+/// Typography
+/// Forms
+/// Iconography
+/// Messaging
+/// Tables
+/// Section Specific
+/// Page Specific
+/// Components
+/// Media Queries
+/// Print Styles
+///
 
 @import "_components";
 
 
-/* = Variables = */
+///
+/// = Variables =
+///
 
 $font-stack: "Helvetica Neue", Arial, sans-serif;
 
-/* Grays */
+
+///
+/// Grays
+///
+
 $white:     #FFF;
 $lightgray: #DDD;
 $gray:      #808080;
@@ -37,36 +47,58 @@ $darkgray:  #4A4A4A;
 $charcoal:  #191919;
 $black:     #000;
 
-/* The brand colors (name them the color) */
+
+///
+/// The brand colors (name them the color)
+///
+
 $brand-blue: #0C96DD;
 $brand-dark-blue: #0C508A;
 $brand-orange: #EB7424;
 
-/* Messaging colors */
+
+///
+/// Messaging colors
+///
+
 $success: #48AC2C;
 $error: #CE2A2A;
 $info: #DDD;
 
-/* Applied colors */
+
+///
+/// Applied colors
+///
+
 $plain-text: $charcoal;
 $meta-text: lighten($charcoal, 35%);
 $link: $brand-blue;
 $link-hover: $brand-orange;
 $border: lighten($charcoal, 80%);
 
-/* Social Network Colors */
+
+///
+/// Social Network Colors
+///
+
 $facebook: #3664A2;
 $twitter: #55ACEE;
 $linkedin: #0077B5;
 $youtube: #CD201F;
 
-/* Breakpoint values */
+
+///
+/// Breakpoint values
+///
+
 $medium: 669px;
 $large: 1024px;
 
 
 
-/* = Mixins = */
+///
+/// = Mixins =
+///
 
 @mixin button {
     background-color: $link;
@@ -91,6 +123,11 @@ $large: 1024px;
     }
 }
 
+
+///
+/// container mixin
+///
+
 @mixin container {
     margin-left: auto;
     margin-right: auto;
@@ -99,6 +136,11 @@ $large: 1024px;
     padding-right: 1rem;
     position: relative;
 }
+
+
+///
+/// grouping mixin
+///
 
 @mixin grouping {
     &::before,
@@ -110,6 +152,11 @@ $large: 1024px;
         clear: both;
     }
 }
+
+
+///
+/// fontawesome mixin
+///
 
 @mixin fontawesome($character: "") {
     font: normal normal normal 1em unquote("/") 1 FontAwesome;
@@ -125,6 +172,11 @@ $large: 1024px;
         display: inline-block;
     }
 }
+
+
+///
+/// messaging mixin
+///
 
 @mixin messaging {
     margin-bottom: 2rem;
@@ -151,6 +203,11 @@ $large: 1024px;
     }
 }
 
+
+///
+/// no-bullets mixin
+///
+
 @mixin no-bullets {
     list-style: none;
     margin: 0;
@@ -161,6 +218,11 @@ $large: 1024px;
     }
 }
 
+
+///
+/// transition mixin
+///
+
 @mixin transition($properties: all, $duration: 250ms, $easing: ease-in-out) {
     @if length($properties) > 1 {
         -webkit-transition-property: $properties;
@@ -170,6 +232,11 @@ $large: 1024px;
         transition: $properties $duration $easing;
     }
 }
+
+
+///
+/// visuallyhidden mixin
+///
 
 @mixin visuallyhidden {
     border: 0;
@@ -183,7 +250,9 @@ $large: 1024px;
 }
 
 
-/* = Base = */
+///
+/// = Base =
+///
 
 a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
     border: 0;
@@ -228,7 +297,9 @@ img {
 }
 
 
-/* = Layout = */
+///
+/// = Layout =
+///
 
 .group {
     @include grouping;
@@ -340,7 +411,7 @@ nav.utility {
     }
     > .dropdown {
         background-color: lighten($charcoal, 5%);
-        z-index: 1001;    
+        z-index: 1001;
         &.sub-menu {
             background-color: lighten($charcoal, 10%);
             z-index: 1002;
@@ -391,7 +462,7 @@ form.search {
     text-align: center;
     .copy {
         @include container;
-        * {
+/// {
             color: #FFF;
         }
     }
@@ -478,7 +549,9 @@ footer.primary {
 }
 
 
-/* = Typography = */
+///
+/// = Typography =
+///
 
 h1,
 h2,
@@ -619,7 +692,9 @@ code {
 }
 
 
-/* = Forms = */
+///
+/// = Forms =
+///
 
 button,
 input,
@@ -754,7 +829,9 @@ input[type="submit"].link {
 }
 
 
-/* = Iconography = */
+///
+/// = Iconography =
+///
 
 .thumbs-up::before {
     @include fontawesome("\f087");
@@ -763,7 +840,9 @@ input[type="submit"].link {
 }
 
 
-/* = Messaging = */
+///
+/// = Messaging =
+///
 
 .success {
     @include messaging;
@@ -805,7 +884,9 @@ input[type="submit"].link {
 }
 
 
-/* = Tables = */
+///
+/// = Tables =
+///
 
 table {
     border-collapse: collapse;
@@ -837,13 +918,19 @@ table {
 }
 
 
-/* = Section Specific = */
+///
+/// = Section Specific =
+///
 
 
-/* =  Page Specific = */
+///
+/// =  Page Specific =
+///
 
 
-/* = Components = */
+///
+/// = Components =
+///
 
 .accordions {
     @include accordion();
@@ -910,16 +997,20 @@ nav.primary {
 }
 
 
-/* = Media Queries = */
+///
+/// = Media Queries =
+///
 @media only screen and (min-width: $medium) {
-    
+
 }
 
 
 @media only screen and (min-width: $large) {
 
-    /* = Layout = */
-    
+    ///
+    /// = Layout =
+    ///
+
     .wrapper {
         overflow: auto;
     }
@@ -977,7 +1068,7 @@ nav.primary {
     button.menu-toggle {
         display: none;
     }
-    
+
     .torso .wrap {
         display: flex;
         justify-content: space-between;
@@ -998,7 +1089,9 @@ nav.primary {
     }
 
 
-    /* = Typography = */
+    ///
+    /// = Typography =
+    ///
 
     h1 {
         font-size: 2.6rem;
@@ -1022,13 +1115,15 @@ nav.primary {
 }
 
 
-/* = Print Styles = */
+///
+/// = Print Styles =
+///
 
 @media print {
-    * {
+/// {
         background-color: transparent !important;
         box-shadow: none !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        color: #000 !important; // Black prints faster: h5bp.com/s
         text-shadow: none !important;
     }
 
