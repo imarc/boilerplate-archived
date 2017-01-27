@@ -278,6 +278,7 @@ img {
 header.primary {
     background-color: $charcoal;
     padding: 1rem 0;
+    position: relative;
     .container {
         position: static;
     }
@@ -874,7 +875,7 @@ footer.primary {
     @include footer();
 }
 
-header.primary {
+header.primary.sticky {
     @include sticky-header();
 }
 
@@ -890,7 +891,7 @@ nav.pagination {
     @include pagination();
 }
 
-nav.primary {
+.desktop nav.primary {
     @include dropdown();
     li.mega {
         @include dropdown-mega();

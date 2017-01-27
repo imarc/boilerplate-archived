@@ -266,7 +266,7 @@ $large: 1024px;
             opacity: 0;
             padding: 2rem 0;
             position: absolute;
-            top: 100%;
+            top: calc(100% + 1rem);
             transition: opacity 300ms;
             visibility: hidden;
             z-index: 1;
@@ -507,6 +507,7 @@ $large: 1024px;
 @mixin mobileNavigation() {
     background-color: $charcoal;
     bottom: 0;
+    display: none;
     height: 100%;
     opacity: 0;
     overflow-y: auto;
@@ -517,11 +518,13 @@ $large: 1024px;
     width: 80%;
     z-index: 1000;
     &.left {
+        display: block;
         left: 0;
         right: auto;
         transform: translateX(-100%);
     }
     &.right {
+        display: block;
         left: auto;
         right: 0;
         transform: translateX(100%);
