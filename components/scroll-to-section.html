@@ -20,7 +20,7 @@
                         </p>
                         <h2>Usage</h2>
                         <p>
-                            Add a <code>data-scroll</code> data attribute to an element which when clicked will smooth-scroll to your anchor link.
+                            Add a <code>data-scroll</code> data attribute to an element which when clicked will smooth scroll to its associated anchor element.
                         </p>
                         <p>
                             <pre><code>&lt;a data-scroll href="#foo">I am a smooth scroll link&lt;/a&gt;</code></pre>
@@ -33,6 +33,9 @@
                         </p>
 
                         <h2>Options and Settings</h2>
+                        <p>
+                            Pass in options and settings to the <code>init()</code> function
+                        </p>
                         <p>
                             <pre>
                                 <code>
@@ -47,8 +50,7 @@ smoothScroll.init({
                             </pre>
                         </p>
                         <p>
-                            You can also override options with data attributes via HTML
-                        </p>
+                            You can also override global options and settings with data attributes via HTML, although it’s preferred to set them in JavaScript.
                         <p>
                             <pre>
                                 <code>
@@ -64,7 +66,9 @@ smoothScroll.init({
                                 </code>
                             </pre>
                         </p>
-
+                        <p>
+                            For additional documentation visit the <a href="https://github.com/cferdinandi/smooth-scroll#options-and-settings">library’s official repository page</a>.
+                        </p>
                    </div>
                 </section>
                 <section>
@@ -163,7 +167,7 @@ smoothScroll.init({
         </div>
 
         <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
-        <script src="../js/smooth-scroll.js"></script>
+        <script src="../js/lib/smooth-scroll.js"></script>
 
         <script>
 
