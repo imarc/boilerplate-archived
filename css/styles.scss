@@ -24,9 +24,10 @@
 
 @import "_components";
 
-/* = Variables = */
-$font-stack: "Helvetica Neue", Arial, sans-serif;
 
+/* = Variables = */
+
+$font-stack: "Helvetica Neue", Arial, sans-serif;
 
 /* Grays */
 $white:     #FFF;
@@ -62,6 +63,7 @@ $youtube: #CD201F;
 /* Breakpoint values */
 $medium: 669px;
 $large: 1024px;
+
 
 
 /* = Mixins = */
@@ -182,20 +184,15 @@ $large: 1024px;
 
 
 /* = Base = */
-/* Not Included:
- *   - bi-directional elements: bdi, bdo
- *   - ruby elements: data, output, rp, rt, rtc, ruby, samp, time, var
- *   - typographical elements: del, dfn, ins, kbd, mark, s, small, wbr
- *   - HTML5 elements: col, colgroup, details, dialog, map, menu, menuitem, summary
- */
+
 a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     border: 0;
-    outline: 0;
-    font-size: 100%;
+    box-sizing: border-box;
     font: inherit;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
     vertical-align: baseline;
 }
 
@@ -232,6 +229,7 @@ img {
 
 
 /* = Layout = */
+
 .group {
     @include grouping;
 }
@@ -244,33 +242,54 @@ img {
     @include columns;
 }
 
-.carousel {
-    @include carousel;
+.wrapper {
+    overflow: hidden;
 }
 
 .sr-only {
     @include visuallyhidden;
 }
 
+.search-drawer {
+    background-color: $darkgray;
+    > div {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 150ms ease;
+        &.open {
+            max-height: 80px;
+        }
+    }
+    form {
+        display: flex;
+        padding: 1rem 0;
+        > * {
+            margin-bottom: 0;
+        }
+        .text {
+            flex: 1 1 auto;
+        }
+        .submit input {
+            height: 100%;
+        }
+    }
+}
+
 header.primary {
     background-color: $charcoal;
-    padding-top: 1rem;
+    padding: 1rem 0;
     .container {
         position: static;
     }
 }
 
 .branding {
-    margin-bottom: 1rem;
-    text-align: center;
-    a {
-        display: inline-block;
-        max-width: 180px;
-    }
+    flex-basis: 180px;
+    flex-shrink: 0;
+    max-width: 180px;
 }
 
 nav {
-    @include grouping;
     ul {
         @include no-bullets;
 
@@ -292,11 +311,14 @@ nav.primary {
         li {
             margin-bottom: 0;
         }
-        li.active,
-        li:hover {
-            > a {
-                color: lighten($charcoal, 55%);
-            }
+    }
+    li a {
+        color: #FFF;
+    }
+    li.active,
+    li:hover {
+        a {
+            color: lighten($charcoal, 55%);
         }
     }
 }
@@ -308,8 +330,30 @@ nav.utility {
     }
 }
 
+.header-content {
+    align-items: flex-end;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .menu-toggle:hover,
+    .menu-toggle:focus {
+        background-color: $link;
+    }
+    > .dropdown {
+        background-color: lighten($charcoal, 5%);
+        z-index: 1001;    
+        &.sub-menu {
+            background-color: lighten($charcoal, 10%);
+            z-index: 1002;
+        }
+    }
+}
+
+.desktop {
+    display: none;
+}
+
 form.search {
-    display: -webkit-flex;
     display: flex;
     .text,
     .submit {
@@ -321,6 +365,10 @@ form.search {
     label {
         @include visuallyhidden;
     }
+    .submit {
+        flex-basis: 33%;
+        flex-shrink: 0;
+    }
     input {
         border: none;
         width: 100%;
@@ -328,8 +376,6 @@ form.search {
 }
 
 .torso {
-    @include grouping;
-
     padding-bottom: 3rem;
     padding-top: 3rem;
 }
@@ -434,6 +480,7 @@ footer.primary {
 
 
 /* = Typography = */
+
 h1,
 h2,
 h3,
@@ -472,8 +519,6 @@ em {
 }
 
 blockquote {
-    @include grouping;
-
     border-left: 1px solid $border;
     color: $meta-text;
     font-style: italic;
@@ -576,6 +621,7 @@ code {
 
 
 /* = Forms = */
+
 button,
 input,
 optgroup,
@@ -630,6 +676,7 @@ input[type="url"],
 input[type="week"],
 textarea {
     border: 1px solid $border;
+    border-radius: 0;
     box-sizing: border-box;
     color: $plain-text;
     display: block;
@@ -639,15 +686,26 @@ textarea {
     width: 100%;
 }
 
+input[type="reset"],
+input[type="search"],
+input[type="text"],
+input[type="submit"] {
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
 ::-webkit-input-placeholder {
     color: #4A4A4A;
 }
+
 ::ms-input-placeholder {
     color: #4A4A4A;
 }
+
 ::-moz-placeholder {
     color: #4A4A4A;
 }
+
 ::-placeholder {
     color: #4A4A4A;
 }
@@ -698,6 +756,7 @@ input[type="submit"].link {
 
 
 /* = Iconography = */
+
 .thumbs-up::before {
     @include fontawesome("\f087");
 
@@ -706,6 +765,7 @@ input[type="submit"].link {
 
 
 /* = Messaging = */
+
 .success {
     @include messaging;
 
@@ -747,6 +807,7 @@ input[type="submit"].link {
 
 
 /* = Tables = */
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -776,6 +837,7 @@ table {
     }
 }
 
+
 /* = Section Specific = */
 
 
@@ -783,19 +845,26 @@ table {
 
 
 /* = Components = */
+
+.accordions {
+    @include accordion();
+}
+
 .backgroundvideo {
     @include backgroundvideo();
+}
+
+.carousel {
+    @include carousel;
 }
 
 .dossier {
     @include dossier($gutter: 2rem, $photoWidth: 25%, $direction: row);
 }
 
-nav.primary {
-    @include dropdown();
-    li.mega {
-        @include dropdown-mega();
-    }
+.header-content > .dropdown,
+.mobile {
+    @include mobileNavigation;
 }
 
 .features {
@@ -822,52 +891,54 @@ nav.pagination {
     @include pagination();
 }
 
-header.primary {
-    @include sticky-header();
+nav.primary {
+    @include dropdown();
+    li.mega {
+        @include dropdown-mega();
+    }
 }
 
 .tabs {
     @include tabs();
 }
 
+.testimonial {
+    @include testimonial;
+}
+
 .tiles {
     @include tiles();
 }
 
-.accordions {
-    @include accordion();
-}
 
 /* = Media Queries = */
 @media only screen and (min-width: $medium) {
-    /* = Layout = */
-    aside.primary {
-        float: right;
-        margin-bottom: 0;
-        width: 20%;
-        nav ul {
-            text-align: left;
-        }
-    }
-    aside.primary ~ main {
-        float: left;
-        padding-right: 2rem;
-        width: 80%;
-    }
+    
 }
 
 
 @media only screen and (min-width: $large) {
+
     /* = Layout = */
-    .branding {
-        float: left;
-        margin-bottom: 0;
-        margin-top: 2rem;
+    
+    .wrapper {
+        overflow: auto;
     }
 
-    .wrapper {
-        float: right;
-        width: 80%;
+    .branding {
+        margin-right: 2rem;
+    }
+
+    .desktop {
+        align-items: flex-end;
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        nav.primary {
+            align-self: flex-start;
+        }
     }
 
     nav {
@@ -877,14 +948,10 @@ header.primary {
     }
 
     nav.primary {
-        float: left;
         margin-bottom: 0;
-        margin-top: 2.2rem;
-        width: 65%;
         > ul > li {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-left: 1rem;
-            padding-bottom: 1rem;
             position: relative;
         }
         > ul > li:first-child {
@@ -900,8 +967,6 @@ header.primary {
     }
 
     .utilities {
-        float: right;
-        width: 30%;
         nav.utility {
             margin-bottom: 0.4rem;
             ul {
@@ -910,14 +975,32 @@ header.primary {
         }
     }
 
-    aside.primary {
-        width: 25%;
+    button.menu-toggle {
+        display: none;
     }
-    aside.primary ~ main {
-        width: 75%;
+    
+    .torso .wrap {
+        display: flex;
+        justify-content: space-between;
+        main {
+            flex: 1 1 auto;
+            padding-right: 2rem;
+        }
+        aside.primary {
+            flex: 0 0 25%;
+        }
     }
 
+    aside.primary {
+        margin-bottom: 0;
+        nav ul {
+            text-align: left;
+        }
+    }
+
+
     /* = Typography = */
+
     h1 {
         font-size: 2.6rem;
     }
@@ -939,7 +1022,9 @@ header.primary {
     }
 }
 
+
 /* = Print Styles = */
+
 @media print {
     * {
         background-color: transparent !important;
