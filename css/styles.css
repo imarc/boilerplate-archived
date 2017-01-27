@@ -143,6 +143,10 @@
  * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
  */
 /**
+ * The MAGNIFIC mixin has some styles included to override magnific's/imarc's conflicting styles (button styles, for example)
+ *
+ */
+/**
  * Mobile Navigation
  *
  * Emmet
@@ -153,7 +157,7 @@
  * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
  */
 /**
- * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * LISTING shows a listing of entries. It includes an optional search form with filters.
  * Remove the search form elements for a simple list.
  *
  * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
@@ -1615,6 +1619,19 @@ header.primary {
     margin-left: auto;
     text-align: right;
   }
+}
+
+.mfp-container .mfp-close:hover {
+  background: none;
+}
+
+.mfp-container .inline-popup {
+  position: relative;
+  background: #FFF;
+  padding: 2rem;
+  width: auto;
+  max-width: 700px;
+  margin: 1rem auto;
 }
 
 nav.pagination {

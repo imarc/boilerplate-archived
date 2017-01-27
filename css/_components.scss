@@ -499,6 +499,28 @@ $large: 1024px;
 
 
 /**
+ * The MAGNIFIC mixin has some styles included to override magnific's/imarc's conflicting styles (button styles, for example)
+ *
+ */
+@mixin magnific {
+    .mfp-close {
+        &:hover {
+            background: none;
+        }
+    }
+
+    .inline-popup {
+        position: relative;
+        background: #FFF;
+        padding: 2rem;
+        width:auto;
+        max-width: 700px;
+        margin: 1rem auto;
+    }
+}
+
+
+/**
  * Mobile Navigation
  *
  * Emmet
@@ -644,7 +666,7 @@ $large: 1024px;
 
 
 /**
- * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * LISTING shows a listing of entries. It includes an optional search form with filters.
  * Remove the search form elements for a simple list.
  *
  * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}

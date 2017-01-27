@@ -340,7 +340,7 @@ nav.utility {
     }
     > .dropdown {
         background-color: lighten($charcoal, 5%);
-        z-index: 1001;    
+        z-index: 1001;
         &.sub-menu {
             background-color: lighten($charcoal, 10%);
             z-index: 1002;
@@ -886,6 +886,10 @@ header.primary {
     @include login;
 }
 
+.mfp-container {
+    @include magnific;
+}
+
 nav.pagination {
     @include pagination();
 }
@@ -912,14 +916,14 @@ nav.primary {
 
 /* = Media Queries = */
 @media only screen and (min-width: $medium) {
-    
+
 }
 
 
 @media only screen and (min-width: $large) {
 
     /* = Layout = */
-    
+
     .wrapper {
         overflow: auto;
     }
@@ -977,7 +981,7 @@ nav.primary {
     button.menu-toggle {
         display: none;
     }
-    
+
     .torso .wrap {
         display: flex;
         justify-content: space-between;
