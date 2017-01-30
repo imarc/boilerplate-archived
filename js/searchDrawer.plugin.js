@@ -1,4 +1,11 @@
+/**
+ *
+ * jQuery Search Drawer Plugin
+ */
+
 ;(function($) {
+    'use strict';
+
     $.fn.searchDrawer = function() {
         var $drawer = $('.search-drawer > div')
         var $toggle = $('.search-toggle');
@@ -9,5 +16,6 @@
             $drawer.toggleClass('open');
             return false;
         });
-    }
+    };
+    
 })(jQuery);

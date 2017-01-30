@@ -1,56 +1,59 @@
-;(function($, window) {
-
-    /**
-     * This jQuery plugin provides the ability to stick and unstick elements
-     * based on the current scroll position. For example,
-     *
-     * To have an element scroll with the page until reaches the top, then
-     * stick to the page:
-     *
-     *     $('aside.primary section.toc').fix();
-     *
-     * To do the same, but stick 100 pixels before it reaches the top of the page:
-     *
-     *     $('aside.primary section.toc').fix({
+/**
+ * This jQuery plugin provides the ability to stick and unstick elements
+ * based on the current scroll position. For example,
+ *
+ * To have an element scroll with the page until reaches the top, then
+ * stick to the page:
+ *
+ *     $('aside.primary section.toc').fix();
+ *
+ * To do the same, but stick 100 pixels before it reaches the top of the page:
+ *
+ *     $('aside.primary section.toc').fix({
      *         startOffset: 100
      *     });
-     *
-     * To stay stuck to the top of the page for 500 pixels of vertical scrolling:
-     *
-     *     $('.sticky').fix({
+ *
+ * To stay stuck to the top of the page for 500 pixels of vertical scrolling:
+ *
+ *     $('.sticky').fix({
      *         startOffset: 100,
      *         duration: 500
      *     });
-     *
-     *
-     *
-     * OPTIONS
-     *
-     *     startOffset (integer, default: 0)
-     *         How many pixels from the top of the viewport to start sticking.
-     *
-     *     endOffset (integer)
-     *         If specified and different than startOffset, the sticky element will
-     *         animate as you scroll from the startOffset to the endOffset
-     *         while the element is fixed.
-     *
-     *     duration (integer)
-     *         If specified, the element will unstick once this number of
-     *         pixels has been scrolled.
-     *
-     *     until (selector)
-     *         If specified, the sticky element unsticks when this element scrolls even 
-     *         with the sticked element.
-     *
-     *     stopEarly (integer, default 0)
-     *         If specified, unsticks the element when it reaches this distance
-     *         from the top of an 'until' element.
-     */
+ *
+ *
+ *
+ * OPTIONS
+ *
+ *     startOffset (integer, default: 0)
+ *         How many pixels from the top of the viewport to start sticking.
+ *
+ *     endOffset (integer)
+ *         If specified and different than startOffset, the sticky element will
+ *         animate as you scroll from the startOffset to the endOffset
+ *         while the element is fixed.
+ *
+ *     duration (integer)
+ *         If specified, the element will unstick once this number of
+ *         pixels has been scrolled.
+ *
+ *     until (selector)
+ *         If specified, the sticky element unsticks when this element scrolls even
+ *         with the sticked element.
+ *
+ *     stopEarly (integer, default 0)
+ *         If specified, unsticks the element when it reaches this distance
+ *         from the top of an 'until' element.
+ */
+
+;(function($, window) {
+    'use strict';
+
     var FixedElement = function(elem, options) {
         var defaults = {
             startOffset: 0,
             stopEarly: 0
         };
+
         options = $.extend(defaults, options);
 
         var that = this,
@@ -78,6 +81,7 @@
 
         that.endAt = function() {
             var offset = that.startAt();
+
             if ('duration' in options) {
                 offset += options.duration;
             } else if ('until' in options) {
