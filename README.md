@@ -6,8 +6,7 @@ Imarc Boilerplate is a light, customizable front-end starter kit and component l
 Supported Browsers: IE11+, Chrome, Firefox, and Safari.
 
 * [See the Markup](http://imarc.github.io/boilerplate)
-* [See the Structure](http://imarc.github.io/boilerplate/structure)
-* [See the CSS](http://imarc.github.io/boilerplate/css/styles.css)
+* [See the SCSS](http://imarc.github.io/boilerplate/css/styles.scss)
 
 Development
 -----------

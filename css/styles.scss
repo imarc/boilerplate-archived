@@ -8,6 +8,7 @@
  * = Table of Contents =
  * Variables
  * Mixins
+ * Components
  * Base
  * Layout
  * Typography
@@ -17,7 +18,6 @@
  * Tables
  * Section Specific
  * Page Specific
- * Components
  * Media Queries
  * Print Styles
  */
@@ -183,6 +183,69 @@ $large: 1024px;
 }
 
 
+/* = Components = */
+
+.accordion {
+    @include accordion();
+}
+
+.backgroundvideo {
+    @include backgroundvideo();
+}
+
+.carousel {
+    @include carousel;
+}
+
+.dossier {
+    @include dossier($gutter: 2rem, $photoWidth: 25%, $direction: row);
+}
+
+.header-content > .dropdown,
+.mobile {
+    @include mobileNavigation;
+}
+
+.features {
+    @include features($gutter: 3rem);
+}
+
+header.primary.sticky {
+    @include sticky-header();
+}
+
+.listing {
+    @include listing();
+}
+
+.login {
+    @include login;
+}
+
+nav.pagination {
+    @include pagination();
+}
+
+.desktop nav.primary {
+    @include dropdown();
+    li.mega {
+        @include dropdown-mega();
+    }
+}
+
+.tabs {
+    @include tabs();
+}
+
+.testimonial {
+    @include testimonial;
+}
+
+.tiles {
+    @include tiles();
+}
+
+
 /* = Base = */
 
 a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
@@ -242,10 +305,6 @@ img {
     @include columns;
 }
 
-.wrapper {
-    overflow: hidden;
-}
-
 .sr-only {
     @include visuallyhidden;
 }
@@ -275,6 +334,12 @@ img {
     }
 }
 
+.branding {
+    img {
+        max-width: 180px;
+    }
+}
+
 header.primary {
     background-color: $charcoal;
     padding: 1rem 0;
@@ -282,12 +347,10 @@ header.primary {
     .container {
         position: static;
     }
-}
-
-.branding {
-    flex-basis: 180px;
-    flex-shrink: 0;
-    max-width: 180px;
+    .branding {
+        flex-basis: 180px;
+        flex-shrink: 0;
+    }
 }
 
 nav {
@@ -447,19 +510,39 @@ nav.supplemental {
 
 footer.primary {
     background-color: $charcoal;
-    color: $meta-text;
+    color: #FFF;
     font-size: 0.9rem;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding: 3rem 0;
     text-align: center;
-    nav {
-        margin-bottom: 1rem;
-    }
-    p {
-        margin: 0;
+    .branding {
+        margin-top: 0;
+        a {
+            margin-bottom: 1rem;
+        }
     }
     a {
+        color: $link;
+        display: inline-block;
+        &:hover {
+            color: darken($link, 10%);
+        }
+    }
+    nav ul {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .social a {
         color: #FFF;
+    }
+    .legal {
+        text-align: center;
+        p {
+            margin-bottom: 0.25rem;
+        }
+        a {
+            margin-left: 0.35rem;
+            margin-right: 0.35rem;
+        }
     }
 }
 
@@ -469,9 +552,18 @@ footer.primary {
     margin-bottom: 1rem;
     li {
         display: inline-block;
-        font-size: 22px;
+        font-size: 1.5rem;
         margin-bottom: 0;
         margin-right: 0.4rem;
+    }
+    .facebook a {
+        color: $facebook;
+    }
+    .linkedin a {
+        color: $linkedin;
+    }
+    .twitter a {
+        color: $twitter;
     }
     a:hover {
         opacity: 0.7;
@@ -736,22 +828,13 @@ a.button {
     margin-bottom: 0;
 }
 
-button:not(.link),
-input[type="button"]:not(.link),
-input[type="reset"]:not(.link),
-input[type="submit"]:not(.link) {
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
     @include button;
     border: none;
     cursor: pointer;
-}
-
-button.link,
-input[type=button].link,
-input[type="button"].link,
-input[type="reset"].link,
-input[type="submit"].link {
-    @include link;
-    background: transparent;
 }
 
 
@@ -844,74 +927,8 @@ table {
 /* =  Page Specific = */
 
 
-/* = Components = */
-
-.accordion {
-    @include accordion();
-}
-
-.backgroundvideo {
-    @include backgroundvideo();
-}
-
-.carousel {
-    @include carousel;
-}
-
-.dossier {
-    @include dossier($gutter: 2rem, $photoWidth: 25%, $direction: row);
-}
-
-.header-content > .dropdown,
-.mobile {
-    @include mobileNavigation;
-}
-
-.features {
-    @include features($gutter: 3rem);
-}
-
-footer.primary {
-    @include footer();
-}
-
-header.primary.sticky {
-    @include sticky-header();
-}
-
-.listing {
-    @include listing();
-}
-
-.login {
-    @include login;
-}
-
-nav.pagination {
-    @include pagination();
-}
-
-.desktop nav.primary {
-    @include dropdown();
-    li.mega {
-        @include dropdown-mega();
-    }
-}
-
-.tabs {
-    @include tabs();
-}
-
-.testimonial {
-    @include testimonial;
-}
-
-.tiles {
-    @include tiles();
-}
-
-
 /* = Media Queries = */
+
 @media only screen and (min-width: $medium) {
     
 }
@@ -921,23 +938,9 @@ nav.pagination {
 
     /* = Layout = */
     
-    .wrapper {
-        overflow: auto;
-    }
-
-    .branding {
-        margin-right: 2rem;
-    }
-
-    .desktop {
-        align-items: flex-end;
-        display: flex;
-        flex: 1 1 auto;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-
-        nav.primary {
-            align-self: flex-start;
+    header.primary {
+        .branding {
+            margin-right: 2rem;
         }
     }
 
@@ -975,6 +978,18 @@ nav.pagination {
         }
     }
 
+    .desktop {
+        align-items: flex-end;
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        nav.primary {
+            align-self: flex-start;
+        }
+    }
+
     button.menu-toggle {
         display: none;
     }
@@ -995,6 +1010,28 @@ nav.pagination {
         margin-bottom: 0;
         nav ul {
             text-align: left;
+        }
+    }
+
+    footer.primary {
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            > * {
+                flex: 1 0 0;
+            }
+            > nav {
+                flex-grow: 2;
+                margin-bottom: 0;
+            }
+        }
+        .branding {
+            margin-right: 0;
+            max-width: none;
+            text-align: left;
+        }
+        .social {
+            text-align: right;
         }
     }
 
