@@ -68,7 +68,7 @@
             .insertAfter($elem);
 
         if ('until' in options) {
-            options.until = $(options.until);
+            options.$until = $(options.until);
         }
 
         $elem.css({
@@ -85,7 +85,7 @@
             if ('duration' in options) {
                 offset += options.duration;
             } else if ('until' in options) {
-                offset = options.until.offset().top;
+                offset = options.$until.offset().top;
             } else {
                 offset = $(document).height();
             }
