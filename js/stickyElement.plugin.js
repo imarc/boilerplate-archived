@@ -75,12 +75,12 @@
             position: 'absolute'
         });
 
-        that.startAt = function() {
+        this.startAt = function() {
             return dupe.offset().top - options.startOffset;
         };
 
-        that.endAt = function() {
-            var offset = that.startAt();
+        this.endAt = function() {
+            var offset = this.startAt();
 
             if ('duration' in options) {
                 offset += options.duration;
@@ -99,7 +99,7 @@
             return offset - options.stopEarly;
         };
 
-        that.release = function(top) {
+        this.release = function(top) {
             state = 'released';
             elem.css({
                 position: 'absolute',
@@ -108,7 +108,7 @@
             });
         };
 
-        that.fix = function(percentage) {
+        this.fix = function(percentage) {
             var offset = options.startOffset;
 
             if (percentage !== undefined) {
@@ -125,7 +125,7 @@
             });
         };
 
-        that.update = function() {
+        this.update = function() {
             var scrollTop = $(window).scrollTop();
             var start = that.startAt(),
                 end   = that.endAt();
