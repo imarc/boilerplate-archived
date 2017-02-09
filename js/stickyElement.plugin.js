@@ -58,25 +58,25 @@
 
         var that = this,
             state = 'init',
-            elem = $(elem),
-            dupe = elem
+            $elem = $(elem),
+            $dupe = $elem
             .clone()
             .addClass('fixed-element-duplicate')
             .css({
                 visibility: 'hidden'
             })
-            .insertAfter(elem);
+            .insertAfter($elem);
 
         if ('until' in options) {
             options.until = $(options.until);
         }
 
-        elem.css({
+        $elem.css({
             position: 'absolute'
         });
 
         this.startAt = function() {
-            return dupe.offset().top - options.startOffset;
+            return $dupe.offset().top - options.startOffset;
         };
 
         this.endAt = function() {
@@ -101,7 +101,7 @@
 
         this.release = function(top) {
             state = 'released';
-            elem.css({
+            $elem.css({
                 position: 'absolute',
                 top: '',
                 transform: 'translateZ(0) translate(0, ' + top + 'px)'
@@ -117,7 +117,7 @@
 
             state = 'fixed';
             requestAnimationFrame(function() {
-                elem.css({
+                $elem.css({
                     position: 'fixed',
                     top: offset,
                     transform: ''
