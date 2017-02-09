@@ -108,12 +108,8 @@
             });
         };
 
-        this.fix = function(percentage) {
-            var offset = options.startOffset;
-
-            if (percentage !== undefined) {
-                offset += (options.endOffset - options.startOffset) * percentage;
-            }
+        this.fix = function(additionalOffset) {
+            var offset = options.startOffset + additionalOffset;
 
             state = 'fixed';
             requestAnimationFrame(function() {
@@ -126,28 +122,31 @@
         };
 
         this.update = function() {
-            var scrollTop = $(window).scrollTop();
-            var start = that.startAt(),
-                end   = that.endAt();
+            var scrollTop   = $(window).scrollTop();
+            var start       = that.startAt();
+            var end         = that.endAt();
+            var diff        = end - start;
+            var currentDiff = scrollTop - start;
+            var diffOffsets = (options.endOffset - options.startOffset) || 0;
 
+            // Above start
             if (scrollTop <= start) {
                 if (state == 'fixed' || state == 'init') {
                     that.release(0);
                 }
+
+            // Between start and end
             } else if (scrollTop <= end) {
-                if ('endOffset' in options && options.endOffset != options.startOffset) {
-                    var percentage = (scrollTop - start)/(end - start);
-                    that.fix(percentage);
+                if (diffOffsets) {
+                    that.fix(diffOffsets * currentDiff / diff);
                 } else if (state == 'released' || state == 'init') {
-                    that.fix(percentage);
+                    that.fix(0);
                 }
+
+            // Below end
             } else {
                 if (state == 'fixed' || state == 'init') {
-                    if ('endOffset' in options) {
-                        that.release(end + options.endOffset - options.startOffset - start);
-                    } else {
-                        that.release(end - start);
-                    }
+                    that.release(diff + diffOffsets);
                 }
             }
         };
