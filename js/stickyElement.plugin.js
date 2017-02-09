@@ -2,7 +2,7 @@
  * This jQuery plugin provides the ability to stick and unstick elements
  * based on the current scroll position. For example,
  *
- * To have an element scroll with the page until reaches the top, then
+ * To have an element scroll with the page until it reaches the top, then
  * stick to the page:
  *
  *     $('aside.primary section.toc').fix();
@@ -10,15 +10,15 @@
  * To do the same, but stick 100 pixels before it reaches the top of the page:
  *
  *     $('aside.primary section.toc').fix({
-     *         startOffset: 100
-     *     });
+ *         startOffset: 100
+ *     });
  *
  * To stay stuck to the top of the page for 500 pixels of vertical scrolling:
  *
  *     $('.sticky').fix({
-     *         startOffset: 100,
-     *         duration: 500
-     *     });
+ *         startOffset: 100,
+ *         duration: 500
+ *     });
  *
  *
  *
@@ -40,7 +40,7 @@
  *         If specified, the sticky element unsticks when this element scrolls even
  *         with the sticked element.
  *
- *     stopEarly (integer, default 0)
+ *     stopEarly (integer, default: 0)
  *         If specified, unsticks the element when it reaches this distance
  *         from the top of an 'until' element.
  */
