@@ -266,7 +266,7 @@ $large: 1024px;
             opacity: 0;
             padding: 2rem 0;
             position: absolute;
-            top: 100%;
+            top: calc(100% + 1rem);
             transition: opacity 300ms;
             visibility: hidden;
             z-index: 1;
@@ -383,74 +383,6 @@ $large: 1024px;
 
 
 /**
- * The FOOTER mixin is a basic implementation of a footer with the company logo,
- * copyright, simple navigation (as opposed to a "super footer"), legal links,
- * social icons, and contact information.
- *
- * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
- */
-@mixin footer {
-    background-color: $charcoal;
-    color: #FFF;
-    font-size: 0.9rem;
-    padding: 3rem 0;
-    text-align: center;
-    .branding {
-        float: none;
-        margin-top: 0;
-        a {
-            margin-bottom: 1rem;
-        }
-    }
-    a {
-        color: $link;
-        &:hover {
-            color: darken($link, 10%);
-        }
-    }
-    nav ul {
-        margin-bottom: 2rem;
-        text-align: center;
-    }
-    .social a {
-        color: #FFF;
-        font-size: 1.5rem;
-        margin-left: 0.5rem;
-    }
-    .legal {
-        text-align: center;
-        p {
-            margin-bottom: 0.25rem;
-        }
-        a {
-            margin-left: 0.35rem;
-            margin-right: 0.35rem;
-        }
-    }
-
-    @media only screen and (min-width: $large) {
-        .container > div {
-            display: flex;
-            justify-content: space-between;
-            > * {
-                flex: 1 0 0;
-            }
-            > nav {
-                flex-grow: 2;
-                margin-bottom: 0;
-            }
-        }
-        .branding {
-            text-align: left;
-        }
-        .social {
-            text-align: right;
-        }
-    }
-}
-
-
-/**
  * The LOGIN mixin is a basic implementation of a login module that includes a
  * username input, password input, submit button, forgot password link, and
  * remember me checkbox
@@ -507,6 +439,7 @@ $large: 1024px;
 @mixin mobileNavigation() {
     background-color: $charcoal;
     bottom: 0;
+    display: none;
     height: 100%;
     opacity: 0;
     overflow-y: auto;
@@ -517,11 +450,13 @@ $large: 1024px;
     width: 80%;
     z-index: 1000;
     &.left {
+        display: block;
         left: 0;
         right: auto;
         transform: translateX(-100%);
     }
     &.right {
+        display: block;
         left: auto;
         right: 0;
         transform: translateX(100%);
