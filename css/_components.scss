@@ -15,6 +15,7 @@ $medium: 669px;
 $large: 1024px;
 
 /**
+* ACCORDION
 *
 * ACCORDION requires the accordion.plugin.js file. Within the .accordion
 * class each accordion item requires a div wrapper. Within the div wrapper
@@ -73,6 +74,8 @@ $large: 1024px;
 
 
 /**
+ * BACKGROUND VIDEO
+ *
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
@@ -107,6 +110,29 @@ $large: 1024px;
 
 
 /**
+/**
+ * BREADCRUMBS
+ *
+ * The breadcrumb mixin provides basic breadcrumb styling, complete with
+ * fontawesome icons being used as separators between crumbs.
+ *
+ * Emmet: nav.breadcrumbs>ul>li*3>a
+ */
+@mixin breadcrumbs() {
+    li:not(:last-child) a {
+        padding-right: 0;
+
+        &::after {
+            @include fontawesome("\f105");
+            padding-left: 0.5rem;
+        }
+    }
+}
+
+
+/**
+ * CAROUSEL
+ *
  * CAROUSEL uses Slick to create a carousel. It defaults to a rather
  * basic, one-slide-at-a-time implementation with dots, but slick supports a
  * good deal of configuration including showing multiple slides, breakpoints,
@@ -158,6 +184,8 @@ $large: 1024px;
 
 
 /**
+ * COLUMNS
+ *
  * The COLUMNS mixin makes it so that immmediate child elements appear as
  * columns. It is responsive, allowing you to specify the media query at which
  * to switch the layout from stacking to columns.
@@ -201,6 +229,8 @@ $large: 1024px;
 
 
 /**
+ * DOSSIER
+ *
  * The DOSSIER mixin displays an individual’s biography and photograph.
  *
  * Emmet: .dossiers>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
@@ -241,6 +271,7 @@ $large: 1024px;
 
 /**
  * DROPDOWN
+ *
  * The DROPDOWN mixin allows for dropdown menus. By default, a single
  * column dropdown is used. It is positioned to its parent.
  *
@@ -266,10 +297,13 @@ $large: 1024px;
             opacity: 0;
             padding: 2rem 0;
             position: absolute;
-            top: calc(100% + 1rem);
+            top: 100%;
             transition: opacity 300ms;
             visibility: hidden;
             z-index: 1;
+            ul {
+                display: block;
+            }
             .menu {
                 > * {
                     padding: 0 1rem;
@@ -297,9 +331,10 @@ $large: 1024px;
 /**
  * DROPDOWN (mega)
  * The DROPDOWN (mega) mixin allows for full-width mega dropdown
- * menus. Call this mixin on a list item rather than nav.primary.
- * The menu is positioned to header.primary instead of its parent
- * list item.
+ * menus. Call this mixin on a list item. Note that the simple
+ * dropdown component is a dependency of this mega dropdown.
+ * The mega dropdown is positioned to header.primary instead
+ * of its parent list item.
  *
  * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
  */
@@ -383,6 +418,80 @@ $large: 1024px;
 
 
 /**
+ * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * Remove the search form elements for a simple list.
+ *
+ * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
+ */
+@mixin listing() {
+    margin-bottom: 2rem;
+    form {
+        .search {
+            display: flex;
+            label {
+                @include visuallyhidden;
+            }
+            .text {
+                flex-grow: 1;
+            }
+            .submit {
+                flex-basis: 120px;
+                flex-shrink: 0;
+            }
+            .submit input {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .filters {
+            margin-bottom: 2rem;
+            label {
+                display: inline;
+            }
+            span {
+                background-color: darken($link, 20%);
+                border-radius: 0.5rem;
+                color: #fff;
+                display: inline-block;
+                margin: 0 0.5rem 0.5rem 0;
+                padding: 0.5rem 1rem;
+            }
+            input[type="checkbox"]:checked + span {
+                background-color: $link;
+            }
+            input[type="checkbox"] {
+                display: none;
+            }
+        }
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        li {
+            border-top: 4px solid $border;
+            margin-bottom: 0;
+            padding: 2rem 0;
+            .meta {
+                display: block;
+                font-size: 0.9rem;
+                margin-bottom: 1em;
+            }
+            h2 + .meta {
+                margin-top: -1em;
+            }
+            .summary {
+                p:last-of-type {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+
+/**
  * The LOGIN mixin is a basic implementation of a login module that includes a
  * username input, password input, submit button, forgot password link, and
  * remember me checkbox
@@ -431,7 +540,7 @@ $large: 1024px;
 
 
 /**
- * Mobile Navigation
+ * MOBILE NAVIGATION
  *
  * Emmet
  */
@@ -475,6 +584,7 @@ $large: 1024px;
         }
     }
     ul {
+        display: block;
         padding-left: 0;
     }
     ul li {
@@ -579,72 +689,129 @@ $large: 1024px;
 
 
 /**
- * LISTING shows a listing of entries. It includes an optional search form with filters. 
- * Remove the search form elements for a simple list.
+ * PROGRESS BREADCRUMBS
  *
- * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
+ * the progress mixin provides a basic, pill-style progress nav bar like you
+ * might find as part of an e-commerce or registration process.
+ *
+ * Emmet: nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
  */
-@mixin listing() {
-    margin-bottom: 2rem;
-    form {
-        .search {
-            display: flex;
-            label {
-                @include visuallyhidden;
-            }
-            .text {
-                flex-grow: 1;
-            }
-            .submit {
-                flex-basis: 120px;
-                flex-shrink: 0;
-            }
-            .submit input {
-                height: 100%;
-                width: 100%;
-            }
+@mixin progress() {
+    ul {
+        border: 1px solid $border;
+        border-radius: 2px;
+        display: block;
+        width: 100%;
+    }
+    a {
+        padding: 0.5rem 1rem;
+        position: relative;
+        text-align: center;
+        &:hover {
+            color: $link-hover;
         }
-        .filters {
-            margin-bottom: 2rem;
-            label {
-                display: inline;
-            }
-            span {
-                background-color: $brand-dark-blue;
-                border-radius: 0.5rem;
-                color: #fff;
-                display: inline-block;
-                margin: 0 0.5rem 0.5rem 0;
-                padding: 0.5rem 1rem;
-            }
-            input[type="checkbox"]:checked + span {
-                background-color: $brand-blue;
-            }
-            input[type="checkbox"] {
-                display: none;
+    }
+    li:not(:last-child) a {
+        border-right: 1px solid $border;
+    }
+    li.active {
+        a {
+            background-color: $link;
+            color: #FFF;
+            cursor: default;
+            pointer-events: none;
+
+            &:hover {
+                background-color: $link-hover;
+                color: #FFF;
             }
         }
     }
-
-    ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+    li.disabled a {
+        color: $border;
+        cursor: default;
+        pointer-events: none;
+    }
+    li:hover:not(.active,.disabled) a {
+        color: $link-hover;
+    }
+    li:not(:last-child) a {
+        border: 0;
+    }
+    li.complete a {
+        background-color: #FFF;
+        color: #ccc;
+        &::before {
+            background-color: #FFF;
+        }
+        &:hover {
+            color: $link;
+        }
+    }
+    @media only screen and (min-width: $medium) {
+        ul {
+            display: flex;
+        }
         li {
-            border-top: 4px solid $border;
-            margin-bottom: 0;
-            padding: 2rem 0;
-            .meta {
+            flex: 1 1 auto;
+            position: relative;
+        }
+        li:last-child a {
+            &::before {
+                display: none;
+            }
+        }
+        a {
+            &::after,
+            &::before {
+                border: 0 solid transparent;
+                border-bottom: 1.25rem solid rgba(0,0,0,0);
+                border-left: 1rem solid #FFF;    
+                border-top: 1.25rem solid rgba(0,0,0,0);
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 0;
+                z-index: 1;
+            }
+            &::after {
+                border-left-color: #FFF;
+            }
+            &::before {
+                border-left-color: darken($border, 10%);
+                margin-right: -1px;
+            }
+        }
+        li.active {
+            margin-left: -1rem;
+            z-index: 2;
+            &::before {
+                border-bottom: 1.25rem solid $link;
+                border-left: 1rem solid #FFF;
+                border-top: 1.25rem solid $link;
+                content: '';
                 display: block;
-                font-size: 0.9rem;
-                margin-bottom: 1em;
+                position: absolute;
+                left: 0;
+                top: 0;
+                z-index: 2;
             }
-            h2 + .meta {
-                margin-top: -1em;
+            a {
+                &::after,
+                &::before {
+                    background-color: $link;
+                    border-bottom-color: #FFF;
+                    border-left-color: $link;
+                    border-top-color: #FFF;
+                }
+                &::before {
+                    margin-right: 0;
+                }
             }
-            .summary {
-                p:last-of-type {
-                    margin-bottom: 0;
+            a:hover {
+                &::after,
+                &::before {
+                    background-color: $link-hover;
                 }
             }
         }
@@ -653,6 +820,8 @@ $large: 1024px;
 
 
 /**
+ * STICKY HEADER
+ *
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
  * header as you scroll down, and show it as you scroll back up. This is
  * responsive as the "top" value is dynamically set in the
@@ -675,61 +844,32 @@ $large: 1024px;
 /**
  * TABS
  *
- * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
+ * Emmet: nav.tabs>ul>li*3>a
  */
-@mixin tabs() {
-    position: relative;
-    nav {
-        border-bottom: 1px solid;
-        ul {
-            list-style: none;
-            margin-left: 20px;
-            padding: 0;
-            text-align: center;
-        }
-        li {
-            background-color: #CBBFB4;
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            cursor: pointer;
-            display: inline-block;
-            margin-bottom: 0;
-            margin-right: 0.5em;
-            padding: 0.5em 1em;
-        }
-        li.active {
-            background-color: #FFF;
-            border: 1px solid;
-            border-bottom: none;
-            position: relative;
-            &::after {
-                background-color: #FFF;
-                bottom: -1px;
-                content: "";
-                height: 1px;
-                left: 0;
-                position: absolute;
-                width: 100%;
-            }
+@mixin tabs {
+    a {
+        border-radius: 4px 4px 0 0;
+        border: 1px solid $border;
+        border-color: transparent transparent $border;
+    }
+
+    li.active {
+        a {
+            border-color: $border $border transparent;
         }
     }
-    .panel {
-        display: none;
-        padding: 20px;
-    }
-    .panel.active {
-        display: inherit;
-    }
-    @media only screen and (min-width: $large) {
-        nav ul {
-            margin-left: 20px;
-            text-align: left;
+
+    li:hover:not(.active) {
+        a {
+            background: $border;
         }
     }
 }
 
 
 /**
+* TESTIMONIAL
+*
 * The TESTIMONIAL mixin is a basic implementation of a testimonial design.
 * Emmet: div.testimonial>div.container>blockquote+p
 * To use the TESTIMONIAL WITH ASSET component, you simply need to add additional html markup, see emmet below.
@@ -812,6 +952,8 @@ $large: 1024px;
 
 
 /**
+ *  TILES
+ *
  *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.
  *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
  *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the

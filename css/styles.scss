@@ -1,4 +1,4 @@
- /**
+/**
  * Built using Imarc Boilerplate v2.1
  *
  * Copyright 2016 Imarc
@@ -39,7 +39,6 @@ $black:     #000;
 
 /* The brand colors (name them the color) */
 $brand-blue: #0C96DD;
-$brand-dark-blue: #0C508A;
 $brand-orange: #EB7424;
 
 /* Messaging colors */
@@ -354,23 +353,51 @@ header.primary {
 }
 
 nav {
+    margin-bottom: 2rem;
     ul {
         @include no-bullets;
-
-        text-align: center;
-    }
-    li {
-        display: inline-block;
+        
+        display: flex;
+        li {
+            margin-bottom: 0;
+        }
     }
     a {
         color: $link;
         display: block;
         padding: 0 0.5rem;
     }
+
+    li.active a,
+    li.active:hover a {
+        color: $charcoal;
+    }
+
+    &.tabs {
+        @include tabs;
+    }
+
+    &.breadcrumbs {
+        @include breadcrumbs();
+    }
+
+    &.progress {
+        @include progress();
+    }
+
 }
 
 nav.primary {
     margin-bottom: 0.7rem;
+
+    a {
+        color: #FFF;
+    }
+
+    li:hover a {
+        color: $brand-blue;
+    }
+
     > ul {
         li {
             margin-bottom: 0;
@@ -390,12 +417,13 @@ nav.primary {
 nav.utility {
     margin-bottom: 0.7rem;
     a {
+        color: #FFF;
         font-size: 0.8rem;
     }
 }
 
 .header-content {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -475,7 +503,9 @@ aside.primary {
 }
 
 nav.supplemental {
+    margin-bottom: 0;
     ul {
+        display: block;
         li {
             display: block;
             float: none;
@@ -712,6 +742,10 @@ code {
     padding: 2px 4px;
 }
 
+.sr-only {
+    @include visuallyhidden;
+}
+
 
 /* = Forms = */
 
@@ -940,6 +974,7 @@ table {
     /* = Layout = */
     
     header.primary {
+        padding-bottom: 0;
         .branding {
             margin-right: 2rem;
         }
@@ -956,6 +991,7 @@ table {
         > ul > li {
             font-size: 1.1rem;
             margin-left: 1rem;
+            padding-bottom: 1rem;
             position: relative;
         }
         > ul > li:first-child {

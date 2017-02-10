@@ -34,6 +34,7 @@
  * Media query breakpoints
  */
 /**
+* ACCORDION
 *
 * ACCORDION requires the accordion.plugin.js file. Within the .accordion
 * class each accordion item requires a div wrapper. Within the div wrapper
@@ -45,10 +46,23 @@
 *
 */
 /**
+ * BACKGROUND VIDEO
+ *
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
 /**
+/**
+ * BREADCRUMBS
+ *
+ * The breadcrumb mixin provides basic breadcrumb styling, complete with
+ * fontawesome icons being used as separators between crumbs.
+ *
+ * Emmet: nav.breadcrumbs>ul>li*3>a
+ */
+/**
+ * CAROUSEL
+ *
  * CAROUSEL uses Slick to create a carousel. It defaults to a rather
  * basic, one-slide-at-a-time implementation with dots, but slick supports a
  * good deal of configuration including showing multiple slides, breakpoints,
@@ -81,6 +95,8 @@
  * arrows.
  */
 /**
+ * COLUMNS
+ *
  * The COLUMNS mixin makes it so that immmediate child elements appear as
  * columns. It is responsive, allowing you to specify the media query at which
  * to switch the layout from stacking to columns.
@@ -101,12 +117,15 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
+ * DOSSIER
+ *
  * The DOSSIER mixin displays an individual’s biography and photograph.
  *
  * Emmet: .dossiers>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
  */
 /**
  * DROPDOWN
+ *
  * The DROPDOWN mixin allows for dropdown menus. By default, a single
  * column dropdown is used. It is positioned to its parent.
  *
@@ -115,9 +134,10 @@
 /**
  * DROPDOWN (mega)
  * The DROPDOWN (mega) mixin allows for full-width mega dropdown
- * menus. Call this mixin on a list item rather than nav.primary.
- * The menu is positioned to header.primary instead of its parent
- * list item.
+ * menus. Call this mixin on a list item. Note that the simple
+ * dropdown component is a dependency of this mega dropdown.
+ * The mega dropdown is positioned to header.primary instead
+ * of its parent list item.
  *
  * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
  */
@@ -129,6 +149,12 @@
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
+ * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * Remove the search form elements for a simple list.
+ *
+ * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
+ */
+/**
  * The LOGIN mixin is a basic implementation of a login module that includes a
  * username input, password input, submit button, forgot password link, and
  * remember me checkbox
@@ -136,7 +162,7 @@
  * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
  */
 /**
- * Mobile Navigation
+ * MOBILE NAVIGATION
  *
  * Emmet
  */
@@ -146,12 +172,16 @@
  * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
  */
 /**
- * LISTING shows a listing of entries. It includes an optional search form with filters. 
- * Remove the search form elements for a simple list.
+ * PROGRESS BREADCRUMBS
  *
- * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
+ * the progress mixin provides a basic, pill-style progress nav bar like you
+ * might find as part of an e-commerce or registration process.
+ *
+ * Emmet: nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
  */
 /**
+ * STICKY HEADER
+ *
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
  * header as you scroll down, and show it as you scroll back up. This is
  * responsive as the "top" value is dynamically set in the
@@ -165,15 +195,19 @@
 /**
  * TABS
  *
- * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
+ * Emmet: nav.tabs>ul>li*3>a
  */
 /**
+* TESTIMONIAL
+*
 * The TESTIMONIAL mixin is a basic implementation of a testimonial design.
 * Emmet: div.testimonial>div.container>blockquote+p
 * To use the TESTIMONIAL WITH ASSET component, you simply need to add additional html markup, see emmet below.
 * Emmet: div.testimonial.asset>div.container>(div>img)+blockquote+p
 */
 /**
+ *  TILES
+ *
  *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.
  *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
  *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the
@@ -393,6 +427,7 @@
 
 .header-content > .dropdown ul,
 .mobile ul {
+  display: block;
   padding-left: 0;
 }
 
@@ -539,7 +574,7 @@ header.primary.sticky {
 }
 
 .listing form .filters span {
-  background-color: #0C508A;
+  background-color: #07547c;
   border-radius: 0.5rem;
   color: #fff;
   display: inline-block;
@@ -732,10 +767,13 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
     opacity: 0;
     padding: 2rem 0;
     position: absolute;
-    top: calc(100% + 1rem);
+    top: 100%;
     transition: opacity 300ms;
     visibility: hidden;
     z-index: 1;
+  }
+  .desktop nav.primary .dropdown ul {
+    display: block;
   }
   .desktop nav.primary .dropdown .menu > * {
     padding: 0 1rem;
@@ -794,63 +832,18 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   }
 }
 
-.tabs {
-  position: relative;
+.tabs a {
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #e5e5e5;
+  border-color: transparent transparent #e5e5e5;
 }
 
-.tabs nav {
-  border-bottom: 1px solid;
+.tabs li.active a {
+  border-color: #e5e5e5 #e5e5e5 transparent;
 }
 
-.tabs nav ul {
-  list-style: none;
-  margin-left: 20px;
-  padding: 0;
-  text-align: center;
-}
-
-.tabs nav li {
-  background-color: #CBBFB4;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  cursor: pointer;
-  display: inline-block;
-  margin-bottom: 0;
-  margin-right: 0.5em;
-  padding: 0.5em 1em;
-}
-
-.tabs nav li.active {
-  background-color: #FFF;
-  border: 1px solid;
-  border-bottom: none;
-  position: relative;
-}
-
-.tabs nav li.active::after {
-  background-color: #FFF;
-  bottom: -1px;
-  content: "";
-  height: 1px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-}
-
-.tabs .panel {
-  display: none;
-  padding: 20px;
-}
-
-.tabs .panel.active {
-  display: inherit;
-}
-
-@media only screen and (min-width: 1024px) {
-  .tabs nav ul {
-    margin-left: 20px;
-    text-align: left;
-  }
+.tabs li:hover:not(.active) a {
+  background: #e5e5e5;
 }
 
 .testimonial {
@@ -1128,19 +1121,24 @@ header.primary .branding {
           flex-shrink: 0;
 }
 
+nav {
+  margin-bottom: 2rem;
+}
+
 nav ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  text-align: center;
+  display: -webkit-flex;
+  display: flex;
 }
 
 nav ul li::before {
   display: none;
 }
 
-nav li {
-  display: inline-block;
+nav ul li {
+  margin-bottom: 0;
 }
 
 nav a {
@@ -1149,8 +1147,170 @@ nav a {
   padding: 0 0.5rem;
 }
 
+nav li.active a,
+nav li.active:hover a {
+  color: #191919;
+}
+
+nav.tabs a {
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #e5e5e5;
+  border-color: transparent transparent #e5e5e5;
+}
+
+nav.tabs li.active a {
+  border-color: #e5e5e5 #e5e5e5 transparent;
+}
+
+nav.tabs li:hover:not(.active) a {
+  background: #e5e5e5;
+}
+
+nav.breadcrumbs li:not(:last-child) a {
+  padding-right: 0;
+}
+
+nav.breadcrumbs li:not(:last-child) a::after {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+  padding-left: 0.5rem;
+}
+
+nav.progress ul {
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+}
+
+nav.progress a {
+  padding: 0.5rem 1rem;
+  position: relative;
+  text-align: center;
+}
+
+nav.progress a:hover {
+  color: #EB7424;
+}
+
+nav.progress li:not(:last-child) a {
+  border-right: 1px solid #e5e5e5;
+}
+
+nav.progress li.active a {
+  background-color: #0C96DD;
+  color: #FFF;
+  cursor: default;
+  pointer-events: none;
+}
+
+nav.progress li.active a:hover {
+  background-color: #EB7424;
+  color: #FFF;
+}
+
+nav.progress li.disabled a {
+  color: #e5e5e5;
+  cursor: default;
+  pointer-events: none;
+}
+
+nav.progress li:hover:not(.active, .disabled) a {
+  color: #EB7424;
+}
+
+nav.progress li:not(:last-child) a {
+  border: 0;
+}
+
+nav.progress li.complete a {
+  background-color: #FFF;
+  color: #ccc;
+}
+
+nav.progress li.complete a::before {
+  background-color: #FFF;
+}
+
+nav.progress li.complete a:hover {
+  color: #0C96DD;
+}
+
+@media only screen and (min-width: 669px) {
+  nav.progress ul {
+    display: -webkit-flex;
+    display: flex;
+  }
+  nav.progress li {
+    -webkit-flex: 1 1 auto;
+            flex: 1 1 auto;
+    position: relative;
+  }
+  nav.progress li:last-child a::before {
+    display: none;
+  }
+  nav.progress a::after, nav.progress a::before {
+    border: 0 solid transparent;
+    border-bottom: 1.25rem solid transparent;
+    border-left: 1rem solid #FFF;
+    border-top: 1.25rem solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+  nav.progress a::after {
+    border-left-color: #FFF;
+  }
+  nav.progress a::before {
+    border-left-color: #cccccc;
+    margin-right: -1px;
+  }
+  nav.progress li.active {
+    margin-left: -1rem;
+    z-index: 2;
+  }
+  nav.progress li.active::before {
+    border-bottom: 1.25rem solid #0C96DD;
+    border-left: 1rem solid #FFF;
+    border-top: 1.25rem solid #0C96DD;
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
+  nav.progress li.active a::after, nav.progress li.active a::before {
+    background-color: #0C96DD;
+    border-bottom-color: #FFF;
+    border-left-color: #0C96DD;
+    border-top-color: #FFF;
+  }
+  nav.progress li.active a::before {
+    margin-right: 0;
+  }
+  nav.progress li.active a:hover::after, nav.progress li.active a:hover::before {
+    background-color: #EB7424;
+  }
+}
+
 nav.primary {
   margin-bottom: 0.7rem;
+}
+
+nav.primary a {
+  color: #FFF;
+}
+
+nav.primary li:hover a {
+  color: #0C96DD;
 }
 
 nav.primary > ul li {
@@ -1171,12 +1331,13 @@ nav.utility {
 }
 
 nav.utility a {
+  color: #FFF;
   font-size: 0.8rem;
 }
 
 .header-content {
-  -webkit-align-items: flex-end;
-          align-items: flex-end;
+  -webkit-align-items: center;
+          align-items: center;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
@@ -1279,6 +1440,14 @@ main section:not(:last-child) {
 
 aside.primary {
   margin-bottom: 2rem;
+}
+
+nav.supplemental {
+  margin-bottom: 0;
+}
+
+nav.supplemental ul {
+  display: block;
 }
 
 nav.supplemental ul li {
@@ -1532,6 +1701,17 @@ code {
   color: #FBCE78;
   font-family: "Consolas", monospace;
   padding: 2px 4px;
+}
+
+.sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 /* = Forms = */
@@ -1887,6 +2067,9 @@ table tr:nth-child(even) td {
 /* = Media Queries = */
 @media only screen and (min-width: 1024px) {
   /* = Layout = */
+  header.primary {
+    padding-bottom: 0;
+  }
   header.primary .branding {
     margin-right: 2rem;
   }
@@ -1899,6 +2082,7 @@ table tr:nth-child(even) td {
   nav.primary > ul > li {
     font-size: 1.1rem;
     margin-left: 1rem;
+    padding-bottom: 1rem;
     position: relative;
   }
   nav.primary > ul > li:first-child {
