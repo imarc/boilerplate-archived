@@ -427,6 +427,7 @@
 
 .header-content > .dropdown ul,
 .mobile ul {
+  display: block;
   padding-left: 0;
 }
 
@@ -766,10 +767,13 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
     opacity: 0;
     padding: 2rem 0;
     position: absolute;
-    top: calc(100% + 1rem);
+    top: 100%;
     transition: opacity 300ms;
     visibility: hidden;
     z-index: 1;
+  }
+  .desktop nav.primary .dropdown ul {
+    display: block;
   }
   .desktop nav.primary .dropdown .menu > * {
     padding: 0 1rem;
@@ -1125,6 +1129,8 @@ nav ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
+  display: -webkit-flex;
+  display: flex;
 }
 
 nav ul li::before {
@@ -1330,8 +1336,8 @@ nav.utility a {
 }
 
 .header-content {
-  -webkit-align-items: flex-end;
-          align-items: flex-end;
+  -webkit-align-items: center;
+          align-items: center;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-flow: row wrap;
@@ -2061,6 +2067,9 @@ table tr:nth-child(even) td {
 /* = Media Queries = */
 @media only screen and (min-width: 1024px) {
   /* = Layout = */
+  header.primary {
+    padding-bottom: 0;
+  }
   header.primary .branding {
     margin-right: 2rem;
   }
@@ -2073,6 +2082,7 @@ table tr:nth-child(even) td {
   nav.primary > ul > li {
     font-size: 1.1rem;
     margin-left: 1rem;
+    padding-bottom: 1rem;
     position: relative;
   }
   nav.primary > ul > li:first-child {

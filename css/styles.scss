@@ -356,7 +356,8 @@ nav {
     margin-bottom: 2rem;
     ul {
         @include no-bullets;
-
+        
+        display: flex;
         li {
             margin-bottom: 0;
         }
@@ -422,7 +423,7 @@ nav.utility {
 }
 
 .header-content {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -973,6 +974,7 @@ table {
     /* = Layout = */
     
     header.primary {
+        padding-bottom: 0;
         .branding {
             margin-right: 2rem;
         }
@@ -989,6 +991,7 @@ table {
         > ul > li {
             font-size: 1.1rem;
             margin-left: 1rem;
+            padding-bottom: 1rem;
             position: relative;
         }
         > ul > li:first-child {

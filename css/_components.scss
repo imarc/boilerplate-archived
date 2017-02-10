@@ -297,10 +297,13 @@ $large: 1024px;
             opacity: 0;
             padding: 2rem 0;
             position: absolute;
-            top: calc(100% + 1rem);
+            top: 100%;
             transition: opacity 300ms;
             visibility: hidden;
             z-index: 1;
+            ul {
+                display: block;
+            }
             .menu {
                 > * {
                     padding: 0 1rem;
@@ -581,6 +584,7 @@ $large: 1024px;
         }
     }
     ul {
+        display: block;
         padding-left: 0;
     }
     ul li {
