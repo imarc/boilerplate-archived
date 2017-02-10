@@ -34,6 +34,7 @@
  * Media query breakpoints
  */
 /**
+* ACCORDION
 *
 * ACCORDION requires the accordion.plugin.js file. Within the .accordion
 * class each accordion item requires a div wrapper. Within the div wrapper
@@ -45,10 +46,23 @@
 *
 */
 /**
+ * BACKGROUND VIDEO
+ *
  * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
  * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
  */
 /**
+/**
+ * BREADCRUMBS
+ *
+ * The breadcrumb mixin provides basic breadcrumb styling, complete with
+ * fontawesome icons being used as separators between crumbs.
+ *
+ * Emmet: nav.breadcrumbs>ul>li*3>a
+ */
+/**
+ * CAROUSEL
+ *
  * CAROUSEL uses Slick to create a carousel. It defaults to a rather
  * basic, one-slide-at-a-time implementation with dots, but slick supports a
  * good deal of configuration including showing multiple slides, breakpoints,
@@ -81,6 +95,8 @@
  * arrows.
  */
 /**
+ * COLUMNS
+ *
  * The COLUMNS mixin makes it so that immmediate child elements appear as
  * columns. It is responsive, allowing you to specify the media query at which
  * to switch the layout from stacking to columns.
@@ -101,12 +117,15 @@
  * Emmet: .columns>div+(hr+div)*2
  */
 /**
+ * DOSSIER
+ *
  * The DOSSIER mixin displays an individual’s biography and photograph.
  *
  * Emmet: .dossiers>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
  */
 /**
  * DROPDOWN
+ *
  * The DROPDOWN mixin allows for dropdown menus. By default, a single
  * column dropdown is used. It is positioned to its parent.
  *
@@ -130,6 +149,12 @@
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
+ * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * Remove the search form elements for a simple list.
+ *
+ * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
+ */
+/**
  * The LOGIN mixin is a basic implementation of a login module that includes a
  * username input, password input, submit button, forgot password link, and
  * remember me checkbox
@@ -137,7 +162,7 @@
  * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
  */
 /**
- * Mobile Navigation
+ * MOBILE NAVIGATION
  *
  * Emmet
  */
@@ -147,12 +172,16 @@
  * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
  */
 /**
- * LISTING shows a listing of entries. It includes an optional search form with filters. 
- * Remove the search form elements for a simple list.
+ * PROGRESS BREADCRUMBS
  *
- * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
+ * the progress mixin provides a basic, pill-style progress nav bar like you
+ * might find as part of an e-commerce or registration process.
+ *
+ * Emmet: nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
  */
 /**
+ * STICKY HEADER
+ *
  * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
  * header as you scroll down, and show it as you scroll back up. This is
  * responsive as the "top" value is dynamically set in the
@@ -169,24 +198,16 @@
  * Emmet: nav.tabs>ul>li*3>a
  */
 /**
- * The breadcrumb mixin provides basic breadcrumb styling, complete with
- * fontawesome icons being used as separators between crumbs.
- *
- * Emmet: nav.breadcrumbs>ul>li*3>a
- */
-/**
- * the progress mixin provides a basic, pill-style progress nav bar like you
- * might find as part of an e-commerce or registration process.
- *
- * Emmet: nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
- */
-/**
+* TESTIMONIAL
+*
 * The TESTIMONIAL mixin is a basic implementation of a testimonial design.
 * Emmet: div.testimonial>div.container>blockquote+p
 * To use the TESTIMONIAL WITH ASSET component, you simply need to add additional html markup, see emmet below.
 * Emmet: div.testimonial.asset>div.container>(div>img)+blockquote+p
 */
 /**
+ *  TILES
+ *
  *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.
  *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
  *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the
@@ -552,7 +573,7 @@ header.primary.sticky {
 }
 
 .listing form .filters span {
-  background-color: #0C508A;
+  background-color: #07547c;
   border-radius: 0.5rem;
   color: #fff;
   display: inline-block;
@@ -1096,12 +1117,14 @@ header.primary .branding {
           flex-shrink: 0;
 }
 
+nav {
+  margin-bottom: 2rem;
+}
+
 nav ul {
   list-style: none;
   margin: 0;
   padding-left: 0;
-  display: -webkit-flex;
-  display: flex;
 }
 
 nav ul li::before {
@@ -1149,45 +1172,20 @@ nav.breadcrumbs li:not(:last-child) a::after {
   text-rendering: auto;
   text-transform: none;
   content: "";
-  padding-left: .5rem;
-}
-
-nav.progress {
-  display: -webkit-flex;
-  display: flex;
+  padding-left: 0.5rem;
 }
 
 nav.progress ul {
   border: 1px solid #e5e5e5;
   border-radius: 2px;
+  display: block;
+  width: 100%;
 }
 
 nav.progress a {
-  padding: .5rem .5rem .5rem 1.5rem;
+  padding: 0.5rem 1rem;
   position: relative;
-}
-
-nav.progress a::before, nav.progress a::after {
-  border-right: 1px solid #e5e5e5;
-  content: '';
-  position: absolute;
-  right: -.25em;
-  width: .5em;
-  z-index: 1;
-}
-
-nav.progress a::before {
-  bottom: 0;
-  top: 50%;
-  -webkit-transform: skewX(-20deg);
-          transform: skewX(-20deg);
-}
-
-nav.progress a::after {
-  bottom: 50%;
-  top: 0;
-  -webkit-transform: skewX(20deg);
-          transform: skewX(20deg);
+  text-align: center;
 }
 
 nav.progress a:hover {
@@ -1200,41 +1198,20 @@ nav.progress li:not(:last-child) a {
 
 nav.progress li.active a {
   background-color: #0C96DD;
-  color: #fff;
+  color: #FFF;
   cursor: default;
   pointer-events: none;
 }
 
-nav.progress li.active a::before, nav.progress li.active a::after {
-  background-color: #0C96DD;
-  border-right: none;
-}
-
 nav.progress li.active a:hover {
-  color: #fff;
   background-color: #EB7424;
-}
-
-nav.progress li.active a:hover::before, nav.progress li.active a:hover::after {
-  background-color: #EB7424;
+  color: #FFF;
 }
 
 nav.progress li.disabled a {
   color: #e5e5e5;
   cursor: default;
   pointer-events: none;
-}
-
-nav.progress li:first-child a {
-  padding-left: 1.5rem;
-}
-
-nav.progress li:last-child a {
-  padding-right: 1.5rem;
-}
-
-nav.progress li:last-child a::before, nav.progress li:last-child a::after {
-  display: none;
 }
 
 nav.progress li:hover:not(.active, .disabled) a {
@@ -1246,16 +1223,76 @@ nav.progress li:not(:last-child) a {
 }
 
 nav.progress li.complete a {
-  background-color: #fff;
+  background-color: #FFF;
   color: #ccc;
 }
 
-nav.progress li.complete a::before, nav.progress li.complete a::after {
-  background-color: #fff;
+nav.progress li.complete a::before {
+  background-color: #FFF;
 }
 
 nav.progress li.complete a:hover {
   color: #0C96DD;
+}
+
+@media only screen and (min-width: 669px) {
+  nav.progress ul {
+    display: -webkit-flex;
+    display: flex;
+  }
+  nav.progress li {
+    -webkit-flex: 1 1 auto;
+            flex: 1 1 auto;
+    position: relative;
+  }
+  nav.progress li:last-child a::before {
+    display: none;
+  }
+  nav.progress a::after, nav.progress a::before {
+    border: 0 solid transparent;
+    border-bottom: 1.25rem solid transparent;
+    border-left: 1rem solid #FFF;
+    border-top: 1.25rem solid transparent;
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+  }
+  nav.progress a::after {
+    border-left-color: #FFF;
+  }
+  nav.progress a::before {
+    border-left-color: #cccccc;
+    margin-right: -1px;
+  }
+  nav.progress li.active {
+    margin-left: -1rem;
+    z-index: 2;
+  }
+  nav.progress li.active::before {
+    border-bottom: 1.25rem solid #0C96DD;
+    border-left: 1rem solid #FFF;
+    border-top: 1.25rem solid #0C96DD;
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
+  nav.progress li.active a::after, nav.progress li.active a::before {
+    background-color: #0C96DD;
+    border-bottom-color: #FFF;
+    border-left-color: #0C96DD;
+    border-top-color: #FFF;
+  }
+  nav.progress li.active a::before {
+    margin-right: 0;
+  }
+  nav.progress li.active a:hover::after, nav.progress li.active a:hover::before {
+    background-color: #EB7424;
+  }
 }
 
 nav.primary {
@@ -1397,6 +1434,14 @@ main section:not(:last-child) {
 
 aside.primary {
   margin-bottom: 2rem;
+}
+
+nav.supplemental {
+  margin-bottom: 0;
+}
+
+nav.supplemental ul {
+  display: block;
 }
 
 nav.supplemental ul li {

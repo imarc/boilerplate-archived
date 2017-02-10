@@ -39,7 +39,6 @@ $black:     #000;
 
 /* The brand colors (name them the color) */
 $brand-blue: #0C96DD;
-$brand-dark-blue: #0C508A;
 $brand-orange: #EB7424;
 
 /* Messaging colors */
@@ -354,9 +353,9 @@ header.primary {
 }
 
 nav {
+    margin-bottom: 2rem;
     ul {
         @include no-bullets;
-        display: flex;
 
         li {
             margin-bottom: 0;
@@ -384,6 +383,7 @@ nav {
     &.progress {
         @include progress();
     }
+
 }
 
 nav.primary {
@@ -502,7 +502,9 @@ aside.primary {
 }
 
 nav.supplemental {
+    margin-bottom: 0;
     ul {
+        display: block;
         li {
             display: block;
             float: none;
