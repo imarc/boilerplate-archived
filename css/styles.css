@@ -1508,6 +1508,8 @@ footer.primary a:hover {
 }
 
 footer.primary nav ul {
+  -webkit-justify-content: center;
+          justify-content: center;
   margin-bottom: 2rem;
   text-align: center;
 }
@@ -2144,8 +2146,6 @@ table tr:nth-child(even) td {
   footer.primary .wrapper {
     display: -webkit-flex;
     display: flex;
-    -webkit-justify-content: space-between;
-            justify-content: space-between;
   }
   footer.primary .wrapper > * {
     -webkit-flex: 1 0 0;
@@ -2155,6 +2155,10 @@ table tr:nth-child(even) td {
     -webkit-flex-grow: 2;
             flex-grow: 2;
     margin-bottom: 0;
+  }
+  footer.primary .wrapper > nav > ul {
+    -webkit-justify-content: center;
+            justify-content: center;
   }
   footer.primary .branding {
     margin-right: 0;
