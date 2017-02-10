@@ -1,16 +1,12 @@
-'use strict';
-
 /**
  *
  * jQuery Accordion Plugin
- *
- *Version: 0.1.0
- *Author: Tommy Chanthaboune <tommy@imarc.com>
  */
 
-(function ($) {
+;(function($) {
+    'use strict';
 
-    $.fn.accordion = function (options) {
+    $.fn.accordion = function(options) {
         var plugin = this;
 
         var defaults = {
@@ -20,21 +16,21 @@
 
         plugin.settings = $.extend({}, defaults, options);
 
-        return this.each(function () {
+        return this.each(function() {
 
             var $header  = $(this).find('.header');
             var $content = $(this).find('.content');
 
-            if (plugin.settings.hiddenOnLoad) {
+            if(plugin.settings.hiddenOnLoad) {
                 $content.addClass('hidden');
                 $header.addClass('close');
             } else {
                 $header.addClass('open');
             }
 
-            $header.on('click', function () {
+            $header.on('click', function() {
 
-                if (!$(this).hasClass('open') && plugin.settings.singleOpen) {
+                if(!$(this).hasClass('open') && plugin.settings.singleOpen) {
                     $header.removeClass('open').addClass('close');
                     $content.slideUp();
                 }
@@ -50,8 +46,3 @@
     };
 
 })(jQuery);
-
-$(function () {
-    var $accordion = $('.accordions');
-    $accordion.accordion();
-});

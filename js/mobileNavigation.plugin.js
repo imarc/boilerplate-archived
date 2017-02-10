@@ -1,19 +1,17 @@
-'use strict';
-
 /**
  *
  * jQuery Mobile Navigation Plugin
- *Author: Tommy Chanthaboune <tommy@imarc.com>
  */
 
-(function($) {
+;(function($) {
+    'use strict';
 
     $.fn.mobileNavigation = function(options) {
         var plugin = this;
 
         var defaults = {
             toggleClass: 'menu-toggle',
-            wrapperClass: 'wrapper',
+            wrapperClass: 'shell',
             subMenuClass: 'dropdown',
             directionFrom: 'left',
             overlayCss: {
@@ -33,10 +31,13 @@
 
         this.settings = $.extend({}, defaults, options);
 
+        this.closeAll = function() {
+            toggleAll();
+        };
+
         /**
          *
          * Return CSS selector from class name.
-         *
          */
 
         var toSelector = function(className) {
@@ -46,7 +47,6 @@
         /**
          *
          * Validate optionals params when initializing library.
-         *
          */
 
         var validateOptions = function() {
@@ -75,7 +75,6 @@
          *
          * Toggles Individual Menu
          * .init sets the menu opacity to 1 to prevent FOUC.
-         *
          */
 
         var toggleMenu = function() {
@@ -89,7 +88,6 @@
         /**
          *
          *  Toggles All Menus
-         *
          */
 
         var toggleAll = function() {
@@ -98,6 +96,8 @@
             var $overlay       = $(toSelector(plugin.settings.wrapperClass)).find('.mobile-overlay');
 
             $overlay.toggle();
+
+            toggleFreezeFrame();
 
             $(toggleSelector).find('i').toggleClass('fa-bars fa-close');
 
@@ -112,12 +112,11 @@
             toggleMenu.call(plugin[0]);
         };
 
-
         /**
          *
          * Sets the direction from where the menu animates from.
-         *
          */
+
         var setMenuDirection = function() {
             var subMenuClass = toSelector(plugin.settings.subMenuClass);
 
@@ -130,8 +129,8 @@
         /**
          *
          * Toggles the main menu. Closes other sub menus if they're open.
-         *
          */
+
         var bindToggle = function() {
             var $toggle = $(toSelector(plugin.settings.toggleClass));
 
@@ -141,8 +140,8 @@
         /**
          *
          * Bind sub menu button to toggle child menu.
-         *
          */
+
         var bindSubMenuToggle = function() {
             var subMenuClass  = toSelector(plugin.settings.subMenuClass);
             var $pluginParent = $(plugin[0].parentNode);
@@ -159,8 +158,8 @@
         /**
          *
          * Append buttons to list items with subMenu menus. Add back buttons to menus.
-         *
          */
+
         var appendControl = function() {
             var subMenuClass = toSelector(plugin.settings.subMenuClass);
             var text         = $(this).find('> a').text();
@@ -182,7 +181,6 @@
         /**
          *
          * Find all sub menus and append as a sibling of library's initialized class.
-         *
          */
 
         var cloneAndAppendMenu = function() {
@@ -209,8 +207,8 @@
         /**
          *
          *  Set unique identifier on each menu.
-         *
          */
+
         var setMenuId = function() {
             var subMenuClass = toSelector(plugin.settings.subMenuClass);
             var text         = $(this).siblings('a').text();
@@ -228,8 +226,8 @@
         /**
          *
          * Set up sub menu
-         *
          */
+
         var initSubMenu = function() {
             var subMenuClass = toSelector(plugin.settings.subMenuClass);
             var $menuItems   = $(this).find('nav ul li');
@@ -253,8 +251,7 @@
 
         /**
          *
-         * Insert overlay and bind it to close  all menus on click
-         *
+         * Insert overlay and bind it to close all menus on click
          */
 
         var addOverlay = function() {
@@ -269,10 +266,28 @@
 
         };
 
+        /*
+         *
+         * Freeze frame toggle
+         */
+
+        var toggleFreezeFrame = function() {
+            var scroll = {
+                'height': '100%',
+                'overflow': 'hidden'
+            };
+
+            if($(plugin[0]).hasClass('open')) {
+                scroll.overflow = 'auto';
+            }
+
+            $('html, body').css(scroll);
+
+        };
+
         /**
          *
          * Set up main menu
-         *
          */
         var init = function() {
             validateOptions();
@@ -284,7 +299,6 @@
         /**
          *
          * Do this each time the library is initialized
-         *
          */
 
         return this.each(function() {
@@ -295,7 +309,8 @@
 
 })(jQuery);
 
-$(function(){
+$(function() {
     // Mobile Navigation
     $('.mobile').mobileNavigation();
+
 });

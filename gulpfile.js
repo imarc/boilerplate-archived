@@ -12,11 +12,11 @@ var autoprefixer = require('gulp-autoprefixer');
 var options = {
     autoprefixer: [
         'Android >= 4.4',
-        'last 5 Chrome versions',
-        'last 5 Firefox versions',
+        'last 3 Chrome versions',
+        'last 3 Firefox versions',
         'Explorer >= 11',
-        'iOS >= 8',
-        'Safari >= 9'
+        'iOS >= 9',
+        'Safari >= 10'
     ],
 
     sassInput: './css/styles.scss',

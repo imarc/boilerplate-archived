@@ -8,6 +8,7 @@
  * = Table of Contents =
  * Variables
  * Mixins
+ * Components
  * Base
  * Layout
  * Typography
@@ -17,16 +18,16 @@
  * Tables
  * Section Specific
  * Page Specific
- * Components
  * Media Queries
  * Print Styles
  */
 
 @import "_components";
 
-/* = Variables = */
-$font-stack: "Helvetica Neue", Arial, sans-serif;
 
+/* = Variables = */
+
+$font-stack: "Helvetica Neue", Arial, sans-serif;
 
 /* Grays */
 $white:     #FFF;
@@ -62,6 +63,7 @@ $youtube: #CD201F;
 /* Breakpoint values */
 $medium: 669px;
 $large: 1024px;
+
 
 
 /* = Mixins = */
@@ -181,21 +183,79 @@ $large: 1024px;
 }
 
 
+/* = Components = */
+
+.accordion {
+    @include accordion();
+}
+
+.backgroundvideo {
+    @include backgroundvideo();
+}
+
+.carousel {
+    @include carousel;
+}
+
+.dossier {
+    @include dossier($gutter: 2rem, $photoWidth: 25%, $direction: row);
+}
+
+.header-content > .dropdown,
+.mobile {
+    @include mobileNavigation;
+}
+
+.features {
+    @include features($gutter: 3rem);
+}
+
+header.primary.sticky {
+    @include sticky-header();
+}
+
+.listing {
+    @include listing();
+}
+
+.login {
+    @include login;
+}
+
+nav.pagination {
+    @include pagination();
+}
+
+.desktop nav.primary {
+    @include dropdown();
+    li.mega {
+        @include dropdown-mega();
+    }
+}
+
+.tabs {
+    @include tabs();
+}
+
+.testimonial {
+    @include testimonial;
+}
+
+.tiles {
+    @include tiles();
+}
+
+
 /* = Base = */
-/* Not Included:
- *   - bi-directional elements: bdi, bdo
- *   - ruby elements: data, output, rp, rt, rtc, ruby, samp, time, var
- *   - typographical elements: del, dfn, ins, kbd, mark, s, small, wbr
- *   - HTML5 elements: col, colgroup, details, dialog, map, menu, menuitem, summary
- */
+
 a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     border: 0;
-    outline: 0;
-    font-size: 100%;
+    box-sizing: border-box;
     font: inherit;
+    font-size: 100%;
+    margin: 0;
+    outline: 0;
+    padding: 0;
     vertical-align: baseline;
 }
 
@@ -232,6 +292,7 @@ img {
 
 
 /* = Layout = */
+
 .group {
     @include grouping;
 }
@@ -244,36 +305,55 @@ img {
     @include columns;
 }
 
-.carousel {
-    @include carousel;
-}
-
-.wrapper {
-    overflow: hidden;
-}
-
 .sr-only {
     @include visuallyhidden;
+}
+
+.search-drawer {
+    background-color: $darkgray;
+    > div {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 150ms ease;
+        &.open {
+            max-height: 80px;
+        }
+    }
+    form {
+        display: flex;
+        padding: 1rem 0;
+        > * {
+            margin-bottom: 0;
+        }
+        .text {
+            flex: 1 1 auto;
+        }
+        .submit input {
+            height: 100%;
+        }
+    }
+}
+
+.branding {
+    img {
+        max-width: 180px;
+    }
 }
 
 header.primary {
     background-color: $charcoal;
     padding: 1rem 0;
+    position: relative;
     .container {
         position: static;
     }
-}
-
-.branding {
-    a {
-        display: inline-block;
-        max-width: 180px;
+    .branding {
+        flex-basis: 180px;
+        flex-shrink: 0;
     }
 }
 
 nav {
-    margin-bottom: 2rem;
-
     ul {
         @include no-bullets;
         display: flex;
@@ -282,10 +362,9 @@ nav {
             margin-bottom: 0;
         }
     }
-
     a {
+        color: $link;
         display: block;
-        font-weight: normal;
         padding: 0 0.5rem;
     }
 
@@ -322,11 +401,14 @@ nav.primary {
         li {
             margin-bottom: 0;
         }
-        li.active,
-        li:hover {
-            > a {
-                color: lighten($charcoal, 55%);
-            }
+    }
+    li a {
+        color: #FFF;
+    }
+    li.active,
+    li:hover {
+        a {
+            color: lighten($charcoal, 55%);
         }
     }
 }
@@ -339,49 +421,30 @@ nav.utility {
     }
 }
 
-.mobile {
-    @include mobileNavigation;
-}
-
-.header-content > .dropdown {
-    @include mobileNavigation;
-    z-index: 1001;
-    background: lighten($charcoal, 5%);
-    &.sub-menu {
-        z-index: 1002;
-        background: lighten($charcoal, 10%);
+.header-content {
+    align-items: flex-end;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .menu-toggle:hover,
+    .menu-toggle:focus {
+        background-color: $link;
     }
-
+    > .dropdown {
+        background-color: lighten($charcoal, 5%);
+        z-index: 1001;    
+        &.sub-menu {
+            background-color: lighten($charcoal, 10%);
+            z-index: 1002;
+        }
+    }
 }
 
 .desktop {
     display: none;
-    flex-flow: column wrap;
-    align-items: flex-end;
-    justify-content: space-between;
-    flex-basis: 80%;
-    max-width: 80%;
-
-    nav.primary {
-        flex-basis: 70%;
-        max-width: 70%;
-        align-self: flex-start;
-    }
-    .utilities {
-        flex-basis: 30%;
-        max-width: 30%;
-    }
-}
-
-.header-content {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-end;
-    justify-content: space-between;
 }
 
 form.search {
-    display: -webkit-flex;
     display: flex;
     .text,
     .submit {
@@ -393,6 +456,10 @@ form.search {
     label {
         @include visuallyhidden;
     }
+    .submit {
+        flex-basis: 33%;
+        flex-shrink: 0;
+    }
     input {
         border: none;
         width: 100%;
@@ -400,8 +467,6 @@ form.search {
 }
 
 .torso {
-    @include grouping;
-
     padding-bottom: 3rem;
     padding-top: 3rem;
 }
@@ -473,19 +538,39 @@ nav.supplemental {
 
 footer.primary {
     background-color: $charcoal;
-    color: $meta-text;
+    color: #FFF;
     font-size: 0.9rem;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding: 3rem 0;
     text-align: center;
-    nav {
-        margin-bottom: 1rem;
-    }
-    p {
-        margin: 0;
+    .branding {
+        margin-top: 0;
+        a {
+            margin-bottom: 1rem;
+        }
     }
     a {
+        color: $link;
+        display: inline-block;
+        &:hover {
+            color: darken($link, 10%);
+        }
+    }
+    nav ul {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .social a {
         color: #FFF;
+    }
+    .legal {
+        text-align: center;
+        p {
+            margin-bottom: 0.25rem;
+        }
+        a {
+            margin-left: 0.35rem;
+            margin-right: 0.35rem;
+        }
     }
 }
 
@@ -495,9 +580,18 @@ footer.primary {
     margin-bottom: 1rem;
     li {
         display: inline-block;
-        font-size: 22px;
+        font-size: 1.5rem;
         margin-bottom: 0;
         margin-right: 0.4rem;
+    }
+    .facebook a {
+        color: $facebook;
+    }
+    .linkedin a {
+        color: $linkedin;
+    }
+    .twitter a {
+        color: $twitter;
     }
     a:hover {
         opacity: 0.7;
@@ -506,6 +600,7 @@ footer.primary {
 
 
 /* = Typography = */
+
 h1,
 h2,
 h3,
@@ -650,6 +745,7 @@ code {
 
 
 /* = Forms = */
+
 button,
 input,
 optgroup,
@@ -704,6 +800,7 @@ input[type="url"],
 input[type="week"],
 textarea {
     border: 1px solid $border;
+    border-radius: 0;
     box-sizing: border-box;
     color: $plain-text;
     display: block;
@@ -713,15 +810,26 @@ textarea {
     width: 100%;
 }
 
+input[type="reset"],
+input[type="search"],
+input[type="text"],
+input[type="submit"] {
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
 ::-webkit-input-placeholder {
     color: #4A4A4A;
 }
+
 ::ms-input-placeholder {
     color: #4A4A4A;
 }
+
 ::-moz-placeholder {
     color: #4A4A4A;
 }
+
 ::-placeholder {
     color: #4A4A4A;
 }
@@ -752,26 +860,18 @@ a.button {
     margin-bottom: 0;
 }
 
-button:not(.link),
-input[type="button"]:not(.link),
-input[type="reset"]:not(.link),
-input[type="submit"]:not(.link) {
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
     @include button;
     border: none;
     cursor: pointer;
 }
 
-button.link,
-input[type=button].link,
-input[type="button"].link,
-input[type="reset"].link,
-input[type="submit"].link {
-    @include link;
-    background: transparent;
-}
-
 
 /* = Iconography = */
+
 .thumbs-up::before {
     @include fontawesome("\f087");
 
@@ -780,6 +880,7 @@ input[type="submit"].link {
 
 
 /* = Messaging = */
+
 .success {
     @include messaging;
 
@@ -821,6 +922,7 @@ input[type="submit"].link {
 
 
 /* = Tables = */
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -850,95 +952,28 @@ table {
     }
 }
 
+
 /* = Section Specific = */
 
 
 /* =  Page Specific = */
 
 
-/* = Components = */
-.backgroundvideo {
-    @include backgroundvideo();
-}
-
-.dossier {
-    @include dossier($gutter: 2rem, $photoWidth: 25%, $direction: row);
-}
-
-nav.primary {
-    @include dropdown();
-    li.mega {
-        @include dropdown-mega();
-    }
-}
-
-.features {
-    @include features($gutter: 3rem);
-}
-
-footer.primary {
-    @include footer();
-}
-
-header.primary {
-    @include sticky-header();
-}
-
-.listing {
-    @include listing();
-}
-
-.login {
-    @include login;
-}
-
-nav.pagination {
-    @include pagination();
-}
-
-header.primary {
-    @include sticky-header();
-}
-
-.tabs {
-    @include tabs();
-}
-
-.testimonial {
-    @include testimonial;
-}
-
-.tiles {
-    @include tiles();
-}
-
-.accordions {
-    @include accordion();
-}
-
 /* = Media Queries = */
+
 @media only screen and (min-width: $medium) {
-    /* = Layout = */
-    aside.primary {
-        float: right;
-        margin-bottom: 0;
-        width: 20%;
-        nav ul {
-            text-align: left;
-        }
-    }
-    aside.primary ~ main {
-        float: left;
-        padding-right: 2rem;
-        width: 80%;
-    }
+    
 }
 
 
 @media only screen and (min-width: $large) {
+
     /* = Layout = */
-    .wrapper {
-        overflow: auto;
+    
+    header.primary {
+        .branding {
+            margin-right: 2rem;
+        }
     }
 
     nav {
@@ -946,10 +981,11 @@ header.primary {
             text-align: left;
         }
     }
+
     nav.primary {
         margin-bottom: 0;
         > ul > li {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-left: 1rem;
             position: relative;
         }
@@ -975,21 +1011,65 @@ header.primary {
     }
 
     .desktop {
+        align-items: flex-end;
         display: flex;
+        flex: 1 1 auto;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        nav.primary {
+            align-self: flex-start;
+        }
     }
 
     button.menu-toggle {
         display: none;
     }
+    
+    .torso .wrap {
+        display: flex;
+        justify-content: space-between;
+        main {
+            flex: 1 1 auto;
+            padding-right: 2rem;
+        }
+        aside.primary {
+            flex: 0 0 25%;
+        }
+    }
 
     aside.primary {
-        width: 25%;
-    }
-    aside.primary ~ main {
-        width: 75%;
+        margin-bottom: 0;
+        nav ul {
+            text-align: left;
+        }
     }
 
+    footer.primary {
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            > * {
+                flex: 1 0 0;
+            }
+            > nav {
+                flex-grow: 2;
+                margin-bottom: 0;
+            }
+        }
+        .branding {
+            margin-right: 0;
+            max-width: none;
+            text-align: left;
+        }
+        .social {
+            text-align: right;
+        }
+    }
+
+
     /* = Typography = */
+
     h1 {
         font-size: 2.6rem;
     }
@@ -1011,7 +1091,9 @@ header.primary {
     }
 }
 
+
 /* = Print Styles = */
+
 @media print {
     * {
         background-color: transparent !important;
