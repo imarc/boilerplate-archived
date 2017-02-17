@@ -1,7 +1,7 @@
 /**
- * Built using Imarc Boilerplate v2.1
+ * Built using Imarc Boilerplate v3.0
  *
- * Copyright 2016 Imarc
+ * Copyright 2017 Imarc
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
@@ -356,7 +356,7 @@ nav {
     margin-bottom: 2rem;
     ul {
         @include no-bullets;
-        
+
         display: flex;
         li {
             margin-bottom: 0;
@@ -433,7 +433,7 @@ nav.utility {
     }
     > .dropdown {
         background-color: lighten($charcoal, 5%);
-        z-index: 1001;    
+        z-index: 1001;
         &.sub-menu {
             background-color: lighten($charcoal, 10%);
             z-index: 1002;
@@ -966,14 +966,14 @@ table {
 /* = Media Queries = */
 
 @media only screen and (min-width: $medium) {
-    
+
 }
 
 
 @media only screen and (min-width: $large) {
 
     /* = Layout = */
-    
+
     header.primary {
         padding-bottom: 0;
         .branding {
@@ -1031,7 +1031,7 @@ table {
     button.menu-toggle {
         display: none;
     }
-    
+
     .torso .wrap {
         display: flex;
         justify-content: space-between;
