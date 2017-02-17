@@ -24,55 +24,109 @@
                     </div>
                 </section>
                 <section>
-                    <h2>Image Popup Example</h2>
+                    <div class="container">
+                        <h2>Image Popup Example</h2>
+                        <p>
+                            This is one of the simplest uses of magnific - zooming/expanding an image. Wrap the <code>img</code> in an <code>a</code> tag with the appropriate class, and use the <code>title</code> attribute as the image caption, as shown below:
+                        </p>
+                        <h4>Emmet:</h4>
+                        <p>
+                            <code>
+                                a.single-popup[title="Image Caption"]>img[src="/path-to-image" alt="image alt text"]
+                            </code>
+                        </p>
 
-                    <!-- Begin component -->
-                    <a class="single-popup" href="../img/dossier-1.jpg" title="Katie Desmond">
-                        <img src="../img/dossier-1.jpg" alt="Katie Desmond Popup">
-                    </a>
-                    &nbsp; &nbsp;
-                    <a class="single-popup" href="../img/dossier-2.jpg" title="Jason Makin"><img src="../img/dossier-2.jpg" alt="Jason Makin Popup"></a>
+
+                        <!-- Begin component -->
+                        <a class="single-popup" href="../img/dossier-1.jpg" title="Katie Desmond">
+                            <img src="../img/dossier-1.jpg" alt="Katie Desmond Popup">
+                        </a>
+                        &nbsp; &nbsp;
+                        <a class="single-popup" href="../img/dossier-2.jpg" title="Jason Makin">
+                            <img src="../img/dossier-2.jpg" alt="Jason Makin Popup">
+                        </a>
 
 
-                    <!-- end component -->
+                        <!-- end component -->
+                    </div>
+
+                </section>
+
+                <section>
+                    <div class="container">
+                        <h2>Video Popup Example</h2>
+
+                        <p>
+                            This is a simple video popup. Wrap a video placeholder image in an <code>a</code> tag with the appropriate class, and the video as the <code>href</code>:
+                        </p>
+                        <h4>Emmet:</h4>
+                        <p>
+                            <code>
+                                a.magnific-video[href="/path-to-video"]>img[src="/path-to-placeholder-image" alt="Video Placeholder Alt Text"]
+                            </code>
+                        </p>
+
+                        <!-- Begin component -->
+                        <a href="https://s3.amazonaws.com/imarc.com/imarc-culture-video.mp4" class="magnific-video" >
+                            <img width="700" src="../img/video-placeholder.jpg" alt="Video Placeholder">
+                        </a>
+                        <!-- end component -->
+                    </div>
 
 
                 </section>
 
                 <section>
-                    <h2>Video Popup Example</h2>
+                    <div class="container">
+                        <h2>HTML/Inline Popup Example(s)</h2>
+                        <p>
+                            This is a simple content popup which can include anything within a hidden <code>div</code>. Simply wrap a video placeholder image in an <code>a</code> tag with the appropriate class, and the video as the <code>href</code>:
+                        </p>
+                        <h4>Emmet:</h4>
+                        <p>
+                            <code>
+                                a.open-popup-link[href="#id-of-hidden-div"]
+                            </code>
+                        </p>
 
                     <!-- Begin component -->
+                       <p>
+                            <a href="#test-popup" class="open-popup-link button">Click Me!</a>
+                       </p>
 
-                        <a href="https://s3.amazonaws.com/imarc.com/imarc-culture-video.mp4" class="magnific-video" ><img width="700" src="../img/video-placeholder.jpg" alt="Video Placeholder"></a>
-                    <!-- end component -->
+                        <p>
+                            This is an alternative example using the data-mfp-src attribute.<br>
+                            <h4>Emmet:</h4>
+                            <p>
+                                <code>
+                                    a.open-popup-link[data-mfp-src="#id-of-hidden-div"]
+                                </code>
+                            </p>
+                            <a data-mfp-src="#test-popup2" class="open-popup-link">Show inline popup</a>
+                        </p>
 
 
-                </section>
+                    </div>
 
-                <section>
-                    <h2>HTML Popup Example</h2>
+                        <!-- end component -->
 
-                    <!-- Begin component -->
-                        <a href="#test-popup" class="open-popup-link">Learn More</a>
-                        <!--
-                        Alternative markup with data-mfp-src attribute:
-                        <a href="mobile-friendly-page.html" data-mfp-src="#test-popup" class="open-popup-link">Show inline popup</a>
-                        -->
-
-                        <!-- Popup itself -->
-                        <div id="test-popup" class="inline-popup mfp-hide">
-                          <h2>Popup content goes here</h2>
-                          <p>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis volutpat urna. Morbi quis scelerisque tortor. Duis mollis et nulla eget vehicula. Vivamus varius faucibus volutpat. Duis lacinia, dolor sit amet molestie molestie, quam urna gravida lorem, eu efficitur massa metus nec est. Sed fringilla sagittis arcu ac facilisis. Phasellus laoreet dui at velit fringilla iaculis. Vestibulum pulvinar ut erat vitae dignissim. Suspendisse id scelerisque libero. Ut cursus nulla eget faucibus fringilla. Nunc eu justo ante. Pellentesque et ultrices urna. Ut malesuada orci quis commodo rhoncus.
-                          </p>
-                        </div>
-
-                    <!-- end component -->
 
 
                 </section>
             </main>
+        </div>
+        <!-- HTML Popup Content - can be placed anywhere on page -->
+        <div id="test-popup" class="inline-popup mfp-hide">
+          <h2>Popup content goes here</h2>
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis volutpat urna. Morbi quis scelerisque tortor. Duis mollis et nulla eget vehicula. Vivamus varius faucibus volutpat. Duis lacinia, dolor sit amet molestie molestie, quam urna gravida lorem, eu efficitur massa metus nec est. Sed fringilla sagittis arcu ac facilisis. Phasellus laoreet dui at velit fringilla iaculis. Vestibulum pulvinar ut erat vitae dignissim. Suspendisse id scelerisque libero. Ut cursus nulla eget faucibus fringilla. Nunc eu justo ante. Pellentesque et ultrices urna. Ut malesuada orci quis commodo rhoncus.
+          </p>
+        </div>
+        <div id="test-popup2" class="inline-popup mfp-hide">
+          <h2>Popup2 content goes here</h2>
+          <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis volutpat urna. Morbi quis scelerisque tortor. Duis mollis et nulla eget vehicula. Vivamus varius faucibus volutpat. Duis lacinia, dolor sit amet molestie molestie, quam urna gravida lorem, eu efficitur massa metus nec est. Sed fringilla sagittis arcu ac facilisis. Phasellus laoreet dui at velit fringilla iaculis. Vestibulum pulvinar ut erat vitae dignissim. Suspendisse id scelerisque libero. Ut cursus nulla eget faucibus fringilla. Nunc eu justo ante. Pellentesque et ultrices urna. Ut malesuada orci quis commodo rhoncus.
+          </p>
         </div>
         <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
