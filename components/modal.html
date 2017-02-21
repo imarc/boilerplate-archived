@@ -27,7 +27,7 @@
                     <div class="container">
                         <h2>Image Popup Example</h2>
                         <p>
-                            This is one of the simplest uses of magnific - zooming/expanding an image. Wrap the <code>img</code> in an <code>a</code> tag with the appropriate class, and use the <code>title</code> attribute as the image caption, as shown below:
+                            This is one of the simplest uses of magnific - zooming/expanding an image. Wrap the <code>img</code> in an <code>a</code> tag with the appropriate class and image source for the <code>href</code>, and use the <code>title</code> attribute as the image caption, as shown below:
                         </p>
                         <h4>Emmet:</h4>
                         <p>
@@ -57,7 +57,7 @@
                         <h2>Video Popup Example</h2>
 
                         <p>
-                            This is a simple video popup. Wrap a video placeholder image in an <code>a</code> tag with the appropriate class, and the video as the <code>href</code>:
+                            This is a simple video popup. Wrap a video placeholder image in an <code>a</code> tag with the appropriate class, and the video link as the <code>href</code>:
                         </p>
                         <h4>Emmet:</h4>
                         <p>
@@ -80,7 +80,7 @@
                     <div class="container">
                         <h2>HTML/Inline Popup Example(s)</h2>
                         <p>
-                            This is a simple content popup which can include anything within a hidden <code>div</code>. Simply wrap a video placeholder image in an <code>a</code> tag with the appropriate class, and the video as the <code>href</code>:
+                            This is a simple content popup which can include anything within a hidden <code>div</code>. Give your <code>a</code> tag the appropriate class, and set the <code>div id</code> as the <code>href</code>:
                         </p>
                         <h4>Emmet:</h4>
                         <p>
@@ -89,29 +89,31 @@
                             </code>
                         </p>
 
-                    <!-- Begin component -->
-                       <p>
-                            <a href="#test-popup" class="open-popup-link button">Click Me!</a>
-                       </p>
-
+                        <!-- Begin component -->
                         <p>
-                            This is an alternative example using the data-mfp-src attribute.<br>
-                            <h4>Emmet:</h4>
-                            <p>
-                                <code>
-                                    a.open-popup-link[data-mfp-src="#id-of-hidden-div"]
-                                </code>
-                            </p>
-                            <a data-mfp-src="#test-popup2" class="open-popup-link">Show inline popup</a>
+                            <a href="#test-popup" class="open-popup-link button">Click Me!</a>
+                        </p>
+                        <!-- end component -->
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <p>
+                            This is an alternative example using the data-mfp-src attribute in an <code>a</code> tag instead of using the <code>href</code>. <br>
+                            <em>Note: you can also use a <code>span</code> tag and style it like a button.</em>
+                        </p>
+                        <h4>Emmet:</h4>
+                        <p>
+                            <code>
+                                a.open-popup-link[data-mfp-src="#id-of-hidden-div"]
+                            </code>
                         </p>
 
-
-                    </div>
+                        <!-- Begin component -->
+                        <a data-mfp-src="#test-popup2" class="open-popup-link button">Click for data-mfp-source Example</a>
 
                         <!-- end component -->
-
-
-
+                    </div>
                 </section>
             </main>
         </div>
