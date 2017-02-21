@@ -1,7 +1,7 @@
 {
   "name": "boilerplate",
   "version": "1.0.0",
-  "description": "Responsive CSS, HTML and JavaScript front-end starting point.",
+  "description": "A light, customizable frontend starter kit and component library",
   "author": "Imarc",
   "license": "Apache-2.0",
   "repository": {

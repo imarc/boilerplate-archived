@@ -1350,7 +1350,7 @@ form.search input {
 }
 
 .hero {
-  background: #191919 url(../img/hero.jpg) no-repeat center top/cover;
+  background: #191919 url(../img/hero.jpg) no-repeat center/cover;
   display: flex;
   flex-direction: column;
   height: 240px;

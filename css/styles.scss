@@ -473,7 +473,7 @@ form.search {
 }
 
 .hero {
-    background: $plain-text url(../img/hero.jpg) no-repeat center top / cover;
+    background: $plain-text url(../img/hero.jpg) no-repeat center / cover;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
