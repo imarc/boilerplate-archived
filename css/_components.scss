@@ -499,7 +499,7 @@ $large: 1024px;
 
 
 /**
- * The MAGNIFIC mixin has some styles included to override magnific's/imarc's conflicting styles (button styles, for example)
+ * The MAGNIFIC mixin has some styles included to override magnific's/imarc's conflicting styles (i.e. button styles), and some basic styling for the html/inline popup method.
  *
  */
 @mixin magnific {
