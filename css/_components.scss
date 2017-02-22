@@ -978,8 +978,8 @@ $large: 1024px;
     @media only screen and (min-width: $medium) {
         display: flex;
         flex-flow: row wrap;
-        margin-left: -$gutter / 2;
-        margin-right: -$gutter / 2;
+        margin-left: -1rem;
+        margin-right: -1rem;
         > * {
             flex-basis: calc(50% - #{$gutter});
             flex-shrink: 0;
