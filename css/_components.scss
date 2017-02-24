@@ -29,6 +29,26 @@ $large: 1024px;
 
 @mixin accordion() {
     > div {
+        &.open {
+            .header {
+                background: darken($lightgray, 5%);
+                &::after {
+                    @include fontawesome("\f068");
+                }
+            }
+        }
+        &.close {
+            .header{
+                &::after {
+                    @include fontawesome("\f067");
+                }
+            }
+        }
+        &.initially-hidden {
+            .content {
+                display: none;
+            }
+        }
         .header {
             background: $lightgray;
             color: $plain-text;
@@ -51,23 +71,9 @@ $large: 1024px;
                 top: 0;
                 width: 1em;
             }
-            &.open {
-                background: darken($lightgray, 5%);
-                &::after {
-                    @include fontawesome("\f068");
-                }
-            }
-            &.close {
-                &::after {
-                    @include fontawesome("\f067");
-                }
-            }
         }
         .content {
             padding: 1em 0;
-            &.hidden {
-                display: none;
-            }
         }
     }
 }
@@ -418,7 +424,7 @@ $large: 1024px;
 
 
 /**
- * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * LISTING shows a listing of entries. It includes an optional search form with filters.
  * Remove the search form elements for a simple list.
  *
  * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
@@ -766,7 +772,7 @@ $large: 1024px;
             &::before {
                 border: 0 solid transparent;
                 border-bottom: 1.25rem solid rgba(0,0,0,0);
-                border-left: 1rem solid #FFF;    
+                border-left: 1rem solid #FFF;
                 border-top: 1.25rem solid rgba(0,0,0,0);
                 content: '';
                 position: absolute;

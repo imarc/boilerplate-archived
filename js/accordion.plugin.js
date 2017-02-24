@@ -22,22 +22,24 @@
             var $content = $(this).find('.content');
 
             if(plugin.settings.hiddenOnLoad) {
-                $content.addClass('hidden');
-                $header.addClass('close');
+                $header.parent().addClass('close initially-hidden');
             } else {
-                $header.addClass('open');
+                $header.parent().addClass('open');
             }
 
             $header.on('click', function() {
 
-                if(!$(this).hasClass('open') && plugin.settings.singleOpen) {
-                    $header.removeClass('open').addClass('close');
+                if(!$(this).parent().hasClass('open') && plugin.settings.singleOpen) {
+                    $header.parent().removeClass('open').addClass('close');
                     $content.slideUp();
                 }
 
                 $(this)
-                    .toggleClass('open close')
-                    .siblings('div')
+                    .parent()
+                    .toggleClass('open close');
+
+                $(this)
+                    .siblings('.content')
                     .slideToggle();
 
             });
