@@ -149,7 +149,7 @@
  * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
  */
 /**
- * LISTING shows a listing of entries. It includes an optional search form with filters. 
+ * LISTING shows a listing of entries. It includes an optional search form with filters.
  * Remove the search form elements for a simple list.
  *
  * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
@@ -227,6 +227,34 @@
 /* Breakpoint values */
 /* = Mixins = */
 /* = Components = */
+.accordion > div.open .header {
+  background: #d0d0d0;
+}
+
+.accordion > div.open .header::after {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+}
+
+.accordion > div.close .header::after {
+  font: normal normal normal 1em / 1 FontAwesome;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+}
+
+.accordion > div.initially-hidden .content {
+  display: none;
+}
+
 .accordion > div .header {
   background: #DDD;
   color: #191919;
@@ -253,36 +281,8 @@
   width: 1em;
 }
 
-.accordion > div .header.open {
-  background: #d0d0d0;
-}
-
-.accordion > div .header.open::after {
-  font: normal normal normal 1em / 1 FontAwesome;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  speak: none;
-  text-rendering: auto;
-  text-transform: none;
-  content: "";
-}
-
-.accordion > div .header.close::after {
-  font: normal normal normal 1em / 1 FontAwesome;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  speak: none;
-  text-rendering: auto;
-  text-transform: none;
-  content: "";
-}
-
 .accordion > div .content {
   padding: 1em 0;
-}
-
-.accordion > div .content.hidden {
-  display: none;
 }
 
 .backgroundvideo {
