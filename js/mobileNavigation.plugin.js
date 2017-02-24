@@ -281,7 +281,7 @@
                 scroll.overflow = 'auto';
             }
 
-            $('html, body').css(scroll);
+            $('html').css(scroll);
 
         };
 
