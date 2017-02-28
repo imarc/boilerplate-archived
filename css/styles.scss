@@ -29,11 +29,16 @@
 /// = Variables =
 ///
 
+///
+/// This is the default font stack.
+///
+
 $font-stack: "Helvetica Neue", Arial, sans-serif;
 
 
 ///
-/// Grays
+/// We provide the color `$white`, `$lightgray`, `$gray`, `$darkgray`,
+/// `$charcoal` and `$black` for convienence.
 ///
 
 $white:     #FFF;
