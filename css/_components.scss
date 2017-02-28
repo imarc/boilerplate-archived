@@ -98,7 +98,9 @@ $large: 1024px;
 
 ///
 /// BACKGROUND VIDEO plays a video (without sound) in the background of an element.
+///
 /// @emmet .backgroundvideo>(.panel>div>h1+p)+video>source[src]
+/// @demo components/background-video.html
 ///
 
 @mixin backgroundvideo() {
@@ -136,6 +138,7 @@ $large: 1024px;
 /// fontawesome icons being used as separators between crumbs.
 ///
 /// @emmet nav.breadcrumbs>ul>li*3>a
+/// @demo components/breadcrumbs.html
 ///
 
 @mixin breadcrumbs() {
@@ -183,7 +186,9 @@ $large: 1024px;
 /// slides while .slick-next and .slick-prev are used for the next/previous
 /// arrows.
 ///
-//
+/// @demo components/carousel.html
+///
+
 @mixin carousel() {
     .slick-slide {
         color: #FFF;
@@ -223,6 +228,7 @@ $large: 1024px;
 /// </div>
 ///
 /// @emmet .columns>div+(hr+div)*2
+/// @demo components/columns.html
 ///
 
 @mixin columns() {
@@ -252,6 +258,7 @@ $large: 1024px;
 /// The DOSSIER mixin displays an individual’s biography and photograph.
 ///
 /// @emmet .dossiers>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
+/// @demo components/dossier.html
 ///
 /// @param {measure}   $gutter     [2rem] - gutter between content and image
 /// @param {measure}   $photoWidth [25%]  - width of image
@@ -297,6 +304,7 @@ $large: 1024px;
 /// column dropdown is used. It is positioned to its parent.
 ///
 /// @emmet nav.primary>ul>li>a{link name}+.dropdown>.menu>ul>li>(a{link name})*3
+/// @demo components/dropdown-simple.html
 ///
 
 @mixin dropdown() {
@@ -358,6 +366,7 @@ $large: 1024px;
 /// of its parent list item.
 ///
 /// @emmet nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
+/// @demo components/dropdown-mega.html
 ///
 
 @mixin dropdown-mega() {
@@ -399,6 +408,7 @@ $large: 1024px;
 /// `$gutter` variable to pass you preferred gutter width.
 ///
 /// @emmet .features>(div>(.icon>img)+h4+p+a)*3
+/// @demo components/features.html
 ///
 /// @param {measure} $gutter [3rem] - gutter between features
 ///
@@ -447,6 +457,7 @@ $large: 1024px;
 /// Remove the search form elements for a simple list.
 ///
 /// @emmet .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
+/// @demo components/listing.html
 ///
 
 @mixin listing() {
@@ -523,6 +534,7 @@ $large: 1024px;
 /// remember me checkbox.
 ///
 /// @emmet .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
+/// @demo components/login.html
 ///
 
 @mixin login {
@@ -569,6 +581,8 @@ $large: 1024px;
 ///
 /// The mobile navigation mixin is missing any kind of sass, docblock style
 /// documentation within _components.scss. Sorry.
+///
+/// @demo components/mobile-navigation.html
 ///
 
 @mixin mobileNavigation() {
@@ -643,9 +657,11 @@ $large: 1024px;
 
 
 ///
-/// PAGINATION
+/// The pagination mixin is missing any kind of sass, docblock style
+/// documentation within _components.scss. Sorry.
 ///
 /// @emmet nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
+/// @demo components/pagination.html
 ///
 
 @mixin pagination {
@@ -720,6 +736,7 @@ $large: 1024px;
 /// might find as part of an e-commerce or registration process.
 ///
 /// @emmet nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
+/// @demo components/progress.html
 ///
 
 @mixin progress() {
@@ -854,6 +871,7 @@ $large: 1024px;
 /// content.
 ///
 /// @emmet header.primary
+/// @demo components/sticky-header.html
 ///
 
 @mixin sticky-header() {
@@ -870,6 +888,7 @@ $large: 1024px;
 /// within _components.scss. Sorry.
 ///
 /// @emmet nav.tabs>ul>li*3>a
+/// @demo components/tabs.html
 ///
 
 @mixin tabs {
@@ -896,11 +915,12 @@ $large: 1024px;
 ///
 /// The TESTIMONIAL mixin is a basic implementation of a testimonial design.
 ///
+/// To use the TESTIMONIAL WITH ASSET component, you simply need to add
+/// additional html markup, see the second emmet example below.
+///
 /// @emmet div.testimonial>div.container>blockquote+p
-///
-/// To use the TESTIMONIAL WITH ASSET component, you simply need to add additional html markup, see emmet below.
-///
 /// @emmet div.testimonial.asset>div.container>(div>img)+blockquote+p
+/// @demo components/testimonial.html
 ///
 
 @mixin testimonial($gutterWidth: 4rem) {
@@ -986,6 +1006,7 @@ $large: 1024px;
 /// two-up your items at the medium breakpoint, and stack them at the small breakpoint.
 ///
 /// @emmet .tiles>.tiles
+/// @demo components/tiles.html
 ///
 /// @param {measure} $gutter  [2rem] - vertical gutter between tiles
 /// @param {number}  $columns [4]    - number of columns while min-width is $large
