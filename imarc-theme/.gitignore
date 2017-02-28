@@ -1,0 +1,7 @@
+/assets/css/main.css.map
+/dist
+/node_modules
+/sassdoc
+.DS_Store
+.sass-cache
+npm-debug.log

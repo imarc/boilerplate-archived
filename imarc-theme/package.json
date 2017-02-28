@@ -1,0 +1,44 @@
+{
+  "name": "sassdoc-theme-default",
+  "description": "SassDoc's default theme",
+  "title": "SassDoc Default Theme",
+  "author": "SassDoc team",
+  "version": "2.5.2",
+  "keywords": [
+    "sassdoc-theme"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SassDoc/sassdoc-theme-default.git"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js",
+    "assets",
+    "views",
+    "dist",
+    "default.json",
+    "index.js",
+    "LICENSE.md",
+    "README.md"
+  ],
+  "dependencies": {
+    "babel-runtime": "^6.22.0",
+    "chroma-js": "^1.2.2",
+    "es6-denodeify": "^0.1.0",
+    "es6-promise": "^4.0.5",
+    "extend": "^3.0.0",
+    "fs-extra": "^2.0.0",
+    "html-minifier": "^3.3.1",
+    "sassdoc-extras": "^2.4.0",
+    "swig": "1.4.0",
+    "swig-extras": "0.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.22.2",
+    "babel-plugin-transform-runtime": "^6.22.0",
+    "babel-preset-latest": "^6.22.0",
+    "standard": "^8.6.0",
+    "uglify-js": "^2.4.15"
+  }
+}

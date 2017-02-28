@@ -6,17 +6,17 @@
 /// + This file should not generate any CSS on it's own; it should only contain
 ///   mixin and/or function definitions.
 ///
-/// @group  components
 ////
 
 ///
-/// ACCORDION requires the accordion.plugin.js file. Within the .accordion
+/// ACCORDION **requires** *the* accordion.plugin.js file. Within the .accordion
 /// class each accordion item requires a div wrapper. Within the div wrapper
 /// there is a .header class and a .content class. The .header class is the
 /// clickable element that will reveal what is hidden in the .content class.
 /// By default .content is hidden by javascript just in case javascript is not available.
 ///
-/// Emmet: .accordion>div>(.header{header}+.content>{lorem ipsum})
+/// @emmet .accordion>div>(.header{header}+.content>{lorem ipsum})
+/// @demo components/accordion.html
 ///
 /// @example markup HTML
 ///   <div class="accordion">
@@ -919,7 +919,7 @@
 ///
 
 @mixin tiles($gutter: 2rem, $columns: 4) {
-    > * {maybe all the ogod st
+    > * {
         background-color: #EEE;
         margin-bottom: $gutter;
         padding: 2rem;

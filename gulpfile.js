@@ -6,6 +6,7 @@ var csscomb = require('gulp-csscomb');
 var sourcemaps = require('gulp-sourcemaps');
 var browsersync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
+var sassdoc = require('sassdoc');
 
 // Options
 
@@ -21,6 +22,11 @@ var options = {
 
     sassInput: './css/styles.scss',
     sassOutput: './css',
+
+    docsInput: './css/*.scss',
+    themeInput: './imarc-theme/scss/main.scss',
+    themeWatch: './imarc-theme/scss/**/*.scss',
+    themeOutput: './imarc-theme/assets/css',
 
     sassCompiler: {
         errLogToConsole: true,
@@ -83,6 +89,30 @@ gulp.task('serve', ['watch'], function () {
         "./img/**/*"
     ]).on('change', browsersync.reload);
 });
+
+/**
+ * Docs tasks
+ */
+gulp.task('docs', function () {
+    return gulp.src(options.docsInput)
+        .pipe(sassdoc({
+            theme: './imarc-theme',
+        }));
+});
+
+gulp.task('theme:build', function () {
+    return gulp.src(options.themeInput)
+        .pipe(sourcemaps.init())
+        .pipe(sass(options.sassCompiler).on('error', sass.logError))
+        .pipe(autoprefixer(options.autoprefixer))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest(options.themeOutput));
+});
+
+gulp.task('theme:watch', ['theme:build', 'docs'], function () {
+    gulp.watch(options.themeWatch, ['theme:build', 'docs']);
+});
+
 
 /**
  * Default task

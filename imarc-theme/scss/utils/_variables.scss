@@ -1,0 +1,88 @@
+/// Pink
+/// @type Color
+$pink: #dd5a6f;
+
+
+/// Purple
+/// @type Color
+$purple: #5c4863;
+
+
+/// Yellow
+/// @type Color
+$yellow: #ffc93c;
+
+
+/// Black
+/// @type Color
+$black: #333;
+
+
+/// Primary color
+/// @type Color
+$primary-color: $pink;
+
+
+/// Primary color
+/// @type Color
+$secondary-color: $yellow;
+
+
+/// Primary color
+/// @type Color
+$tertiary-color: $purple;
+
+
+/// Light grey
+/// @type Color
+$light-grey: #e0e0e0;
+
+
+/// Medium
+/// @type Color
+$medium-grey: #ddd;
+
+
+/// Map of breakpoints for responsive design.
+/// @prop {Map} small [(max-width: 800px)] - small screens
+/// @prop {Map} medium [(min-width: 801px)] - regular screens
+/// @see {mixin} respond-to
+/// @type Map
+$breakpoints: (
+  'small':  (max-width: 800px),
+  'medium': (min-width: 801px)
+) !global;
+
+
+/// Z-indexes layers.
+/// @prop {Number} key   - aliases for specific z-indexes
+/// @see {function} z
+/// @type Map
+$z-indexes: (
+  'goku':       9001,
+  'modal':      5000,
+  'dropdown':   4000,
+  'social':     3000,
+  'default':       1,
+  'below':        -1
+) !global;
+
+
+/// Sidebar width
+/// @type Number
+$sidebar-width: 280px;
+
+
+/// Vertical rhythm
+/// @type Number
+$vertical-rhythm: 1.5rem;
+
+
+/// Text font stack
+/// @type List
+$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+
+
+/// Code font stack
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace;

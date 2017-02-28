@@ -1,0 +1,167 @@
+/// Mixin to size elements.
+/// @param {Number} $width           - Width
+/// @param {Number} $height [$width] - Height
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+/// Shorthand for positioning.
+/// @access private
+/// @param {String} $position - Position type (either `absolute`, `fixed` or `relative`)
+/// @param {Length} $top [null] - Top offset
+/// @param {Length} $right [null] - Right offset
+/// @param {Length} $bottom [null] - Bottom offset
+/// @param {Length} $left [null] - Left offset
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+
+/// Shorthand for absolute positioning.
+/// @requires {mixin} position
+/// @param {Arglist} $args - Offsets
+/// @example scss - Stretch an item over its parent.
+///  @include absolute($top: 0, $right: 0, $bottom: 0, $left: 0)
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+
+/// Shorthand for relative positioning.
+/// @requires {mixin} position
+/// @param {Arglist} $args - Offsets
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+
+/// Shorthand for fixed positioning.
+/// @requires {mixin} position
+/// @param {Arglist} $args - Offsets
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+
+/// Responsive manager.
+/// @requires {variable} breakpoints
+/// @param {String} $breakpoint - Breakpoint
+/// @throws No value found for `$breakpoint`. Please make sure it is defined in `$breakpoints` map.
+@mixin respond-to($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @error 'No value found for `#{$breakpoint}`. '
+         + 'Please make sure it is defined in `$breakpoints` map.';
+  }
+}
+
+
+/// Mixin to handle cross browser keyframes for CSS animations.
+/// @group cross-browser-support
+/// @param {String} $name - Animation name
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+
+/// Mixin to prefix properties that are not prefixed by Compass
+/// @group cross-browser-support
+/// @example
+///  @include prefixer('transform', 'translate(10px)');
+/// @param {String} $property                           - Property to prefix
+/// @param {*}      $value                              - Value for property
+/// @param {List}   $vendors  ['webkit' 'moz' 'ms' 'o'] - Vendor prefixes to output
+@mixin prefixer($property, $value, $vendors: 'webkit' 'moz' 'ms' 'o') {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{'-' + $vendor + '-' + $property}: #{$value};
+    }
+  }
+
+  #{$property}: #{$value};
+}
+
+
+/// Mixin for cross-browser opacity (IE 8).
+/// Clamps the value between 0 and 1.
+/// @group cross-browser-support
+/// @requires {function} clamp
+/// @param {Number} $opacity - Opacity level, between 0 and 1
+@mixin opacity($opacity) {
+  $opacity: clamp($opacity, 0, 1);
+  -ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=#{$opacity * 100})';
+  opacity: $opacity;
+}
+
+
+/// Mixin handling inline-block and vertical-align at once.
+/// If no align is specified, then the `vertical-align` property won't be output.
+/// @param {String} $align [null] - Vertical align
+@mixin inline-block($align: null) {
+  display: inline-block;
+  vertical-align: $align;
+}
+
+
+/// Gives a card depth effect.
+/// @param {Number} $depth - depth level [between 1 and 5]
+/// @link http://www.google.com/design/spec/layout/layout-principles.html#layout-principles-dimensionality Google Design
+/// @requires {function} clamp
+/// @requires {function} top-shadow
+/// @requires {function} bottom-shadow
+/// @requires {variable} light-grey
+@mixin card($depth) {
+  $depth: clamp($depth, 1, 5);
+  box-shadow: bottom-shadow($depth), top-shadow($depth);
+  border: 1px solid $light-grey;
+}
+
+/// Event wrapper.
+/// @author Harry Roberts
+/// @param {Bool} $self [false] - Whether or not to include current selector
+/// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
+@mixin on-event($self: false) {
+    @if $self {
+        &,
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    } @else {
+        &:hover,
+        &:active,
+        &:focus {
+            @content;
+        }
+    }
+}
+
+/// Contexts
+/// @author Hugo Giraudel
+/// @param {String | List} $context
+@mixin when-inside($context) {
+    #{$context} & {
+        @content;
+    }
+}

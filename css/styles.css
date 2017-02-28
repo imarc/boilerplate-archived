@@ -1,205 +1,4 @@
 @charset "UTF-8";
-/**
- * Built using Imarc Boilerplate v2.1
- *
- * Copyright 2016 Imarc
- * Licensed under the Apache License v2.0
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * = Table of Contents =
- * Variables
- * Mixins
- * Base
- * Layout
- * Typography
- * Forms
- * Iconography
- * Messaging
- * Tables
- * Section Specific
- * Page Specific
- * Components
- * Media Queries
- * Print Styles
- */
-/**
- * _components.scss contains solely the mixin definitions for components.
- *
- * + This file should not depend on styles.scss; we should be able to use
- *   include this file without including styles.scss.
- * + This file should not generate any CSS on it's own; it should only contain
- *   mixin and/or function definitions.
- */
-/**
- * Media query breakpoints
- */
-/**
-*
-* ACCORDION requires the accordion.plugin.js file. Within the .accordion
-* class each accordion item requires a div wrapper. Within the div wrapper
-* there is a .header class and a .content class. The .header class is the
-* clickable element that will reveal what is hidden in the .content class.
-* By default .content is hidden by javascript just in case javascript is not available.
-*
-* Emmet: .accordion>div>(.header{header}+.content>{lorem ipsum})
-*
-*/
-/**
- * BACKGROUND VIDEO plays a video (without sound) in the background of an element.
- * Emmet: .backgroundvideo>(.panel>div>h1+p)+video>source[src]
- */
-/**
- * CAROUSEL uses Slick to create a carousel. It defaults to a rather
- * basic, one-slide-at-a-time implementation with dots, but slick supports a
- * good deal of configuration including showing multiple slides, breakpoints,
- * syncing between slides, and plenty of javascript events and methods for
- * integration.
- *
- * The implementation on Boilerplate is using a CDN to provide
- *
- * + slick.css
- * + slick-theme.css
- * + slick.min.js
- *
- * See http://kenwheeler.github.io/slick/ for more information.
- *
- * The carousel() mixin should be included on a parent element that contains
- * one div per slide. No additional classes are necessary – the slick classes
- * referenced are added dynamically by slick.
- *
- * <div class="carousel">
- *     <div>
- *         <h2>A slide!</h2>
- *         <p>Some text.</p>
- *     </div>
- * </div>
- *
- * Emmet: .carousel>div*3>h2+p
- *
- * While there's more information in slick's documentation, .slick-slide wraps
- * slides while .slick-next and .slick-prev are used for the next/previous
- * arrows.
- */
-/**
- * The COLUMNS mixin makes it so that immmediate child elements appear as
- * columns. It is responsive, allowing you to specify the media query at which
- * to switch the layout from stacking to columns.
- *
- * Additionally, it assumes the use of <hr> elements to create visual gutters
- * that are only visible while displayed as columns.
- *
- * <div class="columns">
- *     <div>
- *         <h2>A column</h2>
- *     </div>
- *     <hr />
- *     <div>
- *         <h2>Another column</h2>
- *     </div>
- * </div>
- *
- * Emmet: .columns>div+(hr+div)*2
- */
-/**
- * The DOSSIER mixin displays an individual’s biography and photograph.
- *
- * Emmet: .dossiers>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
- */
-/**
- * DROPDOWN
- * The DROPDOWN mixin allows for dropdown menus. By default, a single
- * column dropdown is used. It is positioned to its parent.
- *
- * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu>ul>li>(a{link name})*3
- */
-/**
- * DROPDOWN (mega)
- * The DROPDOWN (mega) mixin allows for full-width mega dropdown
- * menus. Call this mixin on a list item rather than nav.primary.
- * The menu is positioned to header.primary instead of its parent
- * list item.
- *
- * Emmet: nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
- */
-/**
- * FEATURES house three features in one row. Powered by flexbox,
- * this allows for a bottom alignment of each feature’s anchor. Use the
- * <code>$gutter</code> variable to pass you preferred gutter width.
- *
- * Emmet: .features>(div>(.icon>img)+h4+p+a)*3
- */
-/**
- * The FOOTER mixin is a basic implementation of a footer with the company logo,
- * copyright, simple navigation (as opposed to a "super footer"), legal links,
- * social icons, and contact information.
- *
- * Emmet: footer.primary>(.container>div>(div.branding>(a>img)+p{123 Main Street})+(nav>ul>(li>a{Link})*4)+(div>ul.social>li>a>i.fa.fa-facebook))+.legal>p{Lorem}+a{Terms}
- */
-/**
- * The LOGIN mixin is a basic implementation of a login module that includes a
- * username input, password input, submit button, forgot password link, and
- * remember me checkbox
- *
- * Emmet: .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
- */
-/**
- * Mobile Navigation
- *
- * Emmet
- */
-/**
- * PAGINATION
- *
- * Emmet: nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
- */
-/**
- * LISTING shows a listing of entries. It includes an optional search form with filters. 
- * Remove the search form elements for a simple list.
- *
- * Emmet: .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
- */
-/**
- * The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
- * header as you scroll down, and show it as you scroll back up. This is
- * responsive as the "top" value is dynamically set in the
- * js based on the height of the header. Top padding is also added
- * to the body dynamically via js so that the header doesn't overlap any
- * content.
- *
- * Emmet: header.primary
- *
- **/
-/**
- * TABS
- *
- * Emmet: .tabs>(div>(.icon>img)+h4+p+a)*3
- */
-/**
-* The TESTIMONIAL mixin is a basic implementation of a testimonial design.
-* Emmet: div.testimonial>div.container>blockquote+p
-* To use the TESTIMONIAL WITH ASSET component, you simply need to add additional html markup, see emmet below.
-* Emmet: div.testimonial.asset>div.container>(div>img)+blockquote+p
-*/
-/**
- *  Tiles helps you create an equal-width column grid layout without the use of row wrappers.
- *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
- *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the
- *  specified $column amount only is respected at the large breakpoint. Tiles will automatically
- *  two-up your items at the medium breakpoint, and stack them at the small breakpoint.
- *
- *
- * Emmet: .tiles>.tiles
- *
- **/
-/* = Variables = */
-/* Grays */
-/* The brand colors (name them the color) */
-/* Messaging colors */
-/* Applied colors */
-/* Social Network Colors */
-/* Breakpoint values */
-/* = Mixins = */
-/* = Base = */
 a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
   border: 0;
   box-sizing: border-box;
@@ -246,7 +45,6 @@ img {
   background: #e5e5e5;
 }
 
-/* = Layout = */
 .group::before, .group::after {
   content: "";
   display: table;
@@ -578,7 +376,6 @@ footer.primary a {
   opacity: 0.7;
 }
 
-/* = Typography = */
 h1,
 h2,
 h3,
@@ -718,7 +515,6 @@ code {
   padding: 2px 4px;
 }
 
-/* = Forms = */
 button,
 input,
 optgroup,
@@ -933,7 +729,6 @@ input[type="submit"].link[disabled] {
   pointer-events: none;
 }
 
-/* = Iconography = */
 .thumbs-up::before {
   font: normal normal normal 1em / 1 FontAwesome;
   -webkit-font-smoothing: antialiased;
@@ -945,7 +740,6 @@ input[type="submit"].link[disabled] {
   margin-right: 0.5em;
 }
 
-/* = Messaging = */
 .success {
   margin-bottom: 2rem;
   padding: 1em 3em;
@@ -1076,7 +870,6 @@ input[type="submit"].link[disabled] {
   color: #b7b7b7;
 }
 
-/* = Tables = */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -1111,9 +904,6 @@ table tr:nth-child(even) td {
   background-color: #F3F3F3;
 }
 
-/* = Section Specific = */
-/* =  Page Specific = */
-/* = Components = */
 .accordions > div .header {
   background: #DDD;
   color: #191919;
@@ -1776,11 +1566,11 @@ nav.primary li.mega {
             flex-grow: 1;
     padding: 0 3rem;
   }
-  nav.primary li.mega .dropdown .menu > *:first-child {
+  nav.primary li.mega .dropdown .menu > :first-child {
     border-left: none;
     padding-left: 0;
   }
-  nav.primary li.mega .dropdown .menu > *:last-child {
+  nav.primary li.mega .dropdown .menu > :last-child {
     padding-right: 0;
   }
 }
@@ -1937,7 +1727,7 @@ nav.primary li.mega {
   text-align: left;
 }
 
-.tiles > * *:last-child {
+.tiles > * :last-child {
   margin-bottom: 0;
 }
 
@@ -1967,9 +1757,7 @@ nav.primary li.mega {
   }
 }
 
-/* = Media Queries = */
 @media only screen and (min-width: 1024px) {
-  /* = Layout = */
   .wrapper {
     overflow: auto;
   }
@@ -2043,7 +1831,6 @@ nav.primary li.mega {
   aside.primary nav ul {
     text-align: left;
   }
-  /* = Typography = */
   h1 {
     font-size: 2.6rem;
   }
@@ -2061,13 +1848,11 @@ nav.primary li.mega {
   }
 }
 
-/* = Print Styles = */
 @media print {
   * {
     background-color: transparent !important;
     box-shadow: none !important;
     color: #000 !important;
-    /* Black prints faster: h5bp.com/s */
     text-shadow: none !important;
   }
   a {

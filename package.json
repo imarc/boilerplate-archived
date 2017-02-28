@@ -14,11 +14,13 @@
   "homepage": "https://github.com/imarc/boilerplate#readme",
   "private": true,
   "scripts": {
-    "docs": "sassdoc css",
+    "docs": "gulp docs",
     "clean": "gulp clean",
     "build": "gulp build",
     "watch": "gulp watch",
-    "serve": "gulp serve"
+    "serve": "gulp serve",
+    "theme:build": "gulp theme:build",
+    "theme:watch": "gulp theme:watch"
   },
   "dependencies": {},
   "devDependencies": {

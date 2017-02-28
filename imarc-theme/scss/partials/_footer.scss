@@ -1,0 +1,56 @@
+/**
+ * Footer
+ */
+.footer {
+  background: $light-grey;
+  padding: 1em 0;
+
+  .container {
+    position: relative;
+  }
+}
+
+/**
+ * Project info
+ */
+.footer__project-info {
+  float: left;
+}
+
+/**
+ * 'Built with SassDoc' mark.
+ */
+.footer__watermark {
+  position: absolute;
+  right: 0;
+  top: -0.7em;
+
+  img {
+    display: block;
+    max-width: 7em;
+  }
+}
+
+/**
+ * Make all three spans inline-blocks
+ */
+.project-info__name,
+.project-info__version,
+.project-info__license {
+  @include inline-block;
+}
+
+/**
+ * Make extra informations less prominent
+ */
+.project-info__version,
+.project-info__license {
+  color: #555;
+}
+
+/**
+ * Negates a space width
+ */
+.project-info__license {
+  text-indent: -0.25em;
+}
