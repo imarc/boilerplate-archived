@@ -1,16 +1,14 @@
 ////
-/// Imarc Boilerplate v2.1
+/// Built using Imarc Boilerplate v3.0
 ///
-/// Copyright 2016 Imarc
+/// Copyright 2017 Imarc
 /// Licensed under the Apache License v2.0
 /// http://www.apache.org/licenses/LICENSE-2.0
-///
-////
-
 ///
 /// = Table of Contents =
 /// Variables
 /// Mixins
+/// Components
 /// Base
 /// Layout
 /// Typography
@@ -20,10 +18,9 @@
 /// Tables
 /// Section Specific
 /// Page Specific
-/// Components
 /// Media Queries
 /// Print Styles
-///
+////
 
 @import "_components";
 
@@ -52,7 +49,6 @@ $black:     #000;
 ///
 
 $brand-blue: #0C96DD;
-$brand-dark-blue: #0C508A;
 $brand-orange: #EB7424;
 
 
@@ -250,6 +246,71 @@ $large: 1024px;
 
 
 ///
+/// = Components =
+///
+
+.accordion {
+    @include accordion();
+}
+
+.backgroundvideo {
+    @include backgroundvideo();
+}
+
+.carousel {
+    @include carousel;
+}
+
+.dossier {
+    @include dossier($gutter: 2rem, $photoWidth: 25%, $direction: row);
+}
+
+.header-content > .dropdown,
+.mobile {
+    @include mobileNavigation;
+}
+
+.features {
+    @include features($gutter: 3rem);
+}
+
+header.primary.sticky {
+    @include sticky-header();
+}
+
+.listing {
+    @include listing();
+}
+
+.login {
+    @include login;
+}
+
+nav.pagination {
+    @include pagination();
+}
+
+.desktop nav.primary {
+    @include dropdown();
+    li.mega {
+        @include dropdown-mega();
+    }
+}
+
+.tabs {
+    @include tabs();
+}
+
+.testimonial {
+    @include testimonial;
+}
+
+.tiles {
+    @include tiles();
+}
+
+
+///
 /// = Base =
 ///
 
@@ -312,10 +373,6 @@ img {
     @include columns;
 }
 
-.wrapper {
-    overflow: hidden;
-}
-
 .sr-only {
     @include visuallyhidden;
 }
@@ -345,37 +402,71 @@ img {
     }
 }
 
+.branding {
+    img {
+        max-width: 180px;
+    }
+}
+
 header.primary {
     background-color: $charcoal;
     padding: 1rem 0;
+    position: relative;
     .container {
         position: static;
     }
-}
-
-.branding {
-    flex-basis: 180px;
-    flex-shrink: 0;
-    max-width: 180px;
+    .branding {
+        flex-basis: 180px;
+        flex-shrink: 0;
+    }
 }
 
 nav {
+    margin-bottom: 2rem;
     ul {
         @include no-bullets;
 
-        text-align: center;
-    }
-    li {
-        display: inline-block;
+        display: flex;
+        li {
+            margin-bottom: 0;
+        }
     }
     a {
+        color: $link;
         display: block;
         padding: 0 0.5rem;
     }
+
+    li.active a,
+    li.active:hover a {
+        color: $charcoal;
+    }
+
+    &.tabs {
+        @include tabs;
+    }
+
+    &.breadcrumbs {
+        @include breadcrumbs();
+    }
+
+    &.progress {
+        @include progress();
+    }
+
 }
 
 nav.primary {
     margin-bottom: 0.7rem;
+
+    a {
+        color: #FFF;
+    }
+
+    li:hover a {
+        color: $brand-blue;
+    }
+
     > ul {
         li {
             margin-bottom: 0;
@@ -395,12 +486,13 @@ nav.primary {
 nav.utility {
     margin-bottom: 0.7rem;
     a {
+        color: #FFF;
         font-size: 0.8rem;
     }
 }
 
 .header-content {
-    align-items: flex-end;
+    align-items: center;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -450,7 +542,7 @@ form.search {
 }
 
 .hero {
-    background: $plain-text url(../img/hero.jpg) no-repeat center top / cover;
+    background: $plain-text url(../img/hero.jpg) no-repeat center / cover;
     display: -webkit-flex;
     display: flex;
     -webkit-flex-direction: column;
@@ -481,7 +573,9 @@ aside.primary {
 }
 
 nav.supplemental {
+    margin-bottom: 0;
     ul {
+        display: block;
         li {
             display: block;
             float: none;
@@ -517,19 +611,40 @@ nav.supplemental {
 
 footer.primary {
     background-color: $charcoal;
-    color: $meta-text;
+    color: #FFF;
     font-size: 0.9rem;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
+    padding: 3rem 0;
     text-align: center;
-    nav {
-        margin-bottom: 1rem;
-    }
-    p {
-        margin: 0;
+    .branding {
+        margin-top: 0;
+        a {
+            margin-bottom: 1rem;
+        }
     }
     a {
+        color: $link;
+        display: inline-block;
+        &:hover {
+            color: darken($link, 10%);
+        }
+    }
+    nav ul {
+        justify-content: center;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .social a {
         color: #FFF;
+    }
+    .legal {
+        text-align: center;
+        p {
+            margin-bottom: 0.25rem;
+        }
+        a {
+            margin-left: 0.35rem;
+            margin-right: 0.35rem;
+        }
     }
 }
 
@@ -539,9 +654,18 @@ footer.primary {
     margin-bottom: 1rem;
     li {
         display: inline-block;
-        font-size: 22px;
+        font-size: 1.5rem;
         margin-bottom: 0;
         margin-right: 0.4rem;
+    }
+    .facebook a {
+        color: $facebook;
+    }
+    .linkedin a {
+        color: $linkedin;
+    }
+    .twitter a {
+        color: $twitter;
     }
     a:hover {
         opacity: 0.7;
@@ -691,6 +815,10 @@ code {
     padding: 2px 4px;
 }
 
+.sr-only {
+    @include visuallyhidden;
+}
+
 
 ///
 /// = Forms =
@@ -810,22 +938,13 @@ a.button {
     margin-bottom: 0;
 }
 
-button:not(.link),
-input[type="button"]:not(.link),
-input[type="reset"]:not(.link),
-input[type="submit"]:not(.link) {
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
     @include button;
     border: none;
     cursor: pointer;
-}
-
-button.link,
-input[type=button].link,
-input[type="button"].link,
-input[type="reset"].link,
-input[type="submit"].link {
-    @include link;
-    background: transparent;
 }
 
 
@@ -929,77 +1048,9 @@ table {
 
 
 ///
-/// = Components =
-///
-
-.accordions {
-    @include accordion();
-}
-
-.backgroundvideo {
-    @include backgroundvideo();
-}
-
-.carousel {
-    @include carousel;
-}
-
-.dossier {
-    @include dossier($gutter: 2rem, $photoWidth: 25%, $direction: row);
-}
-
-.header-content > .dropdown,
-.mobile {
-    @include mobileNavigation;
-}
-
-.features {
-    @include features($gutter: 3rem);
-}
-
-footer.primary {
-    @include footer();
-}
-
-header.primary {
-    @include sticky-header();
-}
-
-.listing {
-    @include listing();
-}
-
-.login {
-    @include login;
-}
-
-nav.pagination {
-    @include pagination();
-}
-
-nav.primary {
-    @include dropdown();
-    li.mega {
-        @include dropdown-mega();
-    }
-}
-
-.tabs {
-    @include tabs();
-}
-
-.testimonial {
-    @include testimonial;
-}
-
-.tiles {
-    @include tiles();
-}
-
-
-///
 /// = Media Queries =
 ///
+
 @media only screen and (min-width: $medium) {
 
 }
@@ -1011,23 +1062,10 @@ nav.primary {
     /// = Layout =
     ///
 
-    .wrapper {
-        overflow: auto;
-    }
-
-    .branding {
-        margin-right: 2rem;
-    }
-
-    .desktop {
-        align-items: flex-end;
-        display: flex;
-        flex: 1 1 auto;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-
-        nav.primary {
-            align-self: flex-start;
+    header.primary {
+        padding-bottom: 0;
+        .branding {
+            margin-right: 2rem;
         }
     }
 
@@ -1042,6 +1080,7 @@ nav.primary {
         > ul > li {
             font-size: 1.1rem;
             margin-left: 1rem;
+            padding-bottom: 1rem;
             position: relative;
         }
         > ul > li:first-child {
@@ -1065,6 +1104,18 @@ nav.primary {
         }
     }
 
+    .desktop {
+        align-items: flex-end;
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        nav.primary {
+            align-self: flex-start;
+        }
+    }
+
     button.menu-toggle {
         display: none;
     }
@@ -1085,6 +1136,30 @@ nav.primary {
         margin-bottom: 0;
         nav ul {
             text-align: left;
+        }
+    }
+
+    footer.primary {
+        .wrapper {
+            display: flex;
+            > * {
+                flex: 1 0 0;
+            }
+            > nav {
+                flex-grow: 2;
+                margin-bottom: 0;
+            }
+            > nav > ul {
+                justify-content: center;
+            }
+        }
+        .branding {
+            margin-right: 0;
+            max-width: none;
+            text-align: left;
+        }
+        .social {
+            text-align: right;
         }
     }
 

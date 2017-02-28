@@ -1,4 +1,11 @@
-(function ($) {
+/**
+ *
+ * jQuery Sticky Header Plugin
+ */
+
+;(function ($) {
+    'use strict';
+
     var $window = $(window);
     $.fn.stickyHeader = function (options) {
         var plugin = this;

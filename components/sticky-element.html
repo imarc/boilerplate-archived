@@ -12,42 +12,89 @@
     <body>
         <div class="torso">
             <div class="container">
-                <div class="group">
-                    <aside class="primary">
-                        <section style="background-color: #EEE; width: 100%;">
-                            <h3>Sidebar</h3>
-                        </section>
-                    </aside>
-                    <main>
-                       <section class="intro">
-                            <h1>Sticky Element</h1>
-                            <p>
-                                The Sticky Element component can be used to make elements switch between being in the flow of the page and being fixed. It can be used for sidebars, sticking images along scroll text, etc. It also supports having the element while 'stuck' move slowly if you'd like, for a parallax effect.
-                            </p>
+               <section class="intro">
+                    <h1>Sticky Element</h1>
+                    <p>
+                        The Sticky Element component can be used to make elements switch between being in the flow of the page and being fixed. It can be used for sidebars, sticking images along scroll text, etc. It also supports having the element while 'stuck' move slowly if you'd like, for a parallax effect.
+                    </p>
 
-                            <p>
-                                This page includes both an example of an element stuck to the side as well as one stuck temporarily within the flow of the page.
-                            </p>
-                        </section>
+                    <p>
+                        This page includes both an example of an element stuck to the side as well as one stuck temporarily within the flow of the page.
+                    </p>
+                </section>
+                <div class="wrap">
+                    <main>
 
                         <section>
-                            <h2>
-                                Amet velit labore?
-                            </h2>
+                            <h2>Usage</h2>
+
                             <p>
-                                Elit velit perspiciatis et deserunt quo quos fugiat! Soluta odio hic quo ullam a! Dolorum assumenda nesciunt fuga distinctio labore.
-                            </p>
+                                To have an element scroll with the page until it reaches the top,
+                                then stick to the page:
                             <p>
-                                Lorem laborum labore beatae accusantium dolore quibusdam quibusdam culpa! Dolore voluptatibus iste quis eos nisi optio voluptates facere placeat repellat amet! Doloribus assumenda illo deleniti laboriosam eligendi sunt sit eius! Doloribus voluptates sapiente quis nulla adipisci ad quod earum labore!
-                            </p>
-                            <ul>
-                                <li>Elit aperiam nam voluptates minima!</li>
-                                <li>Amet nostrum voluptates aperiam laudantium.</li>
-                                <li>Ipsum eius consectetur hic enim!</li>
-                            </ul>
+
+                            <pre><code>
+$('aside.primary section.toc').fix();
+                            </code></pre>
+
+                            <br />
+                            <br />
+
                             <p>
-                                Ipsum dolorem beatae totam dolorem omnis exercitationem maiores eligendi. Est maiores recusandae commodi unde qui beatae laborum. Dolore quaerat tenetur magni quibusdam quia, ut! Possimus aliquam quam est dolorem optio?
+                                To do the same but stick 100 pixels before it reaches the top of the page:
                             </p>
+
+                            <pre><code>
+$('aside.primary section.toc').fix({
+    startOffset: 100,
+});
+                            </code></pre>
+
+                            <br /><br />
+
+                            <h2>Options</h2>
+
+                            <dl>
+                                <dt>
+                                    startOffset (integer, default: 0)
+                                </dt>
+                                <dd>
+                                    How many pixels from the top of the viewport to start sticking.
+                                </dd>
+
+                                <dt>
+                                    endOffset (integer)
+                                </dt>
+                                <dd>
+                                    If specified and different than startOffset, the sticky element will
+                                    animate as you scroll from the startOffset to the endOffset
+                                    while the element is fixed.
+                                </dd>
+
+                                <dt>
+                                    duration (integer)
+                                </dt>
+                                <dd>
+                                    If specified, the element will unstick once this number of
+                                    pixels has been scrolled.
+                                </dd>
+
+                                <dt>
+                                    until (selector)
+                                </dt>
+                                <dd>
+                                    If specified, the sticky element unsticks when this element scrolls even
+                                    with the sticked element.
+                                </dd>
+
+                                <dt>
+                                    stopEarly (integer, default: 0)
+                                </dt>
+                                <dd>
+                                    If specified, unsticks the element when it reaches this distance
+                                    from the top of an 'until' element.
+                                </dd>
+                            </dl>
                         </section>
                         <section>
                             <aside class="sticky">
@@ -171,11 +218,19 @@
                         </section>
 
                     </main>
+                    <aside class="primary">
+                        <section style="background-color: #EEE; width: 100%; z-index: 1;">
+                            <h3>Sticky Bar</h3>
+                            <p>
+                                This is a simple sticky bar.
+                            </p>
+                        </section>
+                    </aside>
                 </div>
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
         <script src="../js/stickyElement.plugin.js"></script>
         <script>
             $(function() {

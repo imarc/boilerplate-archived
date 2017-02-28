@@ -1,4 +1,11 @@
+/**
+ *
+ * jQuery Tabs Plugin
+ */
+
 ;(function($) {
+    'use strict';
+
     $.fn.tabs = function() {
         this.each(function() {
             var $nav   = $(this).find('nav');
@@ -18,4 +25,5 @@
             });
         });
     };
+    
 })(jQuery);
