@@ -132,31 +132,31 @@
         </div>
         <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
-         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"/>
         <script type="text/javascript">
             $(function(){
                 $('.single-popup').magnificPopup({
-                  type: 'image',
-                  removalDelay: 300,
-                  mainClass: 'mfp-with-fade',
-                  closeOnContentClick: true,
-                  image: {
+                    type: 'image',
+                    // removalDelay: 300,
+                    // mainClass: 'mfp-fade',
+                    closeOnContentClick: true,
+                    image: {
                       cursor: ''
-                  }
+                    }
                 });
 
                 $('.magnific-video').magnificPopup({
-                  disableOn: 700,
-                  type: 'iframe',
-                  mainClass: 'mfp-fade',
-                  removalDelay: 300,
-                  preloader: false,
-                  fixedContentPos: false
+                    disableOn: 700,
+                    type: 'iframe',
+                    // mainClass: 'mfp-fade',
+                    // removalDelay: 300,
+                    preloader: false,
+                    fixedContentPos: false
                 });
 
                 $('.open-popup-link').magnificPopup({
-                  type:'inline',
-                  midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+                    type:'inline',
+                    midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
                 });
             });
         </script>
