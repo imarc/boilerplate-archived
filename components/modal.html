@@ -32,17 +32,17 @@
                         <h4>Emmet:</h4>
                         <p>
                             <code>
-                                a.single-popup[title="Image Caption"]>img[src="/path-to-image" alt="image alt text"]
+                                a.image-popup[title="Image Caption"]>img[src="/path-to-image" alt="image alt text"]
                             </code>
                         </p>
 
 
                         <!-- Begin component -->
-                        <a class="single-popup" href="../img/dossier-1.jpg" title="Katie Desmond">
+                        <a class="image-popup" href="../img/dossier-1.jpg" title="Katie Desmond">
                             <img src="../img/dossier-1.jpg" alt="Katie Desmond Popup">
                         </a>
                         &nbsp; &nbsp;
-                        <a class="single-popup" href="../img/dossier-2.jpg" title="Jason Makin">
+                        <a class="image-popup" href="../img/dossier-2.jpg" title="Jason Makin">
                             <img src="../img/dossier-2.jpg" alt="Jason Makin Popup">
                         </a>
 
@@ -62,12 +62,12 @@
                         <h4>Emmet:</h4>
                         <p>
                             <code>
-                                a.magnific-video[href="/path-to-video"]>img[src="/path-to-placeholder-image" alt="Video Placeholder Alt Text"]
+                                a.video-popup[href="/path-to-video"]>img[src="/path-to-placeholder-image" alt="Video Placeholder Alt Text"]
                             </code>
                         </p>
 
                         <!-- Begin component -->
-                        <a href="https://s3.amazonaws.com/imarc.com/imarc-culture-video.mp4" class="magnific-video" >
+                        <a href="https://s3.amazonaws.com/imarc.com/imarc-culture-video.mp4" class="video-popup" >
                             <img width="700" src="../img/video-placeholder.jpg" alt="Video Placeholder">
                         </a>
                         <!-- end component -->
@@ -85,13 +85,13 @@
                         <h4>Emmet:</h4>
                         <p>
                             <code>
-                                a.open-popup-link[href="#id-of-hidden-div"]
+                                a.inline-popup[href="#id-of-hidden-div"]
                             </code>
                         </p>
 
                         <!-- Begin component -->
                         <p>
-                            <a href="#test-popup" class="open-popup-link button">Click Me!</a>
+                            <a href="#test-popup" class="inline-popup button">Click Me!</a>
                         </p>
                         <!-- end component -->
                     </div>
@@ -105,12 +105,12 @@
                         <h4>Emmet:</h4>
                         <p>
                             <code>
-                                a.open-popup-link[data-mfp-src="#id-of-hidden-div"]
+                                a.inline-popup[data-mfp-src="#id-of-hidden-div"]
                             </code>
                         </p>
 
                         <!-- Begin component -->
-                        <a data-mfp-src="#test-popup2" class="open-popup-link button">Click for data-mfp-source Example</a>
+                        <a data-mfp-src="#test-popup2" class="inline-popup button">Click for data-mfp-source Example</a>
 
                         <!-- end component -->
                     </div>
@@ -118,13 +118,13 @@
             </main>
         </div>
         <!-- HTML Popup Content - can be placed anywhere on page -->
-        <div id="test-popup" class="inline-popup mfp-hide">
+        <div id="test-popup" class="inline-modal mfp-hide">
           <h2>Popup content goes here</h2>
           <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis volutpat urna. Morbi quis scelerisque tortor. Duis mollis et nulla eget vehicula. Vivamus varius faucibus volutpat. Duis lacinia, dolor sit amet molestie molestie, quam urna gravida lorem, eu efficitur massa metus nec est. Sed fringilla sagittis arcu ac facilisis. Phasellus laoreet dui at velit fringilla iaculis. Vestibulum pulvinar ut erat vitae dignissim. Suspendisse id scelerisque libero. Ut cursus nulla eget faucibus fringilla. Nunc eu justo ante. Pellentesque et ultrices urna. Ut malesuada orci quis commodo rhoncus.
           </p>
         </div>
-        <div id="test-popup2" class="inline-popup mfp-hide">
+        <div id="test-popup2" class="inline-modal mfp-hide">
           <h2>Popup2 content goes here</h2>
           <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis volutpat urna. Morbi quis scelerisque tortor. Duis mollis et nulla eget vehicula. Vivamus varius faucibus volutpat. Duis lacinia, dolor sit amet molestie molestie, quam urna gravida lorem, eu efficitur massa metus nec est. Sed fringilla sagittis arcu ac facilisis. Phasellus laoreet dui at velit fringilla iaculis. Vestibulum pulvinar ut erat vitae dignissim. Suspendisse id scelerisque libero. Ut cursus nulla eget faucibus fringilla. Nunc eu justo ante. Pellentesque et ultrices urna. Ut malesuada orci quis commodo rhoncus.
@@ -135,28 +135,19 @@
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"/>
         <script type="text/javascript">
             $(function(){
-                $('.single-popup').magnificPopup({
+                $('.image-popup').magnificPopup({
                     type: 'image',
-                    // removalDelay: 300,
-                    // mainClass: 'mfp-fade',
-                    closeOnContentClick: true,
                     image: {
                       cursor: ''
                     }
                 });
 
-                $('.magnific-video').magnificPopup({
-                    disableOn: 700,
-                    type: 'iframe',
-                    // mainClass: 'mfp-fade',
-                    // removalDelay: 300,
-                    preloader: false,
-                    fixedContentPos: false
+                $('.video-popup').magnificPopup({
+                    type: 'iframe'
                 });
 
-                $('.open-popup-link').magnificPopup({
-                    type:'inline',
-                    midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+                $('.inline-popup').magnificPopup({
+                    type:'inline'
                 });
             });
         </script>

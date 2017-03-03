@@ -499,23 +499,23 @@ $large: 1024px;
 
 
 /**
- * The MAGNIFIC mixin has some styles included to override magnific's/imarc's conflicting styles (i.e. button styles), and some basic styling for the html/inline popup method.
+ * The MODAL mixin has some styles included to override magnific's/imarc's conflicting styles (i.e. button styles), and some basic styling for the html/inline popup method.
  *
  */
-@mixin magnific {
+@mixin modal {
     .mfp-close {
         &:hover {
             background: none;
         }
     }
 
-    .inline-popup {
-        position: relative;
+    .inline-modal {
         background: #FFF;
+        margin: 1rem auto;
+        max-width: 700px;
+        position: relative;
         padding: 2rem;
         width:auto;
-        max-width: 700px;
-        margin: 1rem auto;
     }
 }
 
