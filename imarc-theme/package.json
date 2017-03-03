@@ -11,6 +11,11 @@
     "type": "git",
     "url": "https://github.com/SassDoc/sassdoc-theme-default.git"
   },
+  "scripts": {
+    "build": "npm run dist && npm run sass",
+    "dist": "rm -rf dist; babel src -d dist",
+    "sass": "node-sass scss -o assets/css --style compressed"
+  },
   "license": "MIT",
   "files": [
     "index.js",
@@ -30,6 +35,7 @@
     "extend": "^3.0.0",
     "fs-extra": "^2.0.0",
     "html-minifier": "^3.3.1",
+    "node-sass": "^4.5.0",
     "sassdoc-extras": "^2.4.0",
     "swig": "1.4.0",
     "swig-extras": "0.0.1"
