@@ -1,207 +1,211 @@
 Boilerplate
 ===========
 
-Imarc Boilerplate is a light, customizable front-end starter kit and component library.
+Imarc Boilerplate is a light, customizable frontend starter kit and component library. 
+It helps jumpstart and optimize frontend development. With its light design and 
+lack of rigid grid framework, we are able to port it to various creative designs.
 
 Supported Browsers: IE11+, Chrome, Firefox, and Safari.
 
-* [See the Markup](http://imarc.github.io/boilerplate)
-* [See the Structure](http://imarc.github.io/boilerplate/structure)
-* [See the CSS](http://imarc.github.io/boilerplate/css/styles.css)
+* [View Boilerplate](http://imarc.github.io/boilerplate)
+* [View the Markup](https://github.com/imarc/boilerplate/blob/gh-pages/index.html)
+* [View the SCSS](http://imarc.github.io/boilerplate/css/styles.scss)
 
-Development
+Get Started
 -----------
 
-To get started working on boilerplate, you should have `node` and `npm` installed.
+To get started working with Boilerplate, you [should have `node` installed](https://nodejs.org/en/).
+Installing `node` will automatically give you `npm`. Alternatively, if you have [Homebrew](https://brew.sh/),
+you can install node via Homebrew. 
 
     npm install
     npm run serve
 
-This will watch all your files and run BrowserSync, both compiling SCSS and reloading your browser on any changes.
+The `npm run serve` command will watch all your files and run BrowserSync, both compiling 
+SCSS and reloading your browser on any changes.
+
 After launching, view in your browser at [localhost:3000](http://localhost:3000).
 
-Occasionally, clean the SCSS file with CSSComb by running:
-
-    npm run clean
 
 Goals
 -----
 
-### Consistent, Clean Markup
+### Consistent, clean markup
 
-The most important goal of Boilerplate is try to build HTML and CSS conventions. Ideally, if
-everyone working on a project knows the project is being built from Boilerplate, then anyone
-involved with project will end up writing HTML and CSS in a consistent way. Keep the markup clean
-and consistent through out the site.
-
-We also take a lot of interest in our semantic use of elements, and Boilerplate should provide some
-acceptable conventions that are up to our semantic standards.
+An important goal of Boilerplate is to build internal HTML and SCSS conventions. 
+If everyone working on a project knows Boilerplate is the foundation, then our 
+HTML and SASS will be clean and consistent.
 
 
-### Works as a Placeholder
+### Works as a placeholder
 
 Boilerplate is **not** meant to be the final look and feel that a site would launch with. It is
-meant to act a placeholder, that
+meant to act a placeholder that
 
-* Provides a client-friendly appearance that isn't distracting that we can for prototypes and sites
+* Serves as the starting point for frontend development.
+* Provides a client-friendly appearance that isn’t distracting that we can for prototypes and sites
   in progress.
-* Tolerable defaults for elements that might not be styled in the normal build out of the site
+* Has tolerable defaults for elements that might not be styled in the normal build-out of a project
   (tables, typographical elements like sup/sub/pre, etc.)
 
 
 ### Light and Semantic
 
-Boilerplate aims to be lighter and more semantic than Twitter Bootstrap. We try to avoid using
-non-semantic class names when we can, which means that we do not have a grid system. Boilerplate is
-meant to encourage great markup.
+Boilerplate aims to be lighter and more semantic than Bootstrap. We try to avoid using
+non-semantic class names when we can, which means that we do not have a grid system. 
+Boilerplate is meant to encourage great markup.
 
 
-### Mobile Friendly, Mobile First
+### Mobile friendly, mobile first
 
-Boilerplate is ready for the mobile world. Boilerplate was built to be 'mobile first' from the
-ground up. We have basic mobile, tablet, and desktop styling, as well as structure for media
-queries.
+Boilerplate is ready for the mobile world. It was built to be ‘mobile first’ from the
+ground up. We have basic small, medium, and large breakpoint styles.
 
 
-At a Glance
-===========
+Components
+----------
 
-* We default to **16 pixel text**. This size is comfortable for reading on a mobile or desktop
-  device. This points **95 characters per line** in our default width for main body content, which
-  is higher than [the recommended range of 50-75 characters per
-  line](http://baymard.com/blog/line-length-readability). Our default line-height is 1.5. All other
-font-sizes are **relative using em units**.
+[Components](http://imarc.github.io/boilerplate/components/) are pre-defined user 
+interface elements that web authors can use as a starting point during frontend 
+development. Most of these are powered via SASS mixins found in the 
+`_components.scss` file. Some components also rely on JavaScript plugins in
+addition to mixins. Relevant JavaScript is found in the `js` directory.
 
-* We default to **Helvetica Neue** with **Arial** as a backup for body text.
+## Using components in a project
 
-* Our page defaults to a maximum of **1200 pixels wide**
+Include `_components.scss` into your `styles.scss` file. All component mixins 
+should be called from the main `styles.scss` file. In other 
+words, do not edit the `_components.scss` file on a project-by-project basis. 
+Out of the box, we have grouped all component instances in a dedicated 
+section within the `styles.scss` file, but feel free to call components from 
+relevant areas in your stylesheet.
 
-Mixins
-------
 
-### Grouping
-**@grouping and .group** are used to make sure the container clears all of its contents. They are a
-cleaner alternative to empty clearfix div elements.
+### Custom arguments
 
-### Container
-**@container and .container** are used to identify elements that should match the width of the
-page.These elements
-* have a max-width. The default maximum width is 1024 (1056 with padding.)
-* have dynamic margins, so their contents remain centered. By default, these margins will collapse
-  to zero if the window is too skinny.
-* have fixed padding. This padding is preserved across all screen sizes.
+Some components have default SASS keyword arguments. These can and should be overridden 
+to better achieve your design. For example, the 
+[tiles](http://imarc.github.io/boilerplate/components/tiles.html) component is a multi-row 
+layout, similar to a grid. By default, including the tiles mixin will result in a four 
+column layout with 2rem-wide gutter spacing.
+    
+    @mixin tiles($gutter: 2rem, $columns: 4) { … }
 
-If you're going to increase the size of the container, make sure to consider whether your content is
-getting too wide. Boilerplate already is above the recommended maximum widths for keeping content easy to
-read.
+ Pass in values of your choice.
 
-### Columns
-**@columns and .columns** are used to make elements within behave as columns, as a cleaner alternative to
-defining classes such as `.one_of_three`, or `.second.fifth`. To create gutters  between columns,
+    .products {
+      @include tiles($gutter: 66px, $columns: 3)
+    }
+
+### Extending components
+
+Components should be extended within the `styles.scss` file. `_components.scss`
+should not be edited.
+
+Example of an extended component
+
+    .tiles {
+        @include tiles($gutter: 6rem, $columns: 3);
+        > * {
+            background-color: $brand-blue;
+            border-left: 6px solid #FFF;
+            border-right: 6px solid #FFF;
+            color: #FFF;
+            margin-bottom: 2rem;
+        }
+        h3 {
+            background-color: $brand-blue-dark;
+            color: $brand-blue-light;
+            display: inline-block;
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+    }
+
+
+
+### Improving components
+
+Components are not perfect and will need continual maintenance and improvement. 
+If you feel a component needs attention, please 
+[create a pull request](https://github.com/imarc/boilerplate/pulls/) or submit 
+an [issue](https://github.com/imarc/boilerplate/issues).
+
+
+CSS
+----
+
+Items worth calling out in Boilerplate’s stylesheet:
+
+### Variables
+
+Boilerplate makes wide use of SASS variables. Declare variables at the top of the
+`styles.scss` file. These will certainly change per project. Note, media 
+query breakpoint values are used here as well: 
+
+    $medium: 669px;
+    $large: 1024px;
+
+### Mixins
+
+Sass mixins are important and live in their own section. Some heavily used mixins are:
+
+#### Button
+`@button` and `.button` are used to style primary call-to-action anchors and buttons.
+
+#### Container
+`@container` and `.container` are used to identify elements that should match the width of the
+page. `.container` should not be used for styling. It is a dedicated site container class. 
+Our site container is 1200 pixels wide (1168 pixels after padding).
+
+#### Columns
+`@columns` and `.columns` make direct children behave as columns, as a cleaner alternative to
+defining classes such as `.one_of_three`, or `.second.fifth`. To create gutters between columns,
 use `hr` elements. This is a semantically appropriate use of the hr tag, and allows for greater
 flexibility in controlling and styling the gutter. By default, these gutters are 16px wide.
 
+#### Grouping
+`@grouping` and `.group` are used to make sure the container clears all of its floated children. 
+They are a cleaner alternative to empty clearfix div elements.
 
-Layout
-------
-This contains rules for the site's layout elements: `body`, `header`, `aside`, `article`,
-etc. These containers all can contain out layout or typographical block elements.
+#### No Bullets
+`@no-bullets` removes default styling to ordered/unordered lists.
 
-Note that we are not using the `main` element yet. While it looks great, until its more widely
-adopted we're going to stick with the semantic equivalent, `<div class="main" rel="main">`.
 
-### .container
-Sometimes we need to identify which elements should be constrained to the maximum width we believe
-the site is best viewed at. Some people this is called `.wrapper` or `.frame`, but we're using
-`.container` as a mixin and classname that we will only use for this purpose.
+### Layout
+This section contains the majority of a project’s styles. Need to set the widths for `main` and
+`aside.primary` elements? This goes in **Layout**. Styling a featured blog post callout? Put it 
+here in **Layout**.
 
-### Primary, Secondary, and Tertiary
-We use the classes `primary`, `secondary`, and `tertiary` to identify layout elements that might occur
-more than once. This includes `<header>`, `<aside>`, `<footer>`, and `<nav>`. The markup includes
-examples of `header.primary`, `aside.primary`, `footer.primary`, `nav.primary`, and `nav.secondary`,
-however `tertiary`, or even `quarternary` can be used if appropriate.
 
-Typography
-----------
-This section contains rules for inline typographical styles and typographical blocks. Inline
-examples are `a`, `sup`, `strong`, or `code`. Typographical blocks are things like headings, lists,
-and blockquotes.
+### Typography
 
-### Headings
-When headings are the first child element in a container, they default to no top padding. However,
-since we often have rich text content coming out of our CMS, we also needed to make sure that a
-heading following a paragraph of text (for example) would be sufficiently spaced from the paragraph
-and stand out.
+#### Intro and Highlight
 
-So, when headings are mixed into content, they will always have a 1.5em top padding. This won't
-collapse with the 1.5em bottom margin most block elements (like paragraphs, lists, etc.) have,
-giving a 3em gap before headings. Second, by using padding instead of margins, the larger area
-remains a target for anchors and heading styles.
-
-Lastly, when two headings are adjacent, the second heading not only loses its top padding, but it
-also gains a .5em, negative, top margin to bring the two heading together.
-
-### Intro and Highlight
-Intro and Highlight are two semantic classes:
+`.intro` and `.highlight` are two semantic classes:
 
 * Intro is used to identify a section or paragraph of introductory, overview, or abstract content
   before the main content.
 * Highlight is used to for callouts or highlighting specific snippets of text.
 
-Iconography
------------
-We are using [FontAwesome](http://fontawesome.io) for icons. Boilerplate contains snippets from
-FontAwesome to enable basic functionality for ~24 hand picked icons. If you'd like to use a lot more
-icons, feel free to include FontAwesome's base CSS instead.
 
-Navigation
-----------
-We always use `ul` elements inside of `nav` elements. There is some light styling to layout a nav
-tag in `.torso` as a toolbar.
+### Iconography
 
-The primary navigation also has styles for CSS only drop down menus. The primary navigation also has
-styles defined for mobile, to remain visible and accessible, and collapse into a single hamburger
-icon. Secondary navigation is hidden from headers at mobile sizes.
+Boilerplate uses [Font Awesome](http://fontawesome.io) for iconography. Use the dedicated `@fontawesome`
+mixin or utilize official Font Awesome markup:
 
-The primary aside may also contain supplemental navigation. The vertical layout is styled to
-`ul.supplemental`, as it is not visually a navigation element.
+    <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>
 
-Forms
------
-Typical styling for `fieldset`, `input` and related elements, as well as some styles for 'lookalike'
-elements like `a.button`.
 
-Messaging
----------
+### Messaging
+
 This section is used for marking up server generated success, info, and error messages, as well as
 help messages typically found in forms.
 
-Tables
-------
-This section contains exactly what you'd expect.
+### Media Queries
 
-Section Specific
-----------------
-This section is initially empty, and is meant for CSS rules targeting entire sections of the site
-using the classes providing on the `body` element.
-
-Page Specific
--------------
-This section is initially empty as well, and is meant for CSS rules targeting specific pages using
-the ID provided on the `body` element.
-
-Media Queries
--------------
-We have included all of the breakpoints from Twitter Bootstrap initially.
-
-### aside.primary and .main
-For desktop sizes and up, the primary aside becomes visible if it exists. To support pages that
-don't have a primary aside as well as those that do, we are using the ~ to set a percentage width to
-`.main` but only if `primary.aside` proceeds it.
-
-Print Styles
-------------
-These rules are primarily from the HTML5 Boilerplate.
+We utilize three breakpoints – small, medium, and large.
 
 
 License

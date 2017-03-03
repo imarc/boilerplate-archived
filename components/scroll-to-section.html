@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Scroll to Section Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+      <!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+    </head>
+    <body>
+        <div class="torso">
+            <main>
+               <section class="intro">
+                   <div class="container">
+                        <h1>Scroll to Section</h1>
+                        <p>
+                            Scroll to Section leverages the <a href="https://github.com/cferdinandi/smooth-scroll">smooth scroll script</a> to implement smooth scrolling to anchor links.
+                        </p>
+                        <h2>Usage</h2>
+                        <p>
+                            Add a <code>data-scroll</code> data attribute to an element which when clicked will smooth scroll to its associated anchor element.
+                        </p>
+                        <p>
+                            <pre><code>&lt;a data-scroll href="#foo">I am a smooth scroll link&lt;/a&gt;</code></pre>
+                        </p>
+                        <p>
+                            Initialize the script
+                        </p>
+                        <p>
+                            <pre><code>smoothScroll.init();</code></pre>
+                        </p>
+
+                        <h2>Options and Settings</h2>
+                        <p>
+                            Pass in options and settings to the <code>init()</code> function
+                        </p>
+                        <p>
+                            <pre>
+                                <code>
+smoothScroll.init({
+    selector: '[data-scroll]', // Selector for links (must be a class, ID, data attribute, or element tag)
+    selectorHeader: null, // Selector for fixed headers (must be a valid CSS selector) [optional]
+    speed: 500, // Integer. How fast to complete the scroll in milliseconds
+    easing: 'easeInOutCubic', // Easing pattern to use
+    offset: 0, // Integer. How far to offset the scrolling anchor location in pixels
+    callback: function ( anchor, toggle ) {} // Function to run after scrolling
+});</code>
+                            </pre>
+                        </p>
+                        <p>
+                            You can also override global options and settings with data attributes via HTML, although it’s preferred to set them in JavaScript.
+                        <p>
+                            <pre>
+                                <code>
+&lt;a data-scroll
+    data-options='{
+        "speed": 500,
+        "easing": "easeInOutCubic",
+        "offset": 0
+    }'
+    >
+   I am a smooth scroll link
+&lt;/a&gt;
+                                </code>
+                            </pre>
+                        </p>
+                        <p>
+                            For additional documentation visit the <a href="https://github.com/cferdinandi/smooth-scroll#options-and-settings">library’s official repository page</a>.
+                        </p>
+                   </div>
+                </section>
+                <section>
+                    <div class="container">
+
+
+                        <!-- Begin component -->
+    
+                        <h1>
+                            <a class="scroll" data-scroll href="#scroller">Click Me</a>
+                        </h1>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <div id="scroller" style="background-color: orange; padding: 1rem;">
+                            <h2>Scroll to Me</h2>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptas quaerat ad.
+                            </p>
+                        </div>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quia commodi voluptas cum tempora doloribus distinctio facere, ab non. Doloremque voluptas error molestiae eos modi inventore veniam dolorum officia. At quis voluptatem iusto eos cum, dignissimos dicta autem aspernatur accusantium nesciunt rem delectus iste eveniet beatae mollitia debitis ullam adipisci! Odit unde ratione quibusdam laboriosam ipsam quas vitae molestiae adipisci dolores non aut magni tempora itaque, esse delectus amet quam dicta nobis. Alias, reprehenderit. Commodi in cum perspiciatis ullam voluptates.
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque alias provident aspernatur eius ipsam ea hic ratione eveniet laborum, at vitae quis illo maxime quos numquam maiores nam, similique perspiciatis accusantium dolore molestiae necessitatibus perferendis veniam nostrum dicta. Aperiam?
+                        </p>
+
+                        <!-- /end component-->
+
+
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="../js/lib/smooth-scroll.js"></script>
+
+        <script>
+
+            smoothScroll.init();
+
+        </script>
+
+    </body>
+</html>
