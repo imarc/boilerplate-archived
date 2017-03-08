@@ -69,16 +69,12 @@ Components
 interface elements that web authors can use as a starting point during frontend 
 development. Most of these are powered via SASS mixins found in the 
 `_components.scss` file. Some components also rely on JavaScript plugins in
-addition to mixins. Relevant JavaScript is found in the `js` directory.
+addition to or instead of the mixins. Relevant JavaScript is found in the `js` directory.
 
 ## Using components in a project
 
 Include `_components.scss` into your `styles.scss` file. All component mixins 
-should be called from the main `styles.scss` file. In other 
-words, do not edit the `_components.scss` file on a project-by-project basis. 
-Out of the box, we have grouped all component instances in a dedicated 
-section within the `styles.scss` file, but feel free to call components from 
-relevant areas in your stylesheet.
+should be called from the main `styles.scss` file. 
 
 
 ### Custom arguments
@@ -99,8 +95,11 @@ column layout with 2rem-wide gutter spacing.
 
 ### Extending components
 
-Components should be extended within the `styles.scss` file. `_components.scss`
-should not be edited.
+The `_components.scss` file can be edited on a project-by-project basis in order to best 
+fit your project. If your new or modified components are different than what came 
+“out of the box”, please comment above each relevant mixin. Ask yourself “Would another
+Imarc engineer be able to quickly understand what my project’s component does?” If the answer
+is no, comment and describe.
 
 Example of an extended component
 
@@ -129,7 +128,8 @@ Example of an extended component
 
 Components are not perfect and will need continual maintenance and improvement. 
 If you feel a component needs attention, please 
-[create a pull request](https://github.com/imarc/boilerplate/pulls/) or submit 
+[create a pull request](https://github.com/imarc/boilerplate/pulls/) with your 
+improvements you feel can be merged in, or submit 
 an [issue](https://github.com/imarc/boilerplate/issues).
 
 
@@ -205,8 +205,9 @@ help messages typically found in forms.
 
 ### Media Queries
 
-We utilize three breakpoints – small, medium, and large.
-
+We utilize three breakpoints – small, medium, and large. Please keep all media query properties in this area.
+WHhile there can be benefits of breaking in and out of media queries throughout a stylesheet, we have no yet
+standardized a way that is helpful for all engineers.
 
 License
 =======
