@@ -96,7 +96,6 @@
                 offset = options.$until.offset().top;
             } else if ('untilVisible' in options) {
                 offset = options.$untilVisible.offset().top - $(window).height();
-                console.log('offset will be', offset);
             } else {
                 offset = $(document).height();
             }
