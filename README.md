@@ -226,23 +226,6 @@ You can regeneration the documentation by running
     npm docs
 
 
-### Rebuilding the SassDoc Theme
-
-This step is **only be necessary** when making changes to the imarc sassdoc theme itself; it is not necessary
-when simply working on Boilerplate.
-
-The SassDoc theme is based on the default SassDoc theme, and makes use of Swig, Themeleon, and a bunch of
-other libraries. You may want to start with [SassDoc's documentation on Using Your Own Theme](http://sassdoc.com/using-your-own-theme/).
-
-You can rebuild the SassDoc theme (pulling in any changes to the sass in `imarc-theme/scss`) by running
-
-    npm theme:build
-
-or you can watch these files for changes and rebuild on the fly using
-
-    npm theme:watch
-
-
 License
 -------
 
