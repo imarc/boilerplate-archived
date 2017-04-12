@@ -217,7 +217,8 @@
  *  Tiles is similar to the Features component, expect that Tiles’s items can wrap.
  *  Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the
  *  specified $column amount only is respected at the large breakpoint. Tiles will automatically
- *  two-up your items at the medium breakpoint, and stack them at the small breakpoint.
+ *  two-up your items at the medium breakpoint, and stack them at the small breakpoint. If no gutter
+ *  is desired, you must still pass a unit (e.g. 0rem).
  *
  *
  * Emmet: .tiles>.tiles
