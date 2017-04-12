@@ -1,9 +1,0 @@
-{
-  "presets": ["latest"],
-  "plugins": [
-    ["transform-runtime", {
-      "polyfill": true,
-      "regenerator": true
-    }]
-  ]
-}
