@@ -24,9 +24,6 @@ var options = {
     sassOutput: './css',
 
     docsInput: './css/*.scss',
-    themeInput: './imarc-theme/scss/main.scss',
-    themeWatch: './imarc-theme/scss/**/*.scss',
-    themeOutput: './imarc-theme/assets/css',
 
     sassCompiler: {
         errLogToConsole: true,
@@ -96,23 +93,9 @@ gulp.task('serve', ['watch'], function () {
 gulp.task('docs', function () {
     return gulp.src(options.docsInput)
         .pipe(sassdoc({
-            theme: './imarc-theme',
+            theme: 'boilerplate',
         }));
 });
-
-gulp.task('theme:build', function () {
-    return gulp.src(options.themeInput)
-        .pipe(sourcemaps.init())
-        .pipe(sass(options.sassCompiler).on('error', sass.logError))
-        .pipe(autoprefixer(options.autoprefixer))
-        .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest(options.themeOutput));
-});
-
-gulp.task('theme:watch', ['theme:build', 'docs'], function () {
-    gulp.watch(options.themeWatch, ['theme:build', 'docs']);
-});
-
 
 /**
  * Default task
