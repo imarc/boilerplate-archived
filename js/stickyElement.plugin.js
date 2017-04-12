@@ -40,6 +40,10 @@
  *         If specified, the sticky element unsticks when this element scrolls even
  *         with the sticked element.
  *
+ *     untilVisible (selector)
+ *         If speicifed, the sticky element unstick when any of this element scrolls
+ *         into view.
+ *
  *     stopEarly (integer, default: 0)
  *         If specified, unsticks the element when it reaches this distance
  *         from the top of an 'until' element.
@@ -71,6 +75,10 @@
             options.$until = $(options.until);
         }
 
+        if ('untilVisible' in options) {
+            options.$untilVisible = $(options.untilVisible);
+        }
+
         $elem.css({
             position: 'absolute'
         });
@@ -86,6 +94,8 @@
                 offset += options.duration;
             } else if ('until' in options) {
                 offset = options.$until.offset().top;
+            } else if ('untilVisible' in options) {
+                offset = options.$untilVisible.offset().top - $(window).height();
             } else {
                 offset = $(document).height();
             }
