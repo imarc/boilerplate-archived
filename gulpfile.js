@@ -6,6 +6,7 @@ var csscomb = require('gulp-csscomb');
 var sourcemaps = require('gulp-sourcemaps');
 var browsersync = require('browser-sync').create();
 var autoprefixer = require('gulp-autoprefixer');
+var sassdoc = require('sassdoc');
 
 // Options
 
@@ -21,6 +22,8 @@ var options = {
 
     sassInput: './css/styles.scss',
     sassOutput: './css',
+
+    docsInput: './css/*.scss',
 
     sassCompiler: {
         errLogToConsole: true,
@@ -82,6 +85,16 @@ gulp.task('serve', ['watch'], function () {
         "./js/**/*.js",
         "./img/**/*"
     ]).on('change', browsersync.reload);
+});
+
+/**
+ * Docs tasks
+ */
+gulp.task('docs', function () {
+    return gulp.src(options.docsInput)
+        .pipe(sassdoc({
+            theme: 'boilerplate',
+        }));
 });
 
 /**
