@@ -23,7 +23,7 @@ var options = {
     sassInput: './css/styles.scss',
     sassOutput: './css',
 
-    docsInput: './css/*.scss',
+    docsInput: './css/_components.scss',
 
     sassCompiler: {
         errLogToConsole: true,
