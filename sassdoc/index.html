@@ -264,7 +264,7 @@
             visibility: visible;
         }
     }
- }" data-collapsed="@mixin dropdown() { ... }"><code>@mixin dropdown() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The DROPDOWN mixin allows for single-column dropdown menus. The mixin is called from the nav.primary element, not a list item.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">nav.primary&gt;ul&gt;li&gt;a{link name}+.dropdown&gt;&gt;ul&gt;li&gt;(a{link name})*3</code></pre></div><p class="demo"><a class="button" href="../components/dropdown-simple.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;nav aria-label=&quot;Primary Mobile Navigation&quot; class=&quot;primary&quot;&gt;
+ }" data-collapsed="@mixin dropdown() { ... }"><code>@mixin dropdown() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The DROPDOWN mixin allows for single-column dropdown menus. The mixin is called from the nav.primary element, not a list item.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">nav.primary&gt;ul&gt;li&gt;a{link name}+.dropdown&gt;&gt;ul&gt;li&gt;(a{link name})*3</code></pre></div><p class="demo"><a class="button" href="../components/dropdown-simple.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;nav class=&quot;primary&quot;&gt;
     &lt;ul&gt;
         &lt;li&gt;
             &lt;a href=&quot;&quot;&gt;Maine&lt;/a&gt;
@@ -305,7 +305,7 @@
             }
         }
     }
- }" data-collapsed="@mixin dropdown-mega() { ... }"><code>@mixin dropdown-mega() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The DROPDOWN (mega) mixin allows for full-width mega dropdown menus. Call this mixin on a list item, not on nav.primary. Note that the simple dropdown component is a dependency of DROPDOWN (mega). The mega dropdown is positioned to header.primary instead of its parent list item.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">nav.primary&gt;ul&gt;li&gt;a{link name}+.dropdown&gt;.menu(div*3)</code></pre></div><p class="demo"><a class="button" href="../components/dropdown-mega.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;nav aria-label=&quot;Primary Mobile Navigation&quot; class=&quot;primary&quot;&gt;
+ }" data-collapsed="@mixin dropdown-mega() { ... }"><code>@mixin dropdown-mega() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The DROPDOWN (mega) mixin allows for full-width mega dropdown menus. Call this mixin on a list item, not on nav.primary. Note that the simple dropdown component is a dependency of DROPDOWN (mega). The mega dropdown is positioned to header.primary instead of its parent list item.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">nav.primary&gt;ul&gt;li&gt;a{link name}+.dropdown&gt;.menu(div*3)</code></pre></div><p class="demo"><a class="button" href="../components/dropdown-mega.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;nav class=&quot;primary&quot;&gt;
     &lt;ul&gt;
         &lt;li&gt;
             &lt;a href=&quot;&quot;&gt;Maine&lt;/a&gt;
@@ -352,7 +352,14 @@
             }
         }
     }
- }" data-collapsed="@mixin features($gutter: 3rem) { ... }"><code>@mixin features($gutter: 3rem) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>FEATURES house three features in one row. Powered by flexbox, this allows for a bottom alignment of each feature’s anchor. Use the <code>$gutter</code> variable to pass you preferred gutter width.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>gutter between features</p></td><td data-label="type"><code>Measure</code></td><td data-label="default"><code>3rem</code></td></tr></tbody></table><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">.features&gt;(div&gt;(.icon&gt;img)+h4+p+a)*3</code></pre></div><p class="demo"><a class="button" href="../components/features.html">View Demo</a></p></section><section class="main__item container item" id="undefined-mixin-listing"><h3 class="item__heading"><a class="item__name" href="#mixin-listing">listing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin listing() { 
+ }" data-collapsed="@mixin features($gutter: 3rem) { ... }"><code>@mixin features($gutter: 3rem) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>FEATURES holds three modules in one row. Powered by flexbox, this allows for a bottom alignment of an optional button. Use the <code>$gutter</code> variable to pass a preferred gutter width.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>gutter between features</p></td><td data-label="type"><code>Measure</code></td><td data-label="default"><code>3rem</code></td></tr></tbody></table><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">.features&gt;(div&gt;(.icon&gt;img)+h4+p+a)*3</code></pre></div><p class="demo"><a class="button" href="../components/features.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;div class=&quot;features&quot;&gt;
+    &lt;div&gt;
+        &lt;div class=&quot;icon&quot;&gt;&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;&lt;/div&gt;
+        &lt;h4&gt;&lt;/h4&gt;
+        &lt;p&gt;&lt;/p&gt;
+        &lt;a href=&quot;&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></section><section class="main__item container item" id="undefined-mixin-listing"><h3 class="item__heading"><a class="item__name" href="#mixin-listing">listing</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin listing() { 
     margin-bottom: 2rem;
     form {
         .search {
@@ -417,8 +424,44 @@
             }
         }
     }
- }" data-collapsed="@mixin listing() { ... }"><code>@mixin listing() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>LISTING shows a listing of entries. It includes an optional search form with filters. Remove the search form elements for a simple list.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">.listing&gt;(form&gt;.search&gt;(.text&gt;label+input^.submit&gt;label+input[type=&quot;submit&quot;]))+p.guide{Showing 10 of 20}+ul&gt;li&gt;a&gt;h2{Listing headline}</code></pre></div><p class="demo"><a class="button" href="../components/listing.html">View Demo</a></p></section><section class="main__item container item" id="undefined-mixin-login"><h3 class="item__heading"><a class="item__name" href="#mixin-login">login</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin login() { 
-    background: #EEE;
+ }" data-collapsed="@mixin listing() { ... }"><code>@mixin listing() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>LISTING shows a listing of entries. It includes an optional search form with filters. Remove the search form elements for a simple list.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">.listing&gt;(form&gt;.search&gt;(.text&gt;label+input^.submit&gt;label+input[type=&quot;submit&quot;]))+p.guide{Showing 10 of 20}+ul&gt;li&gt;a&gt;h2{Listing headline}</code></pre></div><p class="demo"><a class="button" href="../components/listing.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;div class=&quot;listing&quot;&gt;
+    &lt;form&gt;
+        &lt;div class=&quot;search&quot;&gt;
+            &lt;div class=&quot;text&quot;&gt;
+                &lt;label for=&quot;search&quot;&gt;Search the website&lt;/label&gt;
+                &lt;input id=&quot;search&quot; type=&quot;search&quot; placeholder=&quot;Search using keywords (CSS tips, Amazon EC2)&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;submit&quot;&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;Search&quot; /&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;filters&quot;&gt;
+            &lt;label&gt;
+                &lt;input type=&quot;checkbox&quot;&gt;&lt;span&gt;case study&lt;/span&gt;
+            &lt;/label&gt;
+            &lt;label&gt;
+                &lt;input type=&quot;checkbox&quot;&gt;&lt;span&gt;event&lt;/span&gt;
+            &lt;/label&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;p class=&quot;guide&quot;&gt;
+        Showing results 1–10 for &lt;strong&gt;responsive design&lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;
+            &lt;h2&gt;
+                &lt;a href=&quot;&quot;&gt;Responsive Web Design roundup for 2016 | Imarc &lt;/a&gt;
+            &lt;/h2&gt;
+            &lt;a class=&quot;meta&quot; href=&quot;&quot;&gt;http://imarc.com/blog/responsive-web-design&lt;/a&gt;
+            &lt;div class=&quot;summary&quot;&gt;
+                &lt;p&gt;
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta obcaecati voluptatem facere alias nisi sint aliquid a deserunt nostrum explicabo. Ipsa dicta possimus ipsam dignissimos culpa maiores amet eaque! Natus.
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+     &lt;/ul&gt;
+ &lt;/div&gt;</code></pre></div></section><section class="main__item container item" id="undefined-mixin-login"><h3 class="item__heading"><a class="item__name" href="#mixin-login">login</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin login() { 
+    background-color: #EEE;
     margin-left: auto;
     margin-right: auto;
     max-width: 600px;
@@ -455,7 +498,29 @@
             }
         }
     }
- }" data-collapsed="@mixin login() { ... }"><code>@mixin login() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The LOGIN mixin is a basic implementation of a login module that includes a username input, password input, submit button, forgot password link, and remember me checkbox.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">.login&gt;form&gt;(div.text&gt;label{Username}+input)+(div.password&gt;label{Password}+input[type=&quot;password&quot;])+div.actions&gt;(.submit&gt;button{Login})+(label&gt;input[type=&quot;hidden&quot;]+input[type=&quot;checkbox&quot;])+a{Forgot Your Password?}</code></pre></div><p class="demo"><a class="button" href="../components/login.html">View Demo</a></p></section><section class="main__item container item" id="undefined-mixin-mobileNavigation"><h3 class="item__heading"><a class="item__name" href="#mixin-mobileNavigation">mobileNavigation</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin mobileNavigation() { 
+ }" data-collapsed="@mixin login() { ... }"><code>@mixin login() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The LOGIN mixin is a basic implementation of a login module that includes an email input, password input, submit button, forgot password link, and remember me checkbox.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">.login&gt;form&gt;(div.text&gt;label{Username}+input)+(div.password&gt;label{Password}+input[type=&quot;password&quot;])+div.actions&gt;(.submit&gt;button{Login})+(label&gt;input[type=&quot;hidden&quot;]+input[type=&quot;checkbox&quot;])+a{Forgot Your Password?}</code></pre></div><p class="demo"><a class="button" href="../components/login.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;div class=&quot;login&quot;&gt;
+    &lt;form action=&quot;&quot;&gt;
+        &lt;div class=&quot;text&quot;&gt;
+            &lt;label for=&quot;username&quot;&gt;Username&lt;/label&gt;
+            &lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;password&quot;&gt;
+            &lt;label for=&quot;password&quot;&gt;Password&lt;/label&gt;
+            &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;actions&quot;&gt;
+            &lt;div class=&quot;submit&quot;&gt;
+                &lt;button type=&quot;submit&quot;&gt;Login&lt;/button&gt;
+            &lt;/div&gt;
+            &lt;label for=&quot;remember_me&quot;&gt;
+                &lt;input type=&quot;hidden&quot; name=&quot;remember_me&quot; value=&quot;no&quot; /&gt;
+                &lt;input type=&quot;checkbox&quot; name=&quot;remember_me&quot; value=&quot;yes&quot; id=&quot;remember_me&quot; /&gt;
+                Remember me
+            &lt;/label&gt;
+            &lt;a href=&quot;#&quot;&gt;Forgot Your Password?&lt;/a&gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;</code></pre></div></section><section class="main__item container item" id="undefined-mixin-mobileNavigation"><h3 class="item__heading"><a class="item__name" href="#mixin-mobileNavigation">mobileNavigation</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin mobileNavigation() { 
     background-color: $charcoal;
     bottom: 0;
     display: none;
@@ -587,7 +652,18 @@
             }
         }
     }
- }" data-collapsed="@mixin pagination() { ... }"><code>@mixin pagination() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The pagination mixin is missing any kind of sass, docblock style documentation within _components.scss. Sorry.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">nav.pagination&gt;ul&gt;(li.previous&gt;a{Previous})+(li*2&gt;a)+(li.active&gt;a)+(li*2&gt;a)+li.next&gt;a{Next}</code></pre></div><p class="demo"><a class="button" href="../components/pagination.html">View Demo</a></p></section><section class="main__item container item" id="undefined-mixin-progress"><h3 class="item__heading"><a class="item__name" href="#mixin-progress">progress</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin progress() { 
+ }" data-collapsed="@mixin pagination() { ... }"><code>@mixin pagination() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>PAGINATION provides a navigational unordered list of pages. Often used in conjunction of a LISTING component.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">nav.pagination&gt;ul&gt;(li.previous&gt;a{Previous})+(li*2&gt;a)+(li.active&gt;a)+(li*2&gt;a)+li.next&gt;a{Next}</code></pre></div><p class="demo"><a class="button" href="../components/pagination.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;nav class=&quot;pagination&quot;&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;previous&quot;&gt;&lt;a href=&quot;&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Previous&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;6&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;next disabled&quot;&gt;&lt;a href=&quot;&quot;&gt;&lt;span class=&quot;sr-only&quot;&gt;Next&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre></div></section><section class="main__item container item" id="undefined-mixin-progress"><h3 class="item__heading"><a class="item__name" href="#mixin-progress">progress</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin progress() { 
     ul {
         border: 1px solid $border;
         border-radius: 2px;
@@ -707,7 +783,16 @@
             }
         }
     }
- }" data-collapsed="@mixin progress() { ... }"><code>@mixin progress() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>the progress mixin provides a basic, pill-style progress nav bar like you might find as part of an e-commerce or registration process.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">nav.progress&gt;ul&gt;(li.complete*2&gt;a)+(li.active&gt;a)+(li*2&gt;a)</code></pre></div><p class="demo"><a class="button" href="../components/progress.html">View Demo</a></p></section><section class="main__item container item" id="undefined-mixin-sticky-header"><h3 class="item__heading"><a class="item__name" href="#mixin-sticky-header">sticky-header</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin sticky-header() { 
+ }" data-collapsed="@mixin progress() { ... }"><code>@mixin progress() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>PROGRESS provides a basic, pill-style progress nav bar like you might find as part of an ecommerce or registration process.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">nav.progress&gt;ul&gt;(li.complete*2&gt;a)+(li.active&gt;a)+(li*2&gt;a)</code></pre></div><p class="demo"><a class="button" href="../components/progress.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;nav class=&quot;progress&quot;&gt;
+    &lt;ul&gt;
+        &lt;li class=&quot;complete&quot;&gt;&lt;a href=&quot;&quot;&gt;Nav Item 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;complete&quot;&gt;&lt;a href=&quot;&quot;&gt;Nav Item 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;active&quot;&gt;&lt;a href=&quot;&quot;&gt;Nav Item 3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Nav Item 4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Nav Item 5&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Nav Item 6&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre></div></section><section class="main__item container item" id="undefined-mixin-sticky-header"><h3 class="item__heading"><a class="item__name" href="#mixin-sticky-header">sticky-header</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin sticky-header() { 
     position: fixed;
     top: 0;
     transition: top 0.16s cubic-bezier(0, .40, .70, 1);
@@ -762,7 +847,35 @@
              text-align: left;
          }
      }
-  }" data-collapsed="@mixin tabs() { ... }"><code>@mixin tabs() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The tabs mixin is missing any kind of sass, docblock style documentation within _components.scss. Sorry.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">.tabs&gt;(nav&gt;ul&gt;li&gt;(a)*4)&gt;.panel.active+(.panel)*3</code></pre></div><p class="demo"><a class="button" href="../components/tabs.html">View Demo</a></p></section><section class="main__item container item" id="undefined-mixin-testimonial"><h3 class="item__heading"><a class="item__name" href="#mixin-testimonial">testimonial</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin testimonial() { 
+  }" data-collapsed="@mixin tabs() { ... }"><code>@mixin tabs() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>TABS is missing any kind of sass, docblock style documentation within _components.scss. Sorry.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">.tabs&gt;(nav&gt;ul&gt;li*4)&gt;.panel.active+(.panel*3)</code></pre></div><p class="demo"><a class="button" href="../components/tabs.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;div class=&quot;tabs&quot;&gt;
+    &lt;nav&gt;
+        &lt;ul&gt;
+            &lt;li class=&quot;active&quot;&gt;Patriots&lt;/li&gt;
+            &lt;li&gt;Bruins&lt;/li&gt;
+            &lt;li&gt;Celtics&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/nav&gt;
+    &lt;div class=&quot;panel active&quot;&gt;
+        &lt;p&gt;
+            The New England Patriots are a professional American 
+            football team based in the Greater Boston area. 
+        &lt;/p&gt;
+        &lt;p&gt;
+            Since the arrival of head coach Bill Belichick in 2000, 
+            the Patriots have become one of the most successful teams.
+        &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;panel&quot;&gt;
+        &lt;p&gt;
+             The Boston Bruins are an American professional 
+             ice hockey team based in Boston, Massachusetts.
+        &lt;/p&gt;
+        &lt;p&gt;
+            The Bruins have won six Stanley Cup championships, 
+            tied for fifth most of all-time with the Blackhawks.
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></section><section class="main__item container item" id="undefined-mixin-testimonial"><h3 class="item__heading"><a class="item__name" href="#mixin-testimonial">testimonial</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin testimonial($gutterWidth: 4rem) { 
     background-color: $charcoal;
     margin-bottom: 4rem;
     padding: 4rem 0 4rem;
@@ -808,7 +921,7 @@
     }
     @media only screen and (min-width: $large) {
         text-align: left;
-        .container &gt; div {
+        .wrapper {
             display: flex;
             justify-content: space-between;
         }
@@ -834,7 +947,23 @@
             }
         }
     }
- }" data-collapsed="@mixin testimonial() { ... }"><code>@mixin testimonial() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The TESTIMONIAL mixin is a basic implementation of a testimonial design.</p><p>To use the TESTIMONIAL WITH ASSET component, you simply need to add additional html markup, see the second emmet example below.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">div.testimonial&gt;div.container&gt;blockquote+p</code></pre></div><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">div.testimonial.asset&gt;div.container&gt;(div&gt;img)+blockquote+p</code></pre></div><p class="demo"><a class="button" href="../components/testimonial.html">View Demo</a></p></section><section class="main__item container item" id="undefined-mixin-tiles"><h3 class="item__heading"><a class="item__name" href="#mixin-tiles">tiles</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin tiles($gutter: 2rem, $columns: 4) { 
+ }" data-collapsed="@mixin testimonial($gutterWidth: 4rem) { ... }"><code>@mixin testimonial($gutterWidth: 4rem) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The TESTIMONIAL mixin is a basic implementation of a testimonial design. Add in an optional image wrapped in an element with a class of .asset.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutterWidth</code></th><td data-label="desc"><p>gutter between asset and quote</p></td><td data-label="type"><code>Measure</code></td><td data-label="default"><code>4rem</code></td></tr></tbody></table><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">div.testimonial.asset&gt;div.container&gt;(div&gt;img)+blockquote+p</code></pre></div><p class="demo"><a class="button" href="../components/testimonial.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;div class=&quot;testimonial&quot;&gt;
+    &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;wrapper&quot;&gt;
+            &lt;div class=&quot;asset&quot;&gt;
+                &lt;img src=&quot;http://dummyimage.com/900x900/ff675b/fff.png&amp;text=Company logo or headshot&quot; alt=&quot;&quot; /&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;blockquote&gt;
+                    It was an honor to work with Imarc. They demonstrated, very early on, a true ability to understand our business and solve for our needs—create a new intranet site, one that would increase engagement and foster community. Imarc delivered incredible results, taking our former site to new heights. We couldn’t be happier with their work and subject matter expertise.
+                &lt;/blockquote&gt;
+                &lt;p&gt;
+                    – John Smith, Chief Marketing Officer, Acme Co
+                &lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></section><section class="main__item container item" id="undefined-mixin-tiles"><h3 class="item__heading"><a class="item__name" href="#mixin-tiles">tiles</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin tiles($gutter: 2rem, $columns: 4) { 
     &gt; * {
         background-color: #EEE;
         margin-bottom: $gutter;
@@ -861,4 +990,21 @@
             flex-basis: calc((100% / #{$columns}) - (#{$gutter}));
         }
     }
- }" data-collapsed="@mixin tiles($gutter: 2rem, $columns: 4) { ... }"><code>@mixin tiles($gutter: 2rem, $columns: 4) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Tiles helps you create an equal-width column grid layout without the use of row wrappers. Tiles is similar to the Features component, expect that Tiles’s items can wrap. Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the specified $column amount only is respected at the large breakpoint. Tiles will automatically two-up your items at the medium breakpoint, and stack them at the small breakpoint.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>vertical gutter between tiles</p></td><td data-label="type"><code>Measure</code></td><td data-label="default"><code>2rem</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><p>number of columns while min-width is $large</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>4</code></td></tr></tbody></table><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">.tiles&gt;.tiles</code></pre></div><p class="demo"><a class="button" href="../components/tiles.html">View Demo</a></p></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <a class="project-info__name" href="https://github.com/imarc/boilerplate#readme">Boilerplate</a><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under Apache-2.0</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>
+ }" data-collapsed="@mixin tiles($gutter: 2rem, $columns: 4) { ... }"><code>@mixin tiles($gutter: 2rem, $columns: 4) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>TILES helps you create an equal-width column grid layout without the use of row wrappers. Tiles is similar to the Features component, except that TILES’ items can wrap. Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the specified $column amount only is respected at the large breakpoint. Tiles will automatically two-up your items at the medium breakpoint, and stack them at the small breakpoint.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$gutter</code></th><td data-label="desc"><p>vertical gutter between tiles</p></td><td data-label="type"><code>Measure</code></td><td data-label="default"><code>2rem</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$columns</code></th><td data-label="desc"><p>number of columns while min-width is $large</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>4</code></td></tr></tbody></table><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">.tiles&gt;.tiles</code></pre></div><p class="demo"><a class="button" href="../components/tiles.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;div class=&quot;tiles&quot;&gt;
+    &lt;div class=&quot;tile&quot;&gt;
+        &lt;h4&gt;One Great Headline&lt;/h4&gt;
+        &lt;p&gt;Lorem ipsum dolor&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;tile&quot;&gt;
+        &lt;h4&gt;One Great Headline&lt;/h4&gt;
+        &lt;p&gt;Lorem ipsum dolor&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;tile&quot;&gt;
+        &lt;h4&gt;One Great Headline&lt;/h4&gt;
+        &lt;p&gt;Lorem ipsum dolor&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;tile&quot;&gt;
+        &lt;h4&gt;One Great Headline&lt;/h4&gt;
+        &lt;p&gt;Lorem ipsum dolor&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <a class="project-info__name" href="https://github.com/imarc/boilerplate#readme">Boilerplate</a><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under Apache-2.0</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

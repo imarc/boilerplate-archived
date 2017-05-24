@@ -480,12 +480,22 @@
 
 
 ///
-/// FEATURES house three features in one row. Powered by flexbox,
-/// this allows for a bottom alignment of each feature’s anchor. Use the
-/// `$gutter` variable to pass you preferred gutter width.
+/// FEATURES holds three modules in one row. Powered by flexbox,
+/// this allows for a bottom alignment of an optional button. Use the
+/// `$gutter` variable to pass a preferred gutter width.
 ///
 /// @emmet .features>(div>(.icon>img)+h4+p+a)*3
 /// @demo components/features.html
+///
+/// @example markup HTML
+///    <div class="features">
+///        <div>
+///            <div class="icon"><img src="" alt=""></div>
+///            <h4></h4>
+///            <p></p>
+///            <a href=""></a>
+///        </div>
+///    </div>
 ///
 /// @param {measure} $gutter [3rem] - gutter between features
 ///
@@ -535,6 +545,46 @@
 ///
 /// @emmet .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
 /// @demo components/listing.html
+///
+///
+/// @example markup HTML
+///    <div class="listing">
+///        <form>
+///            <div class="search">
+///                <div class="text">
+///                    <label for="search">Search the website</label>
+///                    <input id="search" type="search" placeholder="Search using keywords (CSS tips, Amazon EC2)" />
+///                </div>
+///                <div class="submit">
+///                    <input type="submit" value="Search" />
+///                </div>
+///            </div>
+///            <div class="filters">
+///                <label>
+///                    <input type="checkbox"><span>case study</span>
+///                </label>
+///                <label>
+///                    <input type="checkbox"><span>event</span>
+///                </label>
+///            </div>
+///        </form>
+///        <p class="guide">
+///            Showing results 1–10 for <strong>responsive design</strong>
+///        </p>
+///        <ul>
+///            <li>
+///                <h2>
+///                    <a href="">Responsive Web Design roundup for 2016 | Imarc </a>
+///                </h2>
+///                <a class="meta" href="">http://imarc.com/blog/responsive-web-design</a>
+///                <div class="summary">
+///                    <p>
+///                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta obcaecati voluptatem facere alias nisi sint aliquid a deserunt nostrum explicabo. Ipsa dicta possimus ipsam dignissimos culpa maiores amet eaque! Natus.
+///                    </p>
+///                </div>
+///            </li>
+///         </ul>
+///     </div>
 ///
 
 @mixin listing() {
@@ -606,16 +656,41 @@
 
 
 ///
-/// The LOGIN mixin is a basic implementation of a login module that includes a
-/// username input, password input, submit button, forgot password link, and
+/// The LOGIN mixin is a basic implementation of a login module that includes 
+/// an email input, password input, submit button, forgot password link, and
 /// remember me checkbox.
 ///
 /// @emmet .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
 /// @demo components/login.html
 ///
+/// @example markup HTML
+///       <div class="login">
+///           <form action="">
+///               <div class="text">
+///                   <label for="username">Username</label>
+///                   <input type="text" name="username" />
+///               </div>
+///               <div class="password">
+///                   <label for="password">Password</label>
+///                   <input type="password" name="password" />
+///               </div>
+///               <div class="actions">
+///                   <div class="submit">
+///                       <button type="submit">Login</button>
+///                   </div>
+///                   <label for="remember_me">
+///                       <input type="hidden" name="remember_me" value="no" />
+///                       <input type="checkbox" name="remember_me" value="yes" id="remember_me" />
+///                       Remember me
+///                   </label>
+///                   <a href="#">Forgot Your Password?</a>
+///               </div>
+///           </form>
+///       </div>
+///
 
-@mixin login {
-    background: #EEE;
+@mixin login() {
+    background-color: #EEE;
     margin-left: auto;
     margin-right: auto;
     max-width: 600px;
@@ -734,14 +809,28 @@
 
 
 ///
-/// The pagination mixin is missing any kind of sass, docblock style
-/// documentation within _components.scss. Sorry.
+/// PAGINATION provides a navigational unordered list of pages. Often used
+/// in conjunction of a LISTING component.
 ///
 /// @emmet nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
 /// @demo components/pagination.html
 ///
+/// @example markup HTML
+///    <nav class="pagination">
+///        <ul>
+///            <li class="previous"><a href=""><span class="sr-only">Previous</span></a></li>
+///            <li><a href="">1</a></li>
+///            <li><a href="">2</a></li>
+///            <li class="active"><a href="">3</a></li>
+///            <li><a href="">4</a></li>
+///            <li><a href="">5</a></li>
+///            <li><a href="">6</a></li>
+///            <li class="next disabled"><a href=""><span class="sr-only">Next</span></a></li>
+///        </ul>
+///    </nav>
+///
 
-@mixin pagination {
+@mixin pagination() {
     display: flex;
     justify-content: center;
     ul {
@@ -809,11 +898,23 @@
 
 
 ///
-/// the progress mixin provides a basic, pill-style progress nav bar like you
-/// might find as part of an e-commerce or registration process.
+/// PROGRESS provides a basic, pill-style progress nav bar like you
+/// might find as part of an ecommerce or registration process.
 ///
 /// @emmet nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
 /// @demo components/progress.html
+///
+/// @example markup HTML
+///    <nav class="progress">
+///        <ul>
+///            <li class="complete"><a href="">Nav Item 1</a></li>
+///            <li class="complete"><a href="">Nav Item 2</a></li>
+///            <li class="active"><a href="">Nav Item 3</a></li>
+///            <li><a href="">Nav Item 4</a></li>
+///            <li><a href="">Nav Item 5</a></li>
+///            <li><a href="">Nav Item 6</a></li>
+///        </ul>
+///    </nav>
 ///
 
 @mixin progress() {
@@ -961,13 +1062,45 @@
 
 
 ///
-/// The tabs mixin is missing any kind of sass, docblock style documentation
+/// TABS is missing any kind of sass, docblock style documentation
 /// within _components.scss. Sorry.
 ///
-/// @emmet .tabs>(nav>ul>li>(a)*4)>.panel.active+(.panel)*3
+/// @emmet .tabs>(nav>ul>li*4)>.panel.active+(.panel*3)
 /// @demo components/tabs.html
 ///
- @mixin tabs {
+/// @example markup HTML
+///    <div class="tabs">
+///        <nav>
+///            <ul>
+///                <li class="active">Patriots</li>
+///                <li>Bruins</li>
+///                <li>Celtics</li>
+///            </ul>
+///        </nav>
+///        <div class="panel active">
+///            <p>
+///                The New England Patriots are a professional American 
+///                football team based in the Greater Boston area. 
+///            </p>
+///            <p>
+///                Since the arrival of head coach Bill Belichick in 2000, 
+///                the Patriots have become one of the most successful teams.
+///            </p>
+///        </div>
+///        <div class="panel">
+///            <p>
+///                 The Boston Bruins are an American professional 
+///                 ice hockey team based in Boston, Massachusetts.
+///            </p>
+///            <p>
+///                The Bruins have won six Stanley Cup championships, 
+///                tied for fifth most of all-time with the Blackhawks.
+///            </p>
+///        </div>
+///    </div>
+///
+
+ @mixin tabs() {
      position: relative;
      nav {
          border-bottom: 1px solid;
@@ -1020,13 +1153,31 @@
 
 ///
 /// The TESTIMONIAL mixin is a basic implementation of a testimonial design.
+/// Add in an optional image wrapped in an element with a class of .asset.
 ///
-/// To use the TESTIMONIAL WITH ASSET component, you simply need to add
-/// additional html markup, see the second emmet example below.
-///
-/// @emmet div.testimonial>div.container>blockquote+p
 /// @emmet div.testimonial.asset>div.container>(div>img)+blockquote+p
 /// @demo components/testimonial.html
+///
+/// @param {measure} $gutterWidth [4rem] - gutter between asset and quote
+///
+/// @example markup HTML
+///    <div class="testimonial">
+///        <div class="container">
+///            <div class="wrapper">
+///                <div class="asset">
+///                    <img src="http://dummyimage.com/900x900/ff675b/fff.png&text=Company logo or headshot" alt="" />
+///                </div>
+///                <div>
+///                    <blockquote>
+///                        It was an honor to work with Imarc. They demonstrated, very early on, a true ability to understand our business and solve for our needs—create a new intranet site, one that would increase engagement and foster community. Imarc delivered incredible results, taking our former site to new heights. We couldn’t be happier with their work and subject matter expertise.
+///                    </blockquote>
+///                    <p>
+///                        – John Smith, Chief Marketing Officer, Acme Co
+///                    </p>
+///                </div>
+///            </div>
+///        </div>
+///    </div>
 ///
 
 @mixin testimonial($gutterWidth: 4rem) {
@@ -1075,7 +1226,7 @@
     }
     @media only screen and (min-width: $large) {
         text-align: left;
-        .container > div {
+        .wrapper {
             display: flex;
             justify-content: space-between;
         }
@@ -1105,14 +1256,34 @@
 
 
 ///
-/// Tiles helps you create an equal-width column grid layout without the use of row wrappers.
-/// Tiles is similar to the Features component, expect that Tiles’s items can wrap.
+/// TILES helps you create an equal-width column grid layout without the use of row wrappers.
+/// Tiles is similar to the Features component, except that TILES’ items can wrap.
 /// Powered by flexbox, you can pass in a $gutter width and $column amount. Note that the
 /// specified $column amount only is respected at the large breakpoint. Tiles will automatically
 /// two-up your items at the medium breakpoint, and stack them at the small breakpoint.
 ///
 /// @emmet .tiles>.tiles
 /// @demo components/tiles.html
+///
+/// @example markup HTML
+///    <div class="tiles">
+///        <div class="tile">
+///            <h4>One Great Headline</h4>
+///            <p>Lorem ipsum dolor</p>
+///        </div>
+///        <div class="tile">
+///            <h4>One Great Headline</h4>
+///            <p>Lorem ipsum dolor</p>
+///        </div>
+///        <div class="tile">
+///            <h4>One Great Headline</h4>
+///            <p>Lorem ipsum dolor</p>
+///        </div>
+///        <div class="tile">
+///            <h4>One Great Headline</h4>
+///            <p>Lorem ipsum dolor</p>
+///        </div>
+///    </div>
 ///
 /// @param {measure} $gutter  [2rem] - vertical gutter between tiles
 /// @param {number}  $columns [4]    - number of columns while min-width is $large
