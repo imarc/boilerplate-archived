@@ -124,13 +124,24 @@ Example of an extended component
 
 
 
-### Improving components
+## Improving components
 
 Components are not perfect and will need continual maintenance and improvement.
-If you feel a component needs attention, please
+If you feel a Component needs attention, please
 [create a pull request](https://github.com/imarc/boilerplate/pulls/) with your
 improvements you feel can be merged in, or submit
 an [issue](https://github.com/imarc/boilerplate/issues).
+
+Documentation for Components is generated using [SassDoc](http://sassdoc.com/) and can be found in the
+sassdoc folder or [viewed online](http://imarc.github.io/boilerplate/sassdoc/).
+
+
+### Updating the Docs
+
+If you make changes to Components’ code, you can regenerate the documentation by running
+
+    npm docs
+
 
 
 CSS
@@ -209,21 +220,6 @@ We utilize three breakpoints – small, medium, and large. Please keep all media
 WHhile there can be benefits of breaking in and out of media queries throughout a stylesheet, we have no yet
 standardized a way that is helpful for all engineers.
 
-Documentation
--------------
-
-Documentation for Boilerplate is generated using [SassDoc](http://sassdoc.com/) and can be found in the
-sassdoc folder or [viewed online](http://imarc.github.io/boilerplate/sassdoc/).
-
-We should update the documentation and commit it back when we make significant changes to our components
-especially so our documentation isn’t too far behind.
-
-
-### Updating the Docs
-
-You can regenerate the documentation by running
-
-    npm docs
 
 
 License
