@@ -121,26 +121,24 @@
 ///
 
 @mixin backgroundvideo() {
-    & {
-        align-items: center;
-        display: flex;
-        height: auto;
-        justify-content: center;
-        overflow: hidden;
-        position: relative;
-        .mold {
-            background-color: rgba(2255, 255, 255, 0.6);
-            padding: 2em;
-            text-align: center;
-            z-index: 2;
-        }
-        video {
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 1;
-        }
+    align-items: center;
+    display: flex;
+    height: auto;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    .mold {
+        background-color: rgba(2255, 255, 255, 0.6);
+        padding: 2em;
+        text-align: center;
+        z-index: 2;
+    }
+    video {
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 1;
     }
     &::before {
         content: "";
@@ -163,6 +161,12 @@
 /// @example markup HTML
 ///    <nav class="breadcrumbs">
 ///       <ul>
+///           <li>
+///               <a href="">Item</a>
+///           </li>
+///           <li class="active">
+///               <a href="">Item</a>
+///           </li>
 ///           <li>
 ///               <a href="">Item</a>
 ///           </li>
@@ -235,7 +239,7 @@
 
 ///
 /// The COLUMNS mixin makes it so that immmediate child elements appear as
-/// columns. It assumes the use of <hr> elements to create visual gutters
+/// columns. It assumes the use of < hr > elements to create visual gutters
 /// that are only visible while displayed as columns.
 ///
 ///
@@ -523,7 +527,7 @@
         justify-content: space-between;
         > * {
             display: flex;
-            flex: 1 0 0;
+            flex: 1 0 0%;
             flex-direction: column;
             margin-left: $gutter;
             margin-right: 0;
@@ -543,7 +547,7 @@
 /// LISTING shows a listing of entries. It includes an optional search form with filters.
 /// Remove the search form elements for a simple list.
 ///
-/// @emmet .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}
+/// @emmet .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}+a.meta+div.summary>p{Lorem Ipsum}
 /// @demo components/listing.html
 ///
 ///
@@ -1041,8 +1045,9 @@
 
 
 ///
-/// The STICKY-HEADER mixin works with js (sticky-header.plugin.js) to hide the
-/// header as you scroll down, and show it as you scroll back up. This is
+/// The STICKY-HEADER mixin works with (sticky-header.plugin.js) to hide 
+/// a site’s header.primary element as you scroll down page. The element 
+/// reappears when the user scrolls up the page. This is
 /// responsive as the "top" value is dynamically set in the
 /// js based on the height of the header. Top padding is also added
 /// to the body dynamically via js so that the header doesn't overlap any
@@ -1062,8 +1067,8 @@
 
 
 ///
-/// TABS is missing any kind of sass, docblock style documentation
-/// within _components.scss. Sorry.
+/// TABS allows for the showing and hiding of panels via an
+/// associated tab navigation.
 ///
 /// @emmet .tabs>(nav>ul>li*4)>.panel.active+(.panel*3)
 /// @demo components/tabs.html
@@ -1262,7 +1267,7 @@
 /// specified $column amount only is respected at the large breakpoint. Tiles will automatically
 /// two-up your items at the medium breakpoint, and stack them at the small breakpoint.
 ///
-/// @emmet .tiles>.tiles
+/// @emmet .tiles>(.tile>p{Lorem Ipsum})*2
 /// @demo components/tiles.html
 ///
 /// @example markup HTML

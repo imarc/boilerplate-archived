@@ -216,12 +216,12 @@ Documentation for Boilerplate is generated using [SassDoc](http://sassdoc.com/) 
 sassdoc folder or [viewed online](http://imarc.github.io/boilerplate/sassdoc/).
 
 We should update the documentation and commit it back when we make significant changes to our components
-especially so our documentation isn't too far behind.
+especially so our documentation isn’t too far behind.
 
 
 ### Updating the Docs
 
-You can regeneration the documentation by running
+You can regenerate the documentation by running
 
     npm docs
 
