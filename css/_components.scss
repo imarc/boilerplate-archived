@@ -493,7 +493,7 @@
 ///
 /// @example markup HTML
 ///    <div class="features">
-///        <div>
+///        <div class="feature">
 ///            <div class="icon"><img src="" alt=""></div>
 ///            <h4></h4>
 ///            <p></p>
@@ -1273,20 +1273,22 @@
 /// @example markup HTML
 ///    <div class="tiles">
 ///        <div class="tile">
-///            <h4>One Great Headline</h4>
-///            <p>Lorem ipsum dolor</p>
+///            <div>
+///                <h4>One Great Headline</h4>
+///                <p>Lorem ipsum dolor</p>
+///            </div>
 ///        </div>
 ///        <div class="tile">
-///            <h4>One Great Headline</h4>
-///            <p>Lorem ipsum dolor</p>
+///            <div>
+///                <h4>One Great Headline</h4>
+///                <p>Lorem ipsum dolor</p>
+///            </div>
 ///        </div>
 ///        <div class="tile">
-///            <h4>One Great Headline</h4>
-///            <p>Lorem ipsum dolor</p>
-///        </div>
-///        <div class="tile">
-///            <h4>One Great Headline</h4>
-///            <p>Lorem ipsum dolor</p>
+///            <div>
+///                <h4>One Great Headline</h4>
+///                <p>Lorem ipsum dolor</p>
+///            </div>
 ///        </div>
 ///    </div>
 ///

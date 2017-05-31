@@ -18,11 +18,16 @@
                         <p>
                             In order to achieve an edge-to-edge/cover effect for our video, we <code>position: absolute;</code> it within a parent container. We give it a faux-height via a padding value on this parent’s <code>::before</code> pseudo element. If you aim to have a 16:9 aspect ratio, this padding value would be 56.25% (9 / 16). Do not forget to add a <code>video</code> placeholder image that matches your desired aspect ratio. Use both .webm and .mp4 video file formats for the widest browser support.
                         </p>
+                        <p>
+                            Emmet Shorthand
+                        </p>
+                        <p>
+                            <pre><code>.backgroundvideo>(.mold>div>h1+p)+video>source[src]</code></pre>
+                        </p>
                     </div>
                 </section>
 
                 <section>
-
 
                     <!-- Begin component -->
 
