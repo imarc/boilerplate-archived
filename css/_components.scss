@@ -1298,11 +1298,13 @@
     > * {
         background-color: #EEE;
         margin-bottom: $gutter;
-        padding: 2rem;
         text-align: left;
         *:last-child {
             margin-bottom: 0;
         }
+    }
+    .tile > * {
+        padding: 2rem;
     }
     @media only screen and (min-width: $medium) {
         display: flex;

@@ -713,12 +713,15 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
 .tiles > * {
   background-color: #EEE;
   margin-bottom: 2rem;
-  padding: 2rem;
   text-align: left;
 }
 
 .tiles > * *:last-child {
   margin-bottom: 0;
+}
+
+.tiles .tile > * {
+  padding: 2rem;
 }
 
 @media only screen and (min-width: 669px) {
