@@ -12,7 +12,6 @@
     "url": "https://github.com/imarc/boilerplate/issues"
   },
   "homepage": "https://github.com/imarc/boilerplate#readme",
-  "private": true,
   "scripts": {
     "docs": "gulp docs",
     "clean": "gulp clean",
