@@ -15,13 +15,13 @@
 /// ACCORDION requires the accordion.plugin.js file. Call the ACCORDION
 /// function on your outer element (in our example we use an .accordion div).
 /// You can pass in optional plugin options. See the demo page for a list.
-/// Within the outer element class each accordion item requires a div wrapper. 
-/// Within the div wrapper there is a .header class and a .content class. 
-/// 
+/// Within the outer element class each accordion item requires a div wrapper.
+/// Within the div wrapper there is a .header class and a .content class.
+///
 ///
 ///
 /// @emmet .accordion>div>(.header{header}+.content>{lorem ipsum})
-/// @demo  components/accordion.html
+/// @demo  demo/accordion.html
 ///
 /// @example markup HTML
 ///   <div class="accordion">
@@ -93,13 +93,13 @@
 
 
 ///
-/// BACKGROUND VIDEO plays a video (without sound) in the background of an element. 
+/// BACKGROUND VIDEO plays a video (without sound) in the background of an element.
 /// Increasing the parent’s ::before padding results in a larger height.
 ///
 ///
 ///
 /// @emmet .backgroundvideo>(.mold>div>h1+p)+video>source[src]
-/// @demo components/background-video.html
+/// @demo demo/background-video.html
 ///
 /// @example markup HTML
 ///    <div class="backgroundvideo">
@@ -156,7 +156,7 @@
 ///
 ///
 /// @emmet nav.breadcrumbs>ul>li>a+li.active>a
-/// @demo components/breadcrumbs.html
+/// @demo demo/breadcrumbs.html
 ///
 /// @example markup HTML
 ///    <nav class="breadcrumbs">
@@ -207,7 +207,7 @@
 ///
 ///
 /// @emmet .carousel>div*3>h2+p
-/// @demo components/carousel.html
+/// @demo demo/carousel.html
 ///
 /// @example markup HTML
 ///    <div class="carousel">
@@ -244,7 +244,7 @@
 ///
 ///
 /// @emmet .columns>div+(hr+div)*2
-/// @demo components/columns.html
+/// @demo demo/columns.html
 ///
 /// @example markup HTML
 ///     <div class="columns">
@@ -282,12 +282,12 @@
 
 
 ///
-/// The DOSSIER mixin displays an individual’s biography and photograph. 
-/// If the photo portion is omitted, the biography element flexes to 
+/// The DOSSIER mixin displays an individual’s biography and photograph.
+/// If the photo portion is omitted, the biography element flexes to
 /// fill the space.
 ///
 /// @emmet .dossier>div>(.photo>img^.bio>h2{Lorem Ipsum}+p.title{Vice President}+p{Lorem20})
-/// @demo components/dossier.html
+/// @demo demo/dossier.html
 ///
 /// @example markup HTML
 ///        <div class="dossier">
@@ -357,7 +357,7 @@
 /// is called from the nav.primary element, not a list item.
 ///
 /// @emmet nav.primary>ul>li>a{link name}+.dropdown>>ul>li>(a{link name})*3
-/// @demo components/dropdown-simple.html
+/// @demo demo/dropdown-simple.html
 ///
 /// @example markup HTML
 ///     <nav class="primary">
@@ -427,13 +427,13 @@
 
 ///
 /// The DROPDOWN (mega) mixin allows for full-width mega dropdown
-/// menus. Call this mixin on a list item, not on nav.primary. 
-/// Note that the simple dropdown component is a dependency of 
-/// DROPDOWN (mega). The mega dropdown is positioned to header.primary 
+/// menus. Call this mixin on a list item, not on nav.primary.
+/// Note that the simple dropdown component is a dependency of
+/// DROPDOWN (mega). The mega dropdown is positioned to header.primary
 /// instead of its parent list item.
 ///
 /// @emmet nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
-/// @demo components/dropdown-mega.html
+/// @demo demo/dropdown-mega.html
 ///
 /// @example markup HTML
 ///     <nav class="primary">
@@ -489,7 +489,7 @@
 /// `$gutter` variable to pass a preferred gutter width.
 ///
 /// @emmet .features>(div>(.icon>img)+h4+p+a)*3
-/// @demo components/features.html
+/// @demo demo/features.html
 ///
 /// @example markup HTML
 ///    <div class="features">
@@ -548,7 +548,7 @@
 /// Remove the search form elements for a simple list.
 ///
 /// @emmet .listing>(form>.search>(.text>label+input^.submit>label+input[type="submit"]))+p.guide{Showing 10 of 20}+ul>li>a>h2{Listing headline}+a.meta+div.summary>p{Lorem Ipsum}
-/// @demo components/listing.html
+/// @demo demo/listing.html
 ///
 ///
 /// @example markup HTML
@@ -660,12 +660,12 @@
 
 
 ///
-/// The LOGIN mixin is a basic implementation of a login module that includes 
+/// The LOGIN mixin is a basic implementation of a login module that includes
 /// an email input, password input, submit button, forgot password link, and
 /// remember me checkbox.
 ///
 /// @emmet .login>form>(div.text>label{Username}+input)+(div.password>label{Password}+input[type="password"])+div.actions>(.submit>button{Login})+(label>input[type="hidden"]+input[type="checkbox"])+a{Forgot Your Password?}
-/// @demo components/login.html
+/// @demo demo/login.html
 ///
 /// @example markup HTML
 ///       <div class="login">
@@ -738,7 +738,7 @@
 /// The mobile navigation mixin is missing any kind of sass, docblock style
 /// documentation within _components.scss. Sorry.
 ///
-/// @demo components/mobile-navigation.html
+/// @demo demo/mobile-navigation.html
 ///
 
 @mixin mobileNavigation() {
@@ -817,7 +817,7 @@
 /// in conjunction of a LISTING component.
 ///
 /// @emmet nav.pagination>ul>(li.previous>a{Previous})+(li*2>a)+(li.active>a)+(li*2>a)+li.next>a{Next}
-/// @demo components/pagination.html
+/// @demo demo/pagination.html
 ///
 /// @example markup HTML
 ///    <nav class="pagination">
@@ -906,7 +906,7 @@
 /// might find as part of an ecommerce or registration process.
 ///
 /// @emmet nav.progress>ul>(li.complete*2>a)+(li.active>a)+(li*2>a)
-/// @demo components/progress.html
+/// @demo demo/progress.html
 ///
 /// @example markup HTML
 ///    <nav class="progress">
@@ -1045,8 +1045,8 @@
 
 
 ///
-/// The STICKY-HEADER mixin works with (sticky-header.plugin.js) to hide 
-/// a site’s header.primary element as you scroll down page. The element 
+/// The STICKY-HEADER mixin works with (sticky-header.plugin.js) to hide
+/// a site’s header.primary element as you scroll down page. The element
 /// reappears when the user scrolls up the page. This is
 /// responsive as the "top" value is dynamically set in the
 /// js based on the height of the header. Top padding is also added
@@ -1054,7 +1054,7 @@
 /// content.
 ///
 /// @emmet header.primary
-/// @demo components/sticky-header.html
+/// @demo demo/sticky-header.html
 ///
 
 @mixin sticky-header() {
@@ -1071,7 +1071,7 @@
 /// associated tab navigation.
 ///
 /// @emmet .tabs>(nav>ul>li*4)>.panel.active+(.panel*3)
-/// @demo components/tabs.html
+/// @demo demo/tabs.html
 ///
 /// @example markup HTML
 ///    <div class="tabs">
@@ -1084,21 +1084,21 @@
 ///        </nav>
 ///        <div class="panel active">
 ///            <p>
-///                The New England Patriots are a professional American 
-///                football team based in the Greater Boston area. 
+///                The New England Patriots are a professional American
+///                football team based in the Greater Boston area.
 ///            </p>
 ///            <p>
-///                Since the arrival of head coach Bill Belichick in 2000, 
+///                Since the arrival of head coach Bill Belichick in 2000,
 ///                the Patriots have become one of the most successful teams.
 ///            </p>
 ///        </div>
 ///        <div class="panel">
 ///            <p>
-///                 The Boston Bruins are an American professional 
+///                 The Boston Bruins are an American professional
 ///                 ice hockey team based in Boston, Massachusetts.
 ///            </p>
 ///            <p>
-///                The Bruins have won six Stanley Cup championships, 
+///                The Bruins have won six Stanley Cup championships,
 ///                tied for fifth most of all-time with the Blackhawks.
 ///            </p>
 ///        </div>
@@ -1161,7 +1161,7 @@
 /// Add in an optional image wrapped in an element with a class of .asset.
 ///
 /// @emmet div.testimonial.asset>div.container>(div>img)+blockquote+p
-/// @demo components/testimonial.html
+/// @demo demo/testimonial.html
 ///
 /// @param {measure} $gutterWidth [4rem] - gutter between asset and quote
 ///
@@ -1268,7 +1268,7 @@
 /// two-up your items at the medium breakpoint, and stack them at the small breakpoint.
 ///
 /// @emmet .tiles>(.tile>p{Lorem Ipsum})*2
-/// @demo components/tiles.html
+/// @demo demo/tiles.html
 ///
 /// @example markup HTML
 ///    <div class="tiles">

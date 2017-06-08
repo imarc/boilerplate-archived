@@ -24,6 +24,7 @@ var options = {
     sassOutput: './css',
 
     docsInput: './css/_components.scss',
+    docsOutput: './components',
 
     sassCompiler: {
         errLogToConsole: true,
@@ -80,7 +81,7 @@ gulp.task('serve', ['watch'], function () {
     browsersync.init(options.browserSync);
 
     gulp.watch([
-        "./components/**/*",
+        "./demo/**/*",
         "./*.html",
         "./js/**/*.js",
         "./img/**/*"
@@ -93,6 +94,7 @@ gulp.task('serve', ['watch'], function () {
 gulp.task('docs', function () {
     return gulp.src(options.docsInput)
         .pipe(sassdoc({
+            dest: options.docsOutput,
             theme: 'boilerplate',
         }));
 });
