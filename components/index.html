@@ -592,7 +592,59 @@
             transform: translateX(100%);
         }
     }
- }" data-collapsed="@mixin mobileNavigation() { ... }"><code>@mixin mobileNavigation() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The mobile navigation mixin is missing any kind of sass, docblock style documentation within _components.scss. Sorry.</p></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><p class="demo"><a class="button" href="../demo/mobile-navigation.html">View Demo</a></p></section><section class="main__item container item" id="undefined-mixin-pagination"><h3 class="item__heading"><a class="item__name" href="#mixin-pagination">pagination</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin pagination() { 
+ }" data-collapsed="@mixin mobileNavigation() { ... }"><code>@mixin mobileNavigation() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>Imarc&#39;s Boilerplate has mobile navigation baked in. Mobile navigation menu items share the same mark up as the desktop navigation items. So you can easily abstract menu items into a partial view and include it in both containers.</p><table><thead><tr><th style="text-align:left">Option</th><th style="text-align:left">Type</th><th style="text-align:left">Default</th><th style="text-align:left">Description</th></tr></thead><tbody><tr><td style="text-align:left">toggleClass</td><td style="text-align:left">{string}</td><td style="text-align:left">&quot;menu-toggle&quot;</td><td style="text-align:left">This is the class of the element that users will click on to open up the menu.</td></tr><tr><td style="text-align:left">wrapperClass</td><td style="text-align:left">string</td><td style="text-align:left">&quot;wrapper&quot;</td><td style="text-align:left">This is the wrapper class for the entire site. If for some reason this changes, please change this option to match.</td></tr><tr><td style="text-align:left">subMenuClass</td><td style="text-align:left">string</td><td style="text-align:left">&quot;dropdown&quot;</td><td style="text-align:left">This is the class name for the submenu.</td></tr><tr><td style="text-align:left">directionFrom</td><td style="text-align:left">string</td><td style="text-align:left">&quot;left&quot;</td><td style="text-align:left">You can make the menu open up from the left or right.</td></tr><tr><td style="text-align:left">overlayCss</td><td style="text-align:left">object</td><td style="text-align:left">{ display: &quot;none&quot;, background: &quot;#000000&quot;, bottom: &quot;0%&quot;, height: &quot;100%&quot;, left: &quot;0%&quot;, opacity: &quot;.4&quot;, position: &quot;fixed&quot;, right: &quot;0%&quot;, top: &quot;0%&quot;, width: &quot;100%&quot; }</td><td style="text-align:left">These are the default styles for the overlay that get inserted.</td></tr></tbody></table></div><h3 class="item__sub-heading">Parameters</h3><p>None.</p><p class="demo"><a class="button" href="../demo/mobile-navigation.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;body&gt;
+     &lt;!-- This component requires the site to be wrapped in a wrapper class. By default this is .shell. --&gt;
+     &lt;div class=&quot;shell&quot;&gt;
+
+         &lt;header class=&quot;primary&quot;&gt;
+             &lt;div class=&quot;container&quot;&gt;
+                 &lt;div class=&quot;header-content&quot;&gt;
+                      &lt;div class=&quot;branding&quot;&gt;&lt;/div&gt;
+
+                      &lt;!-- Add an element with a class .menu-toggle. You are able to change this later if you need to. --&gt;
+                      &lt;button class=&quot;menu-toggle&quot;&gt;&lt;/button&gt;
+
+                      &lt;!-- Mobile Navigation Container  --&gt;
+                      &lt;div class=&quot;mobile&quot;&gt;
+                          &lt;div class=&quot;utilities&quot;&gt;&lt;/div&gt;
+                          &lt;nav class=&quot;primary&quot;&gt;
+                              &lt;!-- The Mobile Navigation sub menus are created for every nested .dropdown up to 3
+                                   or more levels in nav.primary. Please refer to the dropdown component on how to
+                                   structure menu items. --&gt;
+                          &lt;/nav&gt;
+                      &lt;/div&gt;
+
+                      &lt;!-- Desktop Navigation Container  --&gt;
+                      &lt;div class=&quot;desktop&quot;&gt;
+                          &lt;div class=&quot;utilities&quot;&gt;&lt;/div&gt;
+                          &lt;nav class=&quot;primary&quot;&gt;&lt;/nav&gt;
+                      &lt;/div&gt;
+                 &lt;/div&gt;
+              &lt;/div&gt;
+         &lt;/header&gt;
+
+     &lt;!-- ... rest of site---&gt;
+
+     &lt;/div&gt;
+
+ &lt;/body&gt;</code></pre></div><div class="item__example example"><div class="example__description"><p>SCSS</p></div><pre class="example__code language-css"><code>.mobile {
+    @include mobileNavigation;
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>JavaScript</p></div><pre class="example__code language-javascript"><code>/* By default, there is an overlay that gets inserted into the DOM by the library. You can change the css
+     properties for this overlay by altering the overlayCss property. */
+
+$(function () {
+    $(&#39;.mobile&#39;).mobileNavigation();
+
+    /* You can have more than one instance of this component. For example, you may want something for a slide
+        out filter. Just make sure you change the toggleClass option. */
+
+    $(&#39;.filters&#39;).mobileNavigation({
+        toggleClass: &#39;open-filter&#39;
+        overlayCss: {
+            opacity: &#39;.8&#39;
+        }}
+    });
+});</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[external]</span> <a href="/js/mobileNavigation.plugin.js"><code>mobileNavigation.plugin.js</code></a></li></ul></section><section class="main__item container item" id="undefined-mixin-pagination"><h3 class="item__heading"><a class="item__name" href="#mixin-pagination">pagination</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin pagination() { 
     display: flex;
     justify-content: center;
     ul {
