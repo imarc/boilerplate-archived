@@ -573,58 +573,70 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   position: relative;
 }
 
-.tabs nav {
-  border-bottom: 1px solid;
-}
-
-.tabs nav ul {
-  list-style: none;
-  margin-left: 20px;
-  padding: 0;
-  text-align: center;
-}
-
-.tabs nav li {
-  background-color: #CBBFB4;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+.tabs .tab {
   cursor: pointer;
-  display: inline-block;
-  margin-bottom: 0;
-  margin-right: 0.5em;
-  padding: 0.5em 1em;
-}
-
-.tabs nav li.active {
-  background-color: #FFF;
-  border: 1px solid;
-  border-bottom: none;
-  position: relative;
-}
-
-.tabs nav li.active::after {
-  background-color: #FFF;
-  bottom: -1px;
-  content: "";
-  height: 1px;
-  left: 0;
-  position: absolute;
-  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .tabs .panel {
-  display: none;
-  padding: 20px;
-}
-
-.tabs .panel.active {
-  display: inherit;
+  display: block;
+  padding: 2rem;
+  text-align: center;
 }
 
 @media only screen and (min-width: 1024px) {
-  .tabs nav ul {
-    margin-left: 20px;
+  .tabs .tab {
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 33.33%;
+  }
+  .tabs .tab.active {
+    background-color: transparent;
+    border-bottom: none;
+    font-weight: bold;
+  }
+  .tabs .tab:nth-of-type(2) {
+    left: 33.33%;
+  }
+  .tabs .tab:nth-of-type(3) {
+    left: 66.66%;
+  }
+  .tabs .panel {
+    border: 1px solid #ccc;
+    display: none;
+    padding-top: 5rem;
     text-align: left;
+  }
+  .tabs .panel.active {
+    display: inherit;
+  }
+  .tabs.side .tab {
+    background-color: transparent;
+    border: none;
+    clear: left;
+    display: block;
+    float: left;
+    left: 0;
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: left;
+    top: auto;
+    width: 33%;
+  }
+  .tabs.side .panel {
+    border: none;
+    clear: none;
+    float: right;
+    padding: 0 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 66%;
   }
 }
 
@@ -925,58 +937,70 @@ nav.tabs {
   position: relative;
 }
 
-nav.tabs nav {
-  border-bottom: 1px solid;
-}
-
-nav.tabs nav ul {
-  list-style: none;
-  margin-left: 20px;
-  padding: 0;
-  text-align: center;
-}
-
-nav.tabs nav li {
-  background-color: #CBBFB4;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
+nav.tabs .tab {
   cursor: pointer;
-  display: inline-block;
-  margin-bottom: 0;
-  margin-right: 0.5em;
-  padding: 0.5em 1em;
-}
-
-nav.tabs nav li.active {
-  background-color: #FFF;
-  border: 1px solid;
-  border-bottom: none;
-  position: relative;
-}
-
-nav.tabs nav li.active::after {
-  background-color: #FFF;
-  bottom: -1px;
-  content: "";
-  height: 1px;
-  left: 0;
-  position: absolute;
-  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 nav.tabs .panel {
-  display: none;
-  padding: 20px;
-}
-
-nav.tabs .panel.active {
-  display: inherit;
+  display: block;
+  padding: 2rem;
+  text-align: center;
 }
 
 @media only screen and (min-width: 1024px) {
-  nav.tabs nav ul {
-    margin-left: 20px;
+  nav.tabs .tab {
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 33.33%;
+  }
+  nav.tabs .tab.active {
+    background-color: transparent;
+    border-bottom: none;
+    font-weight: bold;
+  }
+  nav.tabs .tab:nth-of-type(2) {
+    left: 33.33%;
+  }
+  nav.tabs .tab:nth-of-type(3) {
+    left: 66.66%;
+  }
+  nav.tabs .panel {
+    border: 1px solid #ccc;
+    display: none;
+    padding-top: 5rem;
     text-align: left;
+  }
+  nav.tabs .panel.active {
+    display: inherit;
+  }
+  nav.tabs.side .tab {
+    background-color: transparent;
+    border: none;
+    clear: left;
+    display: block;
+    float: left;
+    left: 0;
+    margin-bottom: 2rem;
+    position: relative;
+    text-align: left;
+    top: auto;
+    width: 33%;
+  }
+  nav.tabs.side .panel {
+    border: none;
+    clear: none;
+    float: right;
+    padding: 0 1rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 66%;
   }
 }
 

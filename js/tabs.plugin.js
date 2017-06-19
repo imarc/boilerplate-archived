@@ -8,22 +8,20 @@
 
     $.fn.tabs = function() {
         this.each(function() {
-            var $nav   = $(this).find('nav');
-            var $tabs  = $nav.find('li');
-            var $panel = $(this).find('.panel');
+            var $tabs  = $(this).find('.tab');
+            var $panels = $(this).find('.panel');
 
             $tabs.click(function() {
                 var $this        = $(this);
-                var $i           = $this.index();
-                var $activePanel = $panel.eq($i);
+                var $activePanel = $panels.eq($tabs.index($this));
 
-                $panel.not($activePanel).removeClass('active');
+                $panels.removeClass('active');
                 $activePanel.addClass('active');
 
-                $this.siblings('li').removeClass('active');
+                $tabs.removeClass('active');
                 $this.addClass('active');
             });
         });
     };
-    
+
 })(jQuery);
