@@ -34,6 +34,7 @@
                                 <img src="img/logo-boilerplate.png" alt="Imarc Boilerplate">
                             </a>
                         </div>
+                        <button class="menu-toggle"><i class="fa fa-bars"></i></button>
                         <div class="desktop">
                             <div class="utilities">
                                 <nav class="utility">
@@ -119,6 +120,73 @@
                                     </li>
                                 </ul>
                             </nav>
+                        </div>
+                        <div class="mobile">
+                            <nav class="primary">
+                                <ul>
+                                    <li>
+                                        <a href="">Maine</a>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li><a href="">Augusta</a></li>
+                                                <li><a href="">Eliot</a></li>
+                                                <li><a href="">Kittery</a></li>
+                                                <li><a href="">Portland</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="active">
+                                        <a href="#yup">Markup</a>
+                                    </li>
+                                    <li>
+                                        <a href="">New Hampshire</a>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li><a href="">Concord</a></li>
+                                                <li><a href="">Manchester</a></li>
+                                                <li><a href="">Portsmouth</a>
+                                                    <div class="dropdown">
+                                                        <ul>
+                                                            <li><a href="#">Main Street</a></li>
+                                                            <li><a href="#">Woodbury Ave</a></li>
+                                                        </ul>
+                                                    </div>
+                                                </li>
+                                                <li><a href="">Hampton</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="">Vermont</a>
+                                        <div class="dropdown">
+                                            <ul>
+                                                <li><a href="">Montpelier</a></li>
+                                                <li><a href="">Burlington</a></li>
+                                                <li><a href="">Killington</a></li>
+                                                <li><a href="">St. Johnsbury</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="utilities">
+                                <nav class="utility">
+                                    <ul>
+                                        <li><a href="">Careers</a></li>
+                                        <li><a href="">Legal</a></li>
+                                        <li><a href="">Log In</a></li>
+                                    </ul>
+                                </nav>
+                                <form class="search" method="post">
+                                    <div class="text">
+                                        <label for="search">Search the website</label>
+                                        <input id="search" placeholder="Search the website" type="text" />
+                                    </div>
+                                    <div class="submit">
+                                        <input type="submit" value="Search" />
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -550,6 +618,7 @@
                 $('header.primary.sticky').stickyHeader();
                 $('.search-drawer').searchDrawer();
                 $('nav.primary').dropdown();
+                $('.mobile').mobileNavigation();
             });
         </script>
     </body>
