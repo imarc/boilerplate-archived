@@ -735,15 +735,9 @@
 
 ///
 /// Imarc's Boilerplate has mobile navigation baked in. Mobile navigation menu items share the same mark up as the
-/// desktop navigation items. So you can easily abstract menu items into a partial view and include it in both containers.
+/// desktop navigation items. So you can easily abstract menu items into a partial view and include it into both containers.
 ///
-/// | Option | Type | Default | Description |
-/// | :--- | :--- | :--- | :--- |
-/// |  toggleClass  |  {string} | "menu-toggle" | This is the class of the element that users will click on to open up the menu. |
-/// |  wrapperClass  |  string | "wrapper" | This is the wrapper class for the entire site. If for some reason this changes, please change this option to match. |
-/// |  subMenuClass  |  string | "dropdown" | This is the class name for the submenu. |
-/// |  directionFrom  |  string | "left" | You can make the menu open up from the left or right. |
-/// |  overlayCss  |  object | { display: "none",  background: "#000000", bottom: "0%", height: "100%", left: "0%", opacity: ".4", position: "fixed", right: "0%", top: "0%", width: "100%" } | These are the default styles for the overlay that get inserted. |
+///
 ///
 /// @require mobileNavigation.plugin.js </js/mobileNavigation.plugin.js>
 ///
@@ -760,22 +754,25 @@
 ///                          <div class="branding"></div>
 ///
 ///                          <!-- Add an element with a class .menu-toggle. You are able to change this later if you need to. -->
+///
 ///                          <button class="menu-toggle"></button>
 ///
 ///                          <!-- Mobile Navigation Container  -->
+///
 ///                          <div class="mobile">
-///                              <div class="utilities"></div>
-///                              <nav class="primary">
+///                              <div class="utilities">...</div>
+///                              <nav class="primary">...</nav>
+///
 ///                                  <!-- The Mobile Navigation sub menus are created for every nested .dropdown up to 3
 ///                                       or more levels in nav.primary. Please refer to the dropdown component on how to
 ///                                       structure menu items. -->
-///                              </nav>
 ///                          </div>
 ///
 ///                          <!-- Desktop Navigation Container  -->
+///
 ///                          <div class="desktop">
-///                              <div class="utilities"></div>
-///                              <nav class="primary"></nav>
+///                              <div class="utilities">...</div>
+///                              <nav class="primary">...</nav>
 ///                          </div>
 ///                     </div>
 ///                  </div>
@@ -793,11 +790,50 @@
 ///     }
 ///
 /// @example javascript JavaScript
-///     /* By default, there is an overlay that gets inserted into the DOM by the library. You can change the css
-///          properties for this overlay by altering the overlayCss property. */
+///
+///     /**
+///      * Default Options
+///      *
+///      */
+///
+///     {
+///            toggleClass: "menu-toggle",  // This is the class of the element that users will click on to open up the menu.
+///            wrapperClass: "shell",       // This is the wrapper class for the entire site. If for some reason this changes, please change this option to match.
+///            subMenuClass: "dropdown",    // This is the class name for the submenu.
+///            directionFrom: "left",       // You can make the menu open up from the left or right.
+///            overlayCss: {                // By default, there is an overlay that gets inserted into the DOM by the library.
+///                display:"none",
+///                background:"#000000",
+///                bottom:"0%",
+///                height:"100%",
+///                left:"0%",
+///                opacity:".4",
+///                position:"fixed",
+///                right:"0%",
+///                top:"0%",
+///                width:"100%"
+///            }
+///     }
+///
+///     /**
+///      * Methods
+///      *
+///      */
+///
+///     closeAll | Close the entire menu. You can bind this to custom close buttons or trigger it programmatically
+///
+///     /**
+///      * Example
+///      *
+///      */
 ///
 ///     $(function () {
+///
 ///         $('.mobile').mobileNavigation();
+///
+///         $('.toggle').on('click', function() {
+///             $('.mobile').closeAll();
+///         }
 ///
 ///         /* You can have more than one instance of this component. For example, you may want something for a slide
 ///             out filter. Just make sure you change the toggleClass option. */
@@ -806,7 +842,8 @@
 ///             toggleClass: 'open-filter'
 ///             overlayCss: {
 ///                 opacity: '.8'
-///             }}
+///             }
+///          }
 ///         });
 ///     });
 
