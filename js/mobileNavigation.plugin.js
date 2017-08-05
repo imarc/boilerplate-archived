@@ -308,9 +308,3 @@
     };
 
 })(jQuery);
-
-$(function() {
-    // Mobile Navigation
-    $('.mobile').mobileNavigation();
-
-});
