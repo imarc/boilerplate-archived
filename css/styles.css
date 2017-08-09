@@ -5,6 +5,8 @@
 
 .accordion > div.open .header::after {
   font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -15,6 +17,8 @@
 
 .accordion > div.close .header::after {
   font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -461,6 +465,8 @@ nav.pagination li.disabled a {
 
 nav.pagination li.previous a::before {
   font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -471,6 +477,8 @@ nav.pagination li.previous a::before {
 
 nav.pagination li.next a::before {
   font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -986,6 +994,8 @@ nav.breadcrumbs li:not(:last-child) a {
 
 nav.breadcrumbs li:not(:last-child) a::after {
   font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -1302,7 +1312,6 @@ footer.primary .branding a {
 
 footer.primary a {
   color: #0C96DD;
-  display: inline-block;
 }
 
 footer.primary a:hover {
@@ -1313,10 +1322,6 @@ footer.primary nav ul {
   justify-content: center;
   margin-bottom: 2rem;
   text-align: center;
-}
-
-footer.primary .social a {
-  color: #FFF;
 }
 
 footer.primary .legal {
@@ -1345,25 +1350,87 @@ footer.primary .legal a {
 
 .social li {
   display: inline-block;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
+  height: 2em;
+  line-height: 2em;
   margin-bottom: 0;
-  margin-right: 0.4rem;
+  margin-left: 0.5em;
+  position: relative;
+  vertical-align: bottom;
+  width: 2em;
 }
 
-.social .facebook a {
-  color: #3664A2;
+.social li:first-child {
+  margin-left: 0;
 }
 
-.social .linkedin a {
-  color: #0077B5;
+.social li.facebook a {
+  background-color: #3664A2;
 }
 
-.social .twitter a {
-  color: #55ACEE;
+.social li.facebook a::before {
+  font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
 }
 
-.social a:hover {
-  opacity: 0.7;
+.social li.twitter a {
+  background-color: #55ACEE;
+}
+
+.social li.twitter a::before {
+  font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+}
+
+.social li.linkedin a {
+  background-color: #0077B5;
+}
+
+.social li.linkedin a::before {
+  font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+  content: "";
+}
+
+.social li a {
+  border-radius: 50%;
+  color: #FFF;
+  display: block;
+  height: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.social li a::before {
+  display: block;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+
+.social li a:hover {
+  color: #222;
 }
 
 h1,
@@ -1683,6 +1750,8 @@ input[type="submit"][disabled] {
 
 .thumbs-up::before {
   font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -1710,6 +1779,8 @@ input[type="submit"][disabled] {
 
 .success::before {
   font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -1756,6 +1827,8 @@ input[type="submit"][disabled] {
 
 .info::before {
   font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -1794,6 +1867,8 @@ input[type="submit"][disabled] {
 
 .error::before {
   font: normal normal normal 1em / 1 FontAwesome;
+  font-size: inherit;
+  line-height: inherit;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;

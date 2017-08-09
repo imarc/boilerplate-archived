@@ -160,6 +160,8 @@ $large: 1024px;
 
 @mixin fontawesome($character: "") {
     font: normal normal normal 1em unquote("/") 1 FontAwesome;
+    font-size: inherit;
+    line-height: inherit;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     speak: none;
@@ -628,7 +630,6 @@ footer.primary {
     }
     a {
         color: $link;
-        display: inline-block;
         &:hover {
             color: darken($link, 10%);
         }
@@ -637,9 +638,6 @@ footer.primary {
         justify-content: center;
         margin-bottom: 2rem;
         text-align: center;
-    }
-    .social a {
-        color: #FFF;
     }
     .legal {
         text-align: center;
@@ -659,21 +657,53 @@ footer.primary {
     margin-bottom: 1rem;
     li {
         display: inline-block;
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        height: 2em;
+        line-height: 2em;
         margin-bottom: 0;
-        margin-right: 0.4rem;
+        margin-left: 0.5em;
+        position: relative;
+        vertical-align: bottom;
+        width: 2em;
     }
-    .facebook a {
-        color: $facebook;
+    li:first-child {
+        margin-left: 0;
     }
-    .linkedin a {
-        color: $linkedin;
+    li.facebook a {
+        background-color: $facebook;
+        &::before {
+            @include fontawesome('\f09a');
+        }
     }
-    .twitter a {
-        color: $twitter;
+    li.twitter a {
+        background-color: $twitter;
+        &::before {
+            @include fontawesome('\f099');
+        }
     }
-    a:hover {
-        opacity: 0.7;
+    li.linkedin a {
+        background-color: $linkedin;
+        &::before {
+            @include fontawesome('\f0e1');
+        }
+    }
+    li a {
+        border-radius: 50%;
+        color: #FFF;
+        display: block;
+        height: 100%;
+        position: relative;
+        text-align: center;
+    }
+    li a::before {
+        display: block;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+    li a:hover {
+        color: #222;
     }
 }
 
