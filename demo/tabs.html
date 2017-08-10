@@ -21,7 +21,7 @@
 
                         <h2>Emmet shorthand</h2>
                         <p>
-                            <pre><code>.tabs>.tab+.panel+.tab+.panel+.tab+.panel</code></pre>
+                            <pre><code>.tabs>(.tab.active+.panel.active)+(.tab+.panel)*2</code></pre>
                         </p>
                    </div>
                 </section>
@@ -70,9 +70,9 @@
                                 This example show the tabs component with a side navigation instead of across the top.
                             </p>
                             <h2>Emmet shorthand</h2>
-                        <p>
-                            <pre><code>.tabs.side>.tab+.panel+.tab+.panel+.tab+.panel</code></pre>
-                        </p>
+                            <p>
+                                <pre><code>.tabs.side>.tab.active+.panel.active+(.tab+.panel)*3</code></pre>
+                            </p>
                         </div>
                     </section>
                     <section>
