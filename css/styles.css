@@ -575,6 +575,8 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
 
 .tabs .tab {
   cursor: pointer;
+  font-weight: bold;
+  margin: 0;
   padding: 1rem;
   text-align: center;
   text-transform: uppercase;
@@ -582,7 +584,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
 
 .tabs .panel {
   display: block;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   text-align: center;
 }
 
@@ -590,6 +592,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   .tabs .tab {
     background-color: #ccc;
     border: 1px solid #ccc;
+    font-weight: normal;
     left: 0;
     position: absolute;
     top: 0;
@@ -609,7 +612,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   .tabs .panel {
     border: 1px solid #ccc;
     display: none;
-    padding-top: 5rem;
+    padding: 5rem 2rem 2rem 2rem;
     text-align: left;
   }
   .tabs .panel.active {
@@ -939,6 +942,8 @@ nav.tabs {
 
 nav.tabs .tab {
   cursor: pointer;
+  font-weight: bold;
+  margin: 0;
   padding: 1rem;
   text-align: center;
   text-transform: uppercase;
@@ -946,7 +951,7 @@ nav.tabs .tab {
 
 nav.tabs .panel {
   display: block;
-  padding: 2rem;
+  padding: 0 2rem 2rem 2rem;
   text-align: center;
 }
 
@@ -954,6 +959,7 @@ nav.tabs .panel {
   nav.tabs .tab {
     background-color: #ccc;
     border: 1px solid #ccc;
+    font-weight: normal;
     left: 0;
     position: absolute;
     top: 0;
@@ -973,7 +979,7 @@ nav.tabs .panel {
   nav.tabs .panel {
     border: 1px solid #ccc;
     display: none;
-    padding-top: 5rem;
+    padding: 5rem 2rem 2rem 2rem;
     text-align: left;
   }
   nav.tabs .panel.active {

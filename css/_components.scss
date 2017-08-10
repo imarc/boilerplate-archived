@@ -1068,33 +1068,53 @@
 
 ///
 /// TABS allows for the showing and hiding of panels via an
-/// associated tab navigation. Use any markup for the tabs (in this example we use p
-/// tags). Update the $width variable depending on number of tabs.
+/// associated tab navigation. Use any markup for the tabs (in this example we use p tags). This component requires that you update the $width variable depending on number of tabs.
 
-/// There's also an option to add an optional class, "side", for the tabs to show up next
-/// to the panels on desktop instead of above.
+/// There's also an option to add an optional class, "side", for the tabs to show up next to the panels on desktop instead of above. This variation does not require the $width variable.
 ///
 /// @emmet .tabs>.tab+.panel+.tab+.panel+.tab+.panel
 /// @demo demo/tabs.html
 ///
+/// @example markup HTML
+///    <section class="tabs">
+//         <p class="tab active">
+//             Patriots
+//         </p>
+//         <div class="panel active">
+//             <p>
+//              Patriots tab content
+//             </p>
+//         </div>
+//         <p class="tab">
+//             Bruins
+//         </p>
+//         <div class="panel">
+//             <p>
+//                  Bruins tab content
+//             </p>
+//         </div>
+//     </section>
 
 @mixin tabs($width: 33.33%) {
     position: relative;
     .tab {
         cursor: pointer;
+        font-weight: bold;
+        margin: 0;
         padding: 1rem;
         text-align: center;
         text-transform: uppercase;
     }
     .panel {
         display: block;
-        padding: 2rem;
+        padding: 0 2rem 2rem 2rem;
         text-align: center;
     }
     @media only screen and (min-width: $large) {
         .tab {
             background-color: #ccc;
             border: 1px solid #ccc;
+            font-weight: normal;
             left: 0;
             position: absolute;
             top: 0;
@@ -1114,7 +1134,7 @@
         .panel {
             border: 1px solid #ccc;
             display: none;
-            padding-top: 5rem;
+            padding: 5rem 2rem 2rem 2rem;
             text-align: left;
             &.active {
                 display: inherit;
