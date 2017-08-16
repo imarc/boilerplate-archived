@@ -1068,26 +1068,26 @@
 
 ///
 /// TABS allows for the showing and hiding of panels via an
-/// associated tab navigation. Use any markup for the tabs (in this example we use p tags). This component requires that you update the $width variable depending on number of tabs.
+/// associated tab navigation. Use any markup for the tabs (in this example we use p tags). This component requires that you update the $width variable depending on number of tabs, which sets the flex-basis for the tabs.
 
-/// There's also an option to add an optional class, "side", for the tabs to show up next to the panels on desktop instead of above. This variation does not require the $width variable.
+/// There's also an option to add an optional class, "vertical", for the tabs to show up next to the panels on desktop instead of above. This variation does not require the $width variable, but does require the $height variable be set so the tabs know when to wrap.
 ///
 /// @emmet .tabs>.tab+.panel+.tab+.panel+.tab+.panel
 /// @demo demo/tabs.html
 ///
 /// @example markup HTML
 ///    <section class="tabs">
-//         <p class="tab active">
+//         <span class="tab active">
 //             Patriots
-//         </p>
+//         </span>
 //         <div class="panel active">
 //             <p>
 //              Patriots tab content
 //             </p>
 //         </div>
-//         <p class="tab">
+//         <span class="tab">
 //             Bruins
-//         </p>
+//         </span>
 //         <div class="panel">
 //             <p>
 //                  Bruins tab content
@@ -1095,7 +1095,9 @@
 //         </div>
 //     </section>
 
-@mixin tabs($width: 33.33%) {
+@mixin tabs($width: 33.33%, $height: 20rem) {
+    display: flex;
+    flex-flow: column nowrap;
     position: relative;
     .tab {
         cursor: pointer;
@@ -1111,57 +1113,43 @@
         text-align: center;
     }
     @media only screen and (min-width: $large) {
+        flex-flow: row wrap;
         .tab {
             background-color: #ccc;
             border: 1px solid #ccc;
             font-weight: normal;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: $width;
+            flex-basis: $width;
+            order: -10;
             &.active {
                 background-color: transparent;
                 border-bottom: none;
                 font-weight: bold;
             }
         }
-        .tab:nth-of-type(2) {
-            left: $width;
-        }
-        .tab:nth-of-type(3) {
-            left: $width * 2;
-        }
         .panel {
             border: 1px solid #ccc;
+            border-top: none;
             display: none;
             padding: 5rem 2rem 2rem 2rem;
             text-align: left;
             &.active {
-                display: inherit;
+                display: block;
             }
         }
-        &.side {
+        &.vertical {
+            flex-flow: column wrap;
+            height: $height;
             .tab {
                 background-color: transparent;
                 border: none;
-                clear: left;
-                display: block;
-                float: left;
-                left: 0;
+                flex-basis: auto;
                 margin-bottom: 2rem;
                 position: relative;
                 text-align: left;
-                top: auto;
-                width: 33%;
             }
             .panel {
                 border: none;
-                clear: none;
-                float: right;
                 padding: 0 1rem;
-                position: absolute;
-                right: 0;
-                top: 0;
                 width: 66%;
             }
         }

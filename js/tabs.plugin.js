@@ -15,10 +15,10 @@
                 var $this        = $(this);
                 var $activePanel = $panels.eq($tabs.index($this));
 
-                $panels.removeClass('active');
+                $panels.not($activePanel).removeClass('active');
                 $activePanel.addClass('active');
 
-                $tabs.removeClass('active');
+                $tabs.not($this).removeClass('active');
                 $this.addClass('active');
             });
         });

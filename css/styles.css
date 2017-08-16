@@ -570,6 +570,8 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
 }
 
 .tabs {
+  display: flex;
+  flex-flow: column nowrap;
   position: relative;
 }
 
@@ -589,56 +591,46 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
 }
 
 @media only screen and (min-width: 1024px) {
+  .tabs {
+    flex-flow: row wrap;
+  }
   .tabs .tab {
     background-color: #ccc;
     border: 1px solid #ccc;
     font-weight: normal;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 33.33%;
+    flex-basis: 33.33%;
+    order: -10;
   }
   .tabs .tab.active {
     background-color: transparent;
     border-bottom: none;
     font-weight: bold;
   }
-  .tabs .tab:nth-of-type(2) {
-    left: 33.33%;
-  }
-  .tabs .tab:nth-of-type(3) {
-    left: 66.66%;
-  }
   .tabs .panel {
     border: 1px solid #ccc;
+    border-top: none;
     display: none;
     padding: 5rem 2rem 2rem 2rem;
     text-align: left;
   }
   .tabs .panel.active {
-    display: inherit;
+    display: block;
   }
-  .tabs.side .tab {
+  .tabs.vertical {
+    flex-flow: column wrap;
+    height: 20rem;
+  }
+  .tabs.vertical .tab {
     background-color: transparent;
     border: none;
-    clear: left;
-    display: block;
-    float: left;
-    left: 0;
+    flex-basis: auto;
     margin-bottom: 2rem;
     position: relative;
     text-align: left;
-    top: auto;
-    width: 33%;
   }
-  .tabs.side .panel {
+  .tabs.vertical .panel {
     border: none;
-    clear: none;
-    float: right;
     padding: 0 1rem;
-    position: absolute;
-    right: 0;
-    top: 0;
     width: 66%;
   }
 }
@@ -937,6 +929,8 @@ nav li.active:hover a {
 }
 
 nav.tabs {
+  display: flex;
+  flex-flow: column nowrap;
   position: relative;
 }
 
@@ -956,56 +950,46 @@ nav.tabs .panel {
 }
 
 @media only screen and (min-width: 1024px) {
+  nav.tabs {
+    flex-flow: row wrap;
+  }
   nav.tabs .tab {
     background-color: #ccc;
     border: 1px solid #ccc;
     font-weight: normal;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 33.33%;
+    flex-basis: 33.33%;
+    order: -10;
   }
   nav.tabs .tab.active {
     background-color: transparent;
     border-bottom: none;
     font-weight: bold;
   }
-  nav.tabs .tab:nth-of-type(2) {
-    left: 33.33%;
-  }
-  nav.tabs .tab:nth-of-type(3) {
-    left: 66.66%;
-  }
   nav.tabs .panel {
     border: 1px solid #ccc;
+    border-top: none;
     display: none;
     padding: 5rem 2rem 2rem 2rem;
     text-align: left;
   }
   nav.tabs .panel.active {
-    display: inherit;
+    display: block;
   }
-  nav.tabs.side .tab {
+  nav.tabs.vertical {
+    flex-flow: column wrap;
+    height: 20rem;
+  }
+  nav.tabs.vertical .tab {
     background-color: transparent;
     border: none;
-    clear: left;
-    display: block;
-    float: left;
-    left: 0;
+    flex-basis: auto;
     margin-bottom: 2rem;
     position: relative;
     text-align: left;
-    top: auto;
-    width: 33%;
   }
-  nav.tabs.side .panel {
+  nav.tabs.vertical .panel {
     border: none;
-    clear: none;
-    float: right;
     padding: 0 1rem;
-    position: absolute;
-    right: 0;
-    top: 0;
     width: 66%;
   }
 }
