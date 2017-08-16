@@ -552,12 +552,12 @@ $large: 1024px;
 @mixin modal {
     .mfp-close {
         &:hover {
-            background: none;
+            background-color: none;
         }
     }
 
     .inline-modal {
-        background: #FFF;
+        background-color: #FFF;
         margin: 1rem auto;
         max-width: 700px;
         position: relative;
