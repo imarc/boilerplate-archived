@@ -274,6 +274,37 @@
   }
 }
 
+.grid > * {
+  margin-bottom: 1rem;
+}
+
+.grid > * *:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 669px) {
+  .grid {
+    align-items: stretch;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  .grid > * {
+    flex-basis: calc(50% - 1rem);
+    flex-shrink: 0;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .grid > * {
+    flex-basis: calc((100% / 3) - (1rem));
+  }
+}
+
 header.primary.sticky {
   position: fixed;
   top: 0;

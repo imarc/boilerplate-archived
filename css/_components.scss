@@ -544,6 +544,71 @@
 
 
 ///
+/// GRID allows for the quick creation of column-based grid that can wrap or nowrap. It is lighter
+/// than the FEATURES or TILES mixin in that it contains no default styling on its contents.
+///
+/// @emmet .grid>(div>p)*3
+/// @demo demo/grid.html
+///
+///
+/// @example markup HTML
+///    <div class="grid">
+///        <div>
+///            <p>
+///                Hello world
+///            </p>
+///         </div>
+///        <div>
+///            <p>
+///                Hello world
+///            </p>
+///         </div>
+///        <div>
+///            <p>
+///                Hello world
+///            </p>
+///         </div>
+///     </div>
+///
+/// @param {direction} $align  [stretch] - align-items property
+/// @param {number}  $columns [3] - number of columns while min-width is $large
+/// @param {direction}  $flow [row nowrap] - number of columns while min-width is $large
+/// @param {measure}  $gutter [1rem] - gutter between grid items
+/// @param {direction}  $justify [space-between] - justify-content property
+
+
+@mixin grid($align: stretch, $columns: 3, $flow: row nowrap, $gutter: 1rem, $justify: space-between) {
+    > * {
+        margin-bottom: $gutter; 
+        *:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @media only screen and (min-width: $medium) {
+        align-items: $align;
+        display: flex;
+        flex-flow: $flow;
+        justify-content: $justify;
+        margin-left: -$gutter / 2;
+        margin-right: -$gutter / 2;
+        > * {
+            flex-basis: calc(50% - #{$gutter});
+            flex-shrink: 0;
+            margin-left: -$gutter / 2;
+            margin-right: -$gutter / 2;
+        }
+    }
+    @media only screen and (min-width: $large) {
+        > * {
+            flex-basis: calc((100% / #{$columns}) - (#{$gutter}));
+        }
+    }
+}
+
+
+
+
+///
 /// LISTING shows a listing of entries. It includes an optional search form with filters.
 /// Remove the search form elements for a simple list.
 ///

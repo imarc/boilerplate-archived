@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Grid Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+    </head>
+    <body>
+        <div class="torso">
+            <main>
+               <section class="intro">
+                   <div class="container">
+                        <h1>Grid</h1>
+                        <p>
+                            GRID allows for the quick creation of column-based grid that can wrap or nowrap. It is lighter than the FEATURES or TILES mixins in that its contents have no default styling.
+                        </p>
+                        <p>Emmet shorthand</p>
+                        <p>
+                            <pre><code>.grid>(div>p)*3</code></pre>
+                        </p>
+
+                        <p>Mixin usage</p>
+                        <p>
+                            <pre>
+                                <code>
+div {
+    @include grid($align: stretch, $columns: 3, $flow: row nowrap, $gutter: 1rem, $justify: space-between);
+}</code>
+                            </pre>
+                        </p>
+                   </div>
+                </section>
+                <section>
+                    <div class="container">
+
+
+                        <!-- Begin component -->
+
+                        <div class="grid">
+                            <div>
+                                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur.</p>
+                            </div>
+                            <div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, impedit!</p>
+                            </div>
+                            <div>
+                                <p>Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui.</p>
+                            </div>
+                       </div>
+
+                        <!-- /end component-->
+
+
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    </body>
+</html>
