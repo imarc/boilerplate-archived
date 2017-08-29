@@ -169,11 +169,11 @@
             }
 
             $(this)
-                .append('<button aria-label="Open this section" class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-right" aria-hidden="true"></i></button>');
+                .append('<button class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-right" aria-hidden="true"></i></button>');
 
             $(this)
                 .find('>' + subMenuClass + '> ul')
-                .prepend('<li><button aria-label="Go back" class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-left" aria-hidden="true"></i> ' + text + '</button></li>')
+                .prepend('<li><button class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-left" aria-hidden="true"></i> ' + text + '</button></li>')
 
 
         };
