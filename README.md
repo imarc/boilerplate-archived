@@ -140,7 +140,7 @@ sassdoc folder or [viewed online](http://imarc.github.io/boilerplate/sassdoc/).
 
 If you make changes to Components’ code, you can regenerate the documentation by running
 
-    npm docs
+    npm run docs
 
 
 

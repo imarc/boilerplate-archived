@@ -173,7 +173,7 @@
 
             $(this)
                 .find('>' + subMenuClass + '> ul')
-                .prepend('<li><button class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-left"></i> ' + text + '</button></li>')
+                .prepend('<li><button class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-left" aria-hidden="true"></i> ' + text + '</button></li>')
 
 
         };
