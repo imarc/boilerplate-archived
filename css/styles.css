@@ -189,6 +189,11 @@
   opacity: 1;
 }
 
+.header-content > .dropdown.init .menu > div + div,
+.mobile.init .menu > div + div {
+  display: none;
+}
+
 .header-content > .dropdown nav.utility ul li a,
 .mobile nav.utility ul li a {
   padding: 0.75rem 0;
@@ -216,6 +221,11 @@
   color: #fff;
   display: block;
   padding: 1rem 0;
+}
+
+.header-content > .dropdown ul li a > i.fa,
+.mobile ul li a > i.fa {
+  display: none;
 }
 
 .header-content > .dropdown ul li i.fa,

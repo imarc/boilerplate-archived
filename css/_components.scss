@@ -773,6 +773,9 @@
     &.init {
         display: block;
         opacity: 1;
+        .menu > div + div {
+            display: none
+        }
     }
     nav.utility {
         ul li a {
@@ -795,6 +798,9 @@
             color: #fff;
             display: block;
             padding: 1rem 0;
+        }
+        a > i.fa {
+            display: none;
         }
         i.fa {
             display: inline-block;
