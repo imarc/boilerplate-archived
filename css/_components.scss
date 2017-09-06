@@ -432,18 +432,22 @@
 /// DROPDOWN (mega). The mega dropdown is positioned to header.primary
 /// instead of its parent list item.
 ///
-/// @emmet nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
+/// @emmet nav.primary>ul>li.mega>a{link name}+.dropdown>.menu(div*3)
 /// @demo demo/dropdown-mega.html
 ///
 /// @example markup HTML
 ///     <nav class="primary">
 ///         <ul>
-///             <li>
+///             <li class="mega">
 ///                 <a href="">Maine</a>
 ///                 <div class="dropdown">
-///                     <ul>
-///                         <li><a href="">Augusta</a></li>
-///                     </ul>
+///                     <div class="menu">
+///                         <div>
+///                             <ul>
+///                                 <li><a href="">Augusta</a></li>
+///                             </ul>
+///                         </div>
+///                     </div>
 ///                 </div>
 ///             </li>
 ///         </ul>
