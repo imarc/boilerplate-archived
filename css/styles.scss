@@ -74,7 +74,7 @@ $plain-text: $charcoal;
 $meta-text: lighten($charcoal, 35%);
 $link: $brand-blue;
 $link-hover: $brand-orange;
-$border: lighten($charcoal, 80%);
+$border: lighten($charcoal, 60%);
 
 
 ///
@@ -106,7 +106,7 @@ $large: 1024px;
     display: inline-block;
     font-family: $font-stack;
     font-weight: bold;
-    padding: 0.4em 1em;
+    padding: 0.4rem 1rem;
     text-align: center;
     vertical-align: top;
 
@@ -919,7 +919,7 @@ textarea {
     display: block;
     font-family: $font-stack;
     margin: 0;
-    padding: 0.4em 0.6em;
+    padding: 0.4rem 0.6rem;
     width: 100%;
 }
 
@@ -943,9 +943,15 @@ input[type="submit"] {
     color: #4A4A4A;
 }
 
+select {
+    border: 1px solid $border;
+    height: 2.4rem;
+    width: 100%;
+}
+
 .multiple select {
-    padding-left: 5px;
-    padding-right: 10px;
+    height: auto;
+    padding: 0.5rem;
 }
 
 textarea {
