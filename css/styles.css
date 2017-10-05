@@ -361,7 +361,7 @@ header.primary.sticky {
 }
 
 .listing ul li {
-  border-top: 4px solid #e5e5e5;
+  border-top: 4px solid #b2b2b2;
   margin-bottom: 0;
   padding: 2rem 0;
 }
@@ -427,7 +427,7 @@ nav.pagination {
 }
 
 nav.pagination ul {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #b2b2b2;
   border-radius: 2px;
   display: flex;
   justify-content: center;
@@ -444,7 +444,7 @@ nav.pagination a {
 }
 
 nav.pagination li:not(:last-child) a {
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid #b2b2b2;
 }
 
 nav.pagination li.active a {
@@ -468,7 +468,7 @@ nav.pagination li.active a:hover::before, nav.pagination li.active a:hover::afte
 }
 
 nav.pagination li.disabled a {
-  color: #e5e5e5;
+  color: #b2b2b2;
   cursor: default;
   pointer-events: none;
 }
@@ -798,15 +798,15 @@ img {
 }
 
 ::-moz-selection {
-  background: #e5e5e5;
+  background: #b2b2b2;
 }
 
 ::selection {
-  background: #e5e5e5;
+  background: #b2b2b2;
 }
 
 ::-moz-selection {
-  background: #e5e5e5;
+  background: #b2b2b2;
 }
 
 .group::before, .group::after {
@@ -1016,7 +1016,7 @@ nav.breadcrumbs li:not(:last-child) a::after {
 }
 
 nav.progress ul {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #b2b2b2;
   border-radius: 2px;
   display: block;
   width: 100%;
@@ -1033,7 +1033,7 @@ nav.progress a:hover {
 }
 
 nav.progress li:not(:last-child) a {
-  border-right: 1px solid #e5e5e5;
+  border-right: 1px solid #b2b2b2;
 }
 
 nav.progress li.active a {
@@ -1049,7 +1049,7 @@ nav.progress li.active a:hover {
 }
 
 nav.progress li.disabled a {
-  color: #e5e5e5;
+  color: #b2b2b2;
   cursor: default;
   pointer-events: none;
 }
@@ -1101,7 +1101,7 @@ nav.progress li.complete a:hover {
     border-left-color: #FFF;
   }
   nav.progress a::before {
-    border-left-color: #cccccc;
+    border-left-color: #999999;
     margin-right: -1px;
   }
   nav.progress li.active {
@@ -1255,7 +1255,7 @@ form.search input {
 }
 
 main section:not(:last-child) {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #b2b2b2;
   margin-bottom: 3rem;
   padding-bottom: 2rem;
 }
@@ -1300,7 +1300,7 @@ nav.supplemental > ul > li {
 }
 
 nav.supplemental > ul > li ~ li {
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid #b2b2b2;
   padding-top: 0.5em;
 }
 
@@ -1481,7 +1481,7 @@ em {
 }
 
 blockquote {
-  border-left: 1px solid #e5e5e5;
+  border-left: 1px solid #b2b2b2;
   color: #727272;
   font-style: italic;
   margin-bottom: 1.5em;
@@ -1646,14 +1646,14 @@ input[type="time"],
 input[type="url"],
 input[type="week"],
 textarea {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #b2b2b2;
   border-radius: 0;
   box-sizing: border-box;
   color: #191919;
   display: block;
   font-family: "Helvetica Neue", Arial, sans-serif;
   margin: 0;
-  padding: 0.4em 0.6em;
+  padding: 0.4rem 0.6rem;
   width: 100%;
 }
 
@@ -1677,9 +1677,15 @@ input[type="submit"] {
   color: #4A4A4A;
 }
 
+select {
+  border: 1px solid #b2b2b2;
+  height: 2.4rem;
+  width: 100%;
+}
+
 .multiple select {
-  padding-left: 5px;
-  padding-right: 10px;
+  height: auto;
+  padding: 0.5rem;
 }
 
 textarea {
@@ -1704,7 +1710,7 @@ a.button {
   display: inline-block;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
-  padding: 0.4em 1em;
+  padding: 0.4rem 1rem;
   text-align: center;
   vertical-align: top;
   margin-bottom: 0;
@@ -1729,7 +1735,7 @@ input[type="submit"] {
   display: inline-block;
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: bold;
-  padding: 0.4em 1em;
+  padding: 0.4rem 1rem;
   text-align: center;
   vertical-align: top;
   border: none;
@@ -1934,7 +1940,7 @@ table th {
 }
 
 table td {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #b2b2b2;
 }
 
 table tr:nth-child(even) td {
