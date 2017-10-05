@@ -1,0 +1,182 @@
+////
+/// _mixins.scss contains helpful code snippets.
+///
+///
+////
+
+///
+/// = Mixins =
+///
+
+@mixin link {
+    color: $link;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+        color: $link-hover;
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+
+    &.disabled,
+    &[disabled] {
+        color: darken(#FFF, 20%);
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+
+@mixin button {
+    background-color: $link;
+    color: #FFF;
+    display: inline-block;
+    font-family: $font-stack;
+    font-weight: bold;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    vertical-align: top;
+
+    &:hover,
+    &:focus {
+        background-color: $link-hover;
+    }
+
+    &.disabled,
+    &[disabled] {
+        background-color: lighten($charcoal, 45%);
+        color: darken(#FFF, 20%);
+        pointer-events: none;
+    }
+}
+
+
+///
+/// container mixin
+///
+
+@mixin container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding-left: $gutter;
+    padding-right: $gutter;
+    position: relative;
+}
+
+
+///
+/// grouping mixin
+///
+
+@mixin grouping {
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+
+///
+/// fontawesome mixin
+///
+
+@mixin fontawesome($character: "") {
+    font: normal normal normal 1em unquote("/") 1 FontAwesome;
+    font-size: inherit;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+
+    @if $character != "" {
+        content: $character;
+    } @else {
+        display: inline-block;
+    }
+}
+
+
+///
+/// messaging mixin
+///
+
+@mixin messaging {
+    margin-bottom: 2rem;
+    padding: 1em 3em;
+    position: relative;
+    p:last-of-type,
+    ul:last-of-type {
+        margin-bottom: 0;
+    }
+    a {
+        text-decoration: underline;
+    }
+    &::before {
+        @include fontawesome;
+
+        content: "";
+        display: block;
+        font-size: 20px;
+        height: 23px;
+        left: 1em;
+        position: absolute;
+        top: 1em;
+        width: 23px;
+    }
+}
+
+
+///
+/// no-bullets mixin
+///
+
+@mixin no-bullets {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+    li::before {
+        display: none;
+    }
+}
+
+
+///
+/// transition mixin
+///
+
+@mixin transition($properties: all, $duration: 250ms, $easing: ease-in-out) {
+    @if length($properties) > 1 {
+        -webkit-transition-property: $properties;
+        transition-property: $properties;
+    } @else {
+        -webkit-transition: $properties $duration $easing;
+        transition: $properties $duration $easing;
+    }
+}
+
+
+///
+/// visuallyhidden mixin
+///
+
+@mixin visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

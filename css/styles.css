@@ -763,6 +763,10 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   }
 }
 
+* {
+  box-sizing: border-box;
+}
+
 a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
   border: 0;
   box-sizing: border-box;
@@ -781,20 +785,26 @@ article, aside, audio, canvas, details, figcaption, figure, footer, header, hgro
 html {
   background-color: #FFF;
   color: #191919;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  font-size: 16px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
 }
 
 body {
-  min-width: 300px;
+  min-width: 320px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 img {
   max-width: 100%;
   vertical-align: middle;
+  display: block;
+  height: auto;
 }
 
 ::-moz-selection {
@@ -822,8 +832,8 @@ img {
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 50px;
+  padding-right: 50px;
   position: relative;
 }
 
@@ -1236,7 +1246,7 @@ form.search input {
   background: #191919 url(../img/hero.jpg) no-repeat center/cover;
   display: flex;
   flex-direction: column;
-  height: 240px;
+  min-height: 240px;
   justify-content: center;
   text-align: center;
 }
@@ -1245,8 +1255,8 @@ form.search input {
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 50px;
+  padding-right: 50px;
   position: relative;
 }
 
@@ -1449,7 +1459,7 @@ h3,
 h4,
 h5 {
   line-height: 1.2;
-  margin-bottom: 0.6em;
+  margin: 0 0 .6em;
 }
 
 h1 {
@@ -1472,10 +1482,17 @@ h5 {
   font-size: 1rem;
 }
 
-strong {
-  font-weight: bold;
+p {
+  margin: 0 0 2em;
+  padding: 0;
 }
 
+b,
+strong {
+  font-weight: 700;
+}
+
+i,
 em {
   font-style: italic;
 }
@@ -1484,7 +1501,7 @@ blockquote {
   border-left: 1px solid #b2b2b2;
   color: #727272;
   font-style: italic;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
   padding-left: 1rem;
 }
 
@@ -1628,7 +1645,6 @@ label {
 
 fieldset .help {
   color: #727272;
-  display: block;
   font-size: 0.8rem;
   margin: 0;
 }
@@ -1651,7 +1667,7 @@ textarea {
   box-sizing: border-box;
   color: #191919;
   display: block;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0.4rem 0.6rem;
   width: 100%;
@@ -1708,7 +1724,7 @@ a.button {
   background-color: #0C96DD;
   color: #FFF;
   display: inline-block;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: bold;
   padding: 0.4rem 1rem;
   text-align: center;
@@ -1733,7 +1749,7 @@ input[type="submit"] {
   background-color: #0C96DD;
   color: #FFF;
   display: inline-block;
-  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-family: Arial, sans-serif;
   font-weight: bold;
   padding: 0.4rem 1rem;
   text-align: center;
