@@ -58,12 +58,12 @@
 /// container mixin
 ///
 
-@mixin container {
+@mixin container($max-width: 1200px, $padding: $gutter ) {
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
-    padding-left: $gutter;
-    padding-right: $gutter;
+    max-width: $max-width;
+    padding-left: $padding;
+    padding-right: $padding;
     position: relative;
 }
 
@@ -179,4 +179,125 @@
     padding: 0;
     position: absolute;
     width: 1px;
+}
+
+
+///
+/// Media Query Mixins
+///
+
+#responsive-tester {
+    background-color: #999;
+    bottom: .5rem;
+    color: rgba(255, 255, 255, 0);
+    display: block;
+    line-height: 1;
+    padding: .3em .5em;
+    position: fixed;
+    left: .5rem;
+    width: 1rem;
+    height: 1rem;
+    overflow: hidden;
+    border-radius: 3rem;
+    z-index: 10000;
+
+    &:before,
+    &:after {
+        display: none;
+    } 
+
+    &:hover {
+        background-color: #000;
+        color: #fff;
+        width: auto;
+        height: auto;
+        border-radius: 0;
+
+        &:before,
+        &:after {
+            display: inline;
+        } 
+    }
+
+    &:before { content: '0px'; }
+    &:after { content: '#{$mq-purple-size}'; }
+}
+
+@mixin media-query-purple {  
+    @media only screen and (min-width: $mq-purple-size) { 
+        #responsive-tester { 
+            background-color: $mq-purple-color;
+
+            &:before { content: '#{$mq-purple-size}'; }
+            &:after { content: '#{$mq-blue-size}'; }
+        }
+
+        @content; 
+    }
+}
+
+@mixin media-query-blue {  
+    @media only screen and (min-width: $mq-blue-size) { 
+        #responsive-tester { 
+            background-color: $mq-blue-color;
+
+            &:before { content: '#{$mq-blue-size}'; }
+            &:after { content: '#{$mq-green-size}'; }
+        } 
+
+        @content; 
+    }
+}
+
+@mixin media-query-green {  
+    @media only screen and (min-width: $mq-green-size) { 
+        #responsive-tester { 
+            background-color: $mq-green-color;
+
+            &:before { content: '#{$mq-green-size}'; }
+            &:after { content: '#{$mq-yellow-size}'; }
+        } 
+
+        @content; 
+    }
+}
+
+@mixin media-query-yellow {  
+    @media only screen and (min-width: $mq-yellow-size) { 
+        #responsive-tester { 
+            background-color: $mq-yellow-color;
+
+            &:before { content: '#{$mq-yellow-size}'; }
+            &:after { content: '#{$mq-orange-size}'; }
+        } 
+
+        @content; 
+    }
+}
+
+@mixin media-query-orange {  
+    @media only screen and (min-width: $mq-orange-size) { 
+        #responsive-tester { 
+            background-color: $mq-orange-color;
+
+            &:before { content: '#{$mq-orange-size}'; }
+            &:after { content: '#{$mq-red-size}'; }
+        } 
+
+        @content; 
+    }
+}
+
+@mixin media-query-red {  
+    @media only screen and (min-width: $mq-red-size) { 
+        #responsive-tester { 
+            background-color: $mq-red-color;
+            content: 'and up';
+
+            &:before { content: '#{$mq-red-size}'; }
+            &:after { content: 'and up'; }
+        } 
+
+        @content; 
+    }
 }

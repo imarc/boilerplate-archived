@@ -1,4 +1,44 @@
 @charset "UTF-8";
+#responsive-tester {
+  background-color: #999;
+  bottom: .5rem;
+  color: rgba(255, 255, 255, 0);
+  display: block;
+  line-height: 1;
+  padding: .3em .5em;
+  position: fixed;
+  left: .5rem;
+  width: 1rem;
+  height: 1rem;
+  overflow: hidden;
+  border-radius: 3rem;
+  z-index: 10000;
+}
+
+#responsive-tester:before, #responsive-tester:after {
+  display: none;
+}
+
+#responsive-tester:hover {
+  background-color: #000;
+  color: #fff;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+}
+
+#responsive-tester:hover:before, #responsive-tester:hover:after {
+  display: inline;
+}
+
+#responsive-tester:before {
+  content: '0px';
+}
+
+#responsive-tester:after {
+  content: "360px";
+}
+
 .accordion > div.open .header {
   background: #d0d0d0;
 }
@@ -118,7 +158,7 @@
   margin-bottom: 2rem;
 }
 
-@media only screen and (min-width: 669px) {
+@media only screen and (min-width: 760px) {
   .dossier > * {
     display: flex;
     flex-direction: row;
@@ -233,7 +273,7 @@
   display: inline-block;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1190px) {
   .header-content > .dropdown.open.left,
   .mobile.open.left {
     -webkit-transform: translateX(-100%);
@@ -265,7 +305,7 @@
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1190px) {
   .features {
     display: flex;
     flex-flow: row nowrap;
@@ -400,7 +440,7 @@ header.primary.sticky {
   text-align: center;
 }
 
-@media only screen and (min-width: 669px) {
+@media only screen and (min-width: 760px) {
   .login .actions {
     align-items: center;
     display: flex;
@@ -507,14 +547,14 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   color: #FFF;
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: 1189px) {
   .desktop nav.primary .dropdown,
   .desktop nav.primary i.fa {
     display: none;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1190px) {
   .desktop nav.primary i.fa {
     display: inline-block;
   }
@@ -558,7 +598,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   position: static;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1190px) {
   .desktop nav.primary li.mega .dropdown {
     left: 0;
     top: 100%;
@@ -639,7 +679,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   display: inherit;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1190px) {
   .tabs nav ul {
     margin-left: 20px;
     text-align: left;
@@ -698,7 +738,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   padding: 0 2.5rem;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1190px) {
   .testimonial {
     text-align: left;
   }
@@ -742,7 +782,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   padding: 2rem;
 }
 
-@media only screen and (min-width: 669px) {
+@media only screen and (min-width: 760px) {
   .tiles {
     display: flex;
     flex-flow: row wrap;
@@ -757,7 +797,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1190px) {
   .tiles > * {
     flex-basis: calc((100% / 4) - (2rem));
   }
@@ -832,8 +872,8 @@ img {
   margin-left: auto;
   margin-right: auto;
   max-width: 1200px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 25px;
+  padding-right: 25px;
   position: relative;
 }
 
@@ -842,7 +882,7 @@ img {
   display: none;
 }
 
-@media only screen and (min-width: 669px) {
+@media only screen and (min-width: 760px) {
   .columns {
     display: table;
     table-layout: fixed;
@@ -1001,7 +1041,7 @@ nav.tabs .panel.active {
   display: inherit;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1190px) {
   nav.tabs nav ul {
     margin-left: 20px;
     text-align: left;
@@ -1085,7 +1125,7 @@ nav.progress li.complete a:hover {
   color: #0C96DD;
 }
 
-@media only screen and (min-width: 669px) {
+@media only screen and (min-width: 760px) {
   nav.progress ul {
     display: flex;
   }
@@ -1963,7 +2003,72 @@ table tr:nth-child(even) td {
   background-color: #F3F3F3;
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 360px) {
+  #responsive-tester {
+    background-color: #6600cc;
+  }
+  #responsive-tester:before {
+    content: "360px";
+  }
+  #responsive-tester:after {
+    content: "470px";
+  }
+}
+
+@media only screen and (min-width: 470px) {
+  #responsive-tester {
+    background-color: #0066ff;
+  }
+  #responsive-tester:before {
+    content: "470px";
+  }
+  #responsive-tester:after {
+    content: "760px";
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  #responsive-tester {
+    background-color: #009900;
+  }
+  #responsive-tester:before {
+    content: "760px";
+  }
+  #responsive-tester:after {
+    content: "1020px";
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+    padding-left: 50px;
+    padding-right: 50px;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  #responsive-tester {
+    background-color: #ffcc00;
+  }
+  #responsive-tester:before {
+    content: "1020px";
+  }
+  #responsive-tester:after {
+    content: "1190px";
+  }
+}
+
+@media only screen and (min-width: 1190px) {
+  #responsive-tester {
+    background-color: #ff6600;
+  }
+  #responsive-tester:before {
+    content: "1190px";
+  }
+  #responsive-tester:after {
+    content: "1390px";
+  }
   header.primary {
     padding-bottom: 0;
   }
@@ -2063,6 +2168,19 @@ table tr:nth-child(even) td {
   }
   h5 {
     font-size: 1.15rem;
+  }
+}
+
+@media only screen and (min-width: 1390px) {
+  #responsive-tester {
+    background-color: #cc0000;
+    content: 'and up';
+  }
+  #responsive-tester:before {
+    content: "1390px";
+  }
+  #responsive-tester:after {
+    content: 'and up';
   }
 }
 

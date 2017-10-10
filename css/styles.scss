@@ -7,6 +7,7 @@
 ///
 /// = Table of Contents =
 /// Variables
+/// Media Query Definitions
 /// Mixins
 /// Components
 /// Base
@@ -21,10 +22,6 @@
 /// Media Queries
 /// Print Styles
 ////
-
-@import "_mixins";
-@import "_components";
-
 
 ///
 /// = Variables =
@@ -92,13 +89,26 @@ $youtube: #CD201F;
 
 
 ///
-/// Breakpoint values
+/// Media Query Details
 ///
 
-$medium: 669px;
-$large: 1024px;
+$mq-purple-size:    360px;     $mq-purple-color:    #6600cc;
+$mq-blue-size:      470px;     $mq-blue-color:      #0066ff;
+$mq-green-size:     760px;     $mq-green-color:     #009900;
+$mq-yellow-size:    1020px;    $mq-yellow-color:    #ffcc00;
+$mq-orange-size:    1190px;    $mq-orange-color:    #ff6600;
+$mq-red-size:       1390px;    $mq-red-color:       #cc0000;
+
+$medium: $mq-green-size;
+$large: $mq-orange-size;
 
 
+///
+/// Imports
+///
+
+@import "_mixins";
+@import "_components";
 
 ///
 /// = Components =
@@ -231,7 +241,7 @@ img {
 }
 
 .container {
-    @include container;
+    @include container(1200px, $gutter * .5);
 }
 
 .columns {
@@ -933,13 +943,26 @@ table {
 /// = Media Queries =
 ///
 
-@media only screen and (min-width: $medium) {
-
+@include media-query-purple { 
+    
 }
 
+@include media-query-blue { 
+    
+}
 
-@media only screen and (min-width: $large) {
+@include media-query-green { 
+    .container {
+        @include container(1200px, $gutter);
+    }
+}
 
+@include media-query-yellow { 
+    
+}
+
+@include media-query-orange { 
+    
     ///
     /// = Layout =
     ///
@@ -1071,6 +1094,10 @@ table {
     }
 }
 
+@include media-query-red { 
+    
+}
+
 
 ///
 /// = Print Styles =
@@ -1080,7 +1107,7 @@ table {
     * {
         background-color: transparent !important;
         box-shadow: none !important;
-        color: #000 !important; // Black prints faster: h5bp.com/s
+        color: #000 !important;
         text-shadow: none !important;
     }
 
