@@ -1784,6 +1784,10 @@ input[type="submit"][disabled] {
   background-color: #48AC2C;
 }
 
+.success p:last-of-type {
+    padding: .5em;
+}
+
 .success p:last-of-type,
 .success ul:last-of-type {
   margin-bottom: 0;
@@ -1832,6 +1836,10 @@ input[type="submit"][disabled] {
   background-color: #DDD;
 }
 
+.info p:last-of-type {
+    padding: .5em;
+}
+
 .info p:last-of-type,
 .info ul:last-of-type {
   margin-bottom: 0;
@@ -1870,6 +1878,10 @@ input[type="submit"][disabled] {
   padding: 1em 3em;
   position: relative;
   background-color: #CE2A2A;
+}
+
+.error p:last-of-type {
+    padding: .5em;
 }
 
 .error p:last-of-type,
