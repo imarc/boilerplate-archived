@@ -157,10 +157,8 @@
 
 @mixin transition($properties: all, $duration: 250ms, $easing: ease-in-out) {
     @if length($properties) > 1 {
-        -webkit-transition-property: $properties;
         transition-property: $properties;
     } @else {
-        -webkit-transition: $properties $duration $easing;
         transition: $properties $duration $easing;
     }
 }
@@ -187,115 +185,77 @@
 ///
 
 #responsive-tester {
-    background-color: #999;
-    bottom: .5rem;
-    color: rgba(255, 255, 255, 0);
+    bottom: 0.5rem;
     display: block;
-    line-height: 1;
-    padding: .3em .5em;
+    font-size: 0.85rem;
+    left: 0.5rem;
+    padding-left: 1.5rem;
     position: fixed;
-    left: .5rem;
-    width: 1rem;
-    height: 1rem;
-    overflow: hidden;
-    border-radius: 3rem;
-    z-index: 10000;
-
-    &:before,
-    &:after {
-        display: none;
-    } 
-
-    &:hover {
-        background-color: #000;
-        color: #fff;
-        width: auto;
-        height: auto;
-        border-radius: 0;
-
-        &:before,
-        &:after {
-            display: inline;
-        } 
+    span {
+        background-color: #999;
+        border-radius: 3rem;
+        color: rgba(255, 255, 255, 0);
+        display: inline-block;
+        height: 1rem;
+        left: 0;
+        line-height: 1;
+        margin-top: -0.5rem;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        width: 1rem;
+        z-index: 10000;
     }
 
-    &:before { content: '0px'; }
-    &:after { content: '#{$mq-purple-size}'; }
+    &::before,
+    &::after {
+        background-color: black;
+        color: #FFF;
+        display: inline;
+        opacity: 0.8;
+        padding: 0.15rem;
+    } 
+
+    &::before { content: 'Base: 0px–'; }
+    &::after  { content: '#{$mq-medium}'; }
 }
 
-@mixin media-query-purple {  
-    @media only screen and (min-width: $mq-purple-size) { 
+@mixin media-medium {  
+    @media only screen and (min-width: $mq-medium) { 
         #responsive-tester { 
-            background-color: $mq-purple-color;
-
-            &:before { content: '#{$mq-purple-size}'; }
-            &:after { content: '#{$mq-blue-size}'; }
+            span {
+                background-color: $mq-medium-color;
+            }
+            &::before { content: 'Medium: #{$mq-medium}–'; }
+            &::after  { content: '#{$mq-large}'; }
         }
 
         @content; 
     }
 }
 
-@mixin media-query-blue {  
-    @media only screen and (min-width: $mq-blue-size) { 
+@mixin media-large {  
+    @media only screen and (min-width: $mq-large) { 
         #responsive-tester { 
-            background-color: $mq-blue-color;
-
-            &:before { content: '#{$mq-blue-size}'; }
-            &:after { content: '#{$mq-green-size}'; }
+            span {
+                background-color: $mq-large-color;
+            }
+            &::before { content: 'Large: #{$mq-large}–'; }
+            &::after  { content: '#{$mq-xl}'; }
         } 
 
         @content; 
     }
 }
 
-@mixin media-query-green {  
-    @media only screen and (min-width: $mq-green-size) { 
+@mixin media-xl {  
+    @media only screen and (min-width: $mq-xl) { 
         #responsive-tester { 
-            background-color: $mq-green-color;
-
-            &:before { content: '#{$mq-green-size}'; }
-            &:after { content: '#{$mq-yellow-size}'; }
-        } 
-
-        @content; 
-    }
-}
-
-@mixin media-query-yellow {  
-    @media only screen and (min-width: $mq-yellow-size) { 
-        #responsive-tester { 
-            background-color: $mq-yellow-color;
-
-            &:before { content: '#{$mq-yellow-size}'; }
-            &:after { content: '#{$mq-orange-size}'; }
-        } 
-
-        @content; 
-    }
-}
-
-@mixin media-query-orange {  
-    @media only screen and (min-width: $mq-orange-size) { 
-        #responsive-tester { 
-            background-color: $mq-orange-color;
-
-            &:before { content: '#{$mq-orange-size}'; }
-            &:after { content: '#{$mq-red-size}'; }
-        } 
-
-        @content; 
-    }
-}
-
-@mixin media-query-red {  
-    @media only screen and (min-width: $mq-red-size) { 
-        #responsive-tester { 
-            background-color: $mq-red-color;
-            content: 'and up';
-
-            &:before { content: '#{$mq-red-size}'; }
-            &:after { content: 'and up'; }
+            span {
+                background-color: $mq-xl-color;
+            }
+            &::before { content: 'XL: #{$mq-xl}+'; }
+            &::after  { content: ''; }
         } 
 
         @content; 

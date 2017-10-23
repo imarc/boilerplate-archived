@@ -1,42 +1,43 @@
 @charset "UTF-8";
 #responsive-tester {
-  background-color: #999;
-  bottom: .5rem;
-  color: rgba(255, 255, 255, 0);
+  bottom: 0.5rem;
   display: block;
-  line-height: 1;
-  padding: .3em .5em;
+  font-size: 0.85rem;
+  left: 0.5rem;
+  padding-left: 1.5rem;
   position: fixed;
-  left: .5rem;
-  width: 1rem;
-  height: 1rem;
-  overflow: hidden;
+}
+
+#responsive-tester span {
+  background-color: #999;
   border-radius: 3rem;
+  color: rgba(255, 255, 255, 0);
+  display: inline-block;
+  height: 1rem;
+  left: 0;
+  line-height: 1;
+  margin-top: -0.5rem;
+  overflow: hidden;
+  position: absolute;
+  top: 50%;
+  width: 1rem;
   z-index: 10000;
 }
 
-#responsive-tester:before, #responsive-tester:after {
-  display: none;
-}
-
-#responsive-tester:hover {
-  background-color: #000;
-  color: #fff;
-  width: auto;
-  height: auto;
-  border-radius: 0;
-}
-
-#responsive-tester:hover:before, #responsive-tester:hover:after {
+#responsive-tester::before, #responsive-tester::after {
+  background-color: black;
+  color: #FFF;
   display: inline;
+  opacity: 0.8;
+  padding: 0.15rem;
 }
 
-#responsive-tester:before {
-  content: '0px';
+#responsive-tester::before {
+  content: 'Base: 0px–';
 }
 
-#responsive-tester:after {
-  content: "360px";
+#responsive-tester::after {
+  content: "576px";
 }
 
 .accordion > div.open .header {
@@ -158,7 +159,7 @@
   margin-bottom: 2rem;
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 576px) {
   .dossier > * {
     display: flex;
     flex-direction: row;
@@ -273,7 +274,7 @@
   display: inline-block;
 }
 
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 1024px) {
   .header-content > .dropdown.open.left,
   .mobile.open.left {
     -webkit-transform: translateX(-100%);
@@ -305,7 +306,7 @@
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 1024px) {
   .features {
     display: flex;
     flex-flow: row nowrap;
@@ -440,7 +441,7 @@ header.primary.sticky {
   text-align: center;
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 576px) {
   .login .actions {
     align-items: center;
     display: flex;
@@ -547,14 +548,14 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   color: #FFF;
 }
 
-@media only screen and (max-width: 1189px) {
+@media only screen and (max-width: 1023px) {
   .desktop nav.primary .dropdown,
   .desktop nav.primary i.fa {
     display: none;
   }
 }
 
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 1024px) {
   .desktop nav.primary i.fa {
     display: inline-block;
   }
@@ -598,7 +599,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   position: static;
 }
 
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 1024px) {
   .desktop nav.primary li.mega .dropdown {
     left: 0;
     top: 100%;
@@ -679,7 +680,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   display: inherit;
 }
 
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 1024px) {
   .tabs nav ul {
     margin-left: 20px;
     text-align: left;
@@ -738,7 +739,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   padding: 0 2.5rem;
 }
 
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 1024px) {
   .testimonial {
     text-align: left;
   }
@@ -782,7 +783,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   padding: 2rem;
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 576px) {
   .tiles {
     display: flex;
     flex-flow: row wrap;
@@ -797,7 +798,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   }
 }
 
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 1024px) {
   .tiles > * {
     flex-basis: calc((100% / 4) - (2rem));
   }
@@ -826,7 +827,7 @@ html {
   background-color: #FFF;
   color: #191919;
   font-family: Arial, sans-serif;
-  font-size: 18px;
+  font-size: 100%;
   line-height: 1.5;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
@@ -843,7 +844,6 @@ body {
 img {
   max-width: 100%;
   vertical-align: middle;
-  display: block;
   height: auto;
 }
 
@@ -882,7 +882,7 @@ img {
   display: none;
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 576px) {
   .columns {
     display: table;
     table-layout: fixed;
@@ -1041,7 +1041,7 @@ nav.tabs .panel.active {
   display: inherit;
 }
 
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 1024px) {
   nav.tabs nav ul {
     margin-left: 20px;
     text-align: left;
@@ -1125,7 +1125,7 @@ nav.progress li.complete a:hover {
   color: #0C96DD;
 }
 
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 576px) {
   nav.progress ul {
     display: flex;
   }
@@ -2003,71 +2003,27 @@ table tr:nth-child(even) td {
   background-color: #F3F3F3;
 }
 
-@media only screen and (min-width: 360px) {
-  #responsive-tester {
-    background-color: #6600cc;
+@media only screen and (min-width: 576px) {
+  #responsive-tester span {
+    background-color: blue;
   }
-  #responsive-tester:before {
-    content: "360px";
+  #responsive-tester::before {
+    content: "Medium: 576px–";
   }
-  #responsive-tester:after {
-    content: "470px";
-  }
-}
-
-@media only screen and (min-width: 470px) {
-  #responsive-tester {
-    background-color: #0066ff;
-  }
-  #responsive-tester:before {
-    content: "470px";
-  }
-  #responsive-tester:after {
-    content: "760px";
+  #responsive-tester::after {
+    content: "1024px";
   }
 }
 
-@media only screen and (min-width: 760px) {
-  #responsive-tester {
-    background-color: #009900;
+@media only screen and (min-width: 1024px) {
+  #responsive-tester span {
+    background-color: green;
   }
-  #responsive-tester:before {
-    content: "760px";
+  #responsive-tester::before {
+    content: "Large: 1024px–";
   }
-  #responsive-tester:after {
-    content: "1020px";
-  }
-  .container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
-    padding-left: 50px;
-    padding-right: 50px;
-    position: relative;
-  }
-}
-
-@media only screen and (min-width: 1020px) {
-  #responsive-tester {
-    background-color: #ffcc00;
-  }
-  #responsive-tester:before {
-    content: "1020px";
-  }
-  #responsive-tester:after {
-    content: "1190px";
-  }
-}
-
-@media only screen and (min-width: 1190px) {
-  #responsive-tester {
-    background-color: #ff6600;
-  }
-  #responsive-tester:before {
-    content: "1190px";
-  }
-  #responsive-tester:after {
-    content: "1390px";
+  #responsive-tester::after {
+    content: "1200px";
   }
   header.primary {
     padding-bottom: 0;
@@ -2171,16 +2127,15 @@ table tr:nth-child(even) td {
   }
 }
 
-@media only screen and (min-width: 1390px) {
-  #responsive-tester {
-    background-color: #cc0000;
-    content: 'and up';
+@media only screen and (min-width: 1200px) {
+  #responsive-tester span {
+    background-color: red;
   }
-  #responsive-tester:before {
-    content: "1390px";
+  #responsive-tester::before {
+    content: "XL: 1200px+";
   }
-  #responsive-tester:after {
-    content: 'and up';
+  #responsive-tester::after {
+    content: '';
   }
 }
 

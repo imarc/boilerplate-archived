@@ -7,8 +7,7 @@
 ///
 /// = Table of Contents =
 /// Variables
-/// Media Query Definitions
-/// Mixins
+/// Imports
 /// Components
 /// Base
 /// Layout
@@ -23,11 +22,11 @@
 /// Print Styles
 ////
 
+
 ///
 /// = Variables =
 ///
 
-$rem:       18px;
 $gutter:    50px;
 
 ///
@@ -92,16 +91,12 @@ $youtube: #CD201F;
 /// Media Query Details
 ///
 
-$mq-purple-size:    360px;     $mq-purple-color:    #6600cc;
-$mq-blue-size:      470px;     $mq-blue-color:      #0066ff;
-$mq-green-size:     760px;     $mq-green-color:     #009900;
-$mq-yellow-size:    1020px;    $mq-yellow-color:    #ffcc00;
-$mq-orange-size:    1190px;    $mq-orange-color:    #ff6600;
-$mq-red-size:       1390px;    $mq-red-color:       #cc0000;
+$mq-medium: 576px;      $mq-medium-color: blue;
+$mq-large:  1024px;     $mq-large-color:  green;
+$mq-xl:     1200px;     $mq-xl-color:     red;
 
-$medium: $mq-green-size;
-$large: $mq-orange-size;
-
+$medium: $mq-medium;
+$large:  $mq-large;
 
 ///
 /// Imports
@@ -109,6 +104,7 @@ $large: $mq-orange-size;
 
 @import "_mixins";
 @import "_components";
+
 
 ///
 /// = Components =
@@ -202,7 +198,7 @@ html {
     background-color: #FFF;
     color: $plain-text;
     font-family: $font-stack;
-    font-size: $rem;
+    font-size: 100%;
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -219,7 +215,6 @@ body {
 img {
     max-width: 100%;
     vertical-align: middle;
-    display: block;
     height: auto;
 }
 
@@ -943,25 +938,12 @@ table {
 /// = Media Queries =
 ///
 
-@include media-query-purple { 
-    
+
+@include media-medium {
+
 }
 
-@include media-query-blue { 
-    
-}
-
-@include media-query-green { 
-    .container {
-        @include container(1200px, $gutter);
-    }
-}
-
-@include media-query-yellow { 
-    
-}
-
-@include media-query-orange { 
+@include media-large { 
     
     ///
     /// = Layout =
@@ -1094,10 +1076,9 @@ table {
     }
 }
 
-@include media-query-red { 
-    
-}
+@include media-xl {
 
+}
 
 ///
 /// = Print Styles =
