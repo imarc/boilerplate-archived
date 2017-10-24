@@ -47,6 +47,9 @@
  *     stopEarly (integer, default: 0)
  *         If specified, unsticks the element when it reaches this distance
  *         from the top of an 'until' element.
+ *
+ *     classWhileFixed (string, default "element-fixed")
+ *         This lets you specify a class to add to the element while it's stuck. Defaults to "element-fixed".
  */
 
 ;(function($, window) {
@@ -54,6 +57,7 @@
 
     var FixedElement = function(elem, options) {
         var defaults = {
+            classWhileFixed: 'element-fixed',
             startOffset: 0,
             stopEarly: 0
         };
@@ -111,11 +115,12 @@
 
         this.release = function(top) {
             state = 'released';
-            $elem.css({
-                position: 'absolute',
-                top: '',
-                transform: 'translateZ(0) translate(0, ' + top + 'px)'
-            });
+            $elem.removeClass(options.classWhileFixed)
+                .css({
+                    position: 'absolute',
+                    top: '',
+                    transform: 'translateZ(0) translate(0, ' + top + 'px)'
+                });
         };
 
         this.fix = function(additionalOffset) {
@@ -123,11 +128,12 @@
 
             state = 'fixed';
             requestAnimationFrame(function() {
-                $elem.css({
-                    position: 'fixed',
-                    top: offset,
-                    transform: ''
-                });
+                $elem.addClass(options.classWhileFixed)
+                    .css({
+                        position: 'fixed',
+                        top: offset,
+                        transform: ''
+                    });
             });
         };
 
