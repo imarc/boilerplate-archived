@@ -1787,10 +1787,6 @@ input[type="submit"][disabled] {
   background-color: #48AC2C;
 }
 
-.success p:last-of-type {
-    padding: .5em;
-}
-
 .success p:last-of-type,
 .success ul:last-of-type {
   margin-bottom: 0;
@@ -1812,12 +1808,13 @@ input[type="submit"][disabled] {
   display: inline-block;
   content: "";
   display: block;
-  font-size: 20px;
-  height: 23px;
+  font-size: 1em;
+  height: 1.5px;
   left: 1em;
   position: absolute;
+  text-align: center;
   top: 1em;
-  width: 23px;
+  width: 1.5em;
 }
 
 .success::before {
@@ -1837,10 +1834,6 @@ input[type="submit"][disabled] {
   padding: 1em 3em;
   position: relative;
   background-color: #DDD;
-}
-
-.info p:last-of-type {
-    padding: .5em;
 }
 
 .info p:last-of-type,
@@ -1864,12 +1857,13 @@ input[type="submit"][disabled] {
   display: inline-block;
   content: "";
   display: block;
-  font-size: 20px;
-  height: 23px;
+  font-size: 1em;
+  height: 1.5px;
   left: 1em;
   position: absolute;
+  text-align: center;
   top: 1em;
-  width: 23px;
+  width: 1.5em;
 }
 
 .info::before {
@@ -1881,10 +1875,6 @@ input[type="submit"][disabled] {
   padding: 1em 3em;
   position: relative;
   background-color: #CE2A2A;
-}
-
-.error p:last-of-type {
-    padding: .5em;
 }
 
 .error p:last-of-type,
@@ -1908,12 +1898,13 @@ input[type="submit"][disabled] {
   display: inline-block;
   content: "";
   display: block;
-  font-size: 20px;
-  height: 23px;
+  font-size: 1em;
+  height: 1.5px;
   left: 1em;
   position: absolute;
+  text-align: center;
   top: 1em;
-  width: 23px;
+  width: 1.5em;
 }
 
 .error::before {
