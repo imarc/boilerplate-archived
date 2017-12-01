@@ -384,31 +384,6 @@ img {
     @include visuallyhidden;
 }
 
-.search-drawer {
-    background-color: $darkgray;
-    > div {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 150ms ease;
-        &.open {
-            max-height: 80px;
-        }
-    }
-    form {
-        display: flex;
-        padding: 1rem 0;
-        > * {
-            margin-bottom: 0;
-        }
-        .text {
-            flex: 1 1 auto;
-        }
-        .submit input {
-            height: 100%;
-        }
-    }
-}
-
 .branding {
     img {
         max-width: 180px;
@@ -417,10 +392,37 @@ img {
 
 header.primary {
     background-color: $charcoal;
-    padding: 1rem 0;
     position: relative;
+    .search-drawer {
+        background-color: $darkgray;
+        display: none;
+        > div {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 150ms ease;
+            &.open {
+                max-height: 80px;
+            }
+        }
+        form {
+            display: flex;
+            padding: 1rem 0;
+            > * {
+                margin-bottom: 0;
+            }
+            .text {
+                flex: 1 1 auto;
+            }
+            .submit input {
+                height: 100%;
+            }
+        }
+    }
     .container {
         position: static;
+    }
+    .header-content {
+        padding: 1rem 0;
     }
     .branding {
         flex-basis: 180px;
@@ -1099,9 +1101,14 @@ table {
     ///
 
     header.primary {
-        padding-bottom: 0;
+        .search-drawer {
+            display: block;
+        }
         .branding {
             margin-right: 2rem;
+        }
+        .header-content {
+            padding-bottom: 0;
         }
     }
 
