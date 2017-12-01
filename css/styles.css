@@ -859,49 +859,53 @@ img {
   width: 1px;
 }
 
-.search-drawer {
-  background-color: #4A4A4A;
-}
-
-.search-drawer > div {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 150ms ease;
-}
-
-.search-drawer > div.open {
-  max-height: 80px;
-}
-
-.search-drawer form {
-  display: flex;
-  padding: 1rem 0;
-}
-
-.search-drawer form > * {
-  margin-bottom: 0;
-}
-
-.search-drawer form .text {
-  flex: 1 1 auto;
-}
-
-.search-drawer form .submit input {
-  height: 100%;
-}
-
 .branding img {
   max-width: 180px;
 }
 
 header.primary {
   background-color: #191919;
-  padding: 1rem 0;
   position: relative;
+}
+
+header.primary .search-drawer {
+  background-color: #4A4A4A;
+  display: none;
+}
+
+header.primary .search-drawer > div {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 150ms ease;
+}
+
+header.primary .search-drawer > div.open {
+  max-height: 80px;
+}
+
+header.primary .search-drawer form {
+  display: flex;
+  padding: 1rem 0;
+}
+
+header.primary .search-drawer form > * {
+  margin-bottom: 0;
+}
+
+header.primary .search-drawer form .text {
+  flex: 1 1 auto;
+}
+
+header.primary .search-drawer form .submit input {
+  height: 100%;
 }
 
 header.primary .container {
   position: static;
+}
+
+header.primary .header-content {
+  padding: 1rem 0;
 }
 
 header.primary .branding {
@@ -1628,7 +1632,6 @@ label {
 
 fieldset .help {
   color: #727272;
-  display: block;
   font-size: 0.8rem;
   margin: 0;
 }
@@ -1960,11 +1963,14 @@ table tr:nth-child(even) td {
 }
 
 @media only screen and (min-width: 1024px) {
-  header.primary {
-    padding-bottom: 0;
+  header.primary .search-drawer {
+    display: block;
   }
   header.primary .branding {
     margin-right: 2rem;
+  }
+  header.primary .header-content {
+    padding-bottom: 0;
   }
   nav ul {
     text-align: left;

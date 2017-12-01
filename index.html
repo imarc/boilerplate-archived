@@ -11,22 +11,23 @@
     </head>
     <body>
         <div class="shell">
-            <div class="search-drawer">
-                <div>
-                    <div class="container">
-                        <form action="">
-                            <div class="text">
-                                <label class="sr-only" for="">Search the website</label>
-                                <input type="text" />
-                            </div>
-                            <div class="submit">
-                                <input type="submit" />
-                            </div>
-                        </form>
+            <header class="primary">
+                <div class="search-drawer">
+                    <div>
+                        <div class="container">
+                            <form action="">
+                                <div class="text">
+                                    <label class="sr-only" for="">Search the website</label>
+                                    <input type="text" />
+                                </div>
+                                <div class="submit">
+                                    <input type="submit" />
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <header class="primary sticky">
+                
                 <div class="container">
                     <div class="header-content">
                         <div class="branding">
@@ -640,8 +641,7 @@
         <script src="js/stickyHeader.plugin.js"></script>
         <script>
             $(function () {
-                $('header.primary.sticky').stickyHeader();
-                $('.search-drawer').searchDrawer();
+                $('header.primary').stickyHeader();
                 $('nav.primary').dropdown();
                 $('.mobile').mobileNavigation();
             });
