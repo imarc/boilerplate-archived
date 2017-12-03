@@ -1,0 +1,253 @@
+///
+/// = Mixins =
+///
+
+@mixin link {
+    color: $link;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+        color: $link-hover;
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+
+    &.disabled,
+    &[disabled] {
+        color: darken(#FFF, 20%);
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+
+@mixin button {
+    background-color: $link;
+    color: #FFF;
+    display: inline-block;
+    font-family: $font-stack;
+    font-weight: bold;
+    padding: 0.4rem 1rem;
+    text-align: center;
+    vertical-align: top;
+
+    &:hover,
+    &:focus {
+        background-color: $link-hover;
+    }
+
+    &.disabled,
+    &[disabled] {
+        background-color: lighten($charcoal, 45%);
+        color: darken(#FFF, 20%);
+        pointer-events: none;
+    }
+}
+
+
+///
+/// container mixin
+///
+
+@mixin container($max-width: 1200px, $padding: $gutter ) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $max-width;
+    padding-left: $padding;
+    padding-right: $padding;
+    position: relative;
+}
+
+
+///
+/// grouping mixin
+///
+
+@mixin grouping {
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+
+///
+/// fontawesome mixin
+///
+
+@mixin fontawesome($character: "") {
+    font: normal normal normal 1em unquote("/") 1 FontAwesome;
+    font-size: inherit;
+    line-height: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+
+    @if $character != "" {
+        content: $character;
+    } @else {
+        display: inline-block;
+    }
+}
+
+
+///
+/// messaging mixin
+///
+
+@mixin messaging {
+    margin-bottom: 2rem;
+    padding: 1em 3em;
+    position: relative;
+    p:last-of-type,
+    ul:last-of-type {
+        margin-bottom: 0;
+    }
+    a {
+        text-decoration: underline;
+    }
+    &::before {
+        @include fontawesome;
+
+        content: "";
+        display: block;
+        font-size: 20px;
+        height: 23px;
+        left: 1em;
+        position: absolute;
+        top: 1em;
+        width: 23px;
+    }
+}
+
+
+///
+/// no-bullets mixin
+///
+
+@mixin no-bullets {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+    li::before {
+        display: none;
+    }
+}
+
+
+///
+/// transition mixin
+///
+
+@mixin transition($properties: all, $duration: 250ms, $easing: ease-in-out) {
+    transition: $properties $duration $easing;
+}
+
+
+///
+/// visuallyhidden mixin
+///
+
+@mixin visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+///
+/// media query mixins
+///
+
+#responsive-tester {
+    bottom: 0.5rem;
+    display: block;
+    font-size: 0.85rem;
+    left: 0.5rem;
+    padding-left: 1.5rem;
+    position: fixed;
+    span {
+        background-color: #999;
+        border-radius: 3rem;
+        color: rgba(255, 255, 255, 0);
+        display: inline-block;
+        height: 1rem;
+        left: 0;
+        line-height: 1;
+        margin-top: -0.5rem;
+        overflow: hidden;
+        position: absolute;
+        top: 50%;
+        width: 1rem;
+        z-index: 10000;
+    }
+
+    &::before,
+    &::after {
+        background-color: black;
+        color: #FFF;
+        display: inline;
+        opacity: 0.8;
+        padding: 0.15rem;
+    } 
+
+    &::before { content: 'Base: 0px–'; }
+    &::after  { content: '#{$mq-medium}'; }
+}
+
+@mixin media-medium {  
+    @media only screen and (min-width: $mq-medium) { 
+        #responsive-tester { 
+            span {
+                background-color: $mq-medium-color;
+            }
+            &::before { content: 'Medium: #{$mq-medium}–'; }
+            &::after  { content: '#{$mq-large}'; }
+        }
+
+        @content; 
+    }
+}
+
+@mixin media-large {  
+    @media only screen and (min-width: $mq-large) { 
+        #responsive-tester { 
+            span {
+                background-color: $mq-large-color;
+            }
+            &::before { content: 'Large: #{$mq-large}–'; }
+            &::after  { content: '#{$mq-xl}'; }
+        } 
+
+        @content; 
+    }
+}
+
+@mixin media-xl {  
+    @media only screen and (min-width: $mq-xl) { 
+        #responsive-tester { 
+            span {
+                background-color: $mq-xl-color;
+            }
+            &::before { content: 'XL: #{$mq-xl}+'; }
+            &::after  { content: ''; }
+        } 
+
+        @content; 
+    }
+}
