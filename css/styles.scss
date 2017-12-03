@@ -19,7 +19,7 @@
 /// Section Specific
 /// Page Specific
 /// Media Queries
-/// Print Styles
+/// Print
 ////
 
 
@@ -102,8 +102,8 @@ $large:  $mq-large;
 /// Imports
 ///
 
-@import "_mixins";
-@import "_components";
+@import "mixins";
+@import "components";
 
 
 ///
@@ -1081,7 +1081,7 @@ table {
 }
 
 ///
-/// = Print Styles =
+/// = Print =
 ///
 
 @media print {
