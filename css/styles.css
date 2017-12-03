@@ -1808,12 +1808,13 @@ input[type="submit"][disabled] {
   display: inline-block;
   content: "";
   display: block;
-  font-size: 20px;
-  height: 23px;
+  font-size: 1em;
+  height: 1.5px;
   left: 1em;
   position: absolute;
+  text-align: center;
   top: 1em;
-  width: 23px;
+  width: 1.5em;
 }
 
 .success::before {
@@ -1856,12 +1857,13 @@ input[type="submit"][disabled] {
   display: inline-block;
   content: "";
   display: block;
-  font-size: 20px;
-  height: 23px;
+  font-size: 1em;
+  height: 1.5px;
   left: 1em;
   position: absolute;
+  text-align: center;
   top: 1em;
-  width: 23px;
+  width: 1.5em;
 }
 
 .info::before {
@@ -1896,12 +1898,13 @@ input[type="submit"][disabled] {
   display: inline-block;
   content: "";
   display: block;
-  font-size: 20px;
-  height: 23px;
+  font-size: 1em;
+  height: 1.5px;
   left: 1em;
   position: absolute;
+  text-align: center;
   top: 1em;
-  width: 23px;
+  width: 1.5em;
 }
 
 .error::before {
