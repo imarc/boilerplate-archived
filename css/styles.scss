@@ -103,9 +103,15 @@ $large:  $mq-large;
 ///  = Imports =
 ///
 
+@import "../node_modules/normalize-scss/sass/normalize";
 @import "mixins";
 @import "components";
 
+///
+/// = Normalize = 
+/// 
+
+@include normalize();
 
 ///
 /// = Components =
@@ -170,12 +176,6 @@ nav.pagination {
 .tiles {
     @include tiles();
 }
-
-///
-/// = Normalize =
-///
-
-@import "../node_modules/normalize.css/normalize.css";
 
 ///
 /// = Base =
