@@ -20,7 +20,7 @@
     "serve": "gulp serve"
   },
   "dependencies": {
-    "normalize.css": "^7.0.0"
+    "normalize-scss": "^7.0.0"
   },
   "devDependencies": {
     "browser-sync": "^2.19.0",
