@@ -33,7 +33,7 @@ $gutter:    50px;
 /// This is the default font stack.
 ///
 
-$font-stack:  -apple-system, BlinkMacSystemFont, “Roboto”, “Droid Sans”, “Helvetica Neue”, Helvetica, Arial, sans-serif;
+$font-stack: Arial, sans-serif;
 
 
 ///
@@ -218,12 +218,6 @@ img {
 
 ::-moz-selection {
     background: $border;
-}
-
-fieldset {
-    border:0;
-    padding:0;
-    margin:0;
 }
 
 
@@ -742,10 +736,15 @@ label {
     color: $error;
 }
 
-fieldset .help {
-    color: $meta-text;
-    font-size: 0.8rem;
-    margin: 0;
+fieldset {
+    border:0;
+    padding:0;
+    margin:0;
+    .help {
+        color: $meta-text;
+        font-size: 0.8rem;
+        margin: 0;
+    }
 }
 
 input[type="date"],
