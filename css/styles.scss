@@ -103,9 +103,15 @@ $large:  $mq-large;
 ///  = Imports =
 ///
 
+@import "../node_modules/normalize-scss/sass/normalize";
 @import "mixins";
 @import "components";
 
+///
+/// = Normalize = 
+/// 
+
+@include normalize();
 
 ///
 /// = Components =
@@ -171,31 +177,12 @@ nav.pagination {
     @include tiles();
 }
 
-
 ///
 /// = Base =
 ///
 
-* {
-    box-sizing: border-box;
-}
-
-a, abbr, address, article, aside, audio, b, blockquote, body, button, canvas, caption, cite, code, datalist, dd, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, hr, i, iframe, img, input, label, legend, li, main, meter, nav, object, ol, option, p, pre, progress, q, section, select, span, strong, sub, sup, table, tbody, td, textarea, tfoot, th, thead, tr, u, ul, video {
-    border: 0;
-    box-sizing: border-box;
-    font: inherit;
-    font-size: 100%;
-    margin: 0;
-    outline: 0;
-    padding: 0;
-    vertical-align: baseline;
-}
-
-article, aside, audio, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, video {
-    display: block;
-}
-
 html {
+    box-sizing: border-box;
     background-color: #FFF;
     color: $plain-text;
     font-family: $font-stack;
@@ -203,6 +190,12 @@ html {
     line-height: 1.5;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+}
+
+*, 
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 body {
@@ -583,6 +576,7 @@ h2,
 h3,
 h4,
 h5 {
+    font-weight: normal;
     line-height: 1.2;
     margin: 0 0 .6em;
 }
@@ -687,10 +681,6 @@ dt {
     padding-left: 0.5em;
 }
 
-dd {
-    padding-left: 2em;
-}
-
 pre {
     background-color: #4A4A4A;
     padding: 1em;
@@ -746,10 +736,15 @@ label {
     color: $error;
 }
 
-fieldset .help {
-    color: $meta-text;
-    font-size: 0.8rem;
+fieldset {
+    border: 0;
     margin: 0;
+    padding: 0;
+    .help {
+        color: $meta-text;
+        font-size: 0.8rem;
+        margin: 0;
+    }
 }
 
 input[type="date"],
