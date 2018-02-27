@@ -20,10 +20,10 @@ var options = {
         'Safari >= 10'
     ],
 
-    sassInput: './css/styles.scss',
+    sassInput: './css/sass/styles.scss',
     sassOutput: './css',
 
-    docsInput: './css/_components.scss',
+    docsInput: './css/sass/_components.scss',
     docsOutput: './components',
 
     sassCompiler: {

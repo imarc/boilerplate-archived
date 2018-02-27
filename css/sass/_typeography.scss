@@ -1,0 +1,145 @@
+///
+/// = Typography =
+///
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0 0 .6rem;
+}
+
+h1 {
+    font-size: 2.2rem;
+    @include media-large {
+        font-size: 2.6rem;
+    }
+}
+
+h2 {
+    font-size: 1.7rem;
+    @include media-large {
+        font-size: 2.1rem;
+    }
+}
+
+h3 {
+    font-size: 1.3rem;
+    @include media-large {
+        font-size: 1.6rem;
+    }
+}
+
+h4 {
+    font-size: 1.1rem;
+    @include media-large {
+        font-size: 1.25rem;
+    }
+}
+
+h5 {
+    font-size: 1rem;
+    @include media-large {
+        font-size: 1.15rem;
+    }
+}
+
+p {
+    margin: 0 0 2rem;
+    padding: 0;
+}
+
+b,
+strong {
+    font-weight: 700;
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+blockquote {
+    border-left: 1px solid $border;
+    color: $meta-text;
+    font-style: italic;
+    margin-bottom: 2rem;
+    padding-left: 1rem;
+}
+
+.intro {
+    color: $meta-text;
+    p {
+        font-size: 1.3rem;
+        margin-bottom: 0.8rem;
+    }
+}
+
+.guide {
+    color: $meta-text;
+    font-size: 1.25rem;
+}
+
+.meta {
+    color: $meta-text;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid $meta-text;
+    display: block;
+    height: 0;
+    margin: 2rem auto 3rem;
+    width: 100%;
+}
+
+
+a {
+    @include link;
+}
+
+p,
+ol,
+ul,
+dl {
+    margin-bottom: 2rem;
+}
+
+ol,
+ul {
+    padding-left: 2rem;
+    li,
+    dt,
+    dd {
+        margin-bottom: 0.5rem;
+    }
+}
+
+ul {
+    list-style: disc;
+}
+
+dt {
+    font-weight: bold;
+    padding-left: 0.5rem;
+}
+
+pre {
+    background-color: #4A4A4A;
+    padding: 1rem;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+code {
+    color: #FBCE78;
+    font-family: "Consolas", monospace;
+    padding: 2px 4px;
+}
+
+.sr-only {
+    @include visuallyhidden;
+}

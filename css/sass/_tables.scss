@@ -1,0 +1,32 @@
+///
+/// = Tables =
+///
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 2rem;
+    width: 100%;
+    caption {
+        font-size: 0.9rem;
+        margin-bottom: 0.75rem;
+    }
+    td,
+    th {
+        padding: 0.5rem 1rem;
+        text-align: left;
+        vertical-align: top;
+    }
+    th {
+        background-color: $plain-text;
+        color: #FFF;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    td {
+        border: 1px solid $border;
+    }
+    tr:nth-child(even) td {
+        background-color: #F3F3F3;
+    }
+}

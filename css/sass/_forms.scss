@@ -1,0 +1,132 @@
+///
+/// = Forms =
+///
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font: inherit;
+    margin: 0;
+}
+
+.button,
+.checkboxes,
+.file,
+.password,
+.radios,
+.reset,
+.select,
+.submit,
+.text,
+.textarea {
+    margin-bottom: 2rem;
+}
+
+label {
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.required {
+    color: $error;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    .help {
+        color: $meta-text;
+        font-size: 0.8rem;
+        margin: 0;
+    }
+}
+
+input[type="date"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea {
+    border: 1px solid $border;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: $plain-text;
+    display: block;
+    font-family: $font-stack;
+    margin: 0;
+    padding: 0.4rem 0.6rem;
+    width: 100%;
+}
+
+input[type="reset"],
+input[type="search"],
+input[type="text"],
+input[type="submit"] {
+    border-radius: 0;
+    -webkit-appearance: none;
+}
+
+::-webkit-input-placeholder {
+    color: #4A4A4A;
+}
+
+::ms-input-placeholder {
+    color: #4A4A4A;
+}
+
+::-placeholder {
+    color: #4A4A4A;
+}
+
+select {
+    border: 1px solid $border;
+    height: 2.4rem;
+    width: 100%;
+}
+
+.multiple select {
+    height: auto;
+    padding: 0.5rem;
+}
+
+textarea {
+    height: 8rem;
+    overflow: auto;
+    resize: vertical;
+}
+
+.radio,
+.checkbox {
+    font-weight: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    padding: 0;
+}
+
+a.button {
+    @include button;
+    margin-bottom: 0;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    @include button;
+    border: none;
+    cursor: pointer;
+}

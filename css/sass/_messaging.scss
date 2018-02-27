@@ -1,0 +1,42 @@
+///
+/// = Messaging =
+///
+
+.success {
+    @include messaging;
+
+    background-color: $success;
+    &::before {
+        content: "\f00c";
+    }
+    a {
+        color: #FFF;
+    }
+    a:hover {
+        color: darken(#FFF, 15%);
+    }
+}
+
+.info {
+    @include messaging;
+
+    background-color: $info;
+    &::before {
+        content: "\f129";
+    }
+}
+
+.error {
+    @include messaging;
+
+    background-color: $error;
+    &::before {
+        content: "\f12a";
+    }
+    a {
+        color: $info;
+    }
+    a:hover {
+        color: darken($info, 15%);
+    }
+}

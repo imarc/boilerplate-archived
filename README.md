@@ -216,9 +216,7 @@ help messages typically found in forms.
 
 ### Media Queries
 
-We utilize three breakpoints – small, medium, and large. Please keep all media query properties in this area.
-WHhile there can be benefits of breaking in and out of media queries throughout a stylesheet, we have no yet
-standardized a way that is helpful for all engineers.
+We utilize three breakpoints – small, medium, and large. Please keep all media query properties inside elements that need a breakpoint.
 
 
 

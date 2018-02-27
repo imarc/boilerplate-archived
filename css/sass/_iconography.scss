@@ -1,0 +1,9 @@
+///
+/// = Iconography =
+///
+
+.thumbs-up::before {
+    @include fontawesome("\f087");
+
+    margin-right: 0.5rem;
+}

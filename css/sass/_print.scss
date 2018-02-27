@@ -1,0 +1,44 @@
+///
+/// = Print =
+///
+
+@media print {
+    * {
+        background-color: transparent !important;
+        box-shadow: none !important;
+        color: #000 !important;
+        text-shadow: none !important;
+    }
+
+    a {
+        text-decoration: underline;
+    }
+
+    pre,
+    blockquote,
+    tr,
+    img,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+}

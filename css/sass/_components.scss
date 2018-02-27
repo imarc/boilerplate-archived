@@ -66,9 +66,9 @@
             background-color: $lightgray;
             color: $plain-text;
             cursor: pointer;
-            font-size: 1em;
-            margin-top: .5em;
-            padding: .5em 1em;
+            font-size: 1rem;
+            margin-top: .5rem;
+            padding: .5rem 1rem;
             position: relative;
             text-align: left;
             width: 100%;
@@ -77,16 +77,16 @@
             }
             &::after {
                 bottom: 0;
-                height: 1em;
+                height: 1rem;
                 margin: auto 0;
                 position: absolute;
-                right: 1em;
+                right: 1rem;
                 top: 0;
-                width: 1em;
+                width: 1rem;
             }
         }
         .content {
-            padding: 1em 0;
+            padding: 1rem 0;
         }
     }
 }
@@ -129,7 +129,7 @@
     position: relative;
     .mold {
         background-color: rgba(2255, 255, 255, 0.6);
-        padding: 2em;
+        padding: 2rem;
         text-align: center;
         z-index: 2;
     }
@@ -406,7 +406,7 @@
                     padding: 0 1rem;
                 }
                 li {
-                    margin-bottom: 0.4em;
+                    margin-bottom: 0.4rem;
                 }
                 a {
                     color: #0C96DD;
@@ -648,10 +648,10 @@
             .meta {
                 display: block;
                 font-size: 0.9rem;
-                margin-bottom: 1em;
+                margin-bottom: 1rem;
             }
             h2 + .meta {
-                margin-top: -1em;
+                margin-top: -1rem;
             }
             .summary {
                 p:last-of-type {
@@ -726,7 +726,7 @@
                 padding: 0;
             }
             label {
-                margin-left: 1em;
+                margin-left: 1rem;
             }
             a {
                 display: block;
@@ -1132,8 +1132,8 @@
              cursor: pointer;
              display: inline-block;
              margin-bottom: 0;
-             margin-right: 0.5em;
-             padding: 0.5em 1em;
+             margin-right: 0.5rem;
+             padding: 0.5rem 1rem;
          }
          li.active {
              background-color: #FFF;
@@ -1203,7 +1203,7 @@
     .asset {
         margin-bottom: 2rem;
         img {
-            max-width: 280px;
+            max-width: 17.5rem;
         }
     }
     blockquote {

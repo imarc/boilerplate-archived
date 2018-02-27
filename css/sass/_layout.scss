@@ -1,0 +1,446 @@
+///
+/// = Layout =
+///
+
+.group {
+    @include grouping;
+}
+
+.container {
+    @include container(1200px, $gutter * .5);
+}
+
+.columns {
+    @include columns;
+}
+
+.sr-only {
+    @include visuallyhidden;
+}
+
+.branding {
+    img {
+        max-width: 11rem;
+    }
+}
+
+header.primary {
+    background-color: $charcoal;
+    position: relative;
+    .search-drawer {
+        background-color: $darkgray;
+        display: none;
+        @include media-large {
+            display: block;
+        }
+        > div {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 150ms ease;
+            &.open {
+                max-height: 5rem;
+            }
+        }
+        form {
+            display: flex;
+            padding: 1rem 0;
+            > * {
+                margin-bottom: 0;
+            }
+            .text {
+                flex: 1 1 auto;
+            }
+            .submit input {
+                height: 100%;
+            }
+        }
+    }
+    .container {
+        position: static;
+    }
+    .header-content {
+        padding: 1rem 0;
+        @include media-large {
+            padding-bottom: 0;
+        }
+    }
+    .branding {
+        flex-basis: 11rem;
+        flex-shrink: 0;
+        @include media-large {
+            margin-right: 2rem;
+        }
+    }
+}
+
+nav {
+    margin-bottom: 2rem;
+    ul {
+        @include no-bullets;
+        display: flex;
+        @include media-large {
+            text-align: left;
+        }
+        li {
+            margin-bottom: 0;
+        }
+    }
+    a {
+        color: $link;
+        display: block;
+        padding: 0 0.5rem;
+    }
+
+    li.active a,
+    li.active:hover a {
+        color: $charcoal;
+    }
+
+    &.tabs {
+        @include tabs;
+    }
+
+    &.breadcrumbs {
+        @include breadcrumbs();
+    }
+
+    &.progress {
+        @include progress();
+    }
+
+}
+
+nav.primary {
+    margin-bottom: 0.7rem;
+
+    a {
+        color: #FFF;
+    }
+
+    li:hover a {
+        color: $brand-blue;
+    }
+
+    > ul {
+        @include media-large {
+            > li {
+                font-size: 1.1rem;
+                margin-left: 1rem;
+                padding-bottom: 1rem;
+                position: relative;
+                &:first-child {
+                    margin-left: 0;
+                }
+            }
+        }
+        li {
+            margin-bottom: 0;
+        }
+    }
+    ul {
+        @include media-large {
+            text-align:left;
+        }
+        li {
+            a {
+                color: $white;
+            }
+            li {
+                @include media-large {
+                    display: block;
+                    float: none;
+                }
+                &.active,
+                &:hover {
+                    a {
+                        color: lighten($charcoal, 55%);
+                    }
+                }
+            }
+        }
+    }
+}
+
+nav.utility {
+    margin-bottom: 0.7rem;
+    a {
+        color: #FFF;
+        font-size: 0.8rem;
+    }
+}
+
+.header-content {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    .menu-toggle {
+        @include media-large {
+            display: none;
+        }
+        &:hover,
+        &:focus {
+            background-color: $link;
+        }
+    }
+    > .dropdown {
+        background-color: lighten($charcoal, 5%);
+        z-index: 1001;
+        &.sub-menu {
+            background-color: lighten($charcoal, 10%);
+            z-index: 1002;
+        }
+    }
+}
+
+.desktop {
+    display: none;
+    @include media-large {
+        align-items: flex-end;
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        nav.primary {
+            align-self: flex-start;
+        }
+    }
+    @include media-large {
+        .utilities {
+            nav.utility {
+                margin-bottom: 0.4rem;
+                ul {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+form.search {
+    display: flex;
+    .text,
+    .submit {
+        margin-bottom: 0;
+    }
+    .text {
+        width: 100%;
+    }
+    label {
+        @include visuallyhidden;
+    }
+    .submit {
+        flex-basis: 33%;
+        flex-shrink: 0;
+    }
+    input {
+        border: none;
+        width: 100%;
+    }
+}
+
+.torso {
+    padding-bottom: 3rem;
+    padding-top: 3rem;
+    .wrap {
+        @include media-large {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.hero {
+    background: $plain-text url(../img/hero.jpg) no-repeat center / cover;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    min-height: 15rem;
+    -webkit-justify-content: center;
+    justify-content: center;
+    text-align: center;
+    .copy {
+        @include container;
+
+        * {
+            color: #FFF;
+        }
+    }
+}
+
+main {
+    @include media-large {
+        flex: 1 1 auto;
+        padding-right: 2rem;
+    }
+    section {
+        &:not(:last-child) {
+            border-bottom: 1px solid $border;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+        }
+    }
+}
+
+aside.primary {
+    margin-bottom: 2rem;
+    @include media-large {
+        flex: 0 0 25%;
+        margin-bottom: 0;
+        nav ul {
+            text-align: left;
+        }
+    }
+}
+
+nav.supplemental {
+    margin-bottom: 0;
+    ul {
+        display: block;
+        li {
+            display: block;
+            float: none;
+            margin-bottom: 0;
+            a {
+                color: $link;
+                display: block;
+                padding: 0.25em 0;
+            }
+            a:hover {
+                color: $plain-text;
+            }
+        }
+        ul {
+            a {
+                color: $meta-text;
+                font-size: 0.8rem;
+                line-height: 2;
+                padding: 0;
+            }
+        }
+    }
+    > ul {
+        > li {
+            padding-bottom: 0.5em;
+        }
+        > li ~ li {
+            border-top: 1px solid $border;
+            padding-top: 0.5em;
+        }
+    }
+}
+
+footer.primary {
+    background-color: $charcoal;
+    color: #FFF;
+    font-size: 0.9rem;
+    padding: 3rem 0;
+    text-align: center;
+    @include media-large {
+        .wrapper {
+            display: flex;
+            > * {
+                flex: 1 0 0px;
+            }
+            > nav {
+                flex-grow: 2;
+                margin-bottom: 0;
+            }
+            > nav > ul {
+                justify-content: center;
+            }
+        }
+    }
+    .branding {
+        margin-top: 0;
+        @include media-large {
+            margin-right: 0;
+            max-width: none;
+            text-align: left;
+        }
+        a {
+            margin-bottom: 1rem;
+        }
+    }
+    a {
+        color: $link;
+        &:hover {
+            color: darken($link, 10%);
+        }
+    }
+    nav ul {
+        justify-content: center;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    .legal {
+        text-align: center;
+        p {
+            margin-bottom: 0.25rem;
+        }
+        a {
+            margin-left: 0.35rem;
+            margin-right: 0.35rem;
+        }
+    }
+}
+
+.social {
+    @include no-bullets;
+    margin-bottom: 1rem;
+    @include media-large {
+        text-align: right;
+    }
+    li {
+        display: inline-block;
+        font-size: 1.25rem;
+        height: 2em;
+        line-height: 2em;
+        margin-bottom: 0;
+        margin-left: 0.5em;
+        position: relative;
+        vertical-align: bottom;
+        width: 2em;
+    }
+    li:first-child {
+        margin-left: 0;
+    }
+    li.facebook a {
+        background-color: $facebook;
+        &::before {
+            @include fontawesome('\f09a');
+        }
+    }
+    li.twitter a {
+        background-color: $twitter;
+        &::before {
+            @include fontawesome('\f099');
+        }
+    }
+    li.linkedin a {
+        background-color: $linkedin;
+        &::before {
+            @include fontawesome('\f0e1');
+        }
+    }
+    li a {
+        border-radius: 50%;
+        color: #FFF;
+        display: block;
+        height: 100%;
+        position: relative;
+        text-align: center;
+    }
+    li a::before {
+        display: block;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+    }
+    li a:hover {
+        color: #222;
+    }
+}

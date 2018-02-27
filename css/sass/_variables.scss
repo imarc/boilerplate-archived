@@ -1,0 +1,74 @@
+///
+/// = Variables =
+///
+
+$gutter:    50px;
+
+///
+/// This is the default font stack.
+///
+
+$font-stack: Arial, sans-serif;
+
+
+///
+/// We provide the color `$white`, `$lightgray`, `$gray`, `$darkgray`,
+/// `$charcoal` and `$black` for convienence.
+///
+
+$white:     #FFF;
+$lightgray: #DDD;
+$gray:      #808080;
+$darkgray:  #4A4A4A;
+$charcoal:  #191919;
+$black:     #000;
+
+
+///
+/// The brand colors (name them the color)
+///
+
+$brand-blue: #0C96DD;
+$brand-orange: #EB7424;
+
+
+///
+/// Messaging colors
+///
+
+$success: #48AC2C;
+$error: #CE2A2A;
+$info: #DDD;
+
+
+///
+/// Applied colors
+///
+
+$plain-text: $charcoal;
+$meta-text: lighten($charcoal, 35%);
+$link: $brand-blue;
+$link-hover: $brand-orange;
+$border: lighten($charcoal, 60%);
+
+
+///
+/// Social Network Colors
+///
+
+$facebook: #3664A2;
+$twitter: #55ACEE;
+$linkedin: #0077B5;
+$youtube: #CD201F;
+
+
+///
+/// Media Query Details
+///
+
+$mq-medium: 576px;      $mq-medium-color: blue;
+$mq-large:  1024px;     $mq-large-color:  green;
+$mq-xl:     1200px;     $mq-xl-color:     red;
+
+$medium: $mq-medium;
+$large:  $mq-large;

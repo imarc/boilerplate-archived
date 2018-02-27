@@ -1,0 +1,42 @@
+///
+/// = Base =
+///
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+*, 
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #FFF;
+    color: $plain-text;
+    font-family: $font-stack;
+    font-size: 1rem;
+    height: 100%;
+    line-height: 1.5;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+    height: auto;
+}
+
+::selection {
+    background: $border;
+}
+
+::-moz-selection {
+    background: $border;
+}
