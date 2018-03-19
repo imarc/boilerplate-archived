@@ -1355,41 +1355,41 @@ img {
   max-width: 180px;
 }
 
-header.primary {
-  background-color: #191919;
-  position: relative;
-}
-
-header.primary .search-drawer {
+.search-drawer {
   background-color: #4A4A4A;
   display: none;
 }
 
-header.primary .search-drawer > div {
+.search-drawer > div {
   max-height: 0;
   overflow: hidden;
   transition: max-height 150ms ease;
 }
 
-header.primary .search-drawer > div.open {
+.search-drawer > div.open {
   max-height: 80px;
 }
 
-header.primary .search-drawer form {
+.search-drawer form {
   display: flex;
   padding: 1rem 0;
 }
 
-header.primary .search-drawer form > * {
+.search-drawer form > * {
   margin-bottom: 0;
 }
 
-header.primary .search-drawer form .text {
+.search-drawer form .text {
   flex: 1 1 auto;
 }
 
-header.primary .search-drawer form .submit input {
+.search-drawer form .submit input {
   height: 100%;
+}
+
+header.primary {
+  background-color: #191919;
+  position: relative;
 }
 
 header.primary .container {
@@ -2474,7 +2474,7 @@ table tr:nth-child(even) td {
   #responsive-tester::after {
     content: "1200px";
   }
-  header.primary .search-drawer {
+  .search-drawer {
     display: block;
   }
   header.primary .branding {
