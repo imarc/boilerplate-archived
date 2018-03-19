@@ -20,6 +20,11 @@
     "serve": "gulp serve"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.4",
+    "@fortawesome/fontawesome-free-brands": "^5.0.8",
+    "@fortawesome/fontawesome-pro-light": "^5.0.8",
+    "@fortawesome/fontawesome-pro-regular": "^5.0.8",
+    "@fortawesome/fontawesome-pro-solid": "^5.0.8",
     "normalize-scss": "^7.0.0"
   },
   "devDependencies": {
