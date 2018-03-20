@@ -19,9 +19,9 @@ Installing `node` will automatically give you `npm`. Alternatively, if you have 
 you can install node via Homebrew.
 
     npm install
-    npm run serve
+    npm run watch
 
-The `npm run serve` command will watch all your files and run BrowserSync, both compiling
+The `npm run watch` command will watch all your files and run BrowserSync, both compiling
 SCSS and reloading your browser on any changes.
 
 After launching, view in your browser at [localhost:3000](http://localhost:3000).

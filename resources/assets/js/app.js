@@ -13,12 +13,5 @@ $(function () {
     $('nav.primary').dropdown();
     $('.mobile').mobileNavigation();
     $('header.primary').stickyHeader();
-    $('.tabs').tabs();
 
-    $('aside.primary section').fix();
-
-    $('.sticky').fix({
-        startOffset: 100,
-        duration: 500,
-    });
 });

@@ -1055,6 +1055,18 @@
 
 
 ///
+/// The STICKY-ELEMENT component works with (sticky-element.plugin.js) to fix
+/// an element at a certain point in the viewport. Has options for offsets, duration,
+/// until, etc. It does not have a SASS mixin.
+///
+/// @emmet 
+/// @demo demo/sticky-element.html
+///
+
+@mixin sticky-element() {}
+
+
+///
 /// The STICKY-HEADER mixin works with (sticky-header.plugin.js) to hide
 /// a site’s header.primary element as you scroll down page. The element
 /// reappears when the user scrolls up the page. This is
