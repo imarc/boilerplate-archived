@@ -9,9 +9,6 @@ import './tabs.plugin.js'
 
 
 $(function () {
-    $('.accordion').accordion();
     $('nav.primary').dropdown();
-    $('.mobile').mobileNavigation();
     $('header.primary').stickyHeader();
-
 });

@@ -99,7 +99,7 @@
 
             toggleFreezeFrame();
 
-            $(toggleSelector).find('i').toggleClass('fa-bars fa-close');
+            $(toggleSelector).find('i').toggleClass('fa-bars fa-times');
 
             $(plugin[0].parentNode)
                 .find(subMenuClass)
