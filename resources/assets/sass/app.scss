@@ -103,7 +103,7 @@ $large:  $mq-large;
 ///  = Imports =
 ///
 
-@import "../node_modules/normalize-scss/sass/normalize";
+@import "~normalize-scss/sass/normalize";
 @import "mixins";
 @import "components";
 
@@ -247,34 +247,34 @@ img {
     }
 }
 
+.search-drawer {
+    background-color: $darkgray;
+    display: none;
+    > div {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 150ms ease;
+        &.open {
+            max-height: 80px;
+        }
+    }
+    form {
+        display: flex;
+        padding: 1rem 0;
+        > * {
+            margin-bottom: 0;
+        }
+        .text {
+            flex: 1 1 auto;
+        }
+        .submit input {
+            height: 100%;
+        }
+    }
+}
 header.primary {
     background-color: $charcoal;
     position: relative;
-    .search-drawer {
-        background-color: $darkgray;
-        display: none;
-        > div {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 150ms ease;
-            &.open {
-                max-height: 80px;
-            }
-        }
-        form {
-            display: flex;
-            padding: 1rem 0;
-            > * {
-                margin-bottom: 0;
-            }
-            .text {
-                flex: 1 1 auto;
-            }
-            .submit input {
-                height: 100%;
-            }
-        }
-    }
     .container {
         position: static;
     }
@@ -530,21 +530,12 @@ footer.primary {
     }
     li.facebook a {
         background-color: $facebook;
-        &::before {
-            @include fontawesome('\f09a');
-        }
     }
     li.twitter a {
         background-color: $twitter;
-        &::before {
-            @include fontawesome('\f099');
-        }
     }
     li.linkedin a {
         background-color: $linkedin;
-        &::before {
-            @include fontawesome('\f0e1');
-        }
     }
     li a {
         border-radius: 50%;
@@ -947,16 +938,14 @@ table {
     /// = Layout =
     ///
 
-    header.primary {
-        .search-drawer {
-            display: block;
-        }
-        .branding {
-            margin-right: 2rem;
-        }
-        .header-content {
-            padding-bottom: 0;
-        }
+    .search-drawer {
+        display: block;
+    }
+    .branding {
+        margin-right: 2rem;
+    }
+    header.primary .header-content {
+        padding-bottom: 0;
     }
 
     nav {

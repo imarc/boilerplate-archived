@@ -3,3 +3,4 @@ _site
 .sass-cache
 node_modules
 .npmrc
+mix-manifest.json

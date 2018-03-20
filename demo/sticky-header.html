@@ -6,27 +6,27 @@
         <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
         <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="../css/app.css" media="all" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-OGsxOZf8qnUumoWWSmTqXMPSNI9URpNYN35fXDb5Cv5jT6OR673ah1e5q+9xKTq6" crossorigin="anonymous">
     </head>
     <body>
         <div class="shell">
-            <div class="search-drawer">
-                <div>
-                    <div class="container">
-                        <form action="">
-                            <div class="text">
-                                <label class="sr-only" for="">Search the website</label>
-                                <input type="text" />
-                            </div>
-                            <div class="submit">
-                                <input type="submit" />
-                            </div>
-                        </form>
+            <header class="primary sticky">
+                <div class="search-drawer">
+                    <div>
+                        <div class="container">
+                            <form action="">
+                                <div class="text">
+                                    <label class="sr-only" for="">Search the website</label>
+                                    <input type="text" />
+                                </div>
+                                <div class="submit">
+                                    <input type="submit" />
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <header class="primary sticky">
                 <div class="container">
                     <div class="header-content">
                         <div class="branding">
@@ -34,12 +34,12 @@
                                 <img src="../img/logo-boilerplate.png" alt="Imarc Boilerplate">
                             </a>
                         </div>
-                        <button class="menu-toggle"><i class="fa fa-bars"></i></button>
+                        <button aria-label="Toggle Menu" class="menu-toggle"><i class="fas fa-bars"></i></button>
                         <div class="desktop">
                             <div class="utilities">
                                 <nav class="utility">
                                     <ul>
-                                        <li><a class="search-toggle" href="/search"><i aria-hidden="true" class="fa fa-search"></i> Search</a></li>
+                                        <li><a aria-label="Search site" class="search-toggle" href="/search"><i aria-hidden class="fas fa-search"></i> Search</a></li>
                                         <li><a href="">Careers</a></li>
                                         <li><a href="">Legal</a></li>
                                         <li><a href="">Log In</a></li>
@@ -49,7 +49,7 @@
                             <nav class="primary">
                                 <ul>
                                     <li class="mega">
-                                        <a href="">Maine <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <a href="">Maine <i class="fas fa-caret-down" aria-hidden></i></a>
                                         <div class="dropdown">
                                             <div class="menu">
                                                 <div>
@@ -87,7 +87,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#yup">Markup <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <a href="#yup">Markup <i class="fas fa-caret-down" aria-hidden></i></a>
                                         <div class="dropdown">
                                             <div class="menu">
                                                 <div>
@@ -125,7 +125,7 @@
                             <nav class="primary">
                                 <ul>
                                     <li class="mega">
-                                        <a href="">Maine <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <a href="">Maine <i class="fas fa-caret-down" aria-hidden></i></a>
                                         <div class="dropdown">
                                             <div class="menu">
                                                 <div>
@@ -163,7 +163,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#yup">Markup <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <a href="#yup">Markup <i class="fas fa-caret-down" aria-hidden></i></a>
                                         <div class="dropdown">
                                             <div class="menu">
                                                 <div>
@@ -356,16 +356,8 @@
                 </div>
             </footer>
         </div>
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="../js/mobileNavigation.plugin.js"></script>
-        <script src="../js/stickyHeader.plugin.js"></script>
-        <script src="../js/dropdown.plugin.js"></script>
-        <script>
-            $(function() {
-                $('header.primary').stickyHeader();
-                $('nav.primary').dropdown();
-                $('.mobile').mobileNavigation();
-            });
-        </script>
+        <script src="../js/manifest.js"></script>
+        <script src="../js/vendor.js"></script>        
+        <script src="../js/app.js"></script>
     </body>
 </html>
