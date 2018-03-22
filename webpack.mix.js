@@ -36,16 +36,10 @@ mix.webpackConfig({
         poll: Mix.isPolling() ? 1700 : false,
         aggregateTimeout: 600,
         ignored: [ /^(?!.*resources)/ ]
-    }
+    },
+    devtool: "inline-source-map"
 });
 
-// Asset Config
-
-mix.js('resources/assets/js/app.js', 'js');
-mix.sass('resources/assets/sass/app.scss', 'css')
-    .options({
-        processCssUrls: false
-    });
 
 mix.browserSync({
     proxy: false,
@@ -54,9 +48,19 @@ mix.browserSync({
     }
 });
 
-mix.extract(['jquery']);
-mix.sourceMaps();
-mix.version();
+
+// Asset Config
+mix
+    .js('resources/assets/js/app.js', 'js')
+    .sass('resources/assets/sass/app.scss', 'css')
+    .options({
+        processCssUrls: false
+    })
+    .extract(['jquery'])
+    .version()
+    .sourceMaps();
+
+
 
 // Full API Examples
 
