@@ -503,27 +503,29 @@ template {
 }
 
 .accordion > div.open .header::after {
-  font: normal normal normal 1em / 1 FontAwesome;
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "";
+  display: inline-block;
   font-size: inherit;
-  line-height: inherit;
+  font-weight: "\F068";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  content: "\F068";
 }
 
 .accordion > div.close .header::after {
-  font: normal normal normal 1em / 1 FontAwesome;
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "";
+  display: inline-block;
   font-size: inherit;
-  line-height: inherit;
+  font-weight: "\F067";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  content: "\F067";
 }
 
 .accordion > div.initially-hidden .content {
@@ -1037,27 +1039,29 @@ nav.pagination li.disabled a {
 }
 
 nav.pagination li.previous a::before {
-  font: normal normal normal 1em / 1 FontAwesome;
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "";
+  display: inline-block;
   font-size: inherit;
-  line-height: inherit;
+  font-weight: "\F100";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  content: "\F100";
 }
 
 nav.pagination li.next a::before {
-  font: normal normal normal 1em / 1 FontAwesome;
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "";
+  display: inline-block;
   font-size: inherit;
-  line-height: inherit;
+  font-weight: "\F101";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  content: "\F101";
 }
 
 nav.pagination li:hover:not(.active):not(.disabled) a {
@@ -1603,15 +1607,16 @@ nav.breadcrumbs li:not(:last-child) a {
 }
 
 nav.breadcrumbs li:not(:last-child) a::after {
-  font: normal normal normal 1em / 1 FontAwesome;
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "";
+  display: inline-block;
   font-size: inherit;
-  line-height: inherit;
+  font-weight: "\F105";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  content: "\F105";
   padding-left: 0.5rem;
 }
 
@@ -2364,17 +2369,60 @@ input[type="submit"][disabled] {
   pointer-events: none;
 }
 
-.thumbs-up::before {
-  font: normal normal normal 1em / 1 FontAwesome;
+[class^="fa-example"]::before {
+  margin-right: .5rem;
+}
+
+.fa-example-light::before {
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "\F11B";
+  display: inline-block;
   font-size: inherit;
-  line-height: inherit;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  content: "\F087";
-  margin-right: 0.5em;
+}
+
+.fa-example-regular::before {
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "\F11B";
+  display: inline-block;
+  font-size: inherit;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+}
+
+.fa-example-solid::before {
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "\F11B";
+  display: inline-block;
+  font-size: inherit;
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
+}
+
+.fa-example-brand::before {
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "\F23E";
+  display: inline-block;
+  font-size: inherit;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  speak: none;
+  text-rendering: auto;
+  text-transform: none;
 }
 
 .success {
@@ -2394,23 +2442,24 @@ input[type="submit"][disabled] {
 }
 
 .success::before {
-  font: normal normal normal 1em / 1 FontAwesome;
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "";
+  display: inline-block;
   font-size: inherit;
-  line-height: inherit;
+  font-weight: 900;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  display: inline-block;
   content: "";
-  display: block;
-  font-size: 20px;
-  height: 23px;
+  font-size: 1em;
   left: 1em;
+  line-height: inherit;
   position: absolute;
-  top: .65em;
-  width: 23px;
+  text-align: center;
+  top: 1em;
+  width: 1em;
 }
 
 .success::before {
@@ -2442,23 +2491,24 @@ input[type="submit"][disabled] {
 }
 
 .info::before {
-  font: normal normal normal 1em / 1 FontAwesome;
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "";
+  display: inline-block;
   font-size: inherit;
-  line-height: inherit;
+  font-weight: 900;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  display: inline-block;
   content: "";
-  display: block;
-  font-size: 20px;
-  height: 23px;
+  font-size: 1em;
   left: 1em;
+  line-height: inherit;
   position: absolute;
-  top: .65em;
-  width: 23px;
+  text-align: center;
+  top: 1em;
+  width: 1em;
 }
 
 .info::before {
@@ -2482,23 +2532,24 @@ input[type="submit"][disabled] {
 }
 
 .error::before {
-  font: normal normal normal 1em / 1 FontAwesome;
+  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  content: "";
+  display: inline-block;
   font-size: inherit;
-  line-height: inherit;
+  font-weight: 900;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
   text-rendering: auto;
   text-transform: none;
-  display: inline-block;
   content: "";
-  display: block;
-  font-size: 20px;
-  height: 23px;
+  font-size: 1em;
   left: 1em;
+  line-height: inherit;
   position: absolute;
-  top: .65em;
-  width: 23px;
+  text-align: center;
+  top: 1em;
+  width: 1em;
 }
 
 .error::before {
