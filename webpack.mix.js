@@ -37,7 +37,7 @@ mix.webpackConfig({
         aggregateTimeout: 600,
         ignored: [ /^(?!.*resources)/ ]
     },
-    devtool: "inline-source-map"
+    devtool: "source-map"
 });
 
 
