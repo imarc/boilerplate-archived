@@ -6,8 +6,8 @@
         <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
         <meta name="web_author" content="Imarc, A Digital Agency | more info at imarc.com" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="css/app.css" media="all" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
     </head>
     <body>
         <div class="shell">
@@ -35,12 +35,12 @@
                                 <img src="img/logo-boilerplate.png" alt="Imarc Boilerplate">
                             </a>
                         </div>
-                        <button class="menu-toggle"><i class="fa fa-bars"></i></button>
+                        <button aria-label="Toggle Menu" class="menu-toggle"><i class="fas fa-bars"></i></button>
                         <div class="desktop">
                             <div class="utilities">
                                 <nav class="utility">
                                     <ul>
-                                        <li><a class="search-toggle" href="/search"><i aria-hidden="true" class="fa fa-search"></i> Search</a></li>
+                                        <li><a aria-label="Search site" class="search-toggle" href="/search"><i aria-hidden class="fas fa-search"></i> Search</a></li>
                                         <li><a href="">Careers</a></li>
                                         <li><a href="">Legal</a></li>
                                         <li><a href="">Log In</a></li>
@@ -50,7 +50,7 @@
                             <nav class="primary">
                                 <ul>
                                     <li class="mega">
-                                        <a href="">Maine <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <a href="">Maine <i class="fas fa-caret-down" aria-hidden></i></a>
                                         <div class="dropdown">
                                             <div class="menu">
                                                 <div>
@@ -88,7 +88,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#yup">Markup <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <a href="#yup">Markup <i class="fa fa-caret-down" aria-hidden></i></a>
                                         <div class="dropdown">
                                             <div class="menu">
                                                 <div>
@@ -522,14 +522,19 @@
 
                             <section>
                                 <h2 id="Iconography">Iconography</h2>
-                                <h3 id="Dedicated-element">Dedicated Element</h3>
                                 <p>
                                     Visit Imarc on
-                                    <a href="https://www.facebook.com/iMarcAgency/"><i class="fa fa-facebook-official" aria-hidden="true"></i> Facebook</a>
+                                    <a href="https://www.facebook.com/iMarcAgency/"><i class="fab fa-facebook"></i> Facebook</a>
                                 </p>
-
-                                <h3 id="Pseudo-element">Pseudo Element</h3>
-                                <a href="https://github.com/imarc/boilerplate" class="button thumbs-up">Boilerplate is great!</a>
+                                <div>
+                                    <span class="fa-example-light">A light pseudo icon example (font-weight: 300)</span>
+                                </div>
+                                <div>
+                                    <span class="fa-example-regular">A regular pseudo icon example (font-weight: 400)</span>
+                                </div>
+                                <div>
+                                    <span class="fa-example-solid">A solid pseudo icon example (font-weight: 900)</span>
+                                </div>
                             </section>
                         </main>
                         <aside class="primary">
@@ -612,14 +617,17 @@
                             <ul class="social">
                                 <li class="facebook">
                                     <a aria-label="Visit us on Facebook" href="https://www.facebook.com/ImarcAgency">
+                                        <i class="fab fa-facebook-f"></i>
                                     </a>
                                 </li>
                                 <li class="twitter">
                                     <a aria-label="Visit us on Twitter" href="https://www.twitter.com/ImarcAgency">
+                                        <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
                                 <li class="linkedin">
                                     <a aria-label="Visit us on Linkedin" href="https://www.linkedin.com/company/imarc">
+                                        <i class="fab fa-linkedin"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -636,16 +644,9 @@
 
         <div id="responsive-tester"><span></span></div>
 
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="js/mobileNavigation.plugin.js"></script>
-        <script src="js/dropdown.plugin.js"></script>
-        <script src="js/stickyHeader.plugin.js"></script>
-        <script>
-            $(function () {
-                $('header.primary').stickyHeader();
-                $('nav.primary').dropdown();
-                $('.mobile').mobileNavigation();
-            });
-        </script>
+        <script src="js/manifest.js"></script>
+        <script src="js/vendor.js"></script>        
+        <script src="js/app.js"></script>
+
     </body>
 </html>

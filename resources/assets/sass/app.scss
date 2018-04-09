@@ -103,7 +103,7 @@ $large:  $mq-large;
 ///  = Imports =
 ///
 
-@import "../node_modules/normalize-scss/sass/normalize";
+@import "~normalize-scss/sass/normalize";
 @import "mixins";
 @import "components";
 
@@ -272,7 +272,7 @@ img {
         }
     }
 }
-    
+
 header.primary {
     background-color: $charcoal;
     position: relative;
@@ -531,21 +531,12 @@ footer.primary {
     }
     li.facebook a {
         background-color: $facebook;
-        &::before {
-            @include fontawesome('\f09a');
-        }
     }
     li.twitter a {
         background-color: $twitter;
-        &::before {
-            @include fontawesome('\f099');
-        }
     }
     li.linkedin a {
         background-color: $linkedin;
-        &::before {
-            @include fontawesome('\f0e1');
-        }
     }
     li a {
         border-radius: 50%;
@@ -837,11 +828,21 @@ input[type="submit"] {
 ///
 /// = Iconography =
 ///
+[class^="fa-example"]::before {
+    margin-right: .5rem;
+}
 
-.thumbs-up::before {
-    @include fontawesome("\f087");
-
-    margin-right: 0.5em;
+.fa-example-light::before {
+    @include fontawesome(300, "\f11b");
+}
+.fa-example-regular::before {
+    @include fontawesome(400, "\f11b");
+}
+.fa-example-solid::before {
+    @include fontawesome(900, "\f11b");
+}
+.fa-example-brand::before {
+    @include fontawesome(400, "\f23e");
 }
 
 
@@ -951,14 +952,11 @@ table {
     .search-drawer {
         display: block;
     }
-
-    header.primary {
-        .branding {
-            margin-right: 2rem;
-        }
-        .header-content {
-            padding-bottom: 0;
-        }
+    .branding {
+        margin-right: 2rem;
+    }
+    header.primary .header-content {
+        padding-bottom: 0;
     }
 
     nav {

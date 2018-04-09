@@ -82,21 +82,17 @@
 /// fontawesome mixin
 ///
 
-@mixin fontawesome($character: "") {
-    font: normal normal normal 1em unquote("/") 1 FontAwesome;
+@mixin fontawesome($weight: 400, $character: "") {
+    font: normal normal normal 1em unquote("/") 1 'Font Awesome 5 Pro';
+    content: $character;
+    display: inline-block;
     font-size: inherit;
-    line-height: inherit;
+    font-weight: $weight;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     speak: none;
     text-rendering: auto;
     text-transform: none;
-
-    @if $character != "" {
-        content: $character;
-    } @else {
-        display: inline-block;
-    }
 }
 
 
@@ -108,6 +104,7 @@
     margin-bottom: 2rem;
     padding: 1em 3em;
     position: relative;
+
     p:last-of-type,
     ul:last-of-type {
         margin-bottom: 0;
@@ -116,16 +113,16 @@
         text-decoration: underline;
     }
     &::before {
-        @include fontawesome;
+        @include fontawesome(900);
 
         content: "";
-        display: block;
-        font-size: 20px;
-        height: 23px;
+        font-size: 1em;
         left: 1em;
+        line-height: inherit;
         position: absolute;
-        top: .65em;
-        width: 23px;
+        text-align: center;
+        top: 1em;
+        width: 1em;
     }
 }
 
