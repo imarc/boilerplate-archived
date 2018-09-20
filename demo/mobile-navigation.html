@@ -6,7 +6,7 @@
         <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
         <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" type="text/css" href="../css/app.css" media="all" /> 
+        <link rel="stylesheet" type="text/css" href="../css/app.css" media="all" />
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.8/css/all.css" integrity="   sha384-OGsxOZf8qnUumoWWSmTqXMPSNI9URpNYN35fXDb5Cv5jT6OR673ah1e5q+9xKTq6" crossorigin="anonymous">
     </head>
     <body>
@@ -232,12 +232,12 @@
                     <code>.mobile</code> and <code>.desktop</code> classes.
                     </p>
                     <p> This component requires the site to be wrapped in a wrapper class.
-                    By default this is <code>.wrapper</code>.
+                    By default this is <code>.shell</code>.
                     </p>
                     <pre>
                     <code>
         &lt;body&gt;
-        &lt;div class="wrapper"&gt; &lt;!--- Wrapper Class ---&gt;
+        &lt;div class="shell"&gt; &lt;!--- Wrapper Class ---&gt;
         &lt;header class="primary"&gt;
             &lt;div class="container"&gt;
                 &lt;div class="header-content"&gt;
@@ -276,21 +276,23 @@
             &lt;li&gt;
                 &lt;a href=""&gt;Maine&lt;/a&gt;
                 &lt;div class="dropdown"&gt; &lt;!--- 2nd Level  ---&gt;
-                    &lt;ul&gt;
-                        &lt;li&gt;
-                            &lt;a href=""&gt;Augusta&lt;/a&gt;
-                            &lt;div class="dropdown"&gt; &lt;!--- 3rd Level ---&gt;
-                                &lt;ul&gt;
-                                    &lt;li&gt;&lt;a href=""&gt;Main Street&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li&gt;&lt;a href=""&gt;Oak Street&lt;/a&gt;&lt;/li&gt;
-                                    &lt;li&gt;&lt;a href=""&gt;Elm Street&lt;/a&gt;&lt;/li&gt;
-                                &lt;/ul&gt;
-                            &lt;/div&gt;
-                        &lt;/li&gt;
-                        &lt;li&gt;&lt;a href=""&gt;Eliot&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=""&gt;Kittery&lt;/a&gt;&lt;/li&gt;
-                        &lt;li&gt;&lt;a href=""&gt;Portland&lt;/a&gt;&lt;/li&gt;
-                    &lt;/ul&gt;
+                    &lt;div class="menu"&gt;
+                        &lt;ul&gt;
+                            &lt;li&gt;
+                                &lt;a href=""&gt;Augusta&lt;/a&gt;
+                                &lt;div class="dropdown"&gt; &lt;!--- 3rd Level ---&gt;
+                                    &lt;ul&gt;
+                                        &lt;li&gt;&lt;a href=""&gt;Main Street&lt;/a&gt;&lt;/li&gt;
+                                        &lt;li&gt;&lt;a href=""&gt;Oak Street&lt;/a&gt;&lt;/li&gt;
+                                        &lt;li&gt;&lt;a href=""&gt;Elm Street&lt;/a&gt;&lt;/li&gt;
+                                    &lt;/ul&gt;
+                                &lt;/div&gt;
+                            &lt;/li&gt;
+                            &lt;li&gt;&lt;a href=""&gt;Eliot&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=""&gt;Kittery&lt;/a&gt;&lt;/li&gt;
+                            &lt;li&gt;&lt;a href=""&gt;Portland&lt;/a&gt;&lt;/li&gt;
+                        &lt;/ul&gt;
+                    &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/li&gt;
 
@@ -358,7 +360,7 @@
                         <tr>
                             <td>wrapperClass</td>
                             <td>string</td>
-                            <td>'wrapper'</td>
+                            <td>'shell'</td>
                             <td>This is the wrapper class for the entire site. If for some reason this changes, please
                                 change this option to match.
                             </td>
@@ -497,7 +499,7 @@
         </footer>
 
         <script src="../js/manifest.js"></script>
-        <script src="../js/vendor.js"></script>        
+        <script src="../js/vendor.js"></script>
         <script src="../js/app.js"></script>
         <script>
             $('.mobile').mobileNavigation();

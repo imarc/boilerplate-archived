@@ -739,8 +739,35 @@
 
 
 ///
-/// The mobile navigation mixin is missing any kind of sass, docblock style
-/// documentation within _components.scss. Sorry.
+/// The MOBILENAVIGATION mixin is a basic implementation of a mobile menu. The
+/// mobile navigation shares similar markup to the desktop navigation. In theory,
+/// you can abstract this mark up into a partial and include the partial within
+/// .mobile and .desktop classes.
+///
+/// @emmet div.shell>header.primary>div.container>div.header-content>(div.branding+button.menu-toggle+(div.mobile>(div.utilities+nav.primary))+(div.desktop>(div.utilities+nav.primary)))
+///
+/// @example markup HTML
+///     <body>
+///        <div class="shell">
+///          <header class="primary">
+///              <div class="container">
+///                  <div class="header-content">
+///                      <div class="branding"></div>
+///                      <button class="menu-toggle"></button>
+///                      <div class="mobile">
+///                          <div class="utilities"></div>
+///                          <nav class="primary"></nav>
+///                      </div>
+///                      <div class="desktop">
+///                          <div class="utilities"></div>
+///                          <nav class="primary"></nav>
+///                      </div>
+///                  </div>
+///              </div>
+///          </header>
+///       </div>
+///     </body>
+///
 ///
 /// @demo demo/mobile-navigation.html
 ///
@@ -1059,7 +1086,7 @@
 /// an element at a certain point in the viewport. Has options for offsets, duration,
 /// until, etc. It does not have a SASS mixin.
 ///
-/// @emmet 
+/// @emmet
 /// @demo demo/sticky-element.html
 ///
 

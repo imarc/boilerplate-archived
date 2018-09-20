@@ -172,7 +172,7 @@
                 .append('<button class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-right" aria-hidden="true"></i></button>');
 
             $(this)
-                .find(subMenuClass + ' ul').first()
+                .find('>' + subMenuClass + '> div')
                 .prepend('<li><button class="sub-menu-toggle" data-menu="' + text + '"><i class="fa fa-angle-left" aria-hidden="true"></i> ' + text + '</button></li>')
 
         };
@@ -273,14 +273,15 @@
         var toggleFreezeFrame = function() {
             var scroll = {
                 'height': '100%',
-                'overflow': 'hidden'
+                'overflow': 'hidden',
+                'position': 'fixed'
             };
 
             if($(plugin[0]).hasClass('open')) {
                 scroll.overflow = 'auto';
             }
 
-            $('html').css(scroll);
+            $('body').css(scroll);
 
         };
 

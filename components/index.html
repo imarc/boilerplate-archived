@@ -602,7 +602,28 @@
             transform: translateX(100%);
         }
     }
- }" data-collapsed="@mixin mobileNavigation() { ... }"><code>@mixin mobileNavigation() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The mobile navigation mixin is missing any kind of sass, docblock style documentation within _components.scss. Sorry.</p></div><h3 class="item__sub-heading">Sass Parameters</h3><p>None.</p><p class="demo"><a class="button" href="../demo/mobile-navigation.html">View Demo</a></p></section><section class="main__item container item" id="undefined-mixin-pagination"><h3 class="item__heading"><a class="item__name" href="#mixin-pagination">pagination</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin pagination() { 
+ }" data-collapsed="@mixin mobileNavigation() { ... }"><code>@mixin mobileNavigation() { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>The MOBILENAVIGATION mixin is a basic implementation of a mobile menu. The mobile navigation shares similar markup to the desktop navigation. In theory, you can abstract this mark up into a partial and include the partial within .mobile and .desktop classes.</p></div><h3 class="item__sub-heading">Sass Parameters</h3><p>None.</p><h3 class="item__sub-heading">Emmet</h3><div class="item__emmet emmet"><pre class="emmet__code language-emmet"><code class="language-emmet">div.shell&gt;header.primary&gt;div.container&gt;div.header-content&gt;(div.branding+button.menu-toggle+(div.mobile&gt;(div.utilities+nav.primary))+(div.desktop&gt;(div.utilities+nav.primary)))
+</code></pre></div><p class="demo"><a class="button" href="../demo/mobile-navigation.html">View Demo</a></p><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>HTML</p></div><pre class="example__code language-markup"><code>&lt;body&gt;
+   &lt;div class=&quot;shell&quot;&gt;
+     &lt;header class=&quot;primary&quot;&gt;
+         &lt;div class=&quot;container&quot;&gt;
+             &lt;div class=&quot;header-content&quot;&gt;
+                 &lt;div class=&quot;branding&quot;&gt;&lt;/div&gt;
+                 &lt;button class=&quot;menu-toggle&quot;&gt;&lt;/button&gt;
+                 &lt;div class=&quot;mobile&quot;&gt;
+                     &lt;div class=&quot;utilities&quot;&gt;&lt;/div&gt;
+                     &lt;nav class=&quot;primary&quot;&gt;&lt;/nav&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&quot;desktop&quot;&gt;
+                     &lt;div class=&quot;utilities&quot;&gt;&lt;/div&gt;
+                     &lt;nav class=&quot;primary&quot;&gt;&lt;/nav&gt;
+                 &lt;/div&gt;
+             &lt;/div&gt;
+         &lt;/div&gt;
+     &lt;/header&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+</code></pre></div></section><section class="main__item container item" id="undefined-mixin-pagination"><h3 class="item__heading"><a class="item__name" href="#mixin-pagination">pagination</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin pagination() { 
     display: flex;
     justify-content: center;
     ul {
