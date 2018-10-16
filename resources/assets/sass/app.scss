@@ -18,7 +18,6 @@
 /// Tables
 /// Section Specific
 /// Page Specific
-/// Media Queries
 /// Print
 ////
 
@@ -108,8 +107,8 @@ $large:  $mq-large;
 @import "components";
 
 ///
-/// = Normalize = 
-/// 
+/// = Normalize =
+///
 
 @include normalize();
 
@@ -192,7 +191,7 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
-*, 
+*,
 *::before,
 *::after {
     box-sizing: inherit;
@@ -245,6 +244,9 @@ img {
     img {
         max-width: 180px;
     }
+    @include media-large {
+        margin-right: 2rem;
+    }
 }
 
 .search-drawer {
@@ -271,6 +273,9 @@ img {
             height: 100%;
         }
     }
+    @include media-large {
+        display: block;
+    }
 }
 
 header.primary {
@@ -285,6 +290,11 @@ header.primary {
     .branding {
         flex-basis: 180px;
         flex-shrink: 0;
+    }
+    @include media-large {
+        .header-content {
+            padding-bottom: 0;
+        }
     }
 }
 
@@ -320,7 +330,11 @@ nav {
     &.progress {
         @include progress();
     }
-
+    @include media-large {
+        ul {
+            text-align: left;
+        }
+    }
 }
 
 nav.primary {
@@ -348,6 +362,25 @@ nav.primary {
             color: lighten($charcoal, 55%);
         }
     }
+    @include media-large {
+        margin-bottom: 0;
+        > ul > li {
+            font-size: 1.1rem;
+            margin-left: 1rem;
+            padding-bottom: 1rem;
+            position: relative;
+        }
+        > ul > li:first-child {
+            margin-left: 0;
+        }
+        ul {
+            text-align: left;
+            li li {
+                display: block;
+                float: none;
+            }
+        }
+    }
 }
 
 nav.utility {
@@ -355,6 +388,17 @@ nav.utility {
     a {
         color: #FFF;
         font-size: 0.8rem;
+    }
+}
+
+.utilities {
+    @include media-large {
+        nav.utility {
+            margin-bottom: 0.4rem;
+            ul {
+                text-align: right;
+            }
+        }
     }
 }
 
@@ -377,8 +421,25 @@ nav.utility {
     }
 }
 
+button.menu-toggle {
+    @include media-large {
+        display: none;
+    }
+}
+
 .desktop {
     display: none;
+    @include media-large {
+        align-items: flex-end;
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        nav.primary {
+            align-self: flex-start;
+        }
+    }
 }
 
 form.search {
@@ -406,6 +467,19 @@ form.search {
 .torso {
     padding-bottom: 3rem;
     padding-top: 3rem;
+    @include media-large {
+        .wrap {
+            display: flex;
+            justify-content: space-between;
+            main {
+                flex: 1 1 auto;
+                padding-right: 2rem;
+            }
+            aside.primary {
+                flex: 0 0 25%;
+            }
+        }
+    }
 }
 
 .hero {
@@ -437,6 +511,12 @@ main section {
 
 aside.primary {
     margin-bottom: 2rem;
+    @include media-large {
+        margin-bottom: 0;
+        nav ul {
+            text-align: left;
+        }
+    }
 }
 
 nav.supplemental {
@@ -509,6 +589,29 @@ footer.primary {
             margin-right: 0.35rem;
         }
     }
+    @include media-large {
+        .wrapper {
+            display: flex;
+            > * {
+                flex: 1 0 0px;
+            }
+            > nav {
+                flex-grow: 2;
+                margin-bottom: 0;
+            }
+            > nav > ul {
+                justify-content: center;
+            }
+        }
+        .branding {
+            margin-right: 0;
+            max-width: none;
+            text-align: left;
+        }
+        .social {
+            text-align: right;
+        }
+    }
 }
 
 .social {
@@ -575,22 +678,37 @@ h5 {
 
 h1 {
     font-size: 2.2rem;
+    @include media-large {
+        font-size: 2.6rem;
+    }
 }
 
 h2 {
     font-size: 1.7rem;
+    @include media-large {
+        font-size: 2.1rem;
+    }
 }
 
 h3 {
     font-size: 1.3rem;
+    @include media-large {
+        font-size: 1.6rem;
+    }
 }
 
 h4 {
     font-size: 1.1rem;
+    @include media-large {
+        font-size: 1.25rem;
+    }
 }
 
 h5 {
     font-size: 1rem;
+    @include media-large {
+        font-size: 1.15rem;
+    }
 }
 
 p {
@@ -933,155 +1051,6 @@ table {
 /// =  Page Specific =
 ///
 
-
-///
-/// = Media Queries =
-///
-
-
-@include media-medium {
-
-}
-
-@include media-large { 
-    
-    ///
-    /// = Layout =
-    ///
-
-    .search-drawer {
-        display: block;
-    }
-    .branding {
-        margin-right: 2rem;
-    }
-    header.primary .header-content {
-        padding-bottom: 0;
-    }
-
-    nav {
-        ul {
-            text-align: left;
-        }
-    }
-
-    nav.primary {
-        margin-bottom: 0;
-        > ul > li {
-            font-size: 1.1rem;
-            margin-left: 1rem;
-            padding-bottom: 1rem;
-            position: relative;
-        }
-        > ul > li:first-child {
-            margin-left: 0;
-        }
-        ul {
-            text-align: left;
-            li li {
-                display: block;
-                float: none;
-            }
-        }
-    }
-
-    .utilities {
-        nav.utility {
-            margin-bottom: 0.4rem;
-            ul {
-                text-align: right;
-            }
-        }
-    }
-
-    .desktop {
-        align-items: flex-end;
-        display: flex;
-        flex: 1 1 auto;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-
-        nav.primary {
-            align-self: flex-start;
-        }
-    }
-
-    button.menu-toggle {
-        display: none;
-    }
-
-    .torso .wrap {
-        display: flex;
-        justify-content: space-between;
-        main {
-            flex: 1 1 auto;
-            padding-right: 2rem;
-        }
-        aside.primary {
-            flex: 0 0 25%;
-        }
-    }
-
-    aside.primary {
-        margin-bottom: 0;
-        nav ul {
-            text-align: left;
-        }
-    }
-
-    footer.primary {
-        .wrapper {
-            display: flex;
-            > * {
-                flex: 1 0 0px;
-            }
-            > nav {
-                flex-grow: 2;
-                margin-bottom: 0;
-            }
-            > nav > ul {
-                justify-content: center;
-            }
-        }
-        .branding {
-            margin-right: 0;
-            max-width: none;
-            text-align: left;
-        }
-        .social {
-            text-align: right;
-        }
-    }
-
-
-    ///
-    /// = Typography =
-    ///
-
-    h1 {
-        font-size: 2.6rem;
-    }
-
-    h2 {
-        font-size: 2.1rem;
-    }
-
-    h3 {
-        font-size: 1.6rem;
-    }
-
-    h4 {
-        font-size: 1.25rem;
-    }
-
-    h5 {
-        font-size: 1.15rem;
-    }
-}
-
-@include media-xl {
-
-}
 
 ///
 /// = Print =
