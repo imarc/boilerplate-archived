@@ -824,6 +824,10 @@ input[type="submit"] {
     cursor: pointer;
 }
 
+.select-wrapper {
+    @include colored-select-wrapper($border, #FFF, 37px);
+}
+
 
 ///
 /// = Iconography =
