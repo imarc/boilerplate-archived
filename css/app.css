@@ -718,7 +718,7 @@ template {
   display: inline-block;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1024px) {
   .header-content > .dropdown.open.left,
   .mobile.open.left {
     -webkit-transform: translateX(-100%);
@@ -750,7 +750,7 @@ template {
   margin-bottom: 0;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1024px) {
   .features {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1040,7 +1040,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   }
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1024px) {
   .desktop nav.primary i.fa {
     display: inline-block;
   }
@@ -1085,7 +1085,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   position: static;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1024px) {
   .desktop nav.primary li.mega .dropdown {
     left: 0;
     top: 100%;
@@ -1176,7 +1176,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   display: inherit;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1024px) {
   .tabs nav ul {
     margin-left: 20px;
     text-align: left;
@@ -1235,7 +1235,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   padding: 0 2.5rem;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1024px) {
   .testimonial {
     text-align: left;
   }
@@ -1307,7 +1307,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   }
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1024px) {
   .tiles > * {
     -ms-flex-preferred-size: calc((100% / 4) - (2rem));
         flex-basis: calc((100% / 4) - (2rem));
@@ -1572,7 +1572,7 @@ nav.tabs .panel.active {
   display: inherit;
 }
 
-@media screen and (min-width: 576px) {
+@media screen and (min-width: 1024px) {
   nav.tabs nav ul {
     margin-left: 20px;
     text-align: left;

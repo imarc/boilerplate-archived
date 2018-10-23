@@ -381,7 +381,7 @@
             display: none;
         }
     }
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
         i.fa {
             display: inline-block;
         }
@@ -456,7 +456,7 @@
 
 @mixin dropdown-mega() {
     position: static;
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
         .dropdown {
             left: 0;
             top: 100%;
@@ -525,7 +525,7 @@
             margin-bottom: 0;
         }
     }
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -811,7 +811,7 @@
         }
 
     }
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
         &.open.left {
             transform: translateX(-100%);
         }
@@ -1170,7 +1170,7 @@
      .panel.active {
          display: inherit;
      }
-     @include breakpoint(md) {
+     @include breakpoint(lg) {
          nav ul {
              margin-left: 20px;
              text-align: left;
@@ -1251,7 +1251,7 @@
             padding: 0 2.5rem;
         }
     }
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
         text-align: left;
         .wrapper {
             display: flex;
@@ -1342,7 +1342,7 @@
             margin-right: $gutter / 2;
         }
     }
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
         > * {
             flex-basis: calc((100% / #{$columns}) - (#{$gutter}));
         }
