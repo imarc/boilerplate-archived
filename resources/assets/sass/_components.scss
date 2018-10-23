@@ -263,7 +263,7 @@
         border: 0;
         display: none;
     }
-    @include media-medium {
+    @include breakpoint(md) {
         & {
             display: table;
             table-layout: fixed;
@@ -325,7 +325,7 @@
             margin-bottom: 2rem;
         }
     }
-    @include media-medium {
+    @include breakpoint(md) {
         > * {
             display: flex;
             flex-direction: $direction;
@@ -375,13 +375,13 @@
 ///
 
 @mixin dropdown() {
-    @media only screen and (max-width: $large - 1px) {
+    @media only screen and (max-width: map-get($breakpoints,lg) - 1px) { 
         .dropdown,
         i.fa {
             display: none;
         }
     }
-    @include media-large {
+    @include breakpoint(md) {
         i.fa {
             display: inline-block;
         }
@@ -456,7 +456,7 @@
 
 @mixin dropdown-mega() {
     position: static;
-    @include media-large {
+    @include breakpoint(md) {
         .dropdown {
             left: 0;
             top: 100%;
@@ -525,7 +525,7 @@
             margin-bottom: 0;
         }
     }
-    @include media-large {
+    @include breakpoint(md) {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -715,7 +715,7 @@
         text-align: center;
 
     }
-    @include media-medium {
+    @include breakpoint(md) {
         .actions {
             align-items: center;
             display: flex;
@@ -811,7 +811,7 @@
         }
 
     }
-    @include media-large {
+    @include breakpoint(md) {
         &.open.left {
             transform: translateX(-100%);
         }
@@ -983,7 +983,7 @@
             color: $link;
         }
     }
-    @include media-medium {
+    @include breakpoint(md) {
         ul {
             display: flex;
         }
@@ -1170,7 +1170,7 @@
      .panel.active {
          display: inherit;
      }
-     @include media-large {
+     @include breakpoint(md) {
          nav ul {
              margin-left: 20px;
              text-align: left;
@@ -1251,7 +1251,7 @@
             padding: 0 2.5rem;
         }
     }
-    @include media-large {
+    @include breakpoint(md) {
         text-align: left;
         .wrapper {
             display: flex;
@@ -1330,7 +1330,7 @@
     .tile > * {
         padding: 2rem;
     }
-    @include media-medium {
+    @include breakpoint(md) {
         display: flex;
         flex-flow: row wrap;
         margin-left: -$gutter / 2;
@@ -1342,7 +1342,7 @@
             margin-right: $gutter / 2;
         }
     }
-    @include media-large {
+    @include breakpoint(md) {
         > * {
             flex-basis: calc((100% / #{$columns}) - (#{$gutter}));
         }

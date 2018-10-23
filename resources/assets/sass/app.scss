@@ -87,15 +87,14 @@ $youtube: #CD201F;
 
 
 ///
-/// Media Query Details
+/// Media Query Breakpoints
 ///
 
-$mq-medium: 576px;      $mq-medium-color: blue;
-$mq-large:  1024px;     $mq-large-color:  green;
-$mq-xl:     1200px;     $mq-xl-color:     red;
-
-$medium: $mq-medium;
-$large:  $mq-large;
+$breakpoints: (
+  md: 576px,
+  lg: 1024px,
+  xl: 1200px
+);
 
 
 ///
@@ -244,7 +243,7 @@ img {
     img {
         max-width: 180px;
     }
-    @include media-large {
+    @include breakpoint(lg) {
         margin-right: 2rem;
     }
 }
@@ -273,7 +272,7 @@ img {
             height: 100%;
         }
     }
-    @include media-large {
+    @include breakpoint(lg) {
         display: block;
     }
 }
@@ -291,7 +290,7 @@ header.primary {
         flex-basis: 180px;
         flex-shrink: 0;
     }
-    @include media-large {
+    @include breakpoint(lg) {
         .header-content {
             padding-bottom: 0;
         }
@@ -330,7 +329,7 @@ nav {
     &.progress {
         @include progress();
     }
-    @include media-large {
+    @include breakpoint(lg) {
         ul {
             text-align: left;
         }
@@ -362,7 +361,7 @@ nav.primary {
             color: lighten($charcoal, 55%);
         }
     }
-    @include media-large {
+    @include breakpoint(lg) {
         margin-bottom: 0;
         > ul > li {
             font-size: 1.1rem;
@@ -392,7 +391,7 @@ nav.utility {
 }
 
 .utilities {
-    @include media-large {
+    @include breakpoint(lg) {
         nav.utility {
             margin-bottom: 0.4rem;
             ul {
@@ -422,14 +421,14 @@ nav.utility {
 }
 
 button.menu-toggle {
-    @include media-large {
+    @include breakpoint(lg) {
         display: none;
     }
 }
 
 .desktop {
     display: none;
-    @include media-large {
+    @include breakpoint(lg) {
         align-items: flex-end;
         display: flex;
         flex: 1 1 auto;
@@ -467,7 +466,7 @@ form.search {
 .torso {
     padding-bottom: 3rem;
     padding-top: 3rem;
-    @include media-large {
+    @include breakpoint(lg) {
         .wrap {
             display: flex;
             justify-content: space-between;
@@ -511,7 +510,7 @@ main section {
 
 aside.primary {
     margin-bottom: 2rem;
-    @include media-large {
+    @include breakpoint(lg) {
         margin-bottom: 0;
         nav ul {
             text-align: left;
@@ -589,7 +588,7 @@ footer.primary {
             margin-right: 0.35rem;
         }
     }
-    @include media-large {
+    @include breakpoint(lg) {
         .wrapper {
             display: flex;
             > * {
@@ -678,35 +677,35 @@ h5 {
 
 h1 {
     font-size: 2.2rem;
-    @include media-large {
+    @include breakpoint(lg) {
         font-size: 2.6rem;
     }
 }
 
 h2 {
     font-size: 1.7rem;
-    @include media-large {
+    @include breakpoint(lg) {
         font-size: 2.1rem;
     }
 }
 
 h3 {
     font-size: 1.3rem;
-    @include media-large {
+    @include breakpoint(lg) {
         font-size: 1.6rem;
     }
 }
 
 h4 {
     font-size: 1.1rem;
-    @include media-large {
+    @include breakpoint(lg) {
         font-size: 1.25rem;
     }
 }
 
 h5 {
     font-size: 1rem;
-    @include media-large {
+    @include breakpoint(lg) {
         font-size: 1.15rem;
     }
 }

@@ -168,83 +168,11 @@
 
 
 ///
-/// media query mixins
+/// media query mixin
 ///
 
-#responsive-tester {
-    bottom: 0.5rem;
-    display: block;
-    font-size: 0.85rem;
-    left: 0.5rem;
-    padding-left: 1.5rem;
-    position: fixed;
-    span {
-        background-color: #999;
-        border-radius: 3rem;
-        color: rgba(255, 255, 255, 0);
-        display: inline-block;
-        height: 1rem;
-        left: 0;
-        line-height: 1;
-        margin-top: -0.5rem;
-        overflow: hidden;
-        position: absolute;
-        top: 50%;
-        width: 1rem;
-        z-index: 10000;
-    }
-
-    &::before,
-    &::after {
-        background-color: black;
-        color: #FFF;
-        display: inline;
-        opacity: 0.8;
-        padding: 0.15rem;
-    } 
-
-    &::before { content: 'Base: 0px–'; }
-    &::after  { content: '#{$mq-medium}'; }
-}
-
-@mixin media-medium {  
-    @media only screen and (min-width: $mq-medium) { 
-        #responsive-tester { 
-            span {
-                background-color: $mq-medium-color;
-            }
-            &::before { content: 'Medium: #{$mq-medium}–'; }
-            &::after  { content: '#{$mq-large}'; }
-        }
-
-        @content; 
-    }
-}
-
-@mixin media-large {  
-    @media only screen and (min-width: $mq-large) { 
-        #responsive-tester { 
-            span {
-                background-color: $mq-large-color;
-            }
-            &::before { content: 'Large: #{$mq-large}–'; }
-            &::after  { content: '#{$mq-xl}'; }
-        } 
-
-        @content; 
-    }
-}
-
-@mixin media-xl {  
-    @media only screen and (min-width: $mq-xl) { 
-        #responsive-tester { 
-            span {
-                background-color: $mq-xl-color;
-            }
-            &::before { content: 'XL: #{$mq-xl}+'; }
-            &::after  { content: ''; }
-        } 
-
-        @content; 
+@mixin breakpoint($bp, $rule: min-width) {
+    @media screen and (#{$rule}: map-get($breakpoints, $bp)) {
+        @content;
     }
 }
