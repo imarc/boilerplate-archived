@@ -1089,8 +1089,11 @@
 
 
 ///
-/// TABS allows for the showing and hiding of panels via an
-/// associated tab navigation.
+/// TABS allows for the showing and hiding of panels via an associated tab 
+/// navigation. By adding an optional data element (data-hash="#myHash") to 
+/// the li tags the javascript plugin will add the hash to the URL so users
+/// may bookmark the page and the page can reload open to that tab when the
+/// the url with the hash is loaded in the browser.
 ///
 /// @emmet .tabs>(nav>ul>li*4)>.panel.active+(.panel*3)
 /// @demo demo/tabs.html
@@ -1099,9 +1102,9 @@
 ///    <div class="tabs">
 ///        <nav>
 ///            <ul>
-///                <li class="active">Patriots</li>
-///                <li>Bruins</li>
-///                <li>Celtics</li>
+///                <li class="active" data-hash="">Patriots</li>
+///                <li data-hash="#bruins">Bruins</li>
+///                <li data-hash="#celtics">Celtics</li>
 ///            </ul>
 ///        </nav>
 ///        <div class="panel active">
