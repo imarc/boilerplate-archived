@@ -18,8 +18,8 @@
                     var $this = $(this);
 
                     if ($this.data('hash') == location.hash) {
-                        $tabs.not($this).removeClass("active");
-                        $this.addClass("active");
+                        $tabs.not($this).removeClass('active');
+                        $this.addClass('active');
 
                         var $activePanel = $panel.eq($this.index());
 
