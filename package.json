@@ -26,10 +26,10 @@
     "normalize-scss": "^7.0.0"
   },
   "devDependencies": {
-    "browser-sync": "^2.23.6",
-    "browser-sync-webpack-plugin": "^2.0.1",
-    "gulp": "^3.9.1",
-    "sassdoc": "^2.5.0",
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "gulp": "^4.0.0",
+    "sassdoc": "^2.5.1",
     "sassdoc-theme-boilerplate": "^1.1.0"
   }
 }

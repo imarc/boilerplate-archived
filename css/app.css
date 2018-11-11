@@ -1659,7 +1659,7 @@ nav.progress li.disabled a {
   pointer-events: none;
 }
 
-nav.progress li:hover:not(.active, .disabled) a {
+nav.progress li:hover a {
   color: #EB7424;
 }
 
@@ -1697,9 +1697,9 @@ nav.progress li.complete a:hover {
   }
   nav.progress a::after, nav.progress a::before {
     border: 0 solid transparent;
-    border-bottom: 1.25rem solid transparent;
+    border-bottom: 1.25rem solid rgba(0, 0, 0, 0);
     border-left: 1rem solid #FFF;
-    border-top: 1.25rem solid transparent;
+    border-top: 1.25rem solid rgba(0, 0, 0, 0);
     content: '';
     position: absolute;
     right: 0;
