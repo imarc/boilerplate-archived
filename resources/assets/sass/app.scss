@@ -96,6 +96,13 @@ $breakpoints: (
   xl: 1200px
 );
 
+///
+/// Media Query breakpoints (legacy)
+///
+
+$mq-medium: 576px;
+$mq-large:  1024px;
+$mq-xl:     1200px;   
 
 ///
 ///  = Imports =
@@ -1094,4 +1101,8 @@ table {
         orphans: 3;
         widows: 3;
     }
+}
+
+@include media-medium {
+    color: red;
 }

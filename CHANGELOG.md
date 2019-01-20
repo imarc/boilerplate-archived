@@ -1,5 +1,10 @@
 Changes
 =======
+3.0
+---
+
+* 3.2.4
+    * Added dedicated media query mixin and breakpoint map
 
 2.0
 ---
