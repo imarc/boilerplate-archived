@@ -13,15 +13,16 @@ var options = {
 /**
  * Docs tasks
  */
-gulp.task('docs', function () {
+const docs = function () {
     return gulp.src(options.docsInput)
         .pipe(sassdoc({
             dest: options.docsOutput,
             theme: 'boilerplate',
         }));
-});
+};
 
 /**
  * Default task
  */
-gulp.task('default', ['docs']);
+gulp.task('docs', docs);
+gulp.task('default', docs);
