@@ -1,45 +1,4 @@
 @charset "UTF-8";
-#responsive-tester {
-  bottom: 0.5rem;
-  display: block;
-  font-size: 0.85rem;
-  left: 0.5rem;
-  padding-left: 1.5rem;
-  position: fixed;
-}
-
-#responsive-tester span {
-  background-color: #999;
-  border-radius: 3rem;
-  color: rgba(255, 255, 255, 0);
-  display: inline-block;
-  height: 1rem;
-  left: 0;
-  line-height: 1;
-  margin-top: -0.5rem;
-  overflow: hidden;
-  position: absolute;
-  top: 50%;
-  width: 1rem;
-  z-index: 10000;
-}
-
-#responsive-tester::before, #responsive-tester::after {
-  background-color: black;
-  color: #FFF;
-  display: inline;
-  opacity: 0.8;
-  padding: 0.15rem;
-}
-
-#responsive-tester::before {
-  content: 'Base: 0px\2013';
-}
-
-#responsive-tester::after {
-  content: "576px";
-}
-
 /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
 /* Document
        ========================================================================== */
@@ -625,7 +584,7 @@ template {
   margin-bottom: 2rem;
 }
 
-@media only screen and (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .dossier > * {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -759,7 +718,7 @@ template {
   display: inline-block;
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .header-content > .dropdown.open.left,
   .mobile.open.left {
     -webkit-transform: translateX(-100%);
@@ -791,7 +750,7 @@ template {
   margin-bottom: 0;
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .features {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -948,7 +907,7 @@ header.primary.sticky {
   text-align: center;
 }
 
-@media only screen and (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .login .actions {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -1081,7 +1040,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .desktop nav.primary i.fa {
     display: inline-block;
   }
@@ -1126,7 +1085,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   position: static;
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .desktop nav.primary li.mega .dropdown {
     left: 0;
     top: 100%;
@@ -1217,7 +1176,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   display: inherit;
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .tabs nav ul {
     margin-left: 20px;
     text-align: left;
@@ -1276,7 +1235,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   padding: 0 2.5rem;
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .testimonial {
     text-align: left;
   }
@@ -1326,7 +1285,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   padding: 2rem;
 }
 
-@media only screen and (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .tiles {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1348,7 +1307,7 @@ nav.pagination li:hover:not(.active):not(.disabled) a::before {
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .tiles > * {
     -ms-flex-preferred-size: calc((100% / 4) - (2rem));
         flex-basis: calc((100% / 4) - (2rem));
@@ -1423,7 +1382,7 @@ img {
   display: none;
 }
 
-@media only screen and (min-width: 576px) {
+@media screen and (min-width: 576px) {
   .columns {
     display: table;
     table-layout: fixed;
@@ -1452,6 +1411,12 @@ img {
 
 .branding img {
   max-width: 180px;
+}
+
+@media screen and (min-width: 1024px) {
+  .branding {
+    margin-right: 2rem;
+  }
 }
 
 .search-drawer {
@@ -1491,6 +1456,12 @@ img {
   height: 100%;
 }
 
+@media screen and (min-width: 1024px) {
+  .search-drawer {
+    display: block;
+  }
+}
+
 header.primary {
   background-color: #191919;
   position: relative;
@@ -1509,6 +1480,12 @@ header.primary .branding {
       flex-basis: 180px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  header.primary .header-content {
+    padding-bottom: 0;
+  }
 }
 
 nav {
@@ -1595,7 +1572,7 @@ nav.tabs .panel.active {
   display: inherit;
 }
 
-@media only screen and (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   nav.tabs nav ul {
     margin-left: 20px;
     text-align: left;
@@ -1680,7 +1657,7 @@ nav.progress li.complete a:hover {
   color: #0C96DD;
 }
 
-@media only screen and (min-width: 576px) {
+@media screen and (min-width: 576px) {
   nav.progress ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1742,6 +1719,12 @@ nav.progress li.complete a:hover {
   }
 }
 
+@media screen and (min-width: 1024px) {
+  nav ul {
+    text-align: left;
+  }
+}
+
 nav.primary {
   margin-bottom: 0.7rem;
 }
@@ -1767,6 +1750,28 @@ nav.primary li:hover a {
   color: #a5a5a5;
 }
 
+@media screen and (min-width: 1024px) {
+  nav.primary {
+    margin-bottom: 0;
+  }
+  nav.primary > ul > li {
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+    position: relative;
+  }
+  nav.primary > ul > li:first-child {
+    margin-left: 0;
+  }
+  nav.primary ul {
+    text-align: left;
+  }
+  nav.primary ul li li {
+    display: block;
+    float: none;
+  }
+}
+
 nav.utility {
   margin-bottom: 0.7rem;
 }
@@ -1774,6 +1779,15 @@ nav.utility {
 nav.utility a {
   color: #FFF;
   font-size: 0.8rem;
+}
+
+@media screen and (min-width: 1024px) {
+  .utilities nav.utility {
+    margin-bottom: 0.4rem;
+  }
+  .utilities nav.utility ul {
+    text-align: right;
+  }
 }
 
 .header-content {
@@ -1807,8 +1821,39 @@ nav.utility a {
   z-index: 1002;
 }
 
+@media screen and (min-width: 1024px) {
+  button.menu-toggle {
+    display: none;
+  }
+}
+
 .desktop {
   display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .desktop {
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .desktop nav.primary {
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+  }
 }
 
 form.search {
@@ -1854,6 +1899,28 @@ form.search input {
   padding-top: 3rem;
 }
 
+@media screen and (min-width: 1024px) {
+  .torso .wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .torso .wrap main {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+    padding-right: 2rem;
+  }
+  .torso .wrap aside.primary {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+  }
+}
+
 .hero {
   background: #191919 url(../img/hero.jpg) no-repeat center/cover;
   display: -webkit-box;
@@ -1891,6 +1958,15 @@ main section:not(:last-child) {
 
 aside.primary {
   margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 1024px) {
+  aside.primary {
+    margin-bottom: 0;
+  }
+  aside.primary nav ul {
+    text-align: left;
+  }
 }
 
 nav.supplemental {
@@ -1978,6 +2054,38 @@ footer.primary .legal a {
   margin-right: 0.35rem;
 }
 
+@media screen and (min-width: 1024px) {
+  footer.primary .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  footer.primary .wrapper > * {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 0px;
+            flex: 1 0 0px;
+  }
+  footer.primary .wrapper > nav {
+    -webkit-box-flex: 2;
+        -ms-flex-positive: 2;
+            flex-grow: 2;
+    margin-bottom: 0;
+  }
+  footer.primary .wrapper > nav > ul {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  footer.primary .branding {
+    margin-right: 0;
+    max-width: none;
+    text-align: left;
+  }
+  footer.primary .social {
+    text-align: right;
+  }
+}
+
 .social {
   list-style: none;
   margin: 0;
@@ -2052,20 +2160,50 @@ h1 {
   font-size: 2.2rem;
 }
 
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 2.6rem;
+  }
+}
+
 h2 {
   font-size: 1.7rem;
+}
+
+@media screen and (min-width: 1024px) {
+  h2 {
+    font-size: 2.1rem;
+  }
 }
 
 h3 {
   font-size: 1.3rem;
 }
 
+@media screen and (min-width: 1024px) {
+  h3 {
+    font-size: 1.6rem;
+  }
+}
+
 h4 {
   font-size: 1.1rem;
 }
 
+@media screen and (min-width: 1024px) {
+  h4 {
+    font-size: 1.25rem;
+  }
+}
+
 h5 {
   font-size: 1rem;
+}
+
+@media screen and (min-width: 1024px) {
+  h5 {
+    font-size: 1.15rem;
+  }
 }
 
 p {
@@ -2598,173 +2736,6 @@ table tr:nth-child(even) td {
   background-color: #F3F3F3;
 }
 
-@media only screen and (min-width: 576px) {
-  #responsive-tester span {
-    background-color: blue;
-  }
-  #responsive-tester::before {
-    content: "Medium: 576px\2013";
-  }
-  #responsive-tester::after {
-    content: "1024px";
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  #responsive-tester span {
-    background-color: green;
-  }
-  #responsive-tester::before {
-    content: "Large: 1024px\2013";
-  }
-  #responsive-tester::after {
-    content: "1200px";
-  }
-  .search-drawer {
-    display: block;
-  }
-  .branding {
-    margin-right: 2rem;
-  }
-  header.primary .header-content {
-    padding-bottom: 0;
-  }
-  nav ul {
-    text-align: left;
-  }
-  nav.primary {
-    margin-bottom: 0;
-  }
-  nav.primary > ul > li {
-    font-size: 1.1rem;
-    margin-left: 1rem;
-    padding-bottom: 1rem;
-    position: relative;
-  }
-  nav.primary > ul > li:first-child {
-    margin-left: 0;
-  }
-  nav.primary ul {
-    text-align: left;
-  }
-  nav.primary ul li li {
-    display: block;
-    float: none;
-  }
-  .utilities nav.utility {
-    margin-bottom: 0.4rem;
-  }
-  .utilities nav.utility ul {
-    text-align: right;
-  }
-  .desktop {
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: column nowrap;
-            flex-flow: column nowrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .desktop nav.primary {
-    -ms-flex-item-align: start;
-        align-self: flex-start;
-  }
-  button.menu-toggle {
-    display: none;
-  }
-  .torso .wrap {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-  }
-  .torso .wrap main {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-    padding-right: 2rem;
-  }
-  .torso .wrap aside.primary {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 0 25%;
-            flex: 0 0 25%;
-  }
-  aside.primary {
-    margin-bottom: 0;
-  }
-  aside.primary nav ul {
-    text-align: left;
-  }
-  footer.primary .wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  footer.primary .wrapper > * {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 0px;
-            flex: 1 0 0px;
-  }
-  footer.primary .wrapper > nav {
-    -webkit-box-flex: 2;
-        -ms-flex-positive: 2;
-            flex-grow: 2;
-    margin-bottom: 0;
-  }
-  footer.primary .wrapper > nav > ul {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  footer.primary .branding {
-    margin-right: 0;
-    max-width: none;
-    text-align: left;
-  }
-  footer.primary .social {
-    text-align: right;
-  }
-  h1 {
-    font-size: 2.6rem;
-  }
-  h2 {
-    font-size: 2.1rem;
-  }
-  h3 {
-    font-size: 1.6rem;
-  }
-  h4 {
-    font-size: 1.25rem;
-  }
-  h5 {
-    font-size: 1.15rem;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  #responsive-tester span {
-    background-color: red;
-  }
-  #responsive-tester::before {
-    content: "XL: 1200px+";
-  }
-  #responsive-tester::after {
-    content: '';
-  }
-}
-
 @media print {
   * {
     background-color: transparent !important;
@@ -2800,6 +2771,10 @@ table tr:nth-child(even) td {
     orphans: 3;
     widows: 3;
   }
+}
+
+@media only screen and (min-width: 576px) {
+  color: red;
 }
 
 /*# sourceMappingURL=app.css.map*/

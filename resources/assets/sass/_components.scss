@@ -263,7 +263,7 @@
         border: 0;
         display: none;
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         & {
             display: table;
             table-layout: fixed;
@@ -325,7 +325,7 @@
             margin-bottom: 2rem;
         }
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         > * {
             display: flex;
             flex-direction: $direction;
@@ -375,13 +375,13 @@
 ///
 
 @mixin dropdown() {
-    @media only screen and (max-width: $large - 1px) {
+    @media only screen and (max-width: map-get($breakpoints,lg) - 1px) { 
         .dropdown,
         i.fa {
             display: none;
         }
     }
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         i.fa {
             display: inline-block;
         }
@@ -456,7 +456,7 @@
 
 @mixin dropdown-mega() {
     position: static;
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         .dropdown {
             left: 0;
             top: 100%;
@@ -525,7 +525,7 @@
             margin-bottom: 0;
         }
     }
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -715,7 +715,7 @@
         text-align: center;
 
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         .actions {
             align-items: center;
             display: flex;
@@ -811,7 +811,7 @@
         }
 
     }
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         &.open.left {
             transform: translateX(-100%);
         }
@@ -983,7 +983,7 @@
             color: $link;
         }
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         ul {
             display: flex;
         }
@@ -1059,7 +1059,7 @@
 /// an element at a certain point in the viewport. Has options for offsets, duration,
 /// until, etc. It does not have a SASS mixin.
 ///
-/// @emmet 
+/// @emmet
 /// @demo demo/sticky-element.html
 ///
 
@@ -1173,7 +1173,7 @@
      .panel.active {
          display: inherit;
      }
-     @media only screen and (min-width: $large) {
+     @include breakpoint(lg) {
          nav ul {
              margin-left: 20px;
              text-align: left;
@@ -1254,7 +1254,7 @@
             padding: 0 2.5rem;
         }
     }
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         text-align: left;
         .wrapper {
             display: flex;
@@ -1333,7 +1333,7 @@
     .tile > * {
         padding: 2rem;
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         display: flex;
         flex-flow: row wrap;
         margin-left: -$gutter / 2;
@@ -1345,7 +1345,7 @@
             margin-right: $gutter / 2;
         }
     }
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         > * {
             flex-basis: calc((100% / #{$columns}) - (#{$gutter}));
         }
