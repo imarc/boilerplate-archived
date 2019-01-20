@@ -18,7 +18,6 @@
 /// Tables
 /// Section Specific
 /// Page Specific
-/// Media Queries
 /// Print
 ////
 
@@ -88,16 +87,22 @@ $youtube: #CD201F;
 
 
 ///
-/// Media Query Details
+/// Media Query Breakpoints
 ///
 
-$mq-medium: 576px;      $mq-medium-color: blue;
-$mq-large:  1024px;     $mq-large-color:  green;
-$mq-xl:     1200px;     $mq-xl-color:     red;
+$breakpoints: (
+  md: 576px,
+  lg: 1024px,
+  xl: 1200px
+);
 
-$medium: $mq-medium;
-$large:  $mq-large;
+///
+/// Media Query breakpoints (legacy)
+///
 
+$mq-medium: 576px;
+$mq-large:  1024px;
+$mq-xl:     1200px;   
 
 ///
 ///  = Imports =
@@ -108,8 +113,8 @@ $large:  $mq-large;
 @import "components";
 
 ///
-/// = Normalize = 
-/// 
+/// = Normalize =
+///
 
 @include normalize();
 
@@ -192,7 +197,7 @@ html {
     -ms-text-size-adjust: 100%;
 }
 
-*, 
+*,
 *::before,
 *::after {
     box-sizing: inherit;
@@ -245,6 +250,9 @@ img {
     img {
         max-width: 180px;
     }
+    @include breakpoint(lg) {
+        margin-right: 2rem;
+    }
 }
 
 .search-drawer {
@@ -271,6 +279,9 @@ img {
             height: 100%;
         }
     }
+    @include breakpoint(lg) {
+        display: block;
+    }
 }
 
 header.primary {
@@ -285,6 +296,11 @@ header.primary {
     .branding {
         flex-basis: 180px;
         flex-shrink: 0;
+    }
+    @include breakpoint(lg) {
+        .header-content {
+            padding-bottom: 0;
+        }
     }
 }
 
@@ -320,7 +336,11 @@ nav {
     &.progress {
         @include progress();
     }
-
+    @include breakpoint(lg) {
+        ul {
+            text-align: left;
+        }
+    }
 }
 
 nav.primary {
@@ -348,6 +368,25 @@ nav.primary {
             color: lighten($charcoal, 55%);
         }
     }
+    @include breakpoint(lg) {
+        margin-bottom: 0;
+        > ul > li {
+            font-size: 1.1rem;
+            margin-left: 1rem;
+            padding-bottom: 1rem;
+            position: relative;
+        }
+        > ul > li:first-child {
+            margin-left: 0;
+        }
+        ul {
+            text-align: left;
+            li li {
+                display: block;
+                float: none;
+            }
+        }
+    }
 }
 
 nav.utility {
@@ -355,6 +394,17 @@ nav.utility {
     a {
         color: #FFF;
         font-size: 0.8rem;
+    }
+}
+
+.utilities {
+    @include breakpoint(lg) {
+        nav.utility {
+            margin-bottom: 0.4rem;
+            ul {
+                text-align: right;
+            }
+        }
     }
 }
 
@@ -377,8 +427,25 @@ nav.utility {
     }
 }
 
+button.menu-toggle {
+    @include breakpoint(lg) {
+        display: none;
+    }
+}
+
 .desktop {
     display: none;
+    @include breakpoint(lg) {
+        align-items: flex-end;
+        display: flex;
+        flex: 1 1 auto;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+
+        nav.primary {
+            align-self: flex-start;
+        }
+    }
 }
 
 form.search {
@@ -406,6 +473,19 @@ form.search {
 .torso {
     padding-bottom: 3rem;
     padding-top: 3rem;
+    @include breakpoint(lg) {
+        .wrap {
+            display: flex;
+            justify-content: space-between;
+            main {
+                flex: 1 1 auto;
+                padding-right: 2rem;
+            }
+            aside.primary {
+                flex: 0 0 25%;
+            }
+        }
+    }
 }
 
 .hero {
@@ -437,6 +517,12 @@ main section {
 
 aside.primary {
     margin-bottom: 2rem;
+    @include breakpoint(lg) {
+        margin-bottom: 0;
+        nav ul {
+            text-align: left;
+        }
+    }
 }
 
 nav.supplemental {
@@ -509,6 +595,29 @@ footer.primary {
             margin-right: 0.35rem;
         }
     }
+    @include breakpoint(lg) {
+        .wrapper {
+            display: flex;
+            > * {
+                flex: 1 0 0px;
+            }
+            > nav {
+                flex-grow: 2;
+                margin-bottom: 0;
+            }
+            > nav > ul {
+                justify-content: center;
+            }
+        }
+        .branding {
+            margin-right: 0;
+            max-width: none;
+            text-align: left;
+        }
+        .social {
+            text-align: right;
+        }
+    }
 }
 
 .social {
@@ -575,22 +684,37 @@ h5 {
 
 h1 {
     font-size: 2.2rem;
+    @include breakpoint(lg) {
+        font-size: 2.6rem;
+    }
 }
 
 h2 {
     font-size: 1.7rem;
+    @include breakpoint(lg) {
+        font-size: 2.1rem;
+    }
 }
 
 h3 {
     font-size: 1.3rem;
+    @include breakpoint(lg) {
+        font-size: 1.6rem;
+    }
 }
 
 h4 {
     font-size: 1.1rem;
+    @include breakpoint(lg) {
+        font-size: 1.25rem;
+    }
 }
 
 h5 {
     font-size: 1rem;
+    @include breakpoint(lg) {
+        font-size: 1.15rem;
+    }
 }
 
 p {
@@ -935,155 +1059,6 @@ table {
 
 
 ///
-/// = Media Queries =
-///
-
-
-@include media-medium {
-
-}
-
-@include media-large { 
-    
-    ///
-    /// = Layout =
-    ///
-
-    .search-drawer {
-        display: block;
-    }
-    .branding {
-        margin-right: 2rem;
-    }
-    header.primary .header-content {
-        padding-bottom: 0;
-    }
-
-    nav {
-        ul {
-            text-align: left;
-        }
-    }
-
-    nav.primary {
-        margin-bottom: 0;
-        > ul > li {
-            font-size: 1.1rem;
-            margin-left: 1rem;
-            padding-bottom: 1rem;
-            position: relative;
-        }
-        > ul > li:first-child {
-            margin-left: 0;
-        }
-        ul {
-            text-align: left;
-            li li {
-                display: block;
-                float: none;
-            }
-        }
-    }
-
-    .utilities {
-        nav.utility {
-            margin-bottom: 0.4rem;
-            ul {
-                text-align: right;
-            }
-        }
-    }
-
-    .desktop {
-        align-items: flex-end;
-        display: flex;
-        flex: 1 1 auto;
-        flex-flow: column nowrap;
-        justify-content: space-between;
-
-        nav.primary {
-            align-self: flex-start;
-        }
-    }
-
-    button.menu-toggle {
-        display: none;
-    }
-
-    .torso .wrap {
-        display: flex;
-        justify-content: space-between;
-        main {
-            flex: 1 1 auto;
-            padding-right: 2rem;
-        }
-        aside.primary {
-            flex: 0 0 25%;
-        }
-    }
-
-    aside.primary {
-        margin-bottom: 0;
-        nav ul {
-            text-align: left;
-        }
-    }
-
-    footer.primary {
-        .wrapper {
-            display: flex;
-            > * {
-                flex: 1 0 0px;
-            }
-            > nav {
-                flex-grow: 2;
-                margin-bottom: 0;
-            }
-            > nav > ul {
-                justify-content: center;
-            }
-        }
-        .branding {
-            margin-right: 0;
-            max-width: none;
-            text-align: left;
-        }
-        .social {
-            text-align: right;
-        }
-    }
-
-
-    ///
-    /// = Typography =
-    ///
-
-    h1 {
-        font-size: 2.6rem;
-    }
-
-    h2 {
-        font-size: 2.1rem;
-    }
-
-    h3 {
-        font-size: 1.6rem;
-    }
-
-    h4 {
-        font-size: 1.25rem;
-    }
-
-    h5 {
-        font-size: 1.15rem;
-    }
-}
-
-@include media-xl {
-
-}
-
-///
 /// = Print =
 ///
 
@@ -1126,4 +1101,8 @@ table {
         orphans: 3;
         widows: 3;
     }
+}
+
+@include media-medium {
+    color: red;
 }
