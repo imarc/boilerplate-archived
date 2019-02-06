@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+let mix = require('laravel-mix');``
 let webpack = require('webpack');
 
 // Mix Public Path
@@ -56,9 +56,9 @@ mix
     .options({
         processCssUrls: false
     })
-    .extract(['jquery'])
-    .version()
-    .sourceMaps();
+    .sourceMaps()
+    .extract()
+    .version();
 
 
 

@@ -3,6 +3,11 @@ Changes
 3.0
 ---
 
+* 3.3
+    * Added generic grid component
+    * Updated Laravel Mix to 4.0.14
+* 3.2.5
+    * Fixed instances of Font Awesome 5 free implementation within Messaging, Accordion, Iconography
 * 3.2.4
     * Added dedicated media query mixin and breakpoint map
 
