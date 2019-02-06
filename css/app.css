@@ -787,6 +787,51 @@ template {
   }
 }
 
+.grid .grid-cell {
+  margin-bottom: 1rem;
+}
+
+.grid .grid-cell:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 576px) {
+  .grid {
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+  }
+  .grid .grid-cell {
+    -ms-flex-preferred-size: calc(50% - 1rem);
+        flex-basis: calc(50% - 1rem);
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    max-width: calc(50% - 1rem);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .grid .grid-cell {
+    -ms-flex-preferred-size: calc((100% / 3) - (1rem));
+        flex-basis: calc((100% / 3) - (1rem));
+    max-width: calc(50% - 1rem);
+  }
+}
+
 header.primary.sticky {
   position: fixed;
   top: 0;

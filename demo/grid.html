@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Grid Component - Imarc</title>
+        <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
+        <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-OGsxOZf8qnUumoWWSmTqXMPSNI9URpNYN35fXDb5Cv5jT6OR673ah1e5q+9xKTq6" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="../css/app.css" media="all" />
+    </head>
+    <body>
+        <div class="torso">
+            <main>
+               <section class="intro">
+                   <div class="container">
+                        <h1>Grid</h1>
+                        <p>
+                            GRID allows for the creation of column-based grid that can wrap or nowrap. It is lighter than the FEATURES or TILES mixins in that its contents have no default styling.
+                        </p>
+                        <p>Emmet shorthand</p>
+                        <p>
+                            <pre><code>.grid>(div>p)*3</code></pre>
+                        </p>
+
+                        <p>Mixin usage</p>
+                        <p>
+                            <pre>
+                                <code>
+div {
+    @include grid($align: stretch, $columns: 3, $flow: row wrap, $gutter: 1rem, $justify: flex-start);
+}</code>
+                            </pre>
+                        </p>
+                   </div>
+                </section>
+                <section>
+                    <div class="container">
+
+
+                        <!-- Begin component -->
+
+                        <div class="grid">
+                            <div class="grid-cell">
+                                <p><strong>Column 1</strong> Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur.</p>
+                            </div>
+                            <div class="grid-cell">
+                                <p><strong>Column 2</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, impedit!</p>
+                            </div>
+                            <div class="grid-cell">
+                                <p><strong>Column 3</strong> Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui.</p>
+                            </div>
+                       </div>
+
+                        <!-- /end component-->
+
+
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    </body>
+</html>

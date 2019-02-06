@@ -147,6 +147,10 @@ $mq-xl:     1200px;
     @include features($gutter: 3rem);
 }
 
+.grid {
+    @include grid();
+}
+
 header.primary.sticky {
     @include sticky-header();
 }

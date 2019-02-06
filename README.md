@@ -129,11 +129,10 @@ Example of an extended component
 Components are not perfect and will need continual maintenance and improvement.
 If you feel a Component needs attention, please
 [create a pull request](https://github.com/imarc/boilerplate/pulls/) with your
-improvements you feel can be merged in, or submit
+improvements, or submit
 an [issue](https://github.com/imarc/boilerplate/issues).
 
-Documentation for Components is generated using [SassDoc](http://sassdoc.com/) and can be found in the
-sassdoc folder or [viewed online](http://imarc.github.io/boilerplate/sassdoc/).
+Documentation for Components is generated using [SassDoc](http://sassdoc.com/) and can be [viewed online](http://imarc.github.io/boilerplate/sassdoc/).
 
 
 ### Updating the Docs
