@@ -16,12 +16,12 @@ Get Started
 
 To get started working with Boilerplate, you [should have `node` installed](https://nodejs.org/en/).
 Installing `node` will automatically give you `npm`. Alternatively, if you have [Homebrew](https://brew.sh/),
-you can install node via Homebrew.
+you can install `node` via Homebrew.
 
     npm install
-    npm run serve
+    npm run watch
 
-The `npm run serve` command will watch all your files and run BrowserSync, both compiling
+The `npm run watch` command will watch all your files and run BrowserSync, both compiling
 SCSS and reloading your browser on any changes.
 
 After launching, view in your browser at [localhost:3000](http://localhost:3000).
@@ -43,7 +43,7 @@ Boilerplate is **not** meant to be the final look and feel that a site would lau
 meant to act a placeholder that
 
 * Serves as the starting point for frontend development.
-* Provides a client-friendly appearance that isn’t distracting that we can for prototypes and sites
+* Provides a client-friendly appearance that isn’t distracting that we can use for prototypes and sites
   in progress.
 * Has tolerable defaults for elements that might not be styled in the normal build-out of a project
   (tables, typographical elements like sup/sub/pre, etc.)
@@ -51,8 +51,8 @@ meant to act a placeholder that
 
 ### Light and Semantic
 
-Boilerplate aims to be lighter and more semantic than Bootstrap. We try to avoid using
-non-semantic class names when we can, which means that we do not have a grid system.
+Boilerplate aims to be lighter and more semantic than other frameworks such as Bootstrap. We try 
+to avoid using non-semantic class names when we can, which means that we do not have a grid system.
 Boilerplate is meant to encourage great markup.
 
 
@@ -140,8 +140,7 @@ sassdoc folder or [viewed online](http://imarc.github.io/boilerplate/sassdoc/).
 
 If you make changes to Components’ code, you can regenerate the documentation by running
 
-    npm docs
-
+    npm run docs
 
 
 CSS
@@ -168,7 +167,7 @@ Sass mixins are important and live in their own section. Some heavily used mixin
 #### Container
 `@container` and `.container` are used to identify elements that should match the width of the
 page. `.container` should not be used for styling. It is a dedicated site container class.
-Our site container is 1200 pixels wide (1168 pixels after padding).
+Our site container is 1200 pixels wide (1150 pixels after left and right padding).
 
 #### Columns
 `@columns` and `.columns` make direct children behave as columns, as a cleaner alternative to
@@ -187,7 +186,7 @@ They are a cleaner alternative to empty clearfix div elements.
 ### Layout
 This section contains the majority of a project’s styles. Need to set the widths for `main` and
 `aside.primary` elements? This goes in **Layout**. Styling a featured blog post callout? Put it
-here in **Layout**.
+in **Layout**.
 
 
 ### Typography
@@ -203,7 +202,7 @@ here in **Layout**.
 
 ### Iconography
 
-Boilerplate uses [Font Awesome](http://fontawesome.io) for iconography. Use the dedicated `@fontawesome`
+Boilerplate uses [Font Awesome](http://fontawesome.com) for iconography. Use the dedicated `@fontawesome`
 mixin or utilize official Font Awesome markup:
 
     <i class="fa fa-caret-square-o-right" aria-hidden="true"></i>

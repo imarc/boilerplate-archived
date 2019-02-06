@@ -1,6 +1,6 @@
 {
   "name": "imarc-boilerplate",
-  "version": "3.1.4",
+  "version": "3.2.4",
   "description": "A light, customizable frontend starter kit and component library",
   "author": "Imarc",
   "license": "Apache-2.0",
@@ -14,21 +14,22 @@
   "homepage": "https://github.com/imarc/boilerplate#readme",
   "scripts": {
     "docs": "gulp docs",
-    "clean": "gulp clean",
-    "build": "gulp build",
-    "watch": "gulp watch",
-    "serve": "gulp serve"
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch:event": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "jquery": "^3.3.1",
+    "laravel-mix": "^2.1.14",
+    "normalize-scss": "^7.0.1"
+  },
   "devDependencies": {
-    "browser-sync": "^2.17.5",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-csscomb": "^3.0.8",
-    "gulp-sass": "^2.3.2",
-    "gulp-sourcemaps": "^2.2.0",
-    "node-sass": "^3.10.1",
-    "sassdoc": "^2.1.20",
-    "sassdoc-theme-boilerplate": "^1.0"
+    "browser-sync": "^2.26.3",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "gulp": "^4.0.0",
+    "sassdoc": "^2.5.1",
+    "sassdoc-theme-boilerplate": "^1.1.0"
   }
 }

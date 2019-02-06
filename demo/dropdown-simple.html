@@ -6,8 +6,9 @@
         <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
         <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-OGsxOZf8qnUumoWWSmTqXMPSNI9URpNYN35fXDb5Cv5jT6OR673ah1e5q+9xKTq6" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="../css/app.css" media="all" />
     </head>
     <body>
         <div class="shell">
@@ -26,7 +27,7 @@
                     </div>
                 </div>
             </div>
-            <header class="primary">
+            <header class="primary sticky">
                 <div class="container">
                     <div class="header-content">
                         <div class="branding">
@@ -34,79 +35,12 @@
                                 <img src="../img/logo-boilerplate.png" alt="Imarc Boilerplate">
                             </a>
                         </div>
-                        <button class="menu-toggle"><i class="fa fa-bars"></i></button>
-                        <div class="mobile">
-                            <nav class="primary">
-                                <ul>
-                                    <li>
-                                        <a href="">Maine</a>
-                                        <div class="dropdown">
-                                            <ul>
-                                                <li><a href="">Augusta</a></li>
-                                                <li><a href="">Eliot</a></li>
-                                                <li><a href="">Kittery</a></li>
-                                                <li><a href="">Portland</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li class="active">
-                                        <a href="#yup">Markup</a>
-                                    </li>
-                                    <li>
-                                        <a href="">New Hampshire</a>
-                                        <div class="dropdown">
-                                            <ul>
-                                                <li><a href="">Concord</a></li>
-                                                <li><a href="">Manchester</a></li>
-                                                <li><a href="">Portsmouth</a>
-                                                    <div class="dropdown">
-                                                        <ul>
-                                                            <li><a href="#">Main Street</a></li>
-                                                            <li><a href="#">Woodbury Ave</a></li>
-                                                        </ul>
-                                                    </div>
-                                                </li>
-                                                <li><a href="">Hampton</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="">Vermont</a>
-                                        <div class="dropdown">
-                                            <ul>
-                                                <li><a href="">Montpelier</a></li>
-                                                <li><a href="">Burlington</a></li>
-                                                <li><a href="">Killington</a></li>
-                                                <li><a href="">St. Johnsbury</a></li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <div class="utilities">
-                                <nav class="utility">
-                                    <ul>
-                                        <li><a href="">Careers</a></li>
-                                        <li><a href="">Legal</a></li>
-                                        <li><a href="">Log In</a></li>
-                                    </ul>
-                                </nav>
-                                <form class="search" method="post">
-                                    <div class="text">
-                                        <label for="search">Search the website</label>
-                                        <input id="search" placeholder="Search the website" type="text" />
-                                    </div>
-                                    <div class="submit">
-                                        <input type="submit" value="Search" />
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        <button aria-label="Toggle Menu" class="menu-toggle"><i class="fas fa-bars"></i></button>
                         <div class="desktop">
                             <div class="utilities">
                                 <nav class="utility">
                                     <ul>
-                                        <li><a class="search-toggle" href="/search"><i aria-hidden="true" class="fa fa-search"></i> Search</a></li>
+                                        <li><a aria-label="Search site" class="search-toggle" href="/search"><i class="fas fa-search"></i> Search</a></li>
                                         <li><a href="">Careers</a></li>
                                         <li><a href="">Legal</a></li>
                                         <li><a href="">Log In</a></li>
@@ -116,7 +50,7 @@
                             <nav class="primary">
                                 <ul>
                                     <li class="mega">
-                                        <a href="">Maine <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <a href="">Maine <i class="fas fa-caret-down"></i></a>
                                         <div class="dropdown">
                                             <div class="menu">
                                                 <div>
@@ -154,7 +88,7 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <a href="#yup">Markup <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                                        <a href="#yup">Markup <i class="fas fa-caret-down" aria-hidden></i></a>
                                         <div class="dropdown">
                                             <div class="menu">
                                                 <div>
@@ -188,9 +122,104 @@
                                 </ul>
                             </nav>
                         </div>
+                        <div class="mobile">
+                            <nav class="primary">
+                                <ul>
+                                    <li class="mega">
+                                        <a href="">Maine <i class="fas fa-caret-down" aria-hidden></i></a>
+                                        <div class="dropdown">
+                                            <div class="menu">
+                                                <div>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="">Products</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="">Services</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="">Blog</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="">About Us</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="">Contact</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div>
+                                                    <h3>Lorem Ipsum Dolar Amat</h3>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis dignissimos quisquam numquam veniam eos reprehenderit, nemo sunt nihil rem suscipit.
+                                                    </p>
+                                                    <p>
+                                                        Nemo sunt nihil rem lorem amat fuga consectetur adipisicing elit.
+                                                    </p>
+                                                </div>
+                                                <div>
+                                                    <img src="http://dummyimage.com/600x400/ff665b/ffffff.png&text=Just an image placeholder " alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#yup">Markup <i class="fas fa-caret-down" aria-hidden></i></a>
+                                        <div class="dropdown">
+                                            <div class="menu">
+                                                <div>
+                                                    <ul>
+                                                        <li>
+                                                            <a href="">Hello World</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="">Lorem Ipsum Amat</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="">HTML is on version 5</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="">New Hampshire</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Vermont</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Massachusetts</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Rhode Island</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="utilities">
+                                <nav class="utility">
+                                    <ul>
+                                        <li><a href="">Careers</a></li>
+                                        <li><a href="">Legal</a></li>
+                                        <li><a href="">Log In</a></li>
+                                    </ul>
+                                </nav>
+                                <form class="search" method="post">
+                                    <div class="text">
+                                        <label for="search">Search the website</label>
+                                        <input id="search" placeholder="Search the website" type="text" />
+                                    </div>
+                                    <div class="submit">
+                                        <input type="submit" value="Search" />
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
+
             <div class="torso">
                 <main>
                    <section class="intro">
@@ -212,15 +241,12 @@
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-        <script src="../js/mobileNavigation.plugin.js"></script>
-        <script src="../js/searchDrawer.plugin.js"></script>
-        <script src="../js/dropdown.plugin.js"></script>
-        <script>
-            $(function() {
-                $('nav.primary').dropdown();
-                $('.search-drawer').searchDrawer();
-            });
+        <script src="../js/manifest.js"></script>
+        <script src="../js/vendor.js"></script>        
+        <script src="../js/app.js"></script>
+
+        <script>    
+            // Simple dropdon  code exists in entrypoint JavaScript file
         </script>
     </body>
 </html>

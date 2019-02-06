@@ -263,7 +263,7 @@
         border: 0;
         display: none;
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         & {
             display: table;
             table-layout: fixed;
@@ -325,7 +325,7 @@
             margin-bottom: 2rem;
         }
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         > * {
             display: flex;
             flex-direction: $direction;
@@ -375,13 +375,13 @@
 ///
 
 @mixin dropdown() {
-    @media only screen and (max-width: $large - 1px) {
+    @media only screen and (max-width: map-get($breakpoints,lg) - 1px) { 
         .dropdown,
         i.fa {
             display: none;
         }
     }
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         i.fa {
             display: inline-block;
         }
@@ -432,18 +432,22 @@
 /// DROPDOWN (mega). The mega dropdown is positioned to header.primary
 /// instead of its parent list item.
 ///
-/// @emmet nav.primary>ul>li>a{link name}+.dropdown>.menu(div*3)
+/// @emmet nav.primary>ul>li.mega>a{link name}+.dropdown>.menu(div*3)
 /// @demo demo/dropdown-mega.html
 ///
 /// @example markup HTML
 ///     <nav class="primary">
 ///         <ul>
-///             <li>
+///             <li class="mega">
 ///                 <a href="">Maine</a>
 ///                 <div class="dropdown">
-///                     <ul>
-///                         <li><a href="">Augusta</a></li>
-///                     </ul>
+///                     <div class="menu">
+///                         <div>
+///                             <ul>
+///                                 <li><a href="">Augusta</a></li>
+///                             </ul>
+///                         </div>
+///                     </div>
 ///                 </div>
 ///             </li>
 ///         </ul>
@@ -452,7 +456,7 @@
 
 @mixin dropdown-mega() {
     position: static;
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         .dropdown {
             left: 0;
             top: 100%;
@@ -521,7 +525,7 @@
             margin-bottom: 0;
         }
     }
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-between;
@@ -776,7 +780,7 @@
         text-align: center;
 
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         .actions {
             align-items: center;
             display: flex;
@@ -838,6 +842,9 @@
     &.init {
         display: block;
         opacity: 1;
+        .menu > div + div {
+            display: none
+        }
     }
     nav.utility {
         ul li a {
@@ -861,12 +868,15 @@
             display: block;
             padding: 1rem 0;
         }
+        a > i.fa {
+            display: none;
+        }
         i.fa {
             display: inline-block;
         }
 
     }
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         &.open.left {
             transform: translateX(-100%);
         }
@@ -1038,7 +1048,7 @@
             color: $link;
         }
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         ul {
             display: flex;
         }
@@ -1110,6 +1120,18 @@
 
 
 ///
+/// The STICKY-ELEMENT component works with (sticky-element.plugin.js) to fix
+/// an element at a certain point in the viewport. Has options for offsets, duration,
+/// until, etc. It does not have a SASS mixin.
+///
+/// @emmet
+/// @demo demo/sticky-element.html
+///
+
+@mixin sticky-element() {}
+
+
+///
 /// The STICKY-HEADER mixin works with (sticky-header.plugin.js) to hide
 /// a site’s header.primary element as you scroll down page. The element
 /// reappears when the user scrolls up the page. This is
@@ -1132,8 +1154,11 @@
 
 
 ///
-/// TABS allows for the showing and hiding of panels via an
-/// associated tab navigation.
+/// TABS allows for the showing and hiding of panels via an associated tab 
+/// navigation. By adding an optional data element (data-hash="#myHash") to 
+/// the li tags the javascript plugin will add the hash to the URL so users
+/// may bookmark the page and the page can reload open to that tab when the
+/// the url with the hash is loaded in the browser.
 ///
 /// @emmet .tabs>(nav>ul>li*4)>.panel.active+(.panel*3)
 /// @demo demo/tabs.html
@@ -1142,9 +1167,9 @@
 ///    <div class="tabs">
 ///        <nav>
 ///            <ul>
-///                <li class="active">Patriots</li>
-///                <li>Bruins</li>
-///                <li>Celtics</li>
+///                <li class="active" data-hash="">Patriots</li>
+///                <li data-hash="#bruins">Bruins</li>
+///                <li data-hash="#celtics">Celtics</li>
 ///            </ul>
 ///        </nav>
 ///        <div class="panel active">
@@ -1213,7 +1238,7 @@
      .panel.active {
          display: inherit;
      }
-     @media only screen and (min-width: $large) {
+     @include breakpoint(lg) {
          nav ul {
              margin-left: 20px;
              text-align: left;
@@ -1294,7 +1319,7 @@
             padding: 0 2.5rem;
         }
     }
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         text-align: left;
         .wrapper {
             display: flex;
@@ -1373,7 +1398,7 @@
     .tile > * {
         padding: 2rem;
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         display: flex;
         flex-flow: row wrap;
         margin-left: -$gutter / 2;
@@ -1385,7 +1410,7 @@
             margin-right: $gutter / 2;
         }
     }
-    @media only screen and (min-width: $large) {
+    @include breakpoint(lg) {
         > * {
             flex-basis: calc((100% / #{$columns}) - (#{$gutter}));
         }

@@ -123,7 +123,7 @@ pre[class*='language-'] {
   color: #e90; }
 
 .token.important {
-  font-weight: bold; }
+  font-weight: 600; }
 
 .token.entity {
   cursor: help; }
@@ -148,7 +148,8 @@ html {
  * Body rules
  */
 body {
-  font: 1em/1.35 "Open Sans", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  color: #414141;
+  font: 300 1em/1.4 "Gibson", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   overflow: auto;
   margin: 0; }
 
@@ -158,9 +159,20 @@ body {
 a {
   transition: 0.15s;
   text-decoration: none;
-  color: #dd5a6f; }
+  color: #229ab7; }
   a:hover, a:hover code {
-    color: #333; }
+    color: #125261; }
+
+a.button {
+  background-color: #229ab7;
+  color: #FFF;
+  display: inline-block;
+  font-weight: 400;
+  padding: 0.4em 1em;
+  text-align: center;
+  margin-bottom: 2em; }
+  a.button:hover, a.button:focus {
+    background-color: #166476; }
 
 /**
  * Vertical rhythm
@@ -172,7 +184,7 @@ table p {
  * Code
  */
 :not(pre) > code {
-  color: #dd5a6f;
+  color: #ff675b;
   white-space: nowrap;
   font-weight: normal; }
 
@@ -198,9 +210,15 @@ table p {
   td::before, th::before {
     content: attr(data-label) ": ";
     text-transform: capitalize;
-    font-weight: bold; }
+    font-weight: 600; }
   td p, th p {
     display: inline; } }
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5 {
+  font-weight: 600; }
 
 /**
  * Sidebar toggle
@@ -277,7 +295,7 @@ table p {
   left: 280px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   padding: 1em 0;
-  background: #dd5a6f;
+  background: #ff675b;
   color: #e0e0e0;
   z-index: 4000; }
   @media (max-width: 800px) {
@@ -333,7 +351,9 @@ table p {
 .searchbar__field {
   border: none;
   padding: 0.5em;
+  font-family: "Gibson", "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-size: 1em;
+  font-weight: 300;
   margin: 0;
   width: 100%;
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
@@ -408,10 +428,9 @@ table p {
   .sidebar__item a {
     padding: 0.5em 4.5em;
     display: block;
-    text-decoration: none;
-    color: #333; }
+    text-decoration: none; }
   .sidebar__item:hover, .sidebar__item:active, .sidebar__item:focus {
-    background: #e0e0e0; }
+    color: #125261; }
   .sidebar__item.is-collapsed + * {
     display: none; }
 
@@ -421,7 +440,7 @@ table p {
 .sidebar__item--heading {
   padding: 1em 1.5em; }
   .sidebar__item--heading a {
-    font-weight: bold; }
+    font-weight: 600; }
 
 /**
  * List item sub-heading
@@ -487,7 +506,7 @@ table p {
   width: 100%;
   cursor: pointer;
   color: #999;
-  font-weight: bold;
+  font-weight: 600;
   margin: 0;
   transition: 0.15s ease-out; }
   .btn-toggle:hover, .btn-toggle:active, .btn-toggle:focus {
@@ -523,31 +542,25 @@ table p {
 .main__heading--secondary {
   padding: 1em 0;
   margin-top: 0; }
-  @media (min-width: 801px) {
-    .main__heading,
-    .main__heading--secondary {
-      padding: 2em 0 0; } }
 
 /**
  * Primary headings
  */
 .main__heading {
   color: #5c4863;
-  font-size: 3.5em;
-  text-align: center;
-  border-bottom: 5px solid rgba(92, 72, 99, 0.2);
-  padding-bottom: .5em;
-  margin-bottom: 1em;
-  background: rgba(92, 72, 99, 0.1); }
+  font-size: 2.5em;
+  text-align: left;
+  border-bottom: 2px solid rgba(92, 72, 99, 0.2);
+  margin-bottom: 1em; }
 
 /**
  * Secondary headings
  */
 .main__heading--secondary {
-  font-size: 3em;
-  color: #dd5a6f;
+  font-size: 2em;
+  color: #ff675b;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: 600;
   padding-top: 0;
   margin-bottom: -3rem;
   position: relative; }
@@ -555,14 +568,6 @@ table p {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
-  .main__heading--secondary::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0.15em;
-    height: 0.2em;
-    background-color: #dd5a6f; }
 
 /**
  * Footer
@@ -619,7 +624,7 @@ table p {
  */
 .item__heading {
   color: #333;
-  margin: 4.5rem 0 1.5rem 0;
+  margin: 3rem 0 1.5rem 0;
   position: relative;
   font-size: 2em;
   font-weight: 300;
@@ -629,7 +634,7 @@ table p {
  * Name
  */
 .item__name {
-  color: #dd5a6f; }
+  font-weight: 400; }
 
 /**
  * Code blocks
@@ -695,7 +700,7 @@ table p {
  */
 .item__anchor {
   font-size: 0.6em;
-  color: #eeafb9; }
+  color: #ffc6c1; }
   @media (min-width: 801px) {
     .item__anchor {
       position: absolute;
