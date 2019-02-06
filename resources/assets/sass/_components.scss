@@ -548,26 +548,27 @@
 
 
 ///
-/// GRID allows for the quick creation of column-based grid that can wrap or nowrap. It is lighter
-/// than the FEATURES or TILES mixin in that it contains no default styling on its contents.
+/// GRID allows for the creation of a column-based grid 
+/// that can wrap or nowrap. It is lighter than FEATURES or TILES
+/// in that it contains no default styling on its contents.
 ///
-/// @emmet .grid>(div>p)*3
+/// @emmet .grid>(.grid-cell>p)*3
 /// @demo demo/grid.html
 ///
 ///
 /// @example markup HTML
 ///    <div class="grid">
-///        <div>
+///        <div class="grid-cell">
 ///            <p>
 ///                Hello world
 ///            </p>
 ///         </div>
-///        <div>
+///        <div class="grid-cell">
 ///            <p>
 ///                Hello world
 ///            </p>
 ///         </div>
-///        <div>
+///        <div class="grid-cell">
 ///            <p>
 ///                Hello world
 ///            </p>
@@ -576,35 +577,37 @@
 ///
 /// @param {direction} $align  [stretch] - align-items property
 /// @param {number}  $columns [3] - number of columns while min-width is $large
-/// @param {direction}  $flow [row nowrap] - number of columns while min-width is $large
+/// @param {direction}  $flow [row wrap] - number of columns while min-width is $large
 /// @param {measure}  $gutter [1rem] - gutter between grid items
-/// @param {direction}  $justify [space-between] - justify-content property
+/// @param {direction}  $justify [flex-start] - justify-content property
 
 
-@mixin grid($align: stretch, $columns: 3, $flow: row nowrap, $gutter: 1rem, $justify: space-between) {
-    > * {
+@mixin grid($align: stretch, $columns: 3, $flow: row wrap, $gutter: 1rem, $justify: flex-start) {
+    .grid-cell {
         margin-bottom: $gutter; 
-        *:last-child {
+        &:last-child {
             margin-bottom: 0;
         }
     }
-    @media only screen and (min-width: $medium) {
+    @include breakpoint(md) {
         align-items: $align;
         display: flex;
         flex-flow: $flow;
         justify-content: $justify;
         margin-left: -$gutter / 2;
         margin-right: -$gutter / 2;
-        > * {
+        .grid-cell {
             flex-basis: calc(50% - #{$gutter});
             flex-shrink: 0;
             margin-left: $gutter / 2;
             margin-right: $gutter / 2;
+            max-width: calc(50% - #{$gutter});
         }
     }
-    @media only screen and (min-width: $large) {
-        > * {
+    @include breakpoint(lg) {
+        .grid-cell {
             flex-basis: calc((100% / #{$columns}) - (#{$gutter}));
+            max-width: calc(50% - #{$gutter});
         }
     }
 }

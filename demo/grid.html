@@ -6,8 +6,9 @@
         <meta name="description" content="The Imarc Boilerplate is a streamlined starting point for building websites." />
         <meta name="web_author" content="Imarc, A Digital Agency | Boston + Silicon Valley | more info at imarc.com" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-OGsxOZf8qnUumoWWSmTqXMPSNI9URpNYN35fXDb5Cv5jT6OR673ah1e5q+9xKTq6" crossorigin="anonymous">
+
+        <link rel="stylesheet" type="text/css" href="../css/app.css" media="all" />
     </head>
     <body>
         <div class="torso">
@@ -16,7 +17,7 @@
                    <div class="container">
                         <h1>Grid</h1>
                         <p>
-                            GRID allows for the quick creation of column-based grid that can wrap or nowrap. It is lighter than the FEATURES or TILES mixins in that its contents have no default styling.
+                            GRID allows for the creation of column-based grid that can wrap or nowrap. It is lighter than the FEATURES or TILES mixins in that its contents have no default styling.
                         </p>
                         <p>Emmet shorthand</p>
                         <p>
@@ -28,7 +29,7 @@
                             <pre>
                                 <code>
 div {
-    @include grid($align: stretch, $columns: 3, $flow: row nowrap, $gutter: 1rem, $justify: space-between);
+    @include grid($align: stretch, $columns: 3, $flow: row wrap, $gutter: 1rem, $justify: flex-start);
 }</code>
                             </pre>
                         </p>
@@ -41,14 +42,14 @@ div {
                         <!-- Begin component -->
 
                         <div class="grid">
-                            <div>
-                                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur.</p>
+                            <div class="grid-cell">
+                                <p><strong>Column 1</strong> Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Morbi leo risus, porta ac consectetur.</p>
                             </div>
-                            <div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, impedit!</p>
+                            <div class="grid-cell">
+                                <p><strong>Column 2</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, impedit!</p>
                             </div>
-                            <div>
-                                <p>Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui.</p>
+                            <div class="grid-cell">
+                                <p><strong>Column 3</strong> Aenean lacinia bibendum nulla sed consectetur. Donec sed odio dui.</p>
                             </div>
                        </div>
 
