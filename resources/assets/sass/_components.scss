@@ -46,14 +46,14 @@
             .header {
                 background: darken($lightgray, 5%);
                 &::after {
-                    @include fontawesome("\f068");
+                    @include fontawesome(900, "\f068");
                 }
             }
         }
         &.close {
             .header{
                 &::after {
-                    @include fontawesome("\f067");
+                    @include fontawesome(900, "\f067");
                 }
             }
         }
@@ -179,7 +179,7 @@
         padding-right: 0;
 
         &::after {
-            @include fontawesome("\f105");
+            @include fontawesome(900, "\f105");
             padding-left: 0.5rem;
         }
     }
@@ -957,12 +957,12 @@
     }
     li.previous a {
         &::before {
-            @include fontawesome("\f100");
+            @include fontawesome(900, "\f100");
         }
     }
     li.next a {
         &::before {
-            @include fontawesome("\f101");
+            @include fontawesome(900, "\f101");
         }
     }
     li:hover:not(.active):not(.disabled) {
