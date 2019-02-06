@@ -462,11 +462,11 @@ template {
 }
 
 .accordion > div.open .header::after {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
-  content: "";
+  font: normal normal normal 1em / 1 "Font Awesome 5 Free";
+  content: "\F068";
   display: inline-block;
   font-size: inherit;
-  font-weight: "\F068";
+  font-weight: 900;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -475,11 +475,11 @@ template {
 }
 
 .accordion > div.close .header::after {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
-  content: "";
+  font: normal normal normal 1em / 1 "Font Awesome 5 Free";
+  content: "\F067";
   display: inline-block;
   font-size: inherit;
-  font-weight: "\F067";
+  font-weight: 900;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -1043,11 +1043,11 @@ nav.pagination li.disabled a {
 }
 
 nav.pagination li.previous a::before {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
-  content: "";
+  font: normal normal normal 1em / 1 "Font Awesome 5 Free";
+  content: "\F100";
   display: inline-block;
   font-size: inherit;
-  font-weight: "\F100";
+  font-weight: 900;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -1056,11 +1056,11 @@ nav.pagination li.previous a::before {
 }
 
 nav.pagination li.next a::before {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
-  content: "";
+  font: normal normal normal 1em / 1 "Font Awesome 5 Free";
+  content: "\F101";
   display: inline-block;
   font-size: inherit;
-  font-weight: "\F101";
+  font-weight: 900;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -1629,11 +1629,11 @@ nav.breadcrumbs li:not(:last-child) a {
 }
 
 nav.breadcrumbs li:not(:last-child) a::after {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
-  content: "";
+  font: normal normal normal 1em / 1 "Font Awesome 5 Free";
+  content: "\F105";
   display: inline-block;
   font-size: inherit;
-  font-weight: "\F105";
+  font-weight: 900;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -2556,22 +2556,9 @@ input[type="submit"][disabled] {
   margin-right: .5rem;
 }
 
-.fa-example-light::before {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
-  content: "\F11B";
-  display: inline-block;
-  font-size: inherit;
-  font-weight: 300;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  speak: none;
-  text-rendering: auto;
-  text-transform: none;
-}
-
 .fa-example-regular::before {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
-  content: "\F11B";
+  font: normal normal normal 1em / 1 "Font Awesome 5 Free";
+  content: "\F118";
   display: inline-block;
   font-size: inherit;
   font-weight: 400;
@@ -2583,24 +2570,11 @@ input[type="submit"][disabled] {
 }
 
 .fa-example-solid::before {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
-  content: "\F11B";
+  font: normal normal normal 1em / 1 "Font Awesome 5 Free";
+  content: "\F118";
   display: inline-block;
   font-size: inherit;
   font-weight: 900;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  speak: none;
-  text-rendering: auto;
-  text-transform: none;
-}
-
-.fa-example-brand::before {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
-  content: "\F23E";
-  display: inline-block;
-  font-size: inherit;
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   speak: none;
@@ -2625,7 +2599,7 @@ input[type="submit"][disabled] {
 }
 
 .success::before {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  font: normal normal normal 1em / 1 "Font Awesome 5 Free";
   content: "";
   display: inline-block;
   font-size: inherit;
@@ -2674,7 +2648,7 @@ input[type="submit"][disabled] {
 }
 
 .info::before {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  font: normal normal normal 1em / 1 "Font Awesome 5 Free";
   content: "";
   display: inline-block;
   font-size: inherit;
@@ -2715,7 +2689,7 @@ input[type="submit"][disabled] {
 }
 
 .error::before {
-  font: normal normal normal 1em / 1 "Font Awesome 5 Pro";
+  font: normal normal normal 1em / 1 "Font Awesome 5 Free";
   content: "";
   display: inline-block;
   font-size: inherit;

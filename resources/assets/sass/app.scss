@@ -956,21 +956,16 @@ input[type="submit"] {
 ///
 /// = Iconography =
 ///
+/// 900: solid / 400: regular and brands / 300: light
+
 [class^="fa-example"]::before {
     margin-right: .5rem;
 }
-
-.fa-example-light::before {
-    @include fontawesome(300, "\f11b");
-}
 .fa-example-regular::before {
-    @include fontawesome(400, "\f11b");
+    @include fontawesome(400, "\f118");
 }
 .fa-example-solid::before {
-    @include fontawesome(900, "\f11b");
-}
-.fa-example-brand::before {
-    @include fontawesome(400, "\f23e");
+    @include fontawesome(900, "\f118");
 }
 
 

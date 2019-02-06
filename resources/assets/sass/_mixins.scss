@@ -83,7 +83,7 @@
 ///
 
 @mixin fontawesome($weight: 400, $character: "") {
-    font: normal normal normal 1em unquote("/") 1 'Font Awesome 5 Pro';
+    font: normal normal normal 1em unquote("/") 1 "Font Awesome 5 Free";
     content: $character;
     display: inline-block;
     font-size: inherit;
@@ -113,7 +113,7 @@
         text-decoration: underline;
     }
     &::before {
-        @include fontawesome(900);
+        @include fontawesome(900, $character: "");
 
         content: "";
         font-size: 1em;
