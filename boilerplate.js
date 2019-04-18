@@ -4,12 +4,7 @@ const fs = require("fs-extra");
 const path = require("path");
 
 const src = path.resolve(__dirname);
-const dest = path.resolve(path.dirname(path.dirname(src)));
-
-if (!src.match("node_modules")) {
-    console.log("Must be called from within node_modules.");
-    process.exit(1);
-}
+const dest = path.resolve("./");
 
 console.log(`Copying files from ${src} to ${dest}...`);
 
