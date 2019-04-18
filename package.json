@@ -4,6 +4,7 @@
   "description": "A light, customizable frontend starter kit and component library",
   "author": "Imarc",
   "license": "Apache-2.0",
+  "bin": "./boilerplate.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/imarc/boilerplate.git"
