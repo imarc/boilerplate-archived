@@ -1,0 +1,106 @@
+///
+/// grouping mixin
+///
+
+@mixin grouping {
+    &::before,
+    &::after {
+        content: "";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+
+///
+/// fontawesome mixin
+///
+
+@mixin fontawesome($weight: 400, $character: "") {
+    font: normal normal normal 1em unquote("/") 1 "Font Awesome 5 Free";
+    content: $character;
+    display: inline-block;
+    font-size: inherit;
+    font-weight: $weight;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    speak: none;
+    text-rendering: auto;
+    text-transform: none;
+}
+
+
+///
+/// no-bullets mixin
+///
+
+@mixin no-bullets {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+
+    li::before {
+        display: none;
+    }
+}
+
+
+///
+/// transition mixin
+///
+
+@mixin transition($properties: all, $duration: 250ms, $easing: ease-in-out) {
+    transition: $properties $duration $easing;
+}
+
+
+///
+/// visuallyhidden mixin
+///
+
+@mixin visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+///
+/// media query mixin
+///
+
+@mixin breakpoint($bp, $rule: min-width) {
+    @media screen and (#{$rule}: map-get($breakpoints, $bp)) {
+        @content;
+    }
+}
+
+
+///
+/// legacy media query mixins
+///
+
+@mixin media-medium {
+    @media only screen and (min-width: $mq-medium) {
+        @content;
+    }
+}
+
+@mixin media-large {
+    @media only screen and (min-width: $mq-large) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media only screen and (min-width: $mq-xl) {
+        @content;
+    }
+}

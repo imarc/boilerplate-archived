@@ -1,0 +1,95 @@
+///
+/// = Variables =
+///
+
+$gutter:    50px !default;
+
+///
+/// This is the default font stack.
+///
+
+$font-stack: Arial, sans-serif !default;
+
+
+///
+/// We provide the color `$white`, `$lightgray`, `$gray`, `$darkgray`,
+/// `$charcoal` and `$black` for convienence.
+///
+
+$white:     #FFF !default;
+$lightgray: #DDD !default;
+$gray:      #808080 !default;
+$darkgray:  #4A4A4A !default;
+$charcoal:  #191919 !default;
+$black:     #000 !default;
+
+
+///
+/// The brand colors (name them the color)
+///
+
+$brand-blue: #0C96DD !default;
+$brand-orange: #EB7424 !default;
+
+
+///
+/// Messaging colors
+///
+
+$success: #48AC2C !default;
+$error: #CE2A2A !default;
+$info: #DDD !default;
+
+
+///
+/// Applied colors
+///
+
+$plain-text: $charcoal !default;
+$meta-text: lighten($charcoal, 35%) !default;
+$link: $brand-blue !default;
+$link-hover: $brand-orange !default;
+$border: lighten($charcoal, 60%) !default;
+
+
+///
+/// Social Network Colors
+///
+
+$facebook: #3664A2 !default;
+$twitter: #55ACEE !default;
+$linkedin: #0077B5 !default;
+$youtube: #CD201F !default;
+
+
+///
+/// Media Query Breakpoints
+///
+
+$breakpoints: (
+  md: 576px,
+  lg: 1024px,
+  xl: 1200px
+) !default;
+
+///
+/// Media Query breakpoints (legacy)
+///
+
+$mq-medium: 576px !default;
+$mq-large:  1024px !default;
+$mq-xl:     1200px !default;
+
+
+///
+/// If this is turned off, component mixins are included but not their CSS classnames.
+///
+$use-boilerplate-classes: true !default;
+
+///
+/// These are settings for slick to work properly and not throw an error.
+///
+$slick-font-path: "~slick-carousel/slick/fonts/" !default;
+$slick-font-family: "slick" !default;
+$slick-loader-path: "~slick-carousel/slick/" !default;
+$slick-arrow-color: black !default;

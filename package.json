@@ -1,0 +1,41 @@
+{
+  "name": "imarc-boilerplate",
+  "version": "4.0.0",
+  "description": "A light, customizable frontend starter kit and component library",
+  "author": "Imarc",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imarc/boilerplate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/imarc/boilerplate/issues"
+  },
+  "homepage": "https://github.com/imarc/boilerplate#readme",
+  "scripts": {
+    "fractal": "fractal",
+    "dev": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --watch-poll --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch:event": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.1",
+    "@frctl/consolidate": "^1.0.1",
+    "@frctl/fractal": "^1.1.7",
+    "cross-env": "^5.2.0",
+    "expose-loader": "^0.7.5",
+    "import-glob-loader": "^1.1.0",
+    "jquery": "^3.3.1",
+    "laravel-mix": "^4.0.15",
+    "normalize-scss": "^7.0.1",
+    "slick-carousel": "^1.8.1",
+    "twig": "^1.13.2"
+  },
+  "devDependencies": {
+    "resolve-url-loader": "^2.3.1",
+    "sass": "^1.17.3",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.10"
+  }
+}
