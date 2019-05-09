@@ -92,6 +92,44 @@ ABEM and Chainable modifiers introduces the following:
 * The one exception to namespace prefixes is `js-`. Boilerplate recommends that the `js-` prefix is used to denote every class that's used for targeting from JavaScript, and that these classes do not overlap with those used for styling.
 
 
+### Styling Elements without Classes
+
+In general, styling elements within blocks should be avoided, however, one typical exception is for styling elements that are just part of rich text.
+
+For example
+
+```
+<div class="messaging -success">
+    <p>
+        Success! Your changes have been saved. <a href="#">View now.</a>
+    </p>
+</div>
+```
+
+In this context, the `<a>` tag is simply being used as part of rich text, but we may need to alter its text color while within `.messaging.-dark`. Other common examples are when elements are part of content coming from a CMS, such as
+
+* `<a>` tags within short descriptions,
+* headings (`<h1>` through `<h6>`) within news articles, and even
+* tables within blog articles.
+
+In these instances - where you simply need to override the default styling for tags within rich text because of a parent component - it's okay to style to element within the block:
+
+```
+.messaging.-success {
+    background-color: darkgreen;
+
+    a {
+        color: white;
+        text-decoration: underline;
+    }
+}
+```
+
+#### Explanation
+
+The reason for this exception to better support styling generated HTML, such as CMS content, server messages, rich text API responses, etc.
+
+
 ## Sass Mixins and Functions
 
 If you'd like to define sass mixins or functions, Boilerplate recommends

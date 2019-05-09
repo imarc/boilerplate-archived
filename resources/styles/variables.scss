@@ -72,19 +72,12 @@ $breakpoints: (
   xl: 1200px
 ) !default;
 
-///
-/// Media Query breakpoints (legacy)
-///
-
-$mq-medium: 576px !default;
-$mq-large:  1024px !default;
-$mq-xl:     1200px !default;
-
 
 ///
 /// If this is turned off, component mixins are included but not their CSS classnames.
 ///
 $use-boilerplate-classes: true !default;
+
 
 ///
 /// These are settings for slick to work properly and not throw an error.

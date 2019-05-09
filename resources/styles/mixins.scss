@@ -81,26 +81,3 @@
         @content;
     }
 }
-
-
-///
-/// legacy media query mixins
-///
-
-@mixin media-medium {
-    @media only screen and (min-width: $mq-medium) {
-        @content;
-    }
-}
-
-@mixin media-large {
-    @media only screen and (min-width: $mq-large) {
-        @content;
-    }
-}
-
-@mixin media-xl {
-    @media only screen and (min-width: $mq-xl) {
-        @content;
-    }
-}

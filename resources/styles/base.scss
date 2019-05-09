@@ -86,6 +86,10 @@ h5 {
     }
 }
 
+a {
+    @include link;
+}
+
 p {
     margin: 0 0 2em;
     padding: 0;
