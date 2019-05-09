@@ -1,0 +1,33 @@
+///
+/// The COLUMNS mixin makes it so that immmediate child elements appear as
+/// columns. It assumes the use of < hr > elements to create visual gutters
+/// that are only visible while displayed as columns.
+///
+
+@mixin columns() {
+    > hr {
+        border: 0;
+        display: none;
+    }
+    @include breakpoint(md) {
+        & {
+            display: table;
+            table-layout: fixed;
+            width: 100%;
+            > * {
+                display: table-cell;
+                vertical-align: top;
+            }
+            > hr {
+                display: table-cell;
+                width: 1rem;
+            }
+        }
+    }
+}
+
+@if $use-boilerplate-classes {
+    .columns {
+        @include columns;
+    }
+}

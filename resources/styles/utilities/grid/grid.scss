@@ -1,0 +1,47 @@
+///
+/// GRID allows for the creation of a column-based grid
+/// that can wrap or nowrap. It is lighter than FEATURES or TILES
+/// in that it contains no default styling on its contents.
+///
+/// @param {direction} $align  [stretch] - align-items property
+/// @param {number}  $columns [3] - number of columns while min-width is $large
+/// @param {direction}  $flow [row wrap] - number of columns while min-width is $large
+/// @param {measure}  $gutter [1rem] - gutter between grid items
+/// @param {direction}  $justify [flex-start] - justify-content property
+///
+
+@mixin grid($align: stretch, $columns: 3, $flow: row wrap, $gutter: 1rem, $justify: flex-start, $selector: '.grid-cell') {
+    #{$selector} {
+        margin-bottom: $gutter;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @include breakpoint(md) {
+        align-items: $align;
+        display: flex;
+        flex-flow: $flow;
+        justify-content: $justify;
+        margin-left: -$gutter / 2;
+        margin-right: -$gutter / 2;
+        #{$selector} {
+            flex-basis: calc(50% - #{$gutter});
+            flex-shrink: 0;
+            margin-left: $gutter / 2;
+            margin-right: $gutter / 2;
+            max-width: calc(50% - #{$gutter});
+        }
+    }
+    @include breakpoint(lg) {
+        #{$selector} {
+            flex-basis: calc((100% / #{$columns}) - (#{$gutter}));
+            max-width: calc(50% - #{$gutter});
+        }
+    }
+}
+
+@if $use-boilerplate-classes {
+    .grid {
+        @include grid;
+    }
+}

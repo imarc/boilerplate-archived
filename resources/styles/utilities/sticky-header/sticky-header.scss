@@ -1,0 +1,23 @@
+///
+/// The STICKY-HEADER mixin works with (sticky-header.plugin.js) to hide
+/// a site’s header.primary element as you scroll down page. The element
+/// reappears when the user scrolls up the page. This is
+/// responsive as the "top" value is dynamically set in the
+/// js based on the height of the header. Top padding is also added
+/// to the body dynamically via js so that the header doesn't overlap any
+/// content.
+///
+
+@mixin sticky-header() {
+    position: fixed;
+    top: 0;
+    transition: top 0.16s cubic-bezier(0, .40, .70, 1);
+    width: 100%;
+    z-index: 100;
+}
+
+@if $use-boilerplate-classes {
+    header.sticky {
+        @include sticky-header;
+    }
+}

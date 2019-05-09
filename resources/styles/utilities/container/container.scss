@@ -1,0 +1,18 @@
+///
+/// container mixin
+///
+
+@mixin container($max-width: 1200px, $padding: $gutter ) {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: $max-width;
+    padding-left: $padding;
+    padding-right: $padding;
+    position: relative;
+}
+
+@if $use-boilerplate-classes {
+    .container {
+        @include container;
+    }
+}
