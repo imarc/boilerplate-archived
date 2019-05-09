@@ -8,6 +8,7 @@ let webpack = require('webpack');
 // this should be set to a relative path within your theme directory 'build' is
 // recommended. The mix-manifest.json file will be created within this path.
 
+mix.setResourceRoot(process.env.RESOURCE_ROOT || '/');
 mix.setPublicPath('web');
 
 // Mix Options

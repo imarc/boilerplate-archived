@@ -5,7 +5,7 @@ const consolidate = require("@frctl/consolidate");
 const fractal = module.exports = require("@frctl/fractal").create();
 const twig = require("twig");
 
-twig.extendFunction("prefix", path => Path.join(process.env.URL_PREFIX || '/', path));
+twig.extendFunction("prefix", path => Path.join(process.env.RESOURCE_ROOT || '/', path));
 
 fractal.components.engine(consolidate("twig", twig.twig));
 fractal.components.set("ext", ".twig");
