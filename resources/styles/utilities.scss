@@ -1,3 +1,5 @@
-.sr-only {
-    @include visuallyhidden;
+@if $use-boilerplate-classes {
+    .sr-only {
+        @include visuallyhidden;
+    }
 }
