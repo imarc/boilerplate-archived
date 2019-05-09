@@ -87,7 +87,12 @@ h5 {
 }
 
 a {
-    @include link;
+    color: $link;
+
+    &:hover,
+    &:active {
+        color: $link-hover;
+    }
 }
 
 p {
