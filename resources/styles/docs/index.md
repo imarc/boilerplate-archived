@@ -91,6 +91,24 @@ ABEM and Chainable modifiers introduces the following:
 * Boilerplate treats the namespace prefix as optional; if you want to use them, use them, but the documentation doesn't.
 * The one exception to namespace prefixes is `js-`. Boilerplate recommends that the `js-` prefix is used to denote every class that's used for targeting from JavaScript, and that these classes do not overlap with those used for styling.
 
+Read even more about [Why We Use BEM, ABEM, and Atomic Design](abem.html).
+
+
+### BEM Mixes
+
+All a BEM mix is using multiple BEM blocks or elements on the same DOM element. For example, it's fine for an element of one block to also be block itself:
+
+```
+<div class="feature">
+    <p>
+        Ipsum mollitia dolores quisquam minima obcaecati. Atque ipsam vel ex?
+    </p>
+    <button class="feature__callToAction button">Learn More</button>
+</div>
+```
+
+It's allowed to even use two different BEM blocks on the same DOM element, but generally that suggests that those two blocks should be combined or rethought.
+
 
 ### Styling Elements without Classes
 
