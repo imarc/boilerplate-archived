@@ -36,7 +36,7 @@ npm init -y
 After that, run
 
 ```
-npx imarc/boilerplate#v4
+npx imarc/boilerplate
 ```
 
 NPX should automatically copy the resource folder to your project, add dependencies to your package.json, and even add scripts to your package.json file.

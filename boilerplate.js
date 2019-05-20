@@ -25,7 +25,7 @@ npm.load({}, function(er, npm) {
         console.log("Error loading package.json. Make sure you've created one first.");
         process.exit();
     }
-    npm.commands.install(["imarc/boilerplate#v4"]);
+    npm.commands.install(["imarc/boilerplate"]);
 });
 
 // Add the files
