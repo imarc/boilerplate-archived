@@ -1,4 +1,4 @@
-const mix = require('laravel-mix',)
+const mix = require('laravel-mix')
 
 // Mix Public Path
 //
@@ -7,14 +7,14 @@ const mix = require('laravel-mix',)
 // this should be set to a relative path within your theme directory 'build' is
 // recommended. The mix-manifest.json file will be created within this path.
 
-mix.setResourceRoot(process.env.RESOURCE_ROOT || '/',)
-mix.setPublicPath('web',)
+mix.setResourceRoot(process.env.RESOURCE_ROOT || '/')
+mix.setPublicPath('web')
 
 // Mix Options
 
 mix.options({
     clearConsole: mix.isWatching(),
-},)
+})
 
 // Extra Webpack Config
 
@@ -28,7 +28,7 @@ mix.webpackConfig({
                 loader: 'import-glob-loader',
             },
             {
-                test: require.resolve('jquery',),
+                test: require.resolve('jquery'),
                 use: [
                     {
                         loader: 'expose-loader',
@@ -50,7 +50,7 @@ mix.webpackConfig({
     },
 
     devtool: 'source-map',
-},)
+})
 
 // Aliases added here work globally throughout
 // all modules. These should be used sparingly.
@@ -59,24 +59,26 @@ mix.webpackConfig({
 // is a global variable.
 // See: https://laravel-mix.com/docs/4.0/autoloading
 mix.autoload({
-    jquery: ['$', 'jQuery', 'window.$', 'window.jQuery',],
-},)
+    jquery: [
+        '$', 'jQuery', 'window.$', 'window.jQuery',
+    ],
+})
 
 // Asset Config
 
-mix.js('resources/js/plugins/accordion.plugin.js', 'js/plugins',)
-mix.js('resources/js/plugins/stickyElement.plugin.js', 'js/plugins',)
-mix.js('resources/js/plugins/mobileNavigation.plugin.js', 'js/plugins',)
-mix.js('resources/js/plugins/stickyHeader.plugin.js', 'js/plugins',)
-mix.js('resources/js/plugins/dropdown.plugin.js', 'js/plugins',)
-mix.js('resources/js/plugins/tabs.plugin.js', 'js/plugins',)
+mix.js('resources/js/plugins/accordion.plugin.js', 'js/plugins')
+mix.js('resources/js/plugins/stickyElement.plugin.js', 'js/plugins')
+mix.js('resources/js/plugins/mobileNavigation.plugin.js', 'js/plugins')
+mix.js('resources/js/plugins/stickyHeader.plugin.js', 'js/plugins')
+mix.js('resources/js/plugins/dropdown.plugin.js', 'js/plugins')
+mix.js('resources/js/plugins/tabs.plugin.js', 'js/plugins')
 
-mix.js('resources/js/main.js', 'js',)
+mix.js('resources/js/main.js', 'js')
 mix.sass('resources/styles/main.scss', 'css', {
     includePaths: [
         'resources/styles',
     ],
-},)
+})
 mix.extract()
 mix.sourceMaps()
 mix.version()
