@@ -1,6 +1,6 @@
 {
   "name": "imarc-boilerplate",
-  "version": "4.0.0",
+  "version": "4.1.0",
   "description": "A light, customizable frontend starter kit and component library",
   "author": "Imarc",
   "license": "Apache-2.0",
@@ -65,16 +65,24 @@
       "ecmaVersion": 2018,
       "sourceType": "module"
     },
-    "plugins": ["vue"],
+    "plugins": [
+      "vue"
+    ],
     "rules": {
-      "comma-dangle": ["warn", {
-        "arrays": "always",
-        "objects": "always",
-        "imports": "never",
-        "exports": "never",
-        "functions": "never"
-      }],
-      "indent": ["warn", 4]
+      "comma-dangle": [
+        "warn",
+        {
+          "arrays": "always",
+          "objects": "always",
+          "imports": "never",
+          "exports": "never",
+          "functions": "never"
+        }
+      ],
+      "indent": [
+        "warn",
+        4
+      ]
     }
   }
 }
