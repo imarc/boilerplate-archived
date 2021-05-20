@@ -1,5 +1,10 @@
-Imarc Boilerplate
-=================
+**This probably isn't the repository you're looking for anymore.** This repository is no longer being kept up to date, with all development happening on [imarc/boilerplate-components,](https://github.com/imarc/boilerplate-components) the full version of our framework.
+
+The [next version of Boilerplate](https://github.com/imarc/boilerplate-components/tree/next) is in beta and is the best starting point for new projects.
+
+----
+
+## Imarc Boilerplate
 
 This is a framework for frontend development. It includes
 
@@ -18,14 +23,12 @@ While we encourage you to read [the builtin documentation](https://imarc.github.
 * Uses [Twig](https://github.com/twigjs/twig.js)
 
 
-Notes
------
+### Notes
 
 Some components were carried over from version 3, but were not updated to the latest practices and syntax. These are flagged as DEPRECATED within the pattern library, and may be removed entirely in a future release.
 
 
-Getting Started
----------------
+### Getting Started
 
 Within a new project, make sure you first have an existing `package.json`. If you don't have one, you can create one by running
 
@@ -43,8 +46,7 @@ NPX should automatically copy the resource folder to your project, add dependenc
 
 
 
-Usage
------
+### Usage
 
 After running `npx` above, your project will be automatically setup so you can run
 
