@@ -1,7 +1,5 @@
 **This probably isn't the repository you're looking for anymore.** This repository is no longer being kept up to date, with all development happening on [imarc/boilerplate-components,](https://github.com/imarc/boilerplate-components) the full version of our framework.
 
-The [next version of Boilerplate](https://github.com/imarc/boilerplate-components/tree/next) is in beta and is the best starting point for new projects.
-
 ----
 
 ## Imarc Boilerplate
